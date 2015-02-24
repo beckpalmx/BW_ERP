@@ -64,6 +64,9 @@
     DBConnect.CONNECTION_URL = "jdbc:postgresql://localhost:5432/" + bwdb_name + year_data;
     DBConnect.CONNECTION_URL_MA = "jdbc:postgresql://localhost:5432/" + db_name_ma + year_data;    
     
+    System.out.println("DB 1 = " + bwdb_name + year_data);
+    System.out.println("DB 2 = " + db_name_ma + year_data);
+    
     selectData.setUsername(tu.EncodeTexttoTIS(user));
     selectData.setPassword(tu.EncodeTexttoTIS(pass));
     
