@@ -65,6 +65,7 @@
             {
                 var arrayChk = new Array;
                 arrayChk[0] = "chkNull";
+                //alert("Edit : ");
                 if (ChkParameter(arrayChk))
                 {
                     if (ChkDate(getId("A_sm_from_date").value, getId("A_sm_to_date").value)) {
@@ -80,12 +81,12 @@
                                 document.getElementById("A_sm_to_time").focus();
                             } else {
                                 getId("A_sm_stop_hour").value = Time_Difference2("A_sm_from_date", "A_sm_to_date", "A_sm_from_time", "A_sm_to_time");
-                                //alert(strID);
+                                //alert("1 > " + strID);
                                 getSave_Detail(URLsend(strID, '../JSP/BW_CS_Detail_033_1.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show033_1.jsp?doc_id=", "show", getId("A_doc_id").value);
                             }
                         } else {
                             getId("A_sm_stop_hour").value = Time_Difference2("A_sm_from_date", "A_sm_to_date", "A_sm_from_time", "A_sm_to_time");
-                            //alert(strID);
+                            //alert("2 > " + strID);
                             getSave_Detail(URLsend(strID, '../JSP/BW_CS_Detail_033_1.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show033_1.jsp?doc_id=", "show", getId("A_doc_id").value);
                         }
 

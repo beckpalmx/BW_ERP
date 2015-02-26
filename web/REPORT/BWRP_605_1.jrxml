@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rp_mprov_name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="14aef8f0-27e6-4706-8ba4-8e6dcdb58b1a">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["RP_040"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="company_name" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["บริษัท แป้งตะวันออกเฉียงเหนือ (1987) จำกัด"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="iso_doc_ref" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["F-P-025- R 03"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="iso_doc_date" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["26/01/48"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DOC_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["18034"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\WORKSPACE\\BWERP_REPORT\\REPORT\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from vd_product_report_daily_header
+WHERE doc_id = $P{DOC_ID}
+and delete_flag <> 'Y'
+order by runno]]>
+	</queryString>
+	<field name="runno" class="java.lang.Integer"/>
+	<field name="doc_id" class="java.lang.String"/>
+	<field name="doc_date" class="java.lang.String"/>
+	<field name="cassava_date" class="java.lang.String"/>
+	<field name="amount_cassava" class="java.lang.String"/>
+	<field name="percent_tapioca" class="java.lang.String"/>
+	<field name="amount_tapioca" class="java.lang.String"/>
+	<field name="fresh_skin" class="java.lang.String"/>
+	<field name="soil_skin" class="java.lang.String"/>
+	<field name="total_cassava" class="java.lang.String"/>
+	<field name="amount_tapioca1" class="java.lang.String"/>
+	<field name="start_m_date" class="java.lang.String"/>
+	<field name="start_m_time" class="java.lang.String"/>
+	<field name="end_m_date" class="java.lang.String"/>
+	<field name="end_m_time" class="java.lang.String"/>
+	<field name="m_time" class="java.lang.String"/>
+	<field name="total_stop_kw" class="java.lang.String"/>
+	<field name="total_stop_milling_hour" class="java.lang.String"/>
+	<field name="total_milling_time" class="java.lang.String"/>
+	<field name="milling_ratio" class="java.lang.String"/>
+	<field name="start_r_date" class="java.lang.String"/>
+	<field name="start_r_time" class="java.lang.String"/>
+	<field name="end_r_date" class="java.lang.String"/>
+	<field name="end_r_time" class="java.lang.String"/>
+	<field name="r_time" class="java.lang.String"/>
+	<field name="total_stop_roast_hour" class="java.lang.String"/>
+	<field name="total_roast_time" class="java.lang.String"/>
+	<field name="epower_milling_from" class="java.lang.String"/>
+	<field name="epower_milling_to" class="java.lang.String"/>
+	<field name="epower_unit" class="java.lang.String"/>
+	<field name="water_use" class="java.lang.String"/>
+	<field name="kw_use" class="java.lang.String"/>
+	<field name="water_per_tapioca" class="java.lang.String"/>
+	<field name="kw_per_tapioca" class="java.lang.String"/>
+	<field name="total_raw_weight" class="java.lang.String"/>
+	<field name="total_prd_weight" class="java.lang.String"/>
+	<field name="starch_date" class="java.lang.String"/>
+	<field name="starch_balance" class="java.lang.String"/>
+	<field name="cassava_of_date" class="java.lang.String"/>
+	<field name="starch_bal" class="java.lang.String"/>
+	<field name="qty_tank" class="java.lang.String"/>
+	<field name="starch_bal_x_qty_tank" class="java.lang.String"/>
+	<field name="qty_litr" class="java.lang.String"/>
+	<field name="total_starch_weight" class="java.lang.String"/>
+	<field name="cassava_prd_date" class="java.lang.String"/>
+	<field name="qty_prd" class="java.lang.String"/>
+	<field name="percent_prd" class="java.lang.String"/>
+	<field name="percent_diff" class="java.lang.String"/>
+	<field name="percent_yield" class="java.lang.String"/>
+	<field name="yield_val" class="java.lang.String"/>
+	<field name="percent_prd1" class="java.lang.String"/>
+	<field name="percent_diff1" class="java.lang.String"/>
+	<field name="percent_yield1" class="java.lang.String"/>
+	<field name="yield_val1" class="java.lang.String"/>
+	<field name="reporter_id" class="java.lang.String"/>
+	<field name="create_date" class="java.sql.Timestamp"/>
+	<field name="create_by" class="java.lang.String"/>
+	<field name="update_date" class="java.sql.Timestamp"/>
+	<field name="update_by" class="java.lang.String"/>
+	<field name="retro_flag" class="java.lang.String"/>
+	<field name="complete_flag" class="java.lang.String"/>
+	<field name="cancel_flag" class="java.lang.String"/>
+	<field name="delete_flag" class="java.lang.String"/>
+	<field name="doc_type" class="java.lang.String"/>
+	<field name="delete_date" class="java.sql.Timestamp"/>
+	<field name="delete_by" class="java.lang.String"/>
+	<field name="company_id" class="java.lang.String"/>
+	<field name="cassava_date2" class="java.lang.String"/>
+	<field name="cassava_prd_date2" class="java.lang.String"/>
+	<field name="starch_date2" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="13" width="454" height="32" uuid="627cf7cd-aef8-4319-9050-3dabbaa37f95"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="24" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[รายงานการผลิตแป้งประจำวัน]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="364" y="0" width="211" height="20" uuid="b9ead8ae-f292-41b8-810f-94aa356246fe"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="445" y="40" width="130" height="20" uuid="d1d4510c-3389-40ce-b44e-183a38ac05e6"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{iso_doc_date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="445" y="20" width="130" height="20" uuid="a5ac1d63-1fd4-4123-83cf-44b189a86746"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{iso_doc_ref}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="364" y="20" width="100" height="20" uuid="66febe02-aa40-4196-b4e3-6a448a2c8969"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[หมายเลขเอกสาร :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="364" y="40" width="100" height="20" uuid="7bcaa385-6441-41ea-b9dd-559fde87e2c4"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[วันที่มีผลบังคับใช้ :]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="101" height="50" uuid="d2b101bc-2928-4f91-ab3c-ee6198ccf5a9"/>
+				<imageExpression><![CDATA["bw-logo.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="60" width="555" height="1" uuid="6f100f62-3348-46f1-b458-3aa537c217ed"/>
+			</line>
+			<line>
+				<reportElement x="0" y="83" width="555" height="1" uuid="133a8477-2a5e-416f-b5c2-95ec5b97437f"/>
+			</line>
+			<staticText>
+				<reportElement x="274" y="64" width="100" height="20" uuid="e60854f6-8867-4527-ad47-5387705c51f7"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[เลขที่เอกสาร :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="339" y="64" width="130" height="20" uuid="08735505-4001-42e3-bac3-84a553c7d3b7"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doc_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="481" y="64" width="130" height="20" uuid="c73309a8-2977-441f-852b-7a52e44f0772"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doc_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="418" y="64" width="100" height="20" uuid="fa8fc96c-3397-4f0a-a77f-ff4862db49a6"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[วันที่เอกสาร :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="63" width="140" height="20" uuid="f421b7d1-05f6-4422-8b03-05829d85523e"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="16" isBold="true" isUnderline="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[รายงานผลผลิตตัดมัน]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="3" width="140" height="20" uuid="11116072-70c4-4657-9400-7be966bd6b1b"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ตัดมัน น้ำแป้งของมันวันที่ ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="148" y="3" width="86" height="20" uuid="ca986494-7e43-4470-8b80-e3492d096223"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cassava_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="235" y="3" width="93" height="20" uuid="7edb1bce-7214-4947-8304-cff7a80115fc"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[เหลือ (ยอดยกมา)  =  ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="329" y="3" width="112" height="20" uuid="e853fed1-bc3f-4706-8a0d-0eedaaed4cb2"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount_cassava}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="404" y="3" width="59" height="20" uuid="0b2a461a-4774-4643-bc70-3a5d2d814bbf"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ตัน ]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="94" y="24" width="461" height="32" uuid="9201be9e-155b-4441-bb87-55d822251ac8"/>
+				<subreportParameter name="SUB_DOC_ID">
+					<subreportParameterExpression><![CDATA[$F{doc_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUB_START_DATE">
+					<subreportParameterExpression><![CDATA[$F{doc_date}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BWRP_605_1_SUB_A.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="7" y="24" width="80" height="20" uuid="e4a34ebf-4890-4037-878e-4c1735c664b5"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ตัดมันของวันที่ ]]></text>
+			</staticText>
+		</band>
+		<band height="70">
+			<subreport>
+				<reportElement x="7" y="0" width="548" height="32" uuid="a3ccd1bf-10ca-4509-b9dc-6a7afe0ddaa0"/>
+				<subreportParameter name="SUB_DOC_ID">
+					<subreportParameterExpression><![CDATA[$F{doc_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUB_START_DATE">
+					<subreportParameterExpression><![CDATA[$F{doc_date}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BWRP_605_1_SUB_B.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="22" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="0" y="2" width="100" height="20" uuid="ded19633-7b79-4c1e-b15d-ef43869d7e61"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="false" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="13828cf9-11a9-483a-960f-bccca3a96bc0"/>
+			</line>
+			<textField>
+				<reportElement x="454" y="2" width="80" height="20" uuid="681082da-aa21-4c31-a8bb-f6ed5b51004c"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="534" y="2" width="40" height="20" uuid="145d3f94-b5c8-4b31-b3dc-4ef36c4ebdce"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="2" width="95" height="20" uuid="c5e424df-c3cd-413f-8930-6fd31a5fd94c"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fileName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
