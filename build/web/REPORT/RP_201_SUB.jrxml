@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RP_201_SUB" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="822" leftMargin="0" rightMargin="20" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUB_DOC_ID" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="SUB_DOC_DATE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from vd_rawmatt_receive
+WHERE doc_date = $P{SUB_DOC_DATE}
+and delete_flag <> 'Y'
+ORDER BY car_date_in,car_time_in]]>
+	</queryString>
+	<field name="runno" class="java.lang.Integer"/>
+	<field name="doc_id" class="java.lang.String"/>
+	<field name="doc_date" class="java.lang.String"/>
+	<field name="line_no" class="java.lang.Integer"/>
+	<field name="product_id" class="java.lang.String"/>
+	<field name="wh_in" class="java.lang.String"/>
+	<field name="wh_out" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.String"/>
+	<field name="supplier_id" class="java.lang.String"/>
+	<field name="supplyer_type" class="java.lang.String"/>
+	<field name="car_no" class="java.lang.String"/>
+	<field name="type_car" class="java.lang.String"/>
+	<field name="car_date_in" class="java.lang.String"/>
+	<field name="car_time_in" class="java.lang.String"/>
+	<field name="car_date_out" class="java.lang.String"/>
+	<field name="car_time_out" class="java.lang.String"/>
+	<field name="potato_type" class="java.lang.String"/>
+	<field name="percent_1" class="java.lang.String"/>
+	<field name="percent_2" class="java.lang.String"/>
+	<field name="percent_3" class="java.lang.String"/>
+	<field name="percent_4" class="java.lang.String"/>
+	<field name="percent_5" class="java.lang.String"/>
+	<field name="percent_6" class="java.lang.String"/>
+	<field name="percent_7" class="java.lang.String"/>
+	<field name="percent_8" class="java.lang.String"/>
+	<field name="percent_avg" class="java.lang.String"/>
+	<field name="pc_ref" class="java.lang.String"/>
+	<field name="price_ref" class="java.lang.String"/>
+	<field name="price_accept" class="java.lang.String"/>
+	<field name="soil_deduct" class="java.lang.String"/>
+	<field name="contamination_deduct" class="java.lang.String"/>
+	<field name="other_deduct" class="java.lang.String"/>
+	<field name="dump_deduct" class="java.lang.String"/>
+	<field name="brake_income" class="java.lang.String"/>
+	<field name="car_in_weight" class="java.lang.String"/>
+	<field name="car_out_weight" class="java.lang.String"/>
+	<field name="total_weight" class="java.lang.String"/>
+	<field name="deduct_weight" class="java.lang.String"/>
+	<field name="balance_weight" class="java.lang.String"/>
+	<field name="total_payment" class="java.lang.String"/>
+	<field name="amount_deduct" class="java.lang.String"/>
+	<field name="amount_payment" class="java.lang.String"/>
+	<field name="reporter_id" class="java.lang.String"/>
+	<field name="checker_id" class="java.lang.String"/>
+	<field name="approve_id" class="java.lang.String"/>
+	<field name="scale_no" class="java.lang.String"/>
+	<field name="company_id" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<field name="create_date" class="java.sql.Timestamp"/>
+	<field name="create_by" class="java.lang.String"/>
+	<field name="update_date" class="java.sql.Timestamp"/>
+	<field name="update_by" class="java.lang.String"/>
+	<field name="retro_flag" class="java.lang.String"/>
+	<field name="complete_flag" class="java.lang.String"/>
+	<field name="cancel_flag" class="java.lang.String"/>
+	<field name="delete_flag" class="java.lang.String"/>
+	<field name="doc_type" class="java.lang.String"/>
+	<field name="delete_date" class="java.sql.Timestamp"/>
+	<field name="delete_by" class="java.lang.String"/>
+	<field name="wh_in_name" class="java.lang.String"/>
+	<field name="wh_out_name" class="java.lang.String"/>
+	<field name="supplier_name" class="java.lang.String"/>
+	<field name="supplier_addr" class="java.lang.String"/>
+	<field name="supplier_tel" class="java.lang.String"/>
+	<field name="prod_name" class="java.lang.String"/>
+	<field name="real_payment" class="java.math.BigDecimal"/>
+	<field name="powder_get" class="java.math.BigDecimal"/>
+	<field name="brake_values" class="java.math.BigDecimal"/>
+	<field name="brake_value" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="236" y="0" width="60" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{percent_avg}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="158" y="0" width="76" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{car_no}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="60" y="0" width="97" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supplier_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="296" y="0" width="70" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price_accept}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="353" y="0" width="70" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_weight}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="397" y="0" width="70" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount_payment}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="450" y="0" width="70" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brake_income}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="520" y="0" width="70" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brake_income}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="590" y="0" width="70" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{real_payment}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="659" y="0" width="70" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{powder_get}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="729" y="0" width="70" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dump_deduct}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="97" height="20"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

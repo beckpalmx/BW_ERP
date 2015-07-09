@@ -78,7 +78,7 @@ public class D_product_report_daily_detail_rawDAO {
             p.setString(i, DataBean.getProduct_id());i += 1;
             p.setString(i, DataBean.getWeight());i += 1;
             p.setString(i, DataBean.getBag_qty());i += 1;
-            p.setString(i, DataBean.getRemark());i += 1;
+            p.setString(i, DataBean.getAmount());i += 1;
             p.setString(i, DataBean.getRemark());i += 1;
             p.setString(i, DataBean.getBy());i += 1;
             p.setTimestamp(i, DataBean.getDate());i += 1;

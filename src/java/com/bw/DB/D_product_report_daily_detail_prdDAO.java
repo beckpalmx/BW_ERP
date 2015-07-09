@@ -78,7 +78,7 @@ public class D_product_report_daily_detail_prdDAO {
             p.setString(i, DataBean.getProduct_id());i += 1;
             p.setString(i, DataBean.getWeight());i += 1;
             p.setString(i, DataBean.getBag_qty());i += 1;
-            p.setString(i, DataBean.getRemark());i += 1;
+            p.setString(i, DataBean.getAmount());i += 1;
             p.setString(i, DataBean.getRemark());i += 1;
             p.setString(i, DataBean.getBy());i += 1;
             p.setTimestamp(i, DataBean.getDate());i += 1;
@@ -219,7 +219,8 @@ public class D_product_report_daily_detail_prdDAO {
         StringBuffer Return_String = new StringBuffer();
         ResultSet rs = null;
         String SQL = "";
-        total = objuti.numRowdatabase("Select Count(doc_id) As num from d_product_report_daily_detail_raw where doc_id ='" + doc_id + "' and delete_flag = 'N' and complete_flag ='N' ");
+        total = objuti.numRowdatabase("Select Count(doc_id) As num from d_product_report_daily_detail_prd where doc_id ='" + doc_id + "' and delete_flag = 'N' and complete_flag ='N' ");
+        System.out.println("SQL total = " + total);
         try {
 
             if (total != 0) {
@@ -233,6 +234,9 @@ public class D_product_report_daily_detail_prdDAO {
                             + "where doc_id = '" + doc_id + "' and delete_flag = 'N' and complete_flag = 'N' "
                             + "order by  to_number(line_no,'999') LIMIT " + row_page + " OFFSET " + start;
                     Return_String.append("<table width='100%' align='center' border='0' cellpadding='0' cellspacing='1' class='inner'>\n");
+                    
+                    System.out.println("SQL Detail = " + SQL);
+                    
                     rs = con.createStatement().executeQuery(SQL);
                     while (rs.next()) {
                         Return_String.append("<tr>\n");

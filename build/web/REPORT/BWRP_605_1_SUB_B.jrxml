@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BWRP_605_SUB_STOP_M" pageWidth="800" pageHeight="612" orientation="Landscape" columnWidth="780" leftMargin="0" rightMargin="20" topMargin="0" bottomMargin="0" uuid="e9a52adb-6dcb-4e63-b957-c46279f5575d">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUB_DOC_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["AL001"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUB_START_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * from d_product_report_daily_detail_starch
+WHERE doc_id = $P{SUB_DOC_ID}
+AND delete_flag <> 'Y'
+Order By to_number(line_no,'99')]]>
+	</queryString>
+	<field name="runno" class="java.lang.Integer"/>
+	<field name="doc_id" class="java.lang.String"/>
+	<field name="doc_date" class="java.lang.String"/>
+	<field name="doc_time" class="java.lang.String"/>
+	<field name="line_no" class="java.lang.String"/>
+	<field name="tank" class="java.lang.String"/>
+	<field name="weight" class="java.lang.String"/>
+	<field name="qty_starch" class="java.lang.Double"/>
+	<field name="be_val" class="java.lang.String"/>
+	<field name="sg_val" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="create_date" class="java.sql.Timestamp"/>
+	<field name="create_by" class="java.lang.String"/>
+	<field name="update_date" class="java.sql.Timestamp"/>
+	<field name="update_by" class="java.lang.String"/>
+	<field name="retro_flag" class="java.lang.String"/>
+	<field name="complete_flag" class="java.lang.String"/>
+	<field name="cancel_flag" class="java.lang.String"/>
+	<field name="delete_flag" class="java.lang.String"/>
+	<field name="doc_type" class="java.lang.String"/>
+	<field name="delete_date" class="java.sql.Timestamp"/>
+	<field name="delete_by" class="java.lang.String"/>
+	<field name="company_id" class="java.lang.String"/>
+	<field name="cassava_of_date" class="java.lang.String"/>
+	<field name="starch_bal" class="java.lang.String"/>
+	<field name="qty_tank" class="java.lang.String"/>
+	<field name="starch_bal_x_qty_tank" class="java.lang.String"/>
+	<field name="qty_litr" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="249" y="0" width="363" height="20" uuid="96acd9b1-6b7b-4b1c-968a-06f01468989c"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  X  " + $F{be_val} + "  X  " + $F{sg_val} + "  X  " +
+"1.777%" + "  X  " + "1.0225" + "   =   " + $F{amount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="7" y="0" width="117" height="20" uuid="93d7a9b6-0554-4d32-9213-5002ba4ab1d0"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["น้ำแป้งถังที่  " + $F{tank}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement x="17" y="0" width="106" height="20" uuid="094e453f-cfa1-4fcf-8eb1-41b6110748ca"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qty_starch}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="124" y="0" width="117" height="20" uuid="0b9d69eb-cb0f-4477-a6da-18187e8189b1"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" ลิตร " + $F{be_val} + " Be'   =   "]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement x="175" y="0" width="70" height="20" uuid="a364b948-f770-4dbb-8039-c33748cfe8fd"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qty_starch}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="217" y="17" width="212" height="1" uuid="73fcf820-ad78-4879-aaa3-812ff17e765c"/>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement x="261" y="16" width="70" height="20" uuid="9be0b91e-12b1-4cba-b537-9bec5899c8c0"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[0.875]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

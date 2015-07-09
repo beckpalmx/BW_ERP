@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RP_401_SUB_A" pageWidth="1200" pageHeight="612" orientation="Landscape" columnWidth="1180" leftMargin="0" rightMargin="20" topMargin="0" bottomMargin="0" uuid="e9a52adb-6dcb-4e63-b957-c46279f5575d">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUB_DOC_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["AL001"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUB_START_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * from vd_product_report_daily_detail_prd
+WHERE doc_id = $P{SUB_DOC_ID}
+AND delete_flag <> 'Y']]>
+	</queryString>
+	<field name="runno" class="java.lang.Integer"/>
+	<field name="doc_id" class="java.lang.String"/>
+	<field name="doc_date" class="java.lang.String"/>
+	<field name="doc_time" class="java.lang.String"/>
+	<field name="line_no" class="java.lang.String"/>
+	<field name="product_id" class="java.lang.String"/>
+	<field name="weight" class="java.lang.String"/>
+	<field name="bag_qty" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<field name="create_date" class="java.sql.Timestamp"/>
+	<field name="create_by" class="java.lang.String"/>
+	<field name="update_date" class="java.sql.Timestamp"/>
+	<field name="update_by" class="java.lang.String"/>
+	<field name="retro_flag" class="java.lang.String"/>
+	<field name="complete_flag" class="java.lang.String"/>
+	<field name="cancel_flag" class="java.lang.String"/>
+	<field name="delete_flag" class="java.lang.String"/>
+	<field name="doc_type" class="java.lang.String"/>
+	<field name="delete_date" class="java.sql.Timestamp"/>
+	<field name="delete_by" class="java.lang.String"/>
+	<field name="company_id" class="java.lang.String"/>
+	<field name="prod_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="6" y="0" width="138" height="20" uuid="a96fb832-db27-4dc8-8e73-9d724594d615"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prod_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="165" y="0" width="94" height="20" uuid="96acd9b1-6b7b-4b1c-968a-06f01468989c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weight}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="285" y="0" width="56" height="20" uuid="ec6542ab-5610-4961-8551-818cad527c0b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bag_qty}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="376" y="0" width="52" height="20" uuid="c2731a16-6f62-4e71-b46f-f722efa17e2f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="355" y="-1" width="1" height="23" uuid="b310d5b4-540a-4ac4-9864-aa18c2cdb2c1"/>
+			</line>
+			<line>
+				<reportElement x="445" y="-2" width="1" height="24" uuid="b699c8de-be14-4107-9f6a-d7fd338341ea"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="22" uuid="be95a246-b8c5-4f91-803c-0cb7bd8c5d21"/>
+			</line>
+			<line>
+				<reportElement x="186" y="-1" width="1" height="23" uuid="40cfdd01-fa51-4796-9504-39ab057e9c61"/>
+			</line>
+			<line>
+				<reportElement x="274" y="-1" width="1" height="23" uuid="aedee06e-5162-47f5-afbc-9e74c84bd378"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

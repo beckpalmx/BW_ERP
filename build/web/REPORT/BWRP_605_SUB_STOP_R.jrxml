@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BWRP_605_SUB_STOP_M" pageWidth="800" pageHeight="612" orientation="Landscape" columnWidth="780" leftMargin="0" rightMargin="20" topMargin="0" bottomMargin="0" uuid="e9a52adb-6dcb-4e63-b957-c46279f5575d">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUB_DOC_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["AL001"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUB_START_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * from d_product_report_daily_detail_stop_roast
+WHERE doc_id = $P{SUB_DOC_ID}
+AND delete_flag <> 'Y'
+Order By to_number(line_no,'99')]]>
+	</queryString>
+	<field name="runno" class="java.lang.Integer"/>
+	<field name="doc_id" class="java.lang.String"/>
+	<field name="doc_date" class="java.lang.String"/>
+	<field name="doc_time" class="java.lang.String"/>
+	<field name="line_no" class="java.lang.String"/>
+	<field name="sr_from_date" class="java.lang.String"/>
+	<field name="sr_from_time" class="java.lang.String"/>
+	<field name="sr_to_date" class="java.lang.String"/>
+	<field name="sr_to_time" class="java.lang.String"/>
+	<field name="sr_stop_hour" class="java.lang.String"/>
+	<field name="create_date" class="java.sql.Timestamp"/>
+	<field name="create_by" class="java.lang.String"/>
+	<field name="update_date" class="java.sql.Timestamp"/>
+	<field name="update_by" class="java.lang.String"/>
+	<field name="retro_flag" class="java.lang.String"/>
+	<field name="complete_flag" class="java.lang.String"/>
+	<field name="cancel_flag" class="java.lang.String"/>
+	<field name="delete_flag" class="java.lang.String"/>
+	<field name="doc_type" class="java.lang.String"/>
+	<field name="delete_date" class="java.sql.Timestamp"/>
+	<field name="delete_by" class="java.lang.String"/>
+	<field name="company_id" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="12" y="0" width="95" height="20" uuid="a96fb832-db27-4dc8-8e73-9d724594d615"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{line_no} + "."]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="40" y="0" width="477" height="20" uuid="96acd9b1-6b7b-4b1c-968a-06f01468989c"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sr_from_date} + "  " + $F{sr_from_time} + "  ถึง  " + "  " +
+$F{sr_to_date} + "  " + $F{sr_to_time} + "     =     " + $F{sr_stop_hour}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

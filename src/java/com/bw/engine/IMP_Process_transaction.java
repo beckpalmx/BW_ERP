@@ -10,6 +10,7 @@ import com.bw.DB.IMP_CustomerDB;
 import com.bw.DB.IMP_Process_transactionDB;
 import com.bw.DB.IMP_Process_transaction_casavaDB;
 import com.bw.DB.IMP_Process_transaction_sale_DB;
+import com.bw.DB.Process_Calculate_TransactionDB;
 import java.sql.Connection;
 import java.util.Random;
 
@@ -34,6 +35,7 @@ public class IMP_Process_transaction {
             IMP_Process_transactionDB obj = new IMP_Process_transactionDB();
             IMP_Process_transaction_casavaDB obj1 = new IMP_Process_transaction_casavaDB();
             IMP_Process_transaction_sale_DB obj2 = new IMP_Process_transaction_sale_DB();
+            Process_Calculate_TransactionDB obj_process = new Process_Calculate_TransactionDB();
             String r_create = Long.toString(Math.abs(r.nextLong()), 36);
 
             //เรียกใช้งานให้ส่ง Parameter ตามนี้ obj.generater_transaction_process(date_from, date_to,process_id,table,doc_type); 
@@ -46,12 +48,15 @@ public class IMP_Process_transaction {
 
             if (process_for.equalsIgnoreCase("CASAVA")) {
                 obj1.generater_transaction_casava_process(doc_date_from, doc_date_to, "IMPORT_WEIGHT_SCALE", "d_ticketbuy_doc", "+", r_create, username);
+                System.out.println("PROCESS_RAWMAT : " + process_for);
+                obj_process.generater_transaction_process(doc_date_from, doc_date_to, "PROCESS_RAWMAT", "d_rawmatt_receive", "+", r_create, username, process_for);
+
             } else if (process_for.equalsIgnoreCase("FRESH-SKIN")) {
                 obj2.generater_transaction_process(doc_date_from, doc_date_to, "IMPORT_WEIGHT_SCALE", "d_ticketsale_doc", "+", r_create, username, process_for);
             } else if (process_for.equalsIgnoreCase("TAPIOCA")) {
                 obj2.generater_transaction_process(doc_date_from, doc_date_to, "IMPORT_WEIGHT_SCALE", "d_ticketsale_doc", "+", r_create, username, process_for);
             }
-            
+
             System.out.println("End IMPORT_WEIGHT_SCALE ");
             //}
             System.out.println("END Transaction Process ... ");

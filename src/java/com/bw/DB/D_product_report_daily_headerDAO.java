@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.bw.DB;
 
 import com.bw.Calculator.Calculator_BW;
@@ -19,10 +18,11 @@ import java.sql.ResultSet;
  * @author B
  */
 public class D_product_report_daily_headerDAO {
+
     UtiDatabase objuti;
-    StringQuery objStringQuery ;   
-    
-    public void insert(DataBeanD_product_report_daily_header DataBean)throws Exception{
+    StringQuery objStringQuery;
+
+    public void insert(DataBeanD_product_report_daily_header DataBean) throws Exception {
         String[] String_input = new String[]{
             "doc_id",
             "doc_date",
@@ -59,10 +59,10 @@ public class D_product_report_daily_headerDAO {
             "starch_date2",
             "starch_balance",
             /*"cassava_of_date",
-            "starch_bal",
-            "qty_tank",
-            "starch_bal_x_qty_tank",
-            "qty_litr",*/
+             "starch_bal",
+             "qty_tank",
+             "starch_bal_x_qty_tank",
+             "qty_litr",*/
             "cassava_prd_date",
             "cassava_prd_date2",
             "qty_prd",
@@ -85,75 +85,124 @@ public class D_product_report_daily_headerDAO {
         Calculator_BW objcal = new Calculator_BW();
         PreparedStatement p = null;
         int i = 1;
-        try{
+        try {
             p = con.prepareStatement(objStringQuery.Insert_String(String_input, "d_product_report_daily_header"));
-            p.setString(i,DataBean.getDoc_id());i+=1;
-            p.setString(i, DataBean.getDoc_date());i+=1;
-            p.setString(i, DataBean.getCassava_date());i+=1;
-            p.setString(i, DataBean.getCassava_date2());i+=1;
-            p.setString(i, DataBean.getAmount_cassava());i+=1;
-            p.setString(i, DataBean.getPercent_tapioca());i+=1;
-            p.setString(i, DataBean.getAmount_tapioca());i+=1;
-            p.setString(i, DataBean.getFresh_skin());i+=1;
-            p.setString(i, DataBean.getSoil_skin());i+=1;
-            p.setString(i, DataBean.getTotal_cassava());i+=1;
-            p.setString(i, DataBean.getAmount_tapioca1());i+=1;
-            p.setString(i, DataBean.getStart_m_date());i+=1;
-            p.setString(i, DataBean.getStart_m_time());i+=1;
-            p.setString(i, DataBean.getEnd_m_date());i+=1;
-            p.setString(i, DataBean.getEnd_m_time());i+=1;
-            p.setString(i, DataBean.getM_time());i+=1;
-            p.setString(i, objcal.Sum_Time(DataBean.getDoc_id(), "d_product_report_daily_detail_stop_milling", "sm_from_date", "sm_to_date", "sm_from_time", "sm_to_time", con));i+=1;
-            p.setString(i, DataBean.getTotal_milling_time());i+=1;
-            p.setString(i, DataBean.getMilling_ratio());i+=1;
-            p.setString(i, DataBean.getStart_r_date());i+=1;
-            p.setString(i, DataBean.getStart_r_time());i+=1;
-            p.setString(i, DataBean.getEnd_r_date());i+=1;
-            p.setString(i, DataBean.getEnd_r_time());i+=1;
-            p.setString(i, DataBean.getR_time());i+=1;
-            p.setString(i, DataBean.getTotal_roast_time());i+=1;
-            p.setString(i, DataBean.getEpower_milling_from());i+=1;
-            p.setString(i, DataBean.getEpower_milling_to());i+=1;
-            p.setString(i, DataBean.getEpower_unit());i+=1;
-            p.setString(i, DataBean.getWater_use());i+=1;
-            p.setString(i, DataBean.getWater_per_tapioca());i+=1;
-            p.setString(i, DataBean.getKw_per_tapioca());i+=1;
-            p.setString(i, DataBean.getStarch_date());i+=1;
-            p.setString(i, DataBean.getStarch_date2());i+=1;
-            p.setString(i, DataBean.getStarch_balance());i+=1;
+            p.setString(i, DataBean.getDoc_id());
+            i += 1;
+            p.setString(i, DataBean.getDoc_date());
+            i += 1;
+            p.setString(i, DataBean.getCassava_date());
+            i += 1;
+            p.setString(i, DataBean.getCassava_date2());
+            i += 1;
+            p.setString(i, DataBean.getAmount_cassava());
+            i += 1;
+            p.setString(i, DataBean.getPercent_tapioca());
+            i += 1;
+            p.setString(i, DataBean.getAmount_tapioca());
+            i += 1;
+            p.setString(i, DataBean.getFresh_skin());
+            i += 1;
+            p.setString(i, DataBean.getSoil_skin());
+            i += 1;
+            p.setString(i, DataBean.getTotal_cassava());
+            i += 1;
+            p.setString(i, DataBean.getAmount_tapioca1());
+            i += 1;
+            p.setString(i, DataBean.getStart_m_date());
+            i += 1;
+            p.setString(i, DataBean.getStart_m_time());
+            i += 1;
+            p.setString(i, DataBean.getEnd_m_date());
+            i += 1;
+            p.setString(i, DataBean.getEnd_m_time());
+            i += 1;
+            p.setString(i, DataBean.getM_time());
+            i += 1;
+            p.setString(i, objcal.Sum_Time(DataBean.getDoc_id(), "d_product_report_daily_detail_stop_milling", "sm_from_date", "sm_to_date", "sm_from_time", "sm_to_time", con));
+            i += 1;
+            p.setString(i, DataBean.getTotal_milling_time());
+            i += 1;
+            p.setString(i, DataBean.getMilling_ratio());
+            i += 1;
+            p.setString(i, DataBean.getStart_r_date());
+            i += 1;
+            p.setString(i, DataBean.getStart_r_time());
+            i += 1;
+            p.setString(i, DataBean.getEnd_r_date());
+            i += 1;
+            p.setString(i, DataBean.getEnd_r_time());
+            i += 1;
+            p.setString(i, DataBean.getR_time());
+            i += 1;
+            p.setString(i, DataBean.getTotal_roast_time());
+            i += 1;
+            p.setString(i, DataBean.getEpower_milling_from());
+            i += 1;
+            p.setString(i, DataBean.getEpower_milling_to());
+            i += 1;
+            p.setString(i, DataBean.getEpower_unit());
+            i += 1;
+            p.setString(i, DataBean.getWater_use());
+            i += 1;
+            p.setString(i, DataBean.getWater_per_tapioca());
+            i += 1;
+            p.setString(i, DataBean.getKw_per_tapioca());
+            i += 1;
+            p.setString(i, DataBean.getStarch_date());
+            i += 1;
+            p.setString(i, DataBean.getStarch_date2());
+            i += 1;
+            p.setString(i, DataBean.getStarch_balance());
+            i += 1;
             /*p.setString(i, DataBean.getCassava_of_date());i+=1;
-            p.setString(i, DataBean.getStarch_bal());i+=1;
-            p.setString(i, DataBean.getQty_tank());i+=1;
-            p.setString(i, DataBean.getStarch_bal_x_qty_tank());i+=1;
-            p.setString(i, DataBean.getQty_litr());i+=1;*/
-            p.setString(i, DataBean.getCassava_prd_date());i+=1;
-            p.setString(i, DataBean.getCassava_prd_date2());i+=1;
-            p.setString(i, DataBean.getQty_prd());i+=1;
-            p.setString(i, DataBean.getPercent_prd());i+=1;
-            p.setString(i, DataBean.getPercent_diff());i+=1;
-            p.setString(i, DataBean.getPercent_yield());i+=1;
-            p.setString(i, DataBean.getYield_val());i+=1;
-            p.setString(i, DataBean.getPercent_prd1());i+=1;
-            p.setString(i, DataBean.getPercent_yield1());i+=1;
-            p.setString(i, DataBean.getPercent_diff1());i+=1;
-            p.setString(i, DataBean.getYield_val1());i+=1;
-            p.setString(i, DataBean.getReporter_id());i+=1;
-            p.setString(i, DataBean.getBy());i+=1;
-            p.setTimestamp(i, DataBean.getDate());i+=1;
+             p.setString(i, DataBean.getStarch_bal());i+=1;
+             p.setString(i, DataBean.getQty_tank());i+=1;
+             p.setString(i, DataBean.getStarch_bal_x_qty_tank());i+=1;
+             p.setString(i, DataBean.getQty_litr());i+=1;*/
+            p.setString(i, DataBean.getCassava_prd_date());
+            i += 1;
+            p.setString(i, DataBean.getCassava_prd_date2());
+            i += 1;
+            p.setString(i, DataBean.getQty_prd());
+            i += 1;
+            p.setString(i, DataBean.getPercent_prd());
+            i += 1;
+            p.setString(i, DataBean.getPercent_diff());
+            i += 1;
+            p.setString(i, DataBean.getPercent_yield());
+            i += 1;
+            p.setString(i, DataBean.getYield_val());
+            i += 1;
+            p.setString(i, DataBean.getPercent_prd1());
+            i += 1;
+            p.setString(i, DataBean.getPercent_yield1());
+            i += 1;
+            p.setString(i, DataBean.getPercent_diff1());
+            i += 1;
+            p.setString(i, DataBean.getYield_val1());
+            i += 1;
+            p.setString(i, DataBean.getReporter_id());
+            i += 1;
+            p.setString(i, DataBean.getBy());
+            i += 1;
+            p.setTimestamp(i, DataBean.getDate());
+            i += 1;
             p.executeUpdate();
 
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(p != null){
+        } finally {
+            if (p != null) {
                 p.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
         }
     }
-    public void update(DataBeanD_product_report_daily_header DataBean)throws Exception{
+
+    public void update(DataBeanD_product_report_daily_header DataBean) throws Exception {
         String[] String_input = new String[]{
             "doc_date",
             "cassava_date",
@@ -194,10 +243,10 @@ public class D_product_report_daily_headerDAO {
             "starch_date2",
             "starch_balance",
             /*"cassava_of_date",
-            "starch_bal",
-            "qty_tank",
-            "starch_bal_x_qty_tank",
-            "qty_litr",*/
+             "starch_bal",
+             "qty_tank",
+             "starch_bal_x_qty_tank",
+             "qty_litr",*/
             "total_starch_weight",
             "cassava_prd_date",
             "cassava_prd_date2",
@@ -222,7 +271,7 @@ public class D_product_report_daily_headerDAO {
         Connection con = objcon.openNewConnection();
         PreparedStatement p = null;
         int i = 1;
-        try{
+        try {
             //*************setData*********************
             DataBean.setTotal_stop_milling_hour(objcal.Sum_Time(DataBean.getDoc_id(), "d_product_report_daily_detail_stop_milling", "sm_from_date", "sm_to_date", "sm_from_time", "sm_to_time", con));
             DataBean.setTotal_stop_roast_hour(objcal.Sum_Time(DataBean.getDoc_id(), "d_product_report_daily_detail_stop_roast", "sr_from_date", "sr_to_date", "sr_from_time", "sr_to_time", con));
@@ -250,180 +299,262 @@ public class D_product_report_daily_headerDAO {
             DataBean.setWater_per_tapioca(objcal_daily.Calculator_Water_per_tapioca(DataBean.getWater_use(), DataBean.getQty_prd()));
             DataBean.setKw_per_tapioca(objcal_daily.Calculator_kw_per_tapioca(DataBean.getKw_use(), DataBean.getQty_prd()));
             //*******************************************************************************
-            p = con.prepareStatement(objStringQuery.Update_String(String_input, "d_product_report_daily_header","WHERE doc_id = ? and delete_flag = 'N' and complete_flag = 'N'"));
-            p.setString(i, DataBean.getDoc_date());i+=1;
-            p.setString(i, DataBean.getCassava_date());i+=1;
-            p.setString(i, DataBean.getCassava_date2());i+=1;
-            p.setString(i, DataBean.getAmount_cassava());i+=1;
-            p.setString(i, DataBean.getPercent_tapioca());i+=1;
-            p.setString(i, DataBean.getAmount_tapioca());i+=1;
-            p.setString(i, DataBean.getFresh_skin());i+=1;
-            p.setString(i, DataBean.getSoil_skin());i+=1;
-            p.setString(i, DataBean.getTotal_cassava());i+=1;
-            p.setString(i, DataBean.getAmount_tapioca1());i+=1;
-            p.setString(i, DataBean.getStart_m_date());i+=1;
-            p.setString(i, DataBean.getStart_m_time());i+=1;
-            p.setString(i, DataBean.getEnd_m_date());i+=1;
-            p.setString(i, DataBean.getEnd_m_time());i+=1;
-            p.setString(i, DataBean.getM_time());i+=1;
-            p.setString(i, DataBean.getTotal_stop_milling_hour());i+=1;
-            p.setString(i, DataBean.getTotal_stop_kw());i+=1;
-            p.setString(i, DataBean.getTotal_milling_time());i+=1;
-            p.setString(i, DataBean.getMilling_ratio());i+=1;
-            p.setString(i, DataBean.getStart_r_date());i+=1;
-            p.setString(i, DataBean.getStart_r_time());i+=1;
-            p.setString(i, DataBean.getEnd_r_date());i+=1;
-            p.setString(i, DataBean.getEnd_r_time());i+=1;
-            p.setString(i, DataBean.getR_time());i+=1;
-            p.setString(i, DataBean.getTotal_stop_roast_hour());i+=1;
-            p.setString(i, DataBean.getTotal_roast_time());i+=1;
-            p.setString(i, DataBean.getEpower_milling_from());i+=1;
-            p.setString(i, DataBean.getEpower_milling_to());i+=1;
-            p.setString(i, DataBean.getEpower_unit());i+=1;
-            p.setString(i, DataBean.getWater_use());i+=1;
-            p.setString(i, DataBean.getKw_use());i+=1;
-            p.setString(i, DataBean.getWater_per_tapioca());i+=1;
-            p.setString(i, DataBean.getKw_per_tapioca());i+=1;
-            p.setString(i, DataBean.getTotal_raw_weight());i+=1;
-            p.setString(i, DataBean.getTotal_prd_weight());i+=1;
-            p.setString(i, DataBean.getStarch_date());i+=1;
-            p.setString(i, DataBean.getStarch_date2());i+=1;
-            p.setString(i, DataBean.getStarch_balance());i+=1;
+            p = con.prepareStatement(objStringQuery.Update_String(String_input, "d_product_report_daily_header", "WHERE doc_id = ? and delete_flag = 'N' and complete_flag = 'N'"));
+            p.setString(i, DataBean.getDoc_date());
+            i += 1;
+            p.setString(i, DataBean.getCassava_date());
+            i += 1;
+            p.setString(i, DataBean.getCassava_date2());
+            i += 1;
+            p.setString(i, DataBean.getAmount_cassava());
+            i += 1;
+            p.setString(i, DataBean.getPercent_tapioca());
+            i += 1;
+            p.setString(i, DataBean.getAmount_tapioca());
+            i += 1;
+            p.setString(i, DataBean.getFresh_skin());
+            i += 1;
+            p.setString(i, DataBean.getSoil_skin());
+            i += 1;
+            p.setString(i, DataBean.getTotal_cassava());
+            i += 1;
+            p.setString(i, DataBean.getAmount_tapioca1());
+            i += 1;
+            p.setString(i, DataBean.getStart_m_date());
+            i += 1;
+            p.setString(i, DataBean.getStart_m_time());
+            i += 1;
+            p.setString(i, DataBean.getEnd_m_date());
+            i += 1;
+            p.setString(i, DataBean.getEnd_m_time());
+            i += 1;
+            p.setString(i, DataBean.getM_time());
+            i += 1;
+            p.setString(i, DataBean.getTotal_stop_milling_hour());
+            i += 1;
+            p.setString(i, DataBean.getTotal_stop_kw());
+            i += 1;
+            p.setString(i, DataBean.getTotal_milling_time());
+            i += 1;
+            p.setString(i, DataBean.getMilling_ratio());
+            i += 1;
+            p.setString(i, DataBean.getStart_r_date());
+            i += 1;
+            p.setString(i, DataBean.getStart_r_time());
+            i += 1;
+            p.setString(i, DataBean.getEnd_r_date());
+            i += 1;
+            p.setString(i, DataBean.getEnd_r_time());
+            i += 1;
+            p.setString(i, DataBean.getR_time());
+            i += 1;
+            p.setString(i, DataBean.getTotal_stop_roast_hour());
+            i += 1;
+            p.setString(i, DataBean.getTotal_roast_time());
+            i += 1;
+            p.setString(i, DataBean.getEpower_milling_from());
+            i += 1;
+            p.setString(i, DataBean.getEpower_milling_to());
+            i += 1;
+            p.setString(i, DataBean.getEpower_unit());
+            i += 1;
+            p.setString(i, DataBean.getWater_use());
+            i += 1;
+            p.setString(i, DataBean.getKw_use());
+            i += 1;
+            p.setString(i, DataBean.getWater_per_tapioca());
+            i += 1;
+            p.setString(i, DataBean.getKw_per_tapioca());
+            i += 1;
+            p.setString(i, DataBean.getTotal_raw_weight());
+            i += 1;
+            p.setString(i, DataBean.getTotal_prd_weight());
+            i += 1;
+            p.setString(i, DataBean.getStarch_date());
+            i += 1;
+            p.setString(i, DataBean.getStarch_date2());
+            i += 1;
+            p.setString(i, DataBean.getStarch_balance());
+            i += 1;
             /*p.setString(i, DataBean.getCassava_of_date());i+=1;
-            p.setString(i, DataBean.getStarch_bal());i+=1;
-            p.setString(i, DataBean.getQty_tank());i+=1;
-            p.setString(i, DataBean.getStarch_bal_x_qty_tank());i+=1;
-            p.setString(i, DataBean.getQty_litr());i+=1;*/
-            p.setString(i, DataBean.getTotal_starch_weight());i+=1;
-            p.setString(i, DataBean.getCassava_prd_date());i+=1;
-            p.setString(i, DataBean.getCassava_prd_date2());i+=1;
-            p.setString(i, DataBean.getQty_prd());i+=1;
-            p.setString(i, DataBean.getPercent_prd());i+=1;
-            p.setString(i, DataBean.getPercent_diff());i+=1;
-            p.setString(i, DataBean.getPercent_yield());i+=1;
-            p.setString(i, DataBean.getYield_val());i+=1;
-            p.setString(i, DataBean.getPercent_prd1());i+=1;
-            p.setString(i, DataBean.getPercent_yield1());i+=1;
-            p.setString(i, DataBean.getPercent_diff1());i+=1;
-            p.setString(i, DataBean.getYield_val1());i+=1;
-            p.setString(i, DataBean.getReporter_id());i+=1;
-            p.setString(i, DataBean.getBy());i+=1;
-            p.setTimestamp(i, DataBean.getDate());i+=1;
-            p.setString(i,DataBean.getDoc_id());i+=1;
+             p.setString(i, DataBean.getStarch_bal());i+=1;
+             p.setString(i, DataBean.getQty_tank());i+=1;
+             p.setString(i, DataBean.getStarch_bal_x_qty_tank());i+=1;
+             p.setString(i, DataBean.getQty_litr());i+=1;*/
+            p.setString(i, DataBean.getTotal_starch_weight());
+            i += 1;
+            p.setString(i, DataBean.getCassava_prd_date());
+            i += 1;
+            p.setString(i, DataBean.getCassava_prd_date2());
+            i += 1;
+            p.setString(i, DataBean.getQty_prd());
+            i += 1;
+            p.setString(i, DataBean.getPercent_prd());
+            i += 1;
+            p.setString(i, DataBean.getPercent_diff());
+            i += 1;
+            p.setString(i, DataBean.getPercent_yield());
+            i += 1;
+            p.setString(i, DataBean.getYield_val());
+            i += 1;
+            p.setString(i, DataBean.getPercent_prd1());
+            i += 1;
+            p.setString(i, DataBean.getPercent_yield1());
+            i += 1;
+            p.setString(i, DataBean.getPercent_diff1());
+            i += 1;
+            p.setString(i, DataBean.getYield_val1());
+            i += 1;
+            p.setString(i, DataBean.getReporter_id());
+            i += 1;
+            p.setString(i, DataBean.getBy());
+            i += 1;
+            p.setTimestamp(i, DataBean.getDate());
+            i += 1;
+            p.setString(i, DataBean.getDoc_id());
+            i += 1;
             p.executeUpdate();
-            
-        }catch(Exception e){
+
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(p != null){
+        } finally {
+            if (p != null) {
                 p.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
         }
     }
-    public void delete(DataBeanD_product_report_daily_header DataBean)throws Exception{
+
+    public void delete(DataBeanD_product_report_daily_header DataBean) throws Exception {
         objStringQuery = new StringQuery();
         DBConnect objcon = new DBConnect();
         Connection con = objcon.openNewConnection();
         PreparedStatement p = null;
-        String[] Str_table = new  String[]{"d_product_report_daily_header","d_product_report_daily_detail_prd","d_product_report_daily_detail_raw","d_product_report_daily_detail_starch","d_product_report_daily_detail_stop_milling","d_product_report_daily_detail_stop_roast"};
-        try{
-            for(int i = 0; i<Str_table.length;i++){
+        String[] Str_table = new String[]{"d_product_report_daily_header", "d_product_report_daily_detail_prd", "d_product_report_daily_detail_raw", "d_product_report_daily_detail_starch", "d_product_report_daily_detail_stop_milling", "d_product_report_daily_detail_stop_roast"};
+        try {
+            for (int i = 0; i < Str_table.length; i++) {
                 p = con.prepareStatement(objStringQuery.Flag_Status_String("delete_flag='Y',delete_by=?,delete_date=?", Str_table[i],
-                    "WHERE doc_id = '"+DataBean.getDoc_id()+"' and delete_flag = 'N' and complete_flag = 'N'"));
+                        "WHERE doc_id = '" + DataBean.getDoc_id() + "' and delete_flag = 'N' and complete_flag = 'N'"));
                 p.setString(1, DataBean.getBy());
                 p.setTimestamp(2, DataBean.getDate());
                 p.executeUpdate();
                 p.clearParameters();
             }
-            
-            
-        }catch(Exception e){
+
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(p != null){
+        } finally {
+            if (p != null) {
                 p.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
         }
     }
-    public String Calculator_Amount_Cassava(DataBeanD_product_report_daily_header DataBean)throws Exception{
+
+    public String Calculator_Amount_Cassava(DataBeanD_product_report_daily_header DataBean) throws Exception {
         Connection con = new DBConnect().openNewConnection();
         ResultSet rs = null;
-        String SQL = "",String_return = "0,0,0,0,0,0,0,0";
+        String SQL = "", String_return = "0,0,0,0,0,0,0,0";
         objuti = new UtiDatabase();
-        try{
-             SQL = "select count(cassava_date) as num  from d_rawmatt_report where "
+        try {
+            SQL = "select count(cassava_date) as num  from d_rawmatt_report where "
                     + "to_date(to_char(to_number(to_char(to_date(cassava_date,'DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date(cassava_date,'DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
                     + "between "
-                    + "to_date(to_char(to_number(to_char(to_date('"+DataBean.getCassava_date()+"','DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date('"+DataBean.getCassava_date()+"','DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
+                    + "to_date(to_char(to_number(to_char(to_date('" + DataBean.getCassava_date() + "','DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date('" + DataBean.getCassava_date() + "','DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
                     + "and "
-                    + "to_date(to_char(to_number(to_char(to_date('"+DataBean.getCassava_of_date()+"','DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date('"+DataBean.getCassava_of_date()+"','DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
+                    + "to_date(to_char(to_number(to_char(to_date('" + DataBean.getCassava_of_date() + "','DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date('" + DataBean.getCassava_of_date() + "','DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
                     + " and delete_flag = 'N' and complete_flag = 'N'";
-            if(objuti.numRowdatabase(SQL) != 0){
-                SQL = "select "
-                        + "trim(to_char(to_number(trim(to_char(sum(to_number(amount_cassava,'99999999999999.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000'))as sum_amount_cassava,"
-                        + "trim(to_char((to_number(trim(to_char(sum(to_number(amount_tapioca,'99999999999999.00')/1000.00),'99999999999990.000')),'99999999999990.000') / (sum(to_number(amount_cassava,'99999999999999.00'))/1000.00))*100,'99999999999990.000'))  as sum_percent_tapioca,"
-                        + "trim(to_char(to_number(trim(to_char(sum(to_number(amount_tapioca,'99999999999999.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_amount_tapioca,"
-                        + "trim(to_char(to_number(trim(to_char(sum(to_number(total_peel_fresh,'99999999999990.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_total_peel_fresh,"
-                        + "trim(to_char(to_number(trim(to_char(sum(to_number(amount_peel_fresh,'99999999999990.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_amount_peel_fresh,"
-                        + "trim(to_char(to_number(trim(to_char(sum(to_number(amount_soil_crust,'99999999999990.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_amount_soil_crust,"
-                        + "trim(to_char(to_number(trim(to_char(sum(to_number(total_cassava,'99999999999990.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_total_cassava,"
-                        + "trim(to_char(to_number(trim(to_char(sum(to_number(total_tapioca,'99999999999990.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_total_tapioca "
-                        + "from d_rawmatt_report "
+            
+            //System.out.println("Calc Cassava SQL = " + SQL);
+            
+            if (objuti.numRowdatabase(SQL) != 0) {
+                                
+                 SQL = "select "
+                 + "trim(to_char(to_number(trim(to_char(sum(to_number(amount_cassava,'99999999999999.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000'))as sum_amount_cassava,"
+                 + "trim(to_char((to_number(trim(to_char(sum(to_number(amount_tapioca,'99999999999999.00')/1000.00),'99999999999990.000')),'99999999999990.000') / (sum(to_number(amount_cassava,'99999999999999.00'))/1000.00))*100,'99999999999990.000'))  as sum_percent_tapioca,"
+                 + "trim(to_char(to_number(trim(to_char(sum(to_number(amount_tapioca,'99999999999999.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_amount_tapioca,"
+                 + "trim(to_char(to_number(trim(to_char(sum(to_number(total_peel_fresh,'99999999999990.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_total_peel_fresh,"
+                 + "trim(to_char(to_number(trim(to_char(sum(to_number(amount_peel_fresh,'99999999999990.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_amount_peel_fresh,"
+                 + "trim(to_char(to_number(trim(to_char(sum(to_number(amount_soil_crust,'99999999999990.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_amount_soil_crust,"
+                 + "trim(to_char(to_number(trim(to_char(sum(to_number(total_cassava,'99999999999990.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_total_cassava,"
+                 + "trim(to_char(to_number(trim(to_char(sum(to_number(total_tapioca,'99999999999990.00')/1000.00),'99999999999990.000')),'99999999999990.000'),'99999999999990.000')) as sum_total_tapioca "
+                 + "from d_rawmatt_report "
+                 + "where "
+                 + "to_date(to_char(to_number(to_char(to_date(cassava_date,'DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date(cassava_date,'DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
+                 + "between "
+                 + "to_date(to_char(to_number(to_char(to_date('" + DataBean.getCassava_date() + "','DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date('" + DataBean.getCassava_date() + "','DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
+                 + "and "
+                 + "to_date(to_char(to_number(to_char(to_date('" + DataBean.getCassava_of_date() + "','DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date('" + DataBean.getCassava_of_date() + "','DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
+                 + "and delete_flag = 'N' and complete_flag = 'N'";
+                 
+/*
+                SQL = "select trim(to_char((to_number(amount_cassava,'9999999.999')/1000),'9,999,999.999')) as sum_amount_cassava"                        
+                        + ",trim(percent_tapioca) as  sum_percent_tapioca"
+                        + ",trim(to_char((to_number(amount_tapioca,'9999999.999')/1000),'9,999,999.999')) as sum_amount_tapioca"                                                
+                        + ",trim(to_char((to_number(total_peel_fresh,'9999999.999')/1000),'9,999,999.999')) as sum_amount_peel_fresh"                        
+                        + ",trim(to_char((to_number(amount_soil_crust,'9999999.999')/1000),'9,999,999.999')) as sum_amount_soil_crust"                        
+                        + ",trim(to_char((to_number(total_cassava,'9999999.999')/1000),'9,999,999.999')) as sum_total_cassava"                        
+                        + ",trim(to_char((to_number(total_tapioca,'9999999.999')/1000),'9,999,999.999')) as sum_total_tapioca "
+                        + " from d_rawmatt_report "
                         + "where "
                         + "to_date(to_char(to_number(to_char(to_date(cassava_date,'DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date(cassava_date,'DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
                         + "between "
-                        + "to_date(to_char(to_number(to_char(to_date('"+DataBean.getCassava_date()+"','DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date('"+DataBean.getCassava_date()+"','DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
+                        + "to_date(to_char(to_number(to_char(to_date('" + DataBean.getCassava_date() + "','DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date('" + DataBean.getCassava_date() + "','DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
                         + "and "
-                        + "to_date(to_char(to_number(to_char(to_date('"+DataBean.getCassava_of_date()+"','DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date('"+DataBean.getCassava_of_date()+"','DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
+                        + "to_date(to_char(to_number(to_char(to_date('" + DataBean.getCassava_of_date() + "','DD-MM-YYYY'),'YYYY'),'0000')- 543,'0000')||'-'||to_char(to_date('" + DataBean.getCassava_of_date() + "','DD-MM-YYYY'),'MM-DD'),'YYYY-MM-DD') "
                         + "and delete_flag = 'N' and complete_flag = 'N'";
+        
+*/      
+
                 rs = con.createStatement().executeQuery(SQL);
-                while(rs.next()){
-                    String_return = objuti.NotNull(rs.getString("sum_amount_cassava"), "0.000")+",";
-                    String_return += objuti.NotNull(rs.getString("sum_percent_tapioca"), "0.000")+",";
-                    String_return += objuti.NotNull(rs.getString("sum_amount_tapioca"), "0.000")+",";
-                    String_return += objuti.NotNull(rs.getString("sum_amount_peel_fresh"), "0.000")+",";
-                    String_return += objuti.NotNull(rs.getString("sum_amount_soil_crust"), "0.000")+",";
-                    String_return += objuti.NotNull(rs.getString("sum_total_cassava"), "0.000")+",";
-                    String_return += objuti.NotNull(rs.getString("sum_percent_tapioca"), "0.000")+",";
+                System.out.println("Calc Casava Detail SQL = " + SQL);
+                while (rs.next()) {
+                    String_return = objuti.NotNull(rs.getString("sum_amount_cassava"), "0.000") + ",";
+                    String_return += objuti.NotNull(rs.getString("sum_percent_tapioca"), "0.000") + ",";
+                    String_return += objuti.NotNull(rs.getString("sum_amount_tapioca"), "0.000") + ",";
+                    String_return += objuti.NotNull(rs.getString("sum_amount_peel_fresh"), "0.000") + ",";
+                    String_return += objuti.NotNull(rs.getString("sum_amount_soil_crust"), "0.000") + ",";
+                    String_return += objuti.NotNull(rs.getString("sum_total_cassava"), "0.000") + ",";
+                    String_return += objuti.NotNull(rs.getString("sum_percent_tapioca"), "0.000") + ",";
                     String_return += objuti.NotNull(rs.getString("sum_total_tapioca"), "0.000");
                 }
             }
-        }catch(Exception e){
+            System.out.println("String_return = " + String_return);
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(rs != null){
+        } finally {
+            if (rs != null) {
                 rs.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
             return String_return;
         }
     }
-    public String Calculator_Starch_Balance(String date_from_input,String date_to_input)throws Exception{
+
+    public String Calculator_Starch_Balance(String date_from_input, String date_to_input) throws Exception {
         String return_value = null;
         Connection con = new DBConnect().openNewConnection();
         ResultSet rs = null;
-        try{
+        try {
             //System.out.print("select total_starch_weight from d_product_report_daily_header where to_date(format_date(doc_date),'YYYY-MM-DD') between to_date(format_date('"+date_from_input+"'),'YYYY-MM-DD') and to_date(format_date('"+date_to_input+"'),'YYYY-MM-DD') and delete_flag = 'N' ");
-            rs = con.createStatement().executeQuery("select trim(to_char(sum(to_number(total_starch_weight,'9999990.000')),'9999990.000')) as sum_total_starch_weight from d_product_report_daily_header where to_date(format_date(doc_date),'YYYY-MM-DD') between to_date(format_date('"+date_from_input+"'),'YYYY-MM-DD') and to_date(format_date('"+date_to_input+"'),'YYYY-MM-DD') and delete_flag = 'N' ");
-            while(rs.next()){
+            rs = con.createStatement().executeQuery("select trim(to_char(sum(to_number(total_starch_weight,'9999990.000')),'9999990.000')) as sum_total_starch_weight from d_product_report_daily_header where to_date(format_date(doc_date),'YYYY-MM-DD') between to_date(format_date('" + date_from_input + "'),'YYYY-MM-DD') and to_date(format_date('" + date_to_input + "'),'YYYY-MM-DD') and delete_flag = 'N' ");
+            while (rs.next()) {
                 return_value = rs.getString("sum_total_starch_weight");
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(rs != null){
+        } finally {
+            if (rs != null) {
                 rs.close();
             }
             con.close();
-            return return_value == null?"0.000":return_value;
+            return return_value == null ? "0.000" : return_value;
         }
     }
 }

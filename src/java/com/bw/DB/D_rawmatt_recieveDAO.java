@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import com.bw.Util.Decimal_Place;
 
 /**
  *
@@ -407,8 +408,26 @@ public class D_rawmatt_recieveDAO {
             }
 
             //out_putstring += ","+percent_avg_array[0]+"."+(Integer.parseInt(percent_avg_array[1]) >= 0 && Integer.parseInt(percent_avg_array[1]) <= 49 ?"0":"5");
-            out_putstring = percent_avg_array[0] + "." + (Integer.parseInt(percent_avg_array[1]) >= 0 && Integer.parseInt(percent_avg_array[1]) <= 49 ? "0" : "5");
+            System.out.println("Decimal = " + Integer.parseInt(percent_avg_array[1]));
+            System.out.println("Decimal = " + (percent_avg_array[1]));
+            
+            //int dec = 0 ;
+            
+                if (percent_avg_array[1].substring(0, 1).equals("0")) {
+                    out_putstring = percent_avg_array[0] + ".00";
+                } else {
+                    out_putstring = percent_avg_array[0] + "." + Integer.toString(Decimal_Place.Decimal_position(Integer.parseInt(percent_avg_array[1])));
+                }
+
+            
+            //dec = Decimal_Place.Decimal_position(Integer.parseInt(percent_avg_array[1]));
+            
+            
+            //System.out.print("Decimal = " + dec);
+            //out_putstring = percent_avg_array[0] + "." + (Integer.parseInt(percent_avg_array[1]) >= 0 && Integer.parseInt(percent_avg_array[1]) <= 49 ? "0" : "5");
+            //out_putstring = percent_avg_array[0] + "." + Integer.toString(dec);
             System.out.println("out_putstring = " + out_putstring);
+            
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

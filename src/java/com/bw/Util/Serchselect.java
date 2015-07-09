@@ -184,7 +184,7 @@ public class Serchselect {
                 }else if(inputdatabase.equals("vproduct")){
                     strColoum = new String[]{"product_id","name_t"};
                 } else {
-                   strColoum = new String[]{"doc_id","doc_date","roast_qty","pack_qty","date_1","date_2","date_3","date_4","percent_p1","percent_p2","percent_p3","percent_p4","percent_y1","percent_y2","percent_y3","percent_y4","reporter_id","checker_id","approver_id","date_5","date_6","date_7","date_8"};
+                   strColoum = new String[]{"doc_id","doc_date","roast_qty","pack_qty","date_1","date_2","date_3","date_4","percent_p1","percent_p2","percent_p3","percent_p4","percent_y1","percent_y2","percent_y3","percent_y4","reporter_id","checker_id","approver_id","date_5","date_6","date_7","date_8","reporter_id_desc","checker_id_desc","approver_id_desc"};
                 }
                 break;
             case 33:
@@ -636,7 +636,7 @@ public class Serchselect {
                 }else if(inputdatabase.equals("vproduct")){
                     strID = "A_cust_id|cust_id_desc";
                 } else {
-                    strID = "A_doc_id|A_doc_date|A_roast_qty|A_pack_qty|A_date_1|A_date_2|A_date_3|A_date_4|A_percent_p1|A_percent_p2|A_percent_p3|A_percent_p4|A_percent_y1|A_percent_y2|A_percent_y3|A_percent_y4|A_reporter_id|A_checker_id|A_approver_id|A_date_5|A_date_6|A_date_7|A_date_8";
+                    strID = "A_doc_id|A_doc_date|A_roast_qty|A_pack_qty|A_date_1|A_date_2|A_date_3|A_date_4|A_percent_p1|A_percent_p2|A_percent_p3|A_percent_p4|A_percent_y1|A_percent_y2|A_percent_y3|A_percent_y4|A_reporter_id|A_checker_id|A_approver_id|A_date_5|A_date_6|A_date_7|A_date_8|reporter_id_desc|checker_id_desc|approver_id_desc";
                 }
                 break;
             case 33:

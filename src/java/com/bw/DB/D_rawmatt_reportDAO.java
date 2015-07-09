@@ -130,7 +130,7 @@ public class D_rawmatt_reportDAO {
         int i = 1;
         try{
             p = con.prepareStatement(obj_StringQuery.Update_String(String_update, "d_rawmatt_report",
-                    "Where doc_id = '"+DataBean.getDoc_id()+"' and complete_flag = 'N' and delete_flag = 'N'"));
+                    "Where doc_id = '"+DataBean.getDoc_id()+ " and delete_flag = 'N'"));
             p.setString(i, DataBean.getDoc_date());i+=1;
             p.setString(i, DataBean.getWh_out());i+=1;
             p.setString(i, DataBean.getWh_in());i+=1;
@@ -196,7 +196,7 @@ public class D_rawmatt_reportDAO {
         ResultSet rs = null;
          String STR_Return = "";
          UtiDatabase objuti = new UtiDatabase();
-         String SQL_REC_COUNT = "SELECT count(doc_date) as num from d_rawmatt_receive WHERE doc_date = '" + dataBean.getDoc_date() + "' AND delete_flag = 'N' AND complete_flag = 'N'" ; 
+         String SQL_REC_COUNT = "SELECT count(doc_date) as num from d_rawmatt_receive WHERE doc_date = '" + dataBean.getDoc_date() + "' AND delete_flag = 'N' " ; 
          System.out.println("REC COUNT = " + SQL_REC_COUNT); 
                 String SQL_EXEC = "SELECT "
                         + "trim(to_char(sum(to_number(balance_weight,'99999990.00')),'99999990.00')) as sum_balance_weight,"
@@ -213,7 +213,7 @@ public class D_rawmatt_reportDAO {
                         //+ "and delete_flag = 'N' AND complete_flag = 'N'" ; 
                 
         try{           
-            if (objuti.numRowdatabase("SELECT count(doc_date) as num from d_rawmatt_receive WHERE doc_date = '" + dataBean.getDoc_date() + "' AND delete_flag = 'N' AND complete_flag = 'N'") != 0) {                                        
+            if (objuti.numRowdatabase("SELECT count(doc_date) as num from d_rawmatt_receive WHERE doc_date = '" + dataBean.getDoc_date() + "' AND delete_flag = 'N' ") != 0) {                                        
                 rs = con.createStatement().executeQuery(SQL_EXEC);
                 System.out.println(SQL_EXEC); 
                 while (rs.next()) {
@@ -223,6 +223,8 @@ public class D_rawmatt_reportDAO {
             } else {
                 STR_Return = "0.00";
             }
+            
+            System.out.println("STR_Return = " + STR_Return);
 
         }catch(Exception e){
             e.printStackTrace();
