@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rp_mprov_name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e5ed1e7b-606c-4d0a-8283-95c1ab4a6c64">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.callouts" value="##Tue Apr 27 16:25:26 ICT 2010"/>
+	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DOC_DATE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SQL_CODE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from vd_rawmatt_receive
+$P!{SQL_CODE}
+order by doc_id desc]]>
+	</queryString>
+	<field name="runno" class="java.lang.Integer"/>
+	<field name="doc_id" class="java.lang.String"/>
+	<field name="doc_date" class="java.lang.String"/>
+	<field name="line_no" class="java.lang.Integer"/>
+	<field name="product_id" class="java.lang.String"/>
+	<field name="wh_in" class="java.lang.String"/>
+	<field name="wh_out" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.String"/>
+	<field name="supplier_id" class="java.lang.String"/>
+	<field name="supplyer_type" class="java.lang.String"/>
+	<field name="car_no" class="java.lang.String"/>
+	<field name="type_car" class="java.lang.String"/>
+	<field name="car_date_in" class="java.lang.String"/>
+	<field name="car_time_in" class="java.lang.String"/>
+	<field name="car_date_out" class="java.lang.String"/>
+	<field name="car_time_out" class="java.lang.String"/>
+	<field name="potato_type" class="java.lang.String"/>
+	<field name="percent_1" class="java.lang.String"/>
+	<field name="percent_2" class="java.lang.String"/>
+	<field name="percent_3" class="java.lang.String"/>
+	<field name="percent_4" class="java.lang.String"/>
+	<field name="percent_5" class="java.lang.String"/>
+	<field name="percent_6" class="java.lang.String"/>
+	<field name="percent_7" class="java.lang.String"/>
+	<field name="percent_8" class="java.lang.String"/>
+	<field name="percent_avg" class="java.lang.String"/>
+	<field name="pc_ref" class="java.lang.String"/>
+	<field name="price_ref" class="java.lang.String"/>
+	<field name="price_accept" class="java.lang.String"/>
+	<field name="soil_deduct" class="java.lang.String"/>
+	<field name="contamination_deduct" class="java.lang.String"/>
+	<field name="other_deduct" class="java.lang.String"/>
+	<field name="dump_deduct" class="java.lang.String"/>
+	<field name="brake_income" class="java.lang.String"/>
+	<field name="car_in_weight" class="java.lang.Double"/>
+	<field name="car_out_weight" class="java.lang.Double"/>
+	<field name="total_weight" class="java.lang.Double"/>
+	<field name="deduct_weight" class="java.lang.Double"/>
+	<field name="balance_weight" class="java.lang.Double"/>
+	<field name="total_payment" class="java.lang.String"/>
+	<field name="amount_deduct" class="java.lang.String"/>
+	<field name="amount_payment" class="java.lang.String"/>
+	<field name="reporter_id" class="java.lang.String"/>
+	<field name="checker_id" class="java.lang.String"/>
+	<field name="approve_id" class="java.lang.String"/>
+	<field name="scale_no" class="java.lang.String"/>
+	<field name="company_id" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<field name="create_date" class="java.sql.Timestamp"/>
+	<field name="create_by" class="java.lang.String"/>
+	<field name="update_date" class="java.sql.Timestamp"/>
+	<field name="update_by" class="java.lang.String"/>
+	<field name="retro_flag" class="java.lang.String"/>
+	<field name="complete_flag" class="java.lang.String"/>
+	<field name="cancel_flag" class="java.lang.String"/>
+	<field name="delete_flag" class="java.lang.String"/>
+	<field name="doc_type" class="java.lang.String"/>
+	<field name="delete_date" class="java.sql.Timestamp"/>
+	<field name="delete_by" class="java.lang.String"/>
+	<field name="brake_value" class="java.lang.String"/>
+	<field name="supplier_name" class="java.lang.String"/>
+	<field name="product_name" class="java.lang.String"/>
+	<field name="warehouse_name" class="java.lang.String"/>
+	<field name="reporter_name" class="java.lang.String"/>
+	<field name="checker_name" class="java.lang.String"/>
+	<field name="approve_name" class="java.lang.String"/>
+	<field name="percent_tapioca" class="java.lang.String"/>
+	<field name="amount_tapioca" class="java.lang.String"/>
+	<field name="doc_time" class="java.lang.String"/>
+	<field name="supplyer_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="99" height="46" uuid="c5947182-6bfd-4e30-b7df-db9d9bb634a3"/>
+				<imageExpression><![CDATA["bw-logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="3" width="555" height="27" uuid="1e07b0ac-2b12-44e8-b1e5-5c8d562d4a23"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="20" isBold="true" isUnderline="false" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[รายงานสรุปชั่งน้ำหนักมันสำปะหลัง]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="b59c3c77-de3b-4b53-bd77-8c09ffd097a3"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="3" width="50" height="20" uuid="51c0fd2e-4c0d-40a8-9056-1be7d88bfa95"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[วันที่]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="24" width="555" height="1" uuid="11ad003a-b186-42f1-85c1-ba74ab0a1d3d"/>
+			</line>
+			<staticText>
+				<reportElement x="51" y="3" width="91" height="20" uuid="fb99a9ff-a906-43fe-b763-12da24a22f72"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ผู้ขาย]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="3" width="56" height="20" uuid="d1af6c1a-520f-40c0-82b3-2e636441320b"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ทะเบียนรถ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="3" width="69" height="20" uuid="a394045b-6070-44dc-a03c-455490a8b9ad"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[น้ำหนักรถเข้า]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="3" width="69" height="20" uuid="d0043bfd-223a-4f53-a44c-b981f8173e46"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[น้ำหนักรถออก]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="3" width="70" height="20" uuid="81f486c5-b8d3-4595-bec7-c8260378ec8f"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[น้ำหนักสุทธิ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="3" width="70" height="20" uuid="3bc76b55-9d25-432d-854c-157e8614db68"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[หักน้ำหนัก]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="486" y="3" width="70" height="20" uuid="3b171cad-5ece-4898-8861-b98882c1ffac"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[น้ำหนักคงเหลือ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="1" width="50" height="15" uuid="be239e74-ae4a-4047-900a-8293dbbddcca"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doc_date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="1" width="125" height="15" uuid="2bbf2707-3b4c-4029-9b8b-537180371919"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supplier_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="161" y="1" width="56" height="15" uuid="e7c2cc73-acaa-4a66-af5d-7471ba7789ba"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{car_no}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="200" y="1" width="69" height="15" uuid="0d3e49c7-70f5-4a6a-8f59-262a77541eb2"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{car_in_weight}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="270" y="1" width="69" height="15" uuid="7cba9b73-1d46-4710-9083-429446973e63"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{car_out_weight}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="340" y="1" width="70" height="15" uuid="bebf11d8-4646-411c-8403-ef0bc4d9d83e"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_weight}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="413" y="1" width="70" height="15" uuid="f5ae029f-31ef-475f-ad9d-cef24fec97b0"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_weight}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="486" y="1" width="70" height="15" uuid="444cb713-610d-41d5-acd8-a51462b766f5"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_weight}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="22" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="0" y="2" width="100" height="20" uuid="3fcd0245-cfbc-4fdd-89eb-cdc8f9759ea1"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="false" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="2fc2d391-4c19-4c6d-bec6-86c4692c372b"/>
+			</line>
+			<textField>
+				<reportElement x="440" y="2" width="80" height="20" uuid="01548de7-96d7-41c9-a400-9c46019170ea"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="525" y="2" width="40" height="20" uuid="e6184320-c249-4a09-a316-87a96df0945d"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="2" width="95" height="20" uuid="cecb902f-3299-4243-9e55-2bb24b10f4e2"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fileName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

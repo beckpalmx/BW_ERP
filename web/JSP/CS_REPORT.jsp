@@ -35,11 +35,11 @@
         if (!start.equals("")) {
             SQL = SQL + "where doc_id between '" + start + "' AND '" + end + "' ";
             if (!date_form.equals("")) {
-                SQL = SQL + " and to_date(format_date(doc_date),'YYYY-MM-DD') between to_date(format_date('" + date_form + "'),'YYYY-MM-DD') AND to_date(format_date('" + date_to + "'),'YYYY-MM-DD')";
+                SQL = SQL + " and to_date(format_date4(doc_date),'YYYY-MM-DD') between to_date(format_date3('" + date_form + "'),'YYYY-MM-DD') AND to_date(format_date3('" + date_to + "'),'YYYY-MM-DD')";
                 //SQL = SQL + "AND to_date(format_date(doc_date),'YYYY-MM-DD') between to_date(format_date2('" + date_form + "'),'YYYY-MM-DD') AND to_date(format_date2('" + date_to + "'),'YYYY-MM-DD')";
             }
         } else if (!date_form.equals("")) {
-                SQL = SQL + " where to_date(format_date(doc_date),'YYYY-MM-DD') between to_date(format_date('" + date_form + "'),'YYYY-MM-DD') AND to_date(format_date('" + date_to + "'),'YYYY-MM-DD')";
+                SQL = SQL + " where to_date(format_date4(doc_date),'YYYY-MM-DD') between to_date(format_date3('" + date_form + "'),'YYYY-MM-DD') AND to_date(format_date3('" + date_to + "'),'YYYY-MM-DD')";
             //SQL = SQL + "where to_date(format_date(doc_date),'YYYY-MM-DD') between to_date(format_date2('" + date_form + "'),'YYYY-MM-DD') AND to_date(format_date2('" + date_to + "'),'YYYY-MM-DD') ";
         }
 
