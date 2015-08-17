@@ -10,7 +10,19 @@ and open the template in the editor.
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
         <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css">        
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>          
+
+        <script src="../JS/bootstrap_select/js/bootstrap-select.js"></script>        
+        <link rel="stylesheet" href="../JS/bootstrap_select/css/bootstrap-select.css">        
+        <link rel="stylesheet" href="../JS/bootstrap_select/css/bootstrap-select.min.css">        
+        <link rel="stylesheet" href="../JS/bootstrap_select/css/bootstrap-theme.min.css">                       
+
 
         <script language="javascript">
             function getStatus() {
@@ -42,38 +54,38 @@ and open the template in the editor.
                             <tr>
                                 <td class="columnlabel"><b>ผู้ใช้งาน*</b>&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='username' type='text' id="username" value='' size='10' />
+                                    <input name='username' class='inputs' type='text' id="username" value='' size='10' />
                                     &nbsp;<a href='javascript:;' onClick="openBrWindow('Vuser_account', 5, '../SEARCHSCREEN/Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">รหัสผ่าน*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='password' type='text' id="password" value='' size='30' />                
+                                    <input name='password' class='inputs' type='password' id="password" value='' size='30' />                
                                 </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">รหัสพนักงาน*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='emp_id' type='text' id="emp_id" value='' size='10' readonly/>
-                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee', 5, 'Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='name_emp' type='text' id="name_emp" value='' size='30' readonly/>
+                                    <input name='emp_id' class='inputs' class='inputs' type='text' id="emp_id" value='' size='10' readonly/>
+                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee', 5, 'Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='name_emp' class='inputs' class='inputs' type='text' id="name_emp" value='' size='30' readonly/>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">รหัสแผนก&nbsp;</td>
-                                <td class="columnobject"> <input type="text" name="dept_id" id="dept_id" size="10" value="" readonly>&nbsp;<input type="text" name="dept_id_desc" id="dept_id_desc" value="" size="30" readonly>
+                                <td class="columnobject"> <input class='inputs' type='text' name="dept_id" id="dept_id" size="10" value="" readonly>&nbsp;<input class='inputs' type='text' name="dept_id_desc" id="dept_id_desc" value="" size="30" readonly>
                             </tr>
                             <tr>
                                 <td class="columnlabel">สิทธิ์ใช้งาน*&nbsp;</td>
-                                <td class="columnobject"><input name='priviledge_id' type='text' id="priviledge_id" value='' size='10' readonly/>
+                                <td class="columnobject"><input name='priviledge_id' class='inputs' class='inputs' type='text' id="priviledge_id" value='' size='10' readonly/>
                                     &nbsp;<a href='javascript:;' onClick="openBrWindow('Priviledge', 5, 'Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                    <input name='name_priviledge' type='text' id="name_priviledge" value='' size='30' readonly/>                </td>
+                                    <input name='name_priviledge' class='inputs' class='inputs' type='text' id="name_priviledge" value='' size='30' readonly/>                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">ตัวย่อสำหรับเลขที่เอกสาร*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input type="text" id="user_dept" name="user_dept" value="" size="10" readonly>
+                                    <input class='inputs' type='text' id="user_dept" name="user_dept" value="" size="10" readonly>
                                     &nbsp;<a href='javascript:;' onClick="openBrWindow('mdepartment_doc_id', 5, 'Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                    <input type="text" id="user_dept_desc" name="user_dept_name" size="30" value="" readonly>
+                                    <input class='inputs' type='text' id="user_dept_desc" name="user_dept_name" size="30" value="" readonly>
                                 </td>
                             </tr>
                             <tr>
@@ -87,7 +99,7 @@ and open the template in the editor.
 
                             <tr>
                                 <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                <td class="columnobject"><textarea id="remark" name='remark' rows='5' cols='40'></textarea></td>
+                                <td class="columnobject"><textarea class='text_inputs' id="remark" name='remark' rows='5' cols='40'></textarea></td>
                             </tr>
 
                             <tr>
@@ -98,7 +110,7 @@ and open the template in the editor.
                                         <input type="hidden" id="chkstatus" value="1"/>
                                         <input type="hidden" id="chkNull" value="username,password,emp_id,priviledge_id,user_dept">
                                         <a href="javascript:;" onClick="cancelAction()"><img alt=""  src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
-                                        <a href="javascript:;" onClick="confirmDialogSave(URLsend('chkNull,username,password,emp_id,priviledge_id,user_dept,status,remark', '../JSP/CS_005.jsp'))">&nbsp;<img alt=""  src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0">&nbsp;</a>
+                                        <a href="javascript:;" onClick="confirmDialogSave(URLsend('chkNull,username,password,emp_id,priviledge_id,user_dept,status,remark', '../JSP/CS_005.jsp'))"><img alt=""  src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
                                         <a href="javascript:;" onClick="confirmDialogDelete(URLsend('username,password,emp_id,priviledge_id,user_dept,status,remark,chkstatus', '../JSP/CS_005.jsp'))"><img alt=""  src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a></div></td>
                             </tr>
                         </table>
