@@ -28,7 +28,7 @@ public class UserDAO {
         ResultSet rs = null;
         Connection con = dbConnect.openNewConnection();
         String sql = "SELECT * From vmuser_account where username = ? AND password = ? and use_status = 'Y' and delete_flag = 'N'";
-        System.out.println(sql);
+        //System.out.println(sql);
         PreparedStatement p = null;
             try {
                 p = con.prepareStatement(sql);

@@ -42,7 +42,7 @@ public class Login_Log_DAO {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
         String sql = "UPDATE mlogin_log SET logout_time=?,login_status=? WHERE session_id=? and logid=?";
-        System.out.println("Update SQL = " + sql);
+        //System.out.println("Update SQL = " + sql);
         PreparedStatement p = null;
         try {
             p = con.prepareStatement(sql);
@@ -78,9 +78,9 @@ public class Login_Log_DAO {
                 loginBean.setSession_id(rs.getString("session_id"));
                 loginBean.setUser_name(rs.getString("user_name"));
                 loginBean.setLogin_time(rs.getTimestamp("login_time"));
-                System.out.println("DB Session : " + rs.getString("session_id"));
-                System.out.println("DB username : " + rs.getString("user_name"));
-                System.out.println("DB login_time : " + rs.getTimestamp("login_time"));
+                //System.out.println("DB Session : " + rs.getString("session_id"));
+                //System.out.println("DB username : " + rs.getString("user_name"));
+                //System.out.println("DB login_time : " + rs.getTimestamp("login_time"));
             }
 
         } finally {
@@ -100,7 +100,7 @@ public class Login_Log_DAO {
         ResultSet rs = null;
         Connection con = dbConnect.openNewConnection();
         String sql = "SELECT * From mlogin_log where login_status = '" + Status + "' and login_time < 'today'";
-        System.out.println("sql = " + sql);
+        //System.out.println("sql = " + sql);
 
         PreparedStatement p = null;
         try {
@@ -119,7 +119,7 @@ public class Login_Log_DAO {
 
                 String sql1 = "UPDATE mlogin_log SET login_status = ? , logout_time = ? WHERE runno = ? ";
 
-                System.out.println("Check Logout And Update SQL = " + sql1);
+                //System.out.println("Check Logout And Update SQL = " + sql1);
                 PreparedStatement pr = null;
                 pr = con.prepareStatement(sql1);
                 pr.setString(1, "N");
@@ -151,15 +151,15 @@ public class Login_Log_DAO {
                 + " From mlogin_log "
                 + " where login_status = '" + Status + "'";
 
-        System.out.println("sql_timediff = " + sql + " -> " + Status);
+        //System.out.println("sql_timediff = " + sql + " -> " + Status);
 
         PreparedStatement p = null;
         try {
             p = con.prepareStatement(sql);
             rs = p.executeQuery();
             while (rs.next()) {
-                System.out.println("TimediffDB username : " + rs.getString("user_name"));
-                System.out.println("TimediffDB login_time : " + rs.getTimestamp("login_time"));
+                //System.out.println("TimediffDB username : " + rs.getString("user_name"));
+                //System.out.println("TimediffDB login_time : " + rs.getTimestamp("login_time"));
             }
 
         } finally {

@@ -11,6 +11,17 @@ and open the template in the editor.
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
         <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
+
+        <script language="javascript">
+            function getStatus() {
+                if (document.getElementById("radio1").checked) {
+                    document.getElementById("status").value = 0;
+                } else if ((document.getElementById("radio2").checked)) {
+                    document.getElementById("status").value = 1;
+                }
+            }
+        </script>        
+
     </head>
 
     <body onUnload="closepopup()">
@@ -32,18 +43,19 @@ and open the template in the editor.
                                 <td class="columnlabel"><b>ผู้ใช้งาน*</b>&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='username' type='text' id="username" value='' size='10' />
-                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('Vuser_account',5,'../SEARCHSCREEN/Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;                </td>
+                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('Vuser_account', 5, '../SEARCHSCREEN/Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">รหัสผ่าน*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='password' type='password' id="password" value='' size='30' />                </td>
+                                    <input name='password' type='text' id="password" value='' size='30' />                
+                                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">รหัสพนักงาน*&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='emp_id' type='text' id="emp_id" value='' size='10' readonly/>
-                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee',5,'Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='name_emp' type='text' id="name_emp" value='' size='30' readonly/>
+                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee', 5, 'Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='name_emp' type='text' id="name_emp" value='' size='30' readonly/>
                                 </td>
                             </tr>
                             <tr>
@@ -53,14 +65,14 @@ and open the template in the editor.
                             <tr>
                                 <td class="columnlabel">สิทธิ์ใช้งาน*&nbsp;</td>
                                 <td class="columnobject"><input name='priviledge_id' type='text' id="priviledge_id" value='' size='10' readonly/>
-                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('Priviledge',5,'Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('Priviledge', 5, 'Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                     <input name='name_priviledge' type='text' id="name_priviledge" value='' size='30' readonly/>                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">ตัวย่อสำหรับเลขที่เอกสาร*&nbsp;</td>
                                 <td class="columnobject">
                                     <input type="text" id="user_dept" name="user_dept" value="" size="10" readonly>
-                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('mdepartment_doc_id',5,'Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('mdepartment_doc_id', 5, 'Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                     <input type="text" id="user_dept_desc" name="user_dept_name" size="30" value="" readonly>
                                 </td>
                             </tr>
@@ -72,7 +84,7 @@ and open the template in the editor.
                                     <input type="radio" name="radio" id="radio2" value="radio" onClick="getStatus()">
                                     ระงับการใช้งาน</td>
                             </tr>
-                            
+
                             <tr>
                                 <td class="columnlabel">หมายเหตุ&nbsp;</td>
                                 <td class="columnobject"><textarea id="remark" name='remark' rows='5' cols='40'></textarea></td>
@@ -87,7 +99,7 @@ and open the template in the editor.
                                         <input type="hidden" id="chkNull" value="username,password,emp_id,priviledge_id,user_dept">
                                         <a href="javascript:;" onClick="cancelAction()"><img alt=""  src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
                                         <a href="javascript:;" onClick="confirmDialogSave(URLsend('chkNull,username,password,emp_id,priviledge_id,user_dept,status,remark', '../JSP/CS_005.jsp'))">&nbsp;<img alt=""  src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0">&nbsp;</a>
-                                        <a href="javascript:;" onClick="confirmDialogDelete(URLsend('username,password,emp_id,priviledge_id,user_dept,status,remark,chkstatus','../JSP/CS_005.jsp'))"><img alt=""  src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a></div></td>
+                                        <a href="javascript:;" onClick="confirmDialogDelete(URLsend('username,password,emp_id,priviledge_id,user_dept,status,remark,chkstatus', '../JSP/CS_005.jsp'))"><img alt=""  src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a></div></td>
                             </tr>
                         </table>
                     </div></td>
@@ -100,13 +112,4 @@ and open the template in the editor.
             </tr>
         </table>
     </body>
-    <script language="javascript">
-        function getStatus(){
-            if(document.getElementById("radio1").checked){
-                document.getElementById("status").value = 0;
-            }else if((document.getElementById("radio2").checked)){
-                document.getElementById("status").value = 1;
-            }
-        }
-    </script>
 </html>

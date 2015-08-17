@@ -4,6 +4,7 @@
  */
 package com.bw.DB;
 import java.sql.*;
+import org.apache.commons.codec.binary.Base64;
 
 public class DBConnect {
 
@@ -20,6 +21,23 @@ public class DBConnect {
 
     /*public DBConnect() {
     }*/
+    
+
+    public Connection openTestConnection() throws Exception {
+        Connection conn;
+        Class.forName("org.postgresql.Driver");
+        String db_postgres_jdbc = "jdbc:postgresql://localhost:5432/BWDB_PRODUCT_2558";
+        // System.out.println(OS);
+        byte[] user_decode = Base64.decodeBase64(USERNAME);
+        byte[] pass_decode = Base64.decodeBase64(PASSWORD);
+        conn = DriverManager.getConnection(db_postgres_jdbc, USERNAME, PASSWORD);
+        //conn = DriverManager.getConnection(db_postgres_jdbc, new String(user_decode), new String(pass_decode));
+        if (conn == null) {
+            throw new SQLException("Cannot initial database connection, because it's NULL.");
+        }
+        //System.out.println("#: PostgreSQL connection opened := "+conn);
+        return conn;
+    }    
 
     public Connection openNewConnection() throws Exception {
         Connection conn = null;

@@ -1,8 +1,9 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.bw.bean.UserBean"%>
 <%@page import="com.bw.Util.ThaiUtil"%>
 <%@page import="java.sql.Timestamp"%>
 <%@page import="com.bw.DB.UserDAO"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import ="org.apache.commons.codec.binary.Base64"%>
 <%!
     UserDAO userDAO = new UserDAO();
     UserBean userBean,selectUserBean;
@@ -24,7 +25,14 @@
     }else status = "Y";
     userBean = new UserBean();
     userBean.setUsername(tu.EncodeTexttoTIS(user));
-    userBean.setPassword(tu.EncodeTexttoTIS(pass));
+    //userBean.setPassword(tu.EncodeTexttoTIS(pass));
+    
+    byte[] pass_encode = Base64.encodeBase64(pass.getBytes());
+    userBean.setPassword(new String(pass_encode));       
+    
+    //stem.out.println("pass = " + pass );
+    //stem.out.println("pass_encode = " + new String(pass_encode));
+    
     userBean.setEmp_id(tu.EncodeTexttoTIS(emp_id));
     userBean.setPriviledge_id(tu.EncodeTexttoTIS(pri_id));
     userBean.setRemark(tu.EncodeTexttoTIS(rm));
