@@ -13,7 +13,7 @@
         <script type='text/javascript' src='../JS/jscalendar/lang/calendar-th.js'></script>
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">        
         <script type="text/javascript" src="../JS/myAjaxFramework.js"></script>
         <script type="text/javascript">

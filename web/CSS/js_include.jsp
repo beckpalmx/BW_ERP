@@ -4,7 +4,7 @@
     Author     : beckpalmx
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- Latest compiled and minified CSS -->
 <!--link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"-->
 <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">

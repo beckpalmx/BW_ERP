@@ -9,7 +9,7 @@ and open the template in the editor.
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link href="../CSS/component.css" rel="stylesheet" type="text/css">        
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
 
@@ -24,13 +24,23 @@ and open the template in the editor.
         <link rel="stylesheet" href="../JS/bootstrap_select/css/bootstrap-theme.min.css">                       
 
 
-        <script language="javascript">
+        <script type="text/javascript">
             function getStatus() {
-                if (document.getElementById("radio1").checked) {
-                    document.getElementById("status").value = 0;
-                } else if ((document.getElementById("radio2").checked)) {
-                    document.getElementById("status").value = 1;
+
+                if (getId("radio1").checked) {
+                    getId("status").value = 0;
+                } else if ((getId("radio2").checked)) {
+                    getId("status").value = 1;
                 }
+
+
+                /*                
+                 if (document.getElementById("radio1").checked) {
+                 document.getElementById("status").value = 0;
+                 } else if ((document.getElementById("radio2").checked)) {
+                 document.getElementById("status").value = 1;
+                 }
+                 */
             }
         </script>        
 
@@ -40,7 +50,7 @@ and open the template in the editor.
         <table  cellpadding="0"  cellspacing="0">
             <tr >
                 <td class="ftopleft"></td>
-                <td  class="ftopcenter" colspan="2">ผู้ใช้งาน&nbsp;(CS_005)</td>
+                <td class="ftopcenter" colspan="2">ผู้ใช้งาน&nbsp;(CS_005)</td>
                 <td class="ftopright"></td>
             </tr>
             <tr>

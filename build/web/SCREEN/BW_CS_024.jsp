@@ -16,7 +16,7 @@
         <link rel="stylesheet" media="all" type="text/css" href="../CSS/ui-lightness/jquery-ui-1.8.17.custom.css" />
         <link rel="stylesheet" media="all" type="text/css" href="../CSS/timepicker.css" />
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="../JS/jscalendar/calendar.js"></script>
         <script language="javascript" src="../JS/engine.js"></script>

@@ -2,44 +2,32 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-function format_date_thai(date_input, time_input) {
+function format_date_thai(date_input,time_input){
     var return_object = {
-        day: parseInt(date_input.substr(0, 2), 10),
-        month: parseInt(date_input.substr(3, 2), 10),
-        year: parseInt(date_input.substr(6, 4), 10) - 543,
-        hours: parseInt(time_input.substr(0, 2), 10),
-        minutes: parseInt(time_input.substr(3, 2), 10)
-    };
-    return return_object;
+        day:parseInt(date_input.substr(0, 2),10),
+        month:parseInt(date_input.substr(3, 2),10),
+        year:parseInt(date_input.substr(6, 4),10)-543,
+        hours:parseInt(time_input.substr(0, 2),10),
+        minutes:parseInt(time_input.substr(3, 2),10)
+        };
+        return return_object;
 }
-function difference_date_and_time(date_from, time_from, date_to, time_to) {
-
-    alert("date_from = " + date_from) + " " + time_from;
-    alert("date_to = " + date_to) + " " + time_to;
-
-    var obj_from = new format_date_thai(date_from, time_from);
-    var obj_to = new format_date_thai(date_to, time_to);
-
-    alert("obj_from = " + obj_from);
-    alert("obj_to = " + obj_to);
-
-
-    var d_from = new Date(obj_from.year, obj_from.month, obj_from.day, obj_from.hours, obj_from.minutes);
-    var d_to = new Date(obj_to.year, obj_to.month, obj_to.day, obj_to.hours, obj_to.minutes);
+function difference_date_and_time(date_from,time_from,date_to,time_to){
+    var obj_from = new format_date_thai(date_from,time_from);
+    var obj_to = new format_date_thai(date_to,time_to);
+    var d_from = new Date(obj_from.year,obj_from.month,obj_from.day,obj_from.hours,obj_from.minutes);
+    var d_to = new Date(obj_to.year,obj_to.month,obj_to.day,obj_to.hours,obj_to.minutes);
     var output_diff = d_to - d_from;
     var h_diff = 0;
     var m_diff = 0;
-    output_diff = output_diff / 60 / 1000;
-    alert("d_from = " + d_from);
-    alert("d_to = " + d_to);
-    alert("output_diff = " + output_diff);
-    if (output_diff >= 60) {
-        h_diff = Math.floor(output_diff / 60);
+    output_diff = output_diff/60/1000;
+    if(output_diff >= 60){
+        h_diff = Math.floor(output_diff/60);
         m_diff = output_diff % 60;
-    } else {
+    }else{
         m_diff = output_diff % 60;
     }
-    return (h_diff < 0 || m_diff < 0) ? alert("not difference now") : (h_diff < 10 ? "0" + h_diff : h_diff) + "." + (m_diff < 10 ? "0" + m_diff : m_diff);
+    return (h_diff < 0 || m_diff < 0)?alert("not difference now"):(h_diff < 10 ? "0"+h_diff:h_diff)+"."+(m_diff < 10 ? "0"+m_diff:m_diff);
 }
 /*
  * use => difference_date_and_time(date_from,time_from,date_to,time_to)

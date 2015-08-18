@@ -11,7 +11,7 @@
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=TIS-620">
     <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-    <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
+    <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
     <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">
 </head>
 <body>

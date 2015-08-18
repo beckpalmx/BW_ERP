@@ -9,17 +9,17 @@
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
         <script type="text/javascript">
             function ckvalue()
             {
-                if(getId("passwordnew_1").value == getId("passwordnew_2").value && getId("passwordnew_1").value != getId("password").value && getId("passwordnew_2").value != getId("password").value)
+                if (getId("passwordnew_1").value === getId("passwordnew_2").value && getId("passwordnew_1").value !== getId("password").value && getId("passwordnew_2").value !== getId("password").value)
                 {
                     //alert("test2");
-                    confirmDialogSave(URLsend('chkNull,username,password,passwordnew_1,passwordnew_2','../JSP/CS_006.jsp'))
+                    confirmDialogSave(URLsend('chkNull,username,password,passwordnew_1,passwordnew_2', '../JSP/CS_006.jsp'));
                 }
-                else if(getId("passwordnew_1").value == getId("password").value && getId("passwordnew_2").value == getId("password").value )
+                else if (getId("passwordnew_1").value === getId("password").value && getId("passwordnew_2").value === getId("password").value)
                 {
                     alert("คุณกรอกรหัสผ่านเหมือนเดิม กรุณากรอกรหัสผ่านใหม่ถ้าต้องการเปลี่ยนรหัสผ่าน");
                 }

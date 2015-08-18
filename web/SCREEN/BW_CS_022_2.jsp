@@ -146,7 +146,7 @@
         </script>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <title>Insert title here</title>
     </head>
     <body >

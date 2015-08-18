@@ -9,7 +9,7 @@
         <META Http-Equiv="Pragma" Content="no-cache">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="../JS/myAjaxFramework.js"></script>
         <script type="text/javascript">
