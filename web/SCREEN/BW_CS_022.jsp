@@ -216,7 +216,7 @@
                 doc_eff_date = objr_p.getDoc_eff_date();
                 doc_no = objr_p.getDoc_no();
                 //_______________________________________________________________report
-%>
+            %>
             <input name="username" type="hidden" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input name="D_status" type="hidden" id="D_status" value="3">
             <!-- เป็นการ Delete ข้อมูลทั้งหมด -->
