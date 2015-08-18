@@ -249,7 +249,7 @@
                                 </tr-->   
 
                                 <tr>
-                                    <td class="columnlabel1"><b>เอกสารสมบูรณ์ (รับหัวมันเสร็จสิ้น)</b>&nbsp;:&nbsp;</td>
+                                    <td class="columnlabel1"><b>เอกสารสมบูรณ์ (รับหัวมันเสร็จสิ้น)</b>&nbsp;</td>
                                     <td class="columnobject">
                                         <div class="checkbox checkbox-primary">
                                             <input type="checkbox" id="A_complete_flag" name="A_complete_flag" value="N" onClick="Click_Complete_flag(this.checked)">
