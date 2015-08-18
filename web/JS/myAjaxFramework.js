@@ -617,25 +617,35 @@ function showTable2(DivShow, Valueinput1, URL)
 
 
 }
+
 //---------------------------------------------------------------------
+
 var my_window = null;
-var t;
+
 function openBrWindow(table, page, jsp) { //v2.0
     if (my_window === null) {
-        t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-        my_window = window.open(t, "mywindow", "status=1,width=560,height=460");
+        openpopup(table, page, jsp);
 
     } else {
         closepopup();
-        t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-        my_window = window.open(t, "mywindow", "status=1,width=560,height=460");
+        openpopup(table, page, jsp);
     }
 }
+
+function openpopup(table, page, jsp) {
+
+    var t;
+    t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
+    my_window = window.open(t, "mywindow", "status=1,width=700,height=500");
+
+}
+
 function closepopup() {
     if (false === my_window.closed) {
         my_window.close();
     }
 }
+
 //---------------------------------------------------------------------
 function IsNumber2(sText, obj) {
     var ValidChars = "0123456789";

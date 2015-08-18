@@ -33,7 +33,7 @@
                                 <td class="columnlabel"><b>รหัสแหล่งผลิต*</b>&nbsp;</td>
                                 <td class="columnobject">
                                     <input type='text' name='prd_place' size='10' value='' id="prd_place" />
-                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('mproduction_place',201,'Serch_Config.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('mproduction_place',201,'Search_Config.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                     <input type='text' name='name_t' size='30' value='' id="name_t" />
                                 </td>
                             </tr>

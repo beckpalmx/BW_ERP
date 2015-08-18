@@ -19,7 +19,7 @@
     <META Http-Equiv="Pragma" Content="no-cache">-->
 </head>
 <body>
-    <form name="serForm" method="get" action="Serch_Config.jsp">
+    <form name="serForm" method="get" action="Search_Config.jsp">
         <input type="hidden" name="table" value="<%=request.getParameter("table")%>">
         <input type="hidden" name="page" value="<%=request.getParameter("page")%>">
         <div style="width: 600px;">
@@ -176,16 +176,16 @@
             <div align="center">
                 <%    if (screen > 1) {
                         if (request.getParameter("searchid") == null && request.getParameter("searchtxt") == null) {%>
-                <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%></a>">ย้อนกลับ</a>
+                <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%></a>">ย้อนกลับ</a>
                 <%
                 } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
-                <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>">ย้อนกลับ</a>
+                <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>">ย้อนกลับ</a>
                 <%
                 } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
-                <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>">ย้อนกลับ</a>
+                <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>">ย้อนกลับ</a>
                 <%
                 } else {%>
-                <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>">ย้อนกลับ</a>
+                <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>">ย้อนกลับ</a>
                 <%
                         }
                     }
@@ -198,16 +198,16 @@
                 <%
                 } else {
                     if (request.getParameter("searchid") == null && request.getParameter("searchtxt") == null) {%>
-                | <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>"><%=i%></a> |
+                | <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>"><%=i%></a> |
                 <%
                 } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
-                | <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>"><%=i%></a> |
+                | <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>"><%=i%></a> |
                 <%
                 } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
-                | <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>"><%=i%></a> |
+                | <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>"><%=i%></a> |
                 <%
                 } else {%>
-                | <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>"><%=i%></a> |
+                | <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>"><%=i%></a> |
                 <%
                             }
                         }
@@ -221,16 +221,16 @@
                 <%
                 } else {
                     if (request.getParameter("searchid") == null && request.getParameter("searchtxt") == null) {%>
-                | <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>"><%=y%></a> |
+                | <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>"><%=y%></a> |
                 <%
                 } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
-                | <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>"><%=y%></a> |
+                | <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>"><%=y%></a> |
                 <%
                 } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
-                | <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>"><%=y%></a> |
+                | <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>"><%=y%></a> |
                 <%
                 } else {%>
-                | <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>"><%=y%></a> |
+                | <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>"><%=y%></a> |
                 <%
                                 }
                             }
@@ -238,16 +238,16 @@
                     }
                     if (screen < total_page) {
                         if (request.getParameter("searchid") == null && request.getParameter("searchtxt") == null) {%>
-                <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>">ไปข้างหน้า</a>
+                <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>">ไปข้างหน้า</a>
                 <%
                 } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
-                <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>">ไปข้างหน้า</a>
+                <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>">ไปข้างหน้า</a>
                 <%
                 } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
-                <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>">ไปข้างหน้า</a>
+                <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>">ไปข้างหน้า</a>
                 <%
                 } else {%>
-                <a href="../SEARCHSCREEN/Serch_Config.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>">ไปข้างหน้า</a>
+                <a href="../SEARCHSCREEN/Search_Config.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>">ไปข้างหน้า</a>
                 <%
                             }
                         } else {;

@@ -28,7 +28,7 @@
 
             function openBrown(tableID) {
                 //alert("../JSP/Search_Report.jsp?table="+getId(tableID).value+"");
-                window.open("../SEARCHSCREEN/Search_Report.jsp?table=" + tableID);
+                window.open("Search_Report.jsp?table=" + tableID);
             }
 
             function CheckDate() {

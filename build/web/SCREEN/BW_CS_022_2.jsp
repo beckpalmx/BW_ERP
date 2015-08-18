@@ -68,11 +68,11 @@
             }
             function Openproduct()
             {
-                openBrWindow('Vproduct&stadment=and+pgroup_id+=+\'G001\'', 22, '../SEARCHSCREEN/Search_Config2.jsp');
+                openBrWindow('Vproduct&stadment=and+pgroup_id+=+\'G001\'', 22, 'Search_Config2.jsp');
             }
             function Opendoc_id()
             {
-                openBrWindow('Vd_rawmatt_receive&stadment=and+complete_flag+<>+\'Y\'', 22, '../SEARCHSCREEN/Search_Config2.jsp');
+                openBrWindow('Vd_rawmatt_receive&stadment=and+complete_flag+<>+\'Y\'', 22, 'Search_Config2.jsp');
             }
             function Chknull() {
                 if (document.getElementById('doc_id').value == '') {
@@ -219,7 +219,7 @@
                                         <td class="columnlabel">ชื่อผู้ขาย*&nbsp;</td>
                                         <td colspan="3" class="columnobject">
                                             <input name='A_supplier_id' type='text' id="A_supplier_id" value='' size='10' readonly="readonly"/>
-                                            &nbsp;<a href='#' onClick="openBrWindow('Vsupplier', 22, '../SEARCHSCREEN/Serch_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='supplier_id_desc' type='text' id="supplier_id_desc" value='' size='20' readonly="readonly" />&nbsp;&nbsp;&nbsp;&nbsp;ประเภทลูกค้า
+                                            &nbsp;<a href='#' onClick="openBrWindow('Vsupplier', 22, 'Search_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='supplier_id_desc' type='text' id="supplier_id_desc" value='' size='20' readonly="readonly" />&nbsp;&nbsp;&nbsp;&nbsp;ประเภทลูกค้า
                                                 <%=objuti.ShowSelectBox("select supply_type_id,name_t from m_supplyer_type where delete_flag = 'N'  order by runno", "supply_type_id", "name_t", "A_supplyer_type")%>
                                         </td>
                                     </tr>

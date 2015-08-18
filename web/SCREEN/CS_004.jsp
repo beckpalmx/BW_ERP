@@ -17,7 +17,7 @@
                 {
                     document.getElementsByName("menu")[i].checked =false;
                 }
-                openBrWindow('Priviledge',4,'../SEARCHSCREEN/Serch_Config.jsp');
+                openBrWindow('Priviledge',4,'Search_Config.jsp');
             }
             function RunBox() { //v2.0
                 var list = new Array();

@@ -10,7 +10,7 @@ public class Serchselect {
     private String strID;
     private SelectSerchData ssd;
 
-    public String SelectTable(String inputdatabase) //function �зӡ�� return ��Ңͧ Table ����ͧ������Ң�����˹��Brown(�Ը��˪�͹ ../JSP/Serch_Config.jsp?page=1&table=?)
+    public String SelectTable(String inputdatabase) //function �зӡ�� return ��Ңͧ Table ����ͧ������Ң�����˹��Brown(�Ը��˪�͹ ../JSP/Search_Config.jsp?page=1&table=?)
     {
         ssd = new SelectSerchData();
         strTable = ssd.SelectSerchTable(inputdatabase);

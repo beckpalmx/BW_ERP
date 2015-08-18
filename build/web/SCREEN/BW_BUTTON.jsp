@@ -71,12 +71,12 @@
             function Open_Doc_id_from() {
                 //alert(math_str_flag());
                 (getId("export_id").value == "") ? alert("กรุณาเลือกรหัสที่ต้องการ Export") :
-                        openBrWindow(getId("lookup_name").value + "&stadment=" + math_str_flag() + "&textinput=runno_from|doc_id_from", 53, "../SEARCHSCREEN/Search_Detail.jsp");
+                        openBrWindow(getId("lookup_name").value + "&stadment=" + math_str_flag() + "&textinput=runno_from|doc_id_from", 53, "Search_Detail.jsp");
             }
             function Open_Doc_id_to() {
                 //alert(math_str_flag());
                 (getId("export_id").value == "") ? alert("กรุณาเลือกรหัสที่ต้องการ Export") :
-                        openBrWindow(getId("lookup_name").value + "&stadment=" + math_str_flag() + "&textinput=runno_to|doc_id_to", 53, "../SEARCHSCREEN/Search_Detail.jsp");
+                        openBrWindow(getId("lookup_name").value + "&stadment=" + math_str_flag() + "&textinput=runno_to|doc_id_to", 53, "Search_Detail.jsp");
             }
             function math_str_flag() {
                 var return_str = "";

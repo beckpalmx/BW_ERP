@@ -32,10 +32,10 @@
             var my_window = null;
             function openBrown(tableID,SentToShow){
                 if(my_window == null){
-                    my_window = window.open("../SEARCHSCREEN/Search_Report.jsp?table="+tableID+"&sentdataToshow="+SentToShow,'','status=1,width=560,height=500');
+                    my_window = window.open("Search_Report.jsp?table="+tableID+"&sentdataToshow="+SentToShow,'','status=1,width=560,height=500');
                 }else{
                     closepopup();
-                    my_window = window.open("../SEARCHSCREEN/Search_Report.jsp?table="+tableID+"&sentdataToshow="+SentToShow,'','status=1,width=560,height=500');
+                    my_window = window.open("Search_Report.jsp?table="+tableID+"&sentdataToshow="+SentToShow,'','status=1,width=560,height=500');
                 }
             }
             

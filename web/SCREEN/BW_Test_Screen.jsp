@@ -47,7 +47,7 @@
             });
             function Opendoc_id()
             {
-                openBrWindow('Vd_rawmatt_receive&stadment=and+complete_flag+<>+\'Y\'', 22, '../SEARCHSCREEN/Search_Config3.jsp');
+                openBrWindow('Vd_rawmatt_receive&stadment=and+complete_flag+<>+\'Y\'', 22, 'Search_Config3.jsp');
             }
 
         </script>

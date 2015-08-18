@@ -90,17 +90,17 @@
             }
             function Openproduct()
             {
-                openBrWindow('Vproduct&stadment=and+pgroup_id+=+\'G001\'', 22, '../SEARCHSCREEN/Search_Config2.jsp');
+                openBrWindow('Vproduct&stadment=and+pgroup_id+=+\'G001\'', 22, 'Search_Config2.jsp');
             }
 
             function Opendoc_id1()
             {
-                openBrWindow('Vd_rawmatt_receive&stadment=and+complete_flag+<>+\'Y\'', 22, '../SEARCHSCREEN/Search_Config2.jsp');
+                openBrWindow('Vd_rawmatt_receive&stadment=and+complete_flag+<>+\'Y\'', 22, 'Search_Config2.jsp');
             }
 
             function Opendoc_id2()
             {
-                openBrWindow('Vd_rawmatt_receive&stadment=and+complete_flag+=+\'Y\'', 22, '../SEARCHSCREEN/Search_Config2.jsp');
+                openBrWindow('Vd_rawmatt_receive&stadment=and+complete_flag+=+\'Y\'', 22, 'Search_Config2.jsp');
             }
 
             function Chknull() {
@@ -280,7 +280,7 @@
                                     <td class="columnlabel1">ชื่อผู้ขาย*&nbsp;</td>
                                     <td colspan="3" class="columnobject">
                                         <input name='A_supplier_id' class='inputs' type="text" id="A_supplier_id" value='' size='10' readonly="readonly"/>
-                                        &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' style="cursor: pointer;" alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' onClick="openBrWindow('Vsupplier', 22, '../SEARCHSCREEN/Serch_Config.jsp');" >&nbsp;&nbsp;&nbsp;<input name='supplier_id_desc' class='inputs' type="text" id="supplier_id_desc" value='' size='20' readonly="readonly" />&nbsp;&nbsp;&nbsp;&nbsp;ประเภทลูกค้า
+                                        &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' style="cursor: pointer;" alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' onClick="openBrWindow('Vsupplier', 22, 'Search_Config.jsp');" >&nbsp;&nbsp;&nbsp;<input name='supplier_id_desc' class='inputs' type="text" id="supplier_id_desc" value='' size='20' readonly="readonly" />&nbsp;&nbsp;&nbsp;&nbsp;ประเภทลูกค้า
                                         <%=objuti.ShowSelectBox("select supply_type_id,name_t from m_supplyer_type where delete_flag = 'N'  order by runno", "supply_type_id", "name_t", "A_supplyer_type")%>
                                     </td>
                                 </tr>
