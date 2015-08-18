@@ -29,21 +29,21 @@
 
         <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
-        
+
         <script src="../JS/jquery/jquery-2.1.4.js"></script>
         <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
 
         <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
 
-        
+
         <script src="../JS/alertify/alertify.js"></script>        
-        
+
         <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
 
         <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
-        
+
         <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />        
-         
+
 
         <script type="text/javascript">
 
@@ -243,10 +243,6 @@
                                 <tr>
                                     <td colspan="4" align="right"><b>วันที่มีผลบังคับใช้ :<%=objs_p.getEffective_date()%></b></td>
                                 </tr>
-                                <!--tr>
-                                    <td class="columnlabel1"><b>เอกสารสมบูรณ์ (รับหัวมันเสร็จสิ้น)&nbsp;</b></td>
-                                    <td class="columnobject"><input type="checkbox" name="A_complete_flag" id="A_complete_flag" value ="N" onClick="Click_Complete_flag(this.checked);"></td>
-                                </tr-->   
 
                                 <tr>
                                     <td class="columnlabel1"><b>เอกสารสมบูรณ์ (รับหัวมันเสร็จสิ้น)</b>&nbsp;</td>
