@@ -122,11 +122,8 @@
                             
                             <%if (request.getParameter("table").equals("vproduct") || request.getParameter("table").equals("Vproduct")) {%>
                             <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                <td><%=objselect.ShowSelectBoxSearch("select * from mproduct_type order by name_t", "ptype_id", "name_t", "mproduct_type")%></td>
-
-                                <td colspan="2"></td>
+                                <td colspan="3" align="right">เลือก  :</td>
+                                <td><%=objselect.ShowSelectBoxSearch_cgc3("select * from mproduct_type order by name_t", "ptype_id", "name_t", "mproduct_type")%></td>
                             </tr>
                             <%}%>
                         </table>

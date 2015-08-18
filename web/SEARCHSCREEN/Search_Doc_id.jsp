@@ -70,19 +70,17 @@
                 <div class="panel-footer">             
                     <div style="width: 700px;" align="center">
                         <table width="630" cellpadding="0" cellspacing="0" border="0">
-                            <tr>
-                                <td width="90"><input type="button" class="cgcButton_5" name="bt1" value=" ย้อนกลับ " onClick="javascript:window.close();"/></td>
-                                <td width="46">รหัส :</td>
-                                <td width="199"><input type="text" name="searchid" value="" size="40"/></td>
-                                <td width="199">&nbsp;</td>
-                                <td width="16" colspan="2"></td>
+                            <tr>                                
+                                <td colspan="3" align="right">รหัส :</td>
+                                <td align="left"><input class='inputs' type="text" name="searchid" value="" size="40"/>
+                                    <input type="submit" id="submit" class="cgcButton_5" value="ย้อนกลับ" onClick="javascript:window.close();">
+                                </td>
                             </tr>
                             <tr>
-                                <td>&nbsp;</td>
-                                <td>ชื่อ &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                <td><input type="text" name="searchtxt" value="" size="40"/></td>
-                                <td><input type="submit" id="submit" class="cgcButton_6" value=" ค้นหา "></td>
-                                <td colspan="2"></td> 
+                                <td colspan="3" align="right">ชื่อ  :</td>
+                                <td align="left"><input class='inputs' type="text" name="searchtxt" value="" size="40"/>
+                                    <input type="submit" id="submit" class="cgcButton_6" value="ค้นหา">
+                                </td>
                             </tr>
 
                         </table>
@@ -148,7 +146,7 @@
 
                             %>
                             <%!ResultSet rs2;
-                                    String getshowdata;%>
+                                String getshowdata;%>
                             <%                                    rs2 = null;
                                 try {
                                     String sql2;
@@ -229,16 +227,16 @@
                     </div >
                     <div align="center">
                         <%                if (screen > 1) {
-                    if (request.getParameter("searchid") == null && request.getParameter("searchtxt") == null) {%>
+                                if (request.getParameter("searchid") == null && request.getParameter("searchtxt") == null) {%>
                         <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&stadment=<%=stadment%>" class="link_transparent">ย้อนกลับ</a>
                         <%
-            } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
+                        } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
                         <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>&stadment=<%=stadment%>" class="link_transparent">ย้อนกลับ</a>
                         <%
-            } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
+                        } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
                         <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&stadment=<%=stadment%>" class="link_transparent">ย้อนกลับ</a>
                         <%
-            } else {%>
+                        } else {%>
                         <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=screen - 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>&stadment=<%=stadment%>" class="link_transparent">ย้อนกลับ</a>
                         <%
                                 }
@@ -254,13 +252,13 @@
                             if (request.getParameter("searchid") == null && request.getParameter("searchtxt") == null) {%>
                         | <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&stadment=<%=stadment%>" class="link_transparent"><%=i%></a> |
                         <%
-            } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
+                        } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
                         | <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>&stadment=<%=stadment%>" class="link_transparent"><%=i%></a> |
                         <%
-            } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
+                        } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
                         | <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&stadment=<%=stadment%>" class="link_transparent"><%=i%></a> |
                         <%
-            } else {%>
+                        } else {%>
                         | <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=i%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>&stadment=<%=stadment%>" class="link_transparent"><%=i%></a> |
                         <%
                                     }
@@ -277,13 +275,13 @@
                             if (request.getParameter("searchid") == null && request.getParameter("searchtxt") == null) {%>
                         | <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&stadment=<%=stadment%>" class="link_transparent"><%=y%></a> |
                         <%
-            } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
+                        } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
                         | <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>&stadment=<%=stadment%>" class="link_transparent"><%=y%></a> |
                         <%
-            } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
+                        } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
                         | <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&stadment=<%=stadment%>" class="link_transparent"><%=y%></a> |
                         <%
-            } else {%>
+                        } else {%>
                         | <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=y%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>&stadment=<%=stadment%>" class="link_transparent"><%=y%></a> |
                         <%
                                         }
@@ -294,13 +292,13 @@
                                 if (request.getParameter("searchid") == null && request.getParameter("searchtxt") == null) {%>
                         <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&stadment=<%=stadment%>" class="link_transparent">ไปข้างหน้า</a>
                         <%
-            } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
+                        } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
                         <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>&stadment=<%=stadment%>" class="link_transparent">ไปข้างหน้า</a>
                         <%
-            } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
+                        } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") == null) {%>
                         <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchid=<%=request.getParameter("searchid")%>&stadment=<%=stadment%>" class="link_transparent">ไปข้างหน้า</a>
                         <%
-            } else {%>
+                        } else {%>
                         <a href="../SEARCHSCREEN/Search_Doc_id.jsp?screen=<%=screen + 1%>&page=<%=request.getParameter("page")%>&table=<%=request.getParameter("table")%>&searchtxt=<%=new String(request.getParameter("searchtxt").getBytes("ISO8859-1"), "TIS-620")%>&stadment=<%=stadment%>" class="link_transparent">ไปข้างหน้า</a>
                         <%
                                         }

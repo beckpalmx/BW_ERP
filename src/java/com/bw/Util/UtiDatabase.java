@@ -160,6 +160,50 @@ public class UtiDatabase {
         }
         return output;
     }
+    
+    public String ShowSelectBoxSearch_cgc2(String inputSQL, String Value, String ShowData, String HTMLIDandName) throws Exception {
+        String output;
+        DBConnect objcon = new DBConnect();
+        Connection con = objcon.openNewConnection();
+        ResultSet rs = con.createStatement().executeQuery(inputSQL);
+        try {
+            output = "<select class='select_cgc2' name='" + HTMLIDandName + "'id='" + HTMLIDandName + "' onclick=\"SelectBoxSearch(\'" + Value + "\',\'" + HTMLIDandName + "\','stadment')\">";
+            while (rs.next()) {
+                output += "<option value='" + rs.getString(Value) + "'>" + rs.getString(ShowData) + "</option>";
+            }
+            output += "</select>";
+        } finally {
+            try {
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return output;
+    }    
+    
+    public String ShowSelectBoxSearch_cgc3(String inputSQL, String Value, String ShowData, String HTMLIDandName) throws Exception {
+        String output;
+        DBConnect objcon = new DBConnect();
+        Connection con = objcon.openNewConnection();
+        ResultSet rs = con.createStatement().executeQuery(inputSQL);
+        try {
+            output = "<select class='select_cgc3' name='" + HTMLIDandName + "'id='" + HTMLIDandName + "' onclick=\"SelectBoxSearch(\'" + Value + "\',\'" + HTMLIDandName + "\','stadment')\">";
+            while (rs.next()) {
+                output += "<option value='" + rs.getString(Value) + "'>" + rs.getString(ShowData) + "</option>";
+            }
+            output += "</select>";
+        } finally {
+            try {
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return output;
+    }        
 
     public String ShowSelectBoxSearch(String Select_value, String[] Fill_Name, String[] Value, String HTMLIDandName) throws Exception {
         String string_output = new String();

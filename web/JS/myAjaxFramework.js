@@ -635,8 +635,13 @@ function openBrWindow(table, page, jsp) { //v2.0
 function openpopup(table, page, jsp) {
 
     var t;
-    t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-    my_window = window.open(t, "mywindow", "status=1,width=700,height=500");
+    t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;    
+    if (jsp.trim() === ("Search_Config2.jsp")) {
+        my_window = window.open(t, "mywindow", "status=1,width=700,height=530");
+    } else {
+        my_window = window.open(t, "mywindow", "status=1,width=700,height=500");
+    }
+
 
 }
 
