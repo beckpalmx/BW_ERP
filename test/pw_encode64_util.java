@@ -36,12 +36,14 @@ public class pw_encode64_util {
 
                 System.out.println("text_encode = " + rs.getString("username") + " | " + new String(user_encode));
 
-                System.out.println(rs.getString("username") + " : " + rs.getString("password") + " = " + new String(pass_encode));
+                System.out.println("pass_encode = " + rs.getString("username") + " | " + new String(pass_encode));
+
+                //System.out.println(rs.getString("username") + " : " + rs.getString("password") + " = " + new String(pass_encode));
                 Update_UserAcc = "update muser_account set password = '" + new String(pass_encode) + "' where username = '" + rs.getString("username") + "'";
 
                 System.out.println("Update_UserAcc = " + Update_UserAcc);
-                p1 = con.prepareStatement(Update_UserAcc);
-                p1.executeUpdate();
+                //p1 = con.prepareStatement(Update_UserAcc);
+                //p1.executeUpdate();                
             }
 
         } catch (Exception ex) {
