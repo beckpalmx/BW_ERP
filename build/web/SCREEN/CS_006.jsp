@@ -1,6 +1,6 @@
 <%@page import="com.bw.bean.UserBean"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
 <html>
     <%
         UserBean userbean = (UserBean) session.getAttribute("user");
@@ -9,15 +9,26 @@
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
+        <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css">  
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>          
+
+        <script src="../JS/bootstrap_select/js/bootstrap-select.js"></script>        
+        <link rel="stylesheet" href="../JS/bootstrap_select/css/bootstrap-select.css">        
+        <link rel="stylesheet" href="../JS/bootstrap_select/css/bootstrap-select.min.css">        
+        <link rel="stylesheet" href="../JS/bootstrap_select/css/bootstrap-theme.min.css">             
         <script type="text/javascript">
             function ckvalue()
             {
                 if (getId("passwordnew_1").value === getId("passwordnew_2").value && getId("passwordnew_1").value !== getId("password").value && getId("passwordnew_2").value !== getId("password").value)
                 {
                     //alert("test2");
-                    confirmDialogSave(URLsend('chkNull,username,password,passwordnew_1,passwordnew_2', '../JSP/CS_006.jsp'));
+                    confirmDialogSave(URLsend('chkNull,username,password,passwordnew_1,passwordnew_2', '../JSP/CS_006.jsp'))
                 }
                 else if (getId("passwordnew_1").value === getId("password").value && getId("passwordnew_2").value === getId("password").value)
                 {
@@ -33,42 +44,37 @@
 
     <body>
         <input type="hidden" id="chkNull" value="passwordnew_1,passwordnew_2">
-        <table  cellpadding="0"  cellspacing="0">
-            <tr>
-                <td class="ftopleft"></td>
-                <td  class="ftopcenter" colspan="2">ผู้ใช้งาน&nbsp;(CS_006)</td>
-                <td class="ftopright"></td>
-            </tr>
-            <tr >
-                <td class="fcenterleft"></td>
-                <td  colspan="2" class="fcentercenter">
+        <div class="container">        
+            <div class="panel panel-primary">
+                <div class="panel-heading"><span class="glyphicon glyphicon-pencil" style="color:white"></span>&nbsp;<b>เปลี่ยนรหัสผ่าน&nbsp;(CS_006)</b></div>       
+                <div class="panel-footer">
                     <div align="center">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel"><b>ผู้ใช้งาน*</b>&nbsp;</td>
+                                <td class="columnlabel1"><b>ผู้ใช้งาน*</b>&nbsp;:&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name="username" class='inputs' type="text" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
+                                    <input name="username" type='text' class="inputs" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">รหัสผ่านเดิม&nbsp;</td>
+                                <td class="columnlabel1">รหัสผ่านเดิม&nbsp;:&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name="password" type="password" id="password" value="" size="30"/>
+                                    <input name="password" type="password" class="inputs" id="password" value="" size="30"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">รหัสผ่านใหม่&nbsp;</td>
+                                <td class="columnlabel1">รหัสผ่านใหม่&nbsp;:&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name="passwordnew_1" type="password" id="passwordnew_1" value="" size="30"/>
+                                    <input name="passwordnew_1" class="inputs" type="password" id="passwordnew_1" value="" size="30"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">รหัสผ่านใหม่(อีกครั้ง)&nbsp;</td>
+                                <td class="columnlabel1">รหัสผ่านใหม่(อีกครั้ง)&nbsp;:&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name="passwordnew_2" type="password" id="passwordnew_2" value="" size="30"/>
+                                    <input name="passwordnew_2" class="inputs" type="password" id="passwordnew_2" value="" size="30"/>
                                 </td>
                             </tr>
 
@@ -76,22 +82,16 @@
                                 <td colspan='2' class='blankspace'>
                                     <br>
                                     <div align="center">
-                                        <a href="javascript:;" onclick="cancelAction()"><img alt=""  src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
-                                        <a href="javascript:;" onClick="ckvalue()"><img alt=""  src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
+                                        <a href="javascript:;" onclick="cancelAction()"><img alt=""  src="../IMAGES/BTN_CANCEL_90.png" class="imgtransparent" width="80" height="30" border="0"></a>
+                                        <a href="javascript:;" onClick="ckvalue()"><img alt=""  src="../IMAGES/BTN_SAVE_90.png" class="imgtransparent" width="80" height="30" border="0"></a>
                                     </div>
                                     <br>
                                 </td>
                             </tr>
                         </table>
-                    </div></td>
-                <td class="fcenterright"></td>
-            </tr>
-            <tr bordercolor="0069B3">
-                <td class="ffootleft"></td>
-                <td  class="ffootcenter" colspan="2"></td>
-                <td class="ffootright"></td>
-            </tr>
-        </table>
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
