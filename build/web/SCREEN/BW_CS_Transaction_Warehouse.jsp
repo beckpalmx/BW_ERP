@@ -167,14 +167,14 @@
                                     </tr>
                                     <tr>
                                         <td align="right"><span class="columnobject">รหัส process*</span></td>
-                                        <td class="columnobject"><input type='text' name='process_id' id="process_id" size='10' value='' />
+                                        <td class="columnobject"><input class='inputs' type="text" name='process_id' id="process_id" size='10' value='' />
                                             &nbsp;<a href='javascript:;' onClick="getId('doc_id').value='';getId('doc_date').value='';openBrWindow('vmprocess&stadment=and+doc_type+<>+\'N\'', 482, 'Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input type='text' name='process_name' id="process_name" size='30' value='' /></td>
+                                            <input class='inputs' type="text" name='process_name' id="process_name" size='30' value='' /></td>
                                     </tr>
                                     <tr>
                                         <td width="30%" align="right"><span class="columnobject">เลขที่เอกสาร*</span></td>
-                                        <td class="columnobject"><input name="doc_id" type="text" id="doc_id" size="10">&nbsp;<a href='javascript:;' onClick="BrownDoc_id()"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input name="doc_date" type="text" id="doc_date" size="30">
+                                        <td class="columnobject"><input name="doc_id" class='inputs' type="text" id="doc_id" size="10">&nbsp;<a href='javascript:;' onClick="BrownDoc_id()"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
+                                            <input name="doc_date" class='inputs' type="text" id="doc_date" size="30">
                                             <input type='button' class="cgcButton_6" name='search' onClick="showTable()" value='ค้นหา'/></td>
                                     </tr>
 
@@ -221,7 +221,7 @@
                                         <td colspan='2' class='blankspace'></td>
                                     </tr>
                                 </table>
-                                <textarea name="calreport" id="calreport" cols="100" rows="7"></textarea>
+                                <textarea class='text_inputs' name="calreport" id="calreport" cols="100" rows="7"></textarea>
                             </div></td>
                         <td class="fcenterright"></td>
                     </tr>

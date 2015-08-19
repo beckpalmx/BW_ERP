@@ -320,7 +320,7 @@
                                         <tr>
                                             <td width="150" class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
                                             <td width="607" class="columnobject">
-                                                <input name='A_doc_id' type='text' id="A_doc_id" value='<%=request.getParameter("A_doc_id")%>' size='20' />&nbsp;&nbsp;วันที่รายงาน<input name='A_date_report' type='text' id="A_date_report" value='<%=date_report%>' size='10' readonly="readonly"/>
+                                                <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='<%=request.getParameter("A_doc_id")%>' size='20' />&nbsp;&nbsp;วันที่รายงาน<input name='A_date_report' class='inputs' type="text" id="A_date_report" value='<%=date_report%>' size='10' readonly="readonly"/>
                                                 &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_date_report',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>
                                             </td>
                                         </tr>
@@ -359,68 +359,68 @@
                                                             </table>
                                                             <div style="width:100%; height: 150px; overflow: auto;" id="show" align="center"><%=objdetail1.Show_Detail(doc_id, 1)%></div><div align="center" style="width:100%;"> <table  cellpadding="0"  cellspacing="0"><tr>
                                                                         <td colspan="2" align="right">รวมใช้เวลาอบ
-                                                                            <input name="tot_roast_hr" type="text" id="tot_roast_hr" size="15" value="<%=tot_roast_hr%>">
+                                                                            <input name="tot_roast_hr" class='inputs' type="text" id="tot_roast_hr" size="15" value="<%=tot_roast_hr%>">
                                                                             ชม.</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">กำลังการผลิตแป้งแห้ง</td>
-                                                                        <td class="columnobject"><input name="A_prod_roast_per_hr" type="text" id="A_prod_roast_per_hr" size="15" value="<%=prod_roast_per_hr%>">
+                                                                        <td class="columnobject"><input name="A_prod_roast_per_hr" class='inputs' type="text" id="A_prod_roast_per_hr" size="15" value="<%=prod_roast_per_hr%>">
                                                                             Kg./hr</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">อุณหภูมิอบแป้ง   ท่อเข้า
                                                                         </td>
-                                                                        <td class="columnobject"><input name="A_temp_roast_in" type="text" id="A_temp_roast_in" size="15" value ="<%=temp_roast_in%>">
+                                                                        <td class="columnobject"><input name="A_temp_roast_in" class='inputs' type="text" id="A_temp_roast_in" size="15" value ="<%=temp_roast_in%>">
                                                                             C<sup>o</sup>&nbsp;&nbsp;&nbsp;อุณหภูมิอบแป้ง ท่อออก
-                                                                            <input name="A_temp_roast_out" type="text" id="A_temp_roast_out" size="15" value ="<%=temp_roast_out%>">
+                                                                            <input name="A_temp_roast_out" class='inputs' type="text" id="A_temp_roast_out" size="15" value ="<%=temp_roast_out%>">
                                                                             C<sup>o</sup></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">อุณหภูมิน้ำมันเข้า   ท่อเข้า
                                                                         </td>
-                                                                        <td class="columnobject"><input name="A_temp_water_in" type="text" id="A_temp_water_in" size="15" value ="<%=temp_water_in%>">
+                                                                        <td class="columnobject"><input name="A_temp_water_in" class='inputs' type="text" id="A_temp_water_in" size="15" value ="<%=temp_water_in%>">
                                                                             C<sup>o</sup>&nbsp;&nbsp;&nbsp;อุณหภูมิน้ำมันออก ท่อออก
 
-                                                                            <input name="A_temp_water_out" type="text" id="A_temp_water_out" size="15" value ="<%=temp_water_out%>">
+                                                                            <input name="A_temp_water_out" class='inputs' type="text" id="A_temp_water_out" size="15" value ="<%=temp_water_out%>">
                                                                             C<sup>o</sup></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">ปริมาณฝืนที่ใช้
                                                                         </td>
-                                                                        <td class="columnobject"><input name="A_firewood_use" type="text" id="A_firewood_use" size="15" value ="<%=firewood_use%>">
+                                                                        <td class="columnobject"><input name="A_firewood_use" class='inputs' type="text" id="A_firewood_use" size="15" value ="<%=firewood_use%>">
                                                                             Kg.&nbsp;&nbsp;&nbsp;ปริมาณฝืนที่ใช้ต่อตันแป้ง
-                                                                            <input name="A_firewood_per_ton" type="text" id="A_firewood_per_ton" size="15" value ="<%=firewood_per_ton%>">
+                                                                            <input name="A_firewood_per_ton" class='inputs' type="text" id="A_firewood_per_ton" size="15" value ="<%=firewood_per_ton%>">
                                                                             Kg./T</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">ปริมาณ   Biogas ที่ใช้
                                                                         </td>
-                                                                        <td class="columnobject"><input name="A_biogas_use" type="text" id="A_biogas_use" size="15" value ="<%=biogas_use%>">
+                                                                        <td class="columnobject"><input name="A_biogas_use" class='inputs' type="text" id="A_biogas_use" size="15" value ="<%=biogas_use%>">
                                                                             NCMH
                                                                             &nbsp;&nbsp;&nbsp;ปริมาณ Biogas ที่ใช้ต่อตันแป้ง
 
-                                                                            <input name="A_biogas_per_ton" type="text" id="A_biogas_per_ton" size="15" value ="<%=biogas_per_ton%>">
+                                                                            <input name="A_biogas_per_ton" class='inputs' type="text" id="A_biogas_per_ton" size="15" value ="<%=biogas_per_ton%>">
                                                                             NCMH</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">โรงไฟฟ้าส่งสตรีม เวลา</td>
-                                                                        <td class="columnobject"><input name="A_elec_stream_t1" type="text" id="A_elec_stream_t1" size="15" value ="<%=elec_stream_t1%>">
+                                                                        <td class="columnobject"><input name="A_elec_stream_t1" class='inputs' type="text" id="A_elec_stream_t1" size="15" value ="<%=elec_stream_t1%>">
                                                                             น.                                                                      &nbsp;&nbsp;&nbsp;&nbsp;
                                                                             หยุดส่งเวลา
-                                                                            <input name="A_elec_stream_st1" type="text" id="A_elec_stream_st1" size="15" value ="<%=elec_stream_st1%>">
+                                                                            <input name="A_elec_stream_st1" class='inputs' type="text" id="A_elec_stream_st1" size="15" value ="<%=elec_stream_st1%>">
                                                                             น.</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">โรงไฟฟ้าส่งสตรีม เวลา</td>
-                                                                        <td class="columnobject"><input name="A_elec_stream_t2" type="text" id="A_elec_stream_t2" size="15" value ="<%=elec_stream_t2%>">
+                                                                        <td class="columnobject"><input name="A_elec_stream_t2" class='inputs' type="text" id="A_elec_stream_t2" size="15" value ="<%=elec_stream_t2%>">
                                                                             น.                                                                      &nbsp;&nbsp;&nbsp;&nbsp;
                                                                             หยุดส่งเวลา
-                                                                            <input name="A_elec_stream_st2" type="text" id="A_elec_stream_st2" size="15" value ="<%=elec_stream_st2%>">
+                                                                            <input name="A_elec_stream_st2" class='inputs' type="text" id="A_elec_stream_st2" size="15" value ="<%=elec_stream_st2%>">
                                                                             น.</td>
                                                                     </tr>
                                                                     <!--<tr>
                                                                         <td class="columnlabel">ปริมาณน้ำ/ตันแป้ง</td>
-                                                                        <td class="columnobject"><input name="textfield13" type="text" id="textfield13" size="15">
+                                                                        <td class="columnobject"><input name="textfield13" class='inputs' type="text" id="textfield13" size="15">
                                                                             กิโลวัตต์/ตันแป้ง</td>
                                                                     </tr>-->
                                                                     <tr>
@@ -449,7 +449,7 @@
                                                             <div align="center"> <table  cellpadding="0"  cellspacing="0">
                                                                     <tr>
                                                                         <td colspan="2" align="right">รวม
-                                                                            <input name="A_total_1" type="text" id="A_total_1" size="15" value="<%=total_1%>"></td>
+                                                                            <input name="A_total_1" class='inputs' type="text" id="A_total_1" size="15" value="<%=total_1%>"></td>
                                                                     </tr></table></div> </div></div>
                                                     <div id="tabs-3"><div align="center" style="width:100%;">
                                                             <table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
@@ -472,7 +472,7 @@
                                                             <div align="center"> <table  cellpadding="0"  cellspacing="0">
                                                                     <tr>
                                                                         <td colspan="2" align="right">รวม
-                                                                            <input name="A_total_2" type="text" id="A_total_2" size="15" value="<%=total_2%>"></td>
+                                                                            <input name="A_total_2" class='inputs' type="text" id="A_total_2" size="15" value="<%=total_2%>"></td>
                                                                     </tr></table></div> </div></div>
                                                     <div id="tabs-4"><div align="center" style="width:100%;">
                                                             <table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
@@ -495,7 +495,7 @@
                                                             <div align="center"> <table  cellpadding="0"  cellspacing="0">
                                                                     <tr>
                                                                         <td colspan="2" align="right">รวม
-                                                                            <input name="A_total_3" type="text" id="A_total_3" size="15" value="<%=total_3%>"></td>
+                                                                            <input name="A_total_3" class='inputs' type="text" id="A_total_3" size="15" value="<%=total_3%>"></td>
                                                                     </tr></table></div> </div></div>
                                                 </div></td>
                                         </tr>
@@ -505,17 +505,17 @@
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">รวมรายการเบิก</td>
-                                            <td class="columnobject"><input name="A_total_withdraw" type="text" id="A_total_withdraw" size="15"  value="<%=total_withdraw%>">
+                                            <td class="columnobject"><input name="A_total_withdraw" class='inputs' type="text" id="A_total_withdraw" size="15"  value="<%=total_withdraw%>">
                                                 ตัน</td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">จำนวนแป้งแห้งที่ผลิตได้ทั้งหมด</td>
-                                            <td class="columnobject"><input name="A_total_prod_1" type="text" id="A_total_prod_1" size="15"  value="<%=total_prod_1%>">
+                                            <td class="columnobject"><input name="A_total_prod_1" class='inputs' type="text" id="A_total_prod_1" size="15"  value="<%=total_prod_1%>">
                                                 ตัน</td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">ผลผลิตการอบแป้งบริสุทธิ</td>
-                                            <td class="columnobject"><input name="A_total_production" type="text" id="A_total_production" size="15"  value="<%=total_production%>">
+                                            <td class="columnobject"><input name="A_total_production" class='inputs' type="text" id="A_total_production" size="15"  value="<%=total_production%>">
                                                 ตัน(คิดเหมือนผลผลิตตัดมัน)</td>
                                         </tr>
                                         <tr>

@@ -189,7 +189,7 @@
 
 
                             %>
-                            <td  class="detailLeft"><a  href="#" onClick="gettoShow_Doc_id2('<%=objut.DecodeNewLine(getshowdata)%>', '<%=memID%>', '<%=memURLShowdeatil%>', 'show', 'show2', '<%=rs2.getString(memcolom[0])%>')"><%=rs2.getString(memcoloumShow[y])%></a></td>
+                            <td  class="detailLeft"><a  href="#" onClick="gettoShow_Doc_id2('<%=objut.DecodeNewLine(getshowdata)%>', '<%=memID%>', '<%=memURLShowdeatil%>', 'show', 'show2', '<%=rs2.getString(memcolom[0])%>')" class="link_transparent"><%=rs2.getString(memcoloumShow[y])%></a></td>
                                 <%
                                 } else {
 

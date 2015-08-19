@@ -32,21 +32,21 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel"><b>รหัสExport_id*</b>&nbsp;</td>
-                                <td class="columnobject"><input type='text' name='export_id' size='10' value='' id="export_id" />
+                                <td class="columnobject"><input class='inputs' type="text" name='export_id' size='10' value='' id="export_id" />
                                     &nbsp;<a href='javascript:;' onClick="openBrWindow('mdata_export&stadment=and+status+=+\'Y\'',204,'Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                    <input type='text' name='name_t' size='30' value='' id="name_t" />                              </td>
+                                    <input class='inputs' type="text" name='name_t' size='30' value='' id="name_t" />                              </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">ชื่อTable*</td>
-                              <td class="columnobject"><input name="lookup_name" type="text" id="lookup_name" size="45"></td>
+                              <td class="columnobject"><input name="lookup_name" class='inputs' type="text" id="lookup_name" size="45"></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">ชื่อที่ต้องการให้แสดง*</td>
-                                <td class="columnobject"><input name="param_name" type="text" id="param_name" size="90" alt="ระบุชื่อที่ต้องการแสดงในไฟล์ CSV "></td>
+                                <td class="columnobject"><input name="param_name" class='inputs' type="text" id="param_name" size="90" alt="ระบุชื่อที่ต้องการแสดงในไฟล์ CSV "></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">ชื่อColoumของTable*</td>
-                              <td class="columnobject"><input name="param_value" type="text" id="param_value" size="90" alt="ระบุชื่อColoumของTableให้ตรงกันกับชื่อที่ต้องการให้แสดง"></td>
+                              <td class="columnobject"><input name="param_value" class='inputs' type="text" id="param_value" size="90" alt="ระบุชื่อColoumของTableให้ตรงกันกับชื่อที่ต้องการให้แสดง"></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">ช่องค้นหารหัส/เลขที่เอกสาร</td>
@@ -89,7 +89,7 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                <td class="columnobject"><textarea name='remark' rows='5' cols='40' id="remark"></textarea></td>
+                                <td class="columnobject"><textarea class='text_inputs' name='remark' rows='5' cols='40' id="remark"></textarea></td>
                             </tr>
 
                             <tr>

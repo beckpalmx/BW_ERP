@@ -206,12 +206,12 @@
                                                 this.disabled = true;">&nbsp;-->
                                     <td class="columnobject">
                                         เลขที่เอกสาร&nbsp;
-                                        <input name='doc_id' type='text' id="doc_id" value='' size='10' readonly="readonly"/>
+                                        <input name='doc_id' class='inputs' type="text" id="doc_id" value='' size='10' readonly="readonly"/>
                                         &nbsp;<a href='#' onClick="javascript:openBrWindow('d_wood_fuel_doc&stadment=and+complete_flag+<>+\'Y\'', 115, 'Search_Doc_id_By_DATE.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                         วันที่เอกสาร*&nbsp;
-                                        <input type='text' name='doc_date' size='10' value='' id="doc_date" readonly="readonly" />&nbsp;<a id='date_1' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;
+                                        <input class='inputs' type="text" name='doc_date' size='10' value='' id="doc_date" readonly="readonly" />&nbsp;<a id='date_1' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;
                                         เวลา*&nbsp;
-                                        <input name='doc_time' type='text' id="doc_time" value='' size='10' />                                </td>
+                                        <input name='doc_time' class='inputs' type="text" id="doc_time" value='' size='10' />                                </td>
                                 </tr>
 
                                 <tr>
@@ -272,7 +272,7 @@
                                 <br>
                                 <!--tr>
                                     <td class="columnlabel">&nbsp;</td>
-                                    <td class="columnobject"><textarea name="remark" id="remark" cols="45" rows="2"></textarea></td>
+                                    <td class="columnobject"><textarea class='text_inputs' name="remark" id="remark" cols="45" rows="2"></textarea></td>
                                 </tr-->
 
                                 <tr>

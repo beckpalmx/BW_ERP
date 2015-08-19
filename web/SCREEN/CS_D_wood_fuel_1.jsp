@@ -141,64 +141,64 @@
                             <tr>
                                 <td class="columnlabel">เลขที่ใบชั่ง*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='ticket_text' type='text' id="ticket_text" value='<%=ticket_text%>' size='20' readonly="readonly" />
+                                    <input name='ticket_text' class='inputs' type="text" id="ticket_text" value='<%=ticket_text%>' size='20' readonly="readonly" />
                                 </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">ทะเบียนรถ&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='truck_no' type='text' id="truck_no" value='<%=truck_no%>' size='20' readonly/>                                </td>
+                                    <input name='truck_no' class='inputs' type="text" id="truck_no" value='<%=truck_no%>' size='20' readonly/>                                </td>
                             </tr>
                             <tr>
                                 <td height="21" class="columnlabel">วันที่&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='date_in' type='text' id="date_in" value='<%=date_in%>' size='20' readonly/>                                </td>
+                                    <input name='date_in' class='inputs' type="text" id="date_in" value='<%=date_in%>' size='20' readonly/>                                </td>
                             </tr>                            
                             <tr>
                                 <td height="21" class="columnlabel">เวลาเข้า&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='time_in' type='text' id="time_in" value='<%=time_in%>' size='20' readonly/>                                </td>
+                                    <input name='time_in' class='inputs' type="text" id="time_in" value='<%=time_in%>' size='20' readonly/>                                </td>
                             </tr>                            
                             <tr>
                                 <td height="21" class="columnlabel">เวลาออก&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='time_out' type='text' id="time_out" value='<%=time_out%>' size='20' readonly/>                                </td>
+                                    <input name='time_out' class='inputs' type="text" id="time_out" value='<%=time_out%>' size='20' readonly/>                                </td>
                             </tr>                                   
 
                             <tr>
                                 <td height="21" class="columnlabel">ชื่อผู้ขาย&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='cred_name' type='text' id="cred_name" value='<%=cred_name%>' size='40' readonly/>                                </td>
+                                    <input name='cred_name' class='inputs' type="text" id="cred_name" value='<%=cred_name%>' size='40' readonly/>                                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">ประเภท</td>
-                                <td class="columnobject"><input name="prod_name" type="text" id="prod_name" size="40" value="<%=prod_name%>" readonly></td>
+                                <td class="columnobject"><input name="prod_name" class='inputs' type="text" id="prod_name" size="40" value="<%=prod_name%>" readonly></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">น้ำหนักรถเข้า&nbsp;</td>
-                                <td class="columnobject"><input name='load_in' type='text' id="load_in" value='<%=load_in%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
+                                <td class="columnobject"><input name='load_in' class='inputs' type="text" id="load_in" value='<%=load_in%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
                                     &nbsp;(กิโลกรัม) </td>
                             </tr>                            
                             <tr>
                                 <td class="columnlabel">น้ำหนักรถออก&nbsp;</td>
-                                <td class="columnobject"><input name='load_out' type='text' id="load_out" value='<%=load_out%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
+                                <td class="columnobject"><input name='load_out' class='inputs' type="text" id="load_out" value='<%=load_out%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
                                     &nbsp;(กิโลกรัม) </td>
                             </tr>                            
 
                             <tr>
                                 <td class="columnlabel"><b>น้ำหนักไม้ฟืน</b>&nbsp;</td>
-                                <td class="columnobject"><input name='net_wght' type='text' id="net_wght" value='<%=net_wght%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
+                                <td class="columnobject"><input name='net_wght' class='inputs' type="text" id="net_wght" value='<%=net_wght%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
                                     &nbsp;(กิโลกรัม) </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><b>ราคาต่อหน่วย*</b>&nbsp;</td>
-                                <td class="columnobject"><input name='price_unit' type='text' id="price_unit" value='<%=price_unit%>' onKeyUp="IsNuber(this.value, this)" size='15' />
+                                <td class="columnobject"><input name='price_unit' class='inputs' type="text" id="price_unit" value='<%=price_unit%>' onKeyUp="IsNuber(this.value, this)" size='15' />
                                     &nbsp;(บาท) </td>
                             </tr>
 
                             <tr>
                                 <td class="columnlabel"><b>รวมราคา*</b>&nbsp;</td>
-                                <td class="columnobject"><input name='price_total' type='text' id="price_total" value='<%=price_total%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
+                                <td class="columnobject"><input name='price_total' class='inputs' type="text" id="price_total" value='<%=price_total%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
                                     &nbsp;(บาท)&nbsp; 
                                     <input type="button" class="bwButton_9" id="btnet_weight_payment" value="คำนวณราคารวม" onclick="cal_total_price()">                                        
                                 </td>

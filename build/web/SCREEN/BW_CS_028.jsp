@@ -110,19 +110,19 @@
 
                                     <td width="150" class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
                                     <td width="607" class="columnobject">
-                                        <input name='A_doc_id' type='text' id="A_doc_id" value='' size='15' onBlur="ChkDoc_id();"/>
+                                        <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='15' onBlur="ChkDoc_id();"/>
                                         &nbsp;<a href='#' onClick="OpenDoc_id()"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel"> วันที่เอกสาร*</td>
-                                    <td class="columnobject"><input name='A_doc_date' type='text' id="A_doc_date" value='' size='10' readonly="readonly"/>&nbsp;&nbsp;&nbsp;&nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>&nbsp;&nbsp;ฝ่ายผลิตทีม&nbsp;&nbsp;<%=objuti.ShowSelectBox("select shift_id,name_t from mshift where shift_id in('A','B','A2','B2') order by runno", "shift_id", "name_t", "A_shift")%></td>
+                                    <td class="columnobject"><input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>&nbsp;&nbsp;&nbsp;&nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>&nbsp;&nbsp;ฝ่ายผลิตทีม&nbsp;&nbsp;<%=objuti.ShowSelectBox("select shift_id,name_t from mshift where shift_id in('A','B','A2','B2') order by runno", "shift_id", "name_t", "A_shift")%></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">ผู้ตรวจสอบ*&nbsp;</td>
-                                    <td class="columnobject"><input name='A_approver_id' type='text' id="A_approver_id" value='' size='10' readonly="readonly" />
+                                    <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly="readonly" />
                                         &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee', 28, 'Search_Config2.jsp');" >&nbsp;&nbsp;&nbsp;
-                                        <input name='approver_id_desc' type='text' id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>
+                                        <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">&nbsp;</td>
@@ -134,9 +134,9 @@
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">วัตถุดิบรับเข้าวันที่&nbsp;</td>
-                                    <td class="columnobject"><input name='A_date_chk' type='text' id="A_date_chk" value='' size='10' readonly="readonly"/>
+                                    <td class="columnobject"><input name='A_date_chk' class='inputs' type="text" id="A_date_chk" value='' size='10' readonly="readonly"/>
                                         &nbsp;&nbsp;&nbsp;&nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_date_chk',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_2',singleClick:true,step:1});</script>&nbsp;&nbsp;&nbsp;
-                                        เวลาตรวจสอบ&nbsp;<input name="A_time_chk" type="text" id="A_time_chk"></td>
+                                        เวลาตรวจสอบ&nbsp;<input name="A_time_chk" class='inputs' type="text" id="A_time_chk"></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" align="center"><table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
@@ -160,16 +160,16 @@
                                                 <td class="row3">(5-6.5)</td>
                                             </tr>
                                             <tr>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_1" type="text" id="A_be_1" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_2" type="text" id="A_be_2" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_3" type="text" id="A_be_3" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_4" type="text" id="A_be_4" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_5" type="text" id="A_be_5" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_6" type="text" id="A_be_6" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_m_be" type="text" id="A_m_be" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_m3" type="text" id="A_m3" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_mold" type="text" id="A_mold" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_ph" type="text" id="A_ph" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_1" class='inputs' type="text" id="A_be_1" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_2" class='inputs' type="text" id="A_be_2" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_3" class='inputs' type="text" id="A_be_3" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_4" class='inputs' type="text" id="A_be_4" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_5" class='inputs' type="text" id="A_be_5" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_6" class='inputs' type="text" id="A_be_6" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_m_be" class='inputs' type="text" id="A_m_be" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_m3" class='inputs' type="text" id="A_m3" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_mold" class='inputs' type="text" id="A_mold" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_ph" class='inputs' type="text" id="A_ph" size="10"></td>
                                             </tr>
                                         </table>                              </td>
                                 </tr>
@@ -197,52 +197,52 @@
                                                 <td width="8%" class="row3" align="center">10</td>
                                             </tr>
                                             <tr>
-                                                <td class="row3"><input name="A_s_1" type="text" id="A_s_1" size="7"></td>
-                                                <td class="row3"><input name="A_s_2" type="text" id="A_s_2" size="7"></td>
-                                                <td class="row3"><input name="A_s_3" type="text" id="A_s_3" size="7"></td>
-                                                <td class="row3"><input name="A_s_4" type="text" id="A_s_4" size="7"></td>
-                                                <td class="row3"><input name="A_s_5" type="text" id="A_s_5" size="7"></td>
-                                                <td class="row3"><input name="A_s_6" type="text" id="A_s_6" size="7"></td>
-                                                <td class="row3"><input name="A_s_7" type="text" id="A_s_7" size="7"></td>
-                                                <td class="row3"><input name="A_s_8" type="text" id="A_s_8" size="7"></td>
-                                                <td class="row3"><input name="A_s_9" type="text" id="A_s_9" size="7"></td>
-                                                <td class="row3"><input name="A_s_10" type="text" id="A_s_10" size="7"></td>
+                                                <td class="row3"><input name="A_s_1" class='inputs' type="text" id="A_s_1" size="7"></td>
+                                                <td class="row3"><input name="A_s_2" class='inputs' type="text" id="A_s_2" size="7"></td>
+                                                <td class="row3"><input name="A_s_3" class='inputs' type="text" id="A_s_3" size="7"></td>
+                                                <td class="row3"><input name="A_s_4" class='inputs' type="text" id="A_s_4" size="7"></td>
+                                                <td class="row3"><input name="A_s_5" class='inputs' type="text" id="A_s_5" size="7"></td>
+                                                <td class="row3"><input name="A_s_6" class='inputs' type="text" id="A_s_6" size="7"></td>
+                                                <td class="row3"><input name="A_s_7" class='inputs' type="text" id="A_s_7" size="7"></td>
+                                                <td class="row3"><input name="A_s_8" class='inputs' type="text" id="A_s_8" size="7"></td>
+                                                <td class="row3"><input name="A_s_9" class='inputs' type="text" id="A_s_9" size="7"></td>
+                                                <td class="row3"><input name="A_s_10" class='inputs' type="text" id="A_s_10" size="7"></td>
                                             </tr>
                                             <tr>
                                                 <td class="row3" align="center" >ดีแคนเตอร์</td>
-                                                <td class="row3"><input name="A_d_1" type="text" id="A_d_1" size="7"></td>
-                                                <td class="row3"><input name="A_d_2" type="text" id="A_d_2" size="7"></td>
-                                                <td class="row3"><input name="A_d_3" type="text" id="A_d_3" size="7"></td>
+                                                <td class="row3"><input name="A_d_1" class='inputs' type="text" id="A_d_1" size="7"></td>
+                                                <td class="row3"><input name="A_d_2" class='inputs' type="text" id="A_d_2" size="7"></td>
+                                                <td class="row3"><input name="A_d_3" class='inputs' type="text" id="A_d_3" size="7"></td>
                                                 <td class="row3">ST1-</td>
-                                                <td colspan="2" class="row3"><input name="A_st_1" type="text" id="A_st_1" size="10"></td>
+                                                <td colspan="2" class="row3"><input name="A_st_1" class='inputs' type="text" id="A_st_1" size="10"></td>
                                                 <td class="row3">&nbsp;/ST2-</td>
-                                                <td colspan="2" class="row3"><input name="A_st_2" type="text" id="A_st_2" size="10"></td>
+                                                <td colspan="2" class="row3"><input name="A_st_2" class='inputs' type="text" id="A_st_2" size="10"></td>
                                                 <td >&nbsp;</td>
                                             </tr>
                                             <tr>
                                                 <td class="row3" align="center" >กากสด</td>
-                                                <td colspan="2" class="row3"><input name="A_k_1" type="text" id="A_k_1" size="10">%
+                                                <td colspan="2" class="row3"><input name="A_k_1" class='inputs' type="text" id="A_k_1" size="10">%
                                                     &nbsp;</td>
                                                 <td align="right">ความชื้น&nbsp;</td>
-                                                <td colspan="2" ><input name="A_m_1" type="text" id="A_m_1" size="10">%&nbsp;</td>
+                                                <td colspan="2" ><input name="A_m_1" class='inputs' type="text" id="A_m_1" size="10">%&nbsp;</td>
                                                 <td align="right">คั้น&nbsp;</td>
-                                                <td colspan="2"><input name="A_b_1" type="text" id="A_b_1" size="10">%&nbsp;</td>
+                                                <td colspan="2"><input name="A_b_1" class='inputs' type="text" id="A_b_1" size="10">%&nbsp;</td>
                                                 <td >&nbsp;</td>
                                                 <td >&nbsp;</td>
                                                 <td >&nbsp;</td>
                                             </tr>
                                             <tr>
                                                 <td width="20%" class="row3" align="center" >น้ำล้างวัตถุดิบ</td>
-                                                <td width="8%" class="row3"><input name="A_w_1" type="text" id="A_w_1" size="7"></td>
-                                                <td width="8%" class="row3"><input name="A_w_2" type="text" id="A_w_2" size="7"></td>
-                                                <td width="8%" class="row3"><input name="A_w_3" type="text" id="A_w_3" size="7"></td>
-                                                <td width="8%" class="row3"><input name="A_w_4" type="text" id="A_w_4" size="7"></td>
-                                                <td width="8%" class="row3"><input name="A_w_5" type="text" id="A_w_5" size="7"></td>
-                                                <td width="8%" class="row3"><input name="A_w_6" type="text" id="A_w_6" size="7"></td>
-                                                <td width="8%" class="row3"><input name="A_w_7" type="text" id="A_w_7" size="7"></td>
-                                                <td width="8%" class="row3"><input name="A_w_8" type="text" id="A_w_8" size="7"></td>
-                                                <td width="8%" class="row3"><input name="A_w_9" type="text" id="A_w_9" size="7"></td>
-                                                <td width="8%" class="row3"><input name="A_w_10" type="text" id="A_w_10" size="7"></td>
+                                                <td width="8%" class="row3"><input name="A_w_1" class='inputs' type="text" id="A_w_1" size="7"></td>
+                                                <td width="8%" class="row3"><input name="A_w_2" class='inputs' type="text" id="A_w_2" size="7"></td>
+                                                <td width="8%" class="row3"><input name="A_w_3" class='inputs' type="text" id="A_w_3" size="7"></td>
+                                                <td width="8%" class="row3"><input name="A_w_4" class='inputs' type="text" id="A_w_4" size="7"></td>
+                                                <td width="8%" class="row3"><input name="A_w_5" class='inputs' type="text" id="A_w_5" size="7"></td>
+                                                <td width="8%" class="row3"><input name="A_w_6" class='inputs' type="text" id="A_w_6" size="7"></td>
+                                                <td width="8%" class="row3"><input name="A_w_7" class='inputs' type="text" id="A_w_7" size="7"></td>
+                                                <td width="8%" class="row3"><input name="A_w_8" class='inputs' type="text" id="A_w_8" size="7"></td>
+                                                <td width="8%" class="row3"><input name="A_w_9" class='inputs' type="text" id="A_w_9" size="7"></td>
+                                                <td width="8%" class="row3"><input name="A_w_10" class='inputs' type="text" id="A_w_10" size="7"></td>
                                             </tr>
                                         </table></td>
                                 </tr>

@@ -350,44 +350,44 @@
                                         <tr>
                                             <td width="150" class="columnlabel"><b>เลขที่เอกสาร</b></td>
                                             <td width="607" class="columnobject">
-                                                <input name='A_doc_id' type='text' id="A_doc_id" value='' size='25' readonly/>
+                                                <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='25' readonly/>
                                                 &nbsp;<a href='#' onClick="openBrWindow('vd_product_report_daily_header&stadment=and+complete_flag+<>+\'Y\'', 33, 'Search_Doc_id_33.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                                 วันที่เอกสาร*&nbsp;
-                                                <input name='A_doc_date' type='text' id="A_doc_date" value='' size='10' />
+                                                <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' />
                                                 &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;                                
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">วันที่ส่งหัวมันสด&nbsp;ตั้งแต่</td>
-                                            <td class="columnobject"><input name='A_cassava_date' type='text' id="A_cassava_date" value='' size='10' />
+                                            <td class="columnobject"><input name='A_cassava_date' class='inputs' type="text" id="A_cassava_date" value='' size='10' />
                                                 &nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>&nbsp;&nbsp;ถึง&nbsp;
-                                                <input name='A_cassava_date2' type='text' id="A_cassava_date2" value='' size='10' />
+                                                <input name='A_cassava_date2' class='inputs' type="text" id="A_cassava_date2" value='' size='10' />
                                                 &nbsp;<a id='date_2_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_date2', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2_2', singleClick: true, step: 1});</script>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel"><input type="button" class="cgcButton_9" value="มีจำนวน" onClick="getCalculator();"></td>
-                                            <td class="columnobject"><input name='A_amount_cassava' type='text' id="A_amount_cassava" value='' size='10' />
+                                            <td class="columnobject"><input name='A_amount_cassava' class='inputs' type="text" id="A_amount_cassava" value='' size='10' />
                                                 ตัน&nbsp;&nbsp;&nbsp;%ซื้อ
-                                                <input name='A_percent_tapioca' type='text' id="A_percent_tapioca" value='' size='10'  />
+                                                <input name='A_percent_tapioca' class='inputs' type="text" id="A_percent_tapioca" value='' size='10'  />
                                                 %&nbsp;&nbsp;&nbsp;แป้งที่ควรจะได้
-                                                <input name='A_amount_tapioca' type='text' id="A_amount_tapioca" value='' size='10' />
+                                                <input name='A_amount_tapioca' class='inputs' type="text" id="A_amount_tapioca" value='' size='10' />
                                                 ตัน</td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">หักเปลือกสด</td>
-                                            <td class="columnobject"><input name='A_fresh_skin' type='text' id="A_fresh_skin" value='' size='10' />
+                                            <td class="columnobject"><input name='A_fresh_skin' class='inputs' type="text" id="A_fresh_skin" value='' size='10' />
                                                 ตัน&nbsp;&nbsp;&nbsp;หักเปลือกดิน
-                                                <input name='A_soil_skin' type='text' id="A_soil_skin" value='' size='10' />
+                                                <input name='A_soil_skin' class='inputs' type="text" id="A_soil_skin" value='' size='10' />
                                                 ตัน</td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">จำนวนมันหลังจากหักเปลือก</td>
-                                            <td class="columnobject"><input name='A_total_cassava' type='text' id="A_total_cassava" value='' size='10' />
+                                            <td class="columnobject"><input name='A_total_cassava' class='inputs' type="text" id="A_total_cassava" value='' size='10' />
                                                 ตัน&nbsp;&nbsp;&nbsp;%
-                                                <input name='A_percent_tapioca1' type='text' id="A_percent_tapioca1" value='' size='10' />
+                                                <input name='A_percent_tapioca1' class='inputs' type="text" id="A_percent_tapioca1" value='' size='10' />
                                                 %&nbsp;&nbsp;&nbsp;แป้งที่ควรจะได้
-                                                <input name='A_amount_tapioca1' type='text' id="A_amount_tapioca1" value='' size='10' />
+                                                <input name='A_amount_tapioca1' class='inputs' type="text" id="A_amount_tapioca1" value='' size='10' />
                                                 ตัน</td>
                                         </tr>
 
@@ -424,15 +424,15 @@
                                                         <div align="left" style="width: 100%;"> <table  cellpadding="0"  cellspacing="0"><tr>
                                                                 <tr>
                                                                     <td class="columnlabel">เริ่มโม่มันวันที่&nbsp;</td>
-                                                                    <td class="columnobject"><input name='A_start_m_date' type='text' id="A_start_m_date" value='' size='10' />
+                                                                    <td class="columnobject"><input name='A_start_m_date' class='inputs' type="text" id="A_start_m_date" value='' size='10' />
                                                                         &nbsp;<a id='date_3'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_start_m_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_3', singleClick: true, step: 1});</script>&nbsp;&nbsp;เวลา
-                                                                        <input name="A_start_m_time" type="text" id="A_start_m_time" size="10" onkeypress="Time_picker(this.id)">
+                                                                        <input name="A_start_m_time" class='inputs' type="text" id="A_start_m_time" size="10" onkeypress="Time_picker(this.id)">
                                                                         &nbsp;&nbsp;ถึงวันที่
-                                                                        <input name='A_end_m_date' type='text' id="A_end_m_date" value='' size='10' />
+                                                                        <input name='A_end_m_date' class='inputs' type="text" id="A_end_m_date" value='' size='10' />
                                                                         &nbsp;<a id='date_4'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_end_m_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_4', singleClick: true, step: 1});</script>&nbsp;&nbsp;เวลา
-                                                                        <input name="A_end_m_time" type="text" id="A_end_m_time" size="10" onkeypress="Time_picker(this.id)">
+                                                                        <input name="A_end_m_time" class='inputs' type="text" id="A_end_m_time" size="10" onkeypress="Time_picker(this.id)">
                                                                         &nbsp;&nbsp;<input class="cgcButton_7" type="button" value=" = " id="cal_time1" onclick="Calculator_Time_A('A_start_m_date', 'A_end_m_date', 'A_start_m_time', 'A_end_m_time', 'A_m_time')">
-                                                                        <input name="A_m_time" type="text" id="A_m_time" size="10" readonly>
+                                                                        <input name="A_m_time" class='inputs' type="text" id="A_m_time" size="10" readonly>
                                                                         ซม.</td>
                                                                 </tr>
 
@@ -464,16 +464,16 @@
                                                             </table>
                                                             <div style="width:100%; height: 150px; overflow: auto;" id="show" align="center">                                    </div><div align="center"> <table  cellpadding="0"  cellspacing="0"><tr>
                                                                         <td colspan="2" align="right" >หยุดโม่เป็นเวลารวม
-                                                                            <input name="total_stop_milling_hour" type="text" id="A_total_stop_milling_hour" size="15">
+                                                                            <input name="total_stop_milling_hour" class='inputs' type="text" id="A_total_stop_milling_hour" size="15">
                                                                             ชม.&nbsp;&nbsp;
-                                                                            <input name="total_stop_kw" type="text" id="A_total_stop_kw" size="15">
+                                                                            <input name="total_stop_kw" class='inputs' type="text" id="A_total_stop_kw" size="15">
                                                                             &nbsp;</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">ใช้เวลาโม่เป็นเวลา</td>
-                                                                        <td class="columnobject"><input name="A_total_milling_time" type="text" id="A_total_milling_time" size="15">
+                                                                        <td class="columnobject"><input name="A_total_milling_time" class='inputs' type="text" id="A_total_milling_time" size="15">
                                                                             ชม.&nbsp;&nbsp;&nbsp;อัตราการโม่มันต่อชั่วโมง
-                                                                            <input name="A_milling_ratio" type="text" id="A_milling_ratio" size="15">
+                                                                            <input name="A_milling_ratio" class='inputs' type="text" id="A_milling_ratio" size="15">
                                                                             ตัน/ชม.</td>
                                                                     </tr>
 
@@ -485,15 +485,15 @@
                                                     <div id="tabs-2" ><div align="left" style="width: 100%;"> <table  cellpadding="0"  cellspacing="0"><tr>
                                                                 <tr>
                                                                     <td class="columnlabel">เริ่มอบมันวันที่&nbsp;</td>
-                                                                    <td class="columnobject"><input name='A_start_r_date' type='text' id="A_start_r_date" value='' size='10' />
+                                                                    <td class="columnobject"><input name='A_start_r_date' class='inputs' type="text" id="A_start_r_date" value='' size='10' />
                                                                         &nbsp;<a id='date_5'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_start_r_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_5', singleClick: true, step: 1});</script>&nbsp;&nbsp;เวลา
-                                                                        <input name="A_start_r_time" type="text" id="A_start_r_time" size="10" onkeypress="Time_picker(this.id)">
+                                                                        <input name="A_start_r_time" class='inputs' type="text" id="A_start_r_time" size="10" onkeypress="Time_picker(this.id)">
                                                                         &nbsp;&nbsp;ถึงวันที่
-                                                                        <input name='A_end_r_date' type='text' id="A_end_r_date" value='' size='10' />
+                                                                        <input name='A_end_r_date' class='inputs' type="text" id="A_end_r_date" value='' size='10' />
                                                                         &nbsp;<a id='date_6'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_end_r_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_6', singleClick: true, step: 1});</script>&nbsp;&nbsp;เวลา
-                                                                        <input name="A_end_r_time" type="text" id="A_end_r_time" size="10" onkeypress="Time_picker(this.id)">
+                                                                        <input name="A_end_r_time" class='inputs' type="text" id="A_end_r_time" size="10" onkeypress="Time_picker(this.id)">
                                                                         &nbsp;&nbsp;<input type="button" class="cgcButton_7" value=" = " id="cal_time1" onclick="Calculator_Time_A('A_start_r_date', 'A_end_r_date', 'A_start_r_time', 'A_end_r_time', 'A_r_time')">
-                                                                        <input name="A_r_time" type="text" id="A_r_time" size="10"></td>
+                                                                        <input name="A_r_time" class='inputs' type="text" id="A_r_time" size="10"></td>
                                                                 </tr>
 
                                                                 <!-- ******************  Double ************************* -->
@@ -521,38 +521,38 @@
                                                             </table>
                                                             <div style="width:100%; height: 150px; overflow: auto;" id="show1" align="center">                                    </div><div align="center"> <table  cellpadding="0"  cellspacing="0"><tr>
                                                                         <td colspan="2" align="right">หยุดอบเป็นเวลารวม
-                                                                            <input name="total_stop_roast_hour" type="text" id="total_stop_roast_hour" size="15">
+                                                                            <input name="total_stop_roast_hour" class='inputs' type="text" id="total_stop_roast_hour" size="15">
                                                                             ชม.</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">ใช่เวลาอบเป็นเวลา</td>
-                                                                        <td class="columnobject"><input name="A_total_roast_time" type="text" id="A_total_roast_time" size="15">
+                                                                        <td class="columnobject"><input name="A_total_roast_time" class='inputs' type="text" id="A_total_roast_time" size="15">
                                                                             ชม.</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">ใช้ไฟในการโม่</td>
-                                                                        <td class="columnobject"><input name="A_epower_milling_from" type="text" id="A_epower_milling_from" size="15" onblur="Calculator_Epower_unit()">
+                                                                        <td class="columnobject"><input name="A_epower_milling_from" class='inputs' type="text" id="A_epower_milling_from" size="15" onblur="Calculator_Epower_unit()">
                                                                             &nbsp;&nbsp;&nbsp;ถึง
-                                                                            <input name="A_epower_milling_to" type="text" id="A_epower_milling_to" size="15" onblur="Calculator_Epower_unit()">
+                                                                            <input name="A_epower_milling_to" class='inputs' type="text" id="A_epower_milling_to" size="15" onblur="Calculator_Epower_unit()">
                                                                             &nbsp;=&nbsp;
-                                                                            <input name="A_epower_unit" type="text" id="A_epower_unit" size="15" readonly>
+                                                                            <input name="A_epower_unit" class='inputs' type="text" id="A_epower_unit" size="15" readonly>
                                                                             หน่วย</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">ใช้น้ำ</td>
-                                                                        <td class="columnobject"><input name="A_water_use" type="text" id="A_water_use" size="15">
+                                                                        <td class="columnobject"><input name="A_water_use" class='inputs' type="text" id="A_water_use" size="15">
                                                                             คิว&nbsp;&nbsp;&nbsp;&nbsp;กิโลวัตต์ที่ใช้จริง
-                                                                            <input name="A_kw_use" type="text" id="A_kw_use" size="15" readonly>
+                                                                            <input name="A_kw_use" class='inputs' type="text" id="A_kw_use" size="15" readonly>
                                                                             หน่วย</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">ปริมาณน้ำ/ตันแป้ง</td>
-                                                                        <td class="columnobject"><input name="A_water_per_tapioca" type="text" id="A_water_per_tapioca" size="15" readonly>
+                                                                        <td class="columnobject"><input name="A_water_per_tapioca" class='inputs' type="text" id="A_water_per_tapioca" size="15" readonly>
                                                                             m<sup>3</sup>/hr</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="columnlabel">ปริมาณไฟ/ตันแป้ง</td>
-                                                                        <td class="columnobject"><input name="A_kw_per_tapioca" type="text" id="A_kw_per_tapioca" size="15" readonly>
+                                                                        <td class="columnobject"><input name="A_kw_per_tapioca" class='inputs' type="text" id="A_kw_per_tapioca" size="15" readonly>
                                                                             กิโลวัตต์/ตันแป้ง</td>
                                                                     </tr>
                                                                     <tr>
@@ -583,7 +583,7 @@
                                                             <div align="center"> <table  cellpadding="0"  cellspacing="0">
                                                                     <tr>
                                                                         <td colspan="2" align="right">รวม
-                                                                            <input name="total_raw_weight" type="text" id="total_raw_weight" size="15"></td>
+                                                                            <input name="total_raw_weight" class='inputs' type="text" id="total_raw_weight" size="15"></td>
                                                                     </tr></table></div> </div></div>
                                                     <div id="tabs-4" ><div align="center" style="width: 100%"><table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
                                                                 <tr>
@@ -609,7 +609,7 @@
                                                             <div align="center"> <table  cellpadding="0"  cellspacing="0">
                                                                     <tr>
                                                                         <td colspan="2" align="right">รวม
-                                                                            <input name="total_prd_weight" type="text" id="total_prd_weight" size="15"></td>
+                                                                            <input name="total_prd_weight" class='inputs' type="text" id="total_prd_weight" size="15"></td>
                                                                     </tr>
                                                                 </table></div>
                                                         </div></div>
@@ -619,10 +619,10 @@
                                                                 <tr>
                                                                     <td class="columnlabel">ตัดมันน้ำแป้งของวันที่&nbsp;</td>
                                                                     <td class="columnobject">
-                                                                        <input name="A_starch_date_from" type="text" id="A_starch_date_from" size="15">&nbsp;<a id='date_7'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_starch_date_from', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_7', singleClick: true, step: 1});</script>&nbsp;&nbsp;-
-                                                                        <input name="A_starch_date_to" type="text" id="A_starch_date_to" size="15">&nbsp;<a id='date_8'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_starch_date_to', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_8', singleClick: true, step: 1});</script>&nbsp;&nbsp;
+                                                                        <input name="A_starch_date_from" class='inputs' type="text" id="A_starch_date_from" size="15">&nbsp;<a id='date_7'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_starch_date_from', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_7', singleClick: true, step: 1});</script>&nbsp;&nbsp;-
+                                                                        <input name="A_starch_date_to" class='inputs' type="text" id="A_starch_date_to" size="15">&nbsp;<a id='date_8'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_starch_date_to', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_8', singleClick: true, step: 1});</script>&nbsp;&nbsp;
                                                                         เหลือ<input class="cgcButton_7" type="button" value="ยอดยกมา" onClick="(getId('A_starch_date_from').value != '' || getId('A_starch_date_to').value != '') ? getData_d_rawmatt_receive('../JSP/BW_CS_033.jsp?status_calculator2=6&A_starch_date_from=' + getId('A_starch_date_from').value + '&A_starch_date_to=' + getId('A_starch_date_to').value + '', 'A_starch_balance') : alert('กรุณาเลือกวันที่ตัดมันน้ำแป้ง');">
-                                                                        <input name="A_starch_balance" type="text" id="A_starch_balance" size="15"></td>
+                                                                        <input name="A_starch_balance" class='inputs' type="text" id="A_starch_balance" size="15"></td>
                                                                 </tr>
                                                             </table></div>
                                                         <div align="center" style="width: 100%;"><table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
@@ -647,7 +647,7 @@
                                                             <div align="center"> <table  cellpadding="0"  cellspacing="0">
                                                                     <tr>
                                                                         <td colspan="2" align="right">รวมแป้งแห้ง
-                                                                            <input name="total_starch_weight" type="text" id="total_starch_weight" size="15">
+                                                                            <input name="total_starch_weight" class='inputs' type="text" id="total_starch_weight" size="15">
                                                                             ตัน</td>
                                                                     </tr></table></div> </div></div>
                                                 </div></td>
@@ -660,27 +660,27 @@
                                         <tr>
                                             <td class="columnlabel"><b>ผลผลิตรวมมันของวันที่</b></td>
                                             <td class="columnobject">
-                                                <input name="A_cassava_prd_date" type="text" id="A_cassava_prd_date" size="15" onblur="getId('A_cassava_prd_date').value = getId('A_cassava_date').value">&nbsp;<a id='date_9'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_prd_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_9', singleClick: true, step: 1});</script>&nbsp;-&nbsp;
-                                                <input name="A_cassava_prd_date2" type="text" id="A_cassava_prd_date2" size="15">&nbsp;<a id='date_10'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_prd_date2', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_10', singleClick: true, step: 1});</script>&nbsp;&nbsp;
+                                                <input name="A_cassava_prd_date" class='inputs' type="text" id="A_cassava_prd_date" size="15" onblur="getId('A_cassava_prd_date').value = getId('A_cassava_date').value">&nbsp;<a id='date_9'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_prd_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_9', singleClick: true, step: 1});</script>&nbsp;-&nbsp;
+                                                <input name="A_cassava_prd_date2" class='inputs' type="text" id="A_cassava_prd_date2" size="15">&nbsp;<a id='date_10'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_prd_date2', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_10', singleClick: true, step: 1});</script>&nbsp;&nbsp;
                                                 &nbsp;=&nbsp;
-                                                <input name="A_qty_prd" type="text" id="A_qty_prd" size="15">
+                                                <input name="A_qty_prd" class='inputs' type="text" id="A_qty_prd" size="15">
                                                 ตัน</td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">คิดเป็น   % ผลผลิตที่ได้จริง</td>
-                                            <td class="columnobject"><input name="A_percent_prd" type="text" id="A_percent_prd" size="15">
+                                            <td class="columnobject"><input name="A_percent_prd" class='inputs' type="text" id="A_percent_prd" size="15">
                                                 %</td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">คิดผลต่าง   % ชื้อกับ % ผลผลิต</td>
-                                            <td class="columnobject"><input name="A_percent_diff" type="text" id="A_percent_diff" size="15">
+                                            <td class="columnobject"><input name="A_percent_diff" class='inputs' type="text" id="A_percent_diff" size="15">
                                                 %</td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">%   yield ที่ได้</td>
-                                            <td class="columnobject"><input name="A_percent_yield" type="text" id="A_percent_yield" size="15">
+                                            <td class="columnobject"><input name="A_percent_yield" class='inputs' type="text" id="A_percent_yield" size="15">
                                                 %&nbsp;&nbsp;&nbsp;&nbsp;หรือ
-                                                <input name="A_yield_val" type="text" id="A_yield_val" size="15"></td>
+                                                <input name="A_yield_val" class='inputs' type="text" id="A_yield_val" size="15"></td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel"><b>คิดจากมันที่หักเปลือกแล้ว</b></td>
@@ -688,19 +688,19 @@
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">คิดเป็น   % ผลผลิตที่ได้จริง</td>
-                                            <td class="columnobject"><input name="A_percent_prd1" type="text" id="A_percent_prd1" size="15">
+                                            <td class="columnobject"><input name="A_percent_prd1" class='inputs' type="text" id="A_percent_prd1" size="15">
                                                 %</td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">คิดผลต่าง   % ชื้อกับ % ผลผลิต</td>
-                                            <td class="columnobject"><input name="A_percent_diff1" type="text" id="A_percent_diff1" size="15">
+                                            <td class="columnobject"><input name="A_percent_diff1" class='inputs' type="text" id="A_percent_diff1" size="15">
                                                 %</td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">%   yield ที่ได้</td>
-                                            <td class="columnobject"><input name="A_percent_yield1" type="text" id="A_percent_yield1" size="15">
+                                            <td class="columnobject"><input name="A_percent_yield1" class='inputs' type="text" id="A_percent_yield1" size="15">
                                                 %&nbsp;&nbsp;&nbsp;&nbsp;หรือ
-                                                <input name="A_yield_val1" type="text" id="A_yield_val1" size="15"></td>
+                                                <input name="A_yield_val1" class='inputs' type="text" id="A_yield_val1" size="15"></td>
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">&nbsp;</td>
@@ -708,7 +708,7 @@
                                         </tr>
                                         <tr>
                                             <td class="columnlabel">ผู้รายงาน</td>
-                                            <td class="columnobject"><input name="A_reporter_id" type="text" id="A_reporter_id" size="15">&nbsp;<a onclick="openBrWindow('Vemployee', 22, 'Search_Config2.jsp');" href="#"><img width="20" height="20" align="middle" border="0" name="IMAGE3" alt="ค้นหา" src="../IMAGES/BUTTON/MAIN/SEARCH20.png"/></a><input name="reporter_id_desc" type="text" id="reporter_id_desc" size="30"/></td>
+                                            <td class="columnobject"><input name="A_reporter_id" class='inputs' type="text" id="A_reporter_id" size="15">&nbsp;<a onclick="openBrWindow('Vemployee', 22, 'Search_Config2.jsp');" href="#"><img width="20" height="20" align="middle" border="0" name="IMAGE3" alt="ค้นหา" src="../IMAGES/BUTTON/MAIN/SEARCH20.png"/></a><input name="reporter_id_desc" class='inputs' type="text" id="reporter_id_desc" size="30"/></td>
                                         </tr>
                                         <tr>
                                             <td colspan="2" align="center">&nbsp;</td>

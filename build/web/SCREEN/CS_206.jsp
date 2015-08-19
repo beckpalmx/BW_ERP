@@ -32,14 +32,14 @@
                             <tr>
                                 <td class="columnlabel"><b>รหัสพันธุ์มัน*</b>&nbsp;</td>
                                 <td class="columnobject">
-                                    <input type='text' name='cassava_type_id' size='10' value='' id="cassava_type_id" />
+                                    <input class='inputs' type="text" name='cassava_type_id' size='10' value='' id="cassava_type_id" />
                                     &nbsp;<a href='javascript:;' onClick="openBrWindow('m_cassava_type',206,'Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                    <input type='text' name='name_t' size='30' value='' id="name_t" />
+                                    <input class='inputs' type="text" name='name_t' size='30' value='' id="name_t" />
                                 </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                <td class="columnobject"><textarea name='remark' rows='5' cols='40' id="remark"></textarea></td>
+                                <td class="columnobject"><textarea class='text_inputs' name='remark' rows='5' cols='40' id="remark"></textarea></td>
                             </tr>
 
                             <tr>

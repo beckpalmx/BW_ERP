@@ -332,16 +332,16 @@
                                     <tr>
                                         <td width="150" class="columnlabel"><input type="button" class="cgcButton_8" value="เลขที่เอกสาร" id="bt_run_id" onclick="check_status_doc_id()"></td>
                                         <td width="607" class="columnobject">
-                                            <input name='A_doc_id' type='text' id="A_doc_id" value='' size='40'/>
+                                            <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='40'/>
                                             &nbsp;<a href='javascript:;' onClick="openBrWindow('vd_product_analysis_header&stadment=and+complete_flag+<>+\'Y\'', 32, 'Search_Doc_id.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                             </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">วันที่เอกสาร*&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='A_doc_date' type='text' id="A_doc_date" value='' size='10' readonly />
+                                            <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly />
                                             &nbsp;<a id='date_1' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>
-                                            &nbsp;&nbsp;เวลา<input name="A_doc_time" type="text" id="A_doc_time" size="10">
+                                            &nbsp;&nbsp;เวลา<input name="A_doc_time" class='inputs' type="text" id="A_doc_time" size="10">
                                         </td>
                                     <tr>
                                         <td class="columnlabel">กะ                             </td>
@@ -361,27 +361,27 @@
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ใบแจ้งผลิต</td>
-                                        <td class="columnobject"><input name="A_production_id" type="text" id="A_production_id" size="20">
+                                        <td class="columnobject"><input name="A_production_id" class='inputs' type="text" id="A_production_id" size="20">
                                             &nbsp;<a href='javascript:;' onClick="Open_Job_id();"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                            <input type="text" name="cust_name" id="cust_name" size="30">&nbsp;
-                                            ชื่อย่อลูกค้า<input type="text" id="initial" name="initial" value="">
+                                            <input class='inputs' type="text" name="cust_name" id="cust_name" size="30">&nbsp;
+                                            ชื่อย่อลูกค้า<input class='inputs' type="text" id="initial" name="initial" value="">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">รหัสสินค้า</td>
-                                        <td class="columnobject"><input name='A_product_lot_id' type='text' id="A_product_lot_id" value='' size='10'  />
-                                            &nbsp;&nbsp;<input type="text" name="product_name" id="product_name" value=""></td>
+                                        <td class="columnobject"><input name='A_product_lot_id' class='inputs' type="text" id="A_product_lot_id" value='' size='10'  />
+                                            &nbsp;&nbsp;<input class='inputs' type="text" name="product_name" id="product_name" value=""></td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel"><p>LOT.NO.</p></td>
-                                        <td class="columnobject"><input name="A_lot_no" type="text" id="A_lot_no" size="10">
+                                        <td class="columnobject"><input name="A_lot_no" class='inputs' type="text" id="A_lot_no" size="10">
                                             &nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input name="A_size" type="text" id="A_size" size="20">
+                                            <input name="A_size" class='inputs' type="text" id="A_size" size="20">
                                             กก.</td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">กระสอบที่</td>
-                                        <td class="columnobject"><input name="A_bag_no" type="text" id="A_bag_no" size="10"></td>
+                                        <td class="columnobject"><input name="A_bag_no" class='inputs' type="text" id="A_bag_no" size="10"></td>
                                     </tr>
                                     <tr>
                                         <td colspan='2' class='blankspace'></td>
@@ -440,7 +440,7 @@
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                        <td class="columnobject"><textarea name='A_remark' cols='80' rows='5' id="A_remark"></textarea></td>
+                                        <td class="columnobject"><textarea class='text_inputs' name='A_remark' cols='80' rows='5' id="A_remark"></textarea></td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">&nbsp;</td>
@@ -462,9 +462,9 @@
                                     </tr>
                                     <tr>
                                         <td class="columnlabel"><p>ผู้ตรวจสอบ</p></td>
-                                        <td class="columnobject"><input name='A_approver_id' type='text' id="A_approver_id" value='' size='10' readonly />
+                                        <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly />
                                             &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee',32, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input name='approver_id_desc' type='text' id="approver_id_desc" value='' size='30' readonly/></td>
+                                            <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly/></td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">&nbsp;</td>

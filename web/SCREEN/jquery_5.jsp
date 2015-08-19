@@ -20,8 +20,8 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<input type="text" id="txt1">
-<input type="text" id="txt2">
+<input class='inputs' type="text" id="txt1">
+<input class='inputs' type="text" id="txt2">
 <div id="div1"></div>
 <input type="button" id="btn1" value="Load">
 </body>

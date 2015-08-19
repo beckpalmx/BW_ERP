@@ -173,37 +173,37 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel">จากวันที่</td>
-                                <td class="columnobject"><input name="A_sm_from_date" type="text" id="A_sm_from_date" size="10" value="<%=sm_from_date%>">
+                                <td class="columnobject"><input name="A_sm_from_date" class='inputs' type="text" id="A_sm_from_date" size="10" value="<%=sm_from_date%>">
                                     &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_sm_from_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
                                     &nbsp;&nbsp;จากเวลา
-                                    <input name="A_sm_from_time" type="text" id="A_sm_from_time" size="10" value="<%=sm_from_time%>" onkeypress="Time_picker(this.id)" onblur="Check_Time_Value(this)"></td>
+                                    <input name="A_sm_from_time" class='inputs' type="text" id="A_sm_from_time" size="10" value="<%=sm_from_time%>" onkeypress="Time_picker(this.id)" onblur="Check_Time_Value(this)"></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">ถึงวันที่&nbsp;</td>
-                                <td class="columnobject"><input name='A_sm_to_date' type='text' id="A_sm_to_date" value='<%=sm_to_date%>' size='10' />
+                                <td class="columnobject"><input name='A_sm_to_date' class='inputs' type="text" id="A_sm_to_date" value='<%=sm_to_date%>' size='10' />
                                     &nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_sm_to_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>
                                     &nbsp;&nbsp;ถึงเวลา
-                                    <input name="A_sm_to_time" type="text" id="A_sm_to_time" size="10" value="<%=sm_to_time%>">
+                                    <input name="A_sm_to_time" class='inputs' type="text" id="A_sm_to_time" size="10" value="<%=sm_to_time%>">
                                     &nbsp;</td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">จำนวนชั่วโมง*</td>
-                                <td class="columnobject"><input name="A_sm_stop_hour" type="text" id="A_sm_stop_hour" size="10" value="<%=sm_stop_hour%>" ></td>
+                                <td class="columnobject"><input name="A_sm_stop_hour" class='inputs' type="text" id="A_sm_stop_hour" size="10" value="<%=sm_stop_hour%>" ></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">กิโลวัตต์ที่เริ่ม*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='A_kw_start' type='text' id="A_kw_start" value='<%=kw_start%>' size='10' onblur="cal_total();"/>
+                                    <input name='A_kw_start' class='inputs' type="text" id="A_kw_start" value='<%=kw_start%>' size='10' onblur="cal_total();"/>
                                     &nbsp;&nbsp;</td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">กิโลวัตต์ที่สิ้นสุด*&nbsp;</td>
-                                <td class="columnobject"><input name='A_kw_end' type='text' id="A_kw_end" value='<%=kw_end%>' size='10' onblur="cal_total();"/>
+                                <td class="columnobject"><input name='A_kw_end' class='inputs' type="text" id="A_kw_end" value='<%=kw_end%>' size='10' onblur="cal_total();"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">กิโลวัตต์รวม</td>
-                                <td class="columnobject"><input name="A_kw_rest" type="text" id="A_kw_rest" size="10" value="<%=kw_rest%>">
+                                <td class="columnobject"><input name="A_kw_rest" class='inputs' type="text" id="A_kw_rest" size="10" value="<%=kw_rest%>">
                                     <input type="button" class="cgcButton_9" id="btnet_weight_payment" value="คำนวณ" onclick="cal_total()">                                        
                                 </td>
                             </tr>

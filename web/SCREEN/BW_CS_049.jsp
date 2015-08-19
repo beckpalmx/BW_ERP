@@ -237,58 +237,58 @@
                                     <tr>
                                         <td class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='doc_id' type='text' id="doc_id" value='' size='10' />
+                                            <input name='doc_id' class='inputs' type="text" id="doc_id" value='' size='10' />
                                             &nbsp;<a href='#' onClick="openBrWindow('vd_requisition_product_header&stadment=and+complete_flag+<>+\'Y\'+and+count_send_complete+=+\'0\'', 42, '../JSP/Search_Doc_id.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                             <a href='#' title="ค้นหาข้อมูลที่ทำเบิกสินค้าเพื่อส่งออกที่กลับมาแก้ไข" onClick="openBrWindow('vd_requisition_product_header&stadment=and+complete_flag+<>+\'Y\'+and+count_send_complete+<>+\'0\'', 42, '../JSP/Search_Doc_id.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหาข้อมูลที่ทำเบิกสินค้าเพื่อส่งออกที่กลับมาแก้ไข' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>
                                             วันที่เอกสาร*&nbsp;
-                                            <input name='doc_date' type='text' id="doc_date" value='' size='10' readonly="readonly"/>
+                                            <input name='doc_date' class='inputs' type="text" id="doc_date" value='' size='10' readonly="readonly"/>
                                             &nbsp;<a id='date_1' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>&nbsp;&nbsp;
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ใบแจ้งการผลิต*&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='job_id' type='text' id="job_id" value='' size='10' readonly="readonly" /><input type="hidden" name="cust_id" id="cust_id" value=""/>
-                                            &nbsp;<a href='#' onClick="openBrWindow('Vd_job_order_header&stadment=and+complete_flag+<>+\'Y\'', 42, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='job_id_desc' type='text' id="job_id_desc" value='' size='30' readonly="readonly"/>
+                                            <input name='job_id' class='inputs' type="text" id="job_id" value='' size='10' readonly="readonly" /><input type="hidden" name="cust_id" id="cust_id" value=""/>
+                                            &nbsp;<a href='#' onClick="openBrWindow('Vd_job_order_header&stadment=and+complete_flag+<>+\'Y\'', 42, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='job_id_desc' class='inputs' type="text" id="job_id_desc" value='' size='30' readonly="readonly"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ที่อยู่ลูกค้า&nbsp;</td>
                                         <td class="columnobject">
-                                            <textarea name='cust_address_desc' cols='40' rows='5' id="cust_address_desc" readonly="readonly"></textarea>
+                                            <textarea class='text_inputs' name='cust_address_desc' cols='40' rows='5' id="cust_address_desc" readonly="readonly"></textarea>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ประเทศ&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='cust_country_desc' type='text' id="cust_country_desc" value='' size='30' readonly="readonly"/>
+                                            <input name='cust_country_desc' class='inputs' type="text" id="cust_country_desc" value='' size='30' readonly="readonly"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ใบสั่งซื้อ&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='po_no_desc' type='text' id="po_no_desc" value='' size='30' />
+                                            <input name='po_no_desc' class='inputs' type="text" id="po_no_desc" value='' size='30' />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ITEM*&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='item_id' type='text' id="item_id" value='' size='10' />
+                                            <input name='item_id' class='inputs' type="text" id="item_id" value='' size='10' />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">คลังจ่าย&nbsp;</td>
                                         <td class="columnobject"><input type="hidden" size="10" id="wh_in" name="wh_in" value="<%=objs_p.getWarehouse_begin_id()%>" >
-                                            <input type="text" size="20"  id="wh_in_desc" name="wh_in_desc" value="<%=objs_p.getWarehouse_begin_name()%>">
+                                            <input class='inputs' type="text" size="20"  id="wh_in_desc" name="wh_in_desc" value="<%=objs_p.getWarehouse_begin_name()%>">
                                             <a href='#' onClick="openBrWindow('Wh_bg&stadment=and+warehouse_id+=+\'<%=objs_p.getWarehouse_begin_id()%>\'', 23, '../JSP/Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a> &nbsp;&nbsp;&nbsp;คลังรับ&nbsp;
                                             <input type="hidden" size="10"  id="wh_out" name="wh_out" value="<%=objs_p.getWarehouse_end_id()%>">
-                                            <input type="text"  size="20"  id="wh_out_desc" name="wh_out_desc" value="<%=objs_p.getWarehouse_end_name()%>">
+                                            <input class='inputs' type="text"  size="20"  id="wh_out_desc" name="wh_out_desc" value="<%=objs_p.getWarehouse_end_name()%>">
                                             <a href='#' onClick="openBrWindow('Wh_en&stadment=and+warehouse_id+=+\'<%=objs_p.getWarehouse_end_id()%>\'', 23, '../JSP/Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a></td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">Container No.&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='contain_no' type='text' id="contain_no" value='' size='10' />
+                                            <input name='contain_no' class='inputs' type="text" id="contain_no" value='' size='10' />
                                             &nbsp;&nbsp;
                                             ประเภทตู้&nbsp;
                                             <select name='contain_type' id="contain_type">
@@ -298,7 +298,7 @@
                                     <tr>
                                         <td class="columnlabel">Seal No.&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='seal_no' type='text' id="seal_no" value='' size='10' />
+                                            <input name='seal_no' class='inputs' type="text" id="seal_no" value='' size='10' />
                                             &nbsp;&nbsp;
                                             ประเภทไม้พาเลท&nbsp;
                                             <select name='palate_type' id="palate_type">
@@ -308,28 +308,28 @@
                                     <tr>
                                         <td class="columnlabel">ผู้อนุมัติ*&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='approver' type='text' id="approver" value='' size='10' readonly="readonly"/>
-                                            &nbsp;<a href='#' onClick="javascript:openBrWindow('Vemployee', 42, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE4' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='approver_desc' type='text' id="approver_desc" value='' size='30' readonly="readonly"/>
+                                            <input name='approver' class='inputs' type="text" id="approver" value='' size='10' readonly="readonly"/>
+                                            &nbsp;<a href='#' onClick="javascript:openBrWindow('Vemployee', 42, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE4' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='approver_desc' class='inputs' type="text" id="approver_desc" value='' size='30' readonly="readonly"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ผู้จ่ายสินค้า*&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='payment_prod' type='text' id="payment_prod" value='' size='10' readonly="readonly"/>
-                                            &nbsp;<a href='#' onClick="javascript:openBrWindow('Vemployee1', 42, '../JSP/Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE5' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='payment_prod_desc' type='text' id="payment_prod_desc" value='' size='30' readonly="readonly"/>
+                                            <input name='payment_prod' class='inputs' type="text" id="payment_prod" value='' size='10' readonly="readonly"/>
+                                            &nbsp;<a href='#' onClick="javascript:openBrWindow('Vemployee1', 42, '../JSP/Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE5' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='payment_prod_desc' class='inputs' type="text" id="payment_prod_desc" value='' size='30' readonly="readonly"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ผู้รับสินค้า*&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='receiver' type='text' id="receiver" value='' size='10' readonly="readonly"/>
-                                            &nbsp;<a href='#' onClick="javascript:openBrWindow('Vemployee2', 42, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE6' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='receiver_desc' type='text' id="receiver_desc" value='' size='30' readonly="readonly"/>
+                                            <input name='receiver' class='inputs' type="text" id="receiver" value='' size='10' readonly="readonly"/>
+                                            &nbsp;<a href='#' onClick="javascript:openBrWindow('Vemployee2', 42, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE6' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='receiver_desc' class='inputs' type="text" id="receiver_desc" value='' size='30' readonly="readonly"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ทะเบียนรถ&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='car_no' type='text' id="car_no" value='' size='10' />
+                                            <input name='car_no' class='inputs' type="text" id="car_no" value='' size='10' />
                                         </td>
                                     </tr>
                                     <tr>
@@ -365,7 +365,7 @@
                                     <tr>
                                         <td colspan="2" align="right">
                                             น้ำหนักรวม*&nbsp;
-                                            <input name='net_weight' type='text' id="net_weight" value='0' size='10' />
+                                            <input name='net_weight' class='inputs' type="text" id="net_weight" value='0' size='10' />
                                             &nbsp;(Kg)
                                             <input name='net_weight_chk' type='hidden' id="net_weight_chk" value='0' size='10' />
 

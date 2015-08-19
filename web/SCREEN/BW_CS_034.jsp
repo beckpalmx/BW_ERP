@@ -170,22 +170,22 @@
                                 <td class="columnlabel">
                                     <input name="runner" id="runner" type="button" value="เลขที่เอกสาร" onclick="AjaxRun_id('doc_id', '../JSP/CS_115.jsp?runer_id=1');this.disabled=true;">
                                 <td class="columnobject">
-                                    <input name='doc_id' type='text' id="doc_id" value='' size='10' />
+                                    <input name='doc_id' class='inputs' type="text" id="doc_id" value='' size='10' />
                                     &nbsp;<a href='#' onClick="javascript:openBrWindow('d_adjust_product_header&stadment=and+complete_flag+<>+\'Y\'',115,'Search_Doc_id.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
 	          		วันที่เอกสาร*&nbsp;
-                                    <input type='text' name='doc_date' size='10' value='' id="doc_date" readonly="readonly" />&nbsp;<a id='date_1' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>&nbsp;&nbsp;
+                                    <input class='inputs' type="text" name='doc_date' size='10' value='' id="doc_date" readonly="readonly" />&nbsp;<a id='date_1' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>&nbsp;&nbsp;
 	          		เวลา*&nbsp;
-                                    <input name='doc_time' type='text' id="doc_time" value='' size='10' />                                </td>
+                                    <input name='doc_time' class='inputs' type="text" id="doc_time" value='' size='10' />                                </td>
                             </tr>
                             <!--<tr>
                                 <td class="columnlabel">คลังสินค้า&nbsp;</td>
-                                <td class="columnobject"><input type="text" size="10" id="wh_in" name="wh_in" value="" ><a href='#' onClick="openBrWindow('Wh_bg', 23, '../JSP/Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>
-                                  <input type="text" size="20"  id="wh_in_desc" name="wh_in_desc" value="">
+                                <td class="columnobject"><input class='inputs' type="text" size="10" id="wh_in" name="wh_in" value="" ><a href='#' onClick="openBrWindow('Wh_bg', 23, '../JSP/Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>
+                                  <input class='inputs' type="text" size="20"  id="wh_in_desc" name="wh_in_desc" value="">
                                   </td>
                           </tr>
                             <tr>
                               <td class="columnlabel">เลขที่กอง</td>
-                              <td class="columnobject"><input name='work_type' type='text' id="work_type" value='' size='10' /></td>
+                              <td class="columnobject"><input name='work_type' class='inputs' type="text" id="work_type" value='' size='10' /></td>
                             </tr>-->
                             <tr>
                               <td class="columnlabel">&nbsp;</td>
@@ -197,7 +197,7 @@
                             </tr>
                             <tr>
                               <td class="columnlabel">&nbsp;</td>
-                              <td class="columnobject"><textarea name="remark" id="remark" cols="45" rows="5"></textarea></td>
+                              <td class="columnobject"><textarea class='text_inputs' name="remark" id="remark" cols="45" rows="5"></textarea></td>
                             </tr>
 
                             <tr>

@@ -194,20 +194,20 @@
 
                                         <td width="150" class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
                                         <td width="607" class="columnobject">
-                                            <input name='A_doc_id' type='text' id="A_doc_id" value='' size='15' />
+                                            <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='15' />
                                             &nbsp;<a href='#' onClick="OpenDoc_id('N')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                             &nbsp;<a href='#' onClick="OpenDoc_id('Y')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                             วันที่เอกสาร*&nbsp;
-                                            <input name='A_doc_date' type='text' id="A_doc_date" value='' size='10' readonly="readonly"/>
+                                            <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>
                                             &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>
                                             &nbsp;&nbsp;เวลา*
-                                            <input name='A_doc_time' type='text' id="A_doc_time" value='' size='10' maxlength="5" /></td>
+                                            <input name='A_doc_time' class='inputs' type="text" id="A_doc_time" value='' size='10' maxlength="5" /></td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">แผนกผู้เบิก*&nbsp;</td>
                                         <td class="columnobject">
-                                            <input name='A_dp_id' type='text' id="A_dp_id" value='' size='10' readonly="readonly" />
-                                            &nbsp;&nbsp;&nbsp;<!--<a href='#' onClick="openBrWindow('Vemployee', 27, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;--><input name='dp_id_desc' type='text' id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
+                                            <input name='A_dp_id' class='inputs' type="text" id="A_dp_id" value='' size='10' readonly="readonly" />
+                                            &nbsp;&nbsp;&nbsp;<!--<a href='#' onClick="openBrWindow('Vemployee', 27, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;--><input name='dp_id_desc' class='inputs' type="text" id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ทำการยืนยันเอกสาร*&nbsp;</td>
@@ -243,15 +243,15 @@
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ผู้ส่งสินค้า</td>
-                                        <td class="columnobject"><input name='A_reporter_id' type='text' id="A_reporter_id" value='' size='10' readonly="readonly" />
+                                        <td class="columnobject"><input name='A_reporter_id' class='inputs' type="text" id="A_reporter_id" value='' size='10' readonly="readonly" />
                                             &nbsp;&nbsp;&nbsp;<!--<a href='#' onClick="openBrWindow('Vemployee', 27, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;-->
-                                            <input name='reporter_id_desc' type='text' id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
+                                            <input name='reporter_id_desc' class='inputs' type="text" id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ผู้อนุมัติ</td>
-                                        <td class="columnobject"><input name='A_approver_id' type='text' id="A_approver_id" value='' size='10' readonly="readonly" />
+                                        <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly="readonly" />
                                             &nbsp;&nbsp;&nbsp;<!--<a href='#' onClick="openBrWindow('Vemployee', 27, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;-->
-                                            <input name='approver_id_desc' type='text' id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>
+                                            <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">แผนกคลังสินค้า</td>
@@ -259,15 +259,15 @@
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ตรวจนับสินค้า                                 </td>
-                                        <td class="columnobject"><input name='A_wh_leader_id' type='text' id="A_wh_leader_id" value='' size='10' readonly="readonly" />
+                                        <td class="columnobject"><input name='A_wh_leader_id' class='inputs' type="text" id="A_wh_leader_id" value='' size='10' readonly="readonly" />
                                             &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee2', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
-                                            <input name='wh_leader_id_desc' type='text' id="wh_leader_id_desc" value='' size='30' readonly="readonly" />หัวหน้าคลังสินค้า</td>
+                                            <input name='wh_leader_id_desc' class='inputs' type="text" id="wh_leader_id_desc" value='' size='30' readonly="readonly" />หัวหน้าคลังสินค้า</td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ผู้อนุมัติ </td>
-                                        <td class="columnobject"><input name='A_account_id' type='text' id="A_account_id" value='' size='10' readonly="readonly" />
+                                        <td class="columnobject"><input name='A_account_id' class='inputs' type="text" id="A_account_id" value='' size='10' readonly="readonly" />
                                             &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee3', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
-                                            <input name='account_id_desc' type='text' id="account_id_desc" value='' size='30' readonly="readonly" />หัวหน้าแผนกบัญชี/คลังสินค้า</td>
+                                            <input name='account_id_desc' class='inputs' type="text" id="account_id_desc" value='' size='30' readonly="readonly" />หัวหน้าแผนกบัญชี/คลังสินค้า</td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" align="right"></td>

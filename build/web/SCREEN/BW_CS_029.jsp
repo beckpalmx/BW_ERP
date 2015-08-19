@@ -233,10 +233,10 @@
 
                                         <td width="150" class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
                                         <td width="607" class="columnobject">
-                                            <input name='A_doc_id' type='text' id="A_doc_id" value='' size='15' />
+                                            <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='15' />
                                             &nbsp;<a href='#' onClick="OpenDoc_id()"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                             วันที่เอกสาร*&nbsp;
-                                            <input name='A_doc_date' type='text' id="A_doc_date" value='' size='10' readonly="readonly"/>
+                                            <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>
                                             &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>
                                             &nbsp;&nbsp;ประเภทแป้ง<select id="A_p_type" name="A_p_type"><option value="P">แป้งแห้ง</option><option value="R">แป้งถ่าย</option></select></td>
                                     </tr>

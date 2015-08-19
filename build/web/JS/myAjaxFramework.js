@@ -55,6 +55,7 @@ function getSave(array)//การส่งข้อมูลแบบ Ajax
                         confirmDialogEdit(array);
                     } else {
                         if (al !== "") {
+                            alert(al);
                             ResetParameter(IDname);
                         } else {
                             ResetParameter(IDname);

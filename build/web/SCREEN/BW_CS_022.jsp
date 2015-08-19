@@ -421,7 +421,7 @@
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">หมายเหตุ&nbsp;</td>
-                                    <td colspan="3" class="columnobject"><textarea class='text_inputs' name='A_remark' cols='40' rows='5' id="A_remark" ></textarea></td>
+                                    <td colspan="3" class="columnobject"><textarea class='text_inputs' class='text_inputs' name='A_remark' cols='40' rows='5' id="A_remark" ></textarea></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">ผู้รายงาน</td>

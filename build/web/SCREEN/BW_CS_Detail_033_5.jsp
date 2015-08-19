@@ -139,42 +139,42 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel">ตัดมันของวันที่</td>
-                                <td class="columnobject"><input name="A_cassava_of_date" type="text" id="A_cassava_of_date" size="15" value ="<%=cassava_of_date%>">&nbsp;<a id='date_8'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_cassava_of_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_8',singleClick:true,step:1});</script>
+                                <td class="columnobject"><input name="A_cassava_of_date" class='inputs' type="text" id="A_cassava_of_date" size="15" value ="<%=cassava_of_date%>">&nbsp;<a id='date_8'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_cassava_of_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_8',singleClick:true,step:1});</script>
                                     &nbsp;&nbsp;&nbsp;&nbsp;มีน้ำแป้งเหลือ
-                                    <input name="A_starch_bal" type="text" id="A_starch_bal" size="15" onblur="Calculator_starch();" value="<%=starch_bal%>">
+                                    <input name="A_starch_bal" class='inputs' type="text" id="A_starch_bal" size="15" onblur="Calculator_starch();" value="<%=starch_bal%>">
                                     &nbsp;x&nbsp;จำนวนถัง
-                                    <input name="A_qty_tank" type="text" id="A_qty_tank" size="15" onblur="Calculator_starch();" value="<%=qty_tank%>">
+                                    <input name="A_qty_tank" class='inputs' type="text" id="A_qty_tank" size="15" onblur="Calculator_starch();" value="<%=qty_tank%>">
                                     ถัง</td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><p>คิดเป็นลิตร ต่อ ถัง</p></td>
-                                <td class="columnobject"><input name="A_starch_bal_x_qty_tank" type="text" id="A_starch_bal_x_qty_tank" size="15" value ="<%=starch_bal_x_qty_tank%>">
+                                <td class="columnobject"><input name="A_starch_bal_x_qty_tank" class='inputs' type="text" id="A_starch_bal_x_qty_tank" size="15" value ="<%=starch_bal_x_qty_tank%>">
                                     &nbsp;x&nbsp;2,200&nbsp;=&nbsp;
-                                    <input name="A_qty_litr" type="text" id="A_qty_litr" size="15" value="<%=qty_starch%>">ลิตร</td>
+                                    <input name="A_qty_litr" class='inputs' type="text" id="A_qty_litr" size="15" value="<%=qty_starch%>">ลิตร</td>
                             </tr>
                             <!--<tr>
                                 <td class="columnlabel">ถังที่*</td>
-                                <td class="columnobject"><input name="A_tank" type="text" id="A_tank" size="10" value=""></td>
+                                <td class="columnobject"><input name="A_tank" class='inputs' type="text" id="A_tank" size="10" value=""></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">จำนวนลิตร*&nbsp;</td>
-                                <td class="columnobject"><input name='A_qty_starch' type='text' id="A_qty_starch" value='' size='10' />
+                                <td class="columnobject"><input name='A_qty_starch' class='inputs' type="text" id="A_qty_starch" value='' size='10' />
                                     &nbsp;</td>
                             </tr>-->
                             <tr>
                                 <td class="columnlabel">ค่าBe'*</td>
-                                <td class="columnobject"><input name="A_be_val" type="text" id="A_be_val" size="10" value="<%=be_val%>"><a href='#' onClick="openBrWindow('m_sg_config', 33, 'Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;</td>
+                                <td class="columnobject"><input name="A_be_val" class='inputs' type="text" id="A_be_val" size="10" value="<%=be_val%>"><a href='#' onClick="openBrWindow('m_sg_config', 33, 'Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;</td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">ค่าS.G.*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='A_sg_val' type='text' id="A_sg_val" value='<%=sg_val%>' size='10' />
+                                    <input name='A_sg_val' class='inputs' type="text" id="A_sg_val" value='<%=sg_val%>' size='10' />
                                     &nbsp;&nbsp;</td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">รวมแป้งแห้ง&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='A_amount' type='text' id="A_amount" value='<%=amount%>' size='10' onblur="Amount();"/>                                </td>
+                                    <input name='A_amount' class='inputs' type="text" id="A_amount" value='<%=amount%>' size='10' onblur="Amount();"/>                                </td>
                             </tr>
 
                             <tr>

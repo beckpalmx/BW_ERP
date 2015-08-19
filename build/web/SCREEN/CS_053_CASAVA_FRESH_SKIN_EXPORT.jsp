@@ -121,18 +121,18 @@
                                     <td colspan='4'><b>กำหนดเงื่อนไข <span class="ftopcenter">Export ข้อมูลกากสด</span></b></td>
                                 </tr>
                                 <!--<tr>
-                                    <td width="158" class='columnlabel'>ชื่อข้อมูลที่&nbsp;Export</td><td colspan="3" class='columnobject'><input name='export_id' class='inputs' type='text' id="export_id" value='' size="20" />
+                                    <td width="158" class='columnlabel'>ชื่อข้อมูลที่&nbsp;Export</td><td colspan="3" class='columnobject'><input name='export_id' class='inputs' class='inputs' type="text" id="export_id" value='' size="20" />
                                         &nbsp;<a href='javascript:;' onClick="openBrWindow('mdata_export&stadment=and+status+=+\'Y\'', 53, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' /></a>
-                                        <input name='export_id_desc' class='inputs' type='text' id="export_id_desc" value='' size="30" />
+                                        <input name='export_id_desc' class='inputs' class='inputs' type="text" id="export_id_desc" value='' size="30" />
                                     </td>
                                 </tr>*-->
 
                                 <tr>
-                                    <td class='columnlabel'>วันที่เอกสารเริ่มต้น&nbsp;</td><td width="182" class='columnobject'><input name='date_from' class='inputs' type='text' id="date_from" value='' size="20" readonly="true"/>
+                                    <td class='columnlabel'>วันที่เอกสารเริ่มต้น&nbsp;</td><td width="182" class='columnobject'><input name='date_from' class='inputs' class='inputs' type="text" id="date_from" value='' size="20" readonly="true"/>
                                         &nbsp;<a id='date_1' href="javascript:;"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a></td>
                                     <td width="150" class='columnlabel'><script type='text/javascript'>Calendar.setup({inputField: 'date_from', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
                                         วันที่เอกสารสิ้นสุด&nbsp;</td>
-                                    <td width="267" class='columnobject'><input name='date_to' class='inputs' type='text' id="date_to" value='' size="20" readonly="true"/>
+                                    <td width="267" class='columnobject'><input name='date_to' class='inputs' class='inputs' type="text" id="date_to" value='' size="20" readonly="true"/>
                                         &nbsp;<a id='date_2' href="javascript:;"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                         <script type='text/javascript'>Calendar.setup({inputField: 'date_to', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script></td>
                                 </tr>           
@@ -140,10 +140,10 @@
                                 <tr>
                                     <td class="columnlabel">รหัสลูกค้า : &nbsp;</td>
                                     <td class="columnobject">
-                                        <input class='inputs' type='text' name="cust_code" size='15' value='' id="cust_code"/>                                        
+                                        <input class='inputs' class='inputs' type="text" name="cust_code" size='15' value='' id="cust_code"/>                                        
                                         <a href='javascript:;'><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' onClick="openBrWindow('vcustomer', 16, 'Search_Config2.jsp')" ></a>
                                         <label>
-                                            <input name="name_t" class='inputs' type='text' id="name_t" size="50">
+                                            <input name="name_t" class='inputs' class='inputs' type="text" id="name_t" size="50">
                                         </label></td>
                                 </tr>                                
 

@@ -31,17 +31,17 @@
                             </tr>
                             <tr>
                               <td class="columnlabel"><b>ค่า Be'*</b>&nbsp;</td>
-                              <td class="columnobject"><input type='text' name='be' size='10' value='' id="be" />
+                              <td class="columnobject"><input class='inputs' type="text" name='be' size='10' value='' id="be" />
                                 &nbsp;<a href='javascript:;' onClick="openBrWindow('m_sg_config',204,'Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                               </td>
                             </tr>
                             <tr>
                               <td class="columnlabel"><b>ค่า S.G.'*</b>&nbsp;</td>
-                              <td class="columnobject"><input type='text' name='sg' size='10' value='' id="sg" /></td>
+                              <td class="columnobject"><input class='inputs' type="text" name='sg' size='10' value='' id="sg" /></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                <td class="columnobject"><textarea name='remark' rows='5' cols='40' id="remark"></textarea></td>
+                                <td class="columnobject"><textarea class='text_inputs' name='remark' rows='5' cols='40' id="remark"></textarea></td>
                             </tr>
 
                             <tr>

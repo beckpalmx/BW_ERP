@@ -132,8 +132,8 @@
                             <tr>
                                 <td class="columnlabel">รหัสสินค้า*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='product_id' type='text' id="product_id" value='<%=product_id%>' size='10' />
-                                    <input type="text" name="product_id_desc" id="product_id_desc" value="<%=product_name%>"></td>
+                                    <input name='product_id' class='inputs' type="text" id="product_id" value='<%=product_id%>' size='10' />
+                                    <input class='inputs' type="text" name="product_id_desc" id="product_id_desc" value="<%=product_name%>"></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">กะ</td>
@@ -143,33 +143,33 @@
                             <tr>
                                 <td class="columnlabel"><span class="row3">คลังสินค้า&nbsp;</span></td>
                                 <td class="columnobject">
-                                    <input name="A_wh_in" type="text" id="A_wh_in" size="10" value="<%=wh_in%>" readonly> <a href="#">
+                                    <input name="A_wh_in" class='inputs' type="text" id="A_wh_in" size="10" value="<%=wh_in%>" readonly> <a href="#">
                                         <img height="20" border="0" align="middle" width="20" src="../IMAGES/BUTTON/MAIN/SEARCH20.png" alt="ค้นหา" name="IMAGE4" onclick="openBrWindow('Mwarehouse&textinput=A_wh_in', 31, 'Search_Detail.jsp')">
                                     </a>                               </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><span class="row3">น้ำหนัก(กก.)&nbsp;</span></td>
                                 <td class="columnobject">
-                                    <input name="weight" type="text" id="weight" size="10" value="<%=weight%>" readonly>                                </td>
+                                    <input name="weight" class='inputs' type="text" id="weight" size="10" value="<%=weight%>" readonly>                                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><span class="row3">จำนวน(ก/ส)&nbsp;</span>&nbsp;</td>
-                                <td class="columnobject"><input name='bag_qty' type='text' id="bag_qty" value='<%=bag_qty%>' size='10' />
+                                <td class="columnobject"><input name='bag_qty' class='inputs' type="text" id="bag_qty" value='<%=bag_qty%>' size='10' />
                                 </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><span class="row3">น้าหนักรวม&nbsp;</span>&nbsp;</td>
-                                <td class="columnobject"><input name='quantity' type='text' id="quantity" value='<%=quantity%>' size='10' />
+                                <td class="columnobject"><input name='quantity' class='inputs' type="text" id="quantity" value='<%=quantity%>' size='10' />
                                 </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><span class="row3">ยอดตรวจนับ
                                         (ก/ส)&nbsp;</span></td>
-                                <td class="columnobject"><input name='A_amount' type='text' id="A_amount" value='<%=amount%>' size='10' />                              </td>
+                                <td class="columnobject"><input name='A_amount' class='inputs' type="text" id="A_amount" value='<%=amount%>' size='10' />                              </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                <td class="columnobject"><textarea name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
+                                <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
                             </tr>
 
                             <tr>

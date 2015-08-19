@@ -365,20 +365,20 @@
 
                                     <td width="150" class="columnlabel1">เลขที่เอกสาร</td>
                                     <td width="607" class="columnobject">
-                                        <input name='A_doc_id' class='inputs' type='text' id="A_doc_id" value='' size='25' readonly/>
+                                        <input name='A_doc_id' class='inputs' class='inputs' type="text" id="A_doc_id" value='' size='25' readonly/>
                                         &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="OpenDoc_id(0);">&nbsp;&nbsp;
                                         &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' style="cursor: pointer" onClick="OpenDoc_id(1);">&nbsp;&nbsp;
                                         วันที่เอกสาร*&nbsp;
-                                        <input name='A_doc_date' class='inputs' type='text' id="A_doc_date" value='' size='10' readonly="readonly"/>
+                                        <input name='A_doc_date' class='inputs' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>
                                         &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
                                         &nbsp;&nbsp;เวลา*
-                                        <input name='A_doc_time' class='inputs' type='text' id="A_doc_time" value='' size='10' maxlength="5"  onkeypress="Time_picker(this.id)" /></td>
+                                        <input name='A_doc_time' class='inputs' class='inputs' type="text" id="A_doc_time" value='' size='10' maxlength="5"  onkeypress="Time_picker(this.id)" /></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">แผนกผู้รับ*&nbsp;</td>
                                     <td class="columnobject">
-                                        <input name='A_dp_id' class='inputs' type='text' id="A_dp_id" value='' size='10' readonly="readonly" />
-                                        &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;"  onClick="openBrWindow('mdepartment&stadment=and+dept_id=\'' + getId('dept_id').value + '\'', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;<input name='dp_id_desc' class='inputs' type='text' id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
+                                        <input name='A_dp_id' class='inputs' class='inputs' type="text" id="A_dp_id" value='' size='10' readonly="readonly" />
+                                        &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;"  onClick="openBrWindow('mdepartment&stadment=and+dept_id=\'' + getId('dept_id').value + '\'', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;<input name='dp_id_desc' class='inputs' class='inputs' type="text" id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
                                 </tr>
                                 <tr>
                                     <td colspan='2' class='blankspace'></td>
@@ -414,15 +414,15 @@
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">ผู้ส่งสินค้า</td>
-                                    <td class="columnobject"><input name='A_reporter_id' class='inputs' type='text' id="A_reporter_id" value='' size='10' readonly="readonly" />
+                                    <td class="columnobject"><input name='A_reporter_id' class='inputs' class='inputs' type="text" id="A_reporter_id" value='' size='10' readonly="readonly" />
                                         &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
-                                        <input name='reporter_id_desc' class='inputs' type='text' id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
+                                        <input name='reporter_id_desc' class='inputs' class='inputs' type="text" id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">ผู้อนุมัติ</td>
-                                    <td class="columnobject"><input name='A_approver_id' class='inputs' type='text' id="A_approver_id" value='' size='10' readonly="readonly" />
+                                    <td class="columnobject"><input name='A_approver_id' class='inputs' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly="readonly" />
                                         &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee1', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
-                                        <input name='approver_id_desc' class='inputs' type='text' id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>
+                                        <input name='approver_id_desc' class='inputs' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                 </tr>
 
                                 <tr>

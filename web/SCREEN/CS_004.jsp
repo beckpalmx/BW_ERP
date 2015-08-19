@@ -76,13 +76,13 @@
                             <tr>
                                 <td class="columnlabel"><b>รหัสสิทธิ์การใช้งาน*</b>&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='priviledge_id' type='text' id="priviledge_id" value='' size='10' />
+                                    <input name='priviledge_id' class='inputs' type="text" id="priviledge_id" value='' size='10' />
                                     &nbsp;<a href='javascript:;' onclick="clearckbox()"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                    <input name='name_t' type='text' id="name_t" value='' size='30' />                                </td>
+                                    <input name='name_t' class='inputs' type="text" id="name_t" value='' size='30' />                                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                <td class="columnobject"><textarea name='remark' cols='40' rows='5' id="remark"></textarea></td>
+                                <td class="columnobject"><textarea class='text_inputs' name='remark' cols='40' rows='5' id="remark"></textarea></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">กำหนดสิทธิ์การเข้าใช้งานระบบ&nbsp;</td>

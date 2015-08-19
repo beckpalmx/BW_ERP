@@ -216,15 +216,15 @@
 
                             <tr>
                                 <td class="columnlabel">ชื่อแป้ง</td>
-                                <td colspan="2" class="columnobject"><input name="A_cust_id" type="text" id="A_cust_id" size="10" value="<%=cust_id%>"><a href='#' onClick="openBrWindow('vproduct', 30, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>
-                                    <input name="cust_id_desc" type="text" id="cust_id_desc" size="30">&nbsp;&nbsp;&nbsp;&nbsp;Lot
-                                    <input type="text" name="A_lot_no" id="A_lot_no" value="<%=lot_no%>"></td>
+                                <td colspan="2" class="columnobject"><input name="A_cust_id" class='inputs' type="text" id="A_cust_id" size="10" value="<%=cust_id%>"><a href='#' onClick="openBrWindow('vproduct', 30, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>
+                                    <input name="cust_id_desc" class='inputs' type="text" id="cust_id_desc" size="30">&nbsp;&nbsp;&nbsp;&nbsp;Lot
+                                    <input class='inputs' type="text" name="A_lot_no" id="A_lot_no" value="<%=lot_no%>"></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">orderทั้งหมด</td>
-                                <td colspan="2" class="columnobject"><input type="text" name="A_order_prod_pack" id="A_order_prod_pack" value="<%=order_prod_pack%>">
+                                <td colspan="2" class="columnobject"><input class='inputs' type="text" name="A_order_prod_pack" id="A_order_prod_pack" value="<%=order_prod_pack%>">
                                     ก/ส&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ยอดคงเหลือ
-                                    <input type="text" name="A_total_prod_pack" id="A_total_prod_pack" value="<%=total_prod_pack%>">
+                                    <input class='inputs' type="text" name="A_total_prod_pack" id="A_total_prod_pack" value="<%=total_prod_pack%>">
                                     ก/ส</td>
                             </tr>
                             <tr>
@@ -260,7 +260,7 @@
                                 </td>
                             </tr>
                             <tr><td class="columnlabel"></td>
-                                <td colspan="2" align="right">               รวม<input type="text" name="withdraw_tot_weight" id="withdraw_tot_weight" value="<%=withdraw_tot_weight%>"></td>
+                                <td colspan="2" align="right">               รวม<input class='inputs' type="text" name="withdraw_tot_weight" id="withdraw_tot_weight" value="<%=withdraw_tot_weight%>"></td>
                             </tr>
                             <tr>
                                 <td colspan='2' class='btn_multi'>&nbsp;</td>
@@ -290,7 +290,7 @@
                                     <div style="width:100%; height: 100px; overflow: auto;" id="show1"><%=objdetail.Show_Detail(doc_id, line_no, 2)%></div>                                </td>
                             </tr>
                             <tr><td class="columnlabel"></td>
-                                <td colspan="2" align="right">            รวม<input type="text" name="prod_tot_weight" id="prod_tot_weight" value="<%=prod_tot_weight%>">                 </td>
+                                <td colspan="2" align="right">            รวม<input class='inputs' type="text" name="prod_tot_weight" id="prod_tot_weight" value="<%=prod_tot_weight%>">                 </td>
                             </tr>
 
                             <tr>

@@ -122,9 +122,9 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel">แป้งถ่ายได้&nbsp;</td>
-                                <td class="columnobject"><input name='A_prod_id' type='text' id="A_prod_id" value='<%=product_id%>' size='35' readonly />
+                                <td class="columnobject"><input name='A_prod_id' class='inputs' type="text" id="A_prod_id" value='<%=product_id%>' size='35' readonly />
                                     <img width="20" height="20" border="0" align="middle" onclick="openBrWindow('vproduct&textinput=A_prod_id|A_prod_id_desc', 31, 'Search_Detail.jsp');" style="cursor: pointer;" name="IMAGE3" alt="ค้นหา" src="../IMAGES/BUTTON/MAIN/SEARCH20.png">
-                                    <input type="text" name="A_prod_id_desc" id="A_prod_id_desc" value="" size="40" readonly>
+                                    <input class='inputs' type="text" name="A_prod_id_desc" id="A_prod_id_desc" value="" size="40" readonly>
                                 </td>
                             </tr>
                             <tr>
@@ -133,16 +133,16 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel">บรรจุ</td>
-                                <td class="columnobject"><input name='A_pack' type='text' id="A_pack" value='<%=pack%>' size='10' /></td>
+                                <td class="columnobject"><input name='A_pack' class='inputs' type="text" id="A_pack" value='<%=pack%>' size='10' /></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><span class="row3">จำนวน(ก/ส)</span></td>
-                                <td class="columnobject"><input name='A_qty' type='text' id="A_qty" value='<%=qty%>' size='10' onblur="Cal_T('A_pack','A_qty','A_weight')"/></td>
+                                <td class="columnobject"><input name='A_qty' class='inputs' type="text" id="A_qty" value='<%=qty%>' size='10' onblur="Cal_T('A_pack','A_qty','A_weight')"/></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><span class="row3">จำนวน(T)</span>&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='A_weight' type='text' id="A_weight" value='<%=weight%>' size='10' onblur="Cal_T('A_pack','A_qty','A_weight')"/>                                </td>
+                                    <input name='A_weight' class='inputs' type="text" id="A_weight" value='<%=weight%>' size='10' onblur="Cal_T('A_pack','A_qty','A_weight')"/>                                </td>
                             </tr>
 
                             <tr>

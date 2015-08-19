@@ -105,18 +105,18 @@
                             <label class="control-label col-md-1 columnlabel1">รหัสหน้าจอ*&nbsp;:&nbsp;</label>
 
                             <div class="col-md-6">                                
-                                <input type='text' class="inputs" name='screen_id' id="screen_id" size='10' value='' />&nbsp;&nbsp;
+                                <input class='inputs' type="text" class="inputs" name='screen_id' id="screen_id" size='10' value='' />&nbsp;&nbsp;
                                 <a href="javascript:openBrWindow('Vscreen',1,'Search_Config.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle'></a>&nbsp;&nbsp;
-                                <input type='text' class="inputs" name='name_t_screen' id="name_t_screen" size='30' value='' />                                       
+                                <input class='inputs' type="text" class="inputs" name='name_t_screen' id="name_t_screen" size='30' value='' />                                       
                             </div>
                         </div>       
 
                         <div class="row">
                             <label class="control-label col-md-1 columnlabel1">รหัส Process*&nbsp;:&nbsp;</label>
                             <div class="col-md-6">                                
-                                <input type='text' class="inputs" name='process_id' id="process_id" size='10' value='' readonly/>&nbsp;&nbsp;
+                                <input class='inputs' type="text" class="inputs" name='process_id' id="process_id" size='10' value='' readonly/>&nbsp;&nbsp;
                                 <a href=javascript:openBrWindow('Process',1,'Search_Config.jsp');><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                <input type='text' class="inputs" name='name_t_process' id="name_t_process" size='30' value='' />                                    
+                                <input class='inputs' type="text" class="inputs" name='name_t_process' id="name_t_process" size='30' value='' />                                    
                             </div>
                         </div>   
 
@@ -124,23 +124,23 @@
                         <div class="row">
                             <label class="control-label col-md-1 columnlabel1">รหัสแผนก*&nbsp;:&nbsp;</label>
                             <div class="col-md-6">                                
-                                <input type='text' class="inputs" name='dept_id' id="dept_id" size='10' value='' readonly/>&nbsp;&nbsp;
+                                <input class='inputs' type="text" class="inputs" name='dept_id' id="dept_id" size='10' value='' readonly/>&nbsp;&nbsp;
                                 <a href=javascript:openBrWindow('Department',1,'Search_Config.jsp');><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle'></a>&nbsp;&nbsp;
-                                <input type='text' class="inputs" name='name_t_dept' id="name_t_dept" size='30' value='' />                                  
+                                <input class='inputs' type="text" class="inputs" name='name_t_dept' id="name_t_dept" size='30' value='' />                                  
                             </div>
                         </div>    
 
                         <div class="row">
                             <label class="control-label col-md-1 columnlabel1">หมายเลขเอกสาร&nbsp;:&nbsp;</label>
                             <div class="col-md-6">                                
-                                <input type='text' class="inputs" name='iso_no' id="iso_no" size='30' value='' />                                    
+                                <input class='inputs' type="text" class="inputs" name='iso_no' id="iso_no" size='30' value='' />                                    
                             </div>
                         </div>        
 
                         <div class="row">
                             <label class="control-label col-md-1 columnlabel1">วันที่บังคับใช้&nbsp;:&nbsp;</label>
                             <div class="col-md-6">                                
-                                <input type='text' class="inputs" name='effective_date' id="effective_date" size='10' value='' readonly/>
+                                <input class='inputs' type="text" class="inputs" name='effective_date' id="effective_date" size='10' value='' readonly/>
                                 <a id='date_1' href="javascript:;"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                 <script type='text/javascript'>Calendar.setup({inputField: 'effective_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
 
@@ -162,7 +162,7 @@
                         <div class="row">
                             <label class="control-label col-md-1 columnlabel1">หมายเหตุ&nbsp;:&nbsp;</label>
                             <div class="col-md-6">                                
-                                <textarea class="text_inputs_3" name='remark_screen' id="remark_screen" rows='5' cols='40'></textarea>
+                                <textarea class='text_inputs' class="text_inputs_3" name='remark_screen' id="remark_screen" rows='5' cols='40'></textarea>
                             </div>
                         </div>                             
 
@@ -170,19 +170,19 @@
                         <div class="row">
                             <label class="control-label col-md-1 columnlabel1">Other :&nbsp;</label>
                             <div class="col-md-1">
-                                <input type='text' class="inputs" name='email_port' id="email_port" size='5' value='' />                                    
+                                <input class='inputs' type="text" class="inputs" name='email_port' id="email_port" size='5' value='' />                                    
                             </div>
                             <div class="col-md-1">
-                                <input type='text' class="inputs" name='email_port' id="email_port" size='5' value='' />                                    
+                                <input class='inputs' type="text" class="inputs" name='email_port' id="email_port" size='5' value='' />                                    
                             </div>
                             <div class="col-md-1">
-                                <input type='text' class="inputs" name='email_port' id="email_port" size='5' value='' />                                    
+                                <input class='inputs' type="text" class="inputs" name='email_port' id="email_port" size='5' value='' />                                    
                             </div>                            
                             <div class="col-md-1">
-                                <input type='text' class="inputs" name='email_port' id="email_port" size='5' value='' />                                    
+                                <input class='inputs' type="text" class="inputs" name='email_port' id="email_port" size='5' value='' />                                    
                             </div>                            
                             <div class="col-md-1">
-                                <input type='text' class="inputs" name='email_port' id="email_port" size='5' value='' />                                    
+                                <input class='inputs' type="text" class="inputs" name='email_port' id="email_port" size='5' value='' />                                    
                             </div>                                                        
 
                         </div>         

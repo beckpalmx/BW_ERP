@@ -266,23 +266,23 @@
 
                                         <td width="150" class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
                                         <td width="607" class="columnobject">
-                                            <input name='A_doc_id' type='text' id="A_doc_id" value='<%=doc_id%>' size='20' readonly/>
+                                            <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='<%=doc_id%>' size='20' readonly/>
                                             &nbsp;<a href='#' onClick="OpenDoc_id()"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                             วันที่เอกสาร*&nbsp;
-                                            <input name='A_doc_date' type='text' id="A_doc_date" value='<%=doc_date%>' size='10' readonly="readonly"/>
+                                            <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='<%=doc_date%>' size='10' readonly="readonly"/>
                                             &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script></td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">
                                             <input type="button"  class="cgcButton_9"  id="bt1" onClick="sub_Screen('BW_CS_Detail_030_1');" value=" รายงานการอบแป้ง "/></td>
                                         <td class="columnobject">ยอดรวมผลผลิตที่ได้
-                                            <input type="text" name="A_roast_qty" id="A_roast_qty" value="<%=roast_qty%>">
+                                            <input class='inputs' type="text" name="A_roast_qty" id="A_roast_qty" value="<%=roast_qty%>">
                                             ตัน</td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel"><input type="button"  class="cgcButton_9" id="bt1" onClick="sub_Screen('BW_CS_Detail_030_2');" value="รายงานการถ่ายแป้ง"/></td>
                                         <td class="columnobject">ยอดรวมผลผลิตที่ได้
-                                            <input type="text" name="A_pack_qty" id="A_pack_qty" value ="<%=pack_qty%>">
+                                            <input class='inputs' type="text" name="A_pack_qty" id="A_pack_qty" value ="<%=pack_qty%>">
                                             ตัน</td>
                                     </tr>
                                     <tr>
@@ -315,53 +315,53 @@
                                                         <td class="row3">&nbsp;</td>
                                                         <td class="row3">1<input type="button" class="cgcButton_8" value=" ดึงข้อมูล " id="bt_1" onClick="(getId('A_date_1').value != '' || getId('A_date_5').value != '') ? getData_d_rawmatt_receive('../JSP/BW_CS_030.jsp?status_calculator=4&A_date_from=' + getId('A_date_1').value + '&A_date_to=' + getId('A_date_5').value + '', 'A_percent_p1,A_percent_y1') : alert('กรุณาเลือกวันที่ตัดมันน้ำแป้ง 1');"></td>
                                                         <td class="row3">
-                                                            <input name="A_date_1" type="text" id="A_date_1" size="10" value="<%=date_1%>">
+                                                            <input name="A_date_1" class='inputs' type="text" id="A_date_1" size="10" value="<%=date_1%>">
                                                             &nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_date_1', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>
                                                             -
-                                                            <input name="A_date_5" type="text" id="A_date_5" size="10" value="<%=date_5%>">
+                                                            <input name="A_date_5" class='inputs' type="text" id="A_date_5" size="10" value="<%=date_5%>">
                                                             <a id='date_6'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_date_5', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_6', singleClick: true, step: 1});</script>
                                                         </td>
-                                                        <td class="row3"><input name="A_percent_p1" type="text" id="A_percent_p1" size="10" value="<%=percent_p1%>"></td>
-                                                        <td class="row3"><input name="A_percent_y1" type="text" id="A_percent_y1" size="10" value="<%=percent_y1%>"></td>
+                                                        <td class="row3"><input name="A_percent_p1" class='inputs' type="text" id="A_percent_p1" size="10" value="<%=percent_p1%>"></td>
+                                                        <td class="row3"><input name="A_percent_y1" class='inputs' type="text" id="A_percent_y1" size="10" value="<%=percent_y1%>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td class="row3">&nbsp;</td>
                                                         <td class="row3">2<input type="button" class="cgcButton_8" value=" ดึงข้อมูล " id="bt_1" onClick="(getId('A_date_2').value != '' || getId('A_date_6').value != '') ? getData_d_rawmatt_receive('../JSP/BW_CS_030.jsp?status_calculator=4&A_date_from=' + getId('A_date_2').value + '&A_date_to=' + getId('A_date_6').value + '', 'A_percent_p2,A_percent_y2') : alert('กรุณาเลือกวันที่ตัดมันน้ำแป้ง 2');"></td>
                                                         <td class="row3">
-                                                            <input name="A_date_2" type="text" id="A_date_2" size="10" value="<%=date_2%>">
+                                                            <input name="A_date_2" class='inputs' type="text" id="A_date_2" size="10" value="<%=date_2%>">
                                                             &nbsp;<a id='date_3'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_date_2', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_3', singleClick: true, step: 1});</script>
                                                             -
-                                                            <input name="A_date_6" type="text" id="A_date_6" size="10" value="<%=date_6%>">
+                                                            <input name="A_date_6" class='inputs' type="text" id="A_date_6" size="10" value="<%=date_6%>">
                                                             <a id='date_7'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_date_6', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_7', singleClick: true, step: 1});</script>
                                                         </td>
-                                                        <td class="row3"><input name="A_percent_p2" type="text" id="A_percent_p2" size="10" value="<%=percent_p2%>"></td>
-                                                        <td class="row3"><input name="A_percent_y2" type="text" id="A_percent_y2" size="10" value="<%=percent_y2%>"></td>
+                                                        <td class="row3"><input name="A_percent_p2" class='inputs' type="text" id="A_percent_p2" size="10" value="<%=percent_p2%>"></td>
+                                                        <td class="row3"><input name="A_percent_y2" class='inputs' type="text" id="A_percent_y2" size="10" value="<%=percent_y2%>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td class="row3">&nbsp;</td>
                                                         <td class="row3">3<input type="button" class="cgcButton_8" value=" ดึงข้อมูล " id="bt_1" onClick="(getId('A_date_3').value != '' || getId('A_date_7').value != '') ? getData_d_rawmatt_receive('../JSP/BW_CS_030.jsp?status_calculator=4&A_date_from=' + getId('A_date_3').value + '&A_date_to=' + getId('A_date_7').value + '', 'A_percent_p3,A_percent_y3') : alert('กรุณาเลือกวันที่ตัดมันน้ำแป้ง 3');"></td>
                                                         <td class="row3">
-                                                            <input name="A_date_3" type="text" id="A_date_3" size="10" value="<%=date_3%>">
+                                                            <input name="A_date_3" class='inputs' type="text" id="A_date_3" size="10" value="<%=date_3%>">
                                                             &nbsp;<a id='date_4'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_date_3', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_4', singleClick: true, step: 1});</script>
                                                             -
-                                                            <input name="A_date_7" type="text" id="A_date_7" size="10" value="<%=date_7%>">
+                                                            <input name="A_date_7" class='inputs' type="text" id="A_date_7" size="10" value="<%=date_7%>">
                                                             <a id='date_8'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_date_7', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_8', singleClick: true, step: 1});</script>
                                                         </td>
-                                                        <td class="row3"><input name="A_percent_p3" type="text" id="A_percent_p3" size="10" value="<%=percent_p3%>"></td>
-                                                        <td class="row3"><input name="A_percent_y3" type="text" id="A_percent_y3" size="10" value="<%=percent_y3%>"></td>
+                                                        <td class="row3"><input name="A_percent_p3" class='inputs' type="text" id="A_percent_p3" size="10" value="<%=percent_p3%>"></td>
+                                                        <td class="row3"><input name="A_percent_y3" class='inputs' type="text" id="A_percent_y3" size="10" value="<%=percent_y3%>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td class="row3">&nbsp;</td>
                                                         <td class="row3">4<input type="button" class="cgcButton_8" value=" ดึงข้อมูล " id="bt_1" onClick="(getId('A_date_4').value != '' || getId('A_date_8').value != '') ? getData_d_rawmatt_receive('../JSP/BW_CS_030.jsp?status_calculator=4&A_date_from=' + getId('A_date_4').value + '&A_date_to=' + getId('A_date_8').value + '', 'A_percent_p4,A_percent_y4') : alert('กรุณาเลือกวันที่ตัดมันน้ำแป้ง 4');"></td>
                                                         <td class="row3">
-                                                            <input name="A_date_4" type="text" id="A_date_4" size="10" value="<%=date_4%>">
+                                                            <input name="A_date_4" class='inputs' type="text" id="A_date_4" size="10" value="<%=date_4%>">
                                                             &nbsp;<a id='date_5'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_date_4', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_5', singleClick: true, step: 1});</script>
                                                             -
-                                                            <input name="A_date_8" type="text" id="A_date_8" size="10" value="<%=date_8%>">
+                                                            <input name="A_date_8" class='inputs' type="text" id="A_date_8" size="10" value="<%=date_8%>">
                                                             <a id='date_9'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_date_8', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_9', singleClick: true, step: 1});</script>
                                                         </td>
-                                                        <td class="row3"><input name="A_percent_p4" type="text" id="A_percent_p4" size="10" value="<%=percent_p4%>"></td>
-                                                        <td class="row3"><input name="A_percent_y4" type="text" id="A_percent_y4" size="10" value="<%=percent_y4%>"></td>
+                                                        <td class="row3"><input name="A_percent_p4" class='inputs' type="text" id="A_percent_p4" size="10" value="<%=percent_p4%>"></td>
+                                                        <td class="row3"><input name="A_percent_y4" class='inputs' type="text" id="A_percent_y4" size="10" value="<%=percent_y4%>"></td>
                                                     </tr>
                                                 </table>
                                             </div>                               </td>
@@ -372,21 +372,21 @@
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ผู้รายงาน</td>
-                                        <td class="columnobject"><input name='A_reporter_id' type='text' id="A_reporter_id" value='<%=reporter_id%>' size='10' readonly="readonly" />
+                                        <td class="columnobject"><input name='A_reporter_id' class='inputs' type="text" id="A_reporter_id" value='<%=reporter_id%>' size='10' readonly="readonly" />
                                             &nbsp;&nbsp;&nbsp;<a href='#' onClick="openBrWindow('Vemployee&stadment=and+emp_id+in(\'55045\')', 30, 'Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input name='reporter_id_desc' type='text' id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
+                                            <input name='reporter_id_desc' class='inputs' type="text" id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ผู้ตรวจสอบ</td>
-                                        <td class="columnobject"><input name="A_checker_id" type='text' id="A_checker_id" value='<%=checker_id%>' size='10' readonly="readonly" />
+                                        <td class="columnobject"><input name="A_checker_id" class='inputs' type="text" id="A_checker_id" value='<%=checker_id%>' size='10' readonly="readonly" />
                                             &nbsp;&nbsp;&nbsp;<a href='#' onClick="openBrWindow('Vemployee1&stadment=and+emp_id+in(\'33011\',\'45093\')', 30, 'Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input name='checker_id_desc' type='text' id="checker_id_desc" value='' size='30' readonly="readonly" />                              </td>
+                                            <input name='checker_id_desc' class='inputs' type="text" id="checker_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ผู้ตรวจสอบ                                 </td>
-                                        <td class="columnobject"><input name='A_approver_id' type='text' id="A_approver_id" value='<%=approver_id%>' size='10' readonly="readonly" />
+                                        <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='<%=approver_id%>' size='10' readonly="readonly" />
                                             &nbsp;&nbsp;&nbsp;<a href='#' onClick="openBrWindow('Vemployee2&stadment=and+emp_id+in(\'42035\')', 30, 'Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input name='approver_id_desc' type='text' id="approver_id_desc" value='' size='30' readonly="readonly" /></td>
+                                            <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly="readonly" /></td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" align="right"></td>

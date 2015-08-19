@@ -109,7 +109,7 @@
 
                                     <tr>
                                         <td width="22%" align="right">วันที่รับมัน</td>
-                                        <td width="78%" class="columnobject"><input type="text" name="doc_date" id="doc_date" size="10"> &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>
+                                        <td width="78%" class="columnobject"><input class='inputs' type="text" name="doc_date" id="doc_date" size="10"> &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>
                                             <input type="button" name="bt_search" id="bt_search" value="ค้นหา" onclick="showTable()"></td>
                                     </tr>
 
@@ -155,7 +155,7 @@
                                         <td colspan='2' class='blankspace'></td>
                                     </tr>
                                 </table>
-                                <textarea name="calreport" id="calreport" cols="100" rows="7"></textarea>
+                                <textarea class='text_inputs' name="calreport" id="calreport" cols="100" rows="7"></textarea>
                             </div></td>
                         <td class="fcenterright"></td>
                     </tr>

@@ -217,9 +217,9 @@
                                 <tr>
                                     <td class="columnlabel1"><input type="button" class="cgcButton_8" id="runid" name="runid" value="เลขที่เอกสาร" onclick="Runing_Doc_id();"></td>
                                     <td class="columnobject">
-                                        <input name='A_doc_id' class='inputs' type='text' id="A_doc_id" value='' size='10'  />
+                                        <input name='A_doc_id' class='inputs' class='inputs' type="text" id="A_doc_id" value='' size='10'  />
                                         &nbsp;<a href='#' onClick="OpenDoc_id()" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;วันที่เอกสาร*&nbsp;
-                                        <input name='A_doc_date' class='inputs' type='text' id="A_doc_date" value='' size='10' readonly="false" />
+                                        <input name='A_doc_date' class='inputs' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="false" />
                                         &nbsp;<a id='date_1' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
                                     </td>
                                 </tr>
@@ -244,11 +244,11 @@
                                             </tr>
                                             <tr>
                                                 <td class="columnlabel1">วันที่ส่งหัวมันสด&nbsp;
-                                                    <input name='A_cassava_date' class='inputs' type='text' id="A_cassava_date" value='' size='10' readonly="false" />
+                                                    <input name='A_cassava_date' class='inputs' class='inputs' type="text" id="A_cassava_date" value='' size='10' readonly="false" />
                                                     <a id='date_2' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>                                                    
                                                 </td>
-                                                <td align="right">&nbsp;เวลาตั้งแต่:<input class='inputs' type='text' id="A_doc_time_from" name="A_doc_time_from" size="10" value = '08.00'></td>
-                                                <td>&nbsp;ถึง<input class='inputs' type='text' id="A_doc_time_to" name="A_doc_time_to" size="10" value = '23.59'></td>                                                
+                                                <td align="right">&nbsp;เวลาตั้งแต่:<input class='inputs' class='inputs' type="text" id="A_doc_time_from" name="A_doc_time_from" size="10" value = '08.00'></td>
+                                                <td>&nbsp;ถึง<input class='inputs' class='inputs' type="text" id="A_doc_time_to" name="A_doc_time_to" size="10" value = '23.59'></td>                                                
                                             </tr>                                            
 
                                             <tr>
@@ -259,23 +259,23 @@
                                             </tr>
                                             <tr>
                                                 <td>จำนวนหัวมันสด(บ/ช)
-                                                    <input name="A_amount_cassava_a" class='inputs' type='text' id="A_amount_cassava_a" size="10" onFocus="getId('calculator').disabled = false;">
+                                                    <input name="A_amount_cassava_a" class='inputs' class='inputs' type="text" id="A_amount_cassava_a" size="10" onFocus="getId('calculator').disabled = false;">
                                                     กก.</td>
                                                 <td>%แป้งซื้อเข้า
-                                                    <input name="A_percent_tapioca_a" class='inputs' type='text' id="A_percent_tapioca_a" size="5" onFocus="getId('calculator').disabled = false;">
+                                                    <input name="A_percent_tapioca_a" class='inputs' class='inputs' type="text" id="A_percent_tapioca_a" size="5" onFocus="getId('calculator').disabled = false;">
                                                     %</td>
                                                 <td>คิดเป็น
-                                                    <input name="A_amount_tapioca_a" class='inputs' type='text' id="A_amount_tapioca_a" size="8" class="textboxtotal" readonly="false">กก.</td>
+                                                    <input name="A_amount_tapioca_a" class='inputs' class='inputs' type="text" id="A_amount_tapioca_a" size="8" class="textboxtotal" readonly="false">กก.</td>
                                             </tr>
                                             <tr>
                                                 <td>จำนวนหัวมันสด(ผลิต)
-                                                    <input name="A_amount_cassava_p" class='inputs' type='text' id="A_amount_cassava_p" size="10" onFocus="getId('calculator').disabled = false;">
+                                                    <input name="A_amount_cassava_p" class='inputs' class='inputs' type="text" id="A_amount_cassava_p" size="10" onFocus="getId('calculator').disabled = false;">
                                                     กก.</td>
                                                 <td>%แป้งซื้อเข้า
-                                                    <input name="A_percent_tapioca_p" class='inputs' type='text' id="A_percent_tapioca_p" size="5" onFocus="getId('calculator').disabled = false;">
+                                                    <input name="A_percent_tapioca_p" class='inputs' class='inputs' type="text" id="A_percent_tapioca_p" size="5" onFocus="getId('calculator').disabled = false;">
                                                     %</td>
                                                 <td>คิดเป็น
-                                                    <input name="A_amount_tapioca_p" class='inputs' type='text' id="A_amount_tapioca_p" size="8" class="textboxtotal" readonly="false">กก.</td>
+                                                    <input name="A_amount_tapioca_p" class='inputs' class='inputs' type="text" id="A_amount_tapioca_p" size="8" class="textboxtotal" readonly="false">กก.</td>
                                             </tr>
                                         </table></td>
                                 </tr>
@@ -289,18 +289,18 @@
                                             </tr>
                                             <tr>
                                                 <td>ปริมาณวันที่
-                                                    <input name="A_peel_fresh_date" class='inputs' type='text' id="A_peel_fresh_date" size="10" readonly="true">
+                                                    <input name="A_peel_fresh_date" class='inputs' class='inputs' type="text" id="A_peel_fresh_date" size="10" readonly="true">
                                                 </td>
                                                 <td><B>หักความชื้น%</B>
-                                                    <input name="A_percent_moisture" class='inputs' type='text' id="A_percent_moisture" size="10" onFocus="getId('calculator').disabled = false;">
+                                                    <input name="A_percent_moisture" class='inputs' class='inputs' type="text" id="A_percent_moisture" size="10" onFocus="getId('calculator').disabled = false;">
                                                     %.</td>
                                                 <td><B>จาก</B>
-                                                    <input name="A_total_peel_fresh" class='inputs' type='text' id="A_total_peel_fresh" size="10" onFocus="getId('calculator').disabled = false;">
+                                                    <input name="A_total_peel_fresh" class='inputs' class='inputs' type="text" id="A_total_peel_fresh" size="10" onFocus="getId('calculator').disabled = false;">
                                                     กก.</td>
                                             </tr>
                                             <tr>
                                                 <td><span class="columnlabel1">จำนวน&nbsp;
-                                                        <input name='A_amount_peel_fresh' class='inputs' type='text' id="A_amount_peel_fresh" value='' size='10' class="textboxtotal"/>
+                                                        <input name='A_amount_peel_fresh' class='inputs' class='inputs' type="text" id="A_amount_peel_fresh" value='' size='10' class="textboxtotal"/>
                                                         &nbsp;กก.</span></td>
                                                 <td>&nbsp;</td>
                                                 <td>&nbsp;</td>
@@ -318,14 +318,14 @@
                                             </tr>
                                             <tr>
                                                 <td>ปริมาณวันที่
-                                                    <input name="A_soil_crust_date" class='inputs' type='text' id="A_soil_crust_date" size="10" readonly="true">
+                                                    <input name="A_soil_crust_date" class='inputs' class='inputs' type="text" id="A_soil_crust_date" size="10" readonly="true">
                                                 </td>
                                                 <td>&nbsp;</td>
                                                 <td>&nbsp;</td>
                                             </tr>
                                             <tr>
                                                 <td><span class="columnlabel1"><B>จำนวน</B>&nbsp;
-                                                        <input name='A_amount_soil_crust' class='inputs' type='text' id="A_amount_soil_crust" value='' size='10'  onfocus="getId('calculator').disabled = false;"/>
+                                                        <input name='A_amount_soil_crust' class='inputs' class='inputs' type="text" id="A_amount_soil_crust" value='' size='10'  onfocus="getId('calculator').disabled = false;"/>
                                                         &nbsp;กก.</span></td>
                                                 <td>&nbsp;</td>
                                                 <td>&nbsp;</td>
@@ -342,9 +342,9 @@
                                 <tr>
                                     <td class="columnlabel1">&nbsp;</td>
                                     <td class="columnobject">จำนวนมันสุทธิ
-                                        <input class='inputs' type='text' name="A_total_cassava" id="A_total_cassava" class="textboxtotal">
+                                        <input class='inputs' class='inputs' type="text" name="A_total_cassava" id="A_total_cassava" class="textboxtotal">
                                         กก.&nbsp;&nbsp;&nbsp;&nbsp;%แป้ง
-                                        <input class='inputs' type='text' name="A_total_tapioca" id="A_total_tapioca" class="textboxtotal">
+                                        <input class='inputs' class='inputs' type="text" name="A_total_tapioca" id="A_total_tapioca" class="textboxtotal">
                                         กก.</td>
                                 </tr>
                                 <tr>
@@ -353,23 +353,23 @@
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">ผู้จัดทำ</td>
-                                    <td class="columnobject"><input name="A_reporter_id" class='inputs' type='text' id="A_reporter_id" size="15">
+                                    <td class="columnobject"><input name="A_reporter_id" class='inputs' class='inputs' type="text" id="A_reporter_id" size="15">
                                         <img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee', 23, 'Search_Config2.jsp');">
-                                        <input name="reporter_id_desc" class='inputs' type='text' id="reporter_id_desc" size="30"></td>
+                                        <input name="reporter_id_desc" class='inputs' class='inputs' type="text" id="reporter_id_desc" size="30"></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1"><p>หัวหน้าแผนกจัดซื้อวัตถุดิบ<br>และจัดส่ง</p></td>
                                     <td class="columnobject">
-                                        <input name="A_purchase_id" class='inputs' type='text' id="A_purchase_id" size="15">
+                                        <input name="A_purchase_id" class='inputs' class='inputs' type="text" id="A_purchase_id" size="15">
                                         <img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee1', 23, 'Search_Config2.jsp');">
-                                        <input name="purchase_id_desc" class='inputs' type='text' id="purchase_id_desc" size="30"></td>
+                                        <input name="purchase_id_desc" class='inputs' class='inputs' type="text" id="purchase_id_desc" size="30"></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1"><p>ผู้จัดการ/หน.แผนกผลิต</p></td>
                                     <td class="columnobject">
-                                        <input name="A_production_id" class='inputs' type='text' id="A_production_id" size="15">
+                                        <input name="A_production_id" class='inputs' class='inputs' type="text" id="A_production_id" size="15">
                                         <img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee2', 23, 'Search_Config2.jsp');">
-                                        <input name="production_id_desc" class='inputs' type='text' id="production_id_desc" size="30"></td>
+                                        <input name="production_id_desc" class='inputs' class='inputs' type="text" id="production_id_desc" size="30"></td>
                                 </tr>
                                 <tr>
                                     <td height="27" colspan='2' class='blankspace'></td>

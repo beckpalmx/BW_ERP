@@ -64,10 +64,10 @@
     </head>
     <body>
         <input type="button" value="test"  onclick="test()">
-        <input type="text" id="test_txt" name="test_txt" value="">
+        <input class='inputs' type="text" id="test_txt" name="test_txt" value="">
         <input type="button" value="test2"  id="test2">
         <div id="dialog" title="Dialog Title">
-            <p><input type="text" id="test" name="test"></p>
+            <p><input class='inputs' type="text" id="test" name="test"></p>
         </div>
         <div id="test_show">
            

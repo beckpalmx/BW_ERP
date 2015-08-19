@@ -100,13 +100,13 @@
                                 <tr>
                                     <td height="24" class="columnlabel">รหัสแป้ง*&nbsp;</td>
                                     <td class="columnobject">
-                                        <input name='A_product_id' type='text' id="A_product_id" value='' size='10' />                                </td>
+                                        <input name='A_product_id' class='inputs' type="text" id="A_product_id" value='' size='10' />                                </td>
                                 </tr>
 
                                 <tr>
                                     <td class="columnlabel"><span class="row3">บรรจุ(KG)&nbsp;</span></td>
                                     <td class="columnobject">
-                                        <input name="A_weight" type="text" id="A_weight" size="10" value="">                                </td>
+                                        <input name="A_weight" class='inputs' type="text" id="A_weight" size="10" value="">                                </td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel"><span class="row3">ความชื้น&nbsp;</span>&nbsp;</td>
@@ -146,7 +146,7 @@
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">สิ่งแปลกปลอม</td>
-                                    <td class="columnobject"><input type="text" name="textfield" id="textfield"></td>
+                                    <td class="columnobject"><input class='inputs' type="text" name="textfield" id="textfield"></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">จุดดำ</td>
@@ -154,7 +154,7 @@
                                 </tr>
                                 <tr>
                                     <td class="columnlabel"><span class="row3">จำนวน ก/ส ที่ไม่ผ่าน&nbsp;</span></td>
-                                    <td class="columnobject"><input type="text" name="textfield2" id="textfield2"></td>
+                                    <td class="columnobject"><input class='inputs' type="text" name="textfield2" id="textfield2"></td>
                                 </tr>
 
                                 <tr>

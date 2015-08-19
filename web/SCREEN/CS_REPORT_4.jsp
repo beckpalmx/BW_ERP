@@ -103,10 +103,10 @@
                                 </tr>
                                 </tr>
                                 <tr>
-                                    <td class='columnlabel'>Date (dd-mm-yyyy) : &nbsp;</td><td class='columnobject'><input name='date_f' type='text' id="date_f" value='' readonly/>
+                                    <td class='columnlabel'>Date (dd-mm-yyyy) : &nbsp;</td><td class='columnobject'><input name='date_f' class='inputs' type="text" id="date_f" value='' readonly/>
                                         &nbsp;<a id='date_1' href="javascript:;"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                         <script type='text/javascript'>Calendar.setup({inputField:'date_f',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>
-                                        To &nbsp;<input name='date_t' type='text' id="date_t" value='' disabled/>
+                                        To &nbsp;<input name='date_t' class='inputs' type="text" id="date_t" value='' disabled/>
                                         &nbsp;<a id='date_2' href="javascript:;"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                         <script type='text/javascript'>Calendar.setup({inputField:'date_t',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_2',singleClick:true,step:1});</script>
                                     </td>

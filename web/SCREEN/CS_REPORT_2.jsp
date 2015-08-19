@@ -59,7 +59,7 @@
                                 <tr>
                                     <td colspan="2"  class="blankspace"></td>
                                 </tr>
-                                <tr><td colspan='2'><b>กำหนดเงื่อนไข การออกรายงาน</b></td></tr><tr><td class='columnlabel'>DOC_ID : &nbsp;</td><td class='columnobject'><input name='DOC_ID_desc' type='text' id="DOC_ID_desc" value='' />
+                                <tr><td colspan='2'><b>กำหนดเงื่อนไข การออกรายงาน</b></td></tr><tr><td class='columnlabel'>DOC_ID : &nbsp;</td><td class='columnobject'><input name='DOC_ID_desc' class='inputs' type="text" id="DOC_ID_desc" value='' />
                                         &nbsp;<a href='javascript:;' onclick="openBrown('<%=lookup%>','DOC_ID_desc')" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='?????' name='IMAGE1' width='20' height='20' border='0' align='middle' /></a></td></tr>
 
                                 <tr>

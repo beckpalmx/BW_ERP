@@ -126,12 +126,12 @@
                             <tr>
                                 <td class="columnlabel">รหัสสินค้า*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='A_product_id' type='text' id="A_product_id" value='<%=product_id%>' size='10' />&nbsp;<a href='#' onClick="openBrWindow('vproduct', 24, 'Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;<input name='product_id_desc' type='text' id="product_id_desc" value='<%=product_name%>' size='20' readonly="readonly" />                                </td>
+                                    <input name='A_product_id' class='inputs' type="text" id="A_product_id" value='<%=product_id%>' size='10' />&nbsp;<a href='#' onClick="openBrWindow('vproduct', 24, 'Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;<input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='<%=product_name%>' size='20' readonly="readonly" />                                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">คลังสินค้า&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name="A_wh_in" type="text" id="A_wh_in" size="10" value="<%=wh_in%>"><a href='#'><img align='middle' border='0' width='20' height='20' onclick="openBrWindow('Mwarehouse&textinput=A_wh_in', 31, 'Search_Detail.jsp')" name='IMAGE4' alt='ค้นหา' src='../IMAGES/BUTTON/MAIN/SEARCH20.png'></a>
+                                    <input name="A_wh_in" class='inputs' type="text" id="A_wh_in" size="10" value="<%=wh_in%>"><a href='#'><img align='middle' border='0' width='20' height='20' onclick="openBrWindow('Mwarehouse&textinput=A_wh_in', 31, 'Search_Detail.jsp')" name='IMAGE4' alt='ค้นหา' src='../IMAGES/BUTTON/MAIN/SEARCH20.png'></a>
                                 </td>
                             </tr>
                             <tr>
@@ -142,22 +142,22 @@
                             <tr>
                                 <td class="columnlabel"><span class="row3">น้ำหนัก(กก.)&nbsp;</span></td>
                                 <td class="columnobject">
-                                    <input name="A_weight" type="text" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight','A_bag_qty','A_quantity')" >
+                                    <input name="A_weight" class='inputs' type="text" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight','A_bag_qty','A_quantity')" >
                                 </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><span class="row3">จำนวน(ก/ส)&nbsp;</span>&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='A_bag_qty' type='text' id="A_bag_qty" value='<%=bag_qty%>' size='10' onblur="Amount('A_weight','A_bag_qty','A_quantity')"/>                                </td>
+                                    <input name='A_bag_qty' class='inputs' type="text" id="A_bag_qty" value='<%=bag_qty%>' size='10' onblur="Amount('A_weight','A_bag_qty','A_quantity')"/>                                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><span class="row3">น้ำหนักรวม&nbsp;</span>&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='A_quantity' type='text' id="A_quantity" value='<%=quantity%>' size='10' />                                </td>
+                                    <input name='A_quantity' class='inputs' type="text" id="A_quantity" value='<%=quantity%>' size='10' />                                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                <td class="columnobject"><textarea name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
+                                <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
                             </tr>
 
                             <tr>

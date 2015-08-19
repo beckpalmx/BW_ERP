@@ -129,15 +129,15 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel">แป้งอบได้</td>
-                                <td class="columnobject"><input type="text" name="A_rawmat_id" id="A_rawmat_id" value="<%=rawmat_id%>">
+                                <td class="columnobject"><input class='inputs' type="text" name="A_rawmat_id" id="A_rawmat_id" value="<%=rawmat_id%>">
                                     <img width="20" height="20" border="0" align="middle" onclick="openBrWindow('vproduct&textinput=A_rawmat_id|A_rawmat_id_desc', 31, 'Search_Detail.jsp');" style="cursor: pointer;" name="IMAGE3" alt="ค้นหา" src="../IMAGES/BUTTON/MAIN/SEARCH20.png">
-                                    <input type="text" name="A_rawmat_id_desc" id="A_rawmat_id_desc" value="" size="40">
+                                    <input class='inputs' type="text" name="A_rawmat_id_desc" id="A_rawmat_id_desc" value="" size="40">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">วันที่</td>
                                 <td class="columnobject">
-                                    <input type="text" name="A_date_rawmat" id="A_date_rawmat" value="<%=date_rawmat%>" readonly>
+                                    <input class='inputs' type="text" name="A_date_rawmat" id="A_date_rawmat" value="<%=date_rawmat%>" readonly>
                                     &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_date_rawmat',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>
 
                                 </td>
@@ -148,15 +148,15 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel">บรรจุ</td>
-                                <td class="columnobject"><input type="text" name="A_pack" id="A_pack" value="<%=pack%>" onblur="Cal_T('A_pack','A_qty','A_weight')"></td>
+                                <td class="columnobject"><input class='inputs' type="text" name="A_pack" id="A_pack" value="<%=pack%>" onblur="Cal_T('A_pack','A_qty','A_weight')"></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">จำนวนกระสอบ</td>
-                                <td class="columnobject"><input type="text" name="A_qty" id="A_qty" value="<%=qty%>" onblur="Cal_T('A_pack','A_qty','A_weight')"></td>
+                                <td class="columnobject"><input class='inputs' type="text" name="A_qty" id="A_qty" value="<%=qty%>" onblur="Cal_T('A_pack','A_qty','A_weight')"></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">จำนวน(T)</td>
-                                <td class="columnobject"><input type="text" name="A_weight" id="A_weight" value="<%=weight%>"></td>
+                                <td class="columnobject"><input class='inputs' type="text" name="A_weight" id="A_weight" value="<%=weight%>"></td>
                             </tr>
 
                             <tr>

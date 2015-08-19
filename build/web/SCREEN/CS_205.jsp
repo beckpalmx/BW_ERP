@@ -95,9 +95,9 @@
                                     <tr>
                                         <td width="150" class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
                                         <td width="607" class="columnobject">
-                                            <input name='A_spec_id' type='text' id="A_spec_id" value='' size='10' />
+                                            <input name='A_spec_id' class='inputs' type="text" id="A_spec_id" value='' size='10' />
                                             &nbsp;<a href='javascript:;' onClick="openBrWindow('m_product_spec_header', 205, 'Search_Doc_id.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                            <input name='A_name_t' type='text' id="A_name_t" value='' size='30'  />
+                                            <input name='A_name_t' class='inputs' type="text" id="A_name_t" value='' size='30'  />
                                             &nbsp;</td>
                                     </tr>
                                     <tr>
@@ -128,9 +128,9 @@
                                                     <tr>
                                                         <td class="forborder" width="3%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         <td class="forborder" width="7%">1</td>
-                                                        <td class="forborder" width="30%"><input name='param1' type='text' id="param1" value='แป้ง(Starch)%' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder" width="15%"><input name='spec_min' type='text' id="spec_min1" value='' size=10 /></td>
-                                                        <td class="forborder" width="15%"><input name='spec_max' type='text' id="spec_max1" value='' size=10 /></td>
+                                                        <td class="forborder" width="30%"><input name='param1' class='inputs' type="text" id="param1" value='แป้ง(Starch)%' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder" width="15%"><input name='spec_min' class='inputs' type="text" id="spec_min1" value='' size=10 /></td>
+                                                        <td class="forborder" width="15%"><input name='spec_max' class='inputs' type="text" id="spec_max1" value='' size=10 /></td>
                                                         <td class="forborder" width="30%"><select name="P_add_desc1" id="P_add_desc1">
                                                                 <option value="Min" selected>Min</option>
                                                                 <option value="Max">Max</option>
@@ -140,9 +140,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         <td class="forborder">2</td>
-                                                        <td class="forborder"><input name='param2' type='text' id="param2" value='ความขาว(Whiteness)%' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min2" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max2" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param2' class='inputs' type="text" id="param2" value='ความขาว(Whiteness)%' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min2" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max2" value='' size=10 /></td>
                                                         <td class="forborder">
                                                             <select name="P_add_desc2" id="P_add_desc2">
                                                                 <option value="Min" selected>Min</option>
@@ -153,9 +153,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         <td class="forborder">3</td>
-                                                        <td class="forborder"><input name='param3' type='text' id="param3" value='ความเหนียว(Viscosity)' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min3" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max3" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param3' class='inputs' type="text" id="param3" value='ความเหนียว(Viscosity)' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min3" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max3" value='' size=10 /></td>
                                                         <td class="forborder"><select name="P_add_desc3" id="P_add_desc3">
                                                                 <option value="Min" selected>Min</option>
                                                                 <option value="Max">Max</option>
@@ -165,9 +165,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         <td class="forborder">4</td>
-                                                        <td class="forborder"><input name='param4' type='text' id="param4" value='ความละเอียด(Fineness)%' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min4" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max4" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param4' class='inputs' type="text" id="param4" value='ความละเอียด(Fineness)%' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min4" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max4" value='' size=10 /></td>
                                                         <td class="forborder">
                                                             <select name="P_add_desc4" id="P_add_desc4">
                                                                 <option value="Min">Min</option>
@@ -178,9 +178,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         <td class="forborder">5</td>
-                                                        <td class="forborder"><input name='param5' type='text' id="param5" value='กากอ่อน(Fiber/Pulp)' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min5" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max5" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param5' class='inputs' type="text" id="param5" value='กากอ่อน(Fiber/Pulp)' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min5" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max5" value='' size=10 /></td>
                                                         <td class="forborder"><select name="P_add_desc5" id="P_add_desc5">
                                                                 <option value="Min">Min</option>
                                                                 <option value="Max" selected>Max</option>
@@ -190,9 +190,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         <td class="forborder">6</td>
-                                                        <td class="forborder"><input name='param6' type='text' id="param6" value='ไซยาไนท์(HCN)' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min6" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max6" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param6' class='inputs' type="text" id="param6" value='ไซยาไนท์(HCN)' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min6" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max6" value='' size=10 /></td>
                                                         <td class="forborder"><select name="P_add_desc6" id="P_add_desc6">
                                                                 <option value="Max" selected>Nill/Max</option>
                                                             </select></td>
@@ -200,9 +200,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         <td class="forborder">7</td>
-                                                        <td class="forborder"><input name='param7' type='text' id="param7" value='ความชื่น(Mooiseture)%' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min7" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max7" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param7' class='inputs' type="text" id="param7" value='ความชื่น(Mooiseture)%' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min7" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max7" value='' size=10 /></td>
                                                         <td class="forborder">
                                                             <select name="P_add_desc7" id="P_add_desc7">
                                                                 <option value="Min">Min</option>
@@ -214,9 +214,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         <td class="forborder">8</td>
-                                                        <td class="forborder"><input name='param8' type='text' id="param8" value='เถ้า(Ash)%' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min8" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max8" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param8' class='inputs' type="text" id="param8" value='เถ้า(Ash)%' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min8" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max8" value='' size=10 /></td>
                                                         <td class="forborder">
                                                             <select name="P_add_desc8" id="P_add_desc8">
                                                                 <option value="Null" selected></option>
@@ -228,9 +228,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         <td class="forborder">9</td>
-                                                        <td class="forborder"><input name='param9' type='text' id="param9" value='พีเอช(pH)' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min9" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max9" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param9' class='inputs' type="text" id="param9" value='พีเอช(pH)' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min9" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max9" value='' size=10 /></td>
                                                         <td class="forborder">
                                                             <select name="P_add_desc9" id="P_add_desc9">
                                                                 <option value="Null" selected></option>
@@ -243,9 +243,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;</td>
                                                         <td class="forborder">10</td>
-                                                        <td class="forborder"><input name='param10' type='text' id="param10" value='SO2' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min10" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max10" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param10' class='inputs' type="text" id="param10" value='SO2' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min10" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max10" value='' size=10 /></td>
                                                         <td class="forborder">
                                                             <select name="P_add_desc10" id="P_add_desc10">
                                                                 <option value="Null" selected></option>
@@ -258,9 +258,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;</td>
                                                         <td class="forborder">11</td>
-                                                        <td class="forborder"><input name='param11' type='text' id="param11" value='จุดดำ' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min11" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max11" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param11' class='inputs' type="text" id="param11" value='จุดดำ' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min11" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max11" value='' size=10 /></td>
                                                         <td class="forborder">
                                                             <select name="P_add_desc11" id="P_add_desc11">
                                                                 <option value="Null" selected></option>
@@ -272,9 +272,9 @@
                                                     <tr>
                                                         <td class="forborder">&nbsp;</td>
                                                         <td class="forborder">12</td>
-                                                        <td class="forborder"><input name='param12' type='text' id="param12" value='Mesh140' size=25 readonly='readonly' /></td>
-                                                        <td class="forborder"><input name='spec_min' type='text' id="spec_min12" value='' size=10 /></td>
-                                                        <td class="forborder"><input name='spec_max' type='text' id="spec_max12" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='param12' class='inputs' type="text" id="param12" value='Mesh140' size=25 readonly='readonly' /></td>
+                                                        <td class="forborder"><input name='spec_min' class='inputs' type="text" id="spec_min12" value='' size=10 /></td>
+                                                        <td class="forborder"><input name='spec_max' class='inputs' type="text" id="spec_max12" value='' size=10 /></td>
                                                         <td class="forborder">
                                                             <select name="P_add_desc12" id="P_add_desc12">
                                                                 <<option value="Null" selected></option>
@@ -294,7 +294,7 @@
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                        <td class="columnobject"><textarea name='A_remark' cols='40' rows='5' id="A_remark"></textarea></td>
+                                        <td class="columnobject"><textarea class='text_inputs' name='A_remark' cols='40' rows='5' id="A_remark"></textarea></td>
                                     </tr>
                                     <tr>
                                         <td colspan='2' class='blankspace'><br>

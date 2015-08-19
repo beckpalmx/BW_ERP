@@ -248,7 +248,7 @@
                                 <tr>
                                     <td width="150" class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
                                     <td width="607" class="columnobject">
-                                        <input name='A_doc_id' type='text' id="A_doc_id" value='<%=request.getParameter("A_doc_id")%>' size='20' onBlur="ChkDoc_id();"/>
+                                        <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='<%=request.getParameter("A_doc_id")%>' size='20' onBlur="ChkDoc_id();"/>
                                         &nbsp;
                                         &nbsp;&nbsp;&nbsp;</td>
                                 </tr>
@@ -310,25 +310,25 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2" align="right">ใช้เวลาในการโม่
-                                        <input type="text" name="total_2" id="total_2" value="<%=total_2%>">
+                                        <input class='inputs' type="text" name="total_2" id="total_2" value="<%=total_2%>">
                                         ชัวโมง</td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">ค่าCODขาเข้า</td>
-                                    <td class="columnobject"><input name='A_cod_in' type='text' id="A_cod_in" value='<%=cod_in%>' size='15' /></td>
+                                    <td class="columnobject"><input name='A_cod_in' class='inputs' type="text" id="A_cod_in" value='<%=cod_in%>' size='15' /></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">ค่าCODขาเข้า</td>
-                                    <td class="columnobject"><input name='A_cod_out' type='text' id="A_cod_out" value='<%=cod_out%>' size='15' /></td>
+                                    <td class="columnobject"><input name='A_cod_out' class='inputs' type="text" id="A_cod_out" value='<%=cod_out%>' size='15' /></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">ปริมาณเหง้า&nbsp;</td>
-                                    <td class="columnobject"><input name='A_cassava_roots_qty' type='text' id="A_cassava_roots_qty" value='<%=cassava_roots_qty%>' size='15' />
+                                    <td class="columnobject"><input name='A_cassava_roots_qty' class='inputs' type="text" id="A_cassava_roots_qty" value='<%=cassava_roots_qty%>' size='15' />
                                         Kg.</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" align="right"><!--
-	          		<input type='text' name='____total_weight' size='10' value='' />
+	          		<input class='inputs' type="text" name='____total_weight' size='10' value='' />
 	          		 -->	          	</td>
                                 </tr>
                                 <tr>

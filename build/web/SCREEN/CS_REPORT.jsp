@@ -166,7 +166,7 @@
 
                                 <tr>
                                     <td width="153" class='columnobject'><div align="right">Date&nbsp;:&nbsp;</div></td>
-                                    <td width="193" class='columnobject'><input name='date_f' type='text' id="date_f" value='' readonly/>
+                                    <td width="193" class='columnobject'><input name='date_f' class='inputs' type="text" id="date_f" value='' readonly/>
                                         &nbsp;<a id='date_1' href="javascript:;"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                         <script type='text/javascript'>Calendar.setup({inputField:'date_f',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>                                    
                                     </td>

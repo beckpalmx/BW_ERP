@@ -23,7 +23,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<input type="text" id="txt1"> + <input type="text" id="txt2"> = <input type="text" id="txt3">
+<input class='inputs' type="text" id="txt1"> + <input class='inputs' type="text" id="txt2"> = <input class='inputs' type="text" id="txt3">
 <input type="button" id="btn1" value="Click">
 <input type="button" id="btn2" value="Clear">
 </body>

@@ -45,80 +45,80 @@
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">รหัสลูกค้า : &nbsp;</td>
-                                    <td class="columnobject"><input type="text" name="customer_id" id="customer_id">
+                                    <td class="columnobject"><input class='inputs' type="text" name="customer_id" id="customer_id">
                                         <a href='javascript:;'><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' onClick="openBrWindow('vcustomer', 15, 'Search_Config2.jsp')" ></a>
-                                        <input name="name_t" type="text" id="name_t" size="30">&nbsp;&nbsp;ชื่อย่อ<input type="text" id="initial" name="initial" value="" /><!--alt="ใช้สำหรับออกรหัสของฝ่าย LAB"-->
+                                        <input name="name_t" class='inputs' type="text" id="name_t" size="30">&nbsp;&nbsp;ชื่อย่อ<input class='inputs' type="text" id="initial" name="initial" value="" /><!--alt="ใช้สำหรับออกรหัสของฝ่าย LAB"-->
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">ที่อยู่ : &nbsp;</td>
-                                    <td class="columnobject"><textarea name="address1_t" id="address1_t" cols="45" rows="5"></textarea></td>
+                                    <td class="columnobject"><textarea class='text_inputs' name="address1_t" id="address1_t" cols="45" rows="5"></textarea></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">รหัสตำบล : &nbsp;</td>
                                     <td class="columnobject"><label>
-                                            <input type="text" name="tambol_code" id="tambol_code" readonly>
+                                            <input class='inputs' type="text" name="tambol_code" id="tambol_code" readonly>
                                         </label>
                                         <label></label>
                                         <label>
                                             <a href='javascript:;'><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' onClick="openBrWindow('mtambol', 15, 'Search_Config2.jsp')" ></a>
-                                            <input type="text" name="tambol_name" id="tambol_name" readonly>
+                                            <input class='inputs' type="text" name="tambol_name" id="tambol_name" readonly>
                                         </label></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">รหัสอำเภอ : &nbsp;</td>
                                     <td class="columnobject"><label>
-                                            <input type="text" name="amp_code" id="amp_code" readonly>
+                                            <input class='inputs' type="text" name="amp_code" id="amp_code" readonly>
                                             <a href='javascript:;'><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' onClick="openBrWindow('mamphor', 15, 'Search_Config2.jsp')" ></a>
-                                            <input type="text" name="amp_name" id="amp_name" readonly>
+                                            <input class='inputs' type="text" name="amp_name" id="amp_name" readonly>
                                         </label></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">รหัสจังหวัด : &nbsp;</td>
                                     <td class="columnobject"><label>
-                                            <input type="text" name="prov_code" id="prov_code" readonly>
+                                            <input class='inputs' type="text" name="prov_code" id="prov_code" readonly>
                                             <a href='javascript:;'><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' onClick="openBrWindow('mprovince', 15, 'Search_Config2.jsp')" ></a>
                                         </label>
                                         <label></label>
                                         <label>
-                                            <input type="text" name="prov_name" id="prov_name" readonly>
+                                            <input class='inputs' type="text" name="prov_name" id="prov_name" readonly>
                                         </label></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">รหัสประเทศ : &nbsp;</td>
                                     <td class="columnobject"><label>
-                                            <input type="text" name="country_id" id="country_id" readonly>
+                                            <input class='inputs' type="text" name="country_id" id="country_id" readonly>
                                             <a href='javascript:;'><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' onClick="openBrWindow('mcountry', 15, '../JSP/Search_Config2.jsp');" ></a> </label>
                                         <label></label>
                                         <label>
-                                            <input type="text" name="country_name" id="country_name" readonly>
+                                            <input class='inputs' type="text" name="country_name" id="country_name" readonly>
                                         </label></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">รหัสไปรษณีย์ : &nbsp;</td>
-                                    <td class="columnobject"><input name="zipcode" type="text" id="zipcode" maxlength="5" onKeyUp="IsNumeric(this.value,this)">
+                                    <td class="columnobject"><input name="zipcode" class='inputs' type="text" id="zipcode" maxlength="5" onKeyUp="IsNumeric(this.value,this)">
                                         <label>          	    </label></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">โทรศัพท์ : &nbsp;</td>
                                     <td class="columnobject"><label>
-                                            <input type="text" name="tel" id="tel" maxlength="13" onKeyUp="IsNumeric(this.value,this)">
+                                            <input class='inputs' type="text" name="tel" id="tel" maxlength="13" onKeyUp="IsNumeric(this.value,this)">
                                         </label></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">โทรสาร : &nbsp;</td>
-                                    <td class="columnobject"><input type="text" name="fax" id="fax" maxlength="13" onKeyUp="IsNumeric(this.value,this)"></td>
+                                    <td class="columnobject"><input class='inputs' type="text" name="fax" id="fax" maxlength="13" onKeyUp="IsNumeric(this.value,this)"></td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel">ชื่อผู้ติดต่อ : &nbsp;</td>
                                     <td class="columnobject"><label>
-                                            <input type="text" name="contact_name" id="contact_name">
+                                            <input class='inputs' type="text" name="contact_name" id="contact_name">
                                         </label></td>
                                 </tr>
                                 <tr>
                                     <td height="63" class="columnlabel">หมายเหตุ : &nbsp;</td>
                                     <td class="columnobject"><label>
-                                            <textarea name="remark" cols="45" rows="5" id="remark"></textarea>
+                                            <textarea class='text_inputs' name="remark" cols="45" rows="5" id="remark"></textarea>
                                         </label></td>
                                 </tr>
                                 <tr>

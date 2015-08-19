@@ -203,37 +203,37 @@
                                         <td width="170" class="columnlabel"><b><!--<input type="button" id="runid" name="runid" value="เลขที่ใบชั่งฯ/รับฯ" onclick="AjaxRun_id('A_doc_id', '../JSP/BW_CS_022.jsp?status_runid=4')">-->
                                                 เลขที่ใบชั่งฯ/รับฯ*</b>&nbsp;</td>
                                         <td width="587" colspan="3" class="columnobject">
-                                            <input name='A_doc_id' type='text' id="A_doc_id" value='' size='12' />
+                                            <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='12' />
                                             &nbsp;<a href='#' onClick="Opendoc_id()"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                             วันที่เอกสาร*&nbsp;
-                                            <input name='A_doc_date' type='text' id="A_doc_date" value='' size='10' readonly="readonly"/>
+                                            <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>
                                             &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
-                                            &nbsp;&nbsp;เวลา*&nbsp;<input name='A_doc_time' type='text' id="A_doc_time" value='' size='10' />
+                                            &nbsp;&nbsp;เวลา*&nbsp;<input name='A_doc_time' class='inputs' type="text" id="A_doc_time" value='' size='10' />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ทะเบียนรถ*</td>
-                                        <td colspan="3" class="columnobject"><input name="A_car_no" type="text" id="A_car_no"></td>
+                                        <td colspan="3" class="columnobject"><input name="A_car_no" class='inputs' type="text" id="A_car_no"></td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ชื่อผู้ขาย*&nbsp;</td>
                                         <td colspan="3" class="columnobject">
-                                            <input name='A_supplier_id' type='text' id="A_supplier_id" value='' size='10' readonly="readonly"/>
-                                            &nbsp;<a href='#' onClick="openBrWindow('Vsupplier', 22, 'Search_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='supplier_id_desc' type='text' id="supplier_id_desc" value='' size='20' readonly="readonly" />&nbsp;&nbsp;&nbsp;&nbsp;ประเภทลูกค้า
+                                            <input name='A_supplier_id' class='inputs' type="text" id="A_supplier_id" value='' size='10' readonly="readonly"/>
+                                            &nbsp;<a href='#' onClick="openBrWindow('Vsupplier', 22, 'Search_Config.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='supplier_id_desc' class='inputs' type="text" id="supplier_id_desc" value='' size='20' readonly="readonly" />&nbsp;&nbsp;&nbsp;&nbsp;ประเภทลูกค้า
                                                 <%=objuti.ShowSelectBox("select supply_type_id,name_t from m_supplyer_type where delete_flag = 'N'  order by runno", "supply_type_id", "name_t", "A_supplyer_type")%>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel"><p>วันที่รถเข้า</p></td>
-                                        <td colspan="3" class="columnobject"><input name='A_car_date_in ' type='text' id="A_car_date_in" value='' size='10' readonly="readonly"/>
+                                        <td colspan="3" class="columnobject"><input name='A_car_date_in ' class='inputs' type="text" id="A_car_date_in" value='' size='10' readonly="readonly"/>
                                             &nbsp;<!--<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_car_date_in',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_2',singleClick:true,step:1});</script>-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เวลา
-                                            <input type="text" name="A_car_time_in" id="A_car_time_in"  maxlength="5" onfocus="getId('A_car_date_in').value = getId('A_doc_date').value;"></td>
+                                            <input class='inputs' type="text" name="A_car_time_in" id="A_car_time_in"  maxlength="5" onfocus="getId('A_car_date_in').value = getId('A_doc_date').value;"></td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">วันที่รถออก</td>
-                                        <td colspan="3" class="columnobject"><input name='A_car_date_out' type='text' id="A_car_date_out" value='' size='10' readonly="readonly"/>
+                                        <td colspan="3" class="columnobject"><input name='A_car_date_out' class='inputs' type="text" id="A_car_date_out" value='' size='10' readonly="readonly"/>
                                             &nbsp;<!--<a id='date_3'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_car_date_out',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_3',singleClick:true,step:1});</script>-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เวลา
-                                            <input type="text" name="A_car_time_out" id="A_car_time_out"  maxlength="5" onfocus="getId('A_car_date_out').value = getId('A_doc_date').value;" onblur="getId('A_doc_date').value = getId(this.id).value"></td>
+                                            <input class='inputs' type="text" name="A_car_time_out" id="A_car_time_out"  maxlength="5" onfocus="getId('A_car_date_out').value = getId('A_doc_date').value;" onblur="getId('A_doc_date').value = getId(this.id).value"></td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel">ชนิดพันธุ์มัน*&nbsp;</td>
@@ -246,30 +246,30 @@
                                             <table width="96%" border="0">
                                                 <tr>
                                                     <td width="25%"><p>ครั้งที่ 1
-                                                            <input name="A_percent_1" type="text" id="A_percent_1" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
+                                                            <input name="A_percent_1" class='inputs' type="text" id="A_percent_1" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
                                                             %</p></td>
                                                     <td width="26%"><p>ครั้งที่ 2
-                                                            <input name="A_percent_2" type="text" id="A_percent_2" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
+                                                            <input name="A_percent_2" class='inputs' type="text" id="A_percent_2" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
                                                             %</p></td>
                                                     <td width="27%"><p>ครั้งที่   3
-                                                            <input name="A_percent_3" type="text" id="A_percent_3" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
+                                                            <input name="A_percent_3" class='inputs' type="text" id="A_percent_3" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
                                                             %</p></td>
                                                     <td width="22%"><p>ครั้งที่   4
-                                                            <input name="A_percent_4" type="text" id="A_percent_4" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
+                                                            <input name="A_percent_4" class='inputs' type="text" id="A_percent_4" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
                                                             %</p></td>
                                                 </tr>
                                                 <tr>
                                                     <td><p>ครั้งที่ 5
-                                                            <input name="A_percent_5" type="text" id="A_percent_5" size="8 " onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
+                                                            <input name="A_percent_5" class='inputs' type="text" id="A_percent_5" size="8 " onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
                                                             %</p></td>
                                                     <td><p>ครั้งที่ 6
-                                                            <input name="A_percent_6" type="text" id="A_percent_6" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
+                                                            <input name="A_percent_6" class='inputs' type="text" id="A_percent_6" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
                                                             %</p></td>
                                                     <td><p>ครั้งที่ 7
-                                                            <input name="A_percent_7" type="text" id="A_percent_7" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
+                                                            <input name="A_percent_7" class='inputs' type="text" id="A_percent_7" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
                                                             %</p></td>
                                                     <td><p>ครั้งที่ 8
-                                                            <input name="A_percent_8" type="text" id="A_percent_8" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
+                                                            <input name="A_percent_8" class='inputs' type="text" id="A_percent_8" size="8" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
                                                             %</p></td>
                                                 </tr>
                                             </table>

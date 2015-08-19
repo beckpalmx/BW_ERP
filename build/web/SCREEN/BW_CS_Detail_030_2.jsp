@@ -215,7 +215,7 @@
                                     </tr>
                                     <tr>
                                         <td width="156" align="" class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
-                                        <td width="600" class="columnobject"><input name='A_doc_id' type='text' id="A_doc_id" value='<%=request.getParameter("A_doc_id")%>' size='20' /></td>
+                                        <td width="600" class="columnobject"><input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='<%=request.getParameter("A_doc_id")%>' size='20' /></td>
                                     </tr>
                                     <tr>
                                         <td colspan='2' class='btn_multi'>&nbsp;</td>

@@ -50,7 +50,7 @@
                             <tr>
                                 <td class="columnlabel"><b>ผู้ใช้งาน*</b>&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name="username" type="text" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
+                                    <input name="username" class='inputs' type="text" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
                                 </td>
                             </tr>
                             <tr>

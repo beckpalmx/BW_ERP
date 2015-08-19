@@ -149,35 +149,35 @@
                             <tr>
                               <td class="columnlabel">วันที่เริ่มอบ*</td>
                               <td class="columnobject">
-                                  <input name="A_date_from" type="text" id="A_date_from" size="10" value="<%=date_from%>">
+                                  <input name="A_date_from" class='inputs' type="text" id="A_date_from" size="10" value="<%=date_from%>">
                                   &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_date_from',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>
                               </td>
                             </tr>
                             <tr>
                               <td class="columnlabel">เวลาที่เริ่มอบ*&nbsp;</td>
-                              <td class="columnobject"><input name='A_time_from' type='text' id="A_time_from" value='<%=time_from%>' size='10' onkeypress="Time_picker(this.id);" onblur="Check_Time_Value(this)"/>
+                              <td class="columnobject"><input name='A_time_from' class='inputs' type="text" id="A_time_from" value='<%=time_from%>' size='10' onkeypress="Time_picker(this.id);" onblur="Check_Time_Value(this)"/>
 
                                 &nbsp;</td>
                             </tr>
                             <tr>
                               <td class="columnlabel">วันที่สิ้นสุดการอบ*</td>
-                              <td class="columnobject"><input name="A_date_to" type="text" id="A_date_to" size="10" value="<%=date_to%>">
+                              <td class="columnobject"><input name="A_date_to" class='inputs' type="text" id="A_date_to" size="10" value="<%=date_to%>">
                               &nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_date_to',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_2',singleClick:true,step:1});</script></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">เวลาที่สิ้นสุดการอบ*&nbsp;</td>
                           <td class="columnobject">
-                              <input name='A_time_to' type='text' id="A_time_to" value='<%=time_to%>' size='10' onkeypress="Time_picker(this.id);" onblur="Check_Time_Value(this)"/>
+                              <input name='A_time_to' class='inputs' type="text" id="A_time_to" value='<%=time_to%>' size='10' onkeypress="Time_picker(this.id);" onblur="Check_Time_Value(this)"/>
                                     &nbsp;&nbsp;</td>
                             </tr>
                             <tr>
                                 <td class="columnlabel"><span class="row3">จำนวนชั่วโมง</span>&nbsp;</td>
                           <td class="columnobject">
-                              <input name='A_roast_hr' type='text' id="A_roast_hr" value='<%=roast_hr%>' size='10' />                                </td>
+                              <input name='A_roast_hr' class='inputs' type="text" id="A_roast_hr" value='<%=roast_hr%>' size='10' />                                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                <td class="columnobject"><textarea name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
+                                <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
                             </tr>
 
                             <tr>

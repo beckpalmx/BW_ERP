@@ -109,23 +109,23 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel">โม่หัวมันวันที่</td>
-                                <td class="columnobject"><input type="text" name="A_milling_date" id="A_milling_date" value="<%=milling_date%>" size="10" readonly> &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_milling_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script></td>
+                                <td class="columnobject"><input class='inputs' type="text" name="A_milling_date" id="A_milling_date" value="<%=milling_date%>" size="10" readonly> &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_milling_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">วันที่เริ่มโม่</td>
-                                <td class="columnobject"><input type="text" name="A_start_milling_date" id="A_start_milling_date" value="<%=start_milling_date%>" size="10" readonly>&nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_start_milling_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_2',singleClick:true,step:1});</script>
+                                <td class="columnobject"><input class='inputs' type="text" name="A_start_milling_date" id="A_start_milling_date" value="<%=start_milling_date%>" size="10" readonly>&nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_start_milling_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_2',singleClick:true,step:1});</script>
                                     &nbsp;&nbsp;&nbsp;เวลาเริ่มโม่
-                                    <input type="text" name="A_start_milling_time" id="A_start_milling_time" value="<%=start_milling_time%>"></td>
+                                    <input class='inputs' type="text" name="A_start_milling_time" id="A_start_milling_time" value="<%=start_milling_time%>"></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">วันที่หัวมันหมด</td>
-                                <td class="columnobject"><input type="text" name="A_stop_milling_date" id="A_stop_milling_date" value="<%=stop_milling_date%>" size="10" readonly>&nbsp;<a id='date_3'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_stop_milling_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_3',singleClick:true,step:1});</script>
+                                <td class="columnobject"><input class='inputs' type="text" name="A_stop_milling_date" id="A_stop_milling_date" value="<%=stop_milling_date%>" size="10" readonly>&nbsp;<a id='date_3'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_stop_milling_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_3',singleClick:true,step:1});</script>
                                     &nbsp;&nbsp;&nbsp;เวลาที่หัวมันหมด
-                                    <input type="text" name="A_stop_milling_time" id="A_stop_milling_time" value="<%=stop_milling_time%>"></td>
+                                    <input class='inputs' type="text" name="A_stop_milling_time" id="A_stop_milling_time" value="<%=stop_milling_time%>"></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">หมายเหตุ&nbsp;</td>
-                                <td class="columnobject"><textarea name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
+                                <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
                             </tr>
 
                             <tr>
