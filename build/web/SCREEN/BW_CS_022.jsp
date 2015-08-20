@@ -33,8 +33,7 @@
         <script src="../JS/jquery/jquery-2.1.4.js"></script>
         <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
 
-        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
-
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>   
 
         <script src="../JS/alertify/alertify.js"></script>        
 
@@ -216,7 +215,7 @@
                 doc_eff_date = objr_p.getDoc_eff_date();
                 doc_no = objr_p.getDoc_no();
                 //_______________________________________________________________report
-            %>
+%>
             <input name="username" type="hidden" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input name="D_status" type="hidden" id="D_status" value="3">
             <!-- เป็นการ Delete ข้อมูลทั้งหมด -->

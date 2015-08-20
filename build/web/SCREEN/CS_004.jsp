@@ -109,7 +109,10 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel1"><b>หมายเหตุ&nbsp;</b></td>
-                                <td class="columnobject"><textarea class="text_inputs" name='remark' cols='40' rows='5' id="remark"></textarea></td>
+                                <td class="columnobject">
+                                    <input class='inputs' type="text" id="remark" name="remark" size="49" value="">
+                                    <!--textarea class="text_inputs" name='remark' cols='40' rows='5' id="remark"></textarea-->
+                                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel1"><b>กำหนดสิทธิ์การเข้าใช้งานระบบ&nbsp;</b></td>

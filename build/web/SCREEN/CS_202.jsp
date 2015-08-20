@@ -10,20 +10,41 @@
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">        
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
+
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
         <script type="text/javascript">
             function add()
             {
                 var strID = "";
-                strID = getIDElements('input','A_');
-                strID = strID.substr(0, strID.length-1);
+                strID = getIDElements('input', 'A_');
+                strID = strID.substr(0, strID.length - 1);
                 alert(strID);
-                confirmDialogSave(URLsend('chkNull,'+strID,'../JSP/CS_202.jsp'));
+                confirmDialogSave(URLsend('chkNull,' + strID, '../JSP/CS_202.jsp'));
             }
-            function del(){
-                confirmDialogDelete(URLsend('A_cassava_price_id,D_status','../JSP/CS_202.jsp'));
+            function del() {
+                confirmDialogDelete(URLsend('A_cassava_price_id,D_status', '../JSP/CS_202.jsp'));
             }
-            function showdetail(){
+            function showdetail() {
                 showTableNonPopup("show", "A_cassava_price_id", "../SHOWDETAILSCREEN/BW_CS_Show202.jsp?doc_id=");
             }
         </script>
@@ -35,39 +56,37 @@
         <input name="U_status" type="hidden" id="U_status" value ="2">
         <input name="D_status" type = "hidden" id ="D_status" value ="3">
         <input type="hidden" id="status_cancle" value=""><!-- status_cancle = 1 คือค่าที่นำมา Edit แต่ถ้า ="" จะเป็นการ Insert -->
-        <table  cellpadding="0"  cellspacing="0">
-            <tr >
-                <td class="ftopleft"></td>
-                <td  class="ftopcenter" colspan="2">ตารางราคารับซื้อมัน (CS_202)</td>
-                <td class="ftopright"></td>
-            </tr>
-            <tr >
-                <td class="fcenterleft"></td>
-                <td  colspan="2" class="fcentercenter">
+
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> <span class="glyphicon glyphicon-pencil"></span>&nbsp;
+                    <b>ตารางราคารับซื้อมัน (CS_202)</b>
+                </div>                        
+                <div class="panel-footer">            
                     <div align="center">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel"><b>เลขที่*</b>&nbsp;</td>
+                                <td class="columnlabel1"><b>เลขที่*</b>&nbsp;</td>
                                 <td class="columnobject">
                                     <input class='inputs' type="text" name='A_cassava_price_id' size='10' value='' id="A_cassava_price_id" />
-                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('m_cassava_price',202,'Search_Doc_id.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;</td>
+                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('m_cassava_price', 202, 'Search_Doc_id.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel"><b>เลขที่ตั้งค่าราคารับซื้อมัน*</b>&nbsp;</td>
+                                <td class="columnlabel1"><b>เลขที่ตั้งค่าราคารับซื้อมัน*</b>&nbsp;</td>
                                 <td class="columnobject">
                                     <input class='inputs' type="text" name='A_cassava_price_setting_id' size='10' value='' id="A_cassava_price_setting_id" />
-                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('m_cassava_price_setting',202,'Search_Doc_id.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;</td>
+                                    &nbsp;<a href='javascript:;' onClick="openBrWindow('m_cassava_price_setting', 202, 'Search_Doc_id.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">วันที่รับซื้อ</td>
-                                <td class="columnobject"><input class='inputs' type="text" name="A_eff_date" id="A_eff_date" readonly>&nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_eff_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>&nbsp;</td>
+                                <td class="columnlabel1">วันที่รับซื้อ</td>
+                                <td class="columnobject"><input class='inputs' type="text" name="A_eff_date" id="A_eff_date" readonly>&nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_eff_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">วันที่ปิดรับ</td>
-                                <td class="columnobject"><input class='inputs' type="text" name="A_end_date" id="A_end_date" readonly>&nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_end_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_2',singleClick:true,step:1});</script>&nbsp;</td>
+                                <td class="columnlabel1">วันที่ปิดรับ</td>
+                                <td class="columnobject"><input class='inputs' type="text" name="A_end_date" id="A_end_date" readonly>&nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_end_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>&nbsp;</td>
                             </tr>
                             <tr>
 
@@ -286,14 +305,9 @@
                                     <br>                                </td>
                             </tr>
                         </table>
-                    </div></td>
-                <td class="fcenterright"></td>
-            </tr>
-            <tr bordercolor="0069B3">
-                <td class="ffootleft"></td>
-                <td  class="ffootcenter" colspan="2"></td>
-                <td class="ffootright"></td>
-            </tr>
-        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

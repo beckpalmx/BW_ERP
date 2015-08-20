@@ -42,13 +42,32 @@
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link rel="stylesheet" type="text/css" media="all" href="../JS/jscalendar/skins/aqua/aqua.css" title="Aua" />
         <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
         <script type="text/javascript" src="../JS/jscalendar/calendar.js"></script>
         <script type='text/javascript' src='../JS/jscalendar/lang/calendar-th.js'></script>
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>        
+
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>   
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
+
         <script type="text/javascript">
             var my_window = null;
             var t;
@@ -69,13 +88,12 @@
                 //AjaxRun_id('doc_date_to', '../JSP/CS_util.jsp?runer_id=1')
                 //getId("doc_date_to").value  = AjaxRun_id('doc_date_to', '../JSP/CS_util.jsp?runer_id=1');
                 getId("doc_date_to").value = MyCurrentDate('tha');
-                alert
             }
             function summit_data() {
                 var IDsend = "";
 
-                getId("date_from_format").value = getId("doc_date_from").value != "" ? format_Date(getId("doc_date_from").value) : "";
-                getId("date_to_format").value = getId("doc_date_to").value != "" ? format_Date(getId("doc_date_to").value) : "";
+                getId("date_from_format").value = getId("doc_date_from").value !== "" ? format_Date(getId("doc_date_from").value) : "";
+                getId("date_to_format").value = getId("doc_date_to").value !== "" ? format_Date(getId("doc_date_to").value) : "";
 
                 IDsend = "testc,doc_date_from,doc_date_to,date_from_format,date_to_format,A_username,process_for";
                 //getsaveProcess(URLsend('testc', "../JSP/CS_PROCESS_TRANSACTION.jsp"), 'report');
@@ -101,7 +119,7 @@
 
                 document.getElementById('doc_date_from').value = '01' + '-' + month + '-' + year;
 
-                if (document.getElementById('doc_date_to').value == '') {
+                if (document.getElementById('doc_date_to').value === '') {
                     document.getElementById('doc_date_to').value = day + '-' + month + '-' + year;
                 }
             }
@@ -120,32 +138,30 @@
         <input type="hidden" name="date_from_format" id="date_from_format" value="">
         <input type="hidden" name="date_to_format" id ="date_to_format" value="">        
         <input type="hidden" id="testc">  
-        <table  cellpadding="0"  cellspacing="0">
-            <tr>
-                <td class="ftopleft"></td>
-                <td  class="ftopcenter" colspan="2">ดึงข้อมูลชั่งน้ำหนักแป้งมันสำปะหลัง (ขาย) (BW_IMPORT_WEIGHT_SCALE_TAPIOCA)&nbsp;</td>
-                <td class="ftopright"></td>
-            </tr>
-            <tr >
-                <td class="fcenterleft"></td>
-                <td  colspan="2" class="fcentercenter">
+
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> <span class="glyphicon glyphicon-task"></span>&nbsp;
+                    <b>ดึงข้อมูลชั่งน้ำหนักแป้งมันสำปะหลัง (ขาย) (BW_IMPORT_WEIGHT_SCALE_TAPIOCA)</b>
+                </div>                        
+                <div class="panel-footer">                               
                     <div align="left">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td colspan='2'><b>&nbsp;</b></td>
-                            </tr>
-                            <tr>
-                                <td class='columnlabel'><b>วันที่เริ่มต้น</b></td><td class='columnobject'><input name='doc_date_from' class='inputs' type="text" id="doc_date_from" value="" readonly/>
+                                <td class='columnlabel1'><b>วันที่เริ่มต้น</b></td><td class='columnobject'><input name='doc_date_from' class='inputs' type="text" id="doc_date_from" value="" readonly/>
                                     &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'doc_date_from', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;
                                     <b>ถึง</b>
                                     <input name='doc_date_to' class='inputs' type="text" id="doc_date_to" value="" />
                                     &nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'doc_date_to', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">&nbsp;</td>
+                                <td colspan='2'><b>&nbsp;</b></td>
+                            </tr>                            
+                            <tr>
+                                <td class="columnlabel1">&nbsp;</td>
                                 <td class="columnobject"><textarea class='text_inputs' name='report' id="report" cols="50" rows="5"></textarea></td>
                             </tr>
                             <tr>
@@ -157,15 +173,10 @@
                                 <td colspan='2' class='blankspace' ></td>
                             </tr>
                         </table>
-                    </div></td>
-                <td class="fcenterright"></td>
-            </tr>
-            <tr bordercolor="0069B3">
-                <td class="ffootleft"></td>
-                <td  class="ffootcenter" colspan="2"></td>
-                <td class="ffootright"></td>
-            </tr>
-        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--/form-->
     </body>
 </html>

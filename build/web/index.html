@@ -41,7 +41,7 @@
         
         function chknull() { //v2.0
             if (document.getElementById('user').value === '' || document.getElementById('pass').value === '') {
-                alert('กรุณาใส่ข้อมูลให้ครบถ่วน');
+                alertify.alert("ชื่อผู้ใช้หรือรหัสผ่าน ไม่ถูกต้อง !!!");
             } else {
                 getLogin(URLsend('chkNull,user,pass,year_data,bwdb_name,db_name_ma', 'JSP/Login.jsp'));
             }

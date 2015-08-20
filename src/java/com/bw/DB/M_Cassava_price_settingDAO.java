@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.bw.DB;
 
 import com.bw.Util.UtiDatabase;
@@ -17,11 +16,12 @@ import java.util.ArrayList;
  * @author Administrator
  */
 public class M_Cassava_price_settingDAO {
-    public void insert(DataBeanM_Cassava_price DataBean_header,ArrayList<DataBeanM_Cassava_price> DataBean_detail)throws Exception{
+
+    public void insert(DataBeanM_Cassava_price DataBean_header, ArrayList<DataBeanM_Cassava_price> DataBean_detail) throws Exception {
         DBConnect objcon = new DBConnect();
         Connection con = objcon.openNewConnection();
         PreparedStatement p = null;
-        try{
+        try {
             p = con.prepareStatement("INSERT INTO m_cassava_price_setting"
                     + "(cassava_price_id,eff_date,end_date,create_by,create_date) "
                     + "VALUES(?,?,?,?,?)");
@@ -35,7 +35,7 @@ public class M_Cassava_price_settingDAO {
             p = con.prepareStatement("INSERT INTO m_cassava_price_detail_setting"
                     + "(cassava_price_id,eff_date,end_date,percent_cassava,price_value,create_by,create_date,percent_cassava_end,price_value_end,percent_cassava_begin,price_value_begin) "
                     + "VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-            for(int loop=0;loop<DataBean_detail.size();loop++){
+            for (int loop = 0; loop < DataBean_detail.size(); loop++) {
                 p.setString(1, DataBean_header.getCassava_price_id());
                 p.setString(2, DataBean_header.getEff_date());
                 p.setString(3, DataBean_header.getEnd_date());
@@ -50,22 +50,23 @@ public class M_Cassava_price_settingDAO {
                 p.addBatch();
             }
             p.executeBatch();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(p!=null){
+        } finally {
+            if (p != null) {
                 p.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
         }
     }
-    public void update(DataBeanM_Cassava_price DataBean_header,ArrayList<DataBeanM_Cassava_price> DataBean_detail)throws Exception{
+
+    public void update(DataBeanM_Cassava_price DataBean_header, ArrayList<DataBeanM_Cassava_price> DataBean_detail) throws Exception {
         DBConnect objcon = new DBConnect();
         Connection con = objcon.openNewConnection();
         PreparedStatement p = null;
-        try{
+        try {
             p = con.prepareStatement("UPDATE m_cassava_price_setting SET "
                     + "eff_date=?,end_date=?,update_by=?,update_date=? "
                     + "WHERE cassava_price_id=? and delete_flag = 'N'");
@@ -79,7 +80,7 @@ public class M_Cassava_price_settingDAO {
             p = con.prepareStatement("UPDATE m_cassava_price_detail_setting SET "
                     + "eff_date=?,end_date=?,price_value=?,price_value_begin=?,price_value_end=?,update_by=?,update_date=?"
                     + "WHERE cassava_price_id=? and percent_cassava=? and delete_flag = 'N'");
-            for(int loop=0;loop<DataBean_detail.size();loop++){
+            for (int loop = 0; loop < DataBean_detail.size(); loop++) {
                 p.setString(1, DataBean_header.getEff_date());
                 p.setString(2, DataBean_header.getEnd_date());
                 p.setString(3, DataBean_detail.get(loop).getPrice_value());
@@ -92,26 +93,27 @@ public class M_Cassava_price_settingDAO {
                 p.addBatch();
             }
             p.executeBatch();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(p != null){
+        } finally {
+            if (p != null) {
                 p.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
         }
     }
-    public void delete(DataBeanM_Cassava_price DataBean_header)throws Exception{
+
+    public void delete(DataBeanM_Cassava_price DataBean_header) throws Exception {
         DBConnect objcon = new DBConnect();
         Connection con = objcon.openNewConnection();
         PreparedStatement p = null;
         String SQL = "";
-        try{
-            for(int i=1;i<=2;i++){
+        try {
+            for (int i = 1; i <= 2; i++) {
                 SQL = "UPDATE ";
-                SQL += i==1?"m_cassava_price_setting ":"m_cassava_price_detail_setting ";
+                SQL += i == 1 ? "m_cassava_price_setting " : "m_cassava_price_detail_setting ";
                 SQL += "SET delete_flag =?,delete_by=?,delete_date=? ";
                 SQL += "WHERE cassava_price_id = ? and delete_flag = 'N'";
                 p = con.prepareStatement(SQL);
@@ -122,18 +124,19 @@ public class M_Cassava_price_settingDAO {
                 p.executeUpdate();
                 p.clearParameters();
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(p != null){
+        } finally {
+            if (p != null) {
                 p.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
         }
     }
-    public String Show_Detail(String doc_id)throws Exception{
+
+    public String Show_Detail(String doc_id) throws Exception {
         StringBuffer String_return = new StringBuffer();
         String SQL = "";
         UtiDatabase objuti = new UtiDatabase();
@@ -141,38 +144,38 @@ public class M_Cassava_price_settingDAO {
         Connection con = objcon.openNewConnection();
         ResultSet rs = null;
         int loop = 34;
-        try{
+        try {
             String_return.append("<table width='100%' align='center' border='0' cellpadding='0' cellspacing='1' class='inner'>\n");
-            if(objuti.numRowdatabase("SELECT count(cassava_price_id) as num from m_cassava_price_setting where cassava_price_id='"+doc_id+"' and delete_flag = 'N'") != 0){
-                SQL = "SELECT percent_cassava,percent_cassava_begin,percent_cassava_end,price_value_begin,price_value_end from m_cassava_price_detail_setting WHERE cassava_price_id = '"+doc_id+"' order by runno";
+            if (objuti.numRowdatabase("SELECT count(cassava_price_id) as num from m_cassava_price_setting where cassava_price_id='" + doc_id + "' and delete_flag = 'N'") != 0) {
+                SQL = "SELECT percent_cassava,percent_cassava_begin,percent_cassava_end,price_value_begin,price_value_end from m_cassava_price_detail_setting WHERE cassava_price_id = '" + doc_id + "' order by runno";
                 rs = con.createStatement().executeQuery(SQL);
-                while(rs.next()){
-                    if(rs.getString("percent_cassava").equals("34")){
-                        String_return.append("<tr><td class='forborder' width='5%'>&nbsp;</td><td class='forborder' width='20%'>"+rs.getString("percent_cassava")+"</td><td class='forborder' width='35%'>"+rs.getString("percent_cassava_begin")+"<input type='text'  name='A_price_value_1_"+loop+"' id='A_price_value_1_"+loop+"' value = '"+rs.getString("price_value_begin")+"'></td><td class='forborder' width='35%'><input type='hidden' name='A_price_value_2_"+loop+"' id='A_price_value_2_"+loop+"' value = '"+rs.getString("price_value_end")+"'>&nbsp;</td><td class='forborder' width='5%'>&nbsp;</td></tr>\n");
-                    }else{
-                        String_return.append("<tr><td class='forborder' width='5%'>&nbsp;</td><td class='forborder' width='20%'>"+rs.getString("percent_cassava")+"</td><td class='forborder' width='35%'>"+rs.getString("percent_cassava_begin")+"<input type='text'  name='A_price_value_1_"+loop+"' id='A_price_value_1_"+loop+"' value = '"+rs.getString("price_value_begin")+"'></td><td class='forborder' width='35%'>"+rs.getString("percent_cassava_end")+"<input type='text'  name='A_price_value_2_"+loop+"' id='A_price_value_2_"+loop+"' value = '"+rs.getString("price_value_end")+"'></td><td class='forborder' width='5%'>&nbsp;</td></tr>\n");
+                while (rs.next()) {
+                    if (rs.getString("percent_cassava").equals("34")) {
+                        String_return.append("<tr><td class='forborder' width='5%'>&nbsp;</td><td class='forborder' width='20%'>" + rs.getString("percent_cassava") + "</td><td class='forborder' width='35%'>" + rs.getString("percent_cassava_begin") + "<input class='inputs' type='text'   name='A_price_value_1_" + loop + "' id='A_price_value_1_" + loop + "' value = '" + rs.getString("price_value_begin") + "'></td><td class='forborder' width='35%'><input type='hidden' name='A_price_value_2_" + loop + "' id='A_price_value_2_" + loop + "' value = '" + rs.getString("price_value_end") + "'>&nbsp;</td><td class='forborder' width='5%'>&nbsp;</td></tr>\n");
+                    } else {
+                        String_return.append("<tr><td class='forborder' width='5%'>&nbsp;</td><td class='forborder' width='20%'>" + rs.getString("percent_cassava") + "</td><td class='forborder' width='35%'>" + rs.getString("percent_cassava_begin") + "<input class='inputs' type='text'   name='A_price_value_1_" + loop + "' id='A_price_value_1_" + loop + "' value = '" + rs.getString("price_value_begin") + "'></td><td class='forborder' width='35%'>" + rs.getString("percent_cassava_end") + "<input class='inputs' type='text'   name='A_price_value_2_" + loop + "' id='A_price_value_2_" + loop + "' value = '" + rs.getString("price_value_end") + "'></td><td class='forborder' width='5%'>&nbsp;</td></tr>\n");
                     }
-                    loop -=1;
+                    loop -= 1;
                 }
 
-            }else{
-                while(loop >= 15){
-                    if(loop == 34){
-                        String_return.append("<tr><td class='forborder' width='5%'>&nbsp;</td><td class='forborder' width='20%'>"+loop+"</td><td class='forborder' width='35%'>"+loop+".00-99.00<input type='text'  name='A_price_value_1_"+loop+"' id='A_price_value_1_"+loop+"' value = ''></td><td class='forborder' width='35%'><input type='hidden' name='A_price_value_2_"+loop+"' id='A_price_value_2_"+loop+"' value = ''></td><td class='forborder' width='5%'>&nbsp;</td></tr>\n");
-                    }else{
-                        String_return.append("<tr><td class='forborder' width='5%'>&nbsp;</td><td class='forborder' width='20%'>"+loop+"</td><td class='forborder' width='35%'>"+loop+".00-"+loop+".49<input type='text'  name='A_price_value_1_"+loop+"' id='A_price_value_1_"+loop+"' value = ''></td><td class='forborder' width='35%'>"+loop+".50-"+loop+".99<input type='text'  name='A_price_value_2_"+loop+"' id='A_price_value_2_"+loop+"' value = ''></td><td class='forborder' width='5%'>&nbsp;</td></tr>\n");
+            } else {
+                while (loop >= 15) {
+                    if (loop == 34) {
+                        String_return.append("<tr><td class='forborder' width='5%'>&nbsp;</td><td class='forborder' width='20%'>" + loop + "</td><td class='forborder' width='35%'>" + loop + ".00-99.00<input class='inputs' type='text'   name='A_price_value_1_" + loop + "' id='A_price_value_1_" + loop + "' value = ''></td><td class='forborder' width='35%'><input type='hidden' name='A_price_value_2_" + loop + "' id='A_price_value_2_" + loop + "' value = ''></td><td class='forborder' width='5%'>&nbsp;</td></tr>\n");
+                    } else {
+                        String_return.append("<tr><td class='forborder' width='5%'>&nbsp;</td><td class='forborder' width='20%'>" + loop + "</td><td class='forborder' width='35%'>" + loop + ".00-" + loop + ".49<input class='inputs' type='text'   name='A_price_value_1_" + loop + "' id='A_price_value_1_" + loop + "' value = ''></td><td class='forborder' width='35%'>" + loop + ".50-" + loop + ".99<input class='inputs' type='text'   name='A_price_value_2_" + loop + "' id='A_price_value_2_" + loop + "' value = ''></td><td class='forborder' width='5%'>&nbsp;</td></tr>\n");
                     }
-                    loop -=1;
+                    loop -= 1;
                 }
             }
             String_return.append("</table>");
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(rs != null){
+        } finally {
+            if (rs != null) {
                 rs.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
             return String_return.toString();
