@@ -23,7 +23,25 @@
         <!-- the following script defines the Calendar.setup helper function, which makes
                adding a calendar a matter of 1 or 2 lines of code. -->
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
+
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
+
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>   
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
         <script type="text/javascript">
 
             function openBrown(tableID) {
@@ -36,18 +54,18 @@
                 var da2 = new Date(document.report.date_t.value);
                 var d1 = document.report.date_f.value;
                 var d2 = document.report.date_t.value;
-                if (da1 < da2 || d1 == '' || d2 == '') {
-                    if (d1 != '' || d2 != '') {
-                        if (d1 != '') {
-                            if (d2 == '') {
+                if (da1 < da2 || d1 === '' || d2 === '') {
+                    if (d1 !== '' || d2 !== '') {
+                        if (d1 !== '') {
+                            if (d2 === '') {
                                 alert("กรุณาใส่ข้อมูลวันที่สิ้นสุดการออกรายงาน");
                             } else {
                                 document.report.date_form.value = d1;
                                 document.report.date_to.value = d2;
                                 document.report.submit();
                             }
-                        } else if (d2 != '') {
-                            if (d1 == '') {
+                        } else if (d2 !== '') {
+                            if (d1 === '') {
                                 alert("กรุณาใส่ข้อมูลวันที่เริ่มต้นการออกรายงาน");
                             } else {
                                 document.report.date_form.value = d1;
@@ -65,20 +83,18 @@
 
             function PrintReport() {
 
-                if (getId("date_f").value != "" && getId("date_t").value != "") {
+                if (getId("date_f").value !== "" && getId("date_t").value !== "") {
                     document.report.date_form.value = format_Date(getId("date_f").value);//dateFormat(da1.format,'yyyy-mm-dd').tostring;
                     document.report.date_to.value = format_Date(getId("date_t").value);
 
                     document.report.submit();
-                } else if (getId("date_f").value == "" && getId("date_t").value == "") {
+                } else if (getId("date_f").value === "" && getId("date_t").value === "") {
                     document.report.submit();
                 } else {
                     alert("กรุณาใส่วันที่ให้ครบ");
                 }
 
             }
-
-
         </script>
     </head>
     <body onunload="closepopup()">
@@ -88,17 +104,12 @@
             <input type="hidden" name="lookup" value="<%=lookup%>">
             <input type="hidden" name="date_form" value="">
             <input type="hidden" name="date_to" value="">
-
-
-            <table  cellpadding="0"  cellspacing="0">
-                <tr>
-                    <td class="ftopleft"></td>
-                    <td  class="ftopcenter" colspan="2">รายงาน 3 (CS_REPORT_3)&nbsp;</td>
-                    <td class="ftopright"></td>
-                </tr>
-                <tr >
-                    <td class="fcenterleft"></td>
-                    <td  colspan="2" class="fcentercenter">
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-print"></span>&nbsp;
+                        <b>รายงาน 3 (CS_REPORT_3)</b>
+                    </div>                        
+                    <div class="panel-footer">    
                         <div align="left">
                             <table  cellpadding="0" cellspacing="0" >
                                 <tr>
@@ -112,7 +123,7 @@
                                 <input name='param_f' type='hidden' id="param_f" value='' />
                                 <input name='param_t' type='hidden' id="param_t" value='' />
 
-                                <td class='columnlabel'>Date (dd-mm-yyyy) : &nbsp;</td><td class='columnobject'><input name='date_f' class='inputs' type="text" id="date_f" value='' readonly/>
+                                <td class='columnlabel1'>Date (dd-mm-yyyy) : &nbsp;</td><td class='columnobject'><input name='date_f' class='inputs' type="text" id="date_f" value='' readonly/>
                                     &nbsp;<a id='date_1' href="javascript:;"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                     <script type='text/javascript'>Calendar.setup({inputField: 'date_f', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
                                     To &nbsp;<input name='date_t' class='inputs' type="text" id="date_t" value='' readonly/>
@@ -126,23 +137,17 @@
 
                                 <tr>
                                     <td colspan='2' class='blankspace' align="right">
-                                        <input type="button" class="cgcButton_11" name="myBut" value=" พิมพ์รายงาน  " onclick="PrintReport()
-                                                        ;"/>
+                                        <input type="button" class="cgcButton_11" name="myBut" value=" พิมพ์รายงาน  " onclick="PrintReport();"/>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan='2' class='blankspace' ></td>
                                 </tr>
                             </table>
-                        </div></td>
-                    <td class="fcenterright"></td>
-                </tr>
-                <tr bordercolor="0069B3">
-                    <td class="ffootleft"></td>
-                    <td  class="ffootcenter" colspan="2"></td>
-                    <td class="ffootright"></td>
-                </tr>
-            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </body>
 </html>

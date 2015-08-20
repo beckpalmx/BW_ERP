@@ -41,7 +41,7 @@
             var t;
             function openBrown(tableID, SentToShow)
             {
-                t = "Search_Report.jsp?table=" + tableID + "&sentdataToshow=" + SentToShow;
+                t = "../SEARCHSCREEN/Search_Report.jsp?table=" + tableID + "&sentdataToshow=" + SentToShow;
                 if (my_window === null)
                     my_window = window.open(t, '', 'status=1,width=560,height=500');
                 else {
@@ -77,8 +77,14 @@
                                 <tr>
                                     <td colspan="2"  class="blankspace"></td>
                                 </tr>
-                                <tr><td colspan='2'><b>กำหนดเงื่อนไข การออกรายงาน</b></td></tr><tr><td class='columnlabel1'>DOC_ID : &nbsp;</td><td class='columnobject'><input name='DOC_ID_desc' class='inputs' type="text" id="DOC_ID_desc" value='' />
-                                        &nbsp;<a href='javascript:;' onclick="openBrown('<%=lookup%>', 'DOC_ID_desc')" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='?????' name='IMAGE1' width='20' height='20' border='0' align='middle' /></a></td></tr>
+                                <tr>
+                                    <td colspan='2'><b>กำหนดเงื่อนไข การออกรายงาน</b></td>
+                                </tr>
+                                <tr>
+                                    <td class='columnlabel1'>DOC_ID : &nbsp;</td><td class='columnobject'><input name='DOC_ID_desc' class='inputs' type="text" id="DOC_ID_desc" value='' />
+                                        &nbsp;<a href='javascript:;' onclick="openBrown('<%=lookup%>', 'DOC_ID_desc')" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='' name='IMAGE1' width='20' height='20' border='0' align='middle' /></a>
+                                    </td>
+                                </tr>
 
                                 <tr>
                                     <td colspan='2' class='blankspace' ></td>

@@ -191,7 +191,7 @@
                                 </tr>
                                 <%if (path.equals("BWRP_201")) {%>
                                 <tr>
-                                    <td class="columnlabel">ค่าเบรค*&nbsp;</td>
+                                    <td class="columnlabel1">ค่าเบรค*&nbsp;</td>
                                     <td colspan="3" class="columnobject"><%=objuti.ShowSelectBox("select brake_value,name_t from m_brake_value where delete_flag = 'N' order by runno", "brake_value", "name_t", "brake_value")%>
                                     </td>
                                 </tr>  

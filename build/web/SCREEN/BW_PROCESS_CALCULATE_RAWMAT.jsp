@@ -73,7 +73,7 @@
             function openBrown(tableID, SentToShow)
             {
                 t = "Search_Report.jsp?table=" + tableID + "&sentdataToshow=" + SentToShow;
-                if (my_window == null)
+                if (my_window === null)
                     my_window = window.open(t, '', 'status=1,width=560,height=500');
                 else {
                     closepopup();
@@ -150,15 +150,15 @@
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td colspan='2'><b>&nbsp;</b></td>
-                            </tr>
-                            <tr>
                                 <td class='columnlabel1'><b>วันที่เริ่มต้น</b></td><td class='columnobject'><input name='doc_date_from' class='inputs' type="text" id="doc_date_from" value="" readonly/>
                                     &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'doc_date_from', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;
                                     <b>ถึง</b>
                                     <input name='doc_date_to' class='inputs' type="text" id="doc_date_to" value="" />
                                     &nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'doc_date_to', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script></td>
                             </tr>
+                            <tr>
+                                <td colspan='2'><b>&nbsp;</b></td>
+                            </tr>                            
                             <tr>
                                 <td class="columnlabel1">&nbsp;</td>
                                 <td class="columnobject"><textarea class='text_inputs' name='report' id="report" cols="50" rows="5"></textarea></td>
