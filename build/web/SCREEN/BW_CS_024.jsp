@@ -206,6 +206,7 @@
                     }
                 }
             }
+
             function CreateNewRow()
             {
                 var intLine = parseInt(getId("maxline").value);
@@ -224,6 +225,7 @@
                 newCell.setAttribute("width", "3px");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td ><input type = 'checkbox' id = '" + intLine + "' name = 'ckbox'></td>";
+                newCell = newRow.insertCell(1);
                 newCell.setAttribute("width", "7%");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td>" + intLine + "&nbsp;</td>";
@@ -234,7 +236,7 @@
                 newCell = newRow.insertCell(3);
                 newCell.setAttribute("width", "12%");
                 newCell.setAttribute("class", "forborder");
-                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"5\" ID=\"P_wh_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'Mwarehouse&textinput=P_wh_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\"></td>";
+                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"5\" ID=\"P_wh_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'Mwarehouse&textinput=P_wh_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\" ></td>";
                 newCell = newRow.insertCell(4);
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
@@ -257,7 +259,7 @@
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_quantity_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
                 newCell = newRow.insertCell(8);
-                newCell.setAttribute("width", "20%");
+                newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"18\" ID=\"P_remark_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
 

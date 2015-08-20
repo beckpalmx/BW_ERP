@@ -35,7 +35,7 @@
                             </tr>
 
                             <tr>
-                                รหัส :
+                                รหัส :&nbsp;  
                             <input type="text" name="searchid" value="" size="40"/>
                             <input type="submit" id="submit" class="cgcButton_6" value="ค้นหา">
                             </tr>

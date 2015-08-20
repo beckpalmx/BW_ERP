@@ -56,7 +56,7 @@
                             <table width="550" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                     <td width="90"><input type="button" class="cgcButton_5" name="bt1" value=" ย้อนกลับ " onClick="javascript:window.close();"/></td>
-                                    <td width="46">รหัส :</td>
+                                    <td width="46">รหัส :&nbsp;  </td>
                                     <td width="199"><input type="text" name="searchid" value="" size="40"/></td>
                                     <td width="199">&nbsp;</td>
                                     <td width="16" colspan="2"></td>

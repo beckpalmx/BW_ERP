@@ -54,7 +54,7 @@
                             </tr>
 
                             <tr>
-                              <td height="22" align="right" valign="middle">ชื่อ :&nbsp;</td>
+                              <td height="22" align="right" valign="middle">ชื่อ :&nbsp; &nbsp;</td>
                               <td colspan="2" align="left"><input type="text" name="by_name" value="" size="40"/>
                                   <a href="javascript:;" ><img src="../IMAGES/BUTTON/MAIN/SEARCH24.png" width="17" height="17" border="0" onClick="chkDataSer()"></a></td>
                           </tr>

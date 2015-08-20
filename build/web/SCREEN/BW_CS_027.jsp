@@ -21,6 +21,24 @@
         <!-- the following script defines the Calendar.setup helper function, which makes
                adding a calendar a matter of 1 or 2 lines of code. -->
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
+
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
+
         <script type="text/javascript">
             function ResetValue() {
                 getId("status_cancle").value = "";
@@ -29,7 +47,7 @@
                 getId("A_return_flag").value = "N";
             }
             function Chknull() {
-                if (document.getElementById('doc_id').value == '') {
+                if (document.getElementById('doc_id').value === '') {
                     alert('กรุณาใส่ข้อมูลเลขที่เอกสาร');
                 } else
                     document.report.submit();
@@ -48,10 +66,10 @@
             {
 
                 var SURL;
-                var r = confirm("คุณต้องการยกเลิกข้อมูลทั้งหมดหรือไม่")
+                var r = confirm("คุณต้องการยกเลิกข้อมูลทั้งหมดหรือไม่");
                 if (r)
                 {
-                    if (getId("status_cancle").value == "1")
+                    if (getId("status_cancle").value === "1")
                     {
                         cancelAction();
                         getId("status_cancle").value = "";
@@ -59,7 +77,7 @@
                         getId("show").innerHTML = "";
                         getId("doc_id").disabled = false;
                     }
-                    else if (getId("status_cancle").value == "1" && getId("child_ck").value == "1")
+                    else if (getId("status_cancle").value === "1" && getId("child_ck").value === "1")
                     {
                         alert("มีการเปลี่ยนแปลงข้อมูลกรุณาบันทึกข้อมูล");
                     }
@@ -95,7 +113,7 @@
             }
             function AddHeader()
             {
-                var r = confirm("คุณต้องการบันทึกหรือไม่")
+                var r = confirm("คุณต้องการบันทึกหรือไม่");
                 if (r)
                 {
                     getSave(URLsend('chkNull,A_doc_id,A_return_flag,A_doc_confirm,A_wh_leader_id,A_account_id', '../JSP/BW_CS_027.jsp'));
@@ -169,136 +187,151 @@
             <input type="hidden" id="lookup" name="lookup" value="<%=lookup%>">
             <input type="hidden" id="doc_eff_date" name="doc_eff_date" value="<%=doc_eff_date%>">
             <input type="hidden" id="doc_no" name="doc_no" value="<%=doc_no%>">
-            <div align="center">
-                <table  cellpadding="0"  cellspacing="0">
-                    <tr >
-                        <td class="ftopleft"></td>
-                        <td  class="ftopcenter" colspan="2">ยืนยันการเบิกสินค้าสำเร็จรูป
-                            (BW_CS_027)&nbsp;</td>
-                        <td class="ftopright"></td>
-                    </tr>
-                    <tr>
-                        <td class="fcenterleft"></td>
-                        <td  colspan="2" class="fcentercenter">
-                            <div align="left">
-                                <table  cellpadding="0" cellspacing="0" >
-                                    <tr>
-                                        <td colspan="2" align="right"><b>หมายเลขเอกสาร : <%=objs_p.getIso_no()%></b></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" align="right"><b>วันที่มีผลบังคับใช้ : <%=objs_p.getEffective_date()%></b></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel">ทำการคืนเอกสารเพื่อแก้ไข</td>
-                                        <td class="columnobject"><input type="checkbox" name="A_return_flag" id="A_return_flag" value ="N" onClick="Click_Return_flag(this.checked);"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel">บริษัทที่จ่าย</td>
-                                        <td class="columnobject"><select name="A_company_id" id="A_company_id">
-                                                <option value="1" selected>BW</option>
-                                                <option value="2">ATS</option>
-                                            </select></td>
-                                    </tr>
-                                    <tr>
 
-                                        <td width="150" class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
-                                        <td width="607" class="columnobject">
-                                            <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='15' />
-                                            &nbsp;<a href='#' onClick="OpenDoc_id('N')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                            &nbsp;<a href='#' onClick="OpenDoc_id('Y')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                            วันที่เอกสาร*&nbsp;
-                                            <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>
-                                            <!--&nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>-->
-                                            &nbsp;&nbsp;เวลา*
-                                            <input name='A_doc_time' class='inputs' type="text" id="A_doc_time" value='' size='10' maxlength="5" readonly/></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel">แผนกผู้เบิก*&nbsp;</td>
-                                        <td class="columnobject">
-                                            <input name='A_dp_id' class='inputs' type="text" id="A_dp_id" value='' size='10' readonly="readonly" />
-                                            &nbsp;&nbsp;&nbsp;<input name='dp_id_desc' class='inputs' type="text" id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel">ทำการยืนยันเอกสาร*&nbsp;</td>
-                                        <td class="columnobject"><input type="checkbox" id="A_doc_confirm" name="A_doc_confirm" value="N" onclick="doc_confrim(this)"></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan='2' class='blankspace'></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="200" colspan="2" align="center">
-                                            <div style="width:100%;">
-                                                <table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
-                                                    <tr>
-                                                        <td colspan="4" class="h_multi">ข้อมูลสินค้า</td>
-                                                        <td colspan="5" class="btn_multi">
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="row3" width="7%">No.</td>
-                                                        <td class="row3" width="20%">รายการเบิกสินค้า&nbsp;</td>
-                                                        <td class="row3" width="10%">คลัง&nbsp;</td>
-                                                        <td class="row3" width="10%">กะ&nbsp;</td>
-                                                        <td class="row3" width="10%">น้ำหนัก(กก.)&nbsp;</td>
-                                                        <td class="row3" width="10%">จำนวน<br>(ก/ส)&nbsp;</td>
-                                                        <td class="row3" width="13%">ยอดตรวจนับ<br>(ก/ส)&nbsp;</td>
-                                                        <td class="row3" width="20%">หมายเหตุในการเบิก&nbsp;</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div style="width:100%; height: 150px; overflow: auto;" id="show">                                    </div>                                </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel">ผู้ส่งสินค้า</td>
-                                        <td class="columnobject"><input name='A_reporter_id' class='inputs' type="text" id="A_reporter_id" value='' size='10' readonly="readonly" />
-                                            &nbsp;&nbsp;&nbsp;
-                                            <input name='reporter_id_desc' class='inputs' type="text" id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel">ผู้อนุมัติ</td>
-                                        <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly="readonly" />
-                                            &nbsp;&nbsp;&nbsp;
-                                            <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel">แผนกคลังสินค้า</td>
-                                        <td class="columnobject">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel">ตรวจนับสินค้า                                 </td>
-                                        <td class="columnobject"><input name='A_wh_leader_id' class='inputs' type="text" id="A_wh_leader_id" value='' size='10' readonly="readonly" />
-                                            &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee2', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
-                                            <input name='wh_leader_id_desc' class='inputs' type="text" id="wh_leader_id_desc" value='' size='30' readonly="readonly" />หัวหน้าคลังสินค้า</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel">ผู้อนุมัติ </td>
-                                        <td class="columnobject"><input name='A_account_id' class='inputs' type="text" id="A_account_id" value='' size='10' readonly="readonly" />
-                                            &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee3', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
-                                            <input name='account_id_desc' class='inputs' type="text" id="account_id_desc" value='' size='30' readonly="readonly" />หัวหน้าแผนกบัญชี/คลังสินค้า</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" align="right"></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan='2' class='blankspace'>
-                                            <br>
-                                            <div align="center">
-                                                <a href="javascript:;" onClick="cancle()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
-                                                <a href="javascript:;" onClick="AddHeader()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
-                                                <a href="javascript:;" onClick="Delete()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a>
-                                                <a href="javascript:;"  onclick="Chknull()"><img alt="พิมพ์เอกสาร" class="imgtransparent" src="../IMAGES/BTN_PRINT_90.png" width="80" height="30" border="0"></a></div>
-                                            <br>                                </td>
-                                    </tr>
-                                </table>
-                            </div></td>
-                        <td class="fcenterright"></td>
-                    </tr>
-                    <tr bordercolor="0069B3">
-                        <td class="ffootleft"></td>
-                        <td  class="ffootcenter" colspan="2"></td>
-                        <td class="ffootright"></td>
-                    </tr>
-                </table>
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                        <b>ยืนยันการเบิกสินค้าสำเร็จรูป (BW_CS_027)</b>
+                    </div>                        
+                    <div class="panel-footer">                                 
+                        <div align="left">
+                            <table  cellpadding="0" cellspacing="0" >
+                                <tr>
+                                    <td colspan="2" align="right"><b>หมายเลขเอกสาร : <%=objs_p.getIso_no()%></b></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="right"><b>วันที่มีผลบังคับใช้ : <%=objs_p.getEffective_date()%></b></td>
+                                </tr>
+
+                                <!--tr>
+                                    <td class="columnlabel1">ทำการคืนเอกสารเพื่อแก้ไข</td>
+                                    <td class="columnobject"><input type="checkbox" name="A_return_flag" id="A_return_flag" value ="N" onClick="Click_Return_flag(this.checked);"></td>
+                                </tr-->
+
+                                <tr>
+                                    <td class="columnlabel1"><b>ทำการคืนเอกสารเพื่อแก้ไข</b>&nbsp;:&nbsp;</td>
+                                    <td class="columnobject">
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" id="A_return_flag" name="A_return_flag" value="N" onClick="Click_Return_flag(this.checked)">
+                                            <label for="A_return_flag"></label> 
+                                        </div>
+                                    </td>
+                                </tr>                                   
+
+                                <tr>
+                                    <td class="columnlabel1">บริษัทที่จ่าย</td>
+                                    <td class="columnobject"><select class='select_cgc2' name="A_company_id" id="A_company_id">
+                                            <option value="1" selected>BW</option>
+                                            <option value="2">ATS</option>
+                                        </select></td>
+                                </tr>
+                                <tr>
+
+                                    <td width="150" class="columnlabel1"><b>เลขที่เอกสาร*</b>&nbsp;</td>
+                                    <td width="607" class="columnobject">
+                                        <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='15' />
+                                        &nbsp;<a href='#' onClick="OpenDoc_id('N')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                        &nbsp;<a href='#' onClick="OpenDoc_id('Y')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                        วันที่เอกสาร*&nbsp;
+                                        <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>
+                                        <!--&nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>-->
+                                        &nbsp;&nbsp;เวลา*
+                                        <input name='A_doc_time' class='inputs' type="text" id="A_doc_time" value='' size='10' maxlength="5" readonly/></td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">แผนกผู้เบิก*&nbsp;</td>
+                                    <td class="columnobject">
+                                        <input name='A_dp_id' class='inputs' type="text" id="A_dp_id" value='' size='10' readonly="readonly" />
+                                        &nbsp;&nbsp;&nbsp;<input name='dp_id_desc' class='inputs' type="text" id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
+                                </tr>
+                                
+                                <!--tr>
+                                    <td class="columnlabel1">ทำการยืนยันเอกสาร*&nbsp;</td>
+                                    <td class="columnobject"><input type="checkbox" id="A_doc_confirm" name="A_doc_confirm" value="N" onclick="doc_confrim(this)"></td>
+                                </tr-->
+                                
+                                <tr>
+                                    <td class="columnlabel1"><b>ทำการยืนยันเอกสาร</b>&nbsp;:&nbsp;</td>
+                                    <td class="columnobject">
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" id="A_doc_confirm" name="A_doc_confirm" value="N" onClick="doc_confrim(this)">
+                                            <label for="A_doc_confirm"></label> 
+                                        </div>
+                                    </td>
+                                </tr>                                         
+                                
+                                <tr>
+                                    <td colspan='2' class='blankspace'></td>
+                                </tr>
+                                <tr>
+                                    <td height="200" colspan="2" align="center">
+                                        <div style="width:100%;">
+                                            <table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
+                                                <tr>
+                                                    <td colspan="4" class="h_multi">ข้อมูลสินค้า</td>
+                                                    <td colspan="5" class="btn_multi">
+                                                </tr>
+                                                <tr>
+                                                    <td class="row3" width="7%">No.</td>
+                                                    <td class="row3" width="20%">รายการเบิกสินค้า&nbsp;</td>
+                                                    <td class="row3" width="10%">คลัง&nbsp;</td>
+                                                    <td class="row3" width="10%">กะ&nbsp;</td>
+                                                    <td class="row3" width="10%">น้ำหนัก(กก.)&nbsp;</td>
+                                                    <td class="row3" width="10%">จำนวน<br>(ก/ส)&nbsp;</td>
+                                                    <td class="row3" width="13%">ยอดตรวจนับ<br>(ก/ส)&nbsp;</td>
+                                                    <td class="row3" width="20%">หมายเหตุในการเบิก&nbsp;</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div style="width:100%; height: 150px; overflow: auto;" id="show">                                    </div>                                </td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">ผู้ส่งสินค้า</td>
+                                    <td class="columnobject"><input name='A_reporter_id' class='inputs' type="text" id="A_reporter_id" value='' size='10' readonly="readonly" />
+                                        &nbsp;&nbsp;&nbsp;
+                                        <input name='reporter_id_desc' class='inputs' type="text" id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">ผู้อนุมัติ</td>
+                                    <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly="readonly" />
+                                        &nbsp;&nbsp;&nbsp;
+                                        <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">แผนกคลังสินค้า</td>
+                                    <td class="columnobject">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">ตรวจนับสินค้า                                 </td>
+                                    <td class="columnobject"><input name='A_wh_leader_id' class='inputs' type="text" id="A_wh_leader_id" value='' size='10' readonly="readonly" />
+                                        &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee2', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
+                                        <input name='wh_leader_id_desc' class='inputs' type="text" id="wh_leader_id_desc" value='' size='30' readonly="readonly" />หัวหน้าคลังสินค้า</td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">ผู้อนุมัติ </td>
+                                    <td class="columnobject"><input name='A_account_id' class='inputs' type="text" id="A_account_id" value='' size='10' readonly="readonly" />
+                                        &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee3', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
+                                        <input name='account_id_desc' class='inputs' type="text" id="account_id_desc" value='' size='30' readonly="readonly" />หัวหน้าแผนกบัญชี/คลังสินค้า</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="right"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan='2' class='blankspace'>
+                                        <br>
+                                        <div align="center">
+                                            <a href="javascript:;" onClick="cancle()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
+                                            <a href="javascript:;" onClick="AddHeader()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
+                                            <a href="javascript:;" onClick="Delete()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a>
+                                            <a href="javascript:;"  onclick="Chknull()"><img alt="พิมพ์เอกสาร" class="imgtransparent" src="../IMAGES/BTN_PRINT_90.png" width="80" height="30" border="0"></a></div>
+                                        <br>                                </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
-    </body>
+        </div>
+    </form>
+</body>
 </html>

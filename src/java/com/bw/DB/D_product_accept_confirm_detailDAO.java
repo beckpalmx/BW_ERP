@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.bw.DB;
 
 import com.bw.Util.StringQuery;
@@ -17,6 +16,7 @@ import java.sql.ResultSet;
  * @author B
  */
 public class D_product_accept_confirm_detailDAO {
+
     UtiDatabase objuti;
     StringQuery objStringQuery;
     int i, numrow;
@@ -40,15 +40,24 @@ public class D_product_accept_confirm_detailDAO {
         i = 1;
         try {
             p = con.prepareStatement(objStringQuery.Insert_String(String_input, "d_product_accept_detail"));
-            p.setString(i, DataBean.getDoc_id());i += 1;
-            p.setString(i, DataBean.getLine_no());i += 1;
-            p.setString(i, DataBean.getProduct_id());i += 1;
-            p.setString(i, DataBean.getWeight());i += 1;
-            p.setString(i, DataBean.getBag_qty());i += 1;
-            p.setString(i, DataBean.getRemark());i += 1;
-            p.setString(i, DataBean.getBy());i += 1;
-            p.setTimestamp(i, DataBean.getDate());i += 1;
-            p.setString(i, DataBean.getShift());i += 1;
+            p.setString(i, DataBean.getDoc_id());
+            i += 1;
+            p.setString(i, DataBean.getLine_no());
+            i += 1;
+            p.setString(i, DataBean.getProduct_id());
+            i += 1;
+            p.setString(i, DataBean.getWeight());
+            i += 1;
+            p.setString(i, DataBean.getBag_qty());
+            i += 1;
+            p.setString(i, DataBean.getRemark());
+            i += 1;
+            p.setString(i, DataBean.getBy());
+            i += 1;
+            p.setTimestamp(i, DataBean.getDate());
+            i += 1;
+            p.setString(i, DataBean.getShift());
+            i += 1;
             p.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -78,11 +87,16 @@ public class D_product_accept_confirm_detailDAO {
         try {
             p = con.prepareStatement(objStringQuery.Update_String(String_update, "d_product_accept_confirm_detail",
                     "where doc_id ='" + DataBean.getDoc_id() + "' and line_no = '" + DataBean.getLine_no() + "' and complete_flag = 'N' and delete_flag = 'N'"));
-            p.setString(i, DataBean.getAmount());i += 1;
-            p.setString(i, DataBean.getRemark());i += 1;
-            p.setString(i, DataBean.getBy());i += 1;
-            p.setTimestamp(i, DataBean.getDate());i += 1;
-            p.setString(i, DataBean.getWh_id());i += 1;
+            p.setString(i, DataBean.getAmount());
+            i += 1;
+            p.setString(i, DataBean.getRemark());
+            i += 1;
+            p.setString(i, DataBean.getBy());
+            i += 1;
+            p.setTimestamp(i, DataBean.getDate());
+            i += 1;
+            p.setString(i, DataBean.getWh_id());
+            i += 1;
             p.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -112,11 +126,16 @@ public class D_product_accept_confirm_detailDAO {
         try {
             p = con.prepareStatement(objStringQuery.Update_String(String_update, "d_product_accept_suppliers_detail_wh",
                     "where doc_id ='" + DataBean.getDoc_id() + "' and line_no = '" + DataBean.getLine_no() + "' and complete_flag = 'N' and delete_flag = 'N'"));
-            p.setString(i, DataBean.getAmount());i += 1;
-            p.setString(i, DataBean.getRemark());i += 1;
-            p.setString(i, DataBean.getBy());i += 1;
-            p.setTimestamp(i, DataBean.getDate());i += 1;
-            p.setString(i, DataBean.getWh_id());i += 1;
+            p.setString(i, DataBean.getAmount());
+            i += 1;
+            p.setString(i, DataBean.getRemark());
+            i += 1;
+            p.setString(i, DataBean.getBy());
+            i += 1;
+            p.setTimestamp(i, DataBean.getDate());
+            i += 1;
+            p.setString(i, DataBean.getWh_id());
+            i += 1;
             p.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -160,14 +179,14 @@ public class D_product_accept_confirm_detailDAO {
                         old_line_no.append(rs.getString("line_no"));
                         old_line_no.append(",");
                     }
-                    Str_old_line_no = old_line_no.toString().substring(0, old_line_no.toString().length()-1);
+                    Str_old_line_no = old_line_no.toString().substring(0, old_line_no.toString().length() - 1);
                     Number_Line_no = null;
-                    p  = null;
+                    p = null;
                     Number_Line_no = Str_old_line_no.split(",");
                     p = con.prepareStatement(objStringQuery.Flag_Status_String("line_no=?", Table_Detail,
                             "where doc_id =? and line_no = ? and complete_flag = 'N' and delete_flag = 'N'"));
                     for (int loop = 0; loop < Number_Line_no.length; loop++) {
-                        p.setString(1, Integer.toString(loop+1));
+                        p.setString(1, Integer.toString(loop + 1));
                         p.setString(2, DataBean.getDoc_id());
                         p.setString(3, Number_Line_no[loop]);
                         p.addBatch();
@@ -214,7 +233,8 @@ public class D_product_accept_confirm_detailDAO {
             }
         }
     }
-    public DataBeanD_product_accept_detail Return_Edit(String doc_id,String line_no)throws Exception{
+
+    public DataBeanD_product_accept_detail Return_Edit(String doc_id, String line_no) throws Exception {
         DataBeanD_product_accept_detail objbean = new DataBeanD_product_accept_detail();
         DBConnect objcon = new DBConnect();
         Connection con = objcon.openNewConnection();
@@ -222,10 +242,10 @@ public class D_product_accept_confirm_detailDAO {
         String SQL = "SELECT "
                 + "product_id,bag_qty,weight,remark,shift,amount,product_name,quantity,wh_in"
                 + " FROM vd_product_accept_confirm_detail "
-                + " WHERE doc_id = '"+doc_id+"' and line_no = '"+line_no+"' and delete_flag = 'N' and complete_flag = 'N'";
-        try{
+                + " WHERE doc_id = '" + doc_id + "' and line_no = '" + line_no + "' and delete_flag = 'N' and complete_flag = 'N'";
+        try {
             rs = con.createStatement().executeQuery(SQL);
-            while(rs.next()){
+            while (rs.next()) {
                 objbean.setProduct_id(rs.getString("product_id"));
                 objbean.setBag_qty(rs.getString("bag_qty"));
                 objbean.setWeight(rs.getString("weight"));
@@ -236,19 +256,20 @@ public class D_product_accept_confirm_detailDAO {
                 objbean.setQuantity(rs.getString("quantity"));
                 objbean.setWh_id(rs.getString("wh_in"));
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(rs != null){
+        } finally {
+            if (rs != null) {
                 rs.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
             return objbean;
         }
     }
-    public DataBeanD_product_accept_detail Return_Edit_suppliers(String doc_id,String line_no)throws Exception{
+
+    public DataBeanD_product_accept_detail Return_Edit_suppliers(String doc_id, String line_no) throws Exception {
         DataBeanD_product_accept_detail objbean = new DataBeanD_product_accept_detail();
         DBConnect objcon = new DBConnect();
         Connection con = objcon.openNewConnection();
@@ -256,10 +277,10 @@ public class D_product_accept_confirm_detailDAO {
         String SQL = "SELECT "
                 + "product_id,bag_qty,weight,remark,shift,amount,product_name,quantity,wh_in"
                 + " FROM vd_product_accept_suppliers_detail_wh "
-                + " WHERE doc_id = '"+doc_id+"' and line_no = '"+line_no+"' and delete_flag = 'N' and complete_flag = 'N'";
-        try{
+                + " WHERE doc_id = '" + doc_id + "' and line_no = '" + line_no + "' and delete_flag = 'N' and complete_flag = 'N'";
+        try {
             rs = con.createStatement().executeQuery(SQL);
-            while(rs.next()){
+            while (rs.next()) {
                 objbean.setProduct_id(rs.getString("product_id"));
                 objbean.setBag_qty(rs.getString("bag_qty"));
                 objbean.setWeight(rs.getString("weight"));
@@ -270,13 +291,13 @@ public class D_product_accept_confirm_detailDAO {
                 objbean.setQuantity(rs.getString("quantity"));
                 objbean.setWh_id(rs.getString("wh_in"));
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(rs != null){
+        } finally {
+            if (rs != null) {
                 rs.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
             return objbean;
@@ -310,7 +331,7 @@ public class D_product_accept_confirm_detailDAO {
                         Return_String.append("<tr>\n");
                         //Return_String.append("<td class='forborder' width='3px'><input type='checkbox' id='ckbox' value='"+rs.getString("line_no")+"' name='ckbox' onclick=\"cancle_chkboxAll('chk_all',this.checked)\"></td>");
                         Return_String.append("<td class='forborder' width='7%'><a href=\"#\" onclick=\"OpenEdit(URLsend('line_no_" + rs.getString("line_no") + ",A_doc_id','../SCREEN/BW_CS_Detail_025.jsp'))\"><input type='hidden' id='line_no_" + rs.getString("line_no") + "' value=\"" + rs.getString("line_no") + "\"><input type='hidden' id='doc_id' value=\"" + rs.getString("doc_id") + "\"><input type='hidden' id='runno_" + rs.getString("runno") + "'' value=\"" + rs.getString("runno") + "\">" + rs.getString("line_no") + "</a></td>\n");
-                        Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("product_id")) + "&nbsp;"+objuti.NotNull(rs.getString("product_name")) + "</td>\n");
+                        Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("product_id")) + "&nbsp;" + objuti.NotNull(rs.getString("product_name")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("wh_in")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("shift_name")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("weight")) + "</td>\n");
@@ -327,17 +348,17 @@ public class D_product_accept_confirm_detailDAO {
                         if (count == screen) {
                             Return_String.append(" [" + count + "] |");
                         } else {
-                            Return_String.append(" <a href='#'  onclick = \"showTableNonPopup_Detail('show','A_doc_id','s_screen_"+count+"','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\"><input type = 'hidden' id='s_screen_"+count+"' name='s_screen_"+count+"' value =\""+count+"\">" + count + "</a> |");
+                            Return_String.append(" <a href='#'  onclick = \"showTableNonPopup_Detail('show','A_doc_id','s_screen_" + count + "','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\"><input type = 'hidden' id='s_screen_" + count + "' name='s_screen_" + count + "' value =\"" + count + "\">" + count + "</a> |");
                         }
 
                     }
                     //**************************************************Select**************************************
-                    Return_String.append("<select id='select_screen' name = 'select_screen'>");
-                    for(int count = 1; count <= 10 && count <= total_page; count++){
+                    Return_String.append("<select class='select_cgc4' id='select_screen' name = 'select_screen'>");
+                    for (int count = 1; count <= 10 && count <= total_page; count++) {
                         if (count == screen) {
-                            Return_String.append("<option selected  value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\">"+count+"</option>");
-                        }else{
-                            Return_String.append("<option   value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\">"+count+"</option>");
+                            Return_String.append("<option selected  value=\'" + count + "\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\">" + count + "</option>");
+                        } else {
+                            Return_String.append("<option   value=\'" + count + "\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\">" + count + "</option>");
                         }
                     }
                     Return_String.append("</select>");
@@ -347,16 +368,16 @@ public class D_product_accept_confirm_detailDAO {
                         if (count == screen) {
                             Return_String.append("| [" + count + "] |");
                         } else {
-                            Return_String.append(" <a href='#' onclick = \"showTableNonPopup_Detail('show','A_doc_id','s_screen_"+count+"','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\"><input type = 'hidden' id='s_screen_"+count+"' name='s_screen_"+count+"' value ='"+count+"'>" + count + "</a> |");
+                            Return_String.append(" <a href='#' onclick = \"showTableNonPopup_Detail('show','A_doc_id','s_screen_" + count + "','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\"><input type = 'hidden' id='s_screen_" + count + "' name='s_screen_" + count + "' value ='" + count + "'>" + count + "</a> |");
                         }
                     }
                     //**************************************************Select**************************************
-                    Return_String.append("<select id='select_screen' name = 'select_screen'>");
-                    for(int count = (screen - 5); count <= (screen + 5) && count <= total_page; count++){
+                    Return_String.append("<select class='select_cgc4' id='select_screen' name = 'select_screen'>");
+                    for (int count = (screen - 5); count <= (screen + 5) && count <= total_page; count++) {
                         if (count == screen) {
-                            Return_String.append("<option selected  value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\">"+count+"</option>");
-                        }else{
-                            Return_String.append("<option   value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\">"+count+"</option>");
+                            Return_String.append("<option selected  value=\'" + count + "\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\">" + count + "</option>");
+                        } else {
+                            Return_String.append("<option   value=\'" + count + "\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=')\">" + count + "</option>");
                         }
                     }
                     Return_String.append("</select>");
@@ -380,8 +401,6 @@ public class D_product_accept_confirm_detailDAO {
             return Return_String.toString();
 
         }
-
-
 
     }
 
@@ -412,7 +431,7 @@ public class D_product_accept_confirm_detailDAO {
                         Return_String.append("<tr>\n");
                         //Return_String.append("<td class='forborder' width='3px'><input type='checkbox' id='ckbox' value='"+rs.getString("line_no")+"' name='ckbox' onclick=\"cancle_chkboxAll('chk_all',this.checked)\"></td>");
                         Return_String.append("<td class='forborder' width='7%'><a href=\"#\" onclick=\"OpenEdit(URLsend('line_no_" + rs.getString("line_no") + ",A_doc_id','../SCREEN/BW_CS_Detail_050_WH.jsp'))\"><input type='hidden' id='line_no_" + rs.getString("line_no") + "' value=\"" + rs.getString("line_no") + "\"><input type='hidden' id='doc_id' value=\"" + rs.getString("doc_id") + "\"><input type='hidden' id='runno_" + rs.getString("runno") + "'' value=\"" + rs.getString("runno") + "\">" + rs.getString("line_no") + "</a></td>\n");
-                        Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("product_id")) + "&nbsp;"+objuti.NotNull(rs.getString("product_name")) + "</td>\n");
+                        Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("product_id")) + "&nbsp;" + objuti.NotNull(rs.getString("product_name")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("wh_in")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("shift_name")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("weight")) + "</td>\n");
@@ -429,17 +448,17 @@ public class D_product_accept_confirm_detailDAO {
                         if (count == screen) {
                             Return_String.append(" [" + count + "] |");
                         } else {
-                            Return_String.append(" <a href='#'  onclick = \"showTableNonPopup_Detail('show','A_doc_id','s_screen_"+count+"','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\"><input type = 'hidden' id='s_screen_"+count+"' name='s_screen_"+count+"' value =\""+count+"\">" + count + "</a> |");
+                            Return_String.append(" <a href='#'  onclick = \"showTableNonPopup_Detail('show','A_doc_id','s_screen_" + count + "','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\"><input type = 'hidden' id='s_screen_" + count + "' name='s_screen_" + count + "' value =\"" + count + "\">" + count + "</a> |");
                         }
 
                     }
                     //**************************************************Select**************************************
-                    Return_String.append("<select id='select_screen' name = 'select_screen'>");
-                    for(int count = 1; count <= 10 && count <= total_page; count++){
+                    Return_String.append("<select class='select_cgc4' id='select_screen' name = 'select_screen'>");
+                    for (int count = 1; count <= 10 && count <= total_page; count++) {
                         if (count == screen) {
-                            Return_String.append("<option selected  value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\">"+count+"</option>");
-                        }else{
-                            Return_String.append("<option   value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\">"+count+"</option>");
+                            Return_String.append("<option selected  value=\'" + count + "\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\">" + count + "</option>");
+                        } else {
+                            Return_String.append("<option   value=\'" + count + "\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\">" + count + "</option>");
                         }
                     }
                     Return_String.append("</select>");
@@ -449,16 +468,16 @@ public class D_product_accept_confirm_detailDAO {
                         if (count == screen) {
                             Return_String.append("| [" + count + "] |");
                         } else {
-                            Return_String.append(" <a href='#' onclick = \"showTableNonPopup_Detail('show','A_doc_id','s_screen_"+count+"','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\"><input type = 'hidden' id='s_screen_"+count+"' name='s_screen_"+count+"' value ='"+count+"'>" + count + "</a> |");
+                            Return_String.append(" <a href='#' onclick = \"showTableNonPopup_Detail('show','A_doc_id','s_screen_" + count + "','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\"><input type = 'hidden' id='s_screen_" + count + "' name='s_screen_" + count + "' value ='" + count + "'>" + count + "</a> |");
                         }
                     }
                     //**************************************************Select**************************************
-                    Return_String.append("<select id='select_screen' name = 'select_screen'>");
-                    for(int count = (screen - 5); count <= (screen + 5) && count <= total_page; count++){
+                    Return_String.append("<select class='select_cgc4' id='select_screen' name = 'select_screen'>");
+                    for (int count = (screen - 5); count <= (screen + 5) && count <= total_page; count++) {
                         if (count == screen) {
-                            Return_String.append("<option selected  value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\">"+count+"</option>");
-                        }else{
-                            Return_String.append("<option   value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\">"+count+"</option>");
+                            Return_String.append("<option selected  value=\'" + count + "\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\">" + count + "</option>");
+                        } else {
+                            Return_String.append("<option   value=\'" + count + "\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show050_WH.jsp?doc_id=')\">" + count + "</option>");
                         }
                     }
                     Return_String.append("</select>");
@@ -482,8 +501,6 @@ public class D_product_accept_confirm_detailDAO {
             return Return_String.toString();
 
         }
-
-
 
     }
 }

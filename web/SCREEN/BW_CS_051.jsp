@@ -304,7 +304,7 @@
                                         <td colspan="2" align="right"><b>วันที่มีผลบังคับใช้ : <%=objs_p.getEffective_date()%></b></td>
                                     </tr>
                                     <tr>
-                                        <td class="columnlabel">เอกาสารสมบูรณ์</td>
+                                        <td class="columnlabel">เอกสารสมบูรณ์</td>
                                         <td class="columnobject"><input type="checkbox" name="A_complete_flag" id="A_complete_flag" value ="N" onClick="Click_Complete_flag(this.checked);"></td>
                                     </tr>
                                     <tr>

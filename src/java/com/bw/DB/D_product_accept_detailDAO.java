@@ -395,7 +395,7 @@ public class D_product_accept_detailDAO {
 
                     }
                     //**************************************************Select**************************************
-                    Return_String.append("<select id='select_screen' name = 'select_screen'>");
+                    Return_String.append("<select class='select_cgc4' id='select_screen' name = 'select_screen'>");
                     for(int count = 1; count <= 10 && count <= total_page; count++){
                         if (count == screen) {
                             Return_String.append("<option selected  value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show024.jsp?doc_id=')\">"+count+"</option>");
@@ -414,7 +414,7 @@ public class D_product_accept_detailDAO {
                         }
                     }
                     //**************************************************Select**************************************
-                    Return_String.append("<select id='select_screen' name = 'select_screen'>");
+                    Return_String.append("<select class='select_cgc4' id='select_screen' name = 'select_screen'>");
                     for(int count = (screen - 5); count <= (screen + 5) && count <= total_page; count++){
                         if (count == screen) {
                             Return_String.append("<option selected  value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show024.jsp?doc_id=')\">"+count+"</option>");
@@ -497,7 +497,7 @@ public class D_product_accept_detailDAO {
 
                     }
                     //**************************************************Select**************************************
-                    Return_String.append("<select id='select_screen' name = 'select_screen'>");
+                    Return_String.append("<select class='select_cgc4' id='select_screen' name = 'select_screen'>");
                     for(int count = 1; count <= 10 && count <= total_page; count++){
                         if (count == screen) {
                             Return_String.append("<option selected  value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show050.jsp?doc_id=')\">"+count+"</option>");
@@ -516,7 +516,7 @@ public class D_product_accept_detailDAO {
                         }
                     }
                     //**************************************************Select**************************************
-                    Return_String.append("<select id='select_screen' name = 'select_screen'>");
+                    Return_String.append("<select class='select_cgc4' id='select_screen' name = 'select_screen'>");
                     for(int count = (screen - 5); count <= (screen + 5) && count <= total_page; count++){
                         if (count == screen) {
                             Return_String.append("<option selected  value=\'"+count+"\' onclick = \"showTableNonPopup_Detail('show','A_doc_id','select_screen','../SHOWDETAILSCREEN/BW_CS_Show050.jsp?doc_id=')\">"+count+"</option>");

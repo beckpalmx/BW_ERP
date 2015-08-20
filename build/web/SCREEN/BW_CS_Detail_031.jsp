@@ -117,32 +117,40 @@
 
 
                             <div class="row">                            
-                                <label class="control-label col-md-1 columnlabel1">Parameter&nbsp;:&nbsp;</label>
+                                <div class="col-md-1">
+                                    <label class="columnlabel1">Parameter&nbsp;:&nbsp;</label>
+                                </div>                                
                                 <div class="col-md-4">
                                     <input type="text" class="inputs" name='A_param' id="A_param" size='30' value='<%=param%>' />
                                 </div>
-                            </div>                                
+                            </div>                                           
 
-                            <div class="row">                            
-                                <label class="control-label col-md-1 columnlabel1">Specification Min&nbsp;:&nbsp;</label>
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <label class="columnlabel1">Specification Min&nbsp;:&nbsp;</label>
+                                </div>                    
                                 <div class="col-md-4">
                                     <input type="text" class="inputs" name='A_spec_min' id="A_spec_min" size='30' value='<%=spec_min%>' />
                                 </div>                                                   
                             </div>     
 
-                            <div class="row">                            
-                                <label class="control-label col-md-1 columnlabel1">Specification Max&nbsp;:&nbsp;</label>
+                            <div class="row">    
+                                <div class="col-md-1">
+                                    <label class="columnlabel1">Specification Max&nbsp;:&nbsp;</label>
+                                </div>          
                                 <div class="col-md-4">
                                     <input type="text" class="inputs" name='A_spec_max' id="A_spec_max" size='30' value='<%=spec_max%>' />
                                 </div>             
                             </div>            
 
-                            <div class="row">                            
-                                <label class="control-label col-md-1 columnlabel1">Unit&nbsp;:&nbsp;</label>
+                            <div class="row">    
+                                <div class="col-md-1">
+                                    <label class="columnlabel1">Unit &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                                </div>          
                                 <div class="col-md-4">
                                     <input type="text" class="inputs" name='A_unit' id="A_unit" size='30' value='<%=unit%>' />
-                                </div>
-                            </div>                                     
+                                </div>             
+                            </div>                                  
 
                             <tr>
                                 <td colspan='2'  align="right">

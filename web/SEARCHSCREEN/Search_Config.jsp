@@ -52,13 +52,13 @@
                             </tr>
 
                             <tr>                                
-                                <td colspan="3" align="right">รหัส :</td>
+                                <td colspan="3" align="right">รหัส :&nbsp;  </td>
                                 <td align="left"><input class='inputs' type="text" name="searchid" value="" size="40"/>
                                     <input type="submit" id="submit" class="cgcButton_5" value="ย้อนกลับ" onClick="javascript:window.close();">
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3" align="right">ชื่อ  :</td>
+                                <td colspan="3" align="right">ชื่อ :&nbsp; </td>
                                 <td align="left"><input class='inputs' type="text" name="searchtxt" value="" size="40"/>
                                     <input type="submit" id="submit" class="cgcButton_6" value="ค้นหา">
                                 </td>

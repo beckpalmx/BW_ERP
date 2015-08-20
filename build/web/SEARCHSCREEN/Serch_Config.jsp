@@ -38,11 +38,11 @@
                             </tr>
 
                             <tr>
-                                <td colspan="3" align="right">รหัส :</td>
+                                <td colspan="3" align="right">รหัส :&nbsp;  </td>
                                 <td width="74%" align="left"><input type="text" name="searchid" value="" size="40"/></td>
                             </tr>
                             <tr>
-                                <td colspan="3" align="right">ชื่อ  :</td>
+                                <td colspan="3" align="right">ชื่อ :&nbsp; </td>
                                 <td align="left"><input type="text" name="searchtxt" value="" size="40"/>
                                     <input type="submit" id="submit" class="cgcButton_6" value="ค้นหา"></td>
                             </tr>

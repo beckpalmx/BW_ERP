@@ -91,7 +91,7 @@
                             <!--tr>
                                 <td width="90"><input type="button" class="cgcButton_5" name="bt1" value="ย้อนกลับ" onClick="javascript:window.close();"/>
                                 </td>
-                                <td width="46">รหัส :</td>
+                                <td width="46">รหัส :&nbsp;  </td>
                                 <td width="199"><input class='inputs' type='text' name="searchid" id="searchid" value="" size="40"/></td>
                                 <td width="199">&nbsp;</td>
                                 <td width="16" colspan="2"></td>
@@ -108,13 +108,13 @@
                             </tr-->
                             
                             <tr>                                
-                                <td colspan="3" align="right">รหัส :</td>
+                                <td colspan="3" align="right">รหัส :&nbsp;  </td>
                                 <td align="left"><input class='inputs' type="text" name="searchid" value="" size="40"/>
                                     <input type="submit" id="submit" class="cgcButton_5" value="ย้อนกลับ" onClick="javascript:window.close();">
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3" align="right">ชื่อ  :</td>
+                                <td colspan="3" align="right">ชื่อ :&nbsp;</td>
                                 <td align="left"><input class='inputs' type="text" name="searchtxt" value="" size="40"/>
                                     <input type="submit" id="submit" class="cgcButton_6" value="ค้นหา" onclick="EncodeBefor_Search();">
                                 </td>

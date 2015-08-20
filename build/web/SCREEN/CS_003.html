@@ -35,13 +35,13 @@ and open the template in the editor.
         <script type="text/javascript">
             function chkDocNo() {
                 var chk = document.getElementById("typesub").value;
-                if (chk == "jrxml") {
-                    if (document.getElementById("lookup").value == "") {
+                if (chk === "jrxml") {
+                    if (document.getElementById("lookup").value === "") {
                         alert('กรุณาใส่ข้อมูล Lookup');
-                    } else if (document.getElementById("doc_no").value == "") {
+                    } else if (document.getElementById("doc_no").value === "") {
                         alert('กรุณาใส่ข้อมูลเลขที่เอกสาร');
                         document.getElementById("doc_no").focus();
-                    } else if (document.getElementById("effective_date").value == "") {
+                    } else if (document.getElementById("effective_date").value === "") {
                         alert('กรุณาใส่ข้อมูลวันที่บังคับใช้');
                     } else
                         confirmDialogSave(URLsend('chkNull,sub_menu_id,name_t,remark,main_menu_id,screen_id,doc_no,effective_date,lookup,typesub', '../JSP/CS_003.jsp'));

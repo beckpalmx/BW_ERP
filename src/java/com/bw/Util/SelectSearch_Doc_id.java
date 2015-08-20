@@ -6,7 +6,7 @@ package com.bw.Util;
 
 /**
  *
- * @author BALL
+ * @author 
  */
 public class SelectSearch_Doc_id {
 
@@ -175,7 +175,7 @@ public class SelectSearch_Doc_id {
                 strFillName = new String[]{"เลขที่เอกสาร", "วันที่บันทึกเอกสาร"};
                 break;
             case 32:
-                strFillName = new String[]{"เลขที่เอกาสาร", "วันทีบันทึกเอกสาร", "ชื่อย่อลูกค้า"};
+                strFillName = new String[]{"เลขที่เอกสาร", "วันทีบันทึกเอกสาร", "ชื่อย่อลูกค้า"};
                 break;
             case 33:
                 strFillName = new String[]{"เลขที่เอกสาร", "วันที่บันทึกเอกสาร"};
