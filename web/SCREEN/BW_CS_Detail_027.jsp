@@ -52,7 +52,7 @@
                 window.close();
             }
             function select(){
-                if(getId("U_status").value != ""){
+                if(getId("U_status").value !== ""){
                     getId("A_shift").value = getId("selectshift").value;
                 }
 
@@ -127,7 +127,8 @@
                             <tr>
                                 <td class="columnlabel">รหัสสินค้า*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='product_id' class='inputs' type="text" id="product_id" value='<%=product_id%>' size='10' />  <input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='<%=product_name%>' size='10' />                               </td>
+                                    <input name='product_id' class='inputs' type="text" id="product_id" value='<%=product_id%>' size='15' />  <input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='<%=product_name%>' size='50' />                               
+                                </td>
                             </tr>
                             <tr>
                                 <td class="columnlabel">คลังสินค้า&nbsp;</td>
