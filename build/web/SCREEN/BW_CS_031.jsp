@@ -292,7 +292,7 @@
                 doc_eff_date = objr_p.getDoc_eff_date();
                 doc_no = objr_p.getDoc_no();
                 //_______________________________________________________________report
-            %>
+%>
             <input type="hidden" name="maxline" value="0" id="maxline">
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input type="hidden" id="chkNull" value="A_doc_id">
@@ -449,7 +449,8 @@
                                         </div>
                                         <div style="width:100%; height: 150px; overflow: auto;" id="show2">
                                             <table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner"   id = "tbdetail"></table>
-                                        </div>                    </td>
+                                        </div>                    
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan='2' class='blankspace'></td>
@@ -479,34 +480,42 @@
                                             <option selected value="N">ไม่ตีตรา</option>
                                             <option value="Y" >ตีตรา</option>
                                         </select>
-                                        <input class='inputs' type="text" name="A_mark_sign_desc" id="A_mark_sign_desc"><br><textarea class='text_inputs' name="A_remark" id="A_remark" cols="30"></textarea>
-                                            <!--<input type="checkbox" name="checkbox5" id="checkbox5">
-                                            ตีตรา<br>
-                                            <input type="checkbox" name="checkbox6" id="checkbox6">
-                                            ไม่ตีตรา
-                                            <input class='inputs' type="text" name="A_mark_sign" id="A_mark_sign">
-                                            <br> -->                                     </td>
+                                        <input class='inputs' type="text" name="A_mark_sign_desc" id="A_mark_sign_desc">
+                                        <br>
+                                        <textarea class='text_inputs' name="A_remark" id="A_remark" cols="30"></textarea>                
+                                     </td>
                                     </tr>
                                     <tr>
                                         <td class="columnlabel1">&nbsp;</td>
-                                        <td class="columnobject">&nbsp;</td>
+                                        <td class="columnobject">&nbsp;</td>                                        
                                     </tr>
                                     <tr>
-                                        <td class="columnlabel1">ไม้รอง</td>
+                                        <td class="columnlabel1">&nbsp;</td>
+                                        <td class="columnobject"><b>ไม้รอง</b>&nbsp;</td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td class="columnlabel1"></td>
                                         <td class="columnobject">
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" id="base_plate1" name="base_plate1" value="N" onClick="chkValue(1);">
+                                            <label for="base_plate1">ไม่ต้องการ</label> 
+                                        </div>
 
-                                            <input type="checkbox" name="base_plate1" id="base_plate1" onclick="chkValue(1);">
-                                            ไม่ต้องการ<br>
-                                            <input type="checkbox" name="base_plate2" id="base_plate2" onclick="chkValue(2);">
-                                            ต้องการ
-                                            <input name="A_base_plate_qty" class='inputs' type="text" id="A_base_plate_qty" size="15">
-                                            <br>
-                                            <input type="checkbox" name="base_plate3" id="base_plate3" onclick="chkValue(3);">ห่อเป็นพาเลท
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" id="base_plate2" name="base_plate2" value="N" onClick="chkValue(2);">
+                                            <label for="base_plate2">ต้องการ</label>
+                                            <input name="A_base_plate_qty" class='inputs' type="text" id="A_base_plate_qty" size="15">                                            
+                                        </div>
+
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" id="base_plate3" name="base_plate3" value="N" onClick="chkValue(3);">
+                                            <label for="base_plate3">ห่อเป็นพาเลท</label>                                            
                                             <input name="A_wrap_on_pallet" class='inputs' type="text" id="A_wrap_on_pallet" size="15">
-                                            กระสอบ&nbsp;&nbsp;&nbsp;&nbsp;จำนวน
+                                            กระสอบ&nbsp;&nbsp;&nbsp;&nbsp;จำนวน                                            
                                             <input name="A_pallet_qty" class='inputs' type="text" id="A_pallet_qty" size="15">
                                             พาเลท
-                                            <input type="hidden" name="A_base_plate" id="A_base_plate">
+                                            <input type="hidden" name="A_base_plate" id="A_base_plate">                                            
+                                        </div>
                                         </td>
                                     </tr>
 

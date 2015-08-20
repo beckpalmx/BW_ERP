@@ -22,6 +22,30 @@
         <!-- the following script defines the Calendar.setup helper function, which makes
                adding a calendar a matter of 1 or 2 lines of code. -->
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
+
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                 
+        
         <script type="text/javascript">
             function ResetValue() {
                 getId("maxline").value = "0";
@@ -233,29 +257,6 @@
                 }
             }
         </script>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
-        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
-        <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">
-
-        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
-
-        <script src="../JS/jquery/jquery-2.1.4.js"></script>
-        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
-
-        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
-
-
-        <script src="../JS/alertify/alertify.js"></script>        
-
-        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
-
-        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
-
-        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
-
         <title>Insert title here</title>
     </head>
     <body onUnload="Unload()">

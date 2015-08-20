@@ -22,23 +22,46 @@
         <!-- the following script defines the Calendar.setup helper function, which makes
                adding a calendar a matter of 1 or 2 lines of code. -->
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
+
+        <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">        
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
+
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
+
         <script type="text/javascript">
-            function Chknull(){
-                if(document.getElementById('doc_id').value == ''){
+            function Chknull() {
+                if (document.getElementById('doc_id').value == '') {
                     alert('กรุณาใส่ข้อมูลเลขที่เอกสาร');
-                }else document.report.submit();
+                } else
+                    document.report.submit();
             }
             function add()
             {
                 var strID = "";
-                strID = getIDElements('input','A_');
-                strID += getIDElements('select','A_');
-                strID = strID.substr(0, strID.length-1);
+                strID = getIDElements('input', 'A_');
+                strID += getIDElements('select', 'A_');
+                strID = strID.substr(0, strID.length - 1);
                 //alert(strID);
-                confirmDialogSave(URLsend('chkNull,'+strID,'../JSP/BW_CS_028.jsp'));
+                confirmDialogSave(URLsend('chkNull,' + strID, '../JSP/BW_CS_028.jsp'));
             }
-            function del(){
-                confirmDialogDelete(URLsend('A_doc_id,D_status','../JSP/BW_CS_028.jsp'));
+            function del() {
+                confirmDialogDelete(URLsend('A_doc_id,D_status', '../JSP/BW_CS_028.jsp'));
             }
             function cancle()
             {
@@ -73,7 +96,7 @@
                 doc_eff_date = objr_p.getDoc_eff_date();
                 doc_no = objr_p.getDoc_no();
                 //_______________________________________________________________report
-%>
+            %>
             <input name="username" type="hidden" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input type="hidden" id="date_ck" name="date_ck" value="">
             <input type="hidden" id="child_ck" name="child_ck" value="">
@@ -87,17 +110,14 @@
             <input type="hidden" id="lookup" name="lookup" value="<%=lookup%>">
             <input type="hidden" id="doc_eff_date" name="doc_eff_date" value="<%=doc_eff_date%>">
             <input type="hidden" id="doc_no" name="doc_no" value="<%=doc_no%>">
-            <div align="center">
-            <table  cellpadding="0"  cellspacing="0">
-                <tr>
-                    <td class="ftopleft"></td>
-                    <td  class="ftopcenter" colspan="2">บันทึกใบตรวจสอบระหว่างกระบวนการผลิต
-                        (BW_CS_028)&nbsp;</td>
-                    <td class="ftopright"></td>
-                </tr>
-                <tr>
-                    <td class="fcenterleft"></td>
-                    <td  colspan="2" class="fcentercenter">
+
+
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                        <b>บันทึกใบตรวจสอบระหว่างกระบวนการผลิต (BW_CS_028)</b>
+                    </div>                        
+                    <div class="panel-footer">                
                         <div align="left">
                             <table  cellpadding="0" cellspacing="0" >
                                 <tr>
@@ -108,34 +128,34 @@
                                 </tr>
                                 <tr>
 
-                                    <td width="150" class="columnlabel"><b>เลขที่เอกสาร*</b>&nbsp;</td>
+                                    <td width="150" class="columnlabel1"><b>เลขที่เอกสาร*</b>&nbsp;</td>
                                     <td width="607" class="columnobject">
                                         <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='15' onBlur="ChkDoc_id();"/>
                                         &nbsp;<a href='#' onClick="OpenDoc_id()"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel"> วันที่เอกสาร*</td>
-                                    <td class="columnobject"><input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>&nbsp;&nbsp;&nbsp;&nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_doc_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_1',singleClick:true,step:1});</script>&nbsp;&nbsp;ฝ่ายผลิตทีม&nbsp;&nbsp;<%=objuti.ShowSelectBox("select shift_id,name_t from mshift where shift_id in('A','B','A2','B2') order by runno", "shift_id", "name_t", "A_shift")%></td>
+                                    <td class="columnlabel1"> วันที่เอกสาร*</td>
+                                    <td class="columnobject"><input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>&nbsp;&nbsp;&nbsp;&nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;ฝ่ายผลิตทีม&nbsp;&nbsp;<%=objuti.ShowSelectBox("select shift_id,name_t from mshift where shift_id in('A','B','A2','B2') order by runno", "shift_id", "name_t", "A_shift")%></td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel">ผู้ตรวจสอบ*&nbsp;</td>
+                                    <td class="columnlabel1">ผู้ตรวจสอบ*&nbsp;</td>
                                     <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly="readonly" />
                                         &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee', 28, 'Search_Config2.jsp');" >&nbsp;&nbsp;&nbsp;
                                         <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel">&nbsp;</td>
+                                    <td class="columnlabel1">&nbsp;</td>
                                     <td class="columnobject">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel"><b>ส่วนที่ 1 </b>&nbsp;</td>
+                                    <td class="columnlabel1"><b>ส่วนที่ 1 </b>&nbsp;</td>
                                     <td class="columnobject"><b>วัตถุดิบ</b>&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel">วัตถุดิบรับเข้าวันที่&nbsp;</td>
+                                    <td class="columnlabel1">วัตถุดิบรับเข้าวันที่&nbsp;</td>
                                     <td class="columnobject"><input name='A_date_chk' class='inputs' type="text" id="A_date_chk" value='' size='10' readonly="readonly"/>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_date_chk',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_2',singleClick:true,step:1});</script>&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_date_chk', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>&nbsp;&nbsp;&nbsp;
                                         เวลาตรวจสอบ&nbsp;<input name="A_time_chk" class='inputs' type="text" id="A_time_chk"></td>
                                 </tr>
                                 <tr>
@@ -160,25 +180,25 @@
                                                 <td class="row3">(5-6.5)</td>
                                             </tr>
                                             <tr>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_1" class='inputs' type="text" id="A_be_1" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_2" class='inputs' type="text" id="A_be_2" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_3" class='inputs' type="text" id="A_be_3" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_4" class='inputs' type="text" id="A_be_4" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_5" class='inputs' type="text" id="A_be_5" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_be_6" class='inputs' type="text" id="A_be_6" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_m_be" class='inputs' type="text" id="A_m_be" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_m3" class='inputs' type="text" id="A_m3" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_mold" class='inputs' type="text" id="A_mold" size="10"></td>
-                                                <td width="10%" class="row3" align="center"><input name="A_ph" class='inputs' type="text" id="A_ph" size="10"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_1" class='inputs' type="text" id="A_be_1" size="7"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_2" class='inputs' type="text" id="A_be_2" size="7"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_3" class='inputs' type="text" id="A_be_3" size="7"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_4" class='inputs' type="text" id="A_be_4" size="7"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_5" class='inputs' type="text" id="A_be_5" size="7"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_be_6" class='inputs' type="text" id="A_be_6" size="7"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_m_be" class='inputs' type="text" id="A_m_be" size="7"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_m3" class='inputs' type="text" id="A_m3" size="7"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_mold" class='inputs' type="text" id="A_mold" size="7"></td>
+                                                <td width="10%" class="row3" align="center"><input name="A_ph" class='inputs' type="text" id="A_ph" size="7"></td>
                                             </tr>
                                         </table>                              </td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel"></td>
+                                    <td class="columnlabel1"></td>
                                     <td class="columnobject">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel"><b>ส่วนที่ 2 &nbsp;</b></td>
+                                    <td class="columnlabel1"><b>ส่วนที่ 2 &nbsp;</b></td>
                                     <td class="columnobject"><b>ปริมาณแป้งในน้ำทิ้งและกากสด&nbsp;st.&#8804;0.1&nbsp;ml.&nbsp;และ&nbsp;&#8804;4%&nbsp;ตามลำดับ</b></td>
                                 </tr>
                                 <tr>
@@ -247,7 +267,7 @@
                                         </table></td>
                                 </tr>
                                 <!--<tr>
-                                  <td class="columnlabel"></td>
+                                  <td class="columnlabel1"></td>
                                   <td class="columnobject">&nbsp;</td>
                                 </tr>-->
                                 <tr>
@@ -264,16 +284,10 @@
                                         <br>                                </td>
                                 </tr>
                             </table>
-                        </div></td>
-                    <td class="fcenterright"></td>
-                </tr>
-                <tr bordercolor="0069B3">
-                    <td class="ffootleft"></td>
-                    <td  class="ffootcenter" colspan="2"></td>
-                    <td class="ffootright"></td>
-                </tr>
-            </table>
-                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </body>
 </html>
