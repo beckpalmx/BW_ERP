@@ -8,7 +8,6 @@ import java.util.HashMap;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 import net.sf.jasperreports.engine.JasperRunManager;
 
 public class PrintReport {

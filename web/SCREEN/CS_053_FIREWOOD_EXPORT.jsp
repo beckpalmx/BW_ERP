@@ -95,8 +95,8 @@
 
             <div class="container">
                 <div class="panel panel-primary">
-                    <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                        <b>Export ข้อมูลไม้ฟืน (CS_053_FIREWOOD_EXPOR)</b>
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-log-in"></span>&nbsp;
+                        <b>Export ข้อมูลไม้ฟืน (CS_053_FIREWOOD_EXPORT)</b>
                     </div>                        
                     <div class="panel-footer">                                    
                         <div align="left">

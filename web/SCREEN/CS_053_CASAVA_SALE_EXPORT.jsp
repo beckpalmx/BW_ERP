@@ -8,13 +8,31 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CGC ERP</title>
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" media="all" href="../JS/jscalendar/skins/aqua/aqua.css" title="Aua" />
         <script type="text/javascript" src="../JS/jscalendar/calendar.js"></script>
         <script type='text/javascript' src='../JS/jscalendar/lang/calendar-th.js'></script>
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>   
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
+
         <script type="text/javascript">
             function Cancelvalue() {
                 /*cancelAction();
@@ -103,15 +121,12 @@
             <input type="hidden" name="lookup_name" id="lookup_name"  value="">
             <input type="hidden" name="date_from_format" id="date_from_format" value="">
             <input type="hidden" name="date_to_format" id ="date_to_format" value="">
-            <table  cellpadding="0"  cellspacing="0">
-                <tr>
-                    <td class="ftopleft"></td>
-                    <td  class="ftopcenter" colspan="2">Export ข้อมูลการขายแป้งมันสำปะหลัง&nbsp;</td>
-                    <td class="ftopright"></td>
-                </tr>
-                <tr >
-                    <td class="fcenterleft"></td>
-                    <td  colspan="2" class="fcentercenter">
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-log-in"></span>&nbsp;
+                        <b>Export ข้อมูลการขายแป้งมันสำปะหลัง (CS_053_CASAVA_SALE_EXPORT)</b>
+                    </div>                        
+                    <div class="panel-footer">           
                         <div align="left">
                             <table  cellpadding="0" cellspacing="0" >
                                 <tr>
@@ -120,25 +135,18 @@
                                 <tr>
                                     <td colspan='4'><b>กำหนดเงื่อนไข <span class="ftopcenter">Export ข้อมูลแป้งมันสำปะหลัง</span></b></td>
                                 </tr>
-                                <!--<tr>
-                                    <td width="158" class='columnlabel'>ชื่อข้อมูลที่&nbsp;Export</td><td colspan="3" class='columnobject'><input name='export_id' class='inputs' class='inputs' type="text" id="export_id" value='' size="20" />
-                                        &nbsp;<a href='javascript:;' onClick="openBrWindow('mdata_export&stadment=and+status+=+\'Y\'', 53, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' /></a>
-                                        <input name='export_id_desc' class='inputs' class='inputs' type="text" id="export_id_desc" value='' size="30" />
-                                    </td>
-                                </tr>*-->
-
                                 <tr>
-                                    <td class='columnlabel'>วันที่เอกสารเริ่มต้น&nbsp;</td><td width="182" class='columnobject'><input name='date_from' class='inputs' class='inputs' type="text" id="date_from" value='' size="20" readonly="true"/>
+                                    <td class='columnlabel1'>วันที่เอกสารเริ่มต้น&nbsp;</td><td width="182" class='columnobject'><input name='date_from' class='inputs' class='inputs' type="text" id="date_from" value='' size="10" readonly="true"/>
                                         &nbsp;<a id='date_1' href="javascript:;"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a></td>
-                                    <td width="150" class='columnlabel'><script type='text/javascript'>Calendar.setup({inputField: 'date_from', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
+                                    <td width="150" class='columnlabel1'><script type='text/javascript'>Calendar.setup({inputField: 'date_from', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
                                         วันที่เอกสารสิ้นสุด&nbsp;</td>
-                                    <td width="267" class='columnobject'><input name='date_to' class='inputs' class='inputs' type="text" id="date_to" value='' size="20" readonly="true"/>
+                                    <td width="267" class='columnobject'><input name='date_to' class='inputs' class='inputs' type="text" id="date_to" value='' size="10" readonly="true"/>
                                         &nbsp;<a id='date_2' href="javascript:;"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                         <script type='text/javascript'>Calendar.setup({inputField: 'date_to', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script></td>
                                 </tr>           
 
                                 <tr>
-                                    <td class="columnlabel">รหัสลูกค้า : &nbsp;</td>
+                                    <td class="columnlabel1">รหัสลูกค้า : &nbsp;</td>
                                     <td class="columnobject">
                                         <input class='inputs' class='inputs' type="text" name="cust_code" size='15' value='' id="cust_code"/>                                        
                                         <a href='javascript:;'><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' onClick="openBrWindow('vcustomer', 16, 'Search_Config2.jsp')" ></a>
@@ -160,15 +168,9 @@
                                     <td colspan='4' class='blankspace' ></td>
                                 </tr>
                             </table>
-                        </div></td>
-                    <td class="fcenterright"></td>
-                </tr>
-                <tr bordercolor="0069B3">
-                    <td class="ffootleft"></td>
-                    <td  class="ffootcenter" colspan="2"></td>
-                    <td class="ffootright"></td>
-                </tr>
-            </table>
-        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </body>
 </html>
