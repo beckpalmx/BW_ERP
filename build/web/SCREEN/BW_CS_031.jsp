@@ -363,7 +363,7 @@
                                     <td class="columnobject"><input name='A_product_id' class='inputs' type="text" id="A_product_id" value='' size='10' readonly />
                                         &nbsp;<a href='javascript:;' onClick="openBrWindow('vproduct', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;<input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='' size='30' readonly/>&nbsp;
                                         น้ำหนักบรรจุ
-                                        <input name="A_weight_content" class='inputs' type="text" id="A_weight_content" size="15">
+                                        <input name="A_weight_content" class='inputs' type="text" id="A_weight_content" size="10">
                                         กก.</td>
                                 </tr>
                                 <tr>
