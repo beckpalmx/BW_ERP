@@ -119,7 +119,7 @@
 
 
                                             int start, screen;
-                                            int row_page = 15;
+                                            int row_page = 13;
                                             int total = 0;
                                             int count = 0;
                                             UtiDatabase objut = new UtiDatabase();

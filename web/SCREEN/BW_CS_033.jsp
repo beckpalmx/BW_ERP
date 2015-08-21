@@ -27,19 +27,46 @@
         <script type="text/javascript" src="../JS/TimeFramwork.js"></script>
         <script type="text/javascript" src="../JS/calculator.js"></script>
         <script type="text/javascript" src="../JS/js_BW_Calculator/JS_Time.js"></script>        
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">        
+        <link href="../CSS/bw_button.css" rel="stylesheet" type="text/css">  
+
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>   
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
+
+
         <script type="text/javascript">
 
             jQuery.noConflict();
 
             function Calculator_Epower_unit() {
-                if (getId("A_epower_milling_from").value != "" && getId("A_epower_milling_to").value != "") {
+                if (getId("A_epower_milling_from").value !== "" && getId("A_epower_milling_to").value !== "") {
                     getId("A_epower_unit").value = (parseFloat(getId("A_epower_milling_to").value) - parseFloat(getId("A_epower_milling_from").value)).toFixed(3);
                 } else {
                     getId("A_epower_unit").value = "0.000";
                 }
             }
             function Calculator_starch() {
-                if (getId("A_starch_bal").value != "" && getId("A_qty_tank").value != "") {
+                if (getId("A_starch_bal").value !== "" && getId("A_qty_tank").value !== "") {
                     getId("A_starch_bal_x_qty_tank").value = (parseFloat(getId("A_starch_bal").value) * parseFloat(getId("A_qty_tank").value)).toFixed(0);
                     getId("A_qty_litr").value = (parseFloat(getId("A_starch_bal").value) * 2200).toFixed(2);
                 } else {
@@ -52,7 +79,7 @@
                     alert("กรุณาตรวจสอบวันที่");
                 } else {
                     var output = difference_date_and_time(getId(date_from).value, getId(time_from).value, getId(date_to).value, getId(time_to).value);
-                    getId(output_diff).value = output == undefined ? "" : output;
+                    getId(output_diff).value = output === undefined ? "" : output;
                 }
             }
 
@@ -60,7 +87,7 @@
                 if (ChkDate(getId(date_from).value, getId(date_to).value)) {
                     alert("กรุณาตรวจสอบวันที่");
                 } else {
-                    if (Count_Date2(getId(date_from).value, getId(date_to).value) == 0) {
+                    if (Count_Date2(getId(date_from).value, getId(date_to).value) === 0) {
                         if (parseFloat(document.getElementById(time_from).value) > parseFloat(document.getElementById(time_to).value)) {
                             alert("กรุณาตรวจสอบเวลา");
                             document.getElementById(time_from).focus();
@@ -77,7 +104,7 @@
             function goAddChild(URLSend)
             {
                 var arryChk = new Array;
-                arryChk[0] = "chkNull"
+                arryChk[0] = "chkNull";
                 if (ChkParameter(arryChk))
                 {
                     window.open(URLSend[0]);
@@ -88,10 +115,10 @@
             {
 
                 var SURL;
-                var r = confirm("คุณต้องการยกเลิกข้อมูลทั้งหมดหรือไม่")
+                var r = confirm("คุณต้องการยกเลิกข้อมูลทั้งหมดหรือไม่");
                 if (r)
                 {
-                    if (getId("status_cancle").value == "1")
+                    if (getId("status_cancle").value === "1")
                     {
                         cancelAction();
                         getId("show").innerHTML = "";
@@ -137,7 +164,7 @@
                 var SURL;
                 if (getId(checkboxAll_name).checked)//จะทำการลบข้อมูลของ Detail ทั้งหมด ทึ่ตรงกับรหัส
                 {
-                    var r = confirm("คุณต้องการลบข้อมูลลายละเอียดของเอกสารนี้ใช่หรือไม่")
+                    var r = confirm("คุณต้องการลบข้อมูลลายละเอียดของเอกสารนี้ใช่หรือไม่");
                     if (r) {
                         SURL = "../JSP/BW_CS_Detail_0" + number_page_action + ".jsp?D_status=3&chk_all=1&username=" + getId("A_username").value;
                         SURL = SURL + "&A_doc_id=" + getId("A_doc_id").value;
@@ -154,7 +181,7 @@
                         Deleteflag += (document.getElementsByName(checkboxlinename)[i].checked) ? document.getElementsByName(checkboxlinename)[i].value + "," : "";
                     }
                     Deleteflag = Deleteflag.substring(0, Deleteflag.length - 1);
-                    if (Deleteflag != "") {
+                    if (Deleteflag !== "") {
                         SURL = SURL + Deleteflag + "&A_doc_id=" + getId("A_doc_id").value + "&username=" + getId("A_username").value;
                         Delete_Line_no(SURL);
                         showTableNonPopup(div_id, "A_doc_id", "../SHOWDETAILSCREEN/" + number_page_show + ".jsp?doc_id=");
@@ -203,7 +230,7 @@
                 }
             }
             function Chknull() {
-                if (document.getElementById('A_doc_id').value == '') {
+                if (document.getElementById('A_doc_id').value === '') {
                     alert('กรุณาใส่ข้อมูลเลขที่เอกสาร');
                 } else {
                     document.report.submit();
@@ -229,7 +256,7 @@
                 }
             }
             function Runid(output_value, input_value) {
-                if (getId(input_value).value == "") {
+                if (getId(input_value).value === "") {
                     AjaxRun_id('A_doc_id', '../JSP/BW_CS_033.jsp?status_runid=5');
                 } else {
                     Format_Date(output_value, getId(input_value).value);
@@ -238,7 +265,7 @@
             }
             function getCalculator() {
                 //alert("getId('A_cassava_date').value = " + getId('A_cassava_date').value);
-                if (getId('A_cassava_date').value != '' && getId('A_cassava_date2').value != '') {
+                if (getId('A_cassava_date').value !== '' && getId('A_cassava_date2').value !== '') {
                     getData_d_rawmatt_receive('../JSP/BW_CS_033.jsp?status_calculator=4&A_cassava_date=' + getId('A_cassava_date').value + '&A_cassava_date2=' + getId('A_cassava_date2').value, 'A_amount_cassava,A_percent_tapioca,A_amount_tapioca,A_fresh_skin,A_soil_skin,A_total_cassava,A_percent_tapioca1,A_amount_tapioca1');
                     getId("A_cassava_prd_date").value = getId('A_cassava_date').value;
                     getId("A_cassava_prd_date2").value = getId('A_cassava_date2').value;
@@ -252,50 +279,17 @@
                 getId("doc_id").value = getId('A_doc_id').value;
                 //alert("getId('doc_id').value = " + getId('doc_id').value);
                 getId("report_code").value = report_code;
-                getId("doc_no").value = getId('doc_no').value;
-                getId("doc_eff_date").value = getId('doc_eff_date').value;
+                //getId("doc_no").value = getId('doc_no').value;
+                //getId("doc_eff_date").value = getId('doc_eff_date').value;
                 document.report.submit();
             }
 
-            /*
-             $(function() {
-             
-             // Accordion
-             //$("#accordion").accordion({ header: "h3" });
-             $('#tabs').tabs();
-             });
-             */
-            /*
-             $(document).ready(function() {
-             
-             $("#tapioca_cut1").click(function() {
-             jAlert('This is a custom alert box', 'Alert Dialog');
-             });
-             });
-             */
-
         </script>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
-        <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">        
-        <link href="../CSS/bw_button.css" rel="stylesheet" type="text/css">  
-
-
-        <script src="../JS/jquery/jquery-2.1.3.js" type="text/javascript"></script>
-        <!--script src="jquery.ui.draggable.js" type="text/javascript"></script-->
-
-        <!-- Core files -->
-        <!--        
-                <script src="../JS/jqueryui/jquery.alerts.js" type="text/javascript"></script>
-                <link href="../JS/jqueryui/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />  
-        -->
 
         <title>Insert title here</title>
     </head>
     <body >
-        <div align="center">
+        <div align="left">
             <div  id="imgLoading" style="display: none" align="center" ><img src="../IMAGES/spinner.gif">กำลังประมวลผล...กรุณารอสักครู่</div>
             <div  id="showpage" style="display: '' ">
                 <form name="report" method="post" action="../JSP/CS_REPORT.jsp" target="_blank">
@@ -329,15 +323,13 @@
                     <input type="hidden" id="doc_eff_date" name="doc_eff_date" value="<%=doc_eff_date%>">
                     <input type="hidden" id="doc_no" name="doc_no" value="<%=doc_no%>">
                     <input type="hidden" id="doc_id" name="doc_no" value="">
-                    <table  cellpadding="0"  cellspacing="0">
-                        <tr>
-                            <td class="ftopleft"></td>
-                            <td  class="ftopcenter" colspan="2">รายงานผลิตแป้งประจำวัน (BW_CS_033)&nbsp;</td>
-                            <td class="ftopright"></td>
-                        </tr>
-                        <tr >
-                            <td class="fcenterleft"></td>
-                            <td  colspan="2" class="fcentercenter">
+
+                    <div class="container">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                                <b>รายงานผลิตแป้งประจำวัน (BW_CS_033)</b>
+                            </div>                        
+                            <div class="panel-footer">                        
                                 <div align="left">
                                     <table  cellpadding="0" cellspacing="0" >
                                         <tr>
@@ -348,7 +340,7 @@
                                         </tr>
                                         <a name="top"></a>
                                         <tr>
-                                            <td width="150" class="columnlabel"><b>เลขที่เอกสาร</b></td>
+                                            <td width="150" class="columnlabel1"><b>เลขที่เอกสาร</b></td>
                                             <td width="607" class="columnobject">
                                                 <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='25' readonly/>
                                                 &nbsp;<a href='#' onClick="openBrWindow('vd_product_report_daily_header&stadment=and+complete_flag+<>+\'Y\'', 33, 'Search_Doc_id_33.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
@@ -358,7 +350,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">วันที่ส่งหัวมันสด&nbsp;ตั้งแต่</td>
+                                            <td class="columnlabel1">วันที่ส่งหัวมันสด&nbsp;ตั้งแต่</td>
                                             <td class="columnobject"><input name='A_cassava_date' class='inputs' type="text" id="A_cassava_date" value='' size='10' />
                                                 &nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>&nbsp;&nbsp;ถึง&nbsp;
                                                 <input name='A_cassava_date2' class='inputs' type="text" id="A_cassava_date2" value='' size='10' />
@@ -366,7 +358,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel"><input type="button" class="cgcButton_9" value="มีจำนวน" onClick="getCalculator();"></td>
+                                            <td class="columnlabel1"><input type="button" class="cgcButton_9" value="มีจำนวน" onClick="getCalculator();"></td>
                                             <td class="columnobject"><input name='A_amount_cassava' class='inputs' type="text" id="A_amount_cassava" value='' size='10' />
                                                 ตัน&nbsp;&nbsp;&nbsp;%ซื้อ
                                                 <input name='A_percent_tapioca' class='inputs' type="text" id="A_percent_tapioca" value='' size='10'  />
@@ -375,14 +367,14 @@
                                                 ตัน</td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">หักเปลือกสด</td>
+                                            <td class="columnlabel1">หักเปลือกสด</td>
                                             <td class="columnobject"><input name='A_fresh_skin' class='inputs' type="text" id="A_fresh_skin" value='' size='10' />
                                                 ตัน&nbsp;&nbsp;&nbsp;หักเปลือกดิน
                                                 <input name='A_soil_skin' class='inputs' type="text" id="A_soil_skin" value='' size='10' />
                                                 ตัน</td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">จำนวนมันหลังจากหักเปลือก</td>
+                                            <td class="columnlabel1">จำนวนมันหลังจากหักเปลือก</td>
                                             <td class="columnobject"><input name='A_total_cassava' class='inputs' type="text" id="A_total_cassava" value='' size='10' />
                                                 ตัน&nbsp;&nbsp;&nbsp;%
                                                 <input name='A_percent_tapioca1' class='inputs' type="text" id="A_percent_tapioca1" value='' size='10' />
@@ -392,7 +384,7 @@
                                         </tr>
 
                                         <tr>
-                                            <td class="columnlabel">&nbsp;</td>
+                                            <td class="columnlabel1">&nbsp;</td>
                                             <td class="columnobject">&nbsp;</td>
                                         </tr>
 
@@ -405,8 +397,8 @@
                                                     <input type='button' class="cgcButton_2" name='but1' value='  เพิ่ม  ' onClick="getId('A_doc_id').value == '' ? alert('กรุณาเลือกเอกสารก่อน') : goAddChild(URLsend('A_doc_id,I_status,A_username', 'BW_CS_Detail_033_1.jsp'));"/>
                                                     <input type='button' class="cgcButton_2" name='but1' value='  เพิ่ม  ' onClick="getId('A_doc_id').value == '' ? alert('กรุณาเลือกเอกสารก่อน') : goAddChild(URLsend('A_doc_id,I_status,A_username', 'BW_CS_Detail_033_1.jsp'));"/-->
                                                     <!--input type='button' class="cgcButton_2" input id='tapioca_cut1' name='tapioca_cut1' value='  ตัดมัน 1  '/-->
-                                                    <input type='button' class="cgcButton_2" name='but1' value='  ตัดมัน 1  ' onClick="getId('A_doc_id').value == '' ? alert('กรุณาเลือกเอกสารก่อน') : send_print('BWRP_605');"/>
-                                                    <input type='button' class="cgcButton_2" name='but2' value='  ตัดมัน 2  ' onClick="getId('A_doc_id').value == '' ? alert('กรุณาเลือกเอกสารก่อน') : send_print('BWRP_605_1');"/>
+                                                    <input type='button' class="cgcButton_2" name='but1' value='  ตัดมัน 1  ' onClick="getId('A_doc_id').value === '' ? alert('กรุณาเลือกเอกสารก่อน') : send_print('BWRP_605');"/>
+                                                    <input type='button' class="cgcButton_2" name='but2' value='  ตัดมัน 2  ' onClick="getId('A_doc_id').value === '' ? alert('กรุณาเลือกเอกสารก่อน') : send_print('BWRP_605_1');"/>
                                                 </div>
                                             </td>
                                         </tr>                                        
@@ -423,7 +415,7 @@
                                                     <div id="tabs-1">
                                                         <div align="left" style="width: 100%;"> <table  cellpadding="0"  cellspacing="0"><tr>
                                                                 <tr>
-                                                                    <td class="columnlabel">เริ่มโม่มันวันที่&nbsp;</td>
+                                                                    <td class="columnlabel1">เริ่มโม่มันวันที่&nbsp;</td>
                                                                     <td class="columnobject"><input name='A_start_m_date' class='inputs' type="text" id="A_start_m_date" value='' size='10' />
                                                                         &nbsp;<a id='date_3'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_start_m_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_3', singleClick: true, step: 1});</script>&nbsp;&nbsp;เวลา
                                                                         <input name="A_start_m_time" class='inputs' type="text" id="A_start_m_time" size="10" onkeypress="Time_picker(this.id)">
@@ -470,7 +462,7 @@
                                                                             &nbsp;</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="columnlabel">ใช้เวลาโม่เป็นเวลา</td>
+                                                                        <td class="columnlabel1">ใช้เวลาโม่เป็นเวลา</td>
                                                                         <td class="columnobject"><input name="A_total_milling_time" class='inputs' type="text" id="A_total_milling_time" size="15">
                                                                             ชม.&nbsp;&nbsp;&nbsp;อัตราการโม่มันต่อชั่วโมง
                                                                             <input name="A_milling_ratio" class='inputs' type="text" id="A_milling_ratio" size="15">
@@ -484,7 +476,7 @@
                                                     </div>
                                                     <div id="tabs-2" ><div align="left" style="width: 100%;"> <table  cellpadding="0"  cellspacing="0"><tr>
                                                                 <tr>
-                                                                    <td class="columnlabel">เริ่มอบมันวันที่&nbsp;</td>
+                                                                    <td class="columnlabel1">เริ่มอบมันวันที่&nbsp;</td>
                                                                     <td class="columnobject"><input name='A_start_r_date' class='inputs' type="text" id="A_start_r_date" value='' size='10' />
                                                                         &nbsp;<a id='date_5'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_start_r_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_5', singleClick: true, step: 1});</script>&nbsp;&nbsp;เวลา
                                                                         <input name="A_start_r_time" class='inputs' type="text" id="A_start_r_time" size="10" onkeypress="Time_picker(this.id)">
@@ -525,12 +517,12 @@
                                                                             ชม.</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="columnlabel">ใช่เวลาอบเป็นเวลา</td>
+                                                                        <td class="columnlabel1">ใช่เวลาอบเป็นเวลา</td>
                                                                         <td class="columnobject"><input name="A_total_roast_time" class='inputs' type="text" id="A_total_roast_time" size="15">
                                                                             ชม.</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="columnlabel">ใช้ไฟในการโม่</td>
+                                                                        <td class="columnlabel1">ใช้ไฟในการโม่</td>
                                                                         <td class="columnobject"><input name="A_epower_milling_from" class='inputs' type="text" id="A_epower_milling_from" size="15" onblur="Calculator_Epower_unit()">
                                                                             &nbsp;&nbsp;&nbsp;ถึง
                                                                             <input name="A_epower_milling_to" class='inputs' type="text" id="A_epower_milling_to" size="15" onblur="Calculator_Epower_unit()">
@@ -539,24 +531,24 @@
                                                                             หน่วย</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="columnlabel">ใช้น้ำ</td>
+                                                                        <td class="columnlabel1">ใช้น้ำ</td>
                                                                         <td class="columnobject"><input name="A_water_use" class='inputs' type="text" id="A_water_use" size="15">
                                                                             คิว&nbsp;&nbsp;&nbsp;&nbsp;กิโลวัตต์ที่ใช้จริง
                                                                             <input name="A_kw_use" class='inputs' type="text" id="A_kw_use" size="15" readonly>
                                                                             หน่วย</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="columnlabel">ปริมาณน้ำ/ตันแป้ง</td>
+                                                                        <td class="columnlabel1">ปริมาณน้ำ/ตันแป้ง</td>
                                                                         <td class="columnobject"><input name="A_water_per_tapioca" class='inputs' type="text" id="A_water_per_tapioca" size="15" readonly>
                                                                             m<sup>3</sup>/hr</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="columnlabel">ปริมาณไฟ/ตันแป้ง</td>
+                                                                        <td class="columnlabel1">ปริมาณไฟ/ตันแป้ง</td>
                                                                         <td class="columnobject"><input name="A_kw_per_tapioca" class='inputs' type="text" id="A_kw_per_tapioca" size="15" readonly>
                                                                             กิโลวัตต์/ตันแป้ง</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="columnlabel">&nbsp;</td>
+                                                                        <td class="columnlabel1">&nbsp;</td>
                                                                         <td class="columnobject">&nbsp;</td>
                                                                     </tr></table></div> </div>
                                                     </div>
@@ -565,7 +557,7 @@
                                                                     <td colspan="5" class="h_multi">รายการเบิกแป้ง</td>
                                                                     <td colspan="6" class="btn_multi">
                                                                         <a href="#top">กลับด้านบน</a>
-                                                                        <input type='button' class="cgcButton_4" name='but5' value='  เพิ่ม  ' onClick="getId('status_cancle').value == '' ? alert('กรุณาบันทึกเอกสารก่อน') : goAddChild(URLsend('A_doc_id,I_status,A_username', 'BW_CS_Detail_033_3.jsp'));"/>
+                                                                        <input type='button' class="cgcButton_4" name='but5' value='  เพิ่ม  ' onClick="getId('status_cancle').value === '' ? alert('กรุณาบันทึกเอกสารก่อน') : goAddChild(URLsend('A_doc_id,I_status,A_username', 'BW_CS_Detail_033_3.jsp'));"/>
                                                                         <input type='button' class="cgcButton_3" name='but5' value='  ลบ  ' onClick="goDelChild('33_3', 'BW_CS_Show033_3', 'chk_all3', 'ckbox_3', 'show2')"/>                                      </td>
                                                                 </tr>
                                                                 <tr>
@@ -590,7 +582,7 @@
                                                                     <td colspan="5" class="h_multi">รายการผลผลิตที่อบได้</td>
                                                                     <td colspan="6" class="btn_multi">
                                                                         <a href="#top">กลับด้านบน</a>
-                                                                        <input type='button' class="cgcButton_4" name='but3' value='  เพิ่ม  ' onClick="getId('status_cancle').value == '' ? alert('กรุณาบันทึกเอกสารก่อน') : goAddChild(URLsend('A_doc_id,I_status,A_username', 'BW_CS_Detail_033_4.jsp'));"/>
+                                                                        <input type='button' class="cgcButton_4" name='but3' value='  เพิ่ม  ' onClick="getId('status_cancle').value === '' ? alert('กรุณาบันทึกเอกสารก่อน') : goAddChild(URLsend('A_doc_id,I_status,A_username', 'BW_CS_Detail_033_4.jsp'));"/>
                                                                         <input type='button' class="cgcButton_3" name='but3' value='  ลบ  ' onClick="goDelChild('33_4', 'BW_CS_Show033_4', 'chk_all4', 'ckbox_4', 'show3')"/>
                                                                         <!--input type='button' class="cgcButton_7" name='but7' value='  แสดง  ' onClick="Display_Detail();"/-->
                                                                     </td>
@@ -617,11 +609,11 @@
                                                         <div align="center"> <table  cellpadding="0"  cellspacing="0">
 
                                                                 <tr>
-                                                                    <td class="columnlabel">ตัดมันน้ำแป้งของวันที่&nbsp;</td>
+                                                                    <td class="columnlabel1">ตัดมันน้ำแป้งของวันที่&nbsp;</td>
                                                                     <td class="columnobject">
                                                                         <input name="A_starch_date_from" class='inputs' type="text" id="A_starch_date_from" size="15">&nbsp;<a id='date_7'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_starch_date_from', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_7', singleClick: true, step: 1});</script>&nbsp;&nbsp;-
                                                                         <input name="A_starch_date_to" class='inputs' type="text" id="A_starch_date_to" size="15">&nbsp;<a id='date_8'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_starch_date_to', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_8', singleClick: true, step: 1});</script>&nbsp;&nbsp;
-                                                                        เหลือ<input class="cgcButton_7" type="button" value="ยอดยกมา" onClick="(getId('A_starch_date_from').value != '' || getId('A_starch_date_to').value != '') ? getData_d_rawmatt_receive('../JSP/BW_CS_033.jsp?status_calculator2=6&A_starch_date_from=' + getId('A_starch_date_from').value + '&A_starch_date_to=' + getId('A_starch_date_to').value + '', 'A_starch_balance') : alert('กรุณาเลือกวันที่ตัดมันน้ำแป้ง');">
+                                                                        เหลือ<input class="cgcButton_7" type="button" value="ยอดยกมา" onClick="(getId('A_starch_date_from').value !== '' || getId('A_starch_date_to').value != '') ? getData_d_rawmatt_receive('../JSP/BW_CS_033.jsp?status_calculator2=6&A_starch_date_from=' + getId('A_starch_date_from').value + '&A_starch_date_to=' + getId('A_starch_date_to').value + '', 'A_starch_balance') : alert('กรุณาเลือกวันที่ตัดมันน้ำแป้ง');">
                                                                         <input name="A_starch_balance" class='inputs' type="text" id="A_starch_balance" size="15"></td>
                                                                 </tr>
                                                             </table></div>
@@ -630,7 +622,7 @@
                                                                     <td colspan="3" class="h_multi">น้ำแป้ง</td>
                                                                     <td colspan="4" class="btn_multi">
                                                                         <a href="#top">กลับด้านบน</a>
-                                                                        <input type='button' class="cgcButton_4" name='but7' value='  เพิ่ม  ' onClick="getId('status_cancle').value == '' ? alert('กรุณาบันทึกเอกสารก่อน') : goAddChild(URLsend('A_doc_id,I_status,A_username', 'BW_CS_Detail_033_5.jsp'));"/>
+                                                                        <input type='button' class="cgcButton_4" name='but7' value='  เพิ่ม  ' onClick="getId('status_cancle').value === '' ? alert('กรุณาบันทึกเอกสารก่อน') : goAddChild(URLsend('A_doc_id,I_status,A_username', 'BW_CS_Detail_033_5.jsp'));"/>
                                                                         <input type='button' class="cgcButton_3" name='but7' value='  ลบ  ' onClick="goDelChild('33_5', 'BW_CS_Show033_5', 'chk_all5', 'ckbox_5', 'show4')"/>                                      </td>
                                                                 </tr>
                                                                 <tr>
@@ -658,7 +650,7 @@
                                         </tr>
 
                                         <tr>
-                                            <td class="columnlabel"><b>ผลผลิตรวมมันของวันที่</b></td>
+                                            <td class="columnlabel1"><b>ผลผลิตรวมมันของวันที่</b></td>
                                             <td class="columnobject">
                                                 <input name="A_cassava_prd_date" class='inputs' type="text" id="A_cassava_prd_date" size="15" onblur="getId('A_cassava_prd_date').value = getId('A_cassava_date').value">&nbsp;<a id='date_9'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_prd_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_9', singleClick: true, step: 1});</script>&nbsp;-&nbsp;
                                                 <input name="A_cassava_prd_date2" class='inputs' type="text" id="A_cassava_prd_date2" size="15">&nbsp;<a id='date_10'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_prd_date2', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_10', singleClick: true, step: 1});</script>&nbsp;&nbsp;
@@ -667,47 +659,47 @@
                                                 ตัน</td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">คิดเป็น   % ผลผลิตที่ได้จริง</td>
+                                            <td class="columnlabel1">คิดเป็น   % ผลผลิตที่ได้จริง</td>
                                             <td class="columnobject"><input name="A_percent_prd" class='inputs' type="text" id="A_percent_prd" size="15">
                                                 %</td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">คิดผลต่าง   % ชื้อกับ % ผลผลิต</td>
+                                            <td class="columnlabel1">คิดผลต่าง   % ชื้อกับ % ผลผลิต</td>
                                             <td class="columnobject"><input name="A_percent_diff" class='inputs' type="text" id="A_percent_diff" size="15">
                                                 %</td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">%   yield ที่ได้</td>
+                                            <td class="columnlabel1">%   yield ที่ได้</td>
                                             <td class="columnobject"><input name="A_percent_yield" class='inputs' type="text" id="A_percent_yield" size="15">
                                                 %&nbsp;&nbsp;&nbsp;&nbsp;หรือ
                                                 <input name="A_yield_val" class='inputs' type="text" id="A_yield_val" size="15"></td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel"><b>คิดจากมันที่หักเปลือกแล้ว</b></td>
+                                            <td class="columnlabel1"><b>คิดจากมันที่หักเปลือกแล้ว</b></td>
                                             <td class="columnobject">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">คิดเป็น   % ผลผลิตที่ได้จริง</td>
+                                            <td class="columnlabel1">คิดเป็น   % ผลผลิตที่ได้จริง</td>
                                             <td class="columnobject"><input name="A_percent_prd1" class='inputs' type="text" id="A_percent_prd1" size="15">
                                                 %</td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">คิดผลต่าง   % ชื้อกับ % ผลผลิต</td>
+                                            <td class="columnlabel1">คิดผลต่าง   % ชื้อกับ % ผลผลิต</td>
                                             <td class="columnobject"><input name="A_percent_diff1" class='inputs' type="text" id="A_percent_diff1" size="15">
                                                 %</td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">%   yield ที่ได้</td>
+                                            <td class="columnlabel1">%   yield ที่ได้</td>
                                             <td class="columnobject"><input name="A_percent_yield1" class='inputs' type="text" id="A_percent_yield1" size="15">
                                                 %&nbsp;&nbsp;&nbsp;&nbsp;หรือ
                                                 <input name="A_yield_val1" class='inputs' type="text" id="A_yield_val1" size="15"></td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">&nbsp;</td>
+                                            <td class="columnlabel1">&nbsp;</td>
                                             <td class="columnobject">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td class="columnlabel">ผู้รายงาน</td>
+                                            <td class="columnlabel1">ผู้รายงาน</td>
                                             <td class="columnobject"><input name="A_reporter_id" class='inputs' type="text" id="A_reporter_id" size="15">&nbsp;<a onclick="openBrWindow('Vemployee', 22, 'Search_Config2.jsp');" href="#"><img width="20" height="20" align="middle" border="0" name="IMAGE3" alt="ค้นหา" src="../IMAGES/BUTTON/MAIN/SEARCH20.png"/></a><input name="reporter_id_desc" class='inputs' type="text" id="reporter_id_desc" size="30"/></td>
                                         </tr>
                                         <tr>
@@ -726,17 +718,12 @@
                                             <br>                                </td>
                                             </tr>
                                             </table>
-                                        </div></td>
-                                        <td class="fcenterright"></td>
-                                        </tr>
-                                        <tr bordercolor="0069B3">
-                                            <td class="ffootleft"></td>
-                                            <td  class="ffootcenter" colspan="2"></td>
-                                            <td class="ffootright"></td>
-                                        </tr>
-                                    </table>
-                                    </form>
+                                        </div>
                                 </div>
-                                </div>
-                                </body>
-                                </html>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

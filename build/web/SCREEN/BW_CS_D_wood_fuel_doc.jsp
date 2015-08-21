@@ -8,14 +8,37 @@
     <%!    String path, lookup, doc_eff_date, doc_no;
     %>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/bw_button.css" rel="stylesheet" type="text/css">
+
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
         <link rel="stylesheet" type="text/css" media="all" href="../JS/jscalendar/skins/aqua/aqua.css" title="Aua" />
         <script type="text/javascript" src="../JS/jscalendar/calendar.js"></script>
         <script type='text/javascript' src='../JS/jscalendar/lang/calendar-th.js'></script>
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>   
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
+
         <script type="text/javascript">
             function Chknull() {
-                if (document.getElementById('doc_id').value == '') {
+                if (document.getElementById('doc_id').value === '') {
                     alert('กรุณาใส่ข้อมูลเลขที่เอกสาร');
                 } else
                     document.report.submit();
@@ -23,7 +46,7 @@
             function goAddChild(URLSend)
             {
                 var arryChk = new Array;
-                arryChk[0] = "chkNull"
+                arryChk[0] = "chkNull";
                 if (ChkParameter(arryChk))
                 {
                     window.open(URLSend[0]);
@@ -34,10 +57,10 @@
             {
 
                 var SURL;
-                var r = confirm("คุณต้องการยกเลิกข้อมูลทั้งหมดหรือไม่")
+                var r = confirm("คุณต้องการยกเลิกข้อมูลทั้งหมดหรือไม่");
                 if (r)
                 {
-                    if (getId("status_cancle").value == "1")
+                    if (getId("status_cancle").value === "1")
                     {
                         cancelAction();
                         getId("status_cancle").value = "";
@@ -48,7 +71,7 @@
                     else {
                         SURL = "../JSP/BW_CS_D_wood_fuel_doc.jsp?status_d=3&chk_all=1";
                         SURL = SURL + "&doc_id=" + getId("doc_id").value;
-                        Delete_Line_no(SURL)
+                        Delete_Line_no(SURL);
                         cancelAction();
                         getId("status_cancle").value = "";
                         getId("child_ck").value = "";
@@ -116,7 +139,7 @@
             }
             function Delete()
             {
-                var r = confirm("คุณต้องการลบข้อมูลทั้งหมดหรือไม่")
+                var r = confirm("คุณต้องการลบข้อมูลทั้งหมดหรือไม่");
                 if (r)
                 {
                     getSave(URLsend('complete_flag,doc_id,doc_date,doc_type,doc_time,remark,username,status_d', '../JSP/BW_CS_D_wood_fuel_doc.jsp'));
@@ -132,16 +155,12 @@
                     getId("complete_flag").value = "Y";
                     alert("เอกสารนี้สมบูรณ์เรียบร้อยแล้ว");
                 } else {
-                    getId("complete_flag").value = "N"
+                    getId("complete_flag").value = "N";
                     //alert("เอกสารนี้สมบูรณ์เรียบร้อยแล้ว");
                 }
             }
 
         </script>      
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
-        <link href="../CSS/bw_button.css" rel="stylesheet" type="text/css">
         <title></title>
     </head>
     <body>
@@ -151,7 +170,7 @@
                 DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                 HeaderScreen_Process h_p = new HeaderScreen_Process();
                 objs_p = h_p.selectheaderscreen_process(objs_p, "BW_CS_D_wood_fuel_doc");
-                 // _______________________________________________________________report
+                // _______________________________________________________________report
 
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
                 HeaderScreen_Report r_p = new HeaderScreen_Report();
@@ -162,7 +181,7 @@
                 doc_no = objr_p.getDoc_no();
 
                  //_______________________________________________________________report
-            %>
+%>
             <input name="username" type="hidden" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input type="hidden" id="chkNull" value="doc_id,doc_date,doc_time,doc_type">
             <input type="hidden" id="status_a" value="1"><!-- เป็นการเพิ่มข้อมูลเข้าไป-->
@@ -179,124 +198,110 @@
             <input type="hidden" id="remark" name="remark" value="-">
             <input type="hidden" id="cred_code" name="cred_code" value="000380"> <!-- C.Gigantic Carbon -->
 
-            <table  cellpadding="0"  cellspacing="0">
-                <tr>
-                    <td class="ftopleft"></td>
-                    <td  class="ftopcenter" colspan="2">บันทึกรับไม้ฟืน(BW_CS_D_wood_fuel_doc)&nbsp;</td>
-                    <td class="ftopright"></td>
-                </tr>
-                <tr >
-                    <td class="fcenterleft"></td>
-                    <td  colspan="2" class="fcentercenter">
-                        <div align="left">
-                            <table  cellpadding="0" cellspacing="0" >
-                                <tr>
-                                    <td colspan="2" align="right"><b>หมายเลขเอกสาร : <%=objs_p.getIso_no()%> </b></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" align="right"><b>วันที่มีผลบังคับใช้ : <%=objs_p.getEffective_date()%> </b></td>
-                                </tr>                                
-                                <tr>
-                                    <td class="columnlabel"><b>เอกสารสมบูรณ์</b>&nbsp;</td>
-                                    <td class="columnobject"><input name="complete_flag" type="checkbox" id="complete_flag" value="N" onClick="Checkvalue(this.checked)"></td>
-                                </tr>                                  
-                                <tr>
-                                    <td class="columnlabel">
-                                        <!--input name="runner" id="runner" class="bwButton_7" type="button" value="เลขที่เอกสาร" onclick="AjaxRun_id('doc_id', '../JSP/BW_CS_D_wood_fuel_doc.jsp?runer_id=1');
-                                                this.disabled = true;">&nbsp;-->
-                                    <td class="columnobject">
-                                        เลขที่เอกสาร&nbsp;
-                                        <input name='doc_id' class='inputs' type="text" id="doc_id" value='' size='10' readonly="readonly"/>
-                                        &nbsp;<a href='#' onClick="javascript:openBrWindow('d_wood_fuel_doc&stadment=and+complete_flag+<>+\'Y\'', 115, 'Search_Doc_id_By_DATE.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                        วันที่เอกสาร*&nbsp;
-                                        <input class='inputs' type="text" name='doc_date' size='10' value='' id="doc_date" readonly="readonly" />&nbsp;<a id='date_1' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;
-                                        เวลา*&nbsp;
-                                        <input name='doc_time' class='inputs' type="text" id="doc_time" value='' size='10' />                                </td>
-                                </tr>
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-pencil"></span>&nbsp;
+                        <b>บันทึกรับไม้ฟืน (BW_CS_D_wood_fuel_doc)</b>
+                    </div>                        
+                    <div class="panel-footer">                    
+                        <td  colspan="2" class="fcentercenter">
+                            <div align="left">
+                                <table  cellpadding="0" cellspacing="0" >
+                                    <tr>
+                                        <td colspan="2" align="right"><b>หมายเลขเอกสาร : <%=objs_p.getIso_no()%> </b></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="right"><b>วันที่มีผลบังคับใช้ : <%=objs_p.getEffective_date()%> </b></td>
+                                    </tr> 
 
-                                <tr>
-                                    <td class="columnlabel">&nbsp;</td>
-                                    <td class="columnobject">
-                                        เอกสารที่อนุมัติแล้ว&nbsp;
-                                        <input name='doc_id1' type='hidden' id="doc_id1" value='' size='10' />
-                                        <a href='#' onClick="javascript:openBrWindow('d_wood_fuel_doc&stadment=and+complete_flag+=+\'Y\'', 115, 'Search_Doc_id_By_DATE.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;                                                                                
-                                    </td>
-                                </tr>                                
+                                    <!--tr>
+                                        <td class="columnlabel1"><b>เอกสารสมบูรณ์</b>&nbsp;</td>
+                                        <td class="columnobject"><input name="complete_flag" type="checkbox" id="complete_flag" value="N" onClick="Checkvalue(this.checked)"></td>
+                                    </tr-->      
 
-                                <!--tr>
-                                    <td class="columnlabel">&nbsp;</td>
-                                    <td class="columnobject"><select name="doc_type" id="doc_type">
-                                            <option value="+">รับเข้า</option>
-                                            <option value="-">จ่ายออก</option>
-                                        </select>
-                                    </td>
-                                </tr-->
+                                    <tr>
+                                        <td class="columnlabel1"><b>เอกสารสมบูรณ์</b>&nbsp;:&nbsp;</td>
+                                        <td class="columnobject">
+                                            <div class="checkbox checkbox-primary">
+                                                <input type="checkbox" id="complete_flag" name="complete_flag" value="N" onClick="Checkvalue(this.checked)">
+                                                <label for="complete_flag"></label> 
+                                            </div>
+                                        </td>
+                                    </tr>                                                                                  
 
+                                    <tr>
+                                        <td class="columnlabel1">
+                                        <td class="columnobject">
+                                            เลขที่เอกสาร&nbsp;
+                                            <input name='doc_id' class='inputs' type="text" id="doc_id" value='' size='10' readonly="readonly"/>
+                                            &nbsp;<a href='#' onClick="javascript:openBrWindow('d_wood_fuel_doc&stadment=and+complete_flag+<>+\'Y\'', 115, 'Search_Doc_id_By_DATE.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                            วันที่เอกสาร*&nbsp;
+                                            <input class='inputs' type="text" name='doc_date' size='10' value='' id="doc_date" readonly="readonly" />&nbsp;<a id='date_1' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;
+                                            เวลา*&nbsp;
+                                            <input name='doc_time' class='inputs' type="text" id="doc_time" value='' size='10' />                                </td>
+                                    </tr>
 
+                                    <tr>
+                                        <td class="columnlabel1">&nbsp;</td>
+                                        <td class="columnobject">
+                                            เอกสารที่อนุมัติแล้ว&nbsp;
+                                            <input name='doc_id1' type='hidden' id="doc_id1" value='' size='10' />
+                                            <a href='#' onClick="javascript:openBrWindow('d_wood_fuel_doc&stadment=and+complete_flag+=+\'Y\'', 115, 'Search_Doc_id_By_DATE.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;                                                                                
+                                        </td>
+                                    </tr>                                
 
-                                <tr>
-                                    <td colspan='2' class='blankspace'></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" align="center">
-                                        <div style="width:100%;">
-                                            <table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
-                                                <tr>
-                                                    <td colspan="5" class="h_multi">ข้อมูลการรับไม้ฟืน</td>
-                                                    <td colspan="6" class="btn_multi">
-                                                        <!--input type='button' class="bwButton_4" name='but1' value='  เพิ่ม  ' onClick="javascript:goAddChild(URLsend('doc_id,doc_date,status_a,username', 'BW_CS_D_wood_fuel_doc_1.jsp'))"/>
-                                                        <input type='button' class="bwButton_3" name='but2' value='  ลบ  ' onclick='goDelChild()'/-->
-                                                    </td>
-                                                </tr>
+                                    <tr>
+                                        <td colspan='2' class='blankspace'></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center">
+                                            <div style="width:100%;">
+                                                <table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
+                                                    <tr>
+                                                        <td colspan="5" class="h_multi">ข้อมูลการรับไม้ฟืน</td>
+                                                        <td colspan="6" class="btn_multi">
+                                                        </td>
+                                                    </tr>
 
-                                                <tr>
-                                                    <td class="row3" width="3%"><input type="checkbox" name="chk_all" value="chk_all" onClick="javascript:ckall(this.checked);"/></td>
-                                                    <!--td class="row3" width="7%">ลำดับ&nbsp;</td-->                                                    
-                                                    <td class="row3" width="15%">เลขที่ใบชั่ง&nbsp;</td>
-                                                    <td class="row3" width="10%">ทะเบียนรถ&nbsp;</td>
-                                                    <td class="row3" width="15%">ชื่อผู้ขาย</td>
-                                                    <td class="row3" width="15%">ประเภท&nbsp;</td>
-                                                    <td class="row3" width="15%">น้ำหนัก&nbsp;</td>
-                                                    <td class="row3" width="17%">ราคาต่อหน่วย&nbsp;</td>
-                                                    <td class="row3" width="15%">รวมราคา&nbsp;</td>
-                                                </tr>
+                                                    <tr>
+                                                        <td class="row3" width="3%"><input type="checkbox" name="chk_all" value="chk_all" onClick="javascript:ckall(this.checked);"/></td>
+                                                        <!--td class="row3" width="7%">ลำดับ&nbsp;</td-->                                                    
+                                                        <td class="row3" width="15%">เลขที่ใบชั่ง&nbsp;</td>
+                                                        <td class="row3" width="10%">ทะเบียนรถ&nbsp;</td>
+                                                        <td class="row3" width="15%">ชื่อผู้ขาย</td>
+                                                        <td class="row3" width="15%">ประเภท&nbsp;</td>
+                                                        <td class="row3" width="15%">น้ำหนัก&nbsp;</td>
+                                                        <td class="row3" width="17%">ราคาต่อหน่วย&nbsp;</td>
+                                                        <td class="row3" width="15%">รวมราคา&nbsp;</td>
+                                                    </tr>
 
-                                            </table>
-                                        </div>
-                                        <div style="width:100%; height: 400px; overflow: auto;" id="show">
+                                                </table>
+                                            </div>
+                                            <div style="width:100%; height: 400px; overflow: auto;" id="show">
 
-                                        </div>
-                                    </td>
-                                </tr>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                                <br>
-                                <!--tr>
-                                    <td class="columnlabel">&nbsp;</td>
-                                    <td class="columnobject"><textarea class='text_inputs' name="remark" id="remark" cols="45" rows="2"></textarea></td>
-                                </tr-->
+                                    <br>
 
-                                <tr>
-                                    <td colspan='2' class='blankspace'>
-                                        <br>
-                                        <div align="center">
-                                            <a href="javascript:;" onClick="cancle()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
-                                            <a href="javascript:;" onClick="AddHeader()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
-                                            <a href="javascript:;" onClick="Delete()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a>                
-                                            <a href="javascript:;"  onclick="Chknull()"><img alt="พิมพ์เอกสาร" class="imgtransparent" src="../IMAGES/BTN_PRINT_90.png" width="80" height="30" border="0"></a>
-                                        </div>
-                                        <br>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div></td>
-                    <td class="fcenterright"></td>
-                </tr>
-                <tr bordercolor="0069B3">
-                    <td class="ffootleft"></td>
-                    <td  class="ffootcenter" colspan="2"></td>
-                    <td class="ffootright"></td>
-                </tr>
-            </table>
+                                    <tr>
+                                        <td colspan='2' class='blankspace'>
+                                            <br>
+                                            <div align="center">
+                                                <a href="javascript:;" onClick="cancle()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
+                                                <a href="javascript:;" onClick="AddHeader()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
+                                                <a href="javascript:;" onClick="Delete()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a>                
+                                                <a href="javascript:;"  onclick="Chknull()"><img alt="พิมพ์เอกสาร" class="imgtransparent" src="../IMAGES/BTN_PRINT_90.png" width="80" height="30" border="0"></a>
+                                            </div>
+                                            <br>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </body>
 </html>
