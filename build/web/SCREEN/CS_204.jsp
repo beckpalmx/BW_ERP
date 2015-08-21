@@ -38,7 +38,7 @@
         <input type="hidden" id="chkNull" value="be,sg">
         <input type="hidden" id="status_u" value ="2">
         <input type = "hidden" id ="status_d" value ="3">
-
+        
         <div class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading"> <span class="glyphicon glyphicon-pencil"></span>&nbsp;

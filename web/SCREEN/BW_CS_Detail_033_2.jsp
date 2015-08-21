@@ -179,9 +179,7 @@
                                 <td class="columnlabel1">ถึงวันที่*&nbsp;</td>
                                 <td class="columnobject"><input name='A_sr_to_date' class='inputs' type="text" id="A_sr_to_date" value='<%=sr_to_date%>' size='10' />
                                     &nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_sr_to_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>
-                                    &nbsp;&nbsp;ถึงเวลา
-                                    &nbsp;&nbsp;
-                                    <input name="A_sr_to_time" class='inputs' type="text" id="A_sr_to_time" size="10" value="<%=sr_to_time%>"></td>
+                                    &nbsp;&nbsp;ถึงเวลา&nbsp;&nbsp;&nbsp;<input name="A_sr_to_time" class='inputs' type="text" id="A_sr_to_time" size="10" value="<%=sr_to_time%>"></td>
                             </tr>
                             <tr>
                                 <td class="columnlabel1">จำนวนชั่วโมง*</td>

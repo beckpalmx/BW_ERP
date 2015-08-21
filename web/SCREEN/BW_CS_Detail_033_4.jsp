@@ -114,44 +114,42 @@
         <input type="hidden" id="I_status" name="I_status" value="<%=I_status%>">
         <input type="hidden" id="U_status" name="U_status" value="<%=U_status%>">
         <input type="hidden" id="chkNull" name="chkNull" value="A_product_id">
-        <table  cellpadding="0"  cellspacing="0" align="center">
-            <tr >
-                <td class="ftopleft"></td>
-                <td  class="ftopcenter" colspan="2">&nbsp;</td>
-                <td class="ftopright"></td>
-            </tr>
-            <tr >
-                <td class="fcenterleft"></td>
-                <td  colspan="2" class="fcentercenter">
+        <br>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                    <b>รายละเอียดผลผลิตที่ได้</b>
+                </div>                        
+                <div class="panel-footer">        
                     <div align="center">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">รายการผลผลิตที่อบได้*</td>
+                                <td class="columnlabel1">รายการผลผลิตที่อบได้*</td>
                                 <td class="columnobject">
                                     <input name="A_product_id" class='inputs' type="text" id="A_product_id" size="10" value="<%=product_id%>">&nbsp;&nbsp;<a onclick="openBrWindow('vproduct', 22, 'Search_Config2.jsp');" href="#"><img width="20" height="20" align="middle" border="0" name="IMAGE3" alt="ค้นหา" src="../IMAGES/BUTTON/MAIN/SEARCH20.png"/></a>
                                     <input name="product_id_desc" class='inputs' type="text" id="product_id_desc" size="30" value="<%=product_id%>">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">น้ำหนักบรรจุ*&nbsp;</td>
+                                <td class="columnlabel1">น้ำหนักบรรจุ*&nbsp;</td>
                                 <td class="columnobject"><input name='A_weight' class='inputs' type="text" id="A_weight" value='<%=weight%>' size='10' onblur="Cal_T('A_weight', 'A_bag_qty', 'A_amount')"/>(กิโลกรัม)
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">จำนวน*</td>
+                                <td class="columnlabel1">จำนวน*</td>
                                 <td class="columnobject"><input name="A_bag_qty" class='inputs' type="text" id="A_bag_qty" size="10" value="<%=bag_qty%>" onblur="Cal_T('A_weight', 'A_bag_qty', 'A_amount')"/>(กระสอบ)</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">น้ำหนัก*&nbsp;</td>
+                                <td class="columnlabel1">น้ำหนัก*&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_amount' class='inputs' type="text" id="A_amount" value='<%=amount%>' size='10' />(ตัน)
                                     &nbsp;&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">หมายเหตุ&nbsp;</td>
+                                <td class="columnlabel1">หมายเหตุ&nbsp;</td>
                                 <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
                             </tr>
 
@@ -173,15 +171,9 @@
                                 <td colspan='2' class='blankspace'>                                </td>
                             </tr>
                         </table>
-                    </div></td>
-                <td class="fcenterright"></td>
-            </tr>
-            <tr bordercolor="0069B3">
-                <td class="ffootleft"></td>
-                <td  class="ffootcenter" colspan="2"></td>
-                <td class="ffootright"></td>
-            </tr>
-        </table>
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

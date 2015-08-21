@@ -115,10 +115,11 @@
         <input type="hidden" id="I_status" name="I_status" value="<%=I_status%>">
         <input type="hidden" id="U_status" name="U_status" value="<%=U_status%>">
         <input type="hidden" id="chkNull" name="chkNull" value="A_weight">
+        <br>
         <div class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                    <b>รายละเอียดผลผลิตที่อบได้</b>
+                    <b>รายละเอียดการเบิกแป้ง</b>
                 </div>                        
                 <div class="panel-footer">           
                     <div align="center">
@@ -128,8 +129,8 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel1">รายการเบิกแป้ง*</td>
-                                <td class="columnobject"><input name="A_product_id" class='inputs' type="text" id="A_product_id" size="10" value="<%=product_id%>">&nbsp;&nbsp;<a onclick="openBrWindow('vproduct', 22, 'Search_Config2.jsp');" href="#"><img width="20" height="20" align="middle" border="0" name="IMAGE3" alt="ค้นหา" src="../IMAGES/BUTTON/MAIN/SEARCH20.png"/></a>
-                                    <input name="product_id_desc" class='inputs' type="text" id="product_id_desc" size="30" value="<%=product_id%>">
+                                <td class="columnobject"><input name="A_product_id" class='inputs' type="text" id="A_product_id" size="15" value="<%=product_id%>">&nbsp;&nbsp;<a onclick="openBrWindow('vproduct', 22, 'Search_Config2.jsp');" href="#"><img width="20" height="20" align="middle" border="0" name="IMAGE3" alt="ค้นหา" src="../IMAGES/BUTTON/MAIN/SEARCH20.png"/></a>
+                                    <input name="product_id_desc" class='inputs' type="text" id="product_id_desc" size="50" value="<%=product_id%>">
                                 </td>
                             </tr>
                             <tr>

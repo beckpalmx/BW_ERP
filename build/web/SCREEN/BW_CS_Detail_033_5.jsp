@@ -141,22 +141,21 @@
         <input type="hidden" id="I_status" name="I_status" value="<%=I_status%>">
         <input type="hidden" id="U_status" name="U_status" value="<%=U_status%>">
         <input type="hidden" id="chkNull" name="chkNull" value="A_doc_id">
-        <table  cellpadding="0"  cellspacing="0" align="center">
-            <tr >
-                <td class="ftopleft"></td>
-                <td  class="ftopcenter" colspan="2">&nbsp;</td>
-                <td class="ftopright"></td>
-            </tr>
-            <tr >
-                <td class="fcenterleft"></td>
-                <td  colspan="2" class="fcentercenter">
+        <br>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                    <b>รายละเอียดน้ำแป้ง</b>
+                </div>                        
+                <div class="panel-footer">        
+
                     <div align="center">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">ตัดมันของวันที่</td>
+                                <td class="columnlabel1">ตัดมันของวันที่</td>
                                 <td class="columnobject"><input name="A_cassava_of_date" class='inputs' type="text" id="A_cassava_of_date" size="15" value ="<%=cassava_of_date%>">&nbsp;<a id='date_8'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_of_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_8', singleClick: true, step: 1});</script>
                                     &nbsp;&nbsp;&nbsp;&nbsp;มีน้ำแป้งเหลือ
                                     <input name="A_starch_bal" class='inputs' type="text" id="A_starch_bal" size="15" onblur="Calculator_starch();" value="<%=starch_bal%>">
@@ -165,32 +164,23 @@
                                     ถัง</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel"><p>คิดเป็นลิตร ต่อ ถัง</p></td>
+                                <td class="columnlabel1"><p>คิดเป็นลิตร ต่อ ถัง</p></td>
                                 <td class="columnobject"><input name="A_starch_bal_x_qty_tank" class='inputs' type="text" id="A_starch_bal_x_qty_tank" size="15" value ="<%=starch_bal_x_qty_tank%>">
                                     &nbsp;x&nbsp;2,200&nbsp;=&nbsp;
                                     <input name="A_qty_litr" class='inputs' type="text" id="A_qty_litr" size="15" value="<%=qty_starch%>">ลิตร</td>
                             </tr>
-                            <!--<tr>
-                                <td class="columnlabel">ถังที่*</td>
-                                <td class="columnobject"><input name="A_tank" class='inputs' type="text" id="A_tank" size="10" value=""></td>
-                            </tr>
                             <tr>
-                                <td class="columnlabel">จำนวนลิตร*&nbsp;</td>
-                                <td class="columnobject"><input name='A_qty_starch' class='inputs' type="text" id="A_qty_starch" value='' size='10' />
-                                    &nbsp;</td>
-                            </tr>-->
-                            <tr>
-                                <td class="columnlabel">ค่าBe'*</td>
+                                <td class="columnlabel1">ค่าBe'*</td>
                                 <td class="columnobject"><input name="A_be_val" class='inputs' type="text" id="A_be_val" size="10" value="<%=be_val%>"><a href='#' onClick="openBrWindow('m_sg_config', 33, 'Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">ค่าS.G.*&nbsp;</td>
+                                <td class="columnlabel1">ค่าS.G.*&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_sg_val' class='inputs' type="text" id="A_sg_val" value='<%=sg_val%>' size='10' />
                                     &nbsp;&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">รวมแป้งแห้ง&nbsp;</td>
+                                <td class="columnlabel1">รวมแป้งแห้ง&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_amount' class='inputs' type="text" id="A_amount" value='<%=amount%>' size='10' onblur="Amount();"/>                                </td>
                             </tr>
@@ -213,15 +203,9 @@
                                 <td colspan='2' class='blankspace'>                                </td>
                             </tr>
                         </table>
-                    </div></td>
-                <td class="fcenterright"></td>
-            </tr>
-            <tr bordercolor="0069B3">
-                <td class="ffootleft"></td>
-                <td  class="ffootcenter" colspan="2"></td>
-                <td class="ffootright"></td>
-            </tr>
-        </table>
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
