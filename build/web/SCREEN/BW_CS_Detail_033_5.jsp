@@ -3,9 +3,9 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.bw.Util.ThaiUtil"%>
 <%
-            response.setHeader("Cache-Control", "no-cache");
-            response.setHeader("Pragma", "no-cache");
-            response.setDateHeader("Expires", -1);
+    response.setHeader("Cache-Control", "no-cache");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", -1);
 %>
 <html>
     <head>
@@ -14,7 +14,8 @@
         <META Http-Equiv="Pragma" Content="no-cache">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">        
         <script type="text/javascript" src="../JS/myAjaxFramework.js"></script>
         <link rel="stylesheet" type="text/css" media="all" href="../JS/jscalendar/skins/aqua/aqua.css" title="Aua" />
@@ -26,49 +27,66 @@
         <!-- the following script defines the Calendar.setup helper function, which makes
                adding a calendar a matter of 1 or 2 lines of code. -->
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>   
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
+
         <script type="text/javascript">
-            function Amount(){
-                getId("A_amount").value =  ((((parseFloat(getId("A_qty_litr").value) * parseFloat(getId("A_be_val").value) * parseFloat(getId("A_sg_val").value)) * (1.777/100) * 1.0225)/0.875)/1000).toFixed(3);
+            function Amount() {
+                getId("A_amount").value = ((((parseFloat(getId("A_qty_litr").value) * parseFloat(getId("A_be_val").value) * parseFloat(getId("A_sg_val").value)) * (1.777 / 100) * 1.0225) / 0.875) / 1000).toFixed(3);
             }
-            function goAdd(){
+            function goAdd() {
                 var arrayChk = new Array;
-                arrayChk[0]  = "chkNull";
-                if(ChkParameter(arrayChk))
+                arrayChk[0] = "chkNull";
+                if (ChkParameter(arrayChk))
                 {
                     Amount();
                     var strID = getIDElements('input', 'A_');
                     strID += getIDElements('input', 'I_');
                     strID += getIDElements('textarea', 'A_');
-                    strID = strID.substr(0, strID.length-1);
+                    strID = strID.substr(0, strID.length - 1);
                     //alert(strID);
-                    getSave_Detail(URLsend(strID,'../JSP/BW_CS_Detail_033_5.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show033_5.jsp?doc_id=", "show4", getId("A_doc_id").value);
+                    getSave_Detail(URLsend(strID, '../JSP/BW_CS_Detail_033_5.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show033_5.jsp?doc_id=", "show4", getId("A_doc_id").value);
                 }
             }
             function goEdit()
             {
 
                 var arrayChk = new Array;
-                arrayChk[0]  = "chkNull";
-                if(ChkParameter(arrayChk))
+                arrayChk[0] = "chkNull";
+                if (ChkParameter(arrayChk))
                 {
                     Amount();
                     var strID = getIDElements('input', 'A_');
                     strID += getIDElements('input', 'U_');
                     strID += getIDElements('textarea', 'A_');
-                    strID = strID.substr(0, strID.length-1);
+                    strID = strID.substr(0, strID.length - 1);
                     //alert(strID);
-                    getSave_Detail(URLsend(strID,'../JSP/BW_CS_Detail_033_5.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show033_5.jsp?doc_id=", "show4", getId("A_doc_id").value);
+                    getSave_Detail(URLsend(strID, '../JSP/BW_CS_Detail_033_5.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show033_5.jsp?doc_id=", "show4", getId("A_doc_id").value);
                 }
             }
             function goBack()
             {
                 window.close();
             }
-            function Calculator_starch(){
-                if(getId("A_starch_bal").value != "" && getId("A_qty_tank").value != ""){
+            function Calculator_starch() {
+                if (getId("A_starch_bal").value != "" && getId("A_qty_tank").value != "") {
                     getId("A_starch_bal_x_qty_tank").value = (parseFloat(getId("A_starch_bal").value) * parseFloat(getId("A_qty_tank").value)).toFixed(2);
                     getId("A_qty_litr").value = (parseFloat(getId("A_starch_bal_x_qty_tank").value) * 2200).toFixed(2);
-                }else{
+                } else {
                     getId("A_starch_bal_x_qty_tank").value = "";
                     getId("A_qty_litr").value = "";
                 }
@@ -80,42 +98,42 @@
             DataBeanD_product_report_daily_detail_starch objBean;
             D_product_report_daily_detail_starchDAO objdb;
             String line_no, doc_id, I_status, U_status,
-                    qty_starch, be_val, sg_val, amount,cassava_of_date, starch_bal,qty_tank,starch_bal_x_qty_tank;
+                    qty_starch, be_val, sg_val, amount, cassava_of_date, starch_bal, qty_tank, starch_bal_x_qty_tank;
         %>
         <%
-                    line_no = "";
-                    doc_id = "";
-                    I_status = "";
-                    U_status = "";
-                    qty_starch = "";
-                    be_val = "";
-                    sg_val = "";
-                    amount = "";
-                    cassava_of_date = "";
-                    starch_bal="";
-                    qty_tank = "";
-                    starch_bal_x_qty_tank = "";
-                    en = new ThaiUtil();
-                    objBean = new DataBeanD_product_report_daily_detail_starch();
-                    objdb = new D_product_report_daily_detail_starchDAO();
-                    if (request.getQueryString().indexOf("line_no_") != -1) {
-                        U_status = "2";
-                        line_no = request.getQueryString().substring(8, request.getQueryString().indexOf("="));
-                        doc_id = request.getParameter("A_doc_id");
-                        objBean = objdb.Return_Edit(doc_id, line_no);
-                        //tank = objBean.getTank();
-                        qty_starch = objBean.getQty_starch();
-                        be_val = objBean.getBe_val();
-                        sg_val = objBean.getSg_val();
-                        amount = objBean.getAmount();
-                        cassava_of_date = objBean.getCassava_of_date();
-                        starch_bal = objBean.getStarch_bal();
-                        qty_tank = objBean.getQty_tank();
-                        starch_bal_x_qty_tank = objBean.getStarch_bal_x_qty_tank();
-                    } else {
-                        doc_id = request.getParameter("A_doc_id");
-                        I_status = request.getParameter("I_status");
-                    }
+            line_no = "";
+            doc_id = "";
+            I_status = "";
+            U_status = "";
+            qty_starch = "";
+            be_val = "";
+            sg_val = "";
+            amount = "";
+            cassava_of_date = "";
+            starch_bal = "";
+            qty_tank = "";
+            starch_bal_x_qty_tank = "";
+            en = new ThaiUtil();
+            objBean = new DataBeanD_product_report_daily_detail_starch();
+            objdb = new D_product_report_daily_detail_starchDAO();
+            if (request.getQueryString().indexOf("line_no_") != -1) {
+                U_status = "2";
+                line_no = request.getQueryString().substring(8, request.getQueryString().indexOf("="));
+                doc_id = request.getParameter("A_doc_id");
+                objBean = objdb.Return_Edit(doc_id, line_no);
+                //tank = objBean.getTank();
+                qty_starch = objBean.getQty_starch();
+                be_val = objBean.getBe_val();
+                sg_val = objBean.getSg_val();
+                amount = objBean.getAmount();
+                cassava_of_date = objBean.getCassava_of_date();
+                starch_bal = objBean.getStarch_bal();
+                qty_tank = objBean.getQty_tank();
+                starch_bal_x_qty_tank = objBean.getStarch_bal_x_qty_tank();
+            } else {
+                doc_id = request.getParameter("A_doc_id");
+                I_status = request.getParameter("I_status");
+            }
         %>
         <input name="username" type="hidden" id="username" value="<%=request.getParameter("A_username")%>" size="30" readonly/>
         <input type="hidden" id="A_doc_id" name="A_doc_id" value="<%=request.getParameter("A_doc_id")%>">
@@ -139,7 +157,7 @@
                             </tr>
                             <tr>
                                 <td class="columnlabel">ตัดมันของวันที่</td>
-                                <td class="columnobject"><input name="A_cassava_of_date" class='inputs' type="text" id="A_cassava_of_date" size="15" value ="<%=cassava_of_date%>">&nbsp;<a id='date_8'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField:'A_cassava_of_date',ifFormat:'%d-%m-%Y',showsTime:false,button:'date_8',singleClick:true,step:1});</script>
+                                <td class="columnobject"><input name="A_cassava_of_date" class='inputs' type="text" id="A_cassava_of_date" size="15" value ="<%=cassava_of_date%>">&nbsp;<a id='date_8'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_cassava_of_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_8', singleClick: true, step: 1});</script>
                                     &nbsp;&nbsp;&nbsp;&nbsp;มีน้ำแป้งเหลือ
                                     <input name="A_starch_bal" class='inputs' type="text" id="A_starch_bal" size="15" onblur="Calculator_starch();" value="<%=starch_bal%>">
                                     &nbsp;x&nbsp;จำนวนถัง
@@ -180,7 +198,7 @@
                             <tr>
                                 <td colspan='2'  align="right">
                                     <%
-                                                if (request.getParameter("I_status") != null) {
+                                        if (request.getParameter("I_status") != null) {
                                     %>
                                     <input type="button" class="cgcButton_5" name="button1" value="ตกลง" onClick="javascript:goAdd();"/>&nbsp;&nbsp;
                                     <%} else {

@@ -30,6 +30,22 @@
         <link rel="stylesheet" media="all" type="text/css" href="../CSS/ui-lightness/jquery-ui-1.8.17.custom.css" />
         <link rel="stylesheet" media="all" type="text/css" href="../CSS/timepicker.css" />
 
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>   
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
+
         <script type="text/javascript">
             function goAdd() {
                 var arrayChk = new Array;
@@ -43,7 +59,7 @@
                         strID += getIDElements('input', 'I_');
                         strID += getIDElements('textarea', 'A_');
                         strID = strID.substr(0, strID.length - 1);
-                        if (Count_Date2(getId("A_sm_from_date").value, getId("A_sm_to_date").value) == 0) {
+                        if (Count_Date2(getId("A_sm_from_date").value, getId("A_sm_to_date").value) === 0) {
                             if (parseFloat(document.getElementById("A_sm_from_time").value) > parseFloat(document.getElementById("A_sm_to_time").value)) {
                                 alert("กรุณาตรวจสอบเวลา");
                                 document.getElementById("A_sm_to_time").focus();
@@ -75,7 +91,7 @@
                         strID += getIDElements('input', 'U_');
                         strID += getIDElements('textarea', 'A_');
                         strID = strID.substr(0, strID.length - 1);
-                        if (Count_Date2(getId("A_sm_from_date").value, getId("A_sm_to_date").value) == 0) {
+                        if (Count_Date2(getId("A_sm_from_date").value, getId("A_sm_to_date").value) === 0) {
                             if (parseFloat(getId("A_sm_from_time").value) > parseFloat(getId("A_sm_to_time").value)) {
                                 alert("กรุณาตรวจสอบเวลา");
                                 document.getElementById("A_sm_to_time").focus();
@@ -157,29 +173,28 @@
         <input type="hidden" id="I_status" name="I_status" value="<%=I_status%>">
         <input type="hidden" id="U_status" name="U_status" value="<%=U_status%>">
         <input type="hidden" id="chkNull" name="chkNull" value="A_sm_from_date">
-        <table  cellpadding="0"  cellspacing="0" align="center">
-            <tr >
-                <td class="ftopleft"></td>
-                <td  class="ftopcenter" colspan="2">&nbsp;</td>
-                <td class="ftopright"></td>
-            </tr>
-            <tr >
-                <td class="fcenterleft"></td>
-                <td  colspan="2" class="fcentercenter">
-                    <div align="center">
+        
+        <br>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                    <b>รายละเอียดการหยุดโม่</b>
+                </div>                        
+                <div class="panel-footer">           
+                    <div align="left">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">จากวันที่</td>
+                                <td class="columnlabel1">จากวันที่</td>
                                 <td class="columnobject"><input name="A_sm_from_date" class='inputs' type="text" id="A_sm_from_date" size="10" value="<%=sm_from_date%>">
                                     &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_sm_from_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
                                     &nbsp;&nbsp;จากเวลา
                                     <input name="A_sm_from_time" class='inputs' type="text" id="A_sm_from_time" size="10" value="<%=sm_from_time%>" onkeypress="Time_picker(this.id)" onblur="Check_Time_Value(this)"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">ถึงวันที่&nbsp;</td>
+                                <td class="columnlabel1">ถึงวันที่&nbsp;</td>
                                 <td class="columnobject"><input name='A_sm_to_date' class='inputs' type="text" id="A_sm_to_date" value='<%=sm_to_date%>' size='10' />
                                     &nbsp;<a id='date_2'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_sm_to_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>
                                     &nbsp;&nbsp;ถึงเวลา
@@ -187,22 +202,22 @@
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">จำนวนชั่วโมง*</td>
+                                <td class="columnlabel1">จำนวนชั่วโมง*</td>
                                 <td class="columnobject"><input name="A_sm_stop_hour" class='inputs' type="text" id="A_sm_stop_hour" size="10" value="<%=sm_stop_hour%>" ></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">กิโลวัตต์ที่เริ่ม*&nbsp;</td>
+                                <td class="columnlabel1">กิโลวัตต์ที่เริ่ม*&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_kw_start' class='inputs' type="text" id="A_kw_start" value='<%=kw_start%>' size='10' onblur="cal_total();"/>
                                     &nbsp;&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">กิโลวัตต์ที่สิ้นสุด*&nbsp;</td>
+                                <td class="columnlabel1">กิโลวัตต์ที่สิ้นสุด*&nbsp;</td>
                                 <td class="columnobject"><input name='A_kw_end' class='inputs' type="text" id="A_kw_end" value='<%=kw_end%>' size='10' onblur="cal_total();"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">กิโลวัตต์รวม</td>
+                                <td class="columnlabel1">กิโลวัตต์รวม</td>
                                 <td class="columnobject"><input name="A_kw_rest" class='inputs' type="text" id="A_kw_rest" size="10" value="<%=kw_rest%>">
                                     <input type="button" class="cgcButton_9" id="btnet_weight_payment" value="คำนวณ" onclick="cal_total()">                                        
                                 </td>
@@ -227,15 +242,9 @@
                                 <td colspan='2' class='blankspace'></td>
                             </tr>
                         </table>
-                    </div></td>
-                <td class="fcenterright"></td>
-            </tr>
-            <tr bordercolor="0069B3">
-                <td class="ffootleft"></td>
-                <td  class="ffootcenter" colspan="2"></td>
-                <td class="ffootright"></td>
-            </tr>
-        </table>
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

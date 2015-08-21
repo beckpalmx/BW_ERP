@@ -3,9 +3,9 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.bw.Util.ThaiUtil"%>
 <%
-            response.setHeader("Cache-Control", "no-cache");
-            response.setHeader("Pragma", "no-cache");
-            response.setDateHeader("Expires", -1);
+    response.setHeader("Cache-Control", "no-cache");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", -1);
 %>
 <html>
     <head>
@@ -14,44 +14,62 @@
         <META Http-Equiv="Pragma" Content="no-cache">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">        
         <script type="text/javascript" src="../JS/myAjaxFramework.js"></script>
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>   
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
+
         <script type="text/javascript">
-            function goAdd(){
+            function goAdd() {
                 var arrayChk = new Array;
-                arrayChk[0]  = "chkNull";
-                if(ChkParameter(arrayChk))
+                arrayChk[0] = "chkNull";
+                if (ChkParameter(arrayChk))
                 {
                     var strID = getIDElements('input', 'A_');
                     strID += getIDElements('input', 'I_');
                     strID += getIDElements('textarea', 'A_');
-                    strID = strID.substr(0, strID.length-1);
+                    strID = strID.substr(0, strID.length - 1);
                     //alert(strID);
-                    getSave_Detail(URLsend(strID,'../JSP/BW_CS_Detail_033_3.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show033_3.jsp?doc_id=", "show2", getId("A_doc_id").value);
+                    getSave_Detail(URLsend(strID, '../JSP/BW_CS_Detail_033_3.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show033_3.jsp?doc_id=", "show2", getId("A_doc_id").value);
                 }
             }
             function goEdit()
             {
 
                 var arrayChk = new Array;
-                arrayChk[0]  = "chkNull";
-                if(ChkParameter(arrayChk))
+                arrayChk[0] = "chkNull";
+                if (ChkParameter(arrayChk))
                 {
                     var strID = getIDElements('input', 'A_');
                     strID += getIDElements('input', 'U_');
                     strID += getIDElements('textarea', 'A_');
-                    strID = strID.substr(0, strID.length-1);
+                    strID = strID.substr(0, strID.length - 1);
                     //alert(strID);
-                    getSave_Detail(URLsend(strID,'../JSP/BW_CS_Detail_033_3.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show033_3.jsp?doc_id=", "show2", getId("A_doc_id").value);
+                    getSave_Detail(URLsend(strID, '../JSP/BW_CS_Detail_033_3.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show033_3.jsp?doc_id=", "show2", getId("A_doc_id").value);
                 }
             }
             function goBack()
             {
                 window.close();
             }
-            function Cal_T(input_Pack,input_qty,out_put){
-                getId(out_put).value = isNaN((parseInt(getId(input_Pack).value,10) * parseInt(getId(input_qty).value,10)))?"0":((parseInt(getId(input_Pack).value,10) * parseInt(getId(input_qty).value,10))/1000).toFixed(3);
+            function Cal_T(input_Pack, input_qty, out_put) {
+                getId(out_put).value = isNaN((parseInt(getId(input_Pack).value, 10) * parseInt(getId(input_qty).value, 10))) ? "0" : ((parseInt(getId(input_Pack).value, 10) * parseInt(getId(input_qty).value, 10)) / 1000).toFixed(3);
             }
         </script>
     </head>
@@ -64,32 +82,32 @@
 
         %>
         <%
-                    line_no = "";
-                    doc_id = "";
-                    I_status = "";
-                    U_status = "";
-                    product_id = "";
-                    weight = "";
-                    bag_qty = "";
-                    amount = "";
-                    remark = "";
-                    en = new ThaiUtil();
-                    objBean = new DataBeanD_product_reprot_daily_detail_raw();
-                    objdb = new D_product_report_daily_detail_rawDAO();
-                    if (request.getQueryString().indexOf("line_no_") != -1) {
-                        U_status = "2";
-                        line_no = request.getQueryString().substring(8, request.getQueryString().indexOf("="));
-                        doc_id = request.getParameter("A_doc_id");
-                        objBean = objdb.Return_Edit(doc_id, line_no);
-                        product_id = objBean.getProduct_id();
-                        weight = objBean.getWeight();
-                        bag_qty = objBean.getBag_qty();
-                        amount = objBean.getAmount();
-                        remark = objBean.getRemark();
-                    } else {
-                        doc_id = request.getParameter("A_doc_id");
-                        I_status = request.getParameter("I_status");
-                    }
+            line_no = "";
+            doc_id = "";
+            I_status = "";
+            U_status = "";
+            product_id = "";
+            weight = "";
+            bag_qty = "";
+            amount = "";
+            remark = "";
+            en = new ThaiUtil();
+            objBean = new DataBeanD_product_reprot_daily_detail_raw();
+            objdb = new D_product_report_daily_detail_rawDAO();
+            if (request.getQueryString().indexOf("line_no_") != -1) {
+                U_status = "2";
+                line_no = request.getQueryString().substring(8, request.getQueryString().indexOf("="));
+                doc_id = request.getParameter("A_doc_id");
+                objBean = objdb.Return_Edit(doc_id, line_no);
+                product_id = objBean.getProduct_id();
+                weight = objBean.getWeight();
+                bag_qty = objBean.getBag_qty();
+                amount = objBean.getAmount();
+                remark = objBean.getRemark();
+            } else {
+                doc_id = request.getParameter("A_doc_id");
+                I_status = request.getParameter("I_status");
+            }
         %>
         <input name="username" type="hidden" id="username" value="<%=request.getParameter("A_username")%>" size="30" readonly/>
         <input type="hidden" id="A_doc_id" name="A_doc_id" value="<%=request.getParameter("A_doc_id")%>">
@@ -97,50 +115,47 @@
         <input type="hidden" id="I_status" name="I_status" value="<%=I_status%>">
         <input type="hidden" id="U_status" name="U_status" value="<%=U_status%>">
         <input type="hidden" id="chkNull" name="chkNull" value="A_weight">
-        <table  cellpadding="0"  cellspacing="0" align="center">
-            <tr >
-                <td class="ftopleft"></td>
-                <td  class="ftopcenter" colspan="2">&nbsp;</td>
-                <td class="ftopright"></td>
-            </tr>
-            <tr >
-                <td class="fcenterleft"></td>
-                <td  colspan="2" class="fcentercenter">
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                    <b>รายละเอียดผลผลิตที่อบได้</b>
+                </div>                        
+                <div class="panel-footer">           
                     <div align="center">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">รายการเบิกแป้ง*</td>
+                                <td class="columnlabel1">รายการเบิกแป้ง*</td>
                                 <td class="columnobject"><input name="A_product_id" class='inputs' type="text" id="A_product_id" size="10" value="<%=product_id%>">&nbsp;&nbsp;<a onclick="openBrWindow('vproduct', 22, 'Search_Config2.jsp');" href="#"><img width="20" height="20" align="middle" border="0" name="IMAGE3" alt="ค้นหา" src="../IMAGES/BUTTON/MAIN/SEARCH20.png"/></a>
-                                <input name="product_id_desc" class='inputs' type="text" id="product_id_desc" size="30" value="<%=product_id%>">
+                                    <input name="product_id_desc" class='inputs' type="text" id="product_id_desc" size="30" value="<%=product_id%>">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">น้ำหนักบรรจุ*&nbsp;</td>
-                                <td class="columnobject"><input name='A_weight' class='inputs' type="text" id="A_weight" value='<%=weight%>' size='10' onblur="Cal_T('A_weight','A_bag_qty','A_amount')"/>(กิโลกรัม)
+                                <td class="columnlabel1">น้ำหนักบรรจุ*&nbsp;</td>
+                                <td class="columnobject"><input name='A_weight' class='inputs' type="text" id="A_weight" value='<%=weight%>' size='10' onblur="Cal_T('A_weight', 'A_bag_qty', 'A_amount')"/>(กิโลกรัม)
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">จำนวน*</td>
-                                <td class="columnobject"><input name="A_bag_qty" class='inputs' type="text" id="A_bag_qty" size="10" value="<%=bag_qty%>" onblur="Cal_T('A_weight','A_bag_qty','A_amount')">(กระสอบ)</td>
+                                <td class="columnlabel1">จำนวน*</td>
+                                <td class="columnobject"><input name="A_bag_qty" class='inputs' type="text" id="A_bag_qty" size="10" value="<%=bag_qty%>" onblur="Cal_T('A_weight', 'A_bag_qty', 'A_amount')">(กระสอบ)</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">น้ำหนัก*&nbsp;</td>
+                                <td class="columnlabel1">น้ำหนัก*&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_amount' class='inputs' type="text" id="A_amount" value='<%=amount%>' size='10' />(ตัน)
                                     &nbsp;&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">หมายเหตุ&nbsp;</td>
+                                <td class="columnlabel1">หมายเหตุ&nbsp;</td>
                                 <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
                             </tr>
 
                             <tr>
                                 <td colspan='2'  align="right">
                                     <%
-                                                if (request.getParameter("I_status") != null) {
+                                        if (request.getParameter("I_status") != null) {
                                     %>
                                     <input type="button" class="cgcButton_5" name="button1" value="ตกลง" onClick="javascript:goAdd();"/>&nbsp;&nbsp;
                                     <%} else {
@@ -155,15 +170,9 @@
                                 <td colspan='2' class='blankspace'>                                </td>
                             </tr>
                         </table>
-                    </div></td>
-                <td class="fcenterright"></td>
-            </tr>
-            <tr bordercolor="0069B3">
-                <td class="ffootleft"></td>
-                <td  class="ffootcenter" colspan="2"></td>
-                <td class="ffootright"></td>
-            </tr>
-        </table>
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
