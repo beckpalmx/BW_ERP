@@ -40,11 +40,14 @@ public class PrintReport {
     }
 
     public void printReport_2(HttpServletRequest request, HttpServletResponse response, InputStream path, String docId, String employee_id)
-            throws Exception {
+            throws Exception {        
+        
         response.setContentType("application/pdf");
         response.setHeader("Content-Disposition", "inline; filename=\"filename.pdf\"");
-        response.setBufferSize(1024);
+        response.setBufferSize(1024);               
+        
         Connection connection = new DBConnect().openNewConnection();
+        
         //InputStream path = (InputStream) request.getSession().getAttribute("path");
         String report_code = (String) request.getParameter("report_code");
         String doc_no = (String) request.getParameter("doc_no");
@@ -57,13 +60,8 @@ public class PrintReport {
         hashMap.put("iso_doc_ref", doc_no);
         hashMap.put("iso_doc_date", doc_eff_date);
         hashMap.put("company_name", Mcompany(connection));
+        
         //hashMap.put("SUB_DOC_ID", docId);
-        //JOptionPane.showConfirmDialog(null, "DOC_ID");
-        //JOptionPane.showConfirmDialog(null, employee_id);        
-        //JOptionPane.showConfirmDialog(null, employee_id_s);
-        //JOptionPane.showConfirmDialog(null, "fileName");
-        //JOptionPane.showConfirmDialog(null, "iso_doc_ref");
-        //JOptionPane.showConfirmDialog(null, "iso_doc_date");
 
         hashMap.put("SUBREPORT_DIR", (new StringBuilder(String.valueOf(request.getSession().getServletContext().getRealPath("REPORT/")))).append("/").toString());
 
@@ -80,7 +78,7 @@ public class PrintReport {
         servletOutputStream.flush();
         servletOutputStream.close();
 
-    }
+    }   
 
     public void printReport_3(HttpServletRequest request, HttpServletResponse response, InputStream path, String sql, String date_form, String date_to)
             throws Exception {
@@ -137,7 +135,10 @@ public class PrintReport {
 
         //JOptionPane.showConfirmDialog(null, sql);
         //= response.getOutputStream();
-        ServletOutputStream servletOutputStream = null;
+        
+        //ServletOutputStream servletOutputStream = null;
+        
+        ServletOutputStream servletOutputStream = response.getOutputStream();
 
         InputStream reportStream = path;
 
@@ -217,5 +218,5 @@ public class PrintReport {
             return str_return;
         }
 
-    }
+    }    
 }
