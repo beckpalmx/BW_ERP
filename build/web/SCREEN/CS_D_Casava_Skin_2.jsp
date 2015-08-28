@@ -60,8 +60,25 @@
         </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link href="../CSS/bw_button.css" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
+
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">             
+
     </head>
     <body>
         <%!
@@ -123,15 +140,13 @@
         <input type="hidden" id="status_u" value="<%=status_u%>">
         <input type="hidden" id="chkNull" value="net_wght,price_unit,price_total">
         <input type="hidden" id="cust_code" name="cust_code" value="000380"> <!-- C.Gigantic Carbon -->
-        <table  cellpadding="0"  cellspacing="0" align="center">
-            <tr >
-                <td class="ftopleft"></td>
-                <td  class="ftopcenter" colspan="2">ข้อมูลการรับไม้ฟืน&nbsp;</td>
-                <td class="ftopright"></td>
-            </tr>
-            <tr >
-                <td class="fcenterleft"></td>
-                <td  colspan="2" class="fcentercenter">
+        <br>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                    <b>ข้อมูลเปลือกสด-เปลือกดิน</b>
+                </div>                        
+                <div class="panel-footer">         
                     <div align="center">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
@@ -139,65 +154,65 @@
                             </tr>
 
                             <tr>
-                                <td class="columnlabel">เลขที่ใบชั่ง*&nbsp;</td>
+                                <td class="columnlabel1">เลขที่ใบชั่ง*&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='ticket_text' class='inputs' type="text" id="ticket_text" value='<%=ticket_text%>' size='20' readonly="readonly" />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">ทะเบียนรถ&nbsp;</td>
+                                <td class="columnlabel1">ทะเบียนรถ&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='truck_no' class='inputs' type="text" id="truck_no" value='<%=truck_no%>' size='20' readonly/>                                </td>
                             </tr>
                             <tr>
-                                <td height="21" class="columnlabel">วันที่&nbsp;</td>
+                                <td height="21" class="columnlabel1">วันที่&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='date_in' class='inputs' type="text" id="date_in" value='<%=date_in%>' size='20' readonly/>                                </td>
                             </tr>                            
                             <tr>
-                                <td height="21" class="columnlabel">เวลาเข้า&nbsp;</td>
+                                <td height="21" class="columnlabel1">เวลาเข้า&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='time_in' class='inputs' type="text" id="time_in" value='<%=time_in%>' size='20' readonly/>                                </td>
                             </tr>                            
                             <tr>
-                                <td height="21" class="columnlabel">เวลาออก&nbsp;</td>
+                                <td height="21" class="columnlabel1">เวลาออก&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='time_out' class='inputs' type="text" id="time_out" value='<%=time_out%>' size='20' readonly/>                                </td>
                             </tr>                                   
 
                             <tr>
-                                <td height="21" class="columnlabel">ชื่อลูกค้า&nbsp;</td>
+                                <td height="21" class="columnlabel1">ชื่อลูกค้า&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='cust_name' class='inputs' type="text" id="cust_name" value='<%=cust_name%>' size='40' readonly/>                                </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">ประเภท</td>
+                                <td class="columnlabel1">ประเภท</td>
                                 <td class="columnobject"><input name="prod_name" class='inputs' type="text" id="prod_name" size="40" value="<%=prod_name%>" readonly></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">น้ำหนักรถเข้า&nbsp;</td>
+                                <td class="columnlabel1">น้ำหนักรถเข้า&nbsp;</td>
                                 <td class="columnobject"><input name='load_in' class='inputs' type="text" id="load_in" value='<%=load_in%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
                                     &nbsp;(กิโลกรัม) </td>
                             </tr>                            
                             <tr>
-                                <td class="columnlabel">น้ำหนักรถออก&nbsp;</td>
+                                <td class="columnlabel1">น้ำหนักรถออก&nbsp;</td>
                                 <td class="columnobject"><input name='load_out' class='inputs' type="text" id="load_out" value='<%=load_out%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
                                     &nbsp;(กิโลกรัม) </td>
                             </tr>                            
 
                             <tr>
-                                <td class="columnlabel"><b>น้ำหนักสินค้า</b>&nbsp;</td>
+                                <td class="columnlabel1"><b>น้ำหนักสินค้า</b>&nbsp;</td>
                                 <td class="columnobject"><input name='net_wght' class='inputs' type="text" id="net_wght" value='<%=net_wght%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
                                     &nbsp;(กิโลกรัม) </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel"><b>ราคาต่อหน่วย*</b>&nbsp;</td>
+                                <td class="columnlabel1"><b>ราคาต่อหน่วย*</b>&nbsp;</td>
                                 <td class="columnobject"><input name='price_unit' class='inputs' type="text" id="price_unit" value='<%=price_unit%>' onKeyUp="IsNuber(this.value, this)" size='15' />
                                     &nbsp;(บาท) </td>
                             </tr>
 
                             <tr>
-                                <td class="columnlabel"><b>รวมราคา*</b>&nbsp;</td>
+                                <td class="columnlabel1"><b>รวมราคา*</b>&nbsp;</td>
                                 <td class="columnobject"><input name='price_total' class='inputs' type="text" id="price_total" value='<%=price_total%>' onKeyUp="IsNuber(this.value, this)" size='15' readonly/>
                                     &nbsp;(บาท)&nbsp; 
                                     <input type="button" class="bwButton_9" id="btnet_weight_payment" value="คำนวณราคารวม" onclick="cal_total_price()">                                        
@@ -220,18 +235,12 @@
                             </tr>
 
                             <tr>
-                                <td colspan='2' class='blankspace'>                                </td>
+                                <td colspan='2' class='blankspace'></td>
                             </tr>
                         </table>
-                    </div></td>
-                <td class="fcenterright"></td>
-            </tr>
-            <tr bordercolor="0069B3">
-                <td class="ffootleft"></td>
-                <td  class="ffootcenter" colspan="2"></td>
-                <td class="ffootright"></td>
-            </tr>
-        </table>
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

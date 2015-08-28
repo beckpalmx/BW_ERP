@@ -43,7 +43,7 @@ public class Process_Calculate_Transaction {
             String_return.append("ประมวลผลเสร็จสิ้น");
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
         //String_return.append(" ");
         //System.out.println("END Transaction Process ... ");

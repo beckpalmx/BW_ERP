@@ -39,7 +39,7 @@ public class Calculator_BW {
                 STR_Return = "0.000";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs = null;
@@ -67,7 +67,7 @@ public class Calculator_BW {
                 STR_Return = "0.000";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs = null;
@@ -95,7 +95,7 @@ public class Calculator_BW {
                 STR_Return = "00.00";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs = null;

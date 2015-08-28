@@ -48,7 +48,7 @@ public class D_ticketbuyDAO {
      p.close();
      con.close();
      } catch (Exception e) {
-     e.printStackTrace();
+     e.printStackTrace(System.out);
      }
 
      }
@@ -81,7 +81,7 @@ public class D_ticketbuyDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
 
         }
@@ -124,7 +124,7 @@ public class D_ticketbuyDAO {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return bean;
@@ -183,7 +183,7 @@ public class D_ticketbuyDAO {
                 }
 
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
 
@@ -209,7 +209,7 @@ public class D_ticketbuyDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
 

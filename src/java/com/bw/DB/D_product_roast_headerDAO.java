@@ -93,7 +93,7 @@ public class D_product_roast_headerDAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -175,7 +175,7 @@ public class D_product_roast_headerDAO {
             p.setString(i, DataBean.getDoc_id());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -220,7 +220,7 @@ public class D_product_roast_headerDAO {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -270,7 +270,7 @@ public class D_product_roast_headerDAO {
             bean_header.setTotal_2(obj_total.Sum_Weight(doc_id, "d_product_roast_detail_3", "weight", con));
             bean_header.setTotal_3(obj_total.Sum_Weight(doc_id, "d_product_roast_detail_4", "weight", con));
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

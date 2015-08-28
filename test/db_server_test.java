@@ -42,13 +42,13 @@ public class db_server_test {
                 System.out.println("output = " + output);                
  
 	} catch (IOException io) {
-		io.printStackTrace();
+		io.printStackTrace(System.out);
 	} finally {
 		if (output != null) {
 			try {
 				output.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
 		}
  

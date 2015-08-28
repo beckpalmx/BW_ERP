@@ -30,7 +30,7 @@ public class MPROCESS_GRPDAO {
 				con.close();
 			}
 			catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
 		}
 	}
@@ -60,7 +60,7 @@ public class MPROCESS_GRPDAO {
     		}
     		catch(Exception e)
     		{
-    			e.printStackTrace();
+    			e.printStackTrace(System.out);
     		}
     	}
 	}
@@ -87,7 +87,7 @@ public class MPROCESS_GRPDAO {
     			con.close();
     		}
     		catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
     	}
     }

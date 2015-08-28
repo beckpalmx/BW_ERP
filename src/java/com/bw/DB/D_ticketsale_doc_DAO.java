@@ -55,7 +55,7 @@ public class D_ticketsale_doc_DAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
 
         }
@@ -99,7 +99,7 @@ public class D_ticketsale_doc_DAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
 
         }
@@ -133,7 +133,7 @@ public class D_ticketsale_doc_DAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
 

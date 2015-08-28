@@ -47,7 +47,7 @@ public class D_product_report_daily_detail_prdDAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p !=null){
                 p.close();
@@ -86,7 +86,7 @@ public class D_product_report_daily_detail_prdDAO {
             p.setString(i, DataBean.getLine_no());i += 1;
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p !=null){
                 p.close();
@@ -144,7 +144,7 @@ public class D_product_report_daily_detail_prdDAO {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -171,7 +171,7 @@ public class D_product_report_daily_detail_prdDAO {
             p.setString(3, DataBean.getDoc_id());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -200,7 +200,7 @@ public class D_product_report_daily_detail_prdDAO {
                 objbean.setRemark(rs.getString("remark"));
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -298,7 +298,7 @@ public class D_product_report_daily_detail_prdDAO {
                 Return_String.append("ไม่พบข้อมูลที่ต้องการ");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
 
             if (rs != null) {

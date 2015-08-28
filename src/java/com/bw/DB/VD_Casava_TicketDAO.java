@@ -48,7 +48,7 @@ public class VD_Casava_TicketDAO {
      p.close();
      con.close();
      } catch (Exception e) {
-     e.printStackTrace();
+     e.printStackTrace(System.out);
      }
 
      }
@@ -81,7 +81,7 @@ public class VD_Casava_TicketDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
 
         }
@@ -124,7 +124,7 @@ public class VD_Casava_TicketDAO {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return bean;
@@ -183,7 +183,7 @@ public class VD_Casava_TicketDAO {
                 }
 
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
 
@@ -209,7 +209,7 @@ public class VD_Casava_TicketDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
 

@@ -83,7 +83,7 @@ public class D_production_headerDAO {
             p.setTimestamp(i, DataBean.getDate());i+=1;
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -155,7 +155,7 @@ public class D_production_headerDAO {
             p.setString(i,DataBean.getDoc_id());i+=1;
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -199,7 +199,7 @@ public class D_production_headerDAO {
                 }
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -254,7 +254,7 @@ public class D_production_headerDAO {
                 
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -275,7 +275,7 @@ public class D_production_headerDAO {
                 str_output = rs.getString("percent_diff")+","+rs.getString("percent_yield");
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();

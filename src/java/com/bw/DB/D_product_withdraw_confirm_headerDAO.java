@@ -39,7 +39,7 @@ public class D_product_withdraw_confirm_headerDAO {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -73,7 +73,7 @@ public class D_product_withdraw_confirm_headerDAO {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();

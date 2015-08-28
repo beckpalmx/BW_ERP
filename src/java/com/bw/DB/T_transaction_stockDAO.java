@@ -45,7 +45,7 @@ public class T_transaction_stockDAO {
                 p.setString(11, dataBean.getBy());
                 p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();

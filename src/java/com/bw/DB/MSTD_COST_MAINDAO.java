@@ -28,7 +28,7 @@ public class MSTD_COST_MAINDAO {
 				con.close();
 			}
 			catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
 		}
 	}
@@ -59,7 +59,7 @@ public class MSTD_COST_MAINDAO {
     		}
     		catch(Exception e)
     		{
-    			e.printStackTrace();
+    			e.printStackTrace(System.out);
     		}
     	}
 	}
@@ -86,7 +86,7 @@ public class MSTD_COST_MAINDAO {
     			con.close();
     		}
     		catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
     	}
     }

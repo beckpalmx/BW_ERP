@@ -65,7 +65,7 @@ public class json_util {
             JSONArray jsonArray = new JSONArray(jsonString);
             //System.out.println("\n\njsonArray: " + jsonArray);
         } catch (JSONException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
     }
 

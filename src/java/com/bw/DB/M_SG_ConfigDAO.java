@@ -35,7 +35,7 @@ public class M_SG_ConfigDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return returnvalue;
@@ -59,7 +59,7 @@ public class M_SG_ConfigDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return returnvalue;
@@ -81,7 +81,7 @@ public class M_SG_ConfigDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return returnvalue;

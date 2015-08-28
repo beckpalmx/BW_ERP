@@ -26,7 +26,7 @@ public class UtiDatabase {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -51,7 +51,7 @@ public class UtiDatabase {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -81,7 +81,7 @@ public class UtiDatabase {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return output;
@@ -103,7 +103,7 @@ public class UtiDatabase {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return output;
@@ -155,7 +155,7 @@ public class UtiDatabase {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return output;
@@ -177,7 +177,7 @@ public class UtiDatabase {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return output;
@@ -199,7 +199,7 @@ public class UtiDatabase {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return output;
@@ -214,7 +214,7 @@ public class UtiDatabase {
             }
             string_output += "</select>";
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             return string_output;
         }
@@ -238,7 +238,7 @@ public class UtiDatabase {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -326,7 +326,7 @@ public class UtiDatabase {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -369,7 +369,7 @@ public class UtiDatabase {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
 
         } finally {
             if (rs != null) {
@@ -401,7 +401,7 @@ public class UtiDatabase {
                 Return_status = 2;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             return Return_status;
         }

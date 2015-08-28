@@ -29,7 +29,7 @@ public class MDRIVERDAO {
 				con.close();
 			}
 			catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
 		}
 	}
@@ -57,7 +57,7 @@ public class MDRIVERDAO {
     		}
     		catch(Exception e)
     		{
-    			e.printStackTrace();
+    			e.printStackTrace(System.out);
     		}
     	}
 	}
@@ -84,7 +84,7 @@ public class MDRIVERDAO {
     			con.close();
     		}
     		catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
     	}
     }

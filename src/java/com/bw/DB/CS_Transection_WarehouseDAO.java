@@ -119,7 +119,7 @@ public class CS_Transection_WarehouseDAO {
             line_complete = line_complete.substring(0, line_complete.length() - 1);
             Update_Complete_Flag(line_complete, request, con);
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (!objAL.isEmpty()) {
                 objAL.clear();
@@ -170,7 +170,7 @@ public class CS_Transection_WarehouseDAO {
                 Update_Complete_Flag(line_complete, request, con);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (!objAL.isEmpty()) {
                 objAL.clear();
@@ -198,7 +198,7 @@ public class CS_Transection_WarehouseDAO {
                 objAL.add(dataBean);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -214,7 +214,7 @@ public class CS_Transection_WarehouseDAO {
         try {
             stroutput = Show_Header_detail(stroutput, 1, SQL, con);
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (con != null) {
                 con.close();
@@ -275,7 +275,7 @@ public class CS_Transection_WarehouseDAO {
             }
             inputstr.append("</table>");
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -298,7 +298,7 @@ public class CS_Transection_WarehouseDAO {
                 p.executeUpdate();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();

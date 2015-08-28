@@ -28,7 +28,7 @@ public class MSTD_COST_SUBDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }
@@ -59,7 +59,7 @@ public class MSTD_COST_SUBDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }
@@ -81,7 +81,7 @@ public class MSTD_COST_SUBDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }

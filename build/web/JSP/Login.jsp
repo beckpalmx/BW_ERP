@@ -60,38 +60,45 @@
     }
 
     //System.out.println("DataBase name = " + bwdb_name + " : " + db_name_ma);
-    
-/*
-    DBConnect.CONNECTION_URL = "jdbc:postgresql://localhost:5432/" + bwdb_name + year_data;
-    DBConnect.CONNECTION_URL_MA = "jdbc:postgresql://localhost:5432/" + db_name_ma + year_data;
-*/
-    
+    /*
+     DBConnect.CONNECTION_URL = "jdbc:postgresql://localhost:5432/" + bwdb_name + year_data;
+     DBConnect.CONNECTION_URL_MA = "jdbc:postgresql://localhost:5432/" + db_name_ma + year_data;
+     */
     DBConnect.CONNECTION_URL = bwdb_name + year_data;
-    DBConnect.CONNECTION_URL_MA = db_name_ma + year_data;    
+    DBConnect.CONNECTION_URL_MA = db_name_ma + year_data;
 
     //System.out.println("DB 1 = " + bwdb_name + year_data);
     //System.out.println("DB 2 = " + db_name_ma + year_data);
-    
     byte[] pass_encode = Base64.encodeBase64(pass.getBytes());
-    byte[] pass_decode = Base64.decodeBase64(pass_encode);    
-    
-    //System.out.println("pass_encode = " + new String(pass_encode) );        
+    byte[] pass_decode = Base64.decodeBase64(pass_encode);
+
+    //System.out.println("-------------------0000------------------------");
+
+    //System.out.println("pass_encode = " + new String(pass_encode));
+
+    //System.out.println("-------------------1111------------------------");
 
     selectData.setUsername(tu.EncodeTexttoTIS(user));
     //selectData.setPassword(tu.EncodeTexttoTIS(pass));
     selectData.setPassword(new String(pass_encode));
 
+    //System.out.println("-------------------2222------------------------");
+
     userBean = useDAO.selectData(selectData);
     DataBean_Mcompany = McompanyDAO.selectData_chk(selectData_chk);
 
-    //System.out.println("-------------------------------------------");    
+    //System.out.println("-------------------3333------------------------");
     //System.out.println(userBean.getMessage_disp());
     //System.out.println(message_disp);      
     if (userBean == null) {
         out.print("Username หรือ Password ไม่ถูกต้อง!!!");
     } else {
+        //System.out.println("-------------------4444------------------------");
         userBean.setSelect_database(bwdb_name + year_data);
         userBean.setMessage_disp(messageDAO.selectData_MSG());
+
+        //System.out.println("-------------------444411111------------------------");
+
         //if(userBean.getUse_status().equals("Y")){
         out.print("LOGIN");
         session.removeAttribute("menu");
@@ -102,6 +109,7 @@
         subList = new ArrayList<String>();
         subBean = new MenuBean();
         priviledge = menuDAO.selectPriviledge(userBean.getPriviledge_id());
+        //System.out.println("-------------------44442222------------------------");
         m = priviledge.getMain_menu_id();
         s = priviledge.getSub_menu_id();
 
@@ -154,6 +162,8 @@
         //JOptionPane.showConfirmDialog(null, menu);
         //JOptionPane.showMessageDialog(null, "Site URL must not be empty.", "Error", JOptionPane.ERROR_MESSAGE);
         //JOptionPane.showConfirmDialog(null,"choose one", "choose one", JOptionPane.YES_NO_OPTION);
+        //System.out.println("-------------------5555------------------------");
+
         session.setAttribute("menu", menu);
         session.setAttribute("user", userBean);
         session.setAttribute("name_t", DataBean_Mcompany);

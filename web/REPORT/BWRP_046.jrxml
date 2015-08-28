@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BWRP_046" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="10" bottomMargin="5" uuid="cbe23524-cbee-4bf2-9169-e06b549665c9">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="587"/>
+	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["RP_046"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="company_name" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["บริษัท ซีไจแกนติก คาร์บอน จำกัด"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="iso_doc_ref" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["F-A-031- R 01"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="iso_doc_date" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["05/09/54"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\workspace\\BWERP_REPORT\\REPORT\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DOC_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["J001"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from vd_job_order_header
+WHERE doc_id = $P{DOC_ID}
+and delete_flag <> 'Y'
+order by runno]]>
+	</queryString>
+	<field name="runno" class="java.lang.Integer"/>
+	<field name="doc_id" class="java.lang.String"/>
+	<field name="doc_date" class="java.lang.String"/>
+	<field name="send_date" class="java.lang.String"/>
+	<field name="po_no" class="java.lang.String"/>
+	<field name="po_cust" class="java.lang.String"/>
+	<field name="cust_id" class="java.lang.String"/>
+	<field name="base_plate_desc" class="java.lang.String"/>
+	<field name="base_plate" class="java.lang.String"/>
+	<field name="base_plate_qty" class="java.lang.String"/>
+	<field name="lot_no" class="java.lang.String"/>
+	<field name="payment_condition" class="java.lang.String"/>
+	<field name="spc_order" class="java.lang.String"/>
+	<field name="prd_name" class="java.lang.String"/>
+	<field name="product_id" class="java.lang.String"/>
+	<field name="weight_content" class="java.lang.String"/>
+	<field name="prd_qty" class="java.lang.String"/>
+	<field name="bag_qty" class="java.lang.String"/>
+	<field name="content" class="java.lang.String"/>
+	<field name="bag_weight" class="java.lang.String"/>
+	<field name="so2" class="java.lang.String"/>
+	<field name="adding" class="java.lang.String"/>
+	<field name="wrap_on_pallet" class="java.lang.String"/>
+	<field name="reporter_id" class="java.lang.String"/>
+	<field name="approver_id" class="java.lang.String"/>
+	<field name="quality_id" class="java.lang.String"/>
+	<field name="production_id" class="java.lang.String"/>
+	<field name="account_id" class="java.lang.String"/>
+	<field name="mark_sign" class="java.lang.String"/>
+	<field name="mark_sign_desc" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<field name="create_date" class="java.sql.Timestamp"/>
+	<field name="create_by" class="java.lang.String"/>
+	<field name="update_date" class="java.sql.Timestamp"/>
+	<field name="update_by" class="java.lang.String"/>
+	<field name="retro_flag" class="java.lang.String"/>
+	<field name="complete_flag" class="java.lang.String"/>
+	<field name="cancel_flag" class="java.lang.String"/>
+	<field name="delete_flag" class="java.lang.String"/>
+	<field name="doc_type" class="java.lang.String"/>
+	<field name="delete_date" class="java.sql.Timestamp"/>
+	<field name="delete_by" class="java.lang.String"/>
+	<field name="company_id" class="java.lang.String"/>
+	<field name="spec_id" class="java.lang.String"/>
+	<field name="cust_name" class="java.lang.String"/>
+	<field name="product_name" class="java.lang.String"/>
+	<field name="spec_name" class="java.lang.String"/>
+	<field name="reporter_name" class="java.lang.String"/>
+	<field name="approver_name" class="java.lang.String"/>
+	<field name="quality_name" class="java.lang.String"/>
+	<field name="production_name" class="java.lang.String"/>
+	<field name="account_name" class="java.lang.String"/>
+	<field name="send_date_to" class="java.lang.String"/>
+	<field name="adding_qty" class="java.lang.String"/>
+	<field name="remark_adding" class="java.lang.String"/>
+	<field name="pallet_qty" class="java.lang.String"/>
+	<field name="initial" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="229" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="42" uuid="355b4846-ce5c-423f-ac80-1b6335627958"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="60" y="7" width="284" height="32" uuid="bdf43b8f-6b3f-4244-9367-a3e10e0077e2"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="24" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ใบแจ้งการผลิต (Order Sheet)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="429" y="22" width="93" height="20" uuid="1da2f70b-e8fd-4d4f-a3fb-9ce89a418158"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{iso_doc_date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="429" y="1" width="87" height="20" uuid="e3705c27-3e24-472d-8794-72a992b07825"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{iso_doc_ref}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="353" y="1" width="100" height="20" uuid="35b833ce-c9b3-4845-bf1d-b4d5a894f61a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[หมายเลขเอกสาร :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="22" width="100" height="20" uuid="c2a5b1b8-5649-402b-bdad-7f8d2236f4fe"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[วันที่มีผลบังคับใช้ :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="45" width="163" height="20" uuid="4af76118-cc54-4a30-b875-a8f17f579793"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[เลขที่ใบแจ้งผลิต/Order Sheet No]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="459" y="45" width="171" height="20" uuid="52b5687d-e23d-42b6-9560-885dca2b79ef"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doc_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="45" width="100" height="20" uuid="8a98d750-8ccc-49a7-9074-0eb9bc18d6d9"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[วันที่/Date]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="90" y="45" width="130" height="20" uuid="b4de5383-3592-43f1-b2a9-340521f14116"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doc_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="65" width="166" height="20" uuid="b1589826-4c74-4900-b48a-3d0109b47fcb"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ชื่อลูกค้า/Customer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="65" width="166" height="20" uuid="18208316-d4ad-4d77-8a1e-46c4753061d6"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[เลขที่ใบสั่งซื้อ/P.O. No ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="85" width="166" height="20" uuid="fb4d7107-4da1-49e7-ba50-efed4d928ccb"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[กำหนดส่งมอบ/Shipping Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="105" width="166" height="20" uuid="74517c90-11d6-4d13-b399-240a951d6cca"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[กำหนดเป็น LOT NO./Batch No]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="90" y="65" width="263" height="20" uuid="868987bf-33e3-4ebb-bb9b-d727766a91c5"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cust_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="413" y="65" width="171" height="20" uuid="060f7e4a-af9d-4ee2-97af-97f753013da0"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{po_no}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="3" y="5" width="58" height="32" uuid="5614a390-a60f-4c46-854c-584fd988628b"/>
+				<imageExpression><![CDATA["bw-logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="508" y="22" width="47" height="20" uuid="3243835c-614c-4435-9906-c59b06998cf9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[แผ่นที่ 1/1]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="137" y="85" width="171" height="20" uuid="58f3840b-7fff-4c80-bce7-47840e9509e7"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{send_date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="142" y="105" width="171" height="20" uuid="379fe7bd-4886-4d12-a399-3d80ea391bf7"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lot_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="125" width="260" height="20" uuid="a712c1ab-b50a-425b-8bcc-ff4eeca7a73b"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="false" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(เลขที่ PO.ลูกค้าหรือเลขที่ PI./เดือนปีที่ผลิต)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="475" y="85" width="171" height="20" uuid="b005d03f-20f7-42a5-bb6d-485f96c75b2c"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{po_cust}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="313" y="85" width="166" height="20" uuid="8bd1d8bd-8993-48c7-89fd-1b6a140e87f5"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[บันทึกคำขอซื้อลูกค้าเลขที่/Fax/Email No]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="486" y="105" width="171" height="20" uuid="a6cada75-6590-4df9-a356-c25fc98f98ce"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payment_condition}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="313" y="105" width="166" height="20" uuid="bf95e805-1473-43e2-8ca4-e50c5f8f0dce"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[เงื่อนไขการชำระเงิน (Term of Payment)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="434" y="125" width="171" height="20" uuid="5b38569a-7e47-469d-8d16-6585e71e9f03"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{spc_order}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="313" y="125" width="166" height="20" uuid="e8595e4f-327b-4397-bd3a-f73196f3437b"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[คำสั่งพิเศษ (Special Order)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="148" width="260" height="20" uuid="da8e1afc-404b-42cb-8f83-b6e16007d831"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="15" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[รายละเอียดแจ้งผลิต/Details Of Processing]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="188" width="166" height="20" uuid="8e44caf9-5f64-444a-9e5b-64b7e7b183b8"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[จำนวนแจ้งผลิต/Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="168" width="166" height="20" uuid="a8174d40-2bac-40ad-ab04-8700e25d6748"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ชื่อผลิตภัณฑ์/Product Name ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="208" width="166" height="20" uuid="91a1c887-8bc6-44e0-8912-5e6c88ee9661"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ภาชนะบรรจุ/Packing]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="168" width="166" height="20" uuid="c0970b9b-258a-4539-b726-754406cac35c"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[น้ำหนักบรรจุ/Packing Weight]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="208" width="166" height="20" uuid="9333c40f-df54-4c6b-b96a-bced2db4538a"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[น้ำหนักกระสอบเปล่า]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="188" width="166" height="20" uuid="56c0decc-1a99-4871-9a54-8c35620b78be"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[จำนวนกระสอบ/Quantity of Bage]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="493" y="168" width="62" height="20" uuid="7078b65a-5a14-470d-9672-012879806c2a"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ก.ก/Kgs.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="493" y="188" width="62" height="20" uuid="578d07cb-8408-44a3-a1a9-2003fa6f1d1e"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ใบ/Bags.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="493" y="208" width="62" height="20" uuid="a9c9bd51-f741-4d57-a022-bb2868b9b944"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ก.ก/Kgs.]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="430" y="168" width="79" height="20" uuid="e875f8ef-95fa-419a-bcdf-63ce3b1521e0"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weight_content}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="430" y="188" width="79" height="20" uuid="298ffc65-f61b-4a9e-85dd-cf2f00c2e925"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bag_qty}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="430" y="208" width="79" height="20" uuid="67e474fd-e76c-4405-828f-4c6db7854823"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bag_weight}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="59" y="0" width="1" height="42" uuid="9fea7573-7597-43d0-8b88-740077428819"/>
+			</line>
+			<line>
+				<reportElement x="344" y="0" width="1" height="42" uuid="fb960e73-80bc-4f33-9f79-2428998e961d"/>
+			</line>
+			<line>
+				<reportElement x="508" y="0" width="1" height="42" uuid="4d237b30-40f5-470b-acd8-0ea6e56d67cf"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="131" y="168" width="238" height="20" uuid="15e591da-ca1e-41c9-b4a4-9c0fb9f308b3"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="105" y="188" width="101" height="20" uuid="9a9df4a5-acef-4d21-938b-1279d9481c06"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prd_qty}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="105" y="208" width="238" height="20" uuid="08d9f872-fcc5-4049-9633-a59ad5fa8cf9"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{content}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="214" y="188" width="80" height="20" uuid="c9480d74-4748-4f0d-a598-5fb818bd4344"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[เมตริกตัน/Mtons.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="2f9aac00-6deb-49d9-808e-866df161ab36"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="1" height="20" uuid="a709e459-cbfb-421b-9965-3d666e7faab5"/>
+			</line>
+			<line>
+				<reportElement x="293" y="1" width="1" height="20" uuid="f7f03c38-a755-46c2-922f-712c4d9f4f6a"/>
+			</line>
+			<line>
+				<reportElement x="555" y="0" width="1" height="21" uuid="f2108fd1-de29-4bd3-b8e4-836672b5b4f0"/>
+			</line>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="52079abd-5226-4a75-8025-2244ebe8895d"/>
+			</line>
+			<staticText>
+				<reportElement x="294" y="1" width="261" height="20" uuid="a5e72103-c67f-4a00-8779-6dc933685503"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[เพิ่มเติม/ADDING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="293" height="20" uuid="fb0da4a1-316c-4191-acd1-b919f1981c96"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[คุณลักษณะแป้ง/SPECIFICATION]]></text>
+			</staticText>
+			<line>
+				<reportElement x="345" y="-209" width="210" height="1" uuid="3543efdc-a92d-4410-a734-5a524e4fcc57"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="495">
+			<subreport>
+				<reportElement x="0" y="29" width="293" height="287" uuid="d9f43ca4-19b7-4e0e-bba0-d1bf85018da9"/>
+				<subreportParameter name="SUB_DOC_ID">
+					<subreportParameterExpression><![CDATA[$F{doc_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BWRP_046_SUB.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="555" y="0" width="1" height="316" uuid="fb4364c3-1520-46f1-b8cb-c3811f85af36"/>
+			</line>
+			<rectangle>
+				<reportElement x="309" y="98" width="15" height="15" uuid="15e3af06-a3dd-451d-9344-ea350a8e3f46"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="309" y="184" width="15" height="15" uuid="829485f6-ea85-4ba1-a701-45715069f197"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="309" y="120" width="247" height="60" uuid="9269156c-a9e5-4f84-a5ca-f3e209753904"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mark_sign_desc}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="315" y="180" width="29" height="20" uuid="f3f6327a-36b1-47d7-823e-f95a15daa1dd"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="18" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{mark_sign}.equals("N") ? "/" : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="327" y="98" width="86" height="20" uuid="6636d262-7a9e-4a21-9db7-0e5c6cc97b62"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ตีตรา/Mark]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="183" width="149" height="20" uuid="152f5d3c-00cc-46db-bf0d-2a5b9b61855b"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ไม่ตีตรา/No Mark]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="78" width="144" height="20" uuid="1aa7c808-a6a4-4e15-9759-3e4b44706518"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ลักษณะตรา (ถ้ามี)/Marking :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="315" y="95" width="29" height="20" uuid="317e16b6-bfbc-4500-931b-b6ee39a6d2e8"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="18" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{mark_sign}.equals("Y") ? "/" : "" )]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="309" y="229" width="15" height="15" uuid="11b47b27-6acb-472e-9fc6-958efffb6bbb"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="327" y="228" width="149" height="20" uuid="1072d669-e048-40ec-814d-84a49a3e53ab"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ต้องการ/Need จำนวน/Quantity]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="309" y="250" width="15" height="15" uuid="ea0d41a0-8730-4e17-bd0e-0cc3da86a990"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="327" y="249" width="149" height="20" uuid="7e74615a-ee05-4f8f-b8e1-24fe402fa21d"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ไม่ต้องการ/No Need]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="208" width="144" height="20" uuid="e4885b8a-2a8c-4d05-8ce3-efe5aa72f960"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ไม้รอง (พาเลท)/Pallet]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="270" width="149" height="20" uuid="8f8e12c0-d9fe-4c17-8692-c872f49d9994"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ห่อเป็นพาเลท/Wrap on Pallet]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="309" y="271" width="15" height="15" uuid="41d6e79f-1f62-4a9f-8805-abdc7564c75f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="327" y="290" width="149" height="20" uuid="b5eeff61-0a51-4e82-b068-12c0f3ae8ca3"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[จำนวน/Quantity]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="316" width="555" height="1" uuid="eb207c02-c1f2-42d2-9fac-7fa67153b63c"/>
+			</line>
+			<line>
+				<reportElement x="293" y="0" width="1" height="316" uuid="e467bb16-8792-4d52-83e5-2d92e2a53769"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="316" uuid="3dec635b-8b38-4513-83b8-fb20c0848063"/>
+			</line>
+			<staticText>
+				<reportElement x="294" y="438" width="166" height="20" uuid="aa3b1c6b-1f69-4409-864d-1b92e16af4ba"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ลงชื่อ ..............................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="447" y="438" width="102" height="20" uuid="0270641b-42a6-4a9b-8d00-d2e212b82bfe"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[รับทราบ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="330" width="102" height="20" uuid="0ab5866e-d7ee-4040-86d4-4141838ef42f"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[รับทราบ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="294" y="398" width="188" height="20" uuid="ca5dbb3e-15bc-4e46-b0fa-a79c3607bbc5"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{production_name}!=null) ?  $F{production_name} : "" )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="294" y="344" width="188" height="20" uuid="bc4d1e07-2ce9-48b3-9c73-597563de1700"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{quality_name}!=null) ? $F{quality_name} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="446" y="384" width="102" height="20" uuid="082f0f3e-2610-40f4-bf43-241b6e0f7fd1"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[รับทราบ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="330" width="166" height="20" uuid="a9926934-824c-4d16-ac10-ea44c07df1b6"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ลงชื่อ ..............................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="330" width="61" height="20" uuid="9e611c7a-5f6e-4c03-9f21-53822284ac01"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ผู้แจ้งผลิต]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="37" y="398" width="183" height="20" uuid="b28064ab-0f40-4125-8a76-7184329169b1"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{approver_name}!=null) ? $F{approver_name} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="330" width="166" height="20" uuid="953a5bee-a9a2-4adb-a460-97709aae8e04"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ลงชื่อ ..............................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="384" width="166" height="20" uuid="0843f4e4-c6aa-401a-901e-52073cb83c1c"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ลงชื่อ ..............................................]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="294" y="453" width="188" height="20" uuid="cfa58047-25d2-495d-b747-0b1622261dde"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{account_name}!=null) ?  $F{account_name} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="189" y="384" width="102" height="20" uuid="b9e834cb-4822-4e61-984d-bed349a231c9"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ผู้อนุมัติ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="384" width="166" height="20" uuid="482c5c06-c392-4850-80c2-ac6372ad515b"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ลงชื่อ ..............................................]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="37" y="344" width="193" height="20" uuid="6827c5c6-8eda-4567-ad91-4c95d9833c46"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{reporter_name}!=null) ? $F{reporter_name} : "" )]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="294" y="204" width="262" height="1" uuid="3fb49f3d-7885-409d-90d6-762f2255face"/>
+			</line>
+			<staticText>
+				<reportElement x="393" y="3" width="60" height="20" uuid="ecf1dc7b-a3bc-42b6-882a-c28a64139230"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[สั่งเพิ่ม/Order]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="375" y="3" width="15" height="15" uuid="c3e9772b-0585-4b65-a8a4-3cdc62986cd3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="309" y="3" width="15" height="15" uuid="80a12a4e-ca92-4bd4-a148-e2b4c7d5b6f7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="327" y="3" width="48" height="20" uuid="36fd01d4-ff94-4988-8a8a-327aeca17fe6"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[มี/Stock]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="315" y="0" width="29" height="20" uuid="3bb3c0eb-b24b-4dd3-9d71-ac43cdeed45f"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="18" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{adding_qty}.equals("1") ? "/" : "" )]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="179" y="3" width="15" height="15" uuid="0825f115-5c18-4fbb-b84a-78f5b3c60eb4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="197" y="3" width="86" height="20" uuid="4289974f-c1cc-4b57-b820-bdc618bfa2a3"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ไม่มีกำมะถัน/So]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="69" y="3" width="15" height="15" uuid="be3d9b61-801f-46a6-8f27-5302e61749e6"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="185" y="0" width="29" height="20" uuid="a2a05833-2e46-436e-be0d-65896bde02cd"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="18" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{so2}.equals("2") ? "/" : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="87" y="3" width="80" height="20" uuid="b309b3e4-e6ff-4077-b7ed-341f948a5aee"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[มีกำมะถัน/So]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="75" y="0" width="29" height="20" uuid="c5f3a03b-6b28-4ab1-b69f-13cb500bc1e5"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="18" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{so2}.equals("1") ? "/" : "" )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="381" y="0" width="29" height="20" uuid="3b93181c-86e6-4917-bf55-0db4dcd9a344"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="18" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{adding_qty}.equals("2") ? "/" : "" )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="315" y="226" width="29" height="20" uuid="3eefda5b-f0b7-4fdf-b6c3-ec918a035b8e"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="18" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{base_plate}.equals("2") ? "/" : "" )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="315" y="247" width="29" height="20" uuid="bb8a1b94-d965-4eb0-978b-f77b05030f2c"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="18" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{base_plate}.equals("1") ? "/" : "" )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="315" y="268" width="29" height="20" uuid="a6528a87-3f6f-4c9c-9265-0ab4f42be2ed"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="18" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{base_plate}.equals("3") ? "/" : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="3" width="52" height="20" uuid="d2de2dca-7415-4c8f-839f-04d369107a3a"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ชนิด/Types]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="9" width="11" height="20" uuid="fbbb6293-69e7-482e-a883-e1f587e3b9d7"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="9" width="11" height="20" uuid="667362ca-e382-4dbd-ab54-4417222cc35c"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="12" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="23" width="144" height="20" uuid="4dee4fa8-ebe5-4646-9582-a397e7fbaad1"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[หมายเหตุ/Note]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="492" y="270" width="62" height="20" uuid="f46d72dd-ac4a-4c9d-9130-d5bacf63f39d"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[กระสอบ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="492" y="228" width="62" height="20" uuid="a10d4a73-43e8-48d8-8b1b-1df74e41410a"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ตัว/Piece]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="452" y="290" width="70" height="20" uuid="936fd798-e3e3-474b-9a6d-ab9a9343a7be"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[พาเลท/Pallets.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="364" width="188" height="20" uuid="2db7f9f9-5bdc-4a4a-aa04-1f418b0bce9e"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(หัวหน้าแผนกควบคุมคุณภาพ)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="418" width="188" height="20" uuid="2c975d82-8d0b-463e-9aeb-4289c3e0e296"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(หัวหน้าแผนกผลิต)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="472" width="188" height="20" uuid="f5101415-1dbb-476a-b9b4-ea2f2ac095bf"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(หัวหน้าแผนกบัญชีคลังสินค้า)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="418" width="184" height="20" uuid="416d02db-c13f-4b9c-9418-bfd51a9a4f0a"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(ผู้จัดการโรงงาน/ผู้ช่วยผู้จัดการ โรงงาน)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="430" y="3" width="79" height="20" uuid="bb50d858-8fa3-44b8-8943-96b2c4101928"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{adding}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="493" y="3" width="62" height="20" uuid="47bbe559-ed6b-44ff-b80a-e309a0028893"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ก/ส(Bags)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="429" y="228" width="79" height="20" uuid="cee83485-82ec-4f4d-a99d-6da3d4960b92"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{base_plate_qty}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="370" y="290" width="79" height="20" uuid="d12f5b73-4b23-4c7b-957c-1fbfd809339f"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pallet_qty}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="429" y="270" width="79" height="20" uuid="e5270633-08c2-4388-9b26-314c42651187"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{wrap_on_pallet}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="0" y="1" width="100" height="20" uuid="def0dcb3-d0ee-4111-8bbe-76f1bc602c8f"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="false" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="459" y="1" width="95" height="20" uuid="721855a2-c502-4315-a288-8e5408395245"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fileName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="-1" width="555" height="1" uuid="3fea1405-6875-4d4a-8453-cf9f9eb3a299"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

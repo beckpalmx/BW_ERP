@@ -77,7 +77,7 @@ public class IMP_SupplierDB {
             System.out.println("Supplier End Process ::: " + timestamp);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

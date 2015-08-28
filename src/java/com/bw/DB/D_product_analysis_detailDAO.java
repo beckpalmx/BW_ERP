@@ -45,7 +45,7 @@ public class D_product_analysis_detailDAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -79,7 +79,7 @@ public class D_product_analysis_detailDAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -136,7 +136,7 @@ public class D_product_analysis_detailDAO {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -163,7 +163,7 @@ public class D_product_analysis_detailDAO {
             p.setString(3, DataBean.getDoc_id());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -190,7 +190,7 @@ public class D_product_analysis_detailDAO {
                 objbean.setUnit(rs.getString("unit"));
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -284,7 +284,7 @@ public class D_product_analysis_detailDAO {
                     break;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

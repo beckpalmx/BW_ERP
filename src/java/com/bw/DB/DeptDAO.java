@@ -35,7 +35,7 @@ public class DeptDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }
@@ -60,7 +60,7 @@ public class DeptDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }
@@ -80,7 +80,7 @@ public class DeptDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }
@@ -111,7 +111,7 @@ public class DeptDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
             return deptBean;
         }
@@ -143,7 +143,7 @@ public class DeptDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
             return list;
         }
@@ -177,7 +177,7 @@ public class DeptDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
             return list;
         }
@@ -200,7 +200,7 @@ public class DeptDAO {
 //                p.close();
 //                con.close();
 //            } catch (Exception e) {
-//                e.printStackTrace();
+//                e.printStackTrace(System.out);
 //            }
 //        }
 //    }

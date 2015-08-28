@@ -37,7 +37,7 @@ public class PrintBurn_out_and_split {
             }
             Write(AL_Print, response,"เตา "+burn_no+" ช่อง "+chenal);
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             AL_Print.clear();
             if(con != null){
@@ -97,7 +97,7 @@ public class PrintBurn_out_and_split {
         pw.println("");
         pw.println("รายงานถ่านออกจากเตาและร่อนแยก,"+Title);
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(pw != null){
                 pw.close();
@@ -324,7 +324,7 @@ public class PrintBurn_out_and_split {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if(rs != null){
                rs.close();

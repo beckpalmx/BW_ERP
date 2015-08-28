@@ -129,7 +129,7 @@ public class D_job_order_headerDAO {
             }
             p.executeBatch();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -229,7 +229,7 @@ public class D_job_order_headerDAO {
             p.executeUpdate();
             
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -257,7 +257,7 @@ public class D_job_order_headerDAO {
             p.setTimestamp(2, DataBean.getDate());
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -287,7 +287,7 @@ public class D_job_order_headerDAO {
                 objAL.add(Bean);
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();

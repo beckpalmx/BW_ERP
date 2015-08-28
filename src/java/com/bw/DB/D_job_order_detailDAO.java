@@ -48,7 +48,7 @@ public class D_job_order_detailDAO {
             p.setTimestamp(i++, DataBean.getDate());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -84,7 +84,7 @@ public class D_job_order_detailDAO {
             p.setTimestamp(i++, DataBean.getDate());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -141,7 +141,7 @@ public class D_job_order_detailDAO {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -168,7 +168,7 @@ public class D_job_order_detailDAO {
             p.setString(3, DataBean.getDoc_id());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -196,7 +196,7 @@ public class D_job_order_detailDAO {
                 objbean.setUnit(rs.getString("unit"));
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -252,7 +252,7 @@ public class D_job_order_detailDAO {
                     break;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

@@ -15,7 +15,7 @@
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
         <script type="text/javascript">
             function Chknull() {
-                if (document.getElementById('doc_id').value == '') {
+                if (document.getElementById('doc_id').value === '') {
                     alert('กรุณาใส่ข้อมูลเลขที่เอกสาร');
                 } else
                     document.report.submit();
@@ -37,7 +37,7 @@
                 var r = confirm("คุณต้องการยกเลิกข้อมูลทั้งหมดหรือไม่")
                 if (r)
                 {
-                    if (getId("status_cancle").value == "1")
+                    if (getId("status_cancle").value === "1")
                     {
                         cancelAction();
                         getId("status_cancle").value = "";
@@ -103,7 +103,7 @@
             }
             function AddHeader()
             {
-                var r = confirm("คุณต้องการบันทึกหรือไม่")
+                var r = confirm("คุณต้องการบันทึกหรือไม่");
                 if (r)
                 {
                     getSave(URLsend('complete_flag,chkNull,doc_id,doc_date,doc_type,doc_time,remark,username', '../JSP/BW_CS_D_Casava_Skin_doc.jsp'));
@@ -116,7 +116,7 @@
             }
             function Delete()
             {
-                var r = confirm("คุณต้องการลบข้อมูลทั้งหมดหรือไม่")
+                var r = confirm("คุณต้องการลบข้อมูลทั้งหมดหรือไม่");
                 if (r)
                 {
                     getSave(URLsend('complete_flag,doc_id,doc_date,doc_type,doc_time,remark,username,status_d', '../JSP/BW_CS_D_Casava_Skin_doc.jsp'));
@@ -132,7 +132,7 @@
                     getId("complete_flag").value = "Y";
                     alert("เอกสารนี้สมบูรณ์เรียบร้อยแล้ว");
                 } else {
-                    getId("complete_flag").value = "N"
+                    getId("complete_flag").value = "N";
                     //alert("เอกสารนี้สมบูรณ์เรียบร้อยแล้ว");
                 }
             }
@@ -140,8 +140,27 @@
         </script>      
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link href="../CSS/bw_button.css" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
+
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                
+
         <title></title>
     </head>
     <body>
@@ -151,7 +170,7 @@
                 DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                 HeaderScreen_Process h_p = new HeaderScreen_Process();
                 objs_p = h_p.selectheaderscreen_process(objs_p, "BW_CS_D_Casava_Skin_doc");
-                 // _______________________________________________________________report
+                // _______________________________________________________________report
 
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
                 HeaderScreen_Report r_p = new HeaderScreen_Report();
@@ -179,15 +198,12 @@
             <input type="hidden" id="remark" name="remark" value="-">
             <input type="hidden" id="cred_code" name="cred_code" value="000380"> <!-- C.Gigantic Carbon -->
 
-            <table  cellpadding="0"  cellspacing="0">
-                <tr>
-                    <td class="ftopleft"></td>
-                    <td  class="ftopcenter" colspan="2">บันทึกการขายกากสด (BW_CS_D_Casava_Skin_doc)&nbsp;</td>
-                    <td class="ftopright"></td>
-                </tr>
-                <tr >
-                    <td class="fcenterleft"></td>
-                    <td  colspan="2" class="fcentercenter">
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                        <b>บันทึกการขายกากสด (BW_CS_D_Casava_Skin_doc)</b>
+                    </div>                        
+                    <div class="panel-footer">                      
                         <div align="left">
                             <table  cellpadding="0" cellspacing="0" >
                                 <tr>
@@ -197,13 +213,16 @@
                                     <td colspan="2" align="right"><b>วันที่มีผลบังคับใช้ : <%=objs_p.getEffective_date()%> </b></td>
                                 </tr>                                
                                 <tr>
-                                    <td class="columnlabel"><b>เอกสารสมบูรณ์</b>&nbsp;</td>
-                                    <td class="columnobject"><input name="complete_flag" type="checkbox" id="complete_flag" value="N" onClick="Checkvalue(this.checked)"></td>
+                                    <td class="columnlabel1"><b>เอกสารสมบูรณ์ :</b>&nbsp;</td>
+                                    <td class="columnobject">
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" id="complete_flag" name="complete_flag" value="N" onClick="Checkvalue(this.checked);">
+                                            <label for="complete_flag"></label> 
+                                        </div>                                      
+                                    </td>
                                 </tr>                                  
                                 <tr>
-                                    <td class="columnlabel">
-                                        <!--input name="runner" id="runner" class="bwButton_7" type="button" value="เลขที่เอกสาร" onclick="AjaxRun_id('doc_id', '../JSP/BW_CS_D_Casava_Skin_doc.jsp?runer_id=1');
-                                                this.disabled = true;">&nbsp;-->
+                                    <td class="columnlabel1">
                                     <td class="columnobject">
                                         เลขที่เอกสาร&nbsp;
                                         <input name='doc_id' class='inputs' type="text" id="doc_id" value='' size='10' readonly="readonly"/>
@@ -216,24 +235,13 @@
                                 </tr>
 
                                 <tr>
-                                    <td class="columnlabel">&nbsp;</td>
+                                    <td class="columnlabel1">&nbsp;</td>
                                     <td class="columnobject">
                                         เอกสารที่อนุมัติแล้ว&nbsp;
                                         <input name='doc_id1' type='hidden' id="doc_id1" value='' size='10' />
                                         <a href='#' onClick="javascript:openBrWindow('vd_casava_skin__fresh&stadment=and+complete_flag+=+\'Y\'and+count_rec+<>+0', 115, 'Search_Doc_id_By_DATE.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;                                                                                
                                     </td>
                                 </tr>                                
-
-                                <!--tr>
-                                    <td class="columnlabel">&nbsp;</td>
-                                    <td class="columnobject"><select name="doc_type" id="doc_type">
-                                            <option value="+">รับเข้า</option>
-                                            <option value="-">จ่ายออก</option>
-                                        </select>
-                                    </td>
-                                </tr-->
-
-
 
                                 <tr>
                                     <td colspan='2' class='blankspace'></td>
@@ -245,8 +253,6 @@
                                                 <tr>
                                                     <td colspan="5" class="h_multi">ข้อมูลกากสด</td>
                                                     <td colspan="6" class="btn_multi">
-                                                        <!--input type='button' class="bwButton_4" name='but1' value='  เพิ่ม  ' onClick="javascript:goAddChild(URLsend('doc_id,doc_date,status_a,username', 'BW_CS_D_Casava_Skin_doc_1.jsp'))"/>
-                                                        <input type='button' class="bwButton_3" name='but2' value='  ลบ  ' onclick='goDelChild()'/-->
                                                     </td>
                                                 </tr>
 
@@ -272,7 +278,7 @@
 
                                 <br>
                                 <!--tr>
-                                    <td class="columnlabel">&nbsp;</td>
+                                    <td class="columnlabel1">&nbsp;</td>
                                     <td class="columnobject"><textarea class='text_inputs' name="remark" id="remark" cols="45" rows="2"></textarea></td>
                                 </tr-->
 
@@ -289,15 +295,10 @@
                                     </td>
                                 </tr>
                             </table>
-                        </div></td>
-                    <td class="fcenterright"></td>
-                </tr>
-                <tr bordercolor="0069B3">
-                    <td class="ffootleft"></td>
-                    <td  class="ffootcenter" colspan="2"></td>
-                    <td class="ffootright"></td>
-                </tr>
-            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </body>
 </html>

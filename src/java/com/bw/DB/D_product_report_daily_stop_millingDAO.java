@@ -53,7 +53,7 @@ public class D_product_report_daily_stop_millingDAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p !=null){
                 p.close();
@@ -98,7 +98,7 @@ public class D_product_report_daily_stop_millingDAO {
             p.setString(i, DataBean.getLine_no());i += 1;
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p !=null){
                 p.close();
@@ -156,7 +156,7 @@ public class D_product_report_daily_stop_millingDAO {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -183,7 +183,7 @@ public class D_product_report_daily_stop_millingDAO {
             p.setString(3, DataBean.getDoc_id());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -215,7 +215,7 @@ public class D_product_report_daily_stop_millingDAO {
                 objbean.setKw_rest(rs.getString("kw_rest"));
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -312,7 +312,7 @@ public class D_product_report_daily_stop_millingDAO {
                 Return_String.append("ไม่พบข้อมูลที่ต้องการ");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
 
             if (rs != null) {

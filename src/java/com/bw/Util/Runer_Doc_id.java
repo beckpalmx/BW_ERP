@@ -37,7 +37,7 @@ public class Runer_Doc_id {
                 return_str = mem_date_now + "-0001";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
 
             if (con != null) {
@@ -68,7 +68,7 @@ public class Runer_Doc_id {
             System.out.println("return_str = "  + return_str);
             
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
 
             if (con != null) {
@@ -88,7 +88,7 @@ public class Runer_Doc_id {
         try {
             id = Query_d_running_doc_id(con, doc_date, Format_Date_Thai(doc_date), dept_id, screen_id);
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             con.close();
             return id;
@@ -128,7 +128,7 @@ public class Runer_Doc_id {
                 Retrun = Retrun_header[1] = rs.getString("doc_id");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -152,7 +152,7 @@ public class Runer_Doc_id {
                 Retrun = Retrun_header[1] = rs.getString("doc_id");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -196,7 +196,7 @@ public class Runer_Doc_id {
                 return_string = doc_date_format + "-" + dept_id + "-0001";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -224,7 +224,7 @@ public class Runer_Doc_id {
                 return_str = "01" + mem_date_now + "P";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (con != null) {
                 con.close();
@@ -255,7 +255,7 @@ public class Runer_Doc_id {
                 Retrun = rs.getString("str_runing_job_id");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

@@ -55,7 +55,7 @@ public class D_product_accept_detailDAO {
             p.setString(i, DataBean.getQuantity());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -100,7 +100,7 @@ public class D_product_accept_detailDAO {
             p.setString(i, DataBean.getQuantity());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -142,7 +142,7 @@ public class D_product_accept_detailDAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -184,7 +184,7 @@ public class D_product_accept_detailDAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -242,7 +242,7 @@ public class D_product_accept_detailDAO {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -269,7 +269,7 @@ public class D_product_accept_detailDAO {
             p.setString(3, DataBean.getDoc_id());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -301,7 +301,7 @@ public class D_product_accept_detailDAO {
                 objbean.setWh_id(rs.getString("wh_in"));
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -334,7 +334,7 @@ public class D_product_accept_detailDAO {
                 objbean.setWh_id(rs.getString("wh_in"));
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -431,7 +431,7 @@ public class D_product_accept_detailDAO {
                 Return_String.append("ไม่พบข้อมูลที่ต้องการ");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
 
             if (rs != null) {
@@ -533,7 +533,7 @@ public class D_product_accept_detailDAO {
                 Return_String.append("ไม่พบข้อมูลที่ต้องการ");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
 
             if (rs != null) {

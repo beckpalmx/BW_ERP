@@ -40,7 +40,7 @@ public class T_warehouse_itemDAO {
             p.setString(8, dataBean.getBy());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -83,7 +83,7 @@ public class T_warehouse_itemDAO {
             p.executeUpdate();
             
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -110,7 +110,7 @@ public class T_warehouse_itemDAO {
                 price = rs.getString("price");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

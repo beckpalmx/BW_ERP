@@ -30,10 +30,12 @@
                     statusck = 1;
                     statusnum = uti.numRowdatabase("Select Count(doc_id) As num from  d_job_order_detail where doc_id = '" + en.EncodeTexttoTIS(request.getParameter("A_doc_id").trim()) + "' and delete_flag = 'N' and complete_flag = 'N'");
                     objdb.setLine_no(Integer.toString(statusnum + 1));
+                    System.out.println("Have Data Line = " + Integer.toString(statusnum + 1));
                 }
             } else if (request.getParameter("U_status") != null) {
                 statusck = 2;
                 objdb.setLine_no(request.getParameter("A_line_no"));
+                System.out.println("Not Have Data Line = " + Integer.toString(statusnum + 1));
 
             } else if (request.getParameter("D_status") != null) {
                 statusck = Integer.parseInt(request.getParameter("D_status"));

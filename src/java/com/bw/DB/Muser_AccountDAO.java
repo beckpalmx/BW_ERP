@@ -28,7 +28,7 @@ public class Muser_AccountDAO {
 				con.close();
 			}
 			catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
 		}
 	}
@@ -55,7 +55,7 @@ public class Muser_AccountDAO {
     		}
     		catch(Exception e)
     		{
-    			e.printStackTrace();
+    			e.printStackTrace(System.out);
     		}
     	}
 	}
@@ -82,7 +82,7 @@ public class Muser_AccountDAO {
     			con.close();
     		}
     		catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
     	}
     }

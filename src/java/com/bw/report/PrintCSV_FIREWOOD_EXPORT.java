@@ -99,7 +99,7 @@ public class PrintCSV_FIREWOOD_EXPORT {
             pw.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -133,7 +133,7 @@ public class PrintCSV_FIREWOOD_EXPORT {
      }
 
      } catch (Exception e) {
-     e.printStackTrace();
+     e.printStackTrace(System.out);
      }
      }
 

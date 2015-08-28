@@ -123,7 +123,7 @@ public class D_production_analysisDAO {
             p.setTimestamp(i, DataBean.getDate());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if(p != null){
                 p.close();
@@ -237,7 +237,7 @@ public class D_production_analysisDAO {
             p.setTimestamp(i, DataBean.getDate());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if(p != null){
                 p.close();
@@ -260,7 +260,7 @@ public class D_production_analysisDAO {
             p.setTimestamp(2 , DataBean.getDate());
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();

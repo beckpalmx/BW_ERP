@@ -48,7 +48,7 @@ public class M_product_specDAO {
             }
             p.executeBatch();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -89,7 +89,7 @@ public class M_product_specDAO {
             }
             p.executeBatch();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -119,7 +119,7 @@ public class M_product_specDAO {
                 p.executeUpdate();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -326,7 +326,7 @@ public class M_product_specDAO {
             }
             String_Return.append("</table>");
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -371,7 +371,7 @@ public class M_product_specDAO {
             }
             String_Return.append("</table>");
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

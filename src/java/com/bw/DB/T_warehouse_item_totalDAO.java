@@ -41,7 +41,7 @@ public class T_warehouse_item_totalDAO {
             p.setString(3, (Process_id.equals("PR_023"))?"0.00":Weight);
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -68,7 +68,7 @@ public class T_warehouse_item_totalDAO {
             p.setString(3, Product_id);
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -103,7 +103,7 @@ public class T_warehouse_item_totalDAO {
             p.setString(2, Weight);
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -128,7 +128,7 @@ public class T_warehouse_item_totalDAO {
             p.setString(2, Product_id);
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();

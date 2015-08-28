@@ -34,13 +34,13 @@ public class db_server_test2 {
             System.out.println(prop.getProperty("db_postgres_password"));
 
         } catch (IOException ex) {
-            ex.printStackTrace();
+            ex.printStackTrace(System.out);
         } finally {
             if (input != null) {
                 try {
                     input.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    e.printStackTrace(System.out);
                 }
             }
         }

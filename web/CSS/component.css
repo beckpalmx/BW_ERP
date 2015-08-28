@@ -303,3 +303,19 @@ thead th {
 .label {
     text-align:right;
 }
+
+.alert, .alert-success, .alert-warning, .alert-error {
+    border: 1px solid black;
+    padding: 5px 10px;
+    background: yellow;
+}
+
+.alert-success {
+    background: green;
+}
+.alert-warning {
+    background: orange;
+}
+.alert-error {
+    background: red;
+}

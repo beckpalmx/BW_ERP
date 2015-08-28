@@ -105,7 +105,7 @@ public class Process_Calculate_TransactionDB {
             System.out.println("End Process ::: " + timestamp);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

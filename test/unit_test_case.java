@@ -41,7 +41,7 @@ public class unit_test_case {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
     }
 }

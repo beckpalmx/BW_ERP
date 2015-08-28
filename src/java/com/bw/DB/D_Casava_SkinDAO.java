@@ -45,7 +45,7 @@ public class D_Casava_SkinDAO {
      p.close();
      con.close();
      } catch (Exception e) {
-     e.printStackTrace();
+     e.printStackTrace(System.out);
      }
 
      }
@@ -78,7 +78,7 @@ public class D_Casava_SkinDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
 
         }
@@ -121,7 +121,7 @@ public class D_Casava_SkinDAO {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return bean;
@@ -180,7 +180,7 @@ public class D_Casava_SkinDAO {
                 }
 
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
 
@@ -206,7 +206,7 @@ public class D_Casava_SkinDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
 

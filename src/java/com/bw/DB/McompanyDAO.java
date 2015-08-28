@@ -45,7 +45,7 @@ public class McompanyDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
             return DataBean_Mcompany;
         }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RP_043_SUB" pageWidth="320" pageHeight="842" columnWidth="300" leftMargin="0" rightMargin="20" topMargin="0" bottomMargin="0" uuid="ce842144-f7e3-4efd-9e1b-614e95bfaf30">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUB_DOC_ID" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from d_job_order_detail
+WHERE doc_id = $P{SUB_DOC_ID}
+and delete_flag <> 'Y']]>
+	</queryString>
+	<field name="runno" class="java.lang.Integer"/>
+	<field name="line_no" class="java.lang.String"/>
+	<field name="doc_id" class="java.lang.String"/>
+	<field name="doc_date" class="java.lang.String"/>
+	<field name="product_id" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.String"/>
+	<field name="wh_in" class="java.lang.String"/>
+	<field name="wh_out" class="java.lang.String"/>
+	<field name="param" class="java.lang.String"/>
+	<field name="method" class="java.lang.String"/>
+	<field name="add_desc" class="java.lang.String"/>
+	<field name="unit" class="java.lang.String"/>
+	<field name="spec" class="java.lang.String"/>
+	<field name="location_id2" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<field name="create_date" class="java.sql.Timestamp"/>
+	<field name="create_by" class="java.lang.String"/>
+	<field name="update_date" class="java.sql.Timestamp"/>
+	<field name="update_by" class="java.lang.String"/>
+	<field name="retro_flag" class="java.lang.String"/>
+	<field name="complete_flag" class="java.lang.String"/>
+	<field name="cancel_flag" class="java.lang.String"/>
+	<field name="delete_flag" class="java.lang.String"/>
+	<field name="doc_type" class="java.lang.String"/>
+	<field name="delete_date" class="java.sql.Timestamp"/>
+	<field name="delete_by" class="java.lang.String"/>
+	<field name="company_id" class="java.lang.String"/>
+	<field name="spec_id" class="java.lang.String"/>
+	<field name="spec_min" class="java.lang.String"/>
+	<field name="spec_max" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="7" y="1" width="143" height="15" uuid="2620bbbf-39bc-482e-bda2-c5a7e426c75a"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="13" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{line_no}.equals("13") ? "อื่นๆ (Others)   " + $F{param} : $F{param}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="104" y="1" width="73" height="15" uuid="1a5e1163-4e56-451f-ae75-e57c06dd41c3"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="13" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{spec_min}.equals("-") ? " " : $F{spec_min})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement x="250" y="1" width="116" height="15" uuid="adb49aef-4009-425c-bdb9-299d993f1643"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="13" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unit}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="188" y="1" width="47" height="15" uuid="71106640-1e06-4102-853c-b1da47dbd16b"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="13" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{spec_max}.equals("-") ? " " : $F{spec_max})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="177" y="1" width="11" height="15" uuid="1d51e73f-e467-420d-ab7d-78944599b1f6"/>
+				<textElement textAlignment="Center">
+					<font fontName="CordiaUPC" size="13" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[!$F{spec_min}.equals("-") && !$F{spec_max}.equals("-") ? "-" : "" ]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

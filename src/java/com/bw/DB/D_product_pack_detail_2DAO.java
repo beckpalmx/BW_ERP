@@ -49,7 +49,7 @@ public class D_product_pack_detail_2DAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p !=null){
                 p.close();
@@ -89,7 +89,7 @@ public class D_product_pack_detail_2DAO {
             p.setString(i, DataBean.getLine_no());i += 1;
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p !=null){
                 p.close();
@@ -148,7 +148,7 @@ public class D_product_pack_detail_2DAO {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -176,7 +176,7 @@ public class D_product_pack_detail_2DAO {
             p.setString(4, DataBean.getDoc_id());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -206,7 +206,7 @@ public class D_product_pack_detail_2DAO {
                 return_bean.setShift(rs.getString("shift"));
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -268,7 +268,7 @@ public class D_product_pack_detail_2DAO {
                     break;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

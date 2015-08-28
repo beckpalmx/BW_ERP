@@ -51,7 +51,7 @@ public class M_Cassava_priceDAO {
             }
             p.executeBatch();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p!=null){
                 p.close();
@@ -93,7 +93,7 @@ public class M_Cassava_priceDAO {
             }
             p.executeBatch();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -123,7 +123,7 @@ public class M_Cassava_priceDAO {
                 p.clearParameters();
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -167,7 +167,7 @@ public class M_Cassava_priceDAO {
             }
             String_return.append("</table>");
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();

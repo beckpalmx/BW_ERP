@@ -85,7 +85,7 @@ public class D_rawmatt_reportDAO {
             p.setTimestamp(i, DataBean.getDate());i+=1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if(p != null){
                 p.close();
@@ -158,7 +158,7 @@ public class D_rawmatt_reportDAO {
             p.setTimestamp(i, DataBean.getDate());i+=1;
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -180,7 +180,7 @@ public class D_rawmatt_reportDAO {
             p.setTimestamp(2 , DataBean.getDate());
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -227,7 +227,7 @@ public class D_rawmatt_reportDAO {
             System.out.println("STR_Return = " + STR_Return);
 
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();

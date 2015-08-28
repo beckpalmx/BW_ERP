@@ -51,7 +51,7 @@ public class D_product_milling_detail_2DAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -91,7 +91,7 @@ public class D_product_milling_detail_2DAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -148,7 +148,7 @@ public class D_product_milling_detail_2DAO {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -175,7 +175,7 @@ public class D_product_milling_detail_2DAO {
             p.setString(3, DataBean.getDoc_id());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -206,7 +206,7 @@ public class D_product_milling_detail_2DAO {
 
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -301,7 +301,7 @@ public class D_product_milling_detail_2DAO {
                 Return_String.append("ไม่พบข้อมูลที่ต้องการ");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
 
             if (rs != null) {

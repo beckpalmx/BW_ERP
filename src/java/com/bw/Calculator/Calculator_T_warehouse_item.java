@@ -77,7 +77,7 @@ public class Calculator_T_warehouse_item {
                 //Str_retuen += ","+rs.getString("price_avg
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
 
         } finally {
             if (rs != null) {
@@ -106,7 +106,7 @@ public class Calculator_T_warehouse_item {
                 str_return = rs.getString("weight_total");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

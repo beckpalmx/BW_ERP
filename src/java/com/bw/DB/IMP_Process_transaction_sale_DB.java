@@ -249,7 +249,7 @@ public class IMP_Process_transaction_sale_DB {
             System.out.println("End Process ::: " + timestamp);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

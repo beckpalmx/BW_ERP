@@ -180,7 +180,7 @@ public class D_rawmatt_recieveDAO {
             i += 1;            
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -346,7 +346,7 @@ public class D_rawmatt_recieveDAO {
             i += 1;            
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -372,7 +372,7 @@ public class D_rawmatt_recieveDAO {
             p.setTimestamp(2, DataBean.getDate());
             p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -429,7 +429,7 @@ public class D_rawmatt_recieveDAO {
             System.out.println("out_putstring = " + out_putstring);
             
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -451,7 +451,7 @@ public class D_rawmatt_recieveDAO {
                     "WHERE runno in (" + value_runno + ") and doc_date = '" + doc_date + "' and complete_flag = 'N'"));
             count = p.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -493,7 +493,7 @@ public class D_rawmatt_recieveDAO {
             }
             Return_String.append("</table>");
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

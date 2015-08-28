@@ -54,8 +54,9 @@
             function Chknull() {
                 if (document.getElementById('doc_id').value === '') {
                     alert('กรุณาใส่ข้อมูลเลขที่เอกสาร');
-                } else
+                } else {
                     document.report.submit();
+                }
             }
             function goAddChild()
             {
@@ -83,13 +84,10 @@
                 var r = confirm("คุณต้องการยกเลิกข้อมูลทั้งหมดหรือไม่");
                 if (r)
                 {
-                    if (getId("status_cancle").value === "1")
-                        ;
-                    {
+                    if (getId("status_cancle").value === "1") {
                         cancelAction();
                         ResetValue();
-                    }
-                    else{
+                    } else {
                         cancelAction();
                         ResetValue();
                     }
@@ -305,7 +303,7 @@
                 doc_eff_date = objr_p.getDoc_eff_date();
                 doc_no = objr_p.getDoc_no();
                 //_______________________________________________________________report
-            %>
+%>
             <div id="toolTipLayer" style="position:absolute; visibility: hidden"></div>
 
 
@@ -450,24 +448,64 @@
                                     <td class="columnlabel1">หมายเหตุ&nbsp;</td>
                                     <td class="columnobject"><textarea class='text_inputs' name='A_remark' cols='80' rows='5' id="A_remark"></textarea></td>
                                 </tr>
+                                <!--tr>
+                                    <td class="columnlabel1">&nbsp;</td>
+                                    <td class="columnobject">
+                                        <input type="checkbox" name="A_random_chk" id="A_random_chk" value="N" onClick="chkValue(this.id, this.checked);">
+                                        ลูก/กระสอบ/เลท    ช.ม.</td>
+                                </tr-->
                                 <tr>
                                     <td class="columnlabel1">&nbsp;</td>
-                                    <td class="columnobject"><input type="checkbox" name="A_random_chk" id="A_random_chk" value="N" onClick="chkValue(this.id, this.checked);">
-                                        ลูก/กระสอบ/เลท    ช.ม.</td>
+                                    <td class="columnobject">
+
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" name="A_random_chk" id="A_random_chk" value="N" onClick="chkValue(this.id, this.checked);">
+                                            <label for="A_random_chk">ลูก/กระสอบ/เลท    ช.ม.</label>                                                                              
+                                        </div>           
+                                    </td>
                                 </tr>
-                                <tr>
+
+                                <!--tr>
                                     <td class="columnlabel1">ผลตรวจสอบ&nbsp;</td>
-                                    <td class="columnobject"><input type="checkbox" name="A_pass_chk" id="A_pass_chk" value="N" onClick="chkValue2(1);">
-                                        ผ่าน&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="A_not_pass_chk" id="A_not_pass_chk" value="N" onClick="chkValue2(2);">
+                                    <td class="columnobject">
+                                        <input type="checkbox" name="A_pass_chk" id="A_pass_chk" value="N" onClick="chkValue2(1);">
+                                        ผ่าน&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="A_not_pass_chk" id="A_not_pass_chk" value="N" onClick="chkValue2(2);">
                                         ไม่ผ่าน</td>
-                                </tr>
+                                </tr-->
+
                                 <tr>
+                                    <td class="columnlabel1">&nbsp;</td>
+                                    <td class="columnobject">
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" name="A_pass_chk" id="A_pass_chk" value="N" onClick="chkValue2(1);">
+                                            <label for="A_pass_chk">ผ่าน&nbsp;&nbsp;&nbsp;&nbsp;</label>&nbsp;&nbsp;
+                                            <input type="checkbox" name="A_not_pass_chk" id="A_not_pass_chk" value="N" onClick="chkValue2(2);">
+                                            <label for="A_not_pass_chk">ไม่ผ่าน</label>                                                  
+                                        </div>           
+                                    </td>
+                                </tr>                                
+
+                                <!--tr>
                                     <td class="columnlabel1">&nbsp;</td>
                                     <td class="columnobject"><input type="checkbox" name="A_naocl_chk" id="A_naocl_chk" value="N" onClick="chkValue(this.id, this.checked);">
                                         NaOCI                                    &nbsp;&nbsp;&nbsp;&nbsp;
                                         <input type="checkbox" name="A_withdraw_chk" id="A_withdraw_chk" value="N" onClick="chkValue(this.id, this.checked);">
                                         เบิกออก</td>
-                                </tr>
+                                </tr-->
+
+                                <tr>
+                                    <td class="columnlabel1">&nbsp;</td>
+                                    <td class="columnobject">
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" name="A_naocl_chk" id="A_naocl_chk" value="N" onClick="chkValue(this.id, this.checked);">
+                                            <label for="A_naocl_chk">NaOCI&nbsp;&nbsp;&nbsp;&nbsp;</label>&nbsp;&nbsp;
+                                            <input type="checkbox" name="A_withdraw_chk" id="A_withdraw_chk" value="N" onClick="chkValue(this.id, this.checked);">
+                                            <label for="A_withdraw_chk">เบิกออก</label>                                                  
+                                        </div>           
+                                    </td>
+                                </tr>                                         
+
                                 <tr>
                                     <td class="columnlabel1"><p>ผู้ตรวจสอบ</p></td>
                                     <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly />
@@ -485,7 +523,8 @@
                                             <a href="javascript:;" onClick="AddHeader()"><img alt="" class="imgtransparent"  src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
                                             <a href="javascript:;" onClick="Delete()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a>
                                             <a href="javascript:;"  onclick="Chknull()"><img alt="พิมพ์เอกสาร" class="imgtransparent" src="../IMAGES/BTN_PRINT_90.png" width="80" height="30" border="0"></a>                                        </div>
-                                        <br>                                  </td>
+                                        <br>                                  
+                                    </td>
                                 </tr>
                             </table>
                         </div>

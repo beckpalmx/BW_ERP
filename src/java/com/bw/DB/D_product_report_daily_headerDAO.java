@@ -191,7 +191,7 @@ public class D_product_report_daily_headerDAO {
             p.executeUpdate();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -416,7 +416,7 @@ public class D_product_report_daily_headerDAO {
             p.executeUpdate();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -444,7 +444,7 @@ public class D_product_report_daily_headerDAO {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -525,7 +525,7 @@ public class D_product_report_daily_headerDAO {
             }
             System.out.println("String_return = " + String_return);
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -548,7 +548,7 @@ public class D_product_report_daily_headerDAO {
                 return_value = rs.getString("sum_total_starch_weight");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

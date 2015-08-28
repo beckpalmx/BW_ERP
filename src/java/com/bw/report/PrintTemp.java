@@ -63,7 +63,7 @@ public class PrintTemp {
                 obj_detail.add(bean_detail);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -105,7 +105,7 @@ public class PrintTemp {
                 obj_prod.add(bean_prod);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -236,7 +236,7 @@ public class PrintTemp {
             }
             pw.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

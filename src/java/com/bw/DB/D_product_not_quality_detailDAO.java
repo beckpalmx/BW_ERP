@@ -48,7 +48,7 @@ public class D_product_not_quality_detailDAO {
             }
             p.executeBatch();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.clearBatch();
@@ -65,7 +65,7 @@ public class D_product_not_quality_detailDAO {
         try{
             
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -249,7 +249,7 @@ public class D_product_not_quality_detailDAO {
                     break;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

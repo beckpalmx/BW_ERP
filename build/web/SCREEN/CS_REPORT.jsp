@@ -48,7 +48,9 @@
 
 
         <script type="text/javascript">
+
             var my_window = null;
+            
             function openBrown(tableID, SentToShow) {
                 if (my_window === null) {
                     my_window = window.open("Search_Report.jsp?table=" + tableID + "&sentdataToshow=" + SentToShow, '', 'status=1,width=560,height=500');
@@ -118,6 +120,9 @@
                     document.report.submit();
                 }
             }
+        </script>
+
+        <script type="text/javascript">
 
             function chk_report() {
                 date_from = document.report.date_f.value;
@@ -130,9 +135,8 @@
                 }
             }
 
-
-
         </script>
+
     </head>
 
     <body onUnload="closepopup()">
@@ -202,7 +206,7 @@
 
                                 <tr>
                                     <td colspan='5' class='blankspace' align="right">
-                                        <input type="button" class="cgcButton_11" name="myBut" value=" พิมพ์รายงาน  " onClick="chk_report()"/>
+                                        <input type="button" class="cgcButton_11" name="myBut" value=" พิมพ์รายงาน  " onClick="chk_report();"/>
                                     </td>
                                 </tr>
                                 <tr>

@@ -35,7 +35,7 @@ public class HeaderScreen_Report_Param {
                 rs.close();
                 con.close();
             }catch(Exception e){
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return objBean;

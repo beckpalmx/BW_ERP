@@ -37,7 +37,7 @@ public class MmachineDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return returnvalue;
@@ -62,7 +62,7 @@ public class MmachineDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return returnvalue;
@@ -84,7 +84,7 @@ public class MmachineDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         return returnvalue;

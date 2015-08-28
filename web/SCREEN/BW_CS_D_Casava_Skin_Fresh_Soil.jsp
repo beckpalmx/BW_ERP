@@ -13,9 +13,27 @@
         <script type="text/javascript" src="../JS/jscalendar/calendar.js"></script>
         <script type='text/javascript' src='../JS/jscalendar/lang/calendar-th.js'></script>
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
+        
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
+
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                        
+        
         <script type="text/javascript">
             function Chknull() {
-                if (document.getElementById('doc_id').value == '') {
+                if (document.getElementById('doc_id').value === '') {
                     alert('กรุณาใส่ข้อมูลเลขที่เอกสาร');
                 } else
                     document.report.submit();
@@ -23,7 +41,7 @@
             function goAddChild(URLSend)
             {
                 var arryChk = new Array;
-                arryChk[0] = "chkNull"
+                arryChk[0] = "chkNull";
                 if (ChkParameter(arryChk))
                 {
                     window.open(URLSend[0]);
@@ -34,10 +52,10 @@
             {
 
                 var SURL;
-                var r = confirm("คุณต้องการยกเลิกข้อมูลทั้งหมดหรือไม่")
+                var r = confirm("คุณต้องการยกเลิกข้อมูลทั้งหมดหรือไม่");
                 if (r)
                 {
-                    if (getId("status_cancle").value == "1")
+                    if (getId("status_cancle").value === "1")
                     {
                         cancelAction();
                         getId("status_cancle").value = "";
@@ -48,7 +66,7 @@
                     else {
                         SURL = "../JSP/BW_CS_D_Casava_Skin_Fresh_Soil.jsp?status_d=3&chk_all=1";
                         SURL = SURL + "&doc_id=" + getId("doc_id").value;
-                        Delete_Line_no(SURL)
+                        Delete_Line_no(SURL);
                         cancelAction();
                         getId("status_cancle").value = "";
                         getId("child_ck").value = "";
@@ -103,7 +121,7 @@
             }
             function AddHeader()
             {
-                var r = confirm("คุณต้องการบันทึกหรือไม่")
+                var r = confirm("คุณต้องการบันทึกหรือไม่");
                 if (r)
                 {
                     getSave(URLsend('complete_flag,chkNull,doc_id,doc_date,doc_type,doc_time,remark,username', '../JSP/BW_CS_D_Casava_Skin_Fresh_Soil.jsp'));
@@ -116,7 +134,7 @@
             }
             function Delete()
             {
-                var r = confirm("คุณต้องการลบข้อมูลทั้งหมดหรือไม่")
+                var r = confirm("คุณต้องการลบข้อมูลทั้งหมดหรือไม่");
                 if (r)
                 {
                     getSave(URLsend('complete_flag,doc_id,doc_date,doc_type,doc_time,remark,username,status_d', '../JSP/BW_CS_D_Casava_Skin_Fresh_Soil.jsp'));
@@ -132,7 +150,7 @@
                     getId("complete_flag").value = "Y";
                     alert("เอกสารนี้สมบูรณ์เรียบร้อยแล้ว");
                 } else {
-                    getId("complete_flag").value = "N"
+                    getId("complete_flag").value = "N";
                     //alert("เอกสารนี้สมบูรณ์เรียบร้อยแล้ว");
                 }
             }
@@ -152,7 +170,7 @@
                 DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                 HeaderScreen_Process h_p = new HeaderScreen_Process();
                 objs_p = h_p.selectheaderscreen_process(objs_p, "BW_CS_D_Casava_Skin_doc");
-                 // _______________________________________________________________report
+                // _______________________________________________________________report
 
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
                 HeaderScreen_Report r_p = new HeaderScreen_Report();
@@ -163,7 +181,7 @@
                 doc_no = objr_p.getDoc_no();
 
                  //_______________________________________________________________report
-            %>
+%>
             <input name="username" type="hidden" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input type="hidden" id="chkNull" value="doc_id,doc_date,doc_time,doc_type">
             <input type="hidden" id="status_a" value="1"><!-- เป็นการเพิ่มข้อมูลเข้าไป-->
@@ -180,15 +198,12 @@
             <input type="hidden" id="remark" name="remark" value="-">
             <input type="hidden" id="cred_code" name="cred_code" value="000380"> <!-- C.Gigantic Carbon -->
 
-            <table  cellpadding="0"  cellspacing="0">
-                <tr>
-                    <td class="ftopleft"></td>
-                    <td  class="ftopcenter" colspan="2">บันทึกการขายเปลือดสด-เปลือกดิน (BW_CS_D_Casava_Skin_Fresh_Soil)&nbsp;</td>
-                    <td class="ftopright"></td>
-                </tr>
-                <tr>
-                    <td class="fcenterleft"></td>
-                    <td  colspan="2" class="fcentercenter">
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                        <b>บันทึกการขายเปลือดสด-เปลือกดิน (BW_CS_D_Casava_Skin_Fresh_Soil)</b>
+                    </div>                        
+                    <div class="panel-footer">               
                         <div align="left">
                             <table  cellpadding="0" cellspacing="0" >
                                 <tr>
@@ -198,13 +213,16 @@
                                     <td colspan="2" align="right"><b>วันที่มีผลบังคับใช้ : <%=objs_p.getEffective_date()%> </b></td>
                                 </tr>                                
                                 <tr>
-                                    <td class="columnlabel"><b>เอกสารสมบูรณ์</b>&nbsp;</td>
-                                    <td class="columnobject"><input name="complete_flag" type="checkbox" id="complete_flag" value="N" onClick="Checkvalue(this.checked)"></td>
-                                </tr>                                  
+                                    <td class="columnlabel1"><b>เอกสารสมบูรณ์ :</b>&nbsp;</td>
+                                    <td class="columnobject">
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" id="complete_flag" name="complete_flag" value="N" onClick="Checkvalue(this.checked);">
+                                            <label for="complete_flag"></label> 
+                                        </div>                                      
+                                    </td>
+                                </tr>                                        
                                 <tr>
-                                    <td class="columnlabel">
-                                        <!--input name="runner" id="runner" class="bwButton_7" type="button" value="เลขที่เอกสาร" onclick="AjaxRun_id('doc_id', '../JSP/BW_CS_D_Casava_Skin_Fresh_Soil.jsp?runer_id=1');
-                                                this.disabled = true;">&nbsp;-->
+                                    <td class="columnlabel1">
                                     <td class="columnobject">
                                         เลขที่เอกสาร&nbsp;
                                         <input name='doc_id' class='inputs' type="text" id="doc_id" value='' size='10' readonly="readonly"/>
@@ -216,7 +234,7 @@
                                 </tr>
 
                                 <tr>
-                                    <td class="columnlabel">&nbsp;</td>
+                                    <td class="columnlabel1">&nbsp;</td>
                                     <td class="columnobject">
                                         เอกสารที่อนุมัติแล้ว&nbsp;
                                         <input name='doc_id1' type='hidden' id="doc_id1" value='' size='10' />
@@ -231,10 +249,8 @@
                                         <div style="width:100%;">
                                             <table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
                                                 <tr>
-                                                    <td colspan="5" class="h_multi">ข้อมูลกากสด</td>
+                                                    <td colspan="5" class="h_multi">เปลือดสด-เปลือกดิน</td>
                                                     <td colspan="6" class="btn_multi">
-                                                        <!--input type='button' class="bwButton_4" name='but1' value='  เพิ่ม  ' onClick="javascript:goAddChild(URLsend('doc_id,doc_date,status_a,username', 'BW_CS_D_Casava_Skin_doc_1.jsp'))"/>
-                                                        <input type='button' class="bwButton_3" name='but2' value='  ลบ  ' onclick='goDelChild()'/-->
                                                     </td>
                                                 </tr>
 
@@ -260,7 +276,7 @@
 
                                 <br>
                                 <!--tr>
-                                    <td class="columnlabel">&nbsp;</td>
+                                    <td class="columnlabel1">&nbsp;</td>
                                     <td class="columnobject"><textarea class='text_inputs' name="remark" id="remark" cols="45" rows="2"></textarea></td>
                                 </tr-->
 
@@ -277,15 +293,10 @@
                                     </td>
                                 </tr>
                             </table>
-                        </div></td>
-                    <td class="fcenterright"></td>
-                </tr>
-                <tr bordercolor="0069B3">
-                    <td class="ffootleft"></td>
-                    <td  class="ffootcenter" colspan="2"></td>
-                    <td class="ffootright"></td>
-                </tr>
-            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </body>
 </html>

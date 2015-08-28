@@ -29,6 +29,10 @@ public class UserDAO {
         Connection con = dbConnect.openNewConnection();
         String sql = "SELECT * From vmuser_account where username = ? AND password = ? and use_status = 'Y' and delete_flag = 'N'";
         //System.out.println(sql);
+        //System.out.println(" User Name = " + data.getUsername());
+        //System.out.println(" Password = " + data.getPassword());
+        
+        
         PreparedStatement p = null;
             try {
                 p = con.prepareStatement(sql);
@@ -58,7 +62,7 @@ public class UserDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
              return userBean ;
         }
@@ -100,7 +104,7 @@ public class UserDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
              return userBean ;
         }
@@ -139,7 +143,7 @@ public class UserDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }
@@ -164,7 +168,7 @@ public class UserDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }
@@ -197,7 +201,7 @@ public class UserDAO {
                 p.close();
                 con.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }

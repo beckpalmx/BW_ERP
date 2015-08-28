@@ -262,7 +262,7 @@
                                                                                                                 } 
                                 } 
                             } catch (Exception e) {
-                                e.printStackTrace();
+                                e.printStackTrace(System.out);
                             } finally {
                                 if (rs2 != null) {
                                     rs2.close();

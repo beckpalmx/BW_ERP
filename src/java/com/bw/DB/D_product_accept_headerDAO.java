@@ -82,7 +82,7 @@ public class D_product_accept_headerDAO {
                 Copy(DataBean);
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -152,7 +152,7 @@ public class D_product_accept_headerDAO {
                 Copy_suppliers(DataBean);
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -208,7 +208,7 @@ public class D_product_accept_headerDAO {
                 Copy(DataBean);
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -264,7 +264,7 @@ public class D_product_accept_headerDAO {
                 Copy_suppliers(DataBean);
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -292,7 +292,7 @@ public class D_product_accept_headerDAO {
             p.setTimestamp(2, DataBean.getDate());
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -320,7 +320,7 @@ public class D_product_accept_headerDAO {
             p.setTimestamp(2, DataBean.getDate());
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p.close();
@@ -399,7 +399,7 @@ public class D_product_accept_headerDAO {
                 p.executeBatch();
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(!Obj_AL_Detail.isEmpty()){
                 Obj_AL_Detail.clear();
@@ -485,7 +485,7 @@ public class D_product_accept_headerDAO {
                 p.executeBatch();
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(!Obj_AL_Detail.isEmpty()){
                 Obj_AL_Detail.clear();
@@ -522,7 +522,7 @@ public class D_product_accept_headerDAO {
                 objAL.add(Bean);
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             return objAL;
         }
@@ -547,7 +547,7 @@ public class D_product_accept_headerDAO {
                 objAL.add(Bean);
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             return objAL;
         }

@@ -282,17 +282,17 @@
                 UserBean userbean = (UserBean) session.getAttribute("user");
                 DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                 HeaderScreen_Process h_p = new HeaderScreen_Process();
-                objs_p = h_p.selectheaderscreen_process(objs_p, "CS_032");
+                objs_p = h_p.selectheaderscreen_process(objs_p, "BW_CS_031");
                 // _______________________________________________________________report
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
                 HeaderScreen_Report r_p = new HeaderScreen_Report();
-                objr_p = r_p.Fn_Report(objr_p, "S507");
+                objr_p = r_p.Fn_Report(objr_p, "S502");
                 path = objr_p.getPath();
                 lookup = objr_p.getLookup();
                 doc_eff_date = objr_p.getDoc_eff_date();
                 doc_no = objr_p.getDoc_no();
                 //_______________________________________________________________report
-%>
+            %>
             <input type="hidden" name="maxline" value="0" id="maxline">
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input type="hidden" id="chkNull" value="A_doc_id">
@@ -315,10 +315,10 @@
                         <div align="left">
                             <table  cellpadding="0" cellspacing="0" >
                                 <tr>
-                                    <td colspan="2" align="right"><b>หมายเลขเอกสาร : <%=objs_p.getIso_no()%> </b></td>
+                                    <td colspan="2" align="right"><b>หมายเลขเอกสาร : <%=doc_no%> </b></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" align="right"><b>วันที่มีผลบังคับใช้ : <%=objs_p.getEffective_date()%> </b></td>
+                                    <td colspan="2" align="right"><b>วันที่มีผลบังคับใช้ : <%=doc_eff_date%> </b></td>
                                 </tr>
                                 <tr>
                                     <td width="150" class="columnlabel1"><input type="button" class="cgcButton_8" id="runid" name="runid" value="เลขที่เอกสาร" onclick="chk_runid();">&nbsp;</td>
@@ -387,9 +387,11 @@
                                         &nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel1">คุณลักษณะของแป้ง   / Specification</td>
+                                    <!--td class="columnlabel1">คุณลักษณะของแป้ง/Specification</td-->
+                                    <td class="columnlabel1">ชนิด/Type</td>
                                     <td class="columnobject">
                                         <select class='select_cgc3' id="A_so2" name="A_so2" >
+                                            <option selected value="0">-</option>
                                             <option selected value="1">มีกำมะถัน/So2</option>
                                             <option value="2" >ไม่มีกำมะถัน/So2</option>
                                         </select>
@@ -403,18 +405,18 @@
                                         <div style="width:100%;">
                                             <table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
                                                 <tr>
-                                                    <td colspan="6" class="h_multi">ข้อมูลคุณสมบัติ</td>
+                                                    <td colspan="6" class="h_multi">คุณลักษณะของแป้ง/Specification</td>
                                                 </tr>
                                                 <tr>
                                                     <td width="3" rowspan="2" class="row3"></td>
-                                                    <td width="7%" rowspan="2" class="row3">ลำดับที่&nbsp;</td>
-                                                    <td width="30%" rowspan="2" class="row3">ข้อมูลวัตถุดิบ</td>
-                                                    <td colspan="2" class="row3"><div align="center">Specification</div></td>
-                                                    <td width="30%" rowspan="2" class="row3"><div align="center">unit&nbsp;</div></td>
+                                                    <td width="7%" rowspan="2" class="row3">ลำดับ&nbsp;</td>
+                                                    <td width="30%" rowspan="2" class="row3">คุณสมบัติ</td>
+                                                    <td colspan="2" class="row3"><div align="center"></div></td>
+                                                    <td width="30%" rowspan="2" class="row3"><div align="center">&nbsp;</div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="row3" width="15%">Min</td>
-                                                    <td class="row3" width="15%">Max</td>
+                                                    <td class="row3" width="15%"></td>
+                                                    <td class="row3" width="15%"></td>
                                                 </tr>
                                             </table>
                                             <div  id="show">
@@ -436,14 +438,14 @@
                                                 </tr>
                                                 <tr>
                                                     <td width="3" rowspan="2" class="row3"><input type="checkbox" name="chk_all" id="chk_all" value="chk_all" onClick="javascript:ckall(this.checked);"/></td>
-                                                    <td width="7%" rowspan="2" class="row3">ลำดับที่&nbsp;</td>
-                                                    <td width="30%" rowspan="2" class="row3">ข้อมูลวัตถุดิบ</td>
-                                                    <td colspan="2" class="row3"><div align="center">Specification</div></td>
-                                                    <td width="30%" rowspan="2" class="row3"><div align="center">unit&nbsp;</div></td>
+                                                    <td width="7%" rowspan="2" class="row3">ลำดับ&nbsp;</td>
+                                                    <td width="30%" rowspan="2" class="row3">คุณสมบัติ</td>
+                                                    <td colspan="2" class="row3"><div align="center"></div></td>
+                                                    <td width="30%" rowspan="2" class="row3"><div align="center">&nbsp;</div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="row3" width="15%">Min</td>
-                                                    <td class="row3" width="15%">Max</td>
+                                                    <td class="row3" width="15%"></td>
+                                                    <td class="row3" width="15%"></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -483,29 +485,30 @@
                                         <input class='inputs' type="text" name="A_mark_sign_desc" id="A_mark_sign_desc">
                                         <br>
                                         <textarea class='text_inputs' name="A_remark" id="A_remark" cols="30"></textarea>                
-                                     </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel1">&nbsp;</td>
-                                        <td class="columnobject">&nbsp;</td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel1">&nbsp;</td>
-                                        <td class="columnobject"><b>ไม้รอง</b>&nbsp;</td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel1"></td>
-                                        <td class="columnobject">
-                                        <div class="checkbox checkbox-primary">
-                                            <input type="checkbox" id="base_plate1" name="base_plate1" value="N" onClick="chkValue(1);">
-                                            <label for="base_plate1">ไม่ต้องการ</label> 
-                                        </div>
-
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">&nbsp;</td>
+                                    <td class="columnobject">&nbsp;</td>                                        
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">&nbsp;</td>
+                                    <td class="columnobject"><b>ไม้รอง</b>&nbsp;</td>                                        
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1"></td>
+                                    <td class="columnobject">
+                                        
                                         <div class="checkbox checkbox-primary">
                                             <input type="checkbox" id="base_plate2" name="base_plate2" value="N" onClick="chkValue(2);">
                                             <label for="base_plate2">ต้องการ</label>
-                                            <input name="A_base_plate_qty" class='inputs' type="text" id="A_base_plate_qty" size="15">                                            
+                                            <input name="A_base_plate_qty" class='inputs' type="text" id="A_base_plate_qty" size="15">&nbsp;ตัว/Piece                                            
                                         </div>
+                                        
+                                        <div class="checkbox checkbox-primary">
+                                            <input type="checkbox" id="base_plate1" name="base_plate1" value="N" onClick="chkValue(1);">
+                                            <label for="base_plate1">ไม่ต้องการ</label> 
+                                        </div>                                        
 
                                         <div class="checkbox checkbox-primary">
                                             <input type="checkbox" id="base_plate3" name="base_plate3" value="N" onClick="chkValue(3);">
@@ -516,58 +519,58 @@
                                             พาเลท
                                             <input type="hidden" name="A_base_plate" id="A_base_plate">                                            
                                         </div>
-                                        </td>
-                                    </tr>
+                                    </td>
+                                </tr>
 
-                                    <tr>
-                                        <td class="columnlabel1">&nbsp;</td>
-                                        <td class="columnobject">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel1">ผู้แจ้งผลิต</td>
-                                        <td class="columnobject"><input name='A_reporter_id' class='inputs' type="text" id="A_reporter_id" value='' size='10' readonly />
-                                            &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input name='reporter_id_desc' class='inputs' type="text" id="reporter_id_desc" value='' size='30' readonly/></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel1">ผู้อนุมัติ</td>
-                                        <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly />
-                                            &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee1', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly/></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel1">ผู้ควบคุมคุณภาพ</td>
-                                        <td class="columnobject"><input name='A_quality_id' class='inputs' type="text" id="A_quality_id" value='' size='10' readonly />
-                                            &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee2', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input name='quality_id_desc' class='inputs' type="text" id="quality_id_desc" value='' size='30' readonly/></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel1">แผนกผลิต</td>
-                                        <td class="columnobject"><input name='A_production_id' class='inputs' type="text" id="A_production_id" value='' size='10' readonly />
-                                            &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee3', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input name='production_id_desc' class='inputs' type="text" id="production_id_desc" value='' size='30' readonly/></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="columnlabel1">บัญชีคลังสินค้า</td>
-                                        <td class="columnobject"><input name='A_account_id' class='inputs' type="text" id="A_account_id" value='' size='10' readonly />
-                                            &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee4', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                            <input name='account_id_desc' class='inputs' type="text" id="account_id_desc" value='' size='30' readonly/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan='2' class='blankspace'><br>
-                                            <div align="center">
-                                                <a href="javascript:;" onClick="cancle()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
-                                                <a href="javascript:;" onClick="AddHeader()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
-                                                <a href="javascript:;" onClick="Delete()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a>
-                                                <a href="javascript:;"  onclick="Chknull()"><img alt="พิมพ์เอกสาร" class="imgtransparent" src="../IMAGES/BTN_PRINT_90.png" width="80" height="30" border="0"></a>                                        </div>
-                                            <br>                                  
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                       </div>
-                  </div>
+                                <tr>
+                                    <td class="columnlabel1">&nbsp;</td>
+                                    <td class="columnobject">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">ผู้แจ้งผลิต</td>
+                                    <td class="columnobject"><input name='A_reporter_id' class='inputs' type="text" id="A_reporter_id" value='' size='10' readonly />
+                                        &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
+                                        <input name='reporter_id_desc' class='inputs' type="text" id="reporter_id_desc" value='' size='30' readonly/></td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">ผู้อนุมัติ</td>
+                                    <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly />
+                                        &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee1', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
+                                        <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly/></td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">ผู้ควบคุมคุณภาพ</td>
+                                    <td class="columnobject"><input name='A_quality_id' class='inputs' type="text" id="A_quality_id" value='' size='10' readonly />
+                                        &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee2', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
+                                        <input name='quality_id_desc' class='inputs' type="text" id="quality_id_desc" value='' size='30' readonly/></td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">แผนกผลิต</td>
+                                    <td class="columnobject"><input name='A_production_id' class='inputs' type="text" id="A_production_id" value='' size='10' readonly />
+                                        &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee3', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
+                                        <input name='production_id_desc' class='inputs' type="text" id="production_id_desc" value='' size='30' readonly/></td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">บัญชีคลังสินค้า</td>
+                                    <td class="columnobject"><input name='A_account_id' class='inputs' type="text" id="A_account_id" value='' size='10' readonly />
+                                        &nbsp;<a href='javascript:;' onClick="openBrWindow('Vemployee4', 31, 'Search_Config2.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
+                                        <input name='account_id_desc' class='inputs' type="text" id="account_id_desc" value='' size='30' readonly/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan='2' class='blankspace'><br>
+                                        <div align="center">
+                                            <a href="javascript:;" onClick="cancle()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
+                                            <a href="javascript:;" onClick="AddHeader()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
+                                            <a href="javascript:;" onClick="Delete()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a>
+                                            <a href="javascript:;"  onclick="Chknull()"><img alt="พิมพ์เอกสาร" class="imgtransparent" src="../IMAGES/BTN_PRINT_90.png" width="80" height="30" border="0"></a>                                        </div>
+                                        <br>                                  
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </body>

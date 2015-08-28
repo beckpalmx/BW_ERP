@@ -90,7 +90,7 @@ public class Chk_T_warehouse_item {
     return_value = -2;
     }
     } catch (Exception e) {
-    e.printStackTrace();
+    e.printStackTrace(System.out);
     } finally {
     if (rs != null) {
     rs.close();
@@ -122,7 +122,7 @@ public class Chk_T_warehouse_item {
                 return_value = -2;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -167,7 +167,7 @@ public class Chk_T_warehouse_item {
                 return_value = -2;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

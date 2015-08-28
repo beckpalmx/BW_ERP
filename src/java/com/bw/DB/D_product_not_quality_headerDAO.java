@@ -63,7 +63,7 @@ public class D_product_not_quality_headerDAO {
                 }
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs.close();
@@ -124,7 +124,7 @@ public class D_product_not_quality_headerDAO {
                 }
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
 
         }
@@ -158,7 +158,7 @@ public class D_product_not_quality_headerDAO {
                 objAL_input.add(DataBean);
             }
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(rs != null){
                 rs = null;
@@ -171,7 +171,7 @@ public class D_product_not_quality_headerDAO {
             p = con.prepareStatement("DELETE FROM  d_product_not_quality_detail where doc_id ='"+doc_id+"' and delete_flag = 'N' and complete_flag = 'N'");
             p.executeUpdate();
         }catch(Exception e){
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }finally{
             if(p != null){
                 p = null;

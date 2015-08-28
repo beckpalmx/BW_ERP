@@ -51,7 +51,7 @@ public class M_Cassava_price_settingDAO {
             }
             p.executeBatch();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -94,7 +94,7 @@ public class M_Cassava_price_settingDAO {
             }
             p.executeBatch();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -125,7 +125,7 @@ public class M_Cassava_price_settingDAO {
                 p.clearParameters();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (p != null) {
                 p.close();
@@ -170,7 +170,7 @@ public class M_Cassava_price_settingDAO {
             }
             String_return.append("</table>");
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

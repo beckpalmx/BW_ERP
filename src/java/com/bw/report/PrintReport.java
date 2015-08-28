@@ -190,7 +190,7 @@ public class PrintReport {
                 str_return = rs.getString("name_t");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -209,7 +209,7 @@ public class PrintReport {
                 str_return = rs.getString("fullname");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             if (rs != null) {
                 rs.close();

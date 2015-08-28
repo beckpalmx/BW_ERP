@@ -31,7 +31,7 @@ public class MoverheadDAO {
 				con.close();
 			}
 			catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
 		}
 	}
@@ -62,7 +62,7 @@ public class MoverheadDAO {
     		}
     		catch(Exception e)
     		{
-    			e.printStackTrace();
+    			e.printStackTrace(System.out);
     		}
     	}
 	}
@@ -89,7 +89,7 @@ public class MoverheadDAO {
     			con.close();
     		}
     		catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace(System.out);
 			}
     	}
     }
