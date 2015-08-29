@@ -244,7 +244,7 @@
                         UserBean userbean = (UserBean) session.getAttribute("user");
                         DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                         HeaderScreen_Process h_p = new HeaderScreen_Process();
-                        objs_p = h_p.selectheaderscreen_process(objs_p, "CS_036");
+                        objs_p = h_p.selectheaderscreen_detail(objs_p, "CS_036");
                         UtiDatabase objuti = new UtiDatabase();
                         DataBeanD_product_roast_header objBean = new DataBeanD_product_roast_header();
                         D_product_roast_headerDAO objDAO = new D_product_roast_headerDAO();

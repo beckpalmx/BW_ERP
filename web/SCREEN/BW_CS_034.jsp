@@ -141,7 +141,7 @@
                     UserBean userbean = (UserBean) session.getAttribute("user");
                     DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                     HeaderScreen_Process h_p = new HeaderScreen_Process();
-                    objs_p = h_p.selectheaderscreen_process(objs_p, "CS_034");
+                    objs_p = h_p.selectheaderscreen_detail(objs_p, "CS_034");
         %>
         <input name="username" type="hidden" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
         <input type="hidden" id="chkNull" value="doc_id,doc_date,doc_time,doc_type">

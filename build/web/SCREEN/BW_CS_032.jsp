@@ -149,14 +149,18 @@
                 var r = confirm("คุณต้องการบันทึกหรือไม่");
                 if (r)
                 {
-                    var strID = "";
-                    strID += getIDElements('input', 'I_');
-                    strID += getIDElements('input', 'A_');
-                    strID += getIDElements('select', 'A_');
-                    strID += getIDElements('textarea', 'A_');
-                    strID = strID.substr(0, strID.length - 1);
-                    getSave(URLsend('chkNull,' + strID, '../JSP/BW_CS_032.jsp'));
-                    ResetValue();
+                    if (getId("A_doc_id").value === "") {
+                        alert("กรุณาป้อนเลขที่เอกสาร !!! โดยป้อนวันที่ , เวลา , Lot No ,หมายเลขกระสอบ แล้วกดปุ่มสร้างเลขที่เอกสาร");
+                    } else {
+                        var strID = "";
+                        strID += getIDElements('input', 'I_');
+                        strID += getIDElements('input', 'A_');
+                        strID += getIDElements('select', 'A_');
+                        strID += getIDElements('textarea', 'A_');
+                        strID = strID.substr(0, strID.length - 1);
+                        getSave(URLsend('chkNull,' + strID, '../JSP/BW_CS_032.jsp'));
+                        ResetValue();
+                    }
                 }
             }
             function Delete()
@@ -293,17 +297,19 @@
                 DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                 HeaderScreen_Process h_p = new HeaderScreen_Process();
                 UtiDatabase objuti = new UtiDatabase();
-                objs_p = h_p.selectheaderscreen_process(objs_p, "CS_032");
+                objs_p = h_p.selectheaderscreen_detail(objs_p, "BW_CS_032");
                 // _______________________________________________________________report
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
                 HeaderScreen_Report r_p = new HeaderScreen_Report();
                 objr_p = r_p.Fn_Report(objr_p, "S507");
                 path = objr_p.getPath();
                 lookup = objr_p.getLookup();
-                doc_eff_date = objr_p.getDoc_eff_date();
-                doc_no = objr_p.getDoc_no();
+                //doc_eff_date = objr_p.getDoc_eff_date();
+                //doc_no = objr_p.getDoc_no();                
+                doc_eff_date = objs_p.getIso_no();
+                doc_no = objs_p.getEffective_date();                
                 //_______________________________________________________________report
-%>
+            %>
             <div id="toolTipLayer" style="position:absolute; visibility: hidden"></div>
 
 
@@ -339,6 +345,9 @@
                                     <td class="columnlabel1"></td>
                                     <td class="columnobject"><div id="show_status_id" style="font-size: large;"></div></b></td>
                                 </tr>
+                                
+                                
+                                
                                 <tr>
                                     <td width="150" class="columnlabel1"><input type="button" class="cgcButton_8" value="เลขที่เอกสาร" id="bt_run_id" onclick="check_status_doc_id()"></td>
                                     <td width="607" class="columnobject">

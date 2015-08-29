@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BWRP_046" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="10" bottomMargin="5" uuid="cbe23524-cbee-4bf2-9169-e06b549665c9">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="11"/>
+	<property name="ireport.y" value="388"/>
 	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["RP_046"]]></defaultValueExpression>
 	</parameter>
@@ -457,11 +457,11 @@ order by runno]]>
 				<reportElement x="309" y="184" width="15" height="15" uuid="829485f6-ea85-4ba1-a701-45715069f197"/>
 			</rectangle>
 			<textField isBlankWhenNull="true">
-				<reportElement x="309" y="120" width="247" height="60" uuid="9269156c-a9e5-4f84-a5ca-f3e209753904"/>
+				<reportElement x="309" y="120" width="261" height="60" uuid="9269156c-a9e5-4f84-a5ca-f3e209753904"/>
 				<textElement>
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{mark_sign_desc}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{remark}.replace("<br>","")]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="315" y="180" width="29" height="20" uuid="f3f6327a-36b1-47d7-823e-f95a15daa1dd"/>
@@ -859,6 +859,13 @@ order by runno]]>
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{wrap_on_pallet}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="309" y="38" width="261" height="40" uuid="a2b6a00d-66da-4025-998b-40efeb0706f0"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[thaicut.wordwrap($F{remark_adding}, 120)]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

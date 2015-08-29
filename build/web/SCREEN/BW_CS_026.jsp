@@ -22,7 +22,7 @@
         <!-- the following script defines the Calendar.setup helper function, which makes
                adding a calendar a matter of 1 or 2 lines of code. -->
         <script type="text/javascript" src="../JS/jscalendar/calendar-setup.js"></script>
-        
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
         <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
@@ -45,7 +45,7 @@
         <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
 
         <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                 
-        
+
         <script type="text/javascript">
             function ResetValue() {
                 getId("maxline").value = "0";
@@ -171,7 +171,7 @@
                     getId("A_complete_flag").value = "N";
                 }
             }
-            
+
             function CreateNewRow()
             {
                 var intLine = parseInt(getId("maxline").value);
@@ -265,18 +265,20 @@
                 UserBean userbean = (UserBean) session.getAttribute("user");
                 DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                 HeaderScreen_Process h_p = new HeaderScreen_Process();
-                objs_p = h_p.selectheaderscreen_process(objs_p, "BW_CS_026");
+                objs_p = h_p.selectheaderscreen_detail(objs_p, "BW_CS_026");
                 UtiDatabase objuti = new UtiDatabase();
                 // _______________________________________________________________report
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
                 HeaderScreen_Report r_p = new HeaderScreen_Report();
-                objr_p = r_p.Fn_Report(objr_p, "S504");
+                objr_p = r_p.Fn_Report(objr_p, "S503");
                 path = objr_p.getPath();
                 lookup = objr_p.getLookup();
-                doc_eff_date = objr_p.getDoc_eff_date();
-                doc_no = objr_p.getDoc_no();
+                //doc_eff_date = objr_p.getDoc_eff_date();
+                //doc_no = objr_p.getDoc_no();                
+                doc_eff_date = objs_p.getIso_no();
+                doc_no = objs_p.getEffective_date();                
                 //_______________________________________________________________report
-            %>
+%>
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input type="hidden" name="chkNull" id="chkNull" value="A_doc_date">
             <input type="hidden" name="A_status" id="I_status" value="1"><!-- เป็นการเพิ่มข้อมูลเข้าไป-->

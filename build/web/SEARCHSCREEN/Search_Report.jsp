@@ -11,43 +11,53 @@
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=TIS-620">
     <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-    <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+    <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+    <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
     <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+    <script src="../JS/jquery/jquery-2.1.4.js"></script>
+    <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+    <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>   
+
+    <script src="../JS/alertify/alertify.js"></script>        
+
+    <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+    <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+    <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />           
 </head>
 <body>
     <form name="serForm" method="get" action="Search_Report.jsp">
         <input type="hidden" name="table" value="<%=request.getParameter("table")%>">
         <input type="hidden" name="page" value="<%=request.getParameter("page")%>">
         <input type="hidden" name="sentdataToshow" value="<%=request.getParameter("sentdataToshow")%>">
-        <div style="width: 600px;">
-            <table width="64%" cellpadding="0"  cellspacing="0">
-                <tr >
-                    <td width="20" class="ftopleft"></td>
-                    <td  class="ftopcenter" colspan="2">รายงาน&nbsp;</td>
-                    <td width="7" class="ftopright"></td>
-                </tr>
-                <tr >
-                    <td class="fcenterleft"></td>
-                    <td  colspan="2" class="fcentercenter">
-                        <table cellpadding="0" cellspacing="0" >
+        <br>
+        <div class="container">        
+            <div class="panel panel-primary">
+                <div class="panel-heading"> <span class="glyphicon glyphicon-zoom-in" style="color:white"></span>&nbsp;<b>ค้นหาข้อมูล</b></div>
+                <div class="panel-footer">             
+                    <div style="width: 650px;" align="left">
+                        <table width="630" cellpadding="0" cellspacing="0" border="0">
                             <tr>
                                 <td colspan="6"  class="blankspace"></td>
                             </tr>
-
                             <tr>
-                                รหัส :&nbsp;  
-                            <input type="text" name="searchid" value="" size="40"/>
-                            <input type="submit" id="submit" class="cgcButton_6" value="ค้นหา">
+                                <td colspan="3" align="right">เลขที่เอกสาร :&nbsp;</td>
+                                <td align="left"><input class='inputs' type="text" name="searchtxt" value="" size="40"/>
+                                    <input type="submit" id="submit" class="cgcButton_6" value="ค้นหา">
+                                </td>
                             </tr>
-
                             <tr>
-                                <td colspan="3" class="header2"><div align="left">รหัส</div></td>
+                                <td colspan="3" class="header2"><div align="left">เลขที่เอกสาร</div></td>
                                 <td width="62%" colspan="3" class="header2"><div align="left">วันที่</div></td>
                             </tr>
                             <%
                                 String inputtable = request.getParameter("table");
                                 String SQL, SQL2, Encode, strid, memtable, memID, memfillname, sentToshow;
-
 
                                 int start, screen;
                                 int row_page = 13;
@@ -88,8 +98,7 @@
                             <%!ResultSet rs2;
                                 String getshowdata, data2;
                             %>
-                            <%
-                                String sql2;
+                            <%                                String sql2;
                                 if (request.getParameter("searchid") == null) {
                                     sql2 = "select * from " + request.getParameter("table") + " where delete_flag <> 'Y'  order by runno desc limit " + row_page + " offset " + start;
                                     rs2 = Conn.createStatement().executeQuery(sql2);
@@ -103,89 +112,81 @@
                                     data2 = rs2.getString("doc_date");
 
                             %>
-                <tr>
-                    <td colspan="3" align="left"><a  href="#" onClick="gettoShow('<%=getshowdata%>','<%=sentToshow%>')"><%=getshowdata%></a></td>
-                    <td colspan="3" align="left"><%=data2%></td>
-                </tr>
-                <%
+                        <tr>
+                            <td colspan="3" align="left"><a  href="#" onClick="gettoShow('<%=getshowdata%>', '<%=sentToshow%>')" class="link_transparent"><%=getshowdata%></a></td>
+                            <td colspan="3" align="left"><%=data2%></td>
+                        </tr>
+                        <%
 
-
-                    }
-
-                %>
-            </table>
-            <div align="center">
-                <%
-                    if (screen > 1) {
-                        if (request.getParameter("searchid") == null) {%>
-                <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=screen - 1%>&table=<%=request.getParameter("table")%>&sentdataToshow=<%=sentToshow%>">ย้อนกลับ</a>
-                <%
-                } else if (request.getParameter("searchid") != null) {%>
-                <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=screen - 1%>&table=<%=request.getParameter("table")%>&searchid=<%=new String(request.getParameter("searchid").getBytes("ISO8859-1"), "TIS-620")%>&sentdataToshow=<%=sentToshow%>">ย้อนกลับ</a>
-                <%
-                        }
-
-                    }
-                    if ((screen % 10) != 0 && screen <= 10) {
-                        for (int i = 1; i <= 10 && i <= total_page; i++) {
-
-                            if (i == screen) {
-                %>
-                <%="[" + i + "]"%>
-                <%
-                } else {
-                    if (request.getParameter("searchid") == null) {%>
-                | <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=i%>&table=<%=request.getParameter("table")%>&sentdataToshow=<%=sentToshow%>"><%=i%></a> |
-                <%
-                } else if (request.getParameter("searchid") != null) {%>
-                | <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=i%>&table=<%=request.getParameter("table")%>&searchid=<%=new String(request.getParameter("searchid").getBytes("ISO8859-1"), "TIS-620")%>&sentdataToshow=<%=sentToshow%>"><%=i%></a> |
-                <%
                             }
-                        }
 
-                    }
-                } else {
-                    for (int y = (screen - 5); y <= (screen + 5) && y <= total_page; y++) {
-                        if (y == screen) {
-                %>
-                <%="[" + y + "]"%>
-                <%
-                } else {
-                    if (request.getParameter("searchid") == null) {%>
-                | <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=y%>&table=<%=request.getParameter("table")%>&sentdataToshow=<%=sentToshow%>"><%=y%></a> |
-                <%
-                } else if (request.getParameter("searchid") != null) {%>
-                | <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=y%>&table=<%=request.getParameter("table")%>&searchid=<%=new String(request.getParameter("searchid").getBytes("ISO8859-1"), "TIS-620")%>&sentdataToshow=<%=sentToshow%>"><%=y%></a> |
-                <%
+                        %>
+                        </table>
+                        <div align="center">
+                            <%                    if (screen > 1) {
+                                    if (request.getParameter("searchid") == null) {%>
+                            <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=screen - 1%>&table=<%=request.getParameter("table")%>&sentdataToshow=<%=sentToshow%>" class="link_transparent">ย้อนกลับ</a>
+                            <%
+                            } else if (request.getParameter("searchid") != null) {%>
+                            <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=screen - 1%>&table=<%=request.getParameter("table")%>&searchid=<%=new String(request.getParameter("searchid").getBytes("ISO8859-1"), "TIS-620")%>&sentdataToshow=<%=sentToshow%>" class="link_transparent">ย้อนกลับ</a>
+                            <%
+                                    }
+
                                 }
-                            }
-                        }
-                    }
-                    if (screen < total_page) {
-                        if (request.getParameter("searchid") == null) {%>
-                <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=screen + 1%>&table=<%=request.getParameter("table")%>&sentdataToshow=<%=sentToshow%>">ไปข้างหน้า</a>
-                <%
-                } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
-                <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=screen + 1%>&table=<%=request.getParameter("table")%>&searchid=<%=new String(request.getParameter("searchid").getBytes("ISO8859-1"), "TIS-620")%>&sentdataToshow=<%=sentToshow%>">ไปข้างหน้า</a>
-                <%
-                            }
-                        } else {
-                            ;
+                                if ((screen % 10) != 0 && screen <= 10) {
+                                    for (int i = 1; i <= 10 && i <= total_page; i++) {
 
-                        }
-                        rs2.close();
-                        Conn.close();
-                    }
-                %>
-            </div></td>
-            <td class="fcenterright"></td>
-            </tr>
-            <tr bordercolor="0069B3" style="height: 5px">
-                <td width="20" class="ffootleft"></td>
-                <td  class="ffootcenter" colspan="2" ></td>
-                <td width="7" class="ffootright"></td>
-            </tr>
-            </table>
-        </div>
+                                        if (i == screen) {
+                            %>
+                            <%="[" + i + "]"%>
+                            <%
+                            } else {
+                                if (request.getParameter("searchid") == null) {%>
+                            | <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=i%>&table=<%=request.getParameter("table")%>&sentdataToshow=<%=sentToshow%>" class="link_transparent"><%=i%></a> |
+                            <%
+                            } else if (request.getParameter("searchid") != null) {%>
+                            | <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=i%>&table=<%=request.getParameter("table")%>&searchid=<%=new String(request.getParameter("searchid").getBytes("ISO8859-1"), "TIS-620")%>&sentdataToshow=<%=sentToshow%>" class="link_transparent"><%=i%></a> |
+                            <%
+                                        }
+                                    }
+
+                                }
+                            } else {
+                                for (int y = (screen - 5); y <= (screen + 5) && y <= total_page; y++) {
+                                    if (y == screen) {
+                            %>
+                            <%="[" + y + "]"%>
+                            <%
+                            } else {
+                                if (request.getParameter("searchid") == null) {%>
+                            | <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=y%>&table=<%=request.getParameter("table")%>&sentdataToshow=<%=sentToshow%>" class="link_transparent"><%=y%></a> |
+                            <%
+                            } else if (request.getParameter("searchid") != null) {%>
+                            | <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=y%>&table=<%=request.getParameter("table")%>&searchid=<%=new String(request.getParameter("searchid").getBytes("ISO8859-1"), "TIS-620")%>&sentdataToshow=<%=sentToshow%>" class="link_transparent"><%=y%></a> |
+                            <%
+                                            }
+                                        }
+                                    }
+                                }
+                                if (screen < total_page) {
+                                    if (request.getParameter("searchid") == null) {%>
+                            <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=screen + 1%>&table=<%=request.getParameter("table")%>&sentdataToshow=<%=sentToshow%>" class="link_transparent">ไปข้างหน้า</a>
+                            <%
+                            } else if (request.getParameter("searchid") != null && request.getParameter("searchtxt") != null) {%>
+                            <a href="../SEARCHSCREEN/Search_Report.jsp?screen=<%=screen + 1%>&table=<%=request.getParameter("table")%>&searchid=<%=new String(request.getParameter("searchid").getBytes("ISO8859-1"), "TIS-620")%>&sentdataToshow=<%=sentToshow%>" class="link_transparent">ไปข้างหน้า</a>
+                            <%
+                                        }
+                                    } else {
+                                        ;
+
+                                    }
+                                    rs2.close();
+                                    Conn.close();
+                                }
+                            %>
+                        </div>
+                    </div>
+                </div>
+            </div>                        
     </form>
 </body>

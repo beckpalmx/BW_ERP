@@ -163,7 +163,7 @@
                 UserBean userbean = (UserBean) session.getAttribute("user");
                 DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                 HeaderScreen_Process h_p = new HeaderScreen_Process();
-                objs_p = h_p.selectheaderscreen_process(objs_p, "CS_027");
+                objs_p = h_p.selectheaderscreen_detail(objs_p, "CS_027");
                 UtiDatabase objuti = new UtiDatabase();
                 // _______________________________________________________________report
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();

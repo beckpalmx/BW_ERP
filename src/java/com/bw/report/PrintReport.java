@@ -12,7 +12,7 @@ import net.sf.jasperreports.engine.JasperRunManager;
 
 public class PrintReport {
 
-    private static String company_code = "10";
+    private static final String company_code = "10";
     private static String employee_id_s = "";
 
     public void printReport_1(HttpServletRequest request, HttpServletResponse response, InputStream path)

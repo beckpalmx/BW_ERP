@@ -205,17 +205,21 @@
                 UtiDatabase objuti = new UtiDatabase();
                 DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                 HeaderScreen_Process h_p = new HeaderScreen_Process();
-                objs_p = h_p.selectheaderscreen_process(objs_p, "BW_CS_022");
+                objs_p = h_p.selectheaderscreen_detail(objs_p, "BW_CS_022");
                 // _______________________________________________________________report
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
                 HeaderScreen_Report r_p = new HeaderScreen_Report();
                 objr_p = r_p.Fn_Report(objr_p, "S501");
                 path = objr_p.getPath();
                 lookup = objr_p.getLookup();
-                doc_eff_date = objr_p.getDoc_eff_date();
-                doc_no = objr_p.getDoc_no();
+
+                //doc_eff_date = objr_p.getDoc_eff_date();
+                //doc_no = objr_p.getDoc_no();                
+                doc_eff_date = objs_p.getIso_no();
+                doc_no = objs_p.getEffective_date();
+
                 //_______________________________________________________________report
-%>
+            %>
             <input name="username" type="hidden" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input name="D_status" type="hidden" id="D_status" value="3">
             <!-- เป็นการ Delete ข้อมูลทั้งหมด -->
@@ -230,9 +234,7 @@
 
             <div class="container">
                 <div class="panel panel-primary">
-                    <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                        <b>ใบรายงานการจัดซื้อหัวมันสำปะหลังประจำวัน (BW_CS_022)</b>
-                    </div>                        
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;<b>ใบรายงานการจัดซื้อหัวมันสำปะหลังประจำวัน (BW_CS_022)</b></div>                        
                     <div class="panel-footer">                        
                         <div align="left">
                             <table  cellpadding="0" cellspacing="0" >
@@ -302,7 +304,8 @@
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">เปอร์เซนต์มันสด</td>
-                                    <td colspan="3" class="columnobject"><table width="96%" border="0">
+                                    <td colspan="3" class="columnobject">
+                                        <table width="96%" border="0">
                                             <tr>
                                                 <td width="25%"><p>ครั้งที่ 1
                                                         <input name="A_percent_1" class='inputs' type="text" id="A_percent_1" size="4" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
@@ -331,7 +334,8 @@
                                                         <input name="A_percent_8" class='inputs' type="text" id="A_percent_8" size="4" onBlur="Calculator_AVG();" onKeyUp="IsNuber(this.value, this)">
                                                         %</p></td>
                                             </tr>
-                                        </table></td>
+                                        </table>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">
@@ -444,14 +448,16 @@
                                             <a href="javascript:;" onClick="cancle();"><img alt="" class="imgtransparent" src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
                                             <a href="javascript:;" onClick="add();"><img alt="" class="imgtransparent" src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
                                             <a href="javascript:;" onClick="del();"><img alt="" class="imgtransparent" src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a>
-                                            <a href="javascript:;"  onclick="Chknull()"><img alt="พิมพ์เอกสาร" class="imgtransparent" src="../IMAGES/BTN_PRINT_90.png" width="80" height="30" border="0"></a></div>
-                                        <br>      		  	</td>
+                                            <!--a href="javascript:;"  onclick="Chknull()"><img alt="พิมพ์เอกสาร" class="imgtransparent" src="../IMAGES/BTN_PRINT_90.png" width="80" height="30" border="0"></a></div-->
+                                        </div>
+                                        <br>      		  	
+                                    </td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>                                
         </form>
     </body>
 </html>

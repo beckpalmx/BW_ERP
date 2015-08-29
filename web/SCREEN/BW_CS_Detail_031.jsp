@@ -96,12 +96,12 @@
             }
 
         %>
-        <input name="A_username" type="text" id="A_username" value="<%=request.getParameter("A_username")%>" size="30" readonly/>
-        <input type="text" id="A_doc_id" value="<%=doc_id%>">
-        <input type="text" id="A_line_no" value="<%=line_no%>">
-        <input type="text" id="I_status" value="<%=A_status%>">
-        <input type="text" id="U_status" value="<%=U_status%>">
-        <input type="text" id="chkNull" value="A_param">
+        <input name="A_username" type="hidden" id="A_username" value="<%=request.getParameter("A_username")%>" size="30" readonly/>
+        <input type="hidden" id="A_doc_id" value="<%=doc_id%>">
+        <input type="hidden" id="A_line_no" value="<%=line_no%>">
+        <input type="hidden" id="I_status" value="<%=A_status%>">
+        <input type="hidden" id="U_status" value="<%=U_status%>">
+        <input type="hidden" id="chkNull" value="A_param">
         <br>
         <div class="container">
             <div class="panel panel-primary">

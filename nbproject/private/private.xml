@@ -4,11 +4,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/workspace/BW_ERP/web/SCREEN/BW_CS_D_Casava_Skin_doc.jsp</file>
-            <file>file:/D:/workspace/BW_ERP/web/SCREEN/BW_CS_030.jsp</file>
-            <file>file:/D:/workspace/BW_ERP/src/java/com/bw/DB/DBConnect.java</file>
-            <file>file:/D:/workspace/BW_ERP/web/JSP/CS_REPORT.jsp</file>
-            <file>file:/D:/workspace/BW_ERP/src/java/com/bw/report/PrintReport.java</file>
+            <file>file:/D:/workspace/BW_ERP/web/JS/myAjaxFramework.js</file>
+            <file>file:/D:/workspace/BW_ERP/src/java/com/bw/DB/UserDAO.java</file>
+            <file>file:/D:/workspace/BW_ERP/web/SCREEN/BW_CS_026.jsp</file>
+            <file>file:/D:/workspace/BW_ERP/web/SCREEN/BW_CS_032.jsp</file>
+            <file>file:/D:/workspace/BW_ERP/web/JSP/Login.jsp</file>
+            <file>file:/D:/workspace/BW_ERP/web/SEARCHSCREEN/Search_Doc_id.jsp</file>
+            <file>file:/D:/workspace/BW_ERP/web/SCREEN/CS_REPORT_2.jsp</file>
+            <file>file:/D:/workspace/BW_ERP/web/JSP/BW_CS_026.jsp</file>
+            <file>file:/D:/workspace/BW_ERP/web/SEARCHSCREEN/Search_Report.jsp</file>
+            <file>file:/D:/workspace/BW_ERP/src/java/com/bw/Util/Runer_Doc_id.java</file>
         </group>
     </open-files>
 </project-private>
