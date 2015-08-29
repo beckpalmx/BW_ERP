@@ -22,7 +22,7 @@
 		<defaultValueExpression><![CDATA["PB002-54"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select * from vd_product_withdraw_header
+		<![CDATA[select * from vd_product_accept_confirm_header
 WHERE doc_id = $P{DOC_ID}
 and delete_flag <> 'Y'
 order by runno]]>
@@ -49,13 +49,11 @@ order by runno]]>
 	<field name="delete_date" class="java.sql.Timestamp"/>
 	<field name="delete_by" class="java.lang.String"/>
 	<field name="company_id" class="java.lang.String"/>
-	<field name="shift" class="java.lang.String"/>
 	<field name="department_name" class="java.lang.String"/>
 	<field name="reporter_name" class="java.lang.String"/>
 	<field name="approver_name" class="java.lang.String"/>
 	<field name="wh_leader_name" class="java.lang.String"/>
 	<field name="account_name" class="java.lang.String"/>
-	<field name="count_send_complete" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -72,7 +70,7 @@ order by runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="24" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[ใบเบิกพัสดุ/สินค้าสำเร็จรูป]]></text>
+				<text><![CDATA[ใบรับพัสดุ/สินค้าสำเร็จรูป]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement x="429" y="22" width="130" height="20" uuid="362fc15b-0194-48d1-a66b-9f6e942121b1"/>
@@ -320,7 +318,7 @@ order by runno]]>
 					<subreportParameterExpression><![CDATA[$F{doc_id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BWRP_026_SUB.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BWRP_025_SUB.jasper"]]></subreportExpression>
 			</subreport>
 			<line>
 				<reportElement x="554" y="0" width="1" height="420" uuid="9cd631fd-cc14-414d-a698-57f2034d80a9"/>

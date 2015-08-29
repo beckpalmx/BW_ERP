@@ -55,7 +55,7 @@
             function goAddChild(URLSend)
             {
                 var arryChk = new Array;
-                arryChk[0] = "chkNull"
+                arryChk[0] = "chkNull";
                 if (ChkParameter(arryChk))
                 {
                     window.open(URLSend[0]);
@@ -84,7 +84,7 @@
                     else {
                         SURL = "../JSP/CS_028.jsp?status_d=3&chk_all=1&username=" + getId("username").value;
                         SURL = SURL + "&doc_id=" + getId("doc_id").value;
-                        Delete_Line_no(SURL)
+                        Delete_Line_no(SURL);
                         cancelAction();
                         getId("status_cancle").value = "";
                         getId("child_ck").value = "";
@@ -163,7 +163,7 @@
                 UserBean userbean = (UserBean) session.getAttribute("user");
                 DataBean_Screen_Process objs_p = new DataBean_Screen_Process();
                 HeaderScreen_Process h_p = new HeaderScreen_Process();
-                objs_p = h_p.selectheaderscreen_detail(objs_p, "CS_027");
+                objs_p = h_p.selectheaderscreen_detail(objs_p, "BW_CS_027");
                 UtiDatabase objuti = new UtiDatabase();
                 // _______________________________________________________________report
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
@@ -171,8 +171,10 @@
                 objr_p = r_p.Fn_Report(objr_p, "S504");
                 path = objr_p.getPath();
                 lookup = objr_p.getLookup();
-                doc_eff_date = objr_p.getDoc_eff_date();
-                doc_no = objr_p.getDoc_no();
+                //doc_eff_date = objr_p.getDoc_eff_date();
+                //doc_no = objr_p.getDoc_no();                
+                doc_no = objs_p.getIso_no();
+                doc_eff_date = objs_p.getEffective_date(); 
                 //_______________________________________________________________report
             %>
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>

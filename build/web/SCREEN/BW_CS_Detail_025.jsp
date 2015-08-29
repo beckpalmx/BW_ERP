@@ -140,7 +140,8 @@
                 <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
                     <b>ข้อมูลการรับสินค้า</b>
                 </div>                        
-                <div class="panel-footer">                                    <div align="center">
+                <div class="panel-footer">                                    
+                    <div align="center">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
                                 <td colspan="2"  class="blankspace"></td>

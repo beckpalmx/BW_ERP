@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BWRP_026" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59805b8f-3f6e-4a61-ab17-2651160692bd">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="240"/>
+	<property name="ireport.y" value="144"/>
 	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["filexxxx.jrxml"]]></defaultValueExpression>
 	</parameter>
@@ -22,7 +22,7 @@
 		<defaultValueExpression><![CDATA["PB002-54"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select * from vd_product_withdraw_header
+		<![CDATA[select * from vd_product_withdraw_confirm_header
 WHERE doc_id = $P{DOC_ID}
 and delete_flag <> 'Y'
 order by runno]]>
@@ -55,7 +55,6 @@ order by runno]]>
 	<field name="approver_name" class="java.lang.String"/>
 	<field name="wh_leader_name" class="java.lang.String"/>
 	<field name="account_name" class="java.lang.String"/>
-	<field name="count_send_complete" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -320,7 +319,7 @@ order by runno]]>
 					<subreportParameterExpression><![CDATA[$F{doc_id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BWRP_026_SUB.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BWRP_027_SUB.jasper"]]></subreportExpression>
 			</subreport>
 			<line>
 				<reportElement x="554" y="0" width="1" height="420" uuid="9cd631fd-cc14-414d-a698-57f2034d80a9"/>

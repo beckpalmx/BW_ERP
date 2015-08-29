@@ -275,8 +275,8 @@
                 lookup = objr_p.getLookup();
                 //doc_eff_date = objr_p.getDoc_eff_date();
                 //doc_no = objr_p.getDoc_no();                
-                doc_eff_date = objs_p.getIso_no();
-                doc_no = objs_p.getEffective_date();                
+                doc_no = objs_p.getIso_no();
+                doc_eff_date = objs_p.getEffective_date();                
                 //_______________________________________________________________report
 %>
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>

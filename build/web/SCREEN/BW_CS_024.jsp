@@ -305,11 +305,15 @@
                 // _______________________________________________________________report
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
                 HeaderScreen_Report r_p = new HeaderScreen_Report();
-                objr_p = r_p.Fn_Report(objr_p, "S303");
+                objr_p = r_p.Fn_Report(objr_p, "S505");
                 path = objr_p.getPath();
                 lookup = objr_p.getLookup();
-                doc_eff_date = objr_p.getDoc_eff_date();
-                doc_no = objr_p.getDoc_no();
+                path = objr_p.getPath();
+                lookup = objr_p.getLookup();
+                //doc_eff_date = objr_p.getDoc_eff_date();
+                //doc_no = objr_p.getDoc_no();                
+                doc_no = objs_p.getIso_no();
+                doc_eff_date = objs_p.getEffective_date();       
                 //_______________________________________________________________report
             %>
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
