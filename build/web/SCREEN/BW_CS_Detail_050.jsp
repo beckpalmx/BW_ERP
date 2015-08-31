@@ -75,11 +75,11 @@
 
             function Amount(weight, bag, amount) {
                 if (getId(weight).value !== "" && getId(bag).value !== "") {
-                    getId("A_quantity").value = parseInt(getId(weight).value, 10) * parseInt(getId(bag).value, 10);
+                    getId("A_quantity").value = parseFloat(getId(weight).value, 10) * parseFloat(getId(bag).value, 10);
                 }
             }
 
-            function PriceAmount(price_unit, bag, amount) {
+            function PriceAmount(price_unit, bag, total_price) {
                 if (getId(price_unit).value !== "" && getId(bag).value !== "") {
                     getId("A_total_price").value = parseFloat(getId(price_unit).value, 10) * parseFloat(getId(bag).value, 10);
                 }
@@ -88,7 +88,8 @@
         </script>
     </head>
     <body onLoad="select();">
-        <%!            ThaiUtil en;
+        <%!            
+            ThaiUtil en;
             DataBeanD_product_accept_detail objBean;
             D_product_accept_detailDAO objdb;
             UtiDatabase objuti;

@@ -258,9 +258,21 @@
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_quantity_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
                 newCell = newRow.insertCell(7);
-                newCell.setAttribute("width", "20%");
+                newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
-                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"18\" ID=\"P_remark_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
+                //newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_price_unit_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";                
+                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_price_unit_" + intLine + "\" VALUE=\"\" onblur=\"PriceAmount('P_price_unit_" + intLine + "','P_bag_" + intLine + "','P_total_price_" + intLine + "')\">&nbsp;</td>";
+                newCell = newRow.insertCell(8);
+                newCell.setAttribute("width", "10%");
+                newCell.setAttribute("class", "forborder");
+                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_total_price_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";                                
+                
+                newCell.innerHTML += "<INPUT TYPE=\"hidden\" SIZE=\"18\" ID=\"P_remark_" + intLine + "\" VALUE=\"\" >&nbsp;";
+                
+                //newCell = newRow.insertCell(9);
+                //newCell.setAttribute("width", "20%");
+                //newCell.setAttribute("class", "forborder");
+                //newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"18\" ID=\"P_remark_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
 
                 getId("maxline").value = intLine;
             }
@@ -279,9 +291,16 @@
             }
             function Amount(weight, bag, amount) {
                 if (getId(weight).value !== "" && getId(bag).value !== "") {
-                    getId(amount).value = parseInt(getId(weight).value, 10) * parseInt(getId(bag).value, 10);
+                    getId(amount).value = parseFloat(getId(weight).value, 10) * parseFloat(getId(bag).value, 10);
                 }
             }
+            
+            function PriceAmount(price_unit, bag, total_price) {
+                if (getId(price_unit).value !== "" && getId(bag).value !== "") {
+                    getId(total_price).value = parseFloat(getId(price_unit).value, 10) * parseFloat(getId(bag).value, 10);
+                }
+            }            
+            
             function Runid(output_value, input_value) {
                 if (getId(input_value).value === "") {
                     AjaxRun_id('A_doc_id', '../JSP/BW_CS_024.jsp?status_runid=4');
@@ -399,13 +418,15 @@
                                                 <tr>
                                                     <td class="row3" width="3px"><input type="checkbox" name="chk_all" id="chk_all" value="chk_all" onClick="javascript:ckall(this.checked);"/></td>
                                                     <td class="row3" width="7%">No.</td>
-                                                    <td class="row3" width="20%">รายการรับสินค้า&nbsp;</td>
+                                                    <td class="row3" width="20%">รายการ&nbsp;</td>
                                                     <td class="row3" width="12%">คลัง&nbsp;</td>
-                                                    <td class="row3" width="10%">กะ&nbsp;</td>
+                                                    <td class="row3" width="10%">กะ&nbsp;</td>                                                    
                                                     <!--td class="row3" width="10%">น้ำหนัก(กก.)&nbsp;</td-->
                                                     <td class="row3" width="10%">จำนวน&nbsp;</td>
+                                                    <td class="row3" width="10%">ยอดตรวจนับ&nbsp;</td>
+                                                    <td class="row3" width="10%">ราคา/หน่วย&nbsp;</td>
                                                     <td class="row3" width="10%">รวม&nbsp;</td>
-                                                    <td class="row3" width="20%">หมายเหตุ&nbsp;</td>
+                                                    <!--td class="row3" width="20%">หมายเหตุ&nbsp;</td-->
                                                 </tr>
                                             </table>
                                         </div>

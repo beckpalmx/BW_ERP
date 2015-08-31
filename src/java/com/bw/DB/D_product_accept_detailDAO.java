@@ -477,7 +477,7 @@ public class D_product_accept_detailDAO {
                 if (screen >= 1 && screen <= total) {
                     start = (screen - 1) * row_page;
                     SQL = "select "
-                            + "runno,doc_id,line_no,product_id,product_name,weight,bag_qty,shift_name,remark,wh_in,quantity "
+                            + "runno,doc_id,line_no,product_id,product_name,weight,bag_qty,shift_name,remark,wh_in,quantity,price_unit,total_price "
                             + "from vd_product_accept_suppliers_detail "
                             + "where doc_id = '" + doc_id + "' and delete_flag = 'N' and complete_flag = 'N' "
                             + "order by  to_number(line_no,'999') LIMIT " + row_page + " OFFSET " + start;
@@ -493,7 +493,9 @@ public class D_product_accept_detailDAO {
                         //Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("weight")) + "&nbsp;</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("bag_qty")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("quantity")) + "</td>\n");
-                        Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("remark"))+ "&nbsp;</td>\n");
+                        Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("price_unit")) + "</td>\n");
+                        Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("total_price")) + "</td>\n");                        
+                        //Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("remark"))+ "&nbsp;</td>\n");
                         Return_String.append("</tr>\n");
                     }
                     Return_String.append("</table>");
