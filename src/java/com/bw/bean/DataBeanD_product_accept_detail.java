@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.bw.bean;
 
 import java.sql.Timestamp;
@@ -12,6 +11,7 @@ import java.sql.Timestamp;
  * @author B
  */
 public class DataBeanD_product_accept_detail {
+
     private String by;
     private Timestamp date;
     private String doc_id;
@@ -26,6 +26,9 @@ public class DataBeanD_product_accept_detail {
     private String product_name;
     private String wh_id;
     private String quantity;
+    private String price_unit;
+    private String total_price;
+
     /**
      * @return the by
      */
@@ -220,5 +223,33 @@ public class DataBeanD_product_accept_detail {
      */
     public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    /**
+     * @return the price_unit
+     */
+    public String getPrice_unit() {
+        return price_unit;
+    }
+
+    /**
+     * @param price_unit the price_unit to set
+     */
+    public void setPrice_unit(String price_unit) {
+        this.price_unit = price_unit;
+    }
+
+    /**
+     * @return the total_price
+     */
+    public String getTotal_price() {
+        return total_price;
+    }
+
+    /**
+     * @param total_price the total_price to set
+     */
+    public void setTotal_price(String total_price) {
+        this.total_price = total_price;
     }
 }

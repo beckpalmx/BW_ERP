@@ -15,7 +15,9 @@
                 "A_remark",
                 "A_shift",
                 "A_quantity",
-                "A_wh_in"
+                "A_wh_in",
+                "A_price_unit",
+                "A_total_price"                
             };
             ThaiUtil en = new ThaiUtil();
             DataBeanD_product_accept_detail objdb = new DataBeanD_product_accept_detail();
@@ -56,6 +58,8 @@
                 objdb.setShift(request.getParameter(request_String_name[i]) == null ? "" :en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));i+=1;
                 objdb.setQuantity(request.getParameter(request_String_name[i]) == null ? "" :en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));i+=1;
                 objdb.setWh_id(request.getParameter(request_String_name[i]) == null ? "" :en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));i+=1;
+                objdb.setPrice_unit(request.getParameter(request_String_name[i]) == null ? "" :en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));i+=1;
+                objdb.setTotal_price(request.getParameter(request_String_name[i]) == null ? "" :en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));i+=1;
                 objdb.setBy(userbean.getUsername());
                 objdb.setDate(new Timestamp(new java.util.Date().getTime()));
             }

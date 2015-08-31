@@ -78,6 +78,13 @@
                     getId("A_quantity").value = parseInt(getId(weight).value, 10) * parseInt(getId(bag).value, 10);
                 }
             }
+
+            function PriceAmount(price_unit, bag, amount) {
+                if (getId(price_unit).value !== "" && getId(bag).value !== "") {
+                    getId("A_total_price").value = parseFloat(getId(price_unit).value, 10) * parseFloat(getId(bag).value, 10);
+                }
+            }
+
         </script>
     </head>
     <body onLoad="select();">
@@ -86,7 +93,7 @@
             D_product_accept_detailDAO objdb;
             UtiDatabase objuti;
             String line_no, doc_id, A_status, U_status,
-                    product_id, weight, bag_qty, remark, shift, product_name, quantity, wh_in;
+                    product_id, weight, bag_qty, remark, shift, product_name, quantity, wh_in, price_unit, total_price;
         %>
         <%
             line_no = "";
@@ -101,6 +108,8 @@
             product_name = "";
             quantity = "";
             wh_in = "";
+            price_unit = "";
+            total_price = "";
             en = new ThaiUtil();
             objBean = new DataBeanD_product_accept_detail();
             objdb = new D_product_accept_detailDAO();
@@ -118,6 +127,8 @@
                 product_name = objBean.getProduct_name();
                 wh_in = objBean.getWh_id();
                 quantity = objBean.getQuantity();
+                price_unit = objBean.getPrice_unit();
+                total_price = objBean.getTotal_price();
             } else {
                 doc_id = request.getParameter("A_doc_id");
                 A_status = request.getParameter("I_status");
@@ -165,9 +176,9 @@
                                     <input name="A_weight" class='inputs' type="text" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')">                                
                                 </td>
                             </tr-->
-                            
-                                <input name="A_weight" class='inputs' type="hidden" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')">                                
-                                
+
+                            <input name="A_weight" class='inputs' type="hidden" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')">                                
+
                             <tr>
                                 <td class="columnlabel1">จำนวน&nbsp;&nbsp;</td>
                                 <td class="columnobject">
@@ -178,6 +189,20 @@
                                 <td class="columnobject">
                                     <input name='A_quantity' class='inputs' type="text" id="A_quantity" value="<%=quantity%>" size='10' />                                </td>
                             </tr>
+
+                            <tr>
+                                <td class="columnlabel1">ราคา/หน่วย&nbsp;&nbsp;</td>
+                                <td class="columnobject">
+                                    <input name='A_price_unit' class='inputs' type="text" id="A_price_unit" value="<%=price_unit%>" size='10' onblur="PriceAmount('A_price_unit', 'A_bag_qty', 'A_total_price')"/>                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="columnlabel1">ราคารวม&nbsp;&nbsp;</td>
+                                <td class="columnobject">
+                                    <input name='A_total_price' class='inputs' type="text" id="A_total_price" value="<%=total_price%>" size='10' />                                
+                                </td>
+                            </tr>                            
+
                             <tr>
                                 <td class="columnlabel1">หมายเหตุ&nbsp;</td>
                                 <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
@@ -194,7 +219,8 @@
                                     <input type="button" class="cgcButton_5" name="button1" value="แก้ไข" onClick="javascript:goEdit();"/>&nbsp;&nbsp;
                                     <%}
                                     %>
-                                    <input type="button" class="cgcButton_5" name="button2" value="ยกเลิก" onClick="goBack()"/>                                </td>
+                                    <input type="button" class="cgcButton_5" name="button2" value="ยกเลิก" onClick="goBack()"/>                                
+                                </td>
                             </tr>
 
                             <tr>
