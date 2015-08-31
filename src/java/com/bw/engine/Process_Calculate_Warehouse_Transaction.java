@@ -3,19 +3,14 @@
  * and open the template in the editor.
  */
 package com.bw.engine;
-
-import com.bw.DB.DBConnect;
-import com.bw.DB.IMP_SupplierDB;
-import com.bw.DB.IMP_CustomerDB;
-import com.bw.DB.Process_Calculate_TransactionDB;
-import java.sql.Connection;
+import com.bw.DB.Process_Calculate_Warehouse_TransactionDB;
 import java.util.Random;
 
 /**
  *
  * @author 
  */
-public class Process_Calculate_Transaction {
+public class Process_Calculate_Warehouse_Transaction {
 
     /**
      * @param args the command line arguments
@@ -27,12 +22,12 @@ public class Process_Calculate_Transaction {
         try {
 
             Random r = new Random();
-            Process_Calculate_TransactionDB obj = new Process_Calculate_TransactionDB();
+            Process_Calculate_Warehouse_TransactionDB obj = new Process_Calculate_Warehouse_TransactionDB();
             String r_create = Long.toString(Math.abs(r.nextLong()), 36);
 
             //เรียกใช้งานให้ส่ง Parameter ตามนี้ obj.generater_transaction_process(date_from, date_to,process_id,table,doc_type); 
             
-            if (process_for.equalsIgnoreCase("PROCESS_RAWMAT")) {
+            if (process_for.equalsIgnoreCase("PROCESS_WH")) {
                 //System.out.println("Start Process ");
                 obj.generater_transaction_process(doc_date_from, doc_date_to, "PROCESS_RAWMAT", "d_rawmatt_receive", "+", r_create, username, process_for);
             }

@@ -16,7 +16,7 @@ import java.util.Random;
 
 /**
  *
- * @author ball
+ * @author 
  */
 public class IMP_Process_transaction {
 

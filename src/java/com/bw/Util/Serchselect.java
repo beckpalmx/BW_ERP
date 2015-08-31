@@ -23,8 +23,8 @@ public class Serchselect {
             case 0:
                 if (inputdatabase.equals("Mproduct")) {
                     strColoum = new String[]{"product_id", "name_t"};
-                }else if(inputdatabase.equals("vproduct")){
-                    strColoum = new String[]{"product_id","name_t"};
+                } else if (inputdatabase.equals("vproduct")) {
+                    strColoum = new String[]{"product_id", "name_t"};
                 }
                 break;
             case 1:
@@ -55,11 +55,11 @@ public class Serchselect {
                 break;
             case 5:
                 if (inputdatabase.equals("Vuser_account")) {
-                    strColoum = new String[]{"username", "fullname", "password", "emp_id", "priviledge_id", "priviledge_name", "remark", "use_status","user_dept","user_dept_name","dept_id","dept_name"};
+                    strColoum = new String[]{"username", "fullname", "password", "emp_id", "priviledge_id", "priviledge_name", "remark", "use_status", "user_dept", "user_dept_name", "dept_id", "dept_name"};
                 } else if (inputdatabase.equals("Vemployee")) {
                     strColoum = new String[]{"emp_id", "fullname"};
-                }else if(inputdatabase.equals("mdepartment_doc_id")){
-                    strColoum = new String[]{"dept_doc_id","name_t"};
+                } else if (inputdatabase.equals("mdepartment_doc_id")) {
+                    strColoum = new String[]{"dept_doc_id", "name_t"};
                 } else {
                     strColoum = new String[]{"priviledge_id", "name_t"};
                 }
@@ -139,7 +139,7 @@ public class Serchselect {
                 } else if (inputdatabase.equals("mprovince")) {
                     strColoum = new String[]{"prov_code", "name_t"};
                 } else if (inputdatabase.equals("vmsupplier")) {
-                    strColoum = new String[]{"supplier_id", "name_t"};                    
+                    strColoum = new String[]{"supplier_id", "name_t"};
                 } else {
                     strColoum = new String[]{"supplier_id", "name_t", "address1_t", "tambol_code", "t_name", "amp_code", "amp_namt", "prov_code", "prov_tname", "zipcode", "tel", "fax", "contact_name", "remark"};
                 }
@@ -163,10 +163,10 @@ public class Serchselect {
                 strColoum = new String[]{"be", "sg", "remark"};
                 break;
             case 206:
-                strColoum = new String[]{"cassava_type_id","name_t","remark"};
+                strColoum = new String[]{"cassava_type_id", "name_t", "remark"};
                 break;
             case 207:
-                strColoum = new String[]{"supply_type_id","name_t","remark"};
+                strColoum = new String[]{"supply_type_id", "name_t", "remark"};
                 break;
             case 53:
                 if (inputdatabase.equals("mdata_export")) {
@@ -181,15 +181,15 @@ public class Serchselect {
             case 30:
                 if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1") || inputdatabase.equals("Vemployee2")) {
                     strColoum = new String[]{"emp_id", "fullname"};
-                }else if(inputdatabase.equals("vproduct")){
-                    strColoum = new String[]{"product_id","name_t"};
+                } else if (inputdatabase.equals("vproduct")) {
+                    strColoum = new String[]{"product_id", "name_t"};
                 } else {
-                   strColoum = new String[]{"doc_id","doc_date","roast_qty","pack_qty","date_1","date_2","date_3","date_4","percent_p1","percent_p2","percent_p3","percent_p4","percent_y1","percent_y2","percent_y3","percent_y4","reporter_id","checker_id","approver_id","date_5","date_6","date_7","date_8","reporter_id_desc","checker_id_desc","approver_id_desc"};
+                    strColoum = new String[]{"doc_id", "doc_date", "roast_qty", "pack_qty", "date_1", "date_2", "date_3", "date_4", "percent_p1", "percent_p2", "percent_p3", "percent_p4", "percent_y1", "percent_y2", "percent_y3", "percent_y4", "reporter_id", "checker_id", "approver_id", "date_5", "date_6", "date_7", "date_8", "reporter_id_desc", "checker_id_desc", "approver_id_desc"};
                 }
                 break;
             case 33:
-                if(inputdatabase.equalsIgnoreCase("m_sg_config")){
-                    strColoum = new String[]{"be","sg"};
+                if (inputdatabase.equalsIgnoreCase("m_sg_config")) {
+                    strColoum = new String[]{"be", "sg"};
                 }
                 break;
             case 301:
@@ -209,14 +209,18 @@ public class Serchselect {
                 strColoum = new String[]{"machine_id", "name_t", "remark"};
                 break;
             case 21:
-                if (inputdatabase.equals("vproduct")) {
-                    strColoum = new String[]{"product_id", "name_t", "pgroup_id", "pgroup_name", "pcat_id", "pcat_name", "ptype_id", "ptype_name", "price", "min", "max", "safety", "weight", "location_id", "value", "remark"};
+                System.out.println("inputdatabase = " + inputdatabase);
+                if (inputdatabase.equals("vproduct") || inputdatabase.equals("vm_supplier_stock")) {
+                    strColoum = new String[]{"product_id", "name_t", "pgroup_id", "pgroup_name", "pcat_id", "pcat_name", "ptype_id", "ptype_name", "price", "min", "max", "safety", "weight", "location_id", "value", "remark","unit_id","unit_name"};
                 } else if (inputdatabase.equals("mproduct_group")) {
                     strColoum = new String[]{"pgroup_id", "name_t"};
                 } else if (inputdatabase.equals("mproduct_cat")) {
                     strColoum = new String[]{"pcat_id", "name_t"};
                 } else if (inputdatabase.equals("mproduct_type")) {
                     strColoum = new String[]{"ptype_id", "name_t"};
+                } else {
+                    strColoum = new String[]{"unit_id", "name_t"};
+                    System.out.println("strColoum = " + strColoum);
                 }
                 break;
             case 114:
@@ -261,10 +265,10 @@ public class Serchselect {
                     strColoum = new String[]{"warehouse_id", "name_t"};
                 } else if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1") || inputdatabase.equals("Vemployee2") || inputdatabase.equals("Vemployee3") || inputdatabase.equals("Vemployee4")) {
                     strColoum = new String[]{"emp_id", "fullname"};
-                } else if(inputdatabase.equals("Vcustomer")){
-                    strColoum = new String[]{"customer_id","name_t","initial"};
+                } else if (inputdatabase.equals("Vcustomer")) {
+                    strColoum = new String[]{"customer_id", "name_t", "initial"};
                 } else {
-                    strColoum = new String[]{"product_id","name_t"};
+                    strColoum = new String[]{"product_id", "name_t"};
                 }
                 break;
             case 50:
@@ -278,7 +282,7 @@ public class Serchselect {
                 } else if (inputdatabase.equalsIgnoreCase("Vproduct")) {
                     strColoum = new String[]{"product_id", "name_t"};
                 } else if (inputdatabase.equalsIgnoreCase("Vd_rawmatt_receive")) {
-                    strColoum = new String[]{"doc_id", "doc_date", "car_no", "supplier_id", "supplyer_type", "car_date_in", "car_time_in", "car_date_out", "car_time_out", "potato_type", "percent_1", "percent_2", "percent_3", "percent_4", "percent_5", "percent_6", "percent_7", "percent_8", "percent_avg", "pc_ref", "price_ref", "price_accept", "soil_deduct", "contamination_deduct", "other_deduct", "dump_deduct", "brake_income", "product_id", "wh_in", "car_in_weight", "car_out_weight", "total_weight", "deduct_weight", "balance_weight", "total_payment", "amount_deduct", "amount_payment", "remark", "reporter_id", "checker_id", "approve_id","supplier_name","product_name","warehouse_name","reporter_name","checker_name","approve_name","brake_value","percent_tapioca","amount_tapioca","doc_time","complete_flag"};
+                    strColoum = new String[]{"doc_id", "doc_date", "car_no", "supplier_id", "supplyer_type", "car_date_in", "car_time_in", "car_date_out", "car_time_out", "potato_type", "percent_1", "percent_2", "percent_3", "percent_4", "percent_5", "percent_6", "percent_7", "percent_8", "percent_avg", "pc_ref", "price_ref", "price_accept", "soil_deduct", "contamination_deduct", "other_deduct", "dump_deduct", "brake_income", "product_id", "wh_in", "car_in_weight", "car_out_weight", "total_weight", "deduct_weight", "balance_weight", "total_payment", "amount_deduct", "amount_payment", "remark", "reporter_id", "checker_id", "approve_id", "supplier_name", "product_name", "warehouse_name", "reporter_name", "checker_name", "approve_name", "brake_value", "percent_tapioca", "amount_tapioca", "doc_time", "complete_flag"};
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee") || inputdatabase.equalsIgnoreCase("Vemployee1") || inputdatabase.equalsIgnoreCase("Vemployee2")) {
                     strColoum = new String[]{"emp_id", "fullname"};
                 } else {
@@ -289,7 +293,7 @@ public class Serchselect {
                 if (inputdatabase.equalsIgnoreCase("Vemployee") || inputdatabase.equalsIgnoreCase("Vemployee1") || inputdatabase.equalsIgnoreCase("Vemployee2")) {
                     strColoum = new String[]{"emp_id", "fullname"};
                 } else {
-                    strColoum = new String[]{"doc_id", "doc_date", "wh_out", "wh_in", "cassava_date", "amount_cassava", "percent_tapioca", "amount_tapioca", "peel_fresh_date", "percent_moisture", "total_peel_fresh", "amount_peel_fresh", "soil_crust_date", "amount_soil_crust", "total_cassava", "total_tapioca", "reporter_id", "purchase_id", "production_id","reporter_name","purchase_name","production_name","cassava_time_from","cassava_time_to", "amount_cassava_product", "percent_tapioca_product", "amount_tapioca_product"};
+                    strColoum = new String[]{"doc_id", "doc_date", "wh_out", "wh_in", "cassava_date", "amount_cassava", "percent_tapioca", "amount_tapioca", "peel_fresh_date", "percent_moisture", "total_peel_fresh", "amount_peel_fresh", "soil_crust_date", "amount_soil_crust", "total_cassava", "total_tapioca", "reporter_id", "purchase_id", "production_id", "reporter_name", "purchase_name", "production_name", "cassava_time_from", "cassava_time_to", "amount_cassava_product", "percent_tapioca_product", "amount_tapioca_product"};
                 }
                 break;
             case 24:
@@ -297,8 +301,8 @@ public class Serchselect {
                     strColoum = new String[]{"dept_id", "name_t"};
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee") || inputdatabase.equalsIgnoreCase("Vemployee1") || inputdatabase.equalsIgnoreCase("Vemployee2") || inputdatabase.equalsIgnoreCase("Vemployee3")) {
                     strColoum = new String[]{"emp_id", "fullname"};
-                }else if(inputdatabase.equalsIgnoreCase("vproduct")){
-                    strColoum = new String[]{"product_id","name_t"};
+                } else if (inputdatabase.equalsIgnoreCase("vproduct")) {
+                    strColoum = new String[]{"product_id", "name_t"};
                 }
                 break;
             case 25:
@@ -317,12 +321,12 @@ public class Serchselect {
                 strColoum = new String[]{"emp_id", "fullname"};
                 break;
             case 28:
-                if(inputdatabase.equalsIgnoreCase("Vemployee")){
+                if (inputdatabase.equalsIgnoreCase("Vemployee")) {
                     strColoum = new String[]{"emp_id", "fullname"};
-                }else{
-                    strColoum = new String[]{"doc_id","doc_date","shift","approver_id","date_chk","time_chk","be_1","be_2","be_3","be_4","be_5","be_6","m_be","m3","mold","ph","s_1","s_2","s_3","s_4","s_5","s_6","s_7","s_8","s_9","s_10","w_1","w_2","w_3","w_4","w_5","w_6","w_7","w_8","w_9","w_10","d_1","d_2","d_3","st_1","st_2","k_1","approver_name","m_1","b_1"};
+                } else {
+                    strColoum = new String[]{"doc_id", "doc_date", "shift", "approver_id", "date_chk", "time_chk", "be_1", "be_2", "be_3", "be_4", "be_5", "be_6", "m_be", "m3", "mold", "ph", "s_1", "s_2", "s_3", "s_4", "s_5", "s_6", "s_7", "s_8", "s_9", "s_10", "w_1", "w_2", "w_3", "w_4", "w_5", "w_6", "w_7", "w_8", "w_9", "w_10", "d_1", "d_2", "d_3", "st_1", "st_2", "k_1", "approver_name", "m_1", "b_1"};
                 }
-                    
+
                 break;
             case 29:
                 if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1")) {
@@ -332,9 +336,9 @@ public class Serchselect {
                 }
                 break;
             case 32:
-                 if (inputdatabase.equals("Vemployee") ){
-                     strColoum = new String[]{"emp_id","fullname"};
-                 }
+                if (inputdatabase.equals("Vemployee")) {
+                    strColoum = new String[]{"emp_id", "fullname"};
+                }
                 break;
             case 34:
                 if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1") || inputdatabase.equals("Vemployee2")) {
@@ -461,8 +465,6 @@ public class Serchselect {
                 }
                 break;
 
-
-
             default:
                 break;
         }
@@ -505,9 +507,9 @@ public class Serchselect {
             case 5:
                 if (inputdatabase.equals("Vuser_account")) {
                     strID = "username|name_emp|password|emp_id|priviledge_id|name_priviledge|remark|status|user_dept|user_dept_desc|dept_id|dept_id_desc";
-                }else if (inputdatabase.equals("Vemployee")) {
+                } else if (inputdatabase.equals("Vemployee")) {
                     strID = "emp_id|name_emp";
-                }else if(inputdatabase.equals("mdepartment_doc_id")){
+                } else if (inputdatabase.equals("mdepartment_doc_id")) {
                     strID = "user_dept|user_dept_desc";
                 } else {
                     strID = "priviledge_id|name_priviledge";
@@ -568,8 +570,7 @@ public class Serchselect {
                 }
                 break;
             case 15:
-                if (inputdatabase.equals("mcountry"))
-                {
+                if (inputdatabase.equals("mcountry")) {
                     strID = "country_id|country_name";
                 } else if (inputdatabase.equals("mtambol")) {
                     strID = "tambol_code|tambol_name";
@@ -589,7 +590,7 @@ public class Serchselect {
                 } else if (inputdatabase.equals("mprovince")) {
                     strID = "prov_code|prov_name";
                 } else if (inputdatabase.equals("vmsupplier")) {
-                    strID = "supplier_id|name_t";                    
+                    strID = "supplier_id|name_t";
                 } else {
                     strID = "supplier_id|name_t|address1_t|tambol_code|tambol_name|amp_code|amp_name|prov_code|prov_name|zipcode|tel|fax|contact_name|remark";
                 }
@@ -613,10 +614,10 @@ public class Serchselect {
                 strID = "be|sg|remark";
                 break;
             case 206:
-                 strID = "cassava_type_id|name_t|remark";
+                strID = "cassava_type_id|name_t|remark";
                 break;
             case 207:
-                 strID = "supply_type_id|name_t|remark";
+                strID = "supply_type_id|name_t|remark";
                 break;
             case 53:
                 if (inputdatabase.equals("mdata_export")) {
@@ -633,14 +634,14 @@ public class Serchselect {
                     strID = "A_checker_id|checker_id_desc";
                 } else if (inputdatabase.equals("Vemployee2")) {
                     strID = "A_approver_id|approver_id_desc";
-                }else if(inputdatabase.equals("vproduct")){
+                } else if (inputdatabase.equals("vproduct")) {
                     strID = "A_cust_id|cust_id_desc";
                 } else {
                     strID = "A_doc_id|A_doc_date|A_roast_qty|A_pack_qty|A_date_1|A_date_2|A_date_3|A_date_4|A_percent_p1|A_percent_p2|A_percent_p3|A_percent_p4|A_percent_y1|A_percent_y2|A_percent_y3|A_percent_y4|A_reporter_id|A_checker_id|A_approver_id|A_date_5|A_date_6|A_date_7|A_date_8|reporter_id_desc|checker_id_desc|approver_id_desc";
                 }
                 break;
             case 33:
-                if(inputdatabase.equalsIgnoreCase("m_sg_config")){
+                if (inputdatabase.equalsIgnoreCase("m_sg_config")) {
                     strID = "A_be_val|A_sg_val";
                 }
                 break;
@@ -661,15 +662,19 @@ public class Serchselect {
                 strID = "machine_id|name_t|remark";
                 break;
             case 21:
-                if (inputdatabase.equals("vproduct")) {
-                    strID = "product_id|name_t_product|pgroup_id|name_t_pgroup|pcat_id|name_t_pcat|ptype_id|name_t_ptype|price|min|max|safety|warehouse_id|location_id|value|remark_product";
+                System.out.println("inputdatabase = " + inputdatabase);
+                if (inputdatabase.equals("vproduct") || inputdatabase.equals("vm_supplier_stock")) {
+                    strID = "product_id|name_t_product|pgroup_id|name_t_pgroup|pcat_id|name_t_pcat|ptype_id|name_t_ptype|price|min|max|safety|warehouse_id|location_id|value|remark_product|unit_id|unit_name";
                 } else if (inputdatabase.equals("mproduct_group")) {
                     strID = "pgroup_id|name_t_pgroup";
                 } else if (inputdatabase.equals("mproduct_cat")) {
                     strID = "pcat_id|name_t_pcat";
                 } else if (inputdatabase.equals("mproduct_type")) {
                     strID = "ptype_id|name_t_ptype";
+                } else {
+                    strID = "unit_id|unit_name";
                 }
+
                 break;
             case 114:
                 strID = "doc_id|doc_date";
@@ -759,7 +764,7 @@ public class Serchselect {
                     strID = "A_wh_leader_id|wh_leader_id_desc";
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee3")) {
                     strID = "A_account_id|account_id_desc";
-                }else if(inputdatabase.equalsIgnoreCase("vproduct")){
+                } else if (inputdatabase.equalsIgnoreCase("vproduct")) {
                     strID = "A_product_id|product_id_desc";
                 }
                 break;
@@ -787,9 +792,9 @@ public class Serchselect {
                 }
                 break;
             case 28:
-                if(inputdatabase.equalsIgnoreCase("Vemployee")){
+                if (inputdatabase.equalsIgnoreCase("Vemployee")) {
                     strID = "A_approver_id|approver_id_desc";
-                }else{
+                } else {
                     strID = "A_doc_id|A_doc_date|A_shift|A_approver_id|A_date_chk|A_time_chk|A_be_1|A_be_2|A_be_3|A_be_4|A_be_5|A_be_6|A_m_be|A_m3|A_mold|A_ph|A_s_1|A_s_2|A_s_3|A_s_4|A_s_5|A_s_6|A_s_7|A_s_8|A_s_9|A_s_10|A_w_1|A_w_2|A_w_3|A_w_4|A_w_5|A_w_6|A_w_7|A_w_8|A_w_9|A_w_10|A_d_1|A_d_2|A_d_3|A_st_1|A_st_2|A_k_1|approver_id_desc|A_m_1|A_b_1";
                 }
                 break;
@@ -809,9 +814,9 @@ public class Serchselect {
                     strID = "A_approver_id|approver_id_desc";
                 } else if (inputdatabase.equals("Vemployee2")) {
                     strID = "A_quality_id|quality_id_desc";
-                }else if (inputdatabase.equals("Vemployee3")) {
+                } else if (inputdatabase.equals("Vemployee3")) {
                     strID = "A_production_id|production_id_desc";
-                }else if (inputdatabase.equals("Vemployee4")) {
+                } else if (inputdatabase.equals("Vemployee4")) {
                     strID = "A_account_id|account_id_desc";
                 } else {
                     strID = "A_product_id|product_id_desc";
@@ -820,7 +825,7 @@ public class Serchselect {
             case 32:
                 if (inputdatabase.equals("Vemployee")) {
                     strID = "A_approver_id|approver_id_desc";
-                } 
+                }
                 break;
             case 34:
                 if (inputdatabase.equals("Vemployee")) {
@@ -969,8 +974,8 @@ public class Serchselect {
     {
         switch (inputpage) {
             case 0:
-                if(inputdatabase.equals("vproduct")){
-                    strFillName = new String[]{"รหัสสินค้า","ชื่อสินค้า"};
+                if (inputdatabase.equals("vproduct")) {
+                    strFillName = new String[]{"รหัสสินค้า", "ชื่อสินค้า"};
                 }
                 break;
             case 13:
@@ -1020,7 +1025,8 @@ public class Serchselect {
                 strFillName = new String[]{"รหัสคลังสินค้า", "ชื่อคลังสินค้า"};
                 break;
             case 21:
-                if (inputdatabase.equals("vproduct")) {
+                System.out.println("inputdatabase = " + inputdatabase);
+                if (inputdatabase.equals("vproduct") || inputdatabase.equals("vm_supplier_stock")) {
                     strFillName = new String[]{"รหัสสินค้า", "ชื่อสินค้า", "ประภทสินค้า"};
                 } else if (inputdatabase.equals("mproduct_group")) {
                     strFillName = new String[]{"รหัสกลุ่มสินค้า", "ชื่อกลุ่มสินค้า"};
@@ -1028,6 +1034,8 @@ public class Serchselect {
                     strFillName = new String[]{"รหัสชนิดสินค้า", "ชื่อชนิดสินค้า"};
                 } else if (inputdatabase.equals("mproduct_type")) {
                     strFillName = new String[]{"รหัสประเภทสินค้า", "ชื่อประเภทสินค้า"};
+                } else {
+                    strFillName = new String[]{"รหัสหน่วยนับ", "ชื่อหน่วยนับ"};
                 }
                 break;
             case 109:
@@ -1037,10 +1045,10 @@ public class Serchselect {
                 strFillName = new String[]{"ค่า Be'", "ค่า S.G."};
                 break;
             case 206:
-                strFillName = new String[]{"รหัสประเภทพันธุ์มัน","ชื่อพันธุ์มัน"};
+                strFillName = new String[]{"รหัสประเภทพันธุ์มัน", "ชื่อพันธุ์มัน"};
                 break;
             case 207:
-                strFillName = new String[]{"รหัสประเภทSupplyer","ชื่อประเภทSupplyer"};
+                strFillName = new String[]{"รหัสประเภทSupplyer", "ชื่อประเภทSupplyer"};
                 break;
             case 53:
                 if (inputdatabase.equals("mdata_export")) {
@@ -1055,15 +1063,15 @@ public class Serchselect {
             case 30:
                 if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1") || inputdatabase.equals("Vemployee2")) {
                     strFillName = new String[]{"รหัสพนักงาน", "ชื่อ", "รหัสแผนก", "ชื่อแผนก"};
-                }else if(inputdatabase.equals("vproduct")){
-                    strFillName = new String[]{"รหัสสินค้า","ชื่อสินค้า"};
-                }else{
+                } else if (inputdatabase.equals("vproduct")) {
+                    strFillName = new String[]{"รหัสสินค้า", "ชื่อสินค้า"};
+                } else {
                     strFillName = new String[]{"เลขที่เอกสาร", "วันที่บันทึกเอกสาร"};
                 }
                 break;
             case 33:
-                if(inputdatabase.equalsIgnoreCase("m_sg_config")){
-                    strFillName = new String[]{"ค่าbe","ค่าsg"};
+                if (inputdatabase.equalsIgnoreCase("m_sg_config")) {
+                    strFillName = new String[]{"ค่าbe", "ค่าsg"};
                 }
                 break;
             case 301:
@@ -1114,9 +1122,9 @@ public class Serchselect {
                 if (inputdatabase.equals("Mwarehouse")) {
                     strFillName = new String[]{"รหัสคลังสินค้า", "ชื่อคลังสินค้า"};
                 } else if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1") || inputdatabase.equals("Vemployee2") || inputdatabase.equals("Vemployee3") || inputdatabase.equals("Vemployee4")) {
-                    strFillName = new String[]{"รหัสพนักงาน", "ชื่อพนักงาน","รหัสแผนก","ชื่อแผนก"};
-                }else if(inputdatabase.equals("Vcustomer")){
-                    strFillName = new String[]{"รหัสลูกค้า","ชื่อลูกค้า"};
+                    strFillName = new String[]{"รหัสพนักงาน", "ชื่อพนักงาน", "รหัสแผนก", "ชื่อแผนก"};
+                } else if (inputdatabase.equals("Vcustomer")) {
+                    strFillName = new String[]{"รหัสลูกค้า", "ชื่อลูกค้า"};
                 } else {
                     strFillName = new String[]{"รหัสสินค้า", "ชื่อสินค้า"};
                 }
@@ -1132,7 +1140,7 @@ public class Serchselect {
                 } else if (inputdatabase.equalsIgnoreCase("Vproduct")) {
                     strFillName = new String[]{"รหัสสินค้า", "ชื่อสินค้า"};
                 } else if (inputdatabase.equalsIgnoreCase("Vd_rawmatt_receive")) {
-                    strFillName = new String[]{"เลขที่เอกสาร", "วันที่บันทึกเอกสาร","ชื่อผู้ขาย"};
+                    strFillName = new String[]{"เลขที่เอกสาร", "วันที่บันทึกเอกสาร", "ชื่อผู้ขาย"};
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee")) {
                     strFillName = new String[]{"รหัสพนักงาน", "ชื่อ", "รหัสแผนก", "ชื่อแผนก"};
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee1")) {
@@ -1157,8 +1165,8 @@ public class Serchselect {
                     strFillName = new String[]{"รหัสแผนก", "ชื่อแผนก"};
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee") || inputdatabase.equalsIgnoreCase("Vemployee1") || inputdatabase.equalsIgnoreCase("Vemployee2") || inputdatabase.equalsIgnoreCase("Vemployee3")) {
                     strFillName = new String[]{"รหัสพนักงาน", "ชื่อ", "รหัสแผนก", "ชื่อแผนก"};
-                }else if(inputdatabase.equalsIgnoreCase("vproduct")){
-                    strFillName = new String[]{"รหัสสินค้า","ชื่อสินค้า"};
+                } else if (inputdatabase.equalsIgnoreCase("vproduct")) {
+                    strFillName = new String[]{"รหัสสินค้า", "ชื่อสินค้า"};
                 }
                 break;
             case 25:
@@ -1177,9 +1185,9 @@ public class Serchselect {
                 strFillName = new String[]{"รหัสพนักงาน", "ชื่อ", "รหัสแผนก", "ชื่อแผนก"};
                 break;
             case 28:
-                if(inputdatabase.equalsIgnoreCase("Vemployee")){
+                if (inputdatabase.equalsIgnoreCase("Vemployee")) {
                     strFillName = new String[]{"รหัสพนักงาน", "ชื่อ", "รหัสแผนก", "ชื่อแผนก"};
-                }else{
+                } else {
                     strFillName = new String[]{"รหัสเอกสาร", "วันที่บันทึกเอกสาร"};
                 }
                 break;
@@ -1191,9 +1199,9 @@ public class Serchselect {
                 }
                 break;
             case 32:
-                if (inputdatabase.equals("Vemployee") ) {
+                if (inputdatabase.equals("Vemployee")) {
                     strFillName = new String[]{"รหัสพนักงาน", "ชื่อ", "รหัสแผนก", "ชื่อแผนก"};
-                } 
+                }
                 break;
             case 34:
                 if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1") || inputdatabase.equals("Vemployee2")) {
@@ -1336,8 +1344,8 @@ public class Serchselect {
 
         switch (inputpage) {
             case 0:
-                if(inputdatabase.equals("vproduct")){
-                    strColoumShow = new String[]{"product_id","name_t"};
+                if (inputdatabase.equals("vproduct")) {
+                    strColoumShow = new String[]{"product_id", "name_t"};
                 }
                 break;
             case 13:
@@ -1388,7 +1396,8 @@ public class Serchselect {
                 strColoumShow = new String[]{"warehouse_id", "name_t"};
                 break;
             case 21:
-                if (inputdatabase.equals("vproduct")) {
+                System.out.println("inputdatabase = " + inputdatabase);
+                if (inputdatabase.equals("vproduct") || inputdatabase.equals("vm_supplier_stock")) {
                     strColoumShow = new String[]{"product_id", "name_t", "ptype_name"};
                 } else if (inputdatabase.equals("mproduct_group")) {
                     strColoumShow = new String[]{"pgroup_id", "name_t"};
@@ -1396,7 +1405,10 @@ public class Serchselect {
                     strColoumShow = new String[]{"pcat_id", "name_t"};
                 } else if (inputdatabase.equals("mproduct_type")) {
                     strColoumShow = new String[]{"ptype_id", "name_t"};
+                } else {
+                    strColoumShow = new String[]{"unit_id", "name_t"};
                 }
+
                 break;
             case 109:
                 strColoumShow = new String[]{"doc_id", "cust_name"};
@@ -1423,15 +1435,15 @@ public class Serchselect {
             case 30:
                 if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1") || inputdatabase.equals("Vemployee2")) {
                     strColoumShow = new String[]{"emp_id", "fullname", "dept_id", "depart_name"};
-                }else if(inputdatabase.equals("vproduct")){
-                    strColoumShow = new String[]{"product_id","name_t"};
+                } else if (inputdatabase.equals("vproduct")) {
+                    strColoumShow = new String[]{"product_id", "name_t"};
                 } else {
                     strColoumShow = new String[]{"doc_id", "doc_date"};
                 }
                 break;
             case 33:
-                if(inputdatabase.equalsIgnoreCase("m_sg_config")){
-                    strColoumShow = new String[]{"be","sg"};
+                if (inputdatabase.equalsIgnoreCase("m_sg_config")) {
+                    strColoumShow = new String[]{"be", "sg"};
                 }
                 break;
             case 301:
@@ -1478,13 +1490,13 @@ public class Serchselect {
                 }
                 break;
             case 31:
-               if (inputdatabase.equals("Mwarehouse")) {
+                if (inputdatabase.equals("Mwarehouse")) {
                     strColoumShow = new String[]{"warehouse_id", "name_t"};
                 } else if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1") || inputdatabase.equals("Vemployee2") || inputdatabase.equals("Vemployee3") || inputdatabase.equals("Vemployee4")) {
                     strColoumShow = new String[]{"emp_id", "fullname", "dept_id", "depart_name"};
-                }else if(inputdatabase.equals("Vcustomer")){
-                    strColoumShow = new String[]{"customer_id","name_t"};
-               } else {
+                } else if (inputdatabase.equals("Vcustomer")) {
+                    strColoumShow = new String[]{"customer_id", "name_t"};
+                } else {
                     strColoumShow = new String[]{"product_id", "name_t"};
                 }
                 break;
@@ -1499,7 +1511,7 @@ public class Serchselect {
                 } else if (inputdatabase.equalsIgnoreCase("Vproduct")) {
                     strColoumShow = new String[]{"product_id", "name_t"};
                 } else if (inputdatabase.equalsIgnoreCase("Vd_rawmatt_receive")) {
-                    strColoumShow = new String[]{"doc_id", "doc_date","supplier_name"};
+                    strColoumShow = new String[]{"doc_id", "doc_date", "supplier_name"};
 
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee") || inputdatabase.equalsIgnoreCase("Vemployee1") || inputdatabase.equalsIgnoreCase("Vemployee2")) {
                     strColoumShow = new String[]{"emp_id", "fullname", "dept_id", "depart_name"};
@@ -1519,8 +1531,8 @@ public class Serchselect {
                     strColoumShow = new String[]{"dept_id", "name_t"};
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee") || inputdatabase.equalsIgnoreCase("Vemployee1") || inputdatabase.equalsIgnoreCase("Vemployee2") || inputdatabase.equalsIgnoreCase("Vemployee3")) {
                     strColoumShow = new String[]{"emp_id", "fullname", "dept_id", "depart_name"};
-                }else if(inputdatabase.equalsIgnoreCase("vproduct")){
-                    strColoumShow = new String[]{"product_id","name_t"};
+                } else if (inputdatabase.equalsIgnoreCase("vproduct")) {
+                    strColoumShow = new String[]{"product_id", "name_t"};
                 }
                 break;
             case 25:
@@ -1539,11 +1551,11 @@ public class Serchselect {
                 strColoumShow = new String[]{"emp_id", "fullname", "dept_id", "depart_name"};
                 break;
             case 28:
-                 if(inputdatabase.equalsIgnoreCase("Vemployee")){
-                     strColoumShow = new String[]{"emp_id", "fullname", "dept_id", "depart_name"};
-                 }else{
-                     strColoumShow = new String[]{"doc_id", "doc_date"};
-                 }
+                if (inputdatabase.equalsIgnoreCase("Vemployee")) {
+                    strColoumShow = new String[]{"emp_id", "fullname", "dept_id", "depart_name"};
+                } else {
+                    strColoumShow = new String[]{"doc_id", "doc_date"};
+                }
                 break;
             case 29:
                 if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1")) {
@@ -1555,7 +1567,7 @@ public class Serchselect {
             case 32:
                 if (inputdatabase.equals("Vemployee")) {
                     strColoumShow = new String[]{"emp_id", "fullname", "dept_id", "depart_name"};
-                } 
+                }
                 break;
             case 34:
                 if (inputdatabase.equals("Vemployee") || inputdatabase.equals("Vemployee1") || inputdatabase.equals("Vemployee2")) {

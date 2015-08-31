@@ -5,32 +5,21 @@
 package com.bw.DB;
 
 import com.bw.Util.UtiDatabase;
-import com.bw.bean.DataBean_Transaction_Process;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
 
 /**
  *
  * @author 
  */
-public class IMP_Process_transaction_sale_DB {
+public class Process_Calculate_Warehouse_TransactionDB {
 
     UtiDatabase objuti;
 
     public void generater_transaction_process(String date_from, String date_to, String process_id, String table, String doc_type, String r, String username, String process_for) throws Exception {
-        String Str_Writer = "", SQL = null, sql1 = "";
-        String s_price_total = "0.00";
-        Double d_price_total = 0.00;
-
+        String Str_Writer = "", SQL = null;
         //DBConnect objcon = new DBConnect();
         Connection con_mysql = new DBConnect().openNewConnectionMySQL();
         Connection con_postgress = new DBConnect().openNewConnection();
@@ -42,23 +31,14 @@ public class IMP_Process_transaction_sale_DB {
 
         String table_h, table_d, prod_code = "";
 
-        if (process_for.equalsIgnoreCase("TAPIOCA")) {
-            table_h = "d_ticketsale_doc";
-            table_d = "d_ticketsale";
+        if (process_for.equalsIgnoreCase("CASAVA")) {
+            table_h = "d_ticketbuy_doc";
+            table_d = "d_ticketbuy";
             prod_code = " and (prod_code in ('01')) ";
-            sql1 = "insert into " + table_d + " (ticket_text,truck_no,date_in,time_in,date_out"
-                    + ",time_out,cust_name,prod_code,prod_name,load_in,load_out,net_wght,cost_unt,date1,month1,year1,create_date,create_by,doc_id,doc_date,doc_time,date2,month2,year2,cust_code,cust_group,supply_type_id)"
-                    + " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
         } else {
-            table_h = "d_casava_skin_doc";
-            table_d = "d_casava_skin";
-            prod_code = " and (prod_code in ('02','03','04')) ";
-
-            sql1 = "insert into " + table_d + " (ticket_text,truck_no,date_in,time_in,date_out"
-                    + ",time_out,cust_name,prod_code,prod_name,load_in,load_out,net_wght,cost_unt,date1,month1,year1,create_date,create_by,doc_id,doc_date,doc_time,date2,month2,year2,cust_code,cust_group,supply_type_id,price_unit,price_total)"
-                    + " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
+            table_h = "d_wood_fuel_doc";
+            table_d = "d_wood_fuel";
+            prod_code = " and (prod_code in ('03','06','07','08','15','16','17')) ";
         }
 
         System.out.println(date_from + " - " + date_to);
@@ -71,11 +51,11 @@ public class IMP_Process_transaction_sale_DB {
 
         try {
 
-            //SQL = "select ticket_text,truck_no,date_in,time_in,date_out,time_out,load_in,load_out,net_wght,cust_name,prod_code,prod_name"
+            //SQL = "select ticket_text,truck_no,date_in,time_in,date_out,time_out,load_in,load_out,net_wght,cred_name,prod_code,prod_name"
             SQL = "select * "
                     + ",substring(Date_In,1,2) as date1,substring(Date_In,4,2) as month1,(cast(substring(Date_In,7,4) as SIGNED )+543) as year1"
                     + ",substring(Date_Out,1,2) as date2,substring(Date_Out,4,2) as month2,(cast(substring(Date_Out,7,4) as SIGNED )+543) as year2"
-                    + " from  ticketsale "
+                    + " from ticketbuy "
                     + " where ticket_text <> '' "
                     + prod_code
                     + " and str_to_date(date_in,'%d/%m/%Y')"
@@ -111,7 +91,9 @@ public class IMP_Process_transaction_sale_DB {
                 SQL_Search = "Select Count(ticket_text) As num from  " + table_d + " where ticket_text ='" + rs.getString("ticket_text") + "' and delete_flag <> 'Y'  ";
                 int a = objuti.numRowdatabase(SQL_Search);
                 if (a == 0) {
-
+                    String sql1 = "insert into " + table_d + " (ticket_text,truck_no,date_in,time_in,date_out"
+                            + ",time_out,cred_name,prod_code,prod_name,load_in,load_out,net_wght,cost_unt,date1,month1,year1,create_date,create_by,doc_id,doc_date,doc_time,date2,month2,year2,cred_code,cred_group,supply_type_id)"
+                            + " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                     System.out.println("sql1 = " + sql1);
                     PreparedStatement p = null;
                     p = con_postgress.prepareStatement(sql1);
@@ -123,7 +105,7 @@ public class IMP_Process_transaction_sale_DB {
                     p.setString(5, objuti.NotNull(rs.getString("date2")) + "-" + objuti.NotNull(rs.getString("month2")) + "-" + objuti.NotNull(rs.getString("year2")));
                     //p.setString(5, objuti.NotNull(rs.getString("date_out")));
                     p.setString(6, objuti.NotNull(rs.getString("time_out")));
-                    p.setString(7, objuti.NotNull(rs.getString("cust_name")));
+                    p.setString(7, objuti.NotNull(rs.getString("cred_name")));
                     p.setString(8, objuti.NotNull(rs.getString("prod_code")));
                     p.setString(9, objuti.NotNull(rs.getString("prod_name")));
                     p.setString(10, objuti.NotNull(rs.getString("load_in")));
@@ -141,21 +123,20 @@ public class IMP_Process_transaction_sale_DB {
                     p.setString(22, objuti.NotNull(rs.getString("date2")));
                     p.setString(23, objuti.NotNull(rs.getString("month2")));
                     p.setString(24, objuti.NotNull(rs.getString("year2")));
-                    p.setString(25, objuti.NotNull(rs.getString("cust_code")));
-                    p.setString(26, objuti.NotNull(rs.getString("cust_group")));
+                    p.setString(25, objuti.NotNull(rs.getString("cred_code")));
+                    p.setString(26, objuti.NotNull(rs.getString("cred_group")));
 
                     if (process_for.equalsIgnoreCase("CASAVA")) {
 
-                        if (rs.getString("cust_group").trim().equals("ชาวไร่")) {
-                            System.out.println(rs.getString("cust_group") + "1");
+                        if (rs.getString("cred_group").trim().equals("ชาวไร่")) {
+                            System.out.println(rs.getString("cred_group") + "1");
                             p.setString(27, "1");
-                        } else if (rs.getString("cust_group").trim().equals("มันลาน")) {
-                            System.out.println(rs.getString("cust_group") + "2");
+                        } else if (rs.getString("cred_group").trim().equals("มันลาน")) {
+                            System.out.println(rs.getString("cred_group") + "2");
                             p.setString(27, "2");
-                        } else if (rs.getString("cust_group").trim().equals("อคส")) {
-                            System.out.println(rs.getString("cust_group") + "3");
-                            p.setString(27, "3");
-                            //} else if (rs.getString("cust_group").trim().equals("")) {
+                        } else if (rs.getString("cred_group").trim().equals("อคส")) {
+                            System.out.println(rs.getString("cred_group") + "3");
+                            p.setString(27, "3");                                                //} else if (rs.getString("cust_group").trim().equals("")) {
                         } else {
                             System.out.println("-" + "4");
                             p.setString(27, "-");
@@ -164,26 +145,13 @@ public class IMP_Process_transaction_sale_DB {
                         p.setString(27, "-");
                     }
 
-                    if (!process_for.equalsIgnoreCase("TAPIOCA")) {
-                        p.setString(28, objuti.NotNull(rs.getString("cost_unt")));
-                        d_price_total = Double.parseDouble(rs.getString("net_wght")) * Double.parseDouble(rs.getString("cost_unt"));
-                        s_price_total = Double.toString(d_price_total);
-                        p.setString(29, s_price_total);
-                    }
-
                     p.executeUpdate();
                 } else {
                     String sql2 = "update " + table_d + " set ticket_text=?,truck_no=?,date_in=?,time_in=?,date_out=?"
-                            //+ ",time_out=?,cust_name=?,prod_code=?,prod_name=?,load_in=?,load_out=?,net_wght=?,cost_unt=?,date1=?,month1=?,year1=?"
-                            + ",time_out=?,cust_name=?,prod_code=?,prod_name=?,load_in=?,load_out=?,net_wght=?,date1=?,month1=?,year1=?,date2=?,month2=?,year2=?"
-                            + ",update_date=?,update_by=?,cust_code=?,cust_group=?,supply_type_id=?";
-
-                    if (!process_for.equalsIgnoreCase("TAPIOCA")) {
-                        sql2 = sql2 + ",price_unit=?,price_total=?";
-                    }
-                    
-                    sql2 = sql2 + " where ticket_text = '" + rs.getString("ticket_text") + "'";
-                    
+                            //+ ",time_out=?,cred_name=?,prod_code=?,prod_name=?,load_in=?,load_out=?,net_wght=?,cost_unt=?,date1=?,month1=?,year1=?"
+                            + ",time_out=?,cred_name=?,prod_code=?,prod_name=?,load_in=?,load_out=?,net_wght=?,date1=?,month1=?,year1=?,date2=?,month2=?,year2=?"
+                            + ",update_date=?,update_by=?,cred_code=?,cred_group=?,supply_type_id=?"
+                            + " where ticket_text = '" + rs.getString("ticket_text") + "'";
                     System.out.println("sql2 = " + sql2);
                     PreparedStatement p = null;
                     p = con_postgress.prepareStatement(sql2);
@@ -195,7 +163,7 @@ public class IMP_Process_transaction_sale_DB {
                     p.setString(5, objuti.NotNull(rs.getString("date2")) + "-" + objuti.NotNull(rs.getString("month2")) + "-" + objuti.NotNull(rs.getString("year2")));
                     //p.setString(5, objuti.NotNull(rs.getString("date_out")));
                     p.setString(6, objuti.NotNull(rs.getString("time_out")));
-                    p.setString(7, objuti.NotNull(rs.getString("cust_name")));
+                    p.setString(7, objuti.NotNull(rs.getString("cred_name")));
                     p.setString(8, objuti.NotNull(rs.getString("prod_code")));
                     p.setString(9, objuti.NotNull(rs.getString("prod_name")));
                     p.setString(10, objuti.NotNull(rs.getString("load_in")));
@@ -210,34 +178,27 @@ public class IMP_Process_transaction_sale_DB {
                     p.setString(18, objuti.NotNull(rs.getString("year2")));
                     p.setTimestamp(19, timestamp);
                     p.setString(20, "System Import");
-                    p.setString(21, objuti.NotNull(rs.getString("cust_code")));
-                    p.setString(22, objuti.NotNull(rs.getString("cust_group")));
+                    p.setString(21, objuti.NotNull(rs.getString("cred_code")));
+                    p.setString(22, objuti.NotNull(rs.getString("cred_group")));
 
                     if (process_for.equalsIgnoreCase("CASAVA")) {
 
-                        if (rs.getString("cust_group").trim().equals("ชาวไร่")) {
-                            System.out.println(rs.getString("cust_group") + "1");
+                        if (rs.getString("cred_group").trim().equals("ชาวไร่")) {
+                            System.out.println(rs.getString("cred_group") + "1");
                             p.setString(23, "1");
-                        } else if (rs.getString("cust_group").trim().equals("มันลาน")) {
-                            System.out.println(rs.getString("cust_group") + "2");
+                        } else if (rs.getString("cred_group").trim().equals("มันลาน")) {
+                            System.out.println(rs.getString("cred_group") + "2");
                             p.setString(23, "2");
-                        } else if (rs.getString("cust_group").trim().equals("อคส")) {
-                            System.out.println(rs.getString("cust_group") + "3");
+                        } else if (rs.getString("cred_group").trim().equals("อคส")) {
+                            System.out.println(rs.getString("cred_group") + "3");
                             p.setString(23, "3");
-                            //} else if (rs.getString("cust_group").trim().equals("")) {
+                            //} else if (rs.getString("cred_group").trim().equals("")) {
                         } else {
                             System.out.println("-" + "4");
                             p.setString(23, "-");
                         }
                     } else {
                         p.setString(23, "-");
-                    }
-
-                    if (!process_for.equalsIgnoreCase("TAPIOCA")) {
-                        p.setString(24, objuti.NotNull(rs.getString("cost_unt")));
-                        d_price_total = Double.parseDouble(rs.getString("net_wght")) * Double.parseDouble(rs.getString("cost_unt"));
-                        s_price_total = Double.toString(d_price_total);
-                        p.setString(25, s_price_total);
                     }
 
                     p.executeUpdate();

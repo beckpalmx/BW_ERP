@@ -196,7 +196,7 @@
                             </tr>
 
                             <tr>
-                                <td colspan='2' class='blankspace'>                                </td>
+                                <td colspan='2' class='blankspace'></td>
                             </tr>
                         </table>
                     </div>

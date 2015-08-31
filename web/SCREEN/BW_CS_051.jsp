@@ -204,7 +204,7 @@
                 newCell = newRow.insertCell(2);
                 newCell.setAttribute("width", "20%");
                 newCell.setAttribute("class", "forborder");
-                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"12\" ID=\"P_product_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'Vproduct&textinput=P_product_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\" ></td>";
+                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"12\" ID=\"P_product_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'m_supplier_stock&textinput=P_product_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\" ></td>";
                 newCell = newRow.insertCell(3);
                 newCell.setAttribute("width", "12%");
                 newCell.setAttribute("class", "forborder");

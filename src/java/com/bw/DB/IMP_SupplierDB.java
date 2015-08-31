@@ -20,7 +20,7 @@ import java.util.Random;
 
 /**
  *
- * @author ball
+ * @author 
  */
 public class IMP_SupplierDB {
 

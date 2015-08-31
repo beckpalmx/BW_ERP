@@ -6,7 +6,7 @@ package com.bw.bean;
 
 /**
  *
- * @author ball
+ * @author 
  */
 public class DataBean_Transaction_Process {
 

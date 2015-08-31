@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 
 /**
  *
- * @author BALL
+ * @author 
  */
 public class VD_Casava_TicketDAO {
 

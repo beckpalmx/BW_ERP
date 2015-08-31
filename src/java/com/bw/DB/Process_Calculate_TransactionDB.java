@@ -21,7 +21,7 @@ import com.bw.Util.Decimal_Place;
 
 /**
  *
- * @author ball
+ * @author 
  */
 public class Process_Calculate_TransactionDB {
 

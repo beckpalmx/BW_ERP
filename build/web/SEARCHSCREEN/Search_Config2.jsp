@@ -87,26 +87,7 @@
                 <div class="panel-footer">                                
 
                     <div style="width: 700px;" align="center">
-                        <table width="630" cellpadding="0" cellspacing="0" border="0">
-                            <!--tr>
-                                <td width="90"><input type="button" class="cgcButton_5" name="bt1" value="ย้อนกลับ" onClick="javascript:window.close();"/>
-                                </td>
-                                <td width="46">รหัส :&nbsp;  </td>
-                                <td width="199"><input class='inputs' type='text' name="searchid" id="searchid" value="" size="40"/></td>
-                                <td width="199">&nbsp;</td>
-                                <td width="16" colspan="2"></td>
-                            </tr>
-
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>ชื่อ &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                <td><input class='inputs' type='text' name="searchtxt" id="searchtxt" value="" size="40"/></td>
-                                <td>&nbsp;<input type="button"  class="cgcButton_6" value="ค้นหา" onclick="EncodeBefor_Search()">
-                                </td>
-                                <td colspan="2">                                    
-                                </td>
-                            </tr-->
-                            
+                        <table width="630" cellpadding="0" cellspacing="0" border="0">                            
                             <tr>                                
                                 <td colspan="3" align="right">รหัส :&nbsp;  </td>
                                 <td align="left"><input class='inputs' type="text" name="searchid" value="" size="40"/>
@@ -190,7 +171,8 @@
                             %>
                             <%!ResultSet rs2;
                                 String getshowdata;%>
-                            <%                                    rs2 = null;
+                            <%                                    
+                                rs2 = null;
                                 try {
                                     String sql2;
                                     if (request.getParameter("searchid") == null && request.getParameter("searchtxt") == null) {

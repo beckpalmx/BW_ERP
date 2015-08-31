@@ -11,7 +11,7 @@ import java.sql.Timestamp;
  *
  * @author com02
  */
-public class ProductBean {
+public class ProductBean {    
     private int runno;
     private String warehouse_id;
     private String product_id;
@@ -38,6 +38,7 @@ public class ProductBean {
     private String location_id;
     private String unit_id;
     private String delete_fag;
+    private String table_name;    
 
     /**
      * @return the runno
@@ -401,6 +402,20 @@ public class ProductBean {
      */
     public void setDelete_fag(String delete_fag) {
         this.delete_fag = delete_fag;
+    }
+
+    /**
+     * @return the table_name
+     */
+    public String getTable_name() {
+        return table_name;
+    }
+
+    /**
+     * @param table_name the table_name to set
+     */
+    public void setTable_name(String table_name) {
+        this.table_name = table_name;
     }
 
 

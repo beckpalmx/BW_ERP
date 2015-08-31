@@ -478,7 +478,7 @@ public class D_product_accept_detailDAO {
                         Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("product_id")) + "&nbsp;"+objuti.NotNull(rs.getString("product_name")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='12%'>" + objuti.NotNull(rs.getString("wh_in")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("shift_name")) + "</td>\n");
-                        Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("weight")) + "&nbsp;</td>\n");
+                        //Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("weight")) + "&nbsp;</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("bag_qty")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("quantity")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("remark"))+ "&nbsp;</td>\n");

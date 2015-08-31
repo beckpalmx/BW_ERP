@@ -12,7 +12,7 @@ import java.sql.PreparedStatement;
 
 /**
  *
- * @author BALL
+ * @author 
  */
 public class D_ticketsale_doc_DAO {
     private int Returnvalue;

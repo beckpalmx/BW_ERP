@@ -226,7 +226,7 @@
                 newCell = newRow.insertCell(2);
                 newCell.setAttribute("width", "20%");
                 newCell.setAttribute("class", "forborder");
-                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"12\" ID=\"P_product_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'Vproduct&textinput=P_product_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\"></td>";
+                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"12\" ID=\"P_product_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'vm_supplier_stock&textinput=P_product_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\"></td>";
                 newCell = newRow.insertCell(3);
                 newCell.setAttribute("width", "12%");
                 newCell.setAttribute("class", "forborder");
@@ -239,20 +239,25 @@
                     select_text += "<option value=\"" + Test_array[i] + "\">" + Test_array1[i] + "</option>";
                 }
                 select_text += "</select></td>";
-                newCell.innerHTML = select_text;
+                
+                weight_text = "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"1\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;";
+                
+                newCell.innerHTML = select_text + weight_text;                
+
+                
+                //newCell = newRow.insertCell(5);
+                //newCell.setAttribute("width", "10%");
+                //newCell.setAttribute("class", "forborder");
+                //newCell.innerHTML = "<td><INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"1\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;</td>";
                 newCell = newRow.insertCell(5);
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
-                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;</td>";
+                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_bag_" + intLine + "\" VALUE=\"\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;</td>";
                 newCell = newRow.insertCell(6);
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
-                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_bag_" + intLine + "\" VALUE=\"\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;</td>";
-                newCell = newRow.insertCell(7);
-                newCell.setAttribute("width", "10%");
-                newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_quantity_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
-                newCell = newRow.insertCell(8);
+                newCell = newRow.insertCell(7);
                 newCell.setAttribute("width", "20%");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"18\" ID=\"P_remark_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
@@ -397,9 +402,9 @@
                                                     <td class="row3" width="20%">รายการรับสินค้า&nbsp;</td>
                                                     <td class="row3" width="12%">คลัง&nbsp;</td>
                                                     <td class="row3" width="10%">กะ&nbsp;</td>
-                                                    <td class="row3" width="10%">น้ำหนัก(กก.)&nbsp;</td>
-                                                    <td class="row3" width="10%">จำนวน(ก/ส)&nbsp;</td>
-                                                    <td class="row3" width="10%">น้ำหนักรวม&nbsp;</td>
+                                                    <!--td class="row3" width="10%">น้ำหนัก(กก.)&nbsp;</td-->
+                                                    <td class="row3" width="10%">จำนวน&nbsp;</td>
+                                                    <td class="row3" width="10%">รวม&nbsp;</td>
                                                     <td class="row3" width="20%">หมายเหตุ&nbsp;</td>
                                                 </tr>
                                             </table>

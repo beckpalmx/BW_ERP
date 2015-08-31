@@ -67,14 +67,14 @@
                 window.close();
             }
             function select() {
-                if (getId("U_status").value != "") {
+                if (getId("U_status").value !== "") {
                     getId("A_shift").value = getId("selectshift").value;
                 }
 
             }
 
             function Amount(weight, bag, amount) {
-                if (getId(weight).value != "" && getId(bag).value != "") {
+                if (getId(weight).value !== "" && getId(bag).value !== "") {
                     getId("A_quantity").value = parseInt(getId(weight).value, 10) * parseInt(getId(bag).value, 10);
                 }
             }
@@ -159,18 +159,22 @@
                                 <td class="columnobject"><%=objuti.ShowSelectBox("select shift_id,name_t from mshift order by runno", "shift_id", "name_t", "A_shift")%>
                                     <input type="hidden" id="selectshift" value="<%=shift%>">&nbsp;</td>
                             </tr>
-                            <tr>
+                            <!--tr>
                                 <td class="columnlabel1">น้ำหนัก(กก.)&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name="A_weight" class='inputs' type="text" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')">                                </td>
-                            </tr>
+                                    <input name="A_weight" class='inputs' type="text" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')">                                
+                                </td>
+                            </tr-->
+                            
+                                <input name="A_weight" class='inputs' type="hidden" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')">                                
+                                
                             <tr>
-                                <td class="columnlabel1">จำนวน(ก/ส)&nbsp;&nbsp;</td>
+                                <td class="columnlabel1">จำนวน&nbsp;&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_bag_qty' class='inputs' type="text" id="A_bag_qty" value="<%=bag_qty%>" size='10' onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')"/>                                </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1">น้ำหนักรวม&nbsp;&nbsp;</td>
+                                <td class="columnlabel1">รวม&nbsp;&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_quantity' class='inputs' type="text" id="A_quantity" value="<%=quantity%>" size='10' />                                </td>
                             </tr>
@@ -194,7 +198,8 @@
                             </tr>
 
                             <tr>
-                                <td colspan='2' class='blankspace'>                                </td>
+                                <td colspan='2' class='blankspace'>                                
+                                </td>
                             </tr>
                         </table>
                     </div>

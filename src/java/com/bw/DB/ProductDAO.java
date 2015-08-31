@@ -9,7 +9,6 @@ import com.bw.bean.ProductBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +18,9 @@ public class ProductDAO {
     public boolean insert(ProductBean proBean) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
-        String sql = "INSERT INTO mproduct(product_id,pgroup_id,ptype_id,pcat_id,name_t,price,min,max,safety,quantity,weight,location_id,value,remark,create_date) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        
+        String sql = "INSERT INTO " + proBean.getTable_name() + "(product_id,pgroup_id,ptype_id,pcat_id,name_t,price,min,max,safety,quantity,weight,location_id,value,remark,create_date,unit_id) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        
         PreparedStatement p = null;
 
         try {
@@ -39,6 +40,7 @@ public class ProductDAO {
             p.setString(13, proBean.getValue());
             p.setString(14, proBean.getRemark());
             p.setTimestamp(15, proBean.getCreate_date());
+            p.setString(16, proBean.getUnit_id());
 
             p.executeUpdate();
 
@@ -58,7 +60,7 @@ public class ProductDAO {
     public void  updateDel(ProductBean proBean) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
-        String sql = "UPDATE mproduct SET delete_flag = 'Y' where product_id=?";
+        String sql = "UPDATE " + proBean.getTable_name() + " SET delete_flag = 'Y' where product_id=?";
         PreparedStatement p = null;
 
         try {
@@ -77,7 +79,7 @@ public class ProductDAO {
     public void  update(ProductBean proBean) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
-        String sql = "UPDATE mproduct SET pgroup_id=?,ptype_id=?,pcat_id=?,name_t=?,price=?,min=?,max=?,safety=?,quantity=?,weight=?,location_id=?,value=?,remark=?,update_date=? where product_id = ?";
+        String sql = "UPDATE " + proBean.getTable_name() + " SET pgroup_id=?,ptype_id=?,pcat_id=?,name_t=?,price=?,min=?,max=?,safety=?,quantity=?,weight=?,location_id=?,value=?,remark=?,update_date=?,unit_id=? where product_id = ?";
         PreparedStatement p = null;
 
         try {
@@ -96,7 +98,8 @@ public class ProductDAO {
             p.setString(12, proBean.getValue());
             p.setString(13, proBean.getRemark());
             p.setTimestamp(14, proBean.getUpdate_date());
-            p.setString(15, proBean.getProduct_id());
+            p.setString(15, proBean.getUnit_id());
+            p.setString(16, proBean.getProduct_id());
             p.executeUpdate();
 
         } finally {
@@ -108,13 +111,13 @@ public class ProductDAO {
             }
         }
     }
-    public ProductBean selectData(String id) throws Exception {
+    public ProductBean selectData(String id,String table_name) throws Exception {
         
         ProductBean proBean = null;
         DBConnect dbConnect = new DBConnect();
         ResultSet rs = null;
         Connection con = dbConnect.openNewConnection();
-        String sql = "SELECT * From mproduct where product_id = ? AND delete_flag <> 'Y'";
+        String sql = "SELECT * From " + table_name + " where product_id = ? AND delete_flag <> 'Y'";
         PreparedStatement p = null;
             try {
                 p = con.prepareStatement(sql);

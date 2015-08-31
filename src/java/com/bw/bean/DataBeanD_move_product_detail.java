@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 
 /**
  *
- * @author BALL
+ * @author 
  */
 public class DataBeanD_move_product_detail {
     private Timestamp date;
