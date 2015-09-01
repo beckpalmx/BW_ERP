@@ -157,6 +157,14 @@ public class PrintReport {
         response.setHeader("Content-Disposition", "inline; filename=\"filename.pdf\"");
         response.setBufferSize(1024);
         String report_code = (String) request.getParameter("report_code");
+        String doc_no = (String) request.getParameter("doc_no");
+        String doc_eff_date = (String) request.getParameter("doc_eff_date");
+        String sub_menu_id = (String) request.getParameter("sub_menu_id"); 
+        
+        System.out.println("doc_no = " + doc_no);
+        System.out.println("doc_eff_date = " + doc_eff_date);
+        System.out.println("sub_menu_id = " + sub_menu_id);
+        
         HashMap<String, Object> hashMap = new HashMap<String, Object>();
         //hashMap.put("SUB_DOC_ID", docId);
         hashMap.put("SUBREPORT_DIR", (new StringBuilder(String.valueOf(request.getSession().getServletContext().getRealPath("REPORT/")))).append("/").toString());

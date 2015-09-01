@@ -147,22 +147,22 @@
             }
             function AddHeader()
             {
-                
-                    var r = confirm("คุณต้องการบันทึกหรือไม่");
-                    if (r)
-                    {
-                        var strID = "";
-                        strID += getIDElements('input', 'I_');
-                        strID += getIDElements('input', 'A_');
-                        strID += getIDElements('select', 'A_');
-                        strID += getIDElements('input', 'P_');
-                        strID += getIDElements('select', 'P_');
-                        strID = strID.substr(0, strID.length - 1);
 
-                        //alert(strID);
-                        getSave(URLsend('chkNull,maxline,' + strID, '../JSP/BW_CS_050.jsp'));
-                        ResetValue();
-                    }                
+                var r = confirm("คุณต้องการบันทึกหรือไม่");
+                if (r)
+                {
+                    var strID = "";
+                    strID += getIDElements('input', 'I_');
+                    strID += getIDElements('input', 'A_');
+                    strID += getIDElements('select', 'A_');
+                    strID += getIDElements('input', 'P_');
+                    strID += getIDElements('select', 'P_');
+                    strID = strID.substr(0, strID.length - 1);
+
+                    //alert(strID);
+                    getSave(URLsend('chkNull,maxline,' + strID, '../JSP/BW_CS_050.jsp'));
+                    ResetValue();
+                }
 
             }
             function Delete()

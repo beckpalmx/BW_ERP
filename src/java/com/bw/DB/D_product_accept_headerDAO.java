@@ -119,8 +119,8 @@ public class D_product_accept_headerDAO {
             "company_id",
             "count_send_complete",
             "wh_leader_id",
-            "account_id"            
-                
+            "account_id"
+
         };
         objuti = new UtiDatabase();
         objStringQuery = new StringQuery();
@@ -153,9 +153,9 @@ public class D_product_accept_headerDAO {
             p.setString(i, objuti.Count_sendcomplete("d_product_accept_suppliers_header", DataBean.getDoc_id(), DataBean.getComplete_flag(), con));
             i += 1;
             p.setString(i, DataBean.getWh_leader_id());
-            i += 1;            
+            i += 1;
             p.setString(i, DataBean.getAccount_id());
-            i += 1;                        
+            i += 1;
             p.executeUpdate();
             p = null;
             p = con.prepareStatement("INSERT INTO d_product_accept_suppliers_detail"
@@ -209,7 +209,7 @@ public class D_product_accept_headerDAO {
             "complete_flag",
             "company_id",
             "count_send_complete"
-                   
+
         };
         objuti = new UtiDatabase();
         objStringQuery = new StringQuery();
@@ -279,7 +279,7 @@ public class D_product_accept_headerDAO {
             "company_id",
             "count_send_complete",
             "wh_leader_id",
-            "account_id"                 
+            "account_id"
         };
         objuti = new UtiDatabase();
         objStringQuery = new StringQuery();
@@ -310,9 +310,9 @@ public class D_product_accept_headerDAO {
             p.setString(i, objuti.Count_sendcomplete("d_product_accept_suppliers_header", DataBean.getDoc_id(), DataBean.getComplete_flag(), con));
             i += 1;
             p.setString(i, DataBean.getWh_leader_id());
-            i += 1;            
+            i += 1;
             p.setString(i, DataBean.getAccount_id());
-            i += 1;                                    
+            i += 1;
             p.setString(i, DataBean.getDoc_id());
             i += 1;
             p.executeUpdate();
@@ -506,7 +506,8 @@ public class D_product_accept_headerDAO {
             "create_date",
             "company_id",
             "wh_leader_id",
-            "account_id"
+            "account_id",
+            "complete_flag"
         };
         String[] String_detail = new String[]{
             "line_no",
@@ -523,7 +524,8 @@ public class D_product_accept_headerDAO {
             "wh_in",
             "quantity",
             "price_unit",
-            "total_price"
+            "total_price",
+            "complete_flag"            
 
         };
         ArrayList<DataBeanD_product_accept_detail> Obj_AL_Detail = new ArrayList<DataBeanD_product_accept_detail>();
@@ -555,9 +557,11 @@ public class D_product_accept_headerDAO {
             p.setString(i, DataBean_header.getCompany_id());
             i += 1;
             p.setString(i, DataBean_header.getWh_leader_id());
-            i += 1;            
+            i += 1;
             p.setString(i, DataBean_header.getAccount_id());
-            i += 1;                        
+            i += 1;
+            p.setString(i, "Y");
+            i += 1;            
             p.executeUpdate();
             Obj_AL_Detail = Copy_Detail_suppliers(Obj_AL_Detail, rs, con, DataBean_header);
             if (!Obj_AL_Detail.isEmpty()) {
@@ -579,7 +583,16 @@ public class D_product_accept_headerDAO {
                     p.setString(13, Obj_AL_Detail.get(loop).getQuantity());
                     p.setString(14, Obj_AL_Detail.get(loop).getPrice_unit());
                     p.setString(15, Obj_AL_Detail.get(loop).getTotal_price());
+                    p.setString(16, "Y");                    
                     p.addBatch();
+                        
+                    String SQL_Update_Last_Price = " Update m_supplier_stock set price = '" + Obj_AL_Detail.get(loop).getPrice_unit() 
+                                                 + "' where product_id = '" + Obj_AL_Detail.get(loop).getProduct_id() + "'" ; 
+                    System.out.println(Obj_AL_Detail.get(loop).getProduct_id() + " = Price/Unit = " + Obj_AL_Detail.get(loop).getPrice_unit()); 
+                    
+                    System.out.println(SQL_Update_Last_Price);
+                    
+                    
                 }
                 p.executeBatch();
             }
@@ -646,7 +659,7 @@ public class D_product_accept_headerDAO {
                 Bean.setWh_id(rs.getString("wh_in"));
                 Bean.setQuantity(rs.getString("quantity"));
                 Bean.setPrice_unit(rs.getString("price_unit"));
-                Bean.setTotal_price(rs.getString("total_price"));                
+                Bean.setTotal_price(rs.getString("total_price"));
                 Bean.setAmount(rs.getString("quantity"));
                 objAL.add(Bean);
             }

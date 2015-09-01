@@ -8,9 +8,13 @@
     PrintReport report = new PrintReport();
 %>
 <%
+    
     report_code = (String) request.getParameter("report_code");
     type = Integer.parseInt((String) request.getParameter("type_report"));
     path = getServletConfig().getServletContext().getResourceAsStream("/REPORT/" + report_code + ".jasper");
+    
+    
+    
     if (type == 1) {
         report.printReport_1(request, response, path);
     } else if (type == 2) {

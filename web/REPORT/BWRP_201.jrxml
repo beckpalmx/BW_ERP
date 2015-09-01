@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BWRP_201" pageWidth="860" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="840" leftMargin="10" rightMargin="10" topMargin="15" bottomMargin="15" uuid="e9746944-f469-46a0-ba19-569d68268019">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="265"/>
+	<property name="ireport.x" value="429"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["BWRP_201.jrxml"]]></defaultValueExpression>
@@ -10,10 +10,10 @@
 		<defaultValueExpression><![CDATA["บริษัท แป้งตะวันออกเฉียงเหนือ (1987) จำกัด"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="iso_doc_ref" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["F-A-031- R 01"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["F-A-008 Rev : 03"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="iso_doc_date" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["26/01/48"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["01/01/52"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["D:\\STR\\BW\\REPORT\\BW\\"]]></defaultValueExpression>

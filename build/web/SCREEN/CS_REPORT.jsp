@@ -1,7 +1,10 @@
 
-<%@page import="com.bw.bean.UserBean"%>
-<%@page import="com.bw.Util.UtiDatabase"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.bw.Util.UtiDatabase"%>
+<%@page import="com.bw.Util.HeaderScreen_Report"%>
+<%@page import="com.bw.bean.DataBean_Screen_Report"%>
+<%@page import="com.bw.bean.UserBean"%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <%!    String path, lookup;
@@ -50,7 +53,7 @@
         <script type="text/javascript">
 
             var my_window = null;
-            
+
             function openBrown(tableID, SentToShow) {
                 if (my_window === null) {
                     my_window = window.open("Search_Report.jsp?table=" + tableID + "&sentdataToshow=" + SentToShow, '', 'status=1,width=560,height=500');
@@ -138,12 +141,27 @@
         </script>
 
     </head>
+    <%    String doc_eff_date, doc_no, sub_menu_id; %>
+    <%
+        lookup = (String) request.getParameter("lookup");
+        path = (String) request.getParameter("report_code");
+
+        DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
+        HeaderScreen_Report r_p = new HeaderScreen_Report();
+        objr_p = r_p.Fn_Report(objr_p, path);
+        sub_menu_id = objr_p.getSub_menu_id();
+        doc_eff_date = objr_p.getDoc_eff_date();
+        doc_no = objr_p.getDoc_no();
+    %>    
 
     <body onUnload="closepopup()">
         <form name="report" method="post" action="../JSP/CS_REPORT.jsp" target="_blank">
             <% UtiDatabase objuti = new UtiDatabase();%>
             <input type="hidden" name="report_code" value="<%=path%>">
             <input type="hidden" name="lookup" value="<%=lookup%>">
+            <input type="hidden" name="sub_menu_id" value="<%=sub_menu_id%>">
+            <input type="hidden" name="doc_eff_date" value="<%=doc_eff_date%>">
+            <input type="hidden" name="doc_no" value="<%=doc_no%>">            
 
             <div class="container">
                 <div class="panel panel-primary">

@@ -1,4 +1,8 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.bw.Util.HeaderScreen_Report"%>
+<%@page import="com.bw.bean.DataBean_Screen_Report"%>
+<%@page import="com.bw.bean.UserBean"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <%!
     String path;
@@ -9,6 +13,19 @@
     lookup = (String) request.getParameter("lookup");
 %>
 <html>
+        <%!    String doc_eff_date, doc_no, report_username, sub_menu_id ;
+    %>
+    <%
+        lookup = (String) request.getParameter("lookup");
+        path = (String) request.getParameter("report_code");
+
+        DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
+        HeaderScreen_Report r_p = new HeaderScreen_Report();
+        objr_p = r_p.Fn_Report(objr_p, path);
+        sub_menu_id = objr_p.getSub_menu_id();
+        doc_eff_date = objr_p.getDoc_eff_date();
+        doc_no = objr_p.getDoc_no();
+    %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CGC ERP</title>
