@@ -17,7 +17,7 @@
                 "A_quantity",
                 "A_wh_in",
                 "A_price_unit",
-                "A_total_price"                
+                "A_total_price"
             };
             ThaiUtil en = new ThaiUtil();
             DataBeanD_product_accept_detail objdb = new DataBeanD_product_accept_detail();

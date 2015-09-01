@@ -14,20 +14,20 @@
         <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">        
         <script type="text/javascript" src="../JS/myAjaxFramework.js"></script>
         <script type="text/javascript">
-            function goAdd(){
+            function goAdd() {
                 var arrayChk = new Array;
-                arrayChk[0]  = "chkNull";
-                if(ChkParameter(arrayChk))
+                arrayChk[0] = "chkNull";
+                if (ChkParameter(arrayChk))
                 {
-                    if(parseInt(getId("bag_qty").value, 10) > parseInt(getId("A_amount").value, 10)){
+                    if (parseInt(getId("bag_qty").value, 10) > parseInt(getId("A_amount").value, 10)) {
                         alert("กรุณากรอกยอดตรวจนับให้ถูกต้อง");
-                    }else{
+                    } else {
                         var strID = getIDElements('input', 'I_');
                         strID += getIDElements('input', 'A_');
                         strID += getIDElements('select', 'A_');
                         strID += getIDElements('textarea', 'A_');
-                        strID = strID.substr(0, strID.length-1);
-                        getSave_Detail(URLsend(strID,'../JSP/BW_CS_Detail_025.jsp'),"../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=", "show", getId("A_doc_id").value);
+                        strID = strID.substr(0, strID.length - 1);
+                        getSave_Detail(URLsend(strID, '../JSP/BW_CS_Detail_025.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=", "show", getId("A_doc_id").value);
                     }
                 }
             }
@@ -35,19 +35,19 @@
             {
 
                 var arrayChk = new Array;
-                arrayChk[0]  = "chkNull";
-                if(ChkParameter(arrayChk))
+                arrayChk[0] = "chkNull";
+                if (ChkParameter(arrayChk))
                 {
-                    if(parseInt(getId("A_amount").value, 10) > parseInt(getId("bag_qty").value, 10)){
+                    if (parseInt(getId("A_amount").value, 10) > parseInt(getId("bag_qty").value, 10)) {
                         alert("กรุณากรอกยอดตรวจนับให้ถูกต้อง");
                         getId("A_amount").select();
-                    }else{
+                    } else {
                         var strID = getIDElements('input', 'U_');
                         strID += getIDElements('input', 'A_');
                         strID += getIDElements('textarea', 'A_');
-                        strID = strID.substr(0, strID.length-1);
-                        alert(strID)
-                        getSave_Detail(URLsend(strID,'../JSP/BW_CS_Detail_025.jsp'),"../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=", "show", getId("A_doc_id").value);
+                        strID = strID.substr(0, strID.length - 1);
+                        alert(strID);
+                        getSave_Detail(URLsend(strID, '../JSP/BW_CS_Detail_025.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=", "show", getId("A_doc_id").value);
 
                     }
                 }
@@ -56,8 +56,8 @@
             {
                 window.close();
             }
-            function select(){
-                if(getId("U_status").value != ""){
+            function select() {
+                if (getId("U_status").value !== "") {
                     getId("A_shift").value = getId("selectshift").value;
                 }
 
@@ -73,41 +73,41 @@
                     product_id, weight, bag_qty, remark, shift, amount, product_name, quantity, wh_in;
         %>
         <%
-                    line_no = "";
-                    doc_id = "";
-                    A_status = "";
-                    U_status = "";
-                    product_id = "";
-                    weight = "";
-                    bag_qty = "";
-                    remark = "";
-                    shift = "";
-                    amount = "";
-                    wh_in = "";
-                    quantity = "";
-                    product_name = "";
-                    en = new ThaiUtil();
-                    objBean = new DataBeanD_product_accept_detail();
-                    objdb = new D_product_accept_confirm_detailDAO();
-                    objuti = new UtiDatabase();
-                    if (request.getQueryString().indexOf("line_no_") != -1) {
-                        U_status = "2";
-                        line_no = request.getQueryString().substring(8, request.getQueryString().indexOf("="));
-                        doc_id = request.getParameter("A_doc_id");
-                        objBean = objdb.Return_Edit_suppliers(doc_id, line_no);
-                        product_id = objBean.getProduct_id();
-                        weight = objBean.getWeight();
-                        bag_qty = objBean.getBag_qty();
-                        remark = objBean.getRemark();
-                        shift = objBean.getShift();
-                        amount = objBean.getAmount();
-                        product_name = objBean.getProduct_name();
-                        quantity = objBean.getQuantity();
-                        wh_in = objBean.getWh_id();
-                    } else {
-                        doc_id = request.getParameter("A_doc_id");
-                        A_status = request.getParameter("I_status");
-                    }
+            line_no = "";
+            doc_id = "";
+            A_status = "";
+            U_status = "";
+            product_id = "";
+            weight = "";
+            bag_qty = "";
+            remark = "";
+            shift = "";
+            amount = "";
+            wh_in = "";
+            quantity = "";
+            product_name = "";
+            en = new ThaiUtil();
+            objBean = new DataBeanD_product_accept_detail();
+            objdb = new D_product_accept_confirm_detailDAO();
+            objuti = new UtiDatabase();
+            if (request.getQueryString().indexOf("line_no_") != -1) {
+                U_status = "2";
+                line_no = request.getQueryString().substring(8, request.getQueryString().indexOf("="));
+                doc_id = request.getParameter("A_doc_id");
+                objBean = objdb.Return_Edit_suppliers(doc_id, line_no);
+                product_id = objBean.getProduct_id();
+                weight = objBean.getWeight();
+                bag_qty = objBean.getBag_qty();
+                remark = objBean.getRemark();
+                shift = objBean.getShift();
+                amount = objBean.getAmount();
+                product_name = objBean.getProduct_name();
+                quantity = objBean.getQuantity();
+                wh_in = objBean.getWh_id();
+            } else {
+                doc_id = request.getParameter("A_doc_id");
+                A_status = request.getParameter("I_status");
+            }
         %>
         <input name="username" type="hidden" id="username" value="<%=request.getParameter("A_username")%>" size="30" readonly/>
         <input type="hidden" id="A_doc_id" name="A_doc_id" value="<%=request.getParameter("A_doc_id")%>">
@@ -175,7 +175,7 @@
                             <tr>
                                 <td colspan='2'  align="right">
                                     <%
-                                                if (request.getParameter("I_status") != null) {
+                                        if (request.getParameter("I_status") != null) {
                                     %>
                                     <input type="button" class="cgcButton_5" name="button1" value="ตกลง" onClick="javascript:goAdd();"/>&nbsp;&nbsp;
                                     <%} else {

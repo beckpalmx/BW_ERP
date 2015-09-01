@@ -265,14 +265,14 @@ order by runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[จำนวน (ก/ส)]]></text>
+				<text><![CDATA[จำนวน]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="360" y="7" width="84" height="20" uuid="d4ce8fee-426c-41c4-ab54-1ee958b13403"/>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[ยอดตรวจนับ (ก/ส)]]></text>
+				<text><![CDATA[ยอดตรวจนับ]]></text>
 			</staticText>
 			<line>
 				<reportElement x="360" y="1" width="1" height="31" uuid="3514ea4c-46e5-4544-8fb0-74cb07bcdb8e"/>
@@ -292,7 +292,7 @@ order by runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[น้ำหนัก (ก.ก.)]]></text>
+				<text><![CDATA[ขนาดบรรจุ]]></text>
 			</staticText>
 		</band>
 	</columnHeader>

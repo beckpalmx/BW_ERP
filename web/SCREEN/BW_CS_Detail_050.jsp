@@ -102,7 +102,7 @@
             A_status = "";
             U_status = "";
             product_id = "";
-            weight = "";
+            weight = "1";
             bag_qty = "";
             remark = "";
             shift = "";
@@ -140,7 +140,8 @@
         <input type="hidden" id="A_line_no" name="A_line_no" value="<%=line_no%>">
         <input type="hidden" id="I_status" name="A_status" value="<%=A_status%>">
         <input type="hidden" id="U_status" name="U_status" value="<%=U_status%>">
-        <input type="hidden" id="chkNull" name="chkNull" value="A_product_id,A_weight,A_bag_qty">
+        <!--input type="hidden" id="chkNull" name="chkNull" value="A_product_id,A_weight,A_bag_qty"-->
+        <input type="hidden" id="chkNull" name="chkNull" value="A_product_id">
         <br>
         <div class="container">
             <div class="panel panel-primary">
@@ -154,20 +155,20 @@
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1">รหัสสินค้า*&nbsp;</td>
+                                <td class="columnlabel1">รหัสสินค้า* :&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='A_product_id' class='inputs' type="text" id="A_product_id" value="<%=product_id%>" size='10' />&nbsp;<a href='#' onClick="openBrWindow('vproduct', 24, 'Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;<input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='<%=product_name%>' size='50' readonly="readonly" />                                  
+                                    <input name='A_product_id' class='inputs' type="text" id="A_product_id" value="<%=product_id%>" size='10' />&nbsp;<a href='#' onClick="openBrWindow('vm_supplier_stock', 24, 'Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;<input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='<%=product_name%>' size='50' readonly="readonly" />                                  
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1">คลังสินค้า&nbsp;</td>
+                                <td class="columnlabel1">คลังสินค้า :&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_wh_in' class='inputs' type="text" id="A_wh_in" value="<%=wh_in%>" size='10' />  <a href="#">
                                         <img height="20" border="0" align="middle" width="20" src="../IMAGES/BUTTON/MAIN/SEARCH20.png" alt="ค้นหา" name="IMAGE4" onclick="openBrWindow('Mwarehouse&textinput=A_wh_in', 31, 'Search_Detail.jsp')">
                                     </a>                               </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1">กะ</td>
+                                <td class="columnlabel1">กะ :&nbsp;</td>
                                 <td class="columnobject"><%=objuti.ShowSelectBox("select shift_id,name_t from mshift order by runno", "shift_id", "name_t", "A_shift")%>
                                     <input type="hidden" id="selectshift" value="<%=shift%>">&nbsp;</td>
                             </tr>
@@ -181,31 +182,31 @@
                             <input name="A_weight" class='inputs' type="hidden" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')">                                
 
                             <tr>
-                                <td class="columnlabel1">จำนวน&nbsp;&nbsp;</td>
+                                <td class="columnlabel1">จำนวน :&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_bag_qty' class='inputs' type="text" id="A_bag_qty" value="<%=bag_qty%>" size='10' onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')"/>                                </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1">รวม&nbsp;&nbsp;</td>
+                                <td class="columnlabel1">ยอดตรวจนับ :&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_quantity' class='inputs' type="text" id="A_quantity" value="<%=quantity%>" size='10' />                                </td>
                             </tr>
 
                             <tr>
-                                <td class="columnlabel1">ราคา/หน่วย&nbsp;&nbsp;</td>
+                                <td class="columnlabel1">ราคา/หน่วย :&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_price_unit' class='inputs' type="text" id="A_price_unit" value="<%=price_unit%>" size='10' onblur="PriceAmount('A_price_unit', 'A_bag_qty', 'A_total_price')"/>                                
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1">ราคารวม&nbsp;&nbsp;</td>
+                                <td class="columnlabel1">ราคารวม :&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_total_price' class='inputs' type="text" id="A_total_price" value="<%=total_price%>" size='10' />                                
                                 </td>
                             </tr>                            
 
                             <tr>
-                                <td class="columnlabel1">หมายเหตุ&nbsp;</td>
+                                <td class="columnlabel1">หมายเหตุ :&nbsp;</td>
                                 <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
                             </tr>
 

@@ -301,7 +301,7 @@ public class Serchselect {
                     strColoum = new String[]{"dept_id", "name_t"};
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee") || inputdatabase.equalsIgnoreCase("Vemployee1") || inputdatabase.equalsIgnoreCase("Vemployee2") || inputdatabase.equalsIgnoreCase("Vemployee3")) {
                     strColoum = new String[]{"emp_id", "fullname"};
-                } else if (inputdatabase.equalsIgnoreCase("vproduct")) {
+                } else if (inputdatabase.equalsIgnoreCase("vproduct")||inputdatabase.equalsIgnoreCase("vm_supplier_stock")) {
                     strColoum = new String[]{"product_id", "name_t"};
                 }
                 break;
@@ -764,7 +764,7 @@ public class Serchselect {
                     strID = "A_wh_leader_id|wh_leader_id_desc";
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee3")) {
                     strID = "A_account_id|account_id_desc";
-                } else if (inputdatabase.equalsIgnoreCase("vproduct")) {
+                } else if (inputdatabase.equalsIgnoreCase("vproduct")||inputdatabase.equalsIgnoreCase("vm_supplier_stock")) {
                     strID = "A_product_id|product_id_desc";
                 }
                 break;
@@ -1165,7 +1165,7 @@ public class Serchselect {
                     strFillName = new String[]{"รหัสแผนก", "ชื่อแผนก"};
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee") || inputdatabase.equalsIgnoreCase("Vemployee1") || inputdatabase.equalsIgnoreCase("Vemployee2") || inputdatabase.equalsIgnoreCase("Vemployee3")) {
                     strFillName = new String[]{"รหัสพนักงาน", "ชื่อ", "รหัสแผนก", "ชื่อแผนก"};
-                } else if (inputdatabase.equalsIgnoreCase("vproduct")) {
+                } else if (inputdatabase.equalsIgnoreCase("vproduct")||inputdatabase.equalsIgnoreCase("vm_supplier_stock")) {
                     strFillName = new String[]{"รหัสสินค้า", "ชื่อสินค้า"};
                 }
                 break;
@@ -1531,7 +1531,7 @@ public class Serchselect {
                     strColoumShow = new String[]{"dept_id", "name_t"};
                 } else if (inputdatabase.equalsIgnoreCase("Vemployee") || inputdatabase.equalsIgnoreCase("Vemployee1") || inputdatabase.equalsIgnoreCase("Vemployee2") || inputdatabase.equalsIgnoreCase("Vemployee3")) {
                     strColoumShow = new String[]{"emp_id", "fullname", "dept_id", "depart_name"};
-                } else if (inputdatabase.equalsIgnoreCase("vproduct")) {
+                } else if (inputdatabase.equalsIgnoreCase("vproduct")||inputdatabase.equalsIgnoreCase("vm_supplier_stock")) {
                     strColoumShow = new String[]{"product_id", "name_t"};
                 }
                 break;

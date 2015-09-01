@@ -19,7 +19,9 @@
                 "A_dp_id",
                 "A_reporter_id",
                 "A_approver_id",
-                "A_complete_flag"
+                "A_complete_flag",
+                "A_wh_leader_id",
+                "A_account_id"          
             };
     ArrayList<DataBeanD_product_accept_detail> objAL = new  ArrayList<DataBeanD_product_accept_detail>();
     ThaiUtil en = new ThaiUtil();
@@ -58,6 +60,8 @@
                     objdb.setReporter_id(request.getParameter(request_String_name[i]) == null ? "" :en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));i+=1;
                     objdb.setApprover_id(request.getParameter(request_String_name[i]) == null ? "" :en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));i+=1;
                     objdb.setComplete_flag(request.getParameter(request_String_name[i]) == null ? "" :en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));i+=1;
+                    objdb.setWh_leader_id(request.getParameter(request_String_name[i]) == null ? "" :en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));i+=1;
+                    objdb.setAccount_id(request.getParameter(request_String_name[i]) == null ? "" :en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));i+=1;                    
                     objdb.setBy(userbean.getUsername());
                     objdb.setDate(new Timestamp(new java.util.Date().getTime()));
                     if(statusck == 1){
@@ -71,6 +75,10 @@
                             bean.setQuantity(en.EncodeTexttoTIS(request.getParameter("P_quantity_"+loop)));
                             bean.setBag_qty(en.EncodeTexttoTIS(request.getParameter("P_bag_"+loop)));
                             bean.setRemark(en.EncodeTexttoTIS(request.getParameter("P_remark_"+loop)));
+                            System.out.println("P_price_unit_" + loop + " = " + request.getParameter("P_price_unit_"+loop));
+                            System.out.println("P_total_price_" + loop + " = " + request.getParameter("P_total_price_"+loop));
+                            bean.setPrice_unit(request.getParameter("P_price_unit_"+loop).equals("")||request.getParameter("P_price_unit_"+loop)==null ? "0" : request.getParameter("P_price_unit_"+loop));
+                            bean.setTotal_price(request.getParameter("P_total_price_"+loop).equals("")||request.getParameter("P_total_price_"+loop)==null ? "0" : request.getParameter("P_total_price_"+loop));
                             objAL.add(bean);
                         }
                     }

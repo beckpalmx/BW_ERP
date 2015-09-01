@@ -80,7 +80,8 @@ public class D_product_accept_detailDAO {
             "wh_in",
             "quantity",
             "price_unit",
-            "total_price"
+            "total_price",
+            "amount"
             
         };
         objStringQuery = new StringQuery();
@@ -103,6 +104,7 @@ public class D_product_accept_detailDAO {
             p.setString(i, DataBean.getQuantity());i += 1;
             p.setString(i, DataBean.getPrice_unit());i += 1;
             p.setString(i, DataBean.getTotal_price());i += 1;            
+            p.setString(i, DataBean.getQuantity());i += 1;
             p.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -171,7 +173,8 @@ public class D_product_accept_detailDAO {
             "update_by",
             "update_date",
             "price_unit",
-            "total_price"                    
+            "total_price",
+            "amount"                                    
         };
         objStringQuery = new StringQuery();
         DBConnect objcon = new DBConnect();
@@ -192,6 +195,7 @@ public class D_product_accept_detailDAO {
             p.setTimestamp(i, DataBean.getDate());i += 1;
             p.setString(i, DataBean.getPrice_unit());i += 1;
             p.setString(i, DataBean.getTotal_price());i += 1;                   
+            p.setString(i, DataBean.getQuantity());i += 1;            
             p.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace(System.out);

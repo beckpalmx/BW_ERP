@@ -147,21 +147,22 @@
             }
             function AddHeader()
             {
-                var r = confirm("คุณต้องการบันทึกหรือไม่");
-                if (r)
-                {
-                    var strID = "";
-                    strID += getIDElements('input', 'I_');
-                    strID += getIDElements('input', 'A_');
-                    strID += getIDElements('select', 'A_');
-                    strID += getIDElements('input', 'P_');
-                    strID += getIDElements('select', 'P_');
-                    strID = strID.substr(0, strID.length - 1);
+                
+                    var r = confirm("คุณต้องการบันทึกหรือไม่");
+                    if (r)
+                    {
+                        var strID = "";
+                        strID += getIDElements('input', 'I_');
+                        strID += getIDElements('input', 'A_');
+                        strID += getIDElements('select', 'A_');
+                        strID += getIDElements('input', 'P_');
+                        strID += getIDElements('select', 'P_');
+                        strID = strID.substr(0, strID.length - 1);
 
-                    //alert(strID);
-                    getSave(URLsend('chkNull,maxline,' + strID, '../JSP/BW_CS_050.jsp'));
-                    ResetValue();
-                }
+                        //alert(strID);
+                        getSave(URLsend('chkNull,maxline,' + strID, '../JSP/BW_CS_050.jsp'));
+                        ResetValue();
+                    }                
 
             }
             function Delete()
@@ -178,11 +179,20 @@
             {
 
             }
+
             function OpenDoc_id(input_value)
             {
-
-                openBrWindow('vd_product_accept_suppliers_header&stadment=+and+create_by=\'' + getId('A_username').value + '\'+and+complete_flag+=+\'N\'+and+count_send_complete+' + (input_value === 1 ? '<>+\'0\'' : '=+\'0\''), 50, 'Search_Doc_id.jsp');
+                //openBrWindow('vd_product_accept_suppliers_header&stadment=+and+create_by=\'' + getId('A_username').value + '\'+and+complete_flag+=+\'N\'+and+count_send_complete+' + (input_value === 1 ? '<>+\'0\'' : '=+\'0\''), 50, 'Search_Doc_id.jsp');
+                openBrWindow('vd_product_accept_suppliers_header&stadment=and+complete_flag+=+\'N\'', 50, 'Search_Doc_id.jsp');
             }
+
+            function OpenCompleteDoc_id()
+            {
+
+                openBrWindow('vd_product_accept_suppliers_header&stadment=and+complete_flag+=+\'Y\'', 50, 'Search_Doc_id.jsp');
+            }
+
+
             function Click_Complete_flag(value) {
                 if (value) {
                     alert("เอกสารนี้สมบูรณ์");
@@ -239,12 +249,12 @@
                     select_text += "<option value=\"" + Test_array[i] + "\">" + Test_array1[i] + "</option>";
                 }
                 select_text += "</select></td>";
-                
-                weight_text = "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"1\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;";
-                
-                newCell.innerHTML = select_text + weight_text;                
 
-                
+                weight_text = "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"1\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;";
+
+                newCell.innerHTML = select_text + weight_text;
+
+
                 //newCell = newRow.insertCell(5);
                 //newCell.setAttribute("width", "10%");
                 //newCell.setAttribute("class", "forborder");
@@ -265,10 +275,10 @@
                 newCell = newRow.insertCell(8);
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
-                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_total_price_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";                                
-                
+                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_total_price_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
+
                 newCell.innerHTML += "<INPUT TYPE=\"hidden\" SIZE=\"18\" ID=\"P_remark_" + intLine + "\" VALUE=\"\" >&nbsp;";
-                
+
                 //newCell = newRow.insertCell(9);
                 //newCell.setAttribute("width", "20%");
                 //newCell.setAttribute("class", "forborder");
@@ -294,13 +304,13 @@
                     getId(amount).value = parseFloat(getId(weight).value, 10) * parseFloat(getId(bag).value, 10);
                 }
             }
-            
+
             function PriceAmount(price_unit, bag, total_price) {
                 if (getId(price_unit).value !== "" && getId(bag).value !== "") {
                     getId(total_price).value = parseFloat(getId(price_unit).value, 10) * parseFloat(getId(bag).value, 10);
                 }
-            }            
-            
+            }
+
             function Runid(output_value, input_value) {
                 if (getId(input_value).value === "") {
                     AjaxRun_id('A_doc_id', '../JSP/BW_CS_024.jsp?status_runid=4');
@@ -331,7 +341,7 @@
                 doc_no = objs_p.getIso_no();
                 doc_eff_date = objs_p.getEffective_date();
                 //_______________________________________________________________report
-%>
+            %>
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input type="hidden" name="chkNull" id="chkNull" value="A_doc_date">
             <input type="hidden" name="I_status" id="I_status" value="1"><!-- เป็นการเพิ่มข้อมูลเข้าไป-->
@@ -375,7 +385,7 @@
                                     </td>
                                 </tr>           
                                 <tr>
-                                    <td class="columnlabel1">บริษัทที่จ่าย</td>
+                                    <td class="columnlabel1">บริษัทที่จ่าย :&nbsp;</td>
                                     <td class="columnobject">
                                         <select class='select_cgc2' name="A_company_id" id="A_company_id">
                                             <option value="1" selected>BW</option>
@@ -385,19 +395,26 @@
                                 </tr>
                                 <tr>
 
-                                    <td width="150" class="columnlabel1">เลขที่เอกสาร</td>
+                                    <td width="150" class="columnlabel1">เลขที่เอกสาร :&nbsp;</td>
                                     <td width="607" class="columnobject">
                                         <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='15' />
                                         &nbsp;<a href='#' onClick="OpenDoc_id(0)"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                        &nbsp;<a href='#' onClick="OpenDoc_id(1)"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                        วันที่เอกสาร*&nbsp;
+                                        <!--&nbsp;<a href='#' onClick="OpenDoc_id(1)"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;-->
+                                        วันที่เอกสาร* :&nbsp;
                                         <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>
                                         &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
-                                        &nbsp;&nbsp;เวลา*
+                                        &nbsp;&nbsp;เวลา* :&nbsp;
                                         <input name='A_doc_time' class='inputs' type="text" id="A_doc_time" value='' size='10' maxlength="5"  onkeypress="Time_picker(this.id)" /></td>
                                 </tr>
+
+                                <!--tr>
+                                    <td width="150" class="columnlabel1">เอกสารที่ตรวจรับพัสดุแล้ว :&nbsp;</td>
+                                    <td width="607" class="columnobject">                                
+                                        &nbsp;<a href='#' onClick="OpenCompleteDoc_id()"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                </tr-->
+
                                 <tr>
-                                    <td class="columnlabel1">แผนกผู้รับ*&nbsp;</td>
+                                    <td class="columnlabel1">แผนกผู้รับ* :&nbsp;</td>
                                     <td class="columnobject">
                                         <input name='A_dp_id' class='inputs' type="text" id="A_dp_id" value='' size='10' readonly="readonly" />
                                         &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('mdepartment&stadment=and+dept_id=\'' + getId('dept_id').value + '\'', 24, 'Search_Config2.jsp');" >&nbsp;<input name='dp_id_desc' class='inputs' type="text" id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
@@ -437,17 +454,31 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel1">ผู้ส่งสินค้า</td>
+                                    <td class="columnlabel1">ผู้ส่งสินค้า :&nbsp;</td>
                                     <td class="columnobject"><input name='A_reporter_id' class='inputs' type="text" id="A_reporter_id" value='' size='10' readonly="readonly" />
                                         &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
                                         <input name='reporter_id_desc' class='inputs' type="text" id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel1">ผู้อนุมัติ</td>
+                                    <td class="columnlabel1">ผู้อนุมัติ :&nbsp;</td>
                                     <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly="readonly" />
                                         &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee1', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
                                         <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                 </tr>
+
+                                <tr>
+                                    <td class="columnlabel1">ตรวจนับสินค้า :&nbsp;</td>
+                                    <td class="columnobject"><input name='A_wh_leader_id' class='inputs' type="text" id="A_wh_leader_id" value='' size='10' readonly="readonly" />
+                                        &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee2', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
+                                        <input name='wh_leader_id_desc' class='inputs' type="text" id="wh_leader_id_desc" value='' size='30' readonly="readonly" />&nbsp;คลังสินค้า</td>
+                                </tr>
+                                <tr>
+                                    <td class="columnlabel1">ผู้อนุมัติ :&nbsp;</td>
+                                    <td class="columnobject"><input name='A_account_id' class='inputs' type="text" id="A_account_id" value='' size='10' readonly="readonly" />
+                                        &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee3', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
+                                        <input name='account_id_desc' class='inputs' type="text" id="account_id_desc" value='' size='30' readonly="readonly" />&nbsp;หัวหน้าแผนกบัญชี/คลังสินค้า</td>
+                                </tr>                                
+
                                 <tr>
                                     <td colspan="2" align="right"></td>
                                 </tr>
