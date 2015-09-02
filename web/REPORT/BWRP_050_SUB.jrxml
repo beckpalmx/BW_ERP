@@ -5,7 +5,7 @@
 	<property name="ireport.y" value="0"/>
 	<parameter name="SUB_DOC_ID" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select * from vd_product_accept_suppliers_detail
+		<![CDATA[select * from vd_product_withdraw_suppliers_detail
 WHERE doc_id = $P{SUB_DOC_ID}
 and delete_flag <> 'Y'
 ORDER BY doc_id,line_no]]>
@@ -35,6 +35,7 @@ ORDER BY doc_id,line_no]]>
 	<field name="delete_by" class="java.lang.String"/>
 	<field name="company_id" class="java.lang.String"/>
 	<field name="shift" class="java.lang.String"/>
+	<field name="approve_amount" class="java.lang.String"/>
 	<field name="product_name" class="java.lang.String"/>
 	<field name="shift_name" class="java.lang.String"/>
 	<background>

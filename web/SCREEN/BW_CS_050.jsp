@@ -226,53 +226,56 @@
                 //*** Column 1 ***//
                 newCell = newRow.insertCell(0);
                 newCell.id = newCell.uniqueID;
-                newCell.setAttribute("width", "3px");
+                newCell.setAttribute("width", "1%");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td ><input type = 'checkbox' id = '" + intLine + "' name = 'ckbox'></td>";
                 newCell = newRow.insertCell(1);
-                newCell.setAttribute("width", "7%");
+                newCell.setAttribute("width", "5%");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td>" + intLine + "&nbsp;</td>";
                 newCell = newRow.insertCell(2);
-                newCell.setAttribute("width", "20%");
+                newCell.setAttribute("width", "35%");
                 newCell.setAttribute("class", "forborder");
-                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"12\" ID=\"P_product_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'vm_supplier_stock&textinput=P_product_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\"></td>";
+                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"30\" ID=\"P_product_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'vm_supplier_stock&textinput=P_product_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\"></td>";
                 newCell = newRow.insertCell(3);
-                newCell.setAttribute("width", "12%");
-                newCell.setAttribute("class", "forborder");
-                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"5\" ID=\"P_wh_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'Mwarehouse&textinput=P_wh_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\" ></td>";
-                newCell = newRow.insertCell(4);
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
-                var select_text = "<td><select name=\"P_shift_" + intLine + "\" id=\"P_shift_" + intLine + "\">";//<INPUT TYPE=\"text\" SIZE=\"10\" ID=\"P_shift_"+intLine+"\" VALUE=\"\" >&nbsp;
+                newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"5\" ID=\"P_wh_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'Mwarehouse&textinput=P_wh_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\" ></td>";
+                
+                //newCell = newRow.insertCell(4);
+                //newCell.setAttribute("width", "10%");
+                //newCell.setAttribute("class", "forborder");
+                
+                var select_text = "<td><select name=\"P_shift_" + intLine + "\" id=\"P_shift_" + intLine + "\">";
                 for (var i = 0; i < Test_array.length; i++) {
                     select_text += "<option value=\"" + Test_array[i] + "\">" + Test_array1[i] + "</option>";
                 }
                 select_text += "</select></td>";
-
-                weight_text = "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"1\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;";
-
-                newCell.innerHTML = select_text + weight_text;
+                
+                //newCell.innerHTML = select_text + weight_text;
+                newCell.innerHTML += "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_shift_" + intLine + "\" VALUE=\"A\" >&nbsp;";                
+                newCell.innerHTML += "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"1\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;";
 
 
                 //newCell = newRow.insertCell(5);
                 //newCell.setAttribute("width", "10%");
                 //newCell.setAttribute("class", "forborder");
                 //newCell.innerHTML = "<td><INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"1\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;</td>";
-                newCell = newRow.insertCell(5);
+                
+                newCell = newRow.insertCell(4);
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_bag_" + intLine + "\" VALUE=\"\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;</td>";
-                newCell = newRow.insertCell(6);
+                newCell = newRow.insertCell(5);
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_quantity_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
-                newCell = newRow.insertCell(7);
+                newCell = newRow.insertCell(6);
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
                 //newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_price_unit_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";                
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_price_unit_" + intLine + "\" VALUE=\"\" onblur=\"PriceAmount('P_price_unit_" + intLine + "','P_bag_" + intLine + "','P_total_price_" + intLine + "')\">&nbsp;</td>";
-                newCell = newRow.insertCell(8);
+                newCell = newRow.insertCell(7);
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_total_price_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
@@ -362,8 +365,7 @@
 
             <div class="container">
                 <div class="panel panel-primary">
-                    <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                        <b>ใบรับพัสดุ (BW_CS_050)</b>
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;<b>ใบรับพัสดุ (กระสอบ - ถุง - พาเลท) (BW_CS_050)</b>
                     </div>                        
                     <div class="panel-footer">                   
 
@@ -427,22 +429,22 @@
                                         <div style="width:100%;">
                                             <table width="100%" align="center" border="0" cellpadding="0" cellspacing="1" class="inner">
                                                 <tr>
-                                                    <td colspan="5" class="h_multi">ข้อมูลรับสินค้าสินค้า</td>
+                                                    <td colspan="5" class="h_multi">ข้อมูลรับพัสดุพัสดุ</td>
                                                     <td colspan="6" class="btn_multi">
                                                         <input type='button' class="cgcButton_4" name='bt_insert' id="bt_insert" value='  เพิ่ม  ' onClick="getId('status_cancle').value == '1' ? goAddChild(URLsend('A_doc_id,I_status,A_username', 'BW_CS_Detail_050.jsp')) : CreateNewRow();"/>
                                                         <input type='button' class="cgcButton_3" name='bt_delete' id="bt_delete" value='  ลบ  ' onclick="getId('status_cancle').value == '1' ? goDelChild() : RemoveRow();"/>                                                </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="row3" width="3px"><input type="checkbox" name="chk_all" id="chk_all" value="chk_all" onClick="javascript:ckall(this.checked);"/></td>
-                                                    <td class="row3" width="7%">No.</td>
-                                                    <td class="row3" width="20%">รายการ&nbsp;</td>
-                                                    <td class="row3" width="12%">คลัง&nbsp;</td>
-                                                    <td class="row3" width="10%">กะ&nbsp;</td>                                                    
+                                                    <td class="row3" width="1%"><input type="checkbox" name="chk_all" id="chk_all" value="chk_all" onClick="javascript:ckall(this.checked);"/></td>
+                                                    <td class="row3" width="5%">No.</td>
+                                                    <td class="row3" width="40%">รายการ&nbsp;</td>
+                                                    <td class="row3" width="10%">คลัง&nbsp;</td>
+                                                    <!--td class="row3" width="10%">กะ&nbsp;</td-->
                                                     <!--td class="row3" width="10%">น้ำหนัก(กก.)&nbsp;</td-->
                                                     <td class="row3" width="10%">จำนวน&nbsp;</td>
-                                                    <td class="row3" width="10%">ยอดตรวจนับ&nbsp;</td>
+                                                    <td class="row3" width="10%">ตรวจนับ&nbsp;</td>
                                                     <td class="row3" width="10%">ราคา/หน่วย&nbsp;</td>
-                                                    <td class="row3" width="10%">รวม&nbsp;</td>
+                                                    <td class="row3" width="10%">ราคารวม&nbsp;</td>
                                                     <!--td class="row3" width="20%">หมายเหตุ&nbsp;</td-->
                                                 </tr>
                                             </table>
@@ -454,7 +456,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel1">ผู้ส่งสินค้า :&nbsp;</td>
+                                    <td class="columnlabel1">ผู้ส่งพัสดุ :&nbsp;</td>
                                     <td class="columnobject"><input name='A_reporter_id' class='inputs' type="text" id="A_reporter_id" value='' size='10' readonly="readonly" />
                                         &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
                                         <input name='reporter_id_desc' class='inputs' type="text" id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
@@ -467,16 +469,17 @@
                                 </tr>
 
                                 <tr>
-                                    <td class="columnlabel1">ตรวจนับสินค้า :&nbsp;</td>
+                                    <td class="columnlabel1">ตรวจนับพัสดุ :&nbsp;</td>
                                     <td class="columnobject"><input name='A_wh_leader_id' class='inputs' type="text" id="A_wh_leader_id" value='' size='10' readonly="readonly" />
                                         &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee2', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
-                                        <input name='wh_leader_id_desc' class='inputs' type="text" id="wh_leader_id_desc" value='' size='30' readonly="readonly" />&nbsp;คลังสินค้า</td>
+                                        <input name='wh_leader_id_desc' class='inputs' type="text" id="wh_leader_id_desc" value='' size='30' readonly="readonly" />&nbsp;คลังพัสดุ</td>
                                 </tr>
+                                
                                 <tr>
                                     <td class="columnlabel1">ผู้อนุมัติ :&nbsp;</td>
                                     <td class="columnobject"><input name='A_account_id' class='inputs' type="text" id="A_account_id" value='' size='10' readonly="readonly" />
                                         &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee3', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
-                                        <input name='account_id_desc' class='inputs' type="text" id="account_id_desc" value='' size='30' readonly="readonly" />&nbsp;หัวหน้าแผนกบัญชี/คลังสินค้า</td>
+                                        <input name='account_id_desc' class='inputs' type="text" id="account_id_desc" value='' size='30' readonly="readonly" />&nbsp;หัวหน้าแผนกบัญชี/คลังพัสดุ</td>
                                 </tr>                                
 
                                 <tr>
@@ -490,7 +493,8 @@
                                             <a href="javascript:;" onClick="AddHeader()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
                                             <a href="javascript:;" onClick="Delete()"><img alt="" class="imgtransparent" src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a>
                                             <a href="javascript:;"  onclick="Chknull()"><img alt="พิมพ์เอกสาร" class="imgtransparent" src="../IMAGES/BTN_PRINT_90.png" width="80" height="30" border="0"></a></div>
-                                        <br>                                </td>
+                                        <br>                                
+                                    </td>
                                 </tr>
                             </table>
                         </div>

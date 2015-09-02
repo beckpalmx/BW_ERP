@@ -489,11 +489,11 @@ public class D_product_accept_detailDAO {
                     rs = con.createStatement().executeQuery(SQL);
                     while (rs.next()) {
                         Return_String.append("<tr>\n");
-                        Return_String.append("<td class='forborder' width='3px'><input type='checkbox' id='ckbox' value='"+rs.getString("line_no")+"' name='ckbox' onclick=\"cancle_chkboxAll('chk_all',this.checked)\"></td>");
-                        Return_String.append("<td class='forborder' width='7%'><a href=\"#\" class=\"link_data_transparent\" onclick=\"OpenEdit(URLsend('line_no_" + rs.getString("line_no") + ",A_doc_id','../SCREEN/BW_CS_Detail_050.jsp'))\"><input type='hidden' id='line_no_" + rs.getString("line_no") + "' value=\"" + rs.getString("line_no") + "\"><input type='hidden' id='doc_id' value=\"" + rs.getString("doc_id") + "\"><input type='hidden' id='runno_" + rs.getString("runno") + "'' value=\"" + rs.getString("runno") + "\">" + rs.getString("line_no") + "</a></td>\n");
-                        Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("product_id")) + "&nbsp;"+objuti.NotNull(rs.getString("product_name")) + "</td>\n");
-                        Return_String.append("<td class='forborder' width='12%'>" + objuti.NotNull(rs.getString("wh_in")) + "</td>\n");
-                        Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("shift_name")) + "</td>\n");
+                        Return_String.append("<td class='forborder' width='1%'><input type='checkbox' id='ckbox' value='"+rs.getString("line_no")+"' name='ckbox' onclick=\"cancle_chkboxAll('chk_all',this.checked)\"></td>");
+                        Return_String.append("<td class='forborder' width='5%'><a href=\"#\" class=\"link_data_transparent\" onclick=\"OpenEdit(URLsend('line_no_" + rs.getString("line_no") + ",A_doc_id','../SCREEN/BW_CS_Detail_050.jsp'))\"><input type='hidden' id='line_no_" + rs.getString("line_no") + "' value=\"" + rs.getString("line_no") + "\"><input type='hidden' id='doc_id' value=\"" + rs.getString("doc_id") + "\"><input type='hidden' id='runno_" + rs.getString("runno") + "'' value=\"" + rs.getString("runno") + "\">" + rs.getString("line_no") + "</a></td>\n");
+                        Return_String.append("<td class='forborder' width='40%'>" + objuti.NotNull(rs.getString("product_id")) + "&nbsp;"+objuti.NotNull(rs.getString("product_name")) + "</td>\n");
+                        Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("wh_in")) + "</td>\n");
+                        //Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("shift_name")) + "</td>\n");
                         //Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("weight")) + "&nbsp;</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("bag_qty")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("quantity")) + "</td>\n");

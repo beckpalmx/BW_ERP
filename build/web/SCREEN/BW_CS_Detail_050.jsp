@@ -88,7 +88,7 @@
         </script>
     </head>
     <body onLoad="select();">
-        <%!            
+        <%!
             ThaiUtil en;
             DataBeanD_product_accept_detail objBean;
             D_product_accept_detailDAO objdb;
@@ -146,7 +146,7 @@
         <div class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                    <b>ข้อมูลการรับ</b>
+                    <b>ข้อมูลการรับ (กระสอบ - ถุง - พาเลท)</b>
                 </div>                        
                 <div class="panel-footer">   
                     <div align="center">
@@ -155,23 +155,28 @@
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1">รหัสสินค้า* :&nbsp;</td>
+                                <td class="columnlabel1">รหัสพัสดุ* :&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_product_id' class='inputs' type="text" id="A_product_id" value="<%=product_id%>" size='10' />&nbsp;<a href='#' onClick="openBrWindow('vm_supplier_stock', 24, 'Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;<input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='<%=product_name%>' size='50' readonly="readonly" />                                  
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1">คลังสินค้า :&nbsp;</td>
+                                <td class="columnlabel1">คลังพัสดุ :&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_wh_in' class='inputs' type="text" id="A_wh_in" value="<%=wh_in%>" size='10' />  <a href="#">
                                         <img height="20" border="0" align="middle" width="20" src="../IMAGES/BUTTON/MAIN/SEARCH20.png" alt="ค้นหา" name="IMAGE4" onclick="openBrWindow('Mwarehouse&textinput=A_wh_in', 31, 'Search_Detail.jsp')">
                                     </a>                               </td>
                             </tr>
-                            <tr>
+                            
+                            <!--tr>
                                 <td class="columnlabel1">กะ :&nbsp;</td>
                                 <td class="columnobject"><%=objuti.ShowSelectBox("select shift_id,name_t from mshift order by runno", "shift_id", "name_t", "A_shift")%>
                                     <input type="hidden" id="selectshift" value="<%=shift%>">&nbsp;</td>
-                            </tr>
+                            </tr-->
+                            
+                            <input type="hidden" id="A_shift" value="A">&nbsp;</td>
+                            <input type="hidden" id="selectshift" value="<%=shift%>">&nbsp;</td>
+                            
                             <!--tr>
                                 <td class="columnlabel1">น้ำหนัก(กก.)&nbsp;</td>
                                 <td class="columnobject">

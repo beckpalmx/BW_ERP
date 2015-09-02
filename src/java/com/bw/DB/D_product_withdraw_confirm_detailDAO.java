@@ -402,7 +402,7 @@ public class D_product_withdraw_confirm_detailDAO {
                 if (screen >= 1 && screen <= total) {
                     start = (screen - 1) * row_page;
                     SQL = "select "
-                            + "runno,doc_id,line_no,product_id,product_name,weight,bag_qty,shift_name,remark,amount,wh_in "
+                            + "runno,doc_id,line_no,product_id,product_name,weight,bag_qty,shift_name,remark,quantity,amount,wh_in "
                             + "from vd_product_withdraw_suppliers_detail_wh "
                             + "where doc_id = '" + doc_id + "' and delete_flag = 'N' and complete_flag = 'N' "
                             + "order by  to_number(line_no,'999') LIMIT " + row_page + " OFFSET " + start;
@@ -412,13 +412,14 @@ public class D_product_withdraw_confirm_detailDAO {
                         Return_String.append("<tr>\n");
                         //Return_String.append("<td class='forborder' width='3px'><input type='checkbox' id='ckbox' value='"+rs.getString("line_no")+"' name='ckbox' onclick=\"cancle_chkboxAll('chk_all',this.checked)\"></td>");
                         Return_String.append("<td class='forborder' width='7%'><a href=\"#\" onclick=\"OpenEdit(URLsend('line_no_" + rs.getString("line_no") + ",A_doc_id','../SCREEN/BW_CS_Detail_051_WH.jsp'))\"><input type='hidden' id='line_no_" + rs.getString("line_no") + "' value=\"" + rs.getString("line_no") + "\"><input type='hidden' id='doc_id' value=\"" + rs.getString("doc_id") + "\"><input type='hidden' id='runno_" + rs.getString("runno") + "'' value=\"" + rs.getString("runno") + "\">" + rs.getString("line_no") + "</a></td>\n");
-                        Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("product_id")) + "&nbsp;"+objuti.NotNull(rs.getString("product_name")) + "</td>\n");
+                        Return_String.append("<td class='forborder' width='40%'>" + objuti.NotNull(rs.getString("product_id")) + "&nbsp;"+objuti.NotNull(rs.getString("product_name")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("wh_in")) + "</td>\n");
-                        Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("shift_name")) + "</td>\n");
-                        Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("weight")) + "</td>\n");
+                        //Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("shift_name")) + "</td>\n");
+                        //Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("weight")) + "</td>\n");
                         Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("bag_qty")) + "</td>\n");
-                        Return_String.append("<td class='forborder' width='13%'>" + objuti.NotNull(rs.getString("amount")) + "</td>\n");
-                        Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("remark")) + "&nbsp;</td>\n");
+                        Return_String.append("<td class='forborder' width='10%'>" + objuti.NotNull(rs.getString("quantity")) + "</td>\n");                        
+                        //Return_String.append("<td class='forborder' width='13%'>" + objuti.NotNull(rs.getString("amount")) + "</td>\n");
+                        //Return_String.append("<td class='forborder' width='20%'>" + objuti.NotNull(rs.getString("remark")) + "&nbsp;</td>\n");
                         Return_String.append("</tr>\n");
                     }
                     Return_String.append("</table>");

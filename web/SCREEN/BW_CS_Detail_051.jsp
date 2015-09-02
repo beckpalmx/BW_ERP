@@ -58,7 +58,7 @@
                     strID += getIDElements('select', 'A_');
                     strID += getIDElements('textarea', 'A_');
                     strID = strID.substr(0, strID.length - 1);
-                    alert(strID)
+                    //alert(strID);
                     getSave_Detail(URLsend(strID, '../JSP/BW_CS_Detail_051.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show051.jsp?doc_id=", "show", getId("A_doc_id").value);
                 }
             }
@@ -67,13 +67,13 @@
                 window.close();
             }
             function select() {
-                if (getId("U_status").value != "") {
+                if (getId("U_status").value !== "") {
                     getId("A_shift").value = getId("selectshift").value;
                 }
 
             }
             function Amount(weight, bag, amount) {
-                if (getId(weight).value != "" && getId(bag).value != "") {
+                if (getId(weight).value !== "" && getId(bag).value !== "") {
                     getId(amount).value = parseInt(getId(weight).value, 10) * parseInt(getId(bag).value, 10);
                 }
             }
@@ -132,7 +132,7 @@
         <div class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                    <b>ข้อมูลการเบิก</b>
+                    <b>ข้อมูลการเบิก (กระสอบ - ถุง - พาเลท) </b>
                 </div>                        
                 <div class="panel-footer">   
                     <div align="center">
@@ -141,35 +141,41 @@
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1">รหัสสินค้า*&nbsp;</td>
+                                <td class="columnlabel1">รหัสพัสดุ*&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_product_id' class='inputs' type="text" id="A_product_id" value='<%=product_id%>' size='10' />&nbsp;<a href='#' onClick="openBrWindow('vproduct', 24, 'Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;<input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='<%=product_name%>' size='50' readonly="readonly" />                                
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1">คลังสินค้า&nbsp;</td>
+                                <td class="columnlabel1">คลังพัสดุ&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name="A_wh_in" class='inputs' type="text" id="A_wh_in" size="10" value="<%=wh_in%>"><a href='#'><img align='middle' border='0' width='20' height='20' onclick="openBrWindow('Mwarehouse&textinput=A_wh_in', 31, 'Search_Detail.jsp')" name='IMAGE4' alt='ค้นหา' src='../IMAGES/BUTTON/MAIN/SEARCH20.png'></a>
+                                    <input name="A_wh_in" class='inputs' type="text" id="A_wh_in" size="10" value="<%=wh_in%>">&nbsp;<a href='#'><img align='middle' border='0' width='20' height='20' onclick="openBrWindow('Mwarehouse&textinput=A_wh_in', 31, 'Search_Detail.jsp')" name='IMAGE4' alt='ค้นหา' src='../IMAGES/BUTTON/MAIN/SEARCH20.png'></a>
                                 </td>
                             </tr>
-                            <tr>
+
+                            <!--tr>
                                 <td class="columnlabel1">กะ</td>
                                 <td class="columnobject"><%=objuti.ShowSelectBox("select shift_id,name_t from mshift order by runno", "shift_id", "name_t", "A_shift")%>
                                     <input type="hidden" id="selectshift" value="<%=shift%>">&nbsp;</td>
-                            </tr>
-                            <tr>
+                            </tr-->
+
+                            <input name='A_shift' class='inputs' type="hidden" id="A_shift" value='A' size='10' /> 
+                            <input name='A_weight' class='inputs' type="hidden" id="A_weight" value='1' size='10' /> 
+
+                            <!--tr>
                                 <td class="columnlabel1"><span class="row3">น้ำหนัก(กก.)&nbsp;</span></td>
                                 <td class="columnobject">
                                     <input name="A_weight" class='inputs' type="text" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')" >
                                 </td>
-                            </tr>
+                            </tr-->
+
                             <tr>
-                                <td class="columnlabel1"><span class="row3">จำนวน(ก/ส)&nbsp;</span>&nbsp;</td>
+                                <td class="columnlabel1"><span class="row3">จำนวน&nbsp;</span>&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_bag_qty' class='inputs' type="text" id="A_bag_qty" value='<%=bag_qty%>' size='10' onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')"/>                                </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel1"><span class="row3">น้ำหนักรวม&nbsp;</span>&nbsp;</td>
+                                <td class="columnlabel1"><span class="row3">รวม&nbsp;</span>&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_quantity' class='inputs' type="text" id="A_quantity" value='<%=quantity%>' size='10' />                                </td>
                             </tr>
@@ -193,7 +199,8 @@
                             </tr>
 
                             <tr>
-                                <td colspan='2' class='blankspace'>                                </td>
+                                <td colspan='2' class='blankspace'>                                
+                                </td>
                             </tr>
                         </table>
                     </div>

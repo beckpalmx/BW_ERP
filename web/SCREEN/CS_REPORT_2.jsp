@@ -1,15 +1,23 @@
-<%@page import="com.bw.bean.UserBean"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@page import="com.bw.Util.HeaderScreen_Report"%>
+<%@page import="com.bw.bean.DataBean_Screen_Report"%>
+<%@page import="com.bw.bean.UserBean"%>
+
 <html>
-    <%!    String path, lookup, doc_eff_date, doc_no;
+    <%!    String path, lookup, doc_eff_date, doc_no, sub_menu_id;
     %>
     <%
         lookup = (String) request.getParameter("lookup");
         path = (String) request.getParameter("report_code");
-        doc_eff_date = (String) request.getParameter("eff_date");
-        doc_no = (String) request.getParameter("doc_no");
-    %>
+
+        DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
+        HeaderScreen_Report r_p = new HeaderScreen_Report();
+        objr_p = r_p.Fn_Report(objr_p, path);
+        sub_menu_id = objr_p.getSub_menu_id();
+        doc_eff_date = objr_p.getDoc_eff_date();
+        doc_no = objr_p.getDoc_no();
+    %>     
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

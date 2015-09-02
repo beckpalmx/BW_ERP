@@ -50,9 +50,9 @@ public class SelectSearch_Doc_id {
                 break;
             case 51:
                 if (inputdatabase.equals("vd_product_withdraw_suppliers_header")) {
-                    strColoum = new String[]{"doc_id", "doc_date", "doc_time", "dp_id", "reporter_id", "approver_id", "company_id", "department_name", "reporter_name", "approver_name"};
+                    strColoum = new String[]{"doc_id", "doc_date", "doc_time", "dp_id", "reporter_id", "approver_id", "company_id", "department_name", "reporter_name", "approver_name","wh_leader_id","wh_leader_name","account_id","account_name"};
                 } else {
-                    strColoum = new String[]{"doc_id", "doc_date", "doc_time", "dp_id", "reporter_id", "approver_id", "company_id", "department_name", "reporter_name", "approver_name"};
+                    strColoum = new String[]{"doc_id", "doc_date", "doc_time", "dp_id", "reporter_id", "approver_id", "company_id", "department_name", "reporter_name", "approver_name","wh_leader_id","wh_leader_name","account_id","account_name"};
                 }
                 break;
             case 115:
@@ -119,9 +119,9 @@ public class SelectSearch_Doc_id {
                 break;
             case 51:
                 if (inputdatabase.equals("vd_product_withdraw_suppliers_header")) {
-                    strID = "A_doc_id|A_doc_date|A_doc_time|A_dp_id|A_reporter_id|A_approver_id|A_company_id|dp_id_desc|reporter_id_desc|approver_id_desc";
+                    strID = "A_doc_id|A_doc_date|A_doc_time|A_dp_id|A_reporter_id|A_approver_id|A_company_id|dp_id_desc|reporter_id_desc|approver_id_desc|A_wh_leader_id|wh_leader_id_desc|A_account_id|account_id_desc";
                 } else {
-                    strID = "A_doc_id|A_doc_date|A_doc_time|A_dp_id|A_reporter_id|A_approver_id|A_company_id|dp_id_desc|reporter_id_desc|approver_id_desc";
+                    strID = "A_doc_id|A_doc_date|A_doc_time|A_dp_id|A_reporter_id|A_approver_id|A_company_id|dp_id_desc|reporter_id_desc|approver_id_desc|A_wh_leader_id|wh_leader_id_desc|A_account_id|account_id_desc";
                 }
                 break;
             case 115:

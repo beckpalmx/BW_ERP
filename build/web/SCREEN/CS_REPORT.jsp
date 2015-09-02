@@ -7,13 +7,19 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-    <%!    String path, lookup;
+    <%!    String path, lookup, doc_eff_date, doc_no, sub_menu_id;
     %>
     <%
         lookup = (String) request.getParameter("lookup");
         path = (String) request.getParameter("report_code");
 
-    %>
+        DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
+        HeaderScreen_Report r_p = new HeaderScreen_Report();
+        objr_p = r_p.Fn_Report(objr_p, path);
+        sub_menu_id = objr_p.getSub_menu_id();
+        doc_eff_date = objr_p.getDoc_eff_date();
+        doc_no = objr_p.getDoc_no();
+    %>        
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -73,7 +79,7 @@
                 var chk_param = (param_to === "" && param_from === "") ? true : false;
                 var chk_date = (date_to === "" && date_from === "") ? true : false;
                 if (chk_param === false && chk_date === true) {
-                    if (param_to !== "" && param_from !== = "") {
+                    if (param_to !== "" && param_from !=== "") {
                         submit_boolen = true;
                     } else {
                         alert("กรุณากรอกข้อมูลให้ครบ");
@@ -141,18 +147,6 @@
         </script>
 
     </head>
-    <%    String doc_eff_date, doc_no, sub_menu_id; %>
-    <%
-        lookup = (String) request.getParameter("lookup");
-        path = (String) request.getParameter("report_code");
-
-        DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
-        HeaderScreen_Report r_p = new HeaderScreen_Report();
-        objr_p = r_p.Fn_Report(objr_p, path);
-        sub_menu_id = objr_p.getSub_menu_id();
-        doc_eff_date = objr_p.getDoc_eff_date();
-        doc_no = objr_p.getDoc_no();
-    %>    
 
     <body onUnload="closepopup()">
         <form name="report" method="post" action="../JSP/CS_REPORT.jsp" target="_blank">

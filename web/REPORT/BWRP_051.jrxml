@@ -72,7 +72,7 @@ order by runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="24" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[ใบรับพัสดุ/สินค้าสำเร็จรูป]]></text>
+				<text><![CDATA[ใบเบิกพัสดุ/สินค้าสำเร็จรูป]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement x="429" y="22" width="130" height="20" uuid="362fc15b-0194-48d1-a66b-9f6e942121b1"/>
@@ -259,21 +259,21 @@ order by runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[หมายเหตุ]]></text>
+				<text><![CDATA[เหตุผลในการเบิก]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="296" y="7" width="64" height="20" uuid="fdeec8ac-e3fc-4066-83e9-d860f8bd4fc0"/>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[จำนวน (ก/ส)]]></text>
+				<text><![CDATA[จำนวน]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="360" y="7" width="84" height="20" uuid="d4ce8fee-426c-41c4-ab54-1ee958b13403"/>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[ยอดตรวจนับ (ก/ส)]]></text>
+				<text><![CDATA[ยอดตรวจนับ]]></text>
 			</staticText>
 			<line>
 				<reportElement x="360" y="1" width="1" height="31" uuid="3514ea4c-46e5-4544-8fb0-74cb07bcdb8e"/>
@@ -286,14 +286,14 @@ order by runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[รายการเบิกสินค้าสำเร็จรูป (แป้ง)]]></text>
+				<text><![CDATA[รายการเบิกพัสดุ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="231" y="7" width="64" height="19" uuid="e17afbc9-9aa0-4ca2-af2b-16ec621a0ee6"/>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[น้ำหนัก (ก.ก.)]]></text>
+				<text><![CDATA[ขนาดบรรจุ]]></text>
 			</staticText>
 		</band>
 	</columnHeader>

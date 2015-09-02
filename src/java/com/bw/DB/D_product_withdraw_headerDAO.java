@@ -110,7 +110,9 @@ public class D_product_withdraw_headerDAO {
             "create_date",
             "complete_flag",
             "company_id",
-            "count_send_complete"
+            "count_send_complete",
+            "wh_leader_id",
+            "account_id"
         };
         objuti = new UtiDatabase();
         objStringQuery = new StringQuery();
@@ -131,8 +133,10 @@ public class D_product_withdraw_headerDAO {
             p.setString(i, DataBean.getBy());i+=1;
             p.setTimestamp(i, DataBean.getDate());i+=1;
             p.setString(i, DataBean.getComplete_flag());i+=1;
-            p.setString(i, DataBean.getCompany_id());i+=1;
+            p.setString(i, DataBean.getCompany_id());i+=1;          
             p.setString(i, objuti.Count_sendcomplete("d_product_withdraw_suppliers_header", DataBean.getDoc_id() , DataBean.getComplete_flag(), con));i+=1;
+            p.setString(i, DataBean.getWh_leader_id());i += 1;
+            p.setString(i, DataBean.getAccount_id());i += 1;              
             p.executeUpdate();
             p = null;
             p = con.prepareStatement("INSERT INTO d_product_withdraw_suppliers_detail"
@@ -184,7 +188,9 @@ public class D_product_withdraw_headerDAO {
             "update_date",
             "complete_flag",
             "company_id",
-            "count_send_complete"
+            "count_send_complete",
+            "wh_leader_id",
+            "account_id"                
         };
         objuti = new UtiDatabase();
         objStringQuery = new StringQuery();
@@ -206,6 +212,8 @@ public class D_product_withdraw_headerDAO {
             p.setString(i, DataBean.getComplete_flag());i+=1;
             p.setString(i, DataBean.getCompany_id());i+=1;
             p.setString(i, objuti.Count_sendcomplete("d_product_withdraw_header", DataBean.getDoc_id() , DataBean.getComplete_flag(), con));i+=1;
+            p.setString(i, DataBean.getWh_leader_id());i += 1;
+            p.setString(i, DataBean.getAccount_id());i += 1;            
             p.setString(i,DataBean.getDoc_id());i+=1;
             p.executeUpdate();
             if(objuti.numRowdatabase("Select count(doc_id) as num from d_product_withdraw_detail where doc_id = '"+DataBean.getDoc_id()+"' and delete_flag = 'N' and complete_flag = 'N'") != 0){
@@ -455,6 +463,7 @@ public class D_product_withdraw_headerDAO {
             "create_by",
             "create_date",
             "company_id"
+ 
         };
         String[] String_detail = new String[]{
             "line_no",
