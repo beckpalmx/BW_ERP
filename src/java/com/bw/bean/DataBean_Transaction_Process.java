@@ -20,8 +20,12 @@ public class DataBean_Transaction_Process {
     private String unit;    
     private String wh_id;
     private String weight;
+    private String bag_qty_total;    
+    private String amount_total;        
+    private String quantity_total;            
     private String location_id;
     private String pgroup_id_chk;
+    private String total_price;    
 
     /**
      * @return the process_id
@@ -189,6 +193,62 @@ public class DataBean_Transaction_Process {
      */
     public void setPgroup_id_chk(String pgroup_id_chk) {
         this.pgroup_id_chk = pgroup_id_chk;
+    }
+
+    /**
+     * @return the bag_qty_total
+     */
+    public String getBag_qty_total() {
+        return bag_qty_total;
+    }
+
+    /**
+     * @param bag_qty_total the bag_qty_total to set
+     */
+    public void setBag_qty_total(String bag_qty_total) {
+        this.bag_qty_total = bag_qty_total;
+    }
+
+    /**
+     * @return the amount_total
+     */
+    public String getAmount_total() {
+        return amount_total;
+    }
+
+    /**
+     * @param amount_total the amount_total to set
+     */
+    public void setAmount_total(String amount_total) {
+        this.amount_total = amount_total;
+    }
+
+    /**
+     * @return the quantity_total
+     */
+    public String getQuantity_total() {
+        return quantity_total;
+    }
+
+    /**
+     * @param quantity_total the quantity_total to set
+     */
+    public void setQuantity_total(String quantity_total) {
+        this.quantity_total = quantity_total;
+    }
+
+    /**
+     * @return the total_price
+     */
+    public String getTotal_price() {
+        return total_price;
+    }
+
+    /**
+     * @param total_price the total_price to set
+     */
+    public void setTotal_price(String total_price) {
+        this.total_price = total_price;
     }
     
             

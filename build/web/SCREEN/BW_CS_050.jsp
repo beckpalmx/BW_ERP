@@ -241,19 +241,19 @@
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"5\" ID=\"P_wh_id_" + intLine + "\" VALUE=\"\" onclick=\"openBrWindow(\'Mwarehouse&textinput=P_wh_id_" + intLine + "\', 31, \'Search_Detail.jsp\')\" ></td>";
-                
+
                 //newCell = newRow.insertCell(4);
                 //newCell.setAttribute("width", "10%");
                 //newCell.setAttribute("class", "forborder");
-                
+
                 var select_text = "<td><select name=\"P_shift_" + intLine + "\" id=\"P_shift_" + intLine + "\">";
                 for (var i = 0; i < Test_array.length; i++) {
                     select_text += "<option value=\"" + Test_array[i] + "\">" + Test_array1[i] + "</option>";
                 }
                 select_text += "</select></td>";
-                
+
                 //newCell.innerHTML = select_text + weight_text;
-                newCell.innerHTML += "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_shift_" + intLine + "\" VALUE=\"A\" >&nbsp;";                
+                newCell.innerHTML += "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_shift_" + intLine + "\" VALUE=\"A\" >&nbsp;";
                 newCell.innerHTML += "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"1\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;";
 
 
@@ -261,7 +261,7 @@
                 //newCell.setAttribute("width", "10%");
                 //newCell.setAttribute("class", "forborder");
                 //newCell.innerHTML = "<td><INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"1\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;</td>";
-                
+
                 newCell = newRow.insertCell(4);
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
@@ -344,8 +344,9 @@
                 doc_no = objs_p.getIso_no();
                 doc_eff_date = objs_p.getEffective_date();
                 //_______________________________________________________________report
-            %>
+%>
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
+            <input name="A_user_dept_id" type="hidden" id="A_user_dept_id" value="<%=userbean.getDept_id()%>" size="30" readonly/>
             <input type="hidden" name="chkNull" id="chkNull" value="A_doc_date">
             <input type="hidden" name="I_status" id="I_status" value="1"><!-- เป็นการเพิ่มข้อมูลเข้าไป-->
             <input type="hidden" name="D_status" id="D_status" value="3"><!-- เป็นการ Delete ข้อมูลทั้งหมด -->
@@ -418,8 +419,9 @@
                                 <tr>
                                     <td class="columnlabel1">แผนกผู้รับ* :&nbsp;</td>
                                     <td class="columnobject">
-                                        <input name='A_dp_id' class='inputs' type="text" id="A_dp_id" value='' size='10' readonly="readonly" />
-                                        &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('mdepartment&stadment=and+dept_id=\'' + getId('dept_id').value + '\'', 24, 'Search_Config2.jsp');" >&nbsp;<input name='dp_id_desc' class='inputs' type="text" id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
+                                        <input name='A_dp_id' class='inputs' type="text" id="A_dp_id" value='<%=userbean.getDept_id()%>' size='10' readonly="readonly" />
+                                        &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('mdepartment&stadment=and+dept_id=\'' + getId('A_user_dept_id').value + '\'', 24, 'Search_Config2.jsp');" >&nbsp;<input name='dp_id_desc' class='inputs' type="text" id="dp_id_desc" value='<%=userbean.getDept_name()%>' size='30' readonly="readonly" />                                
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan='2' class='blankspace'></td>
@@ -474,7 +476,7 @@
                                         &nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee2', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
                                         <input name='wh_leader_id_desc' class='inputs' type="text" id="wh_leader_id_desc" value='' size='30' readonly="readonly" />&nbsp;คลังพัสดุ</td>
                                 </tr>
-                                
+
                                 <tr>
                                     <td class="columnlabel1">ผู้อนุมัติ :&nbsp;</td>
                                     <td class="columnobject"><input name='A_account_id' class='inputs' type="text" id="A_account_id" value='' size='10' readonly="readonly" />

@@ -167,16 +167,16 @@
                                         <img height="20" border="0" align="middle" width="20" src="../IMAGES/BUTTON/MAIN/SEARCH20.png" alt="ค้นหา" name="IMAGE4" onclick="openBrWindow('Mwarehouse&textinput=A_wh_in', 31, 'Search_Detail.jsp')">
                                     </a>                               </td>
                             </tr>
-                            
+
                             <!--tr>
                                 <td class="columnlabel1">กะ :&nbsp;</td>
                                 <td class="columnobject"><%=objuti.ShowSelectBox("select shift_id,name_t from mshift order by runno", "shift_id", "name_t", "A_shift")%>
                                     <input type="hidden" id="selectshift" value="<%=shift%>">&nbsp;</td>
                             </tr-->
-                            
+
                             <input type="hidden" id="A_shift" value="A">&nbsp;</td>
                             <input type="hidden" id="selectshift" value="<%=shift%>">&nbsp;</td>
-                            
+
                             <!--tr>
                                 <td class="columnlabel1">น้ำหนัก(กก.)&nbsp;</td>
                                 <td class="columnobject">

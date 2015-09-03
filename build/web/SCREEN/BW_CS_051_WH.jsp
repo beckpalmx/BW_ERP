@@ -164,13 +164,13 @@
                 // _______________________________________________________________report
                 DataBean_Screen_Report objr_p = new DataBean_Screen_Report();
                 HeaderScreen_Report r_p = new HeaderScreen_Report();
-                objr_p = r_p.Fn_Report(objr_p, "S504");
+                objr_p = r_p.Fn_Report(objr_p, "S509");
                 path = objr_p.getPath();
                 lookup = objr_p.getLookup();
                 doc_eff_date = objr_p.getDoc_eff_date();
                 doc_no = objr_p.getDoc_no();
                 //_______________________________________________________________report
-            %>
+%>
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input type="hidden" name="chkNull" id="chkNull" value="A_doc_id">
             <input type="hidden" name="I_status" id="I_status" value="1">
@@ -284,7 +284,8 @@
                                                 </tr>
                                             </table>
                                         </div>
-                                        <div style="width:100%; height: 150px; overflow: auto;" id="show">                                    </div>                                </td>
+                                        <div style="width:100%; height: 150px; overflow: auto;" id="show"></div>                                
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">ผู้ส่งพัสดุ&nbsp;:&nbsp;</td>

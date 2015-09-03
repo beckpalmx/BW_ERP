@@ -46,7 +46,7 @@
                         strID += getIDElements('input', 'A_');
                         strID += getIDElements('textarea', 'A_');
                         strID = strID.substr(0, strID.length - 1);
-                        alert(strID);
+                        //alert(strID);
                         getSave_Detail(URLsend(strID, '../JSP/BW_CS_Detail_025.jsp'), "../SHOWDETAILSCREEN/BW_CS_Show025.jsp?doc_id=", "show", getId("A_doc_id").value);
 
                     }

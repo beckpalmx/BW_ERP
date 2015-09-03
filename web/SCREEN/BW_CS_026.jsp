@@ -276,9 +276,9 @@
                 //doc_eff_date = objr_p.getDoc_eff_date();
                 //doc_no = objr_p.getDoc_no();                
                 doc_no = objs_p.getIso_no();
-                doc_eff_date = objs_p.getEffective_date();                
+                doc_eff_date = objs_p.getEffective_date();
                 //_______________________________________________________________report
-%>
+            %>
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input type="hidden" name="chkNull" id="chkNull" value="A_doc_date">
             <input type="hidden" name="A_status" id="I_status" value="1"><!-- เป็นการเพิ่มข้อมูลเข้าไป-->
@@ -320,7 +320,7 @@
                                     </td>
                                 </tr>        
                                 <tr>
-                                    <td class="columnlabel1">บริษัทที่จ่าย</td>
+                                    <td class="columnlabel1">บริษัทที่จ่าย&nbsp;:&nbsp;</td>
                                     <td class="columnobject"><select class='select_cgc2' name="A_company_id" id="A_company_id">
                                             <option value="1" selected>BW</option>
                                             <option value="2">ATS</option>
@@ -328,18 +328,18 @@
                                 </tr>
                                 <tr>
 
-                                    <td width="150" class="columnlabel1">เลขที่เอกสาร</td>
+                                    <td width="150" class="columnlabel1">เลขที่เอกสาร&nbsp;:&nbsp;</td>
                                     <td width="607" class="columnobject">
                                         <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='25' />
                                         &nbsp;<a href='#' onClick="OpenDoc_id(0)"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                         &nbsp;<a href='#' onClick="OpenDoc_id(1)"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                        วันที่เอกสาร*&nbsp;
+                                        วันที่เอกสาร*&nbsp;:&nbsp;
                                         <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>
-                                        &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;เวลา
+                                        &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;เวลา&nbsp;:&nbsp;
                                         <input name='A_doc_time' class='inputs' type="text" id="A_doc_time" value='' size='10' maxlength="5" /></td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel1">แผนกผู้เบิก&nbsp;</td>
+                                    <td class="columnlabel1">แผนกผู้เบิก&nbsp;:&nbsp;</td>
                                     <td class="columnobject">
                                         <input name='A_dp_id' class='inputs' type="text" id="A_dp_id" value='' size='10' readonly="readonly" />
                                         &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('mdepartment&stadment=and+dept_id=\'' + getId('dept_id').value + '\'', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;<input name='dp_id_desc' class='inputs' type="text" id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
@@ -358,6 +358,7 @@
                                                         <input type='button' class="cgcButton_3" name='but2' value='  ลบ  ' onclick="getId('status_cancle').value === '1' ? goDelChild() : RemoveRow();"/>                                                </td>
                                                 </tr>
                                                 <tr>
+                                             
                                                     <td class="row3" width="3px"><input type="checkbox" name="chk_all" id="chk_all" value="chk_all" onClick="javascript:ckall(this.checked);"/></td>
                                                     <td class="row3" width="7%">No.</td>
                                                     <td class="row3" width="20%">รายการเบิกสินค้า&nbsp;</td>
@@ -376,13 +377,13 @@
                                         </div>                                </td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel1">ผู้เบิกสินค้า</td>
+                                    <td class="columnlabel1">ผู้เบิกสินค้า&nbsp;:&nbsp;</td>
                                     <td class="columnobject"><input name='A_reporter_id' class='inputs' type="text" id="A_reporter_id" value='' size='10' readonly="readonly" />
                                         &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
                                         <input name='reporter_id_desc' class='inputs' type="text" id="reporter_id_desc" value='' size='30' readonly="readonly" />                              </td>
                                 </tr>
                                 <tr>
-                                    <td class="columnlabel1">ผู้อนุมัติ</td>
+                                    <td class="columnlabel1">ผู้อนุมัติ&nbsp;:&nbsp;</td>
                                     <td class="columnobject"><input name='A_approver_id' class='inputs' type="text" id="A_approver_id" value='' size='10' readonly="readonly" />
                                         &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Vemployee1', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
                                         <input name='approver_id_desc' class='inputs' type="text" id="approver_id_desc" value='' size='30' readonly="readonly" />                              </td>

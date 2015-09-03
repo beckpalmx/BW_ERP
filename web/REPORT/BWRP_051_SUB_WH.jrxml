@@ -5,10 +5,10 @@
 	<property name="ireport.y" value="0"/>
 	<parameter name="SUB_DOC_ID" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select * from vd_product_accept_suppliers_detail
+		<![CDATA[select * from vd_product_withdraw_suppliers_detail_wh
 WHERE doc_id = $P{SUB_DOC_ID}
 and delete_flag <> 'Y'
-ORDER BY doc_id,line_no]]>
+ORDER BY doc_id]]>
 	</queryString>
 	<field name="runno" class="java.lang.Integer"/>
 	<field name="line_no" class="java.lang.String"/>
@@ -37,8 +37,6 @@ ORDER BY doc_id,line_no]]>
 	<field name="shift" class="java.lang.String"/>
 	<field name="product_name" class="java.lang.String"/>
 	<field name="shift_name" class="java.lang.String"/>
-	<field name="price_unit" class="java.lang.String"/>
-	<field name="total_price" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -73,7 +71,7 @@ ORDER BY doc_id,line_no]]>
 				<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="359" y="4" width="78" height="20" uuid="56f3368d-becc-49f7-a94f-b31c5c7cb38f"/>
+				<reportElement x="358" y="4" width="78" height="20" uuid="d4843596-66b1-48fd-9b2e-421365999362"/>
 				<textElement textAlignment="Right">
 					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>

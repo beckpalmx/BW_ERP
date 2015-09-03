@@ -143,7 +143,7 @@
                             <tr>
                                 <td class="columnlabel1">รหัสพัสดุ*&nbsp;</td>
                                 <td class="columnobject">
-                                    <input name='A_product_id' class='inputs' type="text" id="A_product_id" value='<%=product_id%>' size='10' />&nbsp;<a href='#' onClick="openBrWindow('vproduct', 24, 'Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;<input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='<%=product_name%>' size='50' readonly="readonly" />                                
+                                    <input name='A_product_id' class='inputs' type="text" id="A_product_id" value='<%=product_id%>' size='10' />&nbsp;<a href='#' onClick="openBrWindow('vm_supplier_stock', 24, 'Search_Config2.jsp');" ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;<input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='<%=product_name%>' size='50' readonly="readonly" />                                
                                 </td>
                             </tr>
                             <tr>

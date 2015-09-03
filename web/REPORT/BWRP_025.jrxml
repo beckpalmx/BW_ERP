@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BWRP_026" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59805b8f-3f6e-4a61-ab17-2651160692bd">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="240"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["filexxxx.jrxml"]]></defaultValueExpression>
 	</parameter>
@@ -284,7 +284,7 @@ order by runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[รายการเบิกสินค้าสำเร็จรูป (แป้ง)]]></text>
+				<text><![CDATA[รายการรับสินค้าสำเร็จรูป (แป้ง)]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="231" y="7" width="64" height="19" uuid="e17afbc9-9aa0-4ca2-af2b-16ec621a0ee6"/>
