@@ -169,6 +169,16 @@
                 openBrWindow('vd_product_withdraw_suppliers_header&stadment=and+complete_flag+=+\'N\'+and+create_by=\'' + getId('A_username').value + '\'++and+count_send_complete+' + (input_value === 1 ? '<>+\'0\'' : '=+\'0\''), 51, 'Search_Doc_id.jsp');
 
             }
+            
+            function OpenDoc_id_Complete()
+            {
+                
+                openBrWindow('vd_product_withdraw_suppliers_header&stadment=and+complete_flag+=+\'Y\'+and+create_by+=\'' + getId('A_username').value + '\'', 51, 'Search_Doc_id.jsp');
+                
+                //openBrWindow('vd_product_withdraw_suppliers_header&stadment=and+complete_flag+=+\'N\'+and+create_by=\'' + getId('A_username').value + '\'++and+count_send_complete+' + (input_value === 1 ? '<>+\'0\'' : '=+\'0\''), 51, 'Search_Doc_id.jsp');
+
+            }            
+            
             function Click_Complete_flag(value) {
                 if (value) {
                     alert("เอกสารนี้สมบูรณ์");
@@ -221,8 +231,8 @@
                 select_text += "</select></td>";
 
                 //newCell.innerHTML = select_text + weight_text;
-                
-                newCell.innerHTML += "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_shift_" + intLine + "\" VALUE=\"A\" >&nbsp;"; 
+
+                newCell.innerHTML += "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_shift_" + intLine + "\" VALUE=\"A\" >&nbsp;";
                 newCell.innerHTML += "<INPUT TYPE=\"hidden\" SIZE=\"7\" ID=\"P_weight_" + intLine + "\" VALUE=\"1\" onblur=\"Amount('P_weight_" + intLine + "','P_bag_" + intLine + "','P_quantity_" + intLine + "')\">&nbsp;";
 
                 //newCell = newRow.insertCell(5);
@@ -238,12 +248,12 @@
                 newCell.setAttribute("width", "10%");
                 newCell.setAttribute("class", "forborder");
                 newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_quantity_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";
-                
+
                 //newCell = newRow.insertCell(6);
                 //newCell.setAttribute("width", "10%");
                 //newCell.setAttribute("class", "forborder");
                 //newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_price_unit_" + intLine + "\" VALUE=\"\" >&nbsp;</td>";                
-                
+
                 //newCell.innerHTML = "<td><INPUT TYPE=\"text\" SIZE=\"7\" ID=\"P_price_unit_" + intLine + "\" VALUE=\"\" onblur=\"PriceAmount('P_price_unit_" + intLine + "','P_bag_" + intLine + "','P_total_price_" + intLine + "')\">&nbsp;</td>";
                 //newCell = newRow.insertCell(7);
                 //newCell.setAttribute("width", "10%");
@@ -309,7 +319,7 @@
                 doc_eff_date = objr_p.getDoc_eff_date();
                 doc_no = objr_p.getDoc_no();
                 //_______________________________________________________________report
-            %>
+%>
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input name="A_user_dept_id" type="hidden" id="A_user_dept_id" value="<%=userbean.getDept_id()%>" size="30" readonly/>            
             <input type="hidden" name="chkNull" id="chkNull" value="A_doc_date">
@@ -367,12 +377,27 @@
                                     <td width="607" class="columnobject">
                                         <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='15' />
                                         &nbsp;<a href='#' onClick="OpenDoc_id(0)"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                        &nbsp;<a href='#' onClick="OpenDoc_id(1)"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                        <!--&nbsp;<a href='#' onClick="OpenDoc_id(1)"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;-->
                                         วันที่เอกสาร* :&nbsp;
                                         <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>
                                         &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'A_doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;เวลา&nbsp;:&nbsp;
                                         <input name='A_doc_time' class='inputs' type="text" id="A_doc_time" value='' size='10' maxlength="5" /></td>
                                 </tr>
+                                
+                                <tr>
+                                    <td class="columnlabel1">เอกสารที่ถูกส่งคืน&nbsp;:&nbsp;</td>
+                                    <td class="columnobject">
+                                        &nbsp;<a href='#' onClick="OpenDoc_id(1)"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                    </td>
+                                </tr>                                
+
+                                <tr>
+                                    <td class="columnlabel1">เอกสารที่เบิกสำเร็จแล้ว&nbsp;:&nbsp;</td>
+                                    <td class="columnobject">
+                                        &nbsp;<a href='#' onClick="OpenDoc_id_Complete()"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                    </td>
+                                </tr>
+
                                 <tr>
                                     <td class="columnlabel1">แผนกผู้เบิก&nbsp;:&nbsp;</td>
                                     <td class="columnobject">

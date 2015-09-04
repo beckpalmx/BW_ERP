@@ -334,7 +334,8 @@ public class D_product_accept_detailDAO {
         String SQL = "SELECT "
                 + "product_id,bag_qty,weight,remark,shift,product_name,quantity,wh_in,price_unit,total_price"
                 + " FROM vd_product_accept_suppliers_detail "
-                + " WHERE doc_id = '"+doc_id+"' and line_no = '"+line_no+"' and delete_flag = 'N' and complete_flag = 'N'";
+                //+ " WHERE doc_id = '"+doc_id+"' and line_no = '"+line_no+"' and delete_flag = 'N' and complete_flag = 'N'";
+                + " WHERE doc_id = '"+doc_id+"' and line_no = '"+line_no+"' and delete_flag = 'N' ";
         try{
             rs = con.createStatement().executeQuery(SQL);
             while(rs.next()){
@@ -472,7 +473,8 @@ public class D_product_accept_detailDAO {
         StringBuffer Return_String = new StringBuffer();
         ResultSet rs = null;
         String SQL = "";
-        total = objuti.numRowdatabase("Select Count(doc_id) As num from  d_product_accept_suppliers_detail where doc_id ='" + doc_id + "' and delete_flag = 'N' and complete_flag ='N' ");
+        //total = objuti.numRowdatabase("Select Count(doc_id) As num from  d_product_accept_suppliers_detail where doc_id ='" + doc_id + "' and delete_flag = 'N' and complete_flag ='N' ");
+        total = objuti.numRowdatabase("Select Count(doc_id) As num from  d_product_accept_suppliers_detail where doc_id ='" + doc_id + "' and delete_flag = 'N' ");
         try {
 
             if (total != 0) {
@@ -483,7 +485,8 @@ public class D_product_accept_detailDAO {
                     SQL = "select "
                             + "runno,doc_id,line_no,product_id,product_name,weight,bag_qty,shift_name,remark,wh_in,quantity,price_unit,total_price "
                             + "from vd_product_accept_suppliers_detail "
-                            + "where doc_id = '" + doc_id + "' and delete_flag = 'N' and complete_flag = 'N' "
+                            //+ "where doc_id = '" + doc_id + "' and delete_flag = 'N' and complete_flag = 'N' "
+                            + "where doc_id = '" + doc_id + "' and delete_flag = 'N' "
                             + "order by  to_number(line_no,'999') LIMIT " + row_page + " OFFSET " + start;
                     Return_String.append("<table width='100%' align='center' border='0' cellpadding='0' cellspacing='1' class='inner'>\n");
                     rs = con.createStatement().executeQuery(SQL);

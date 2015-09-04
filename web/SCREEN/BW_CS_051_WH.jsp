@@ -111,7 +111,7 @@
                 var r = confirm("คุณต้องการบันทึกหรือไม่");
                 if (r)
                 {
-                    getSave(URLsend('chkNull,A_doc_id,A_return_flag,A_doc_confirm,A_wh_leader_id,A_account_id', '../JSP/BW_CS_051_WH.jsp'));
+                    getSave(URLsend('A_doc_id,A_return_flag,A_doc_confirm,A_wh_leader_id,A_account_id', '../JSP/BW_CS_051_WH.jsp'));
                     ResetValue();
                 }
             }
@@ -125,7 +125,8 @@
             function OpenDoc_id(input_type)
             {
 
-                openBrWindow('vd_product_withdraw_suppliers_header_wh&stadment=and+complete_flag+=+\'N\'+and+doc_type+=\'' + input_type + '\'', 51, 'Search_Doc_id.jsp');
+                //openBrWindow('vd_product_withdraw_suppliers_header_wh&stadment=and+complete_flag+=+\'N\'+and+doc_type+=\'' + input_type + '\'', 51, 'Search_Doc_id.jsp');
+                openBrWindow('vd_product_withdraw_suppliers_header_wh&stadment=and+complete_flag+=\'' + input_type + '\'', 51, 'Search_Doc_id.jsp');
             }
             function Click_Return_flag(value) {
                 if (value) {
@@ -229,13 +230,21 @@
                                     <td width="607" class="columnobject">
                                         <input name='A_doc_id' class='inputs' type="text" id="A_doc_id" value='' size='15' />
                                         &nbsp;<a href='#' onClick="OpenDoc_id('N')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                        &nbsp;<a href='#' onClick="OpenDoc_id('Y')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                        <!--&nbsp;<a href='#' onClick="OpenDoc_id('Y')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;-->
                                         วันที่เอกสาร*&nbsp;:&nbsp;
                                         <input name='A_doc_date' class='inputs' type="text" id="A_doc_date" value='' size='10' readonly="readonly"/>
                                         &nbsp;<a id='date_1'><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>
                                         &nbsp;&nbsp;เวลา*&nbsp;:&nbsp;
                                         <input name='A_doc_time' class='inputs' type="text" id="A_doc_time" value='' size='10' maxlength="5" /></td>
                                 </tr>
+                                
+                                <tr>
+                                    <td class="columnlabel1">เอกสารที่ยืนยันการเบิกแล้ว&nbsp;:&nbsp;</td>
+                                    <td class="columnobject">
+                                        &nbsp;<a href='#' onClick="OpenDoc_id('Y')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                    </td>
+                                </tr>                                
+                                
                                 <tr>
                                     <td class="columnlabel1">แผนกผู้เบิก*&nbsp;:&nbsp;</td>
                                     <td class="columnobject">
@@ -252,7 +261,7 @@
                                     <td class="columnlabel1"><b>ทำการยืนยันเอกสาร</b>&nbsp;:&nbsp;</td>
                                     <td class="columnobject">
                                         <div class="checkbox checkbox-primary">
-                                            <input type="checkbox" id="A_return_flag" name="A_doc_confirm" value="N" onClick="doc_confrim(this)">
+                                            <input type="checkbox" id="A_doc_confirm" name="A_doc_confirm" value="N" onClick="doc_confrim(this)">
                                             <label for="A_doc_confirm"></label> 
                                         </div>
                                     </td>

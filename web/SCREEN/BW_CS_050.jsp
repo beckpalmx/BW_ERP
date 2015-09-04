@@ -410,11 +410,11 @@
                                         <input name='A_doc_time' class='inputs' type="text" id="A_doc_time" value='' size='10' maxlength="5"  onkeypress="Time_picker(this.id)" /></td>
                                 </tr>
 
-                                <!--tr>
+                                <tr>
                                     <td width="150" class="columnlabel1">เอกสารที่ตรวจรับพัสดุแล้ว :&nbsp;</td>
                                     <td width="607" class="columnobject">                                
                                         &nbsp;<a href='#' onClick="OpenCompleteDoc_id()"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
-                                </tr-->
+                                </tr>
 
                                 <tr>
                                     <td class="columnlabel1">แผนกผู้รับ* :&nbsp;</td>

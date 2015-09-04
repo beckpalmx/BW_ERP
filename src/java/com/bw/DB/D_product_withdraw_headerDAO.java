@@ -104,8 +104,6 @@ public class D_product_withdraw_headerDAO {
             "dp_id",
             "reporter_id",
             "approver_id",
-            "wh_leader_id",
-            "account_id",
             "create_by",
             "create_date",
             "complete_flag",
@@ -128,8 +126,6 @@ public class D_product_withdraw_headerDAO {
             p.setString(i, DataBean.getDp_id());i+=1;
             p.setString(i, DataBean.getReporter_id());i+=1;
             p.setString(i, DataBean.getApprover_id());i+=1;
-            p.setString(i, DataBean.getWh_leader_id());i+=1;
-            p.setString(i, DataBean.getAccount_id());i+=1;
             p.setString(i, DataBean.getBy());i+=1;
             p.setTimestamp(i, DataBean.getDate());i+=1;
             p.setString(i, DataBean.getComplete_flag());i+=1;
@@ -181,8 +177,6 @@ public class D_product_withdraw_headerDAO {
             "doc_time",
             "dp_id",
             "reporter_id",
-            "approver_id",
-            "wh_leader_id",
             "account_id",
             "update_by",
             "update_date",
@@ -205,8 +199,6 @@ public class D_product_withdraw_headerDAO {
             p.setString(i, DataBean.getDp_id());i+=1;
             p.setString(i, DataBean.getReporter_id());i+=1;
             p.setString(i, DataBean.getApprover_id());i+=1;
-            p.setString(i, DataBean.getWh_leader_id());i+=1;
-            p.setString(i, DataBean.getAccount_id());i+=1;
             p.setString(i, DataBean.getBy());i+=1;
             p.setTimestamp(i, DataBean.getDate());i+=1;
             p.setString(i, DataBean.getComplete_flag());i+=1;

@@ -636,7 +636,7 @@ function openBrWindow(table, page, jsp) { //v2.0
 function openpopup(table, page, jsp) {
 
     var t;
-    t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;    
+    t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
     if (jsp.trim() === ("Search_Config2.jsp")) {
         my_window = window.open(t, "mywindow", "status=1,width=700,height=530");
     } else {
@@ -880,6 +880,13 @@ function gettoShow_Doc_id(dataInput, getIdshow, URLShowDetail, DivShow, Valueinp
         //alert(arryData[i] );
         //senddataPopup(arryID[0]).readOnly =true;
         if (arryData[i] !== "null") {
+
+            if (arryID[i] === "A_complete_flag") {
+                opener.document.getElementById(arryID[i]).value = arryData[i];
+                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
+                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
+            }
+
             //alert(arryData[i]);
             //opener.document.getElementById(arryID[i]).value = arryData[i];
             if (arryID[i] === "remark") {
@@ -936,25 +943,13 @@ function gettoShow_Doc_id2(dataInput, getIdshow, URLShowDetail, DivShow, DivShow
     arryID = getIdshow.split("|");
     for (var i = 0; i < arryData.length; i++)
     {
-        //senddataPopup(arryID[0]).disabled =true;
-        /*if(arryID[i] == "mark_sign" || arryID[i] == "base_plate"){
-         if(arryData[i] == "Y" && arryID[i] == "mark_sign"){
-         senddataPopup("chkbox_mark_sign").checked = true;
-         senddataPopup("mark_sign_desc").disabled = false;
-         }else if(arryData[i] == "Y" && arryID[i] == "base_plate"){
-         senddataPopup("chkbox_base_plate").checked = true;
-         senddataPopup("base_plate_desc").disabled = false;
-         }else  if(arryData[i] == "N" && arryID[i] == "mark_sign"){
-         senddataPopup("chkbox_mark_sign").checked = false;
-         senddataPopup("mark_sign_desc").disabled = true;
-         }else  if(arryData[i] == "N" && arryID[i] == "base_plate"){
-         senddataPopup("chkbox_base_plate").checked = false;
-         senddataPopup("base_plate_desc").disabled = true;
-         }
-         }*/
-        //************************CS_036****************************
-        //***********************************************************
         if (arryData[i] !== "null") {
+
+            if (arryID[i] === "A_complete_flag") {
+                opener.document.getElementById(arryID[i]).value = arryData[i];
+                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
+                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
+            }
             //alert(arryData[i]);
             //opener.document.getElementById(arryID[i]).value = arryData[i];
             if (arryID[i] === "A_remark") {
@@ -1020,24 +1015,6 @@ function gettoShow_Doc_id3(dataInput, getIdshow, URLShowDetail, DivShow, DivShow
     arryID = getIdshow.split("|");
     for (var i = 0; i < arryData.length; i++)
     {
-        //senddataPopup(arryID[0]).disabled =true;
-        /*if(arryID[i] == "mark_sign" || arryID[i] == "base_plate"){
-         if(arryData[i] == "Y" && arryID[i] == "mark_sign"){
-         senddataPopup("chkbox_mark_sign").checked = true;
-         senddataPopup("mark_sign_desc").disabled = false;
-         }else if(arryData[i] == "Y" && arryID[i] == "base_plate"){
-         senddataPopup("chkbox_base_plate").checked = true;
-         senddataPopup("base_plate_desc").disabled = false;
-         }else  if(arryData[i] == "N" && arryID[i] == "mark_sign"){
-         senddataPopup("chkbox_mark_sign").checked = false;
-         senddataPopup("mark_sign_desc").disabled = true;
-         }else  if(arryData[i] == "N" && arryID[i] == "base_plate"){
-         senddataPopup("chkbox_base_plate").checked = false;
-         senddataPopup("base_plate_desc").disabled = true;
-         }
-         }*/
-        //************************CS_036****************************
-        //***********************************************************
         if (arryData[i] !== "null") {
             //alert(arryData[i]);
             //opener.document.getElementById(arryID[i]).value = arryData[i];

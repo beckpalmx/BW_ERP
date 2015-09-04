@@ -113,7 +113,7 @@ public class Process_Supplier_TransactionDB {
         int i;
         try {
             p = con.prepareStatement("insert into t_transaction_supplier_stock "
-                    + "(process_id,doc_no,doc_date,doc_type,product_id,wh_id,price_unit,quantity,bag_qty,amount,create_date,create_by) "
+                    + "(process_id,doc_id,doc_date,doc_type,product_id,wh_id,price_unit,quantity,bag_qty,amount,create_date,create_by) "
                     + "values"
                     + "(?,?,?,?,?,?,?,?,?,?,?,?)");
 
