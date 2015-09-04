@@ -9,7 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
         <link href="../CSS/BT.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css"> <link href="../CSS/component.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css">
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
         <link rel="stylesheet" type="text/css" media="all" href="../JS/jscalendar/skins/aqua/aqua.css" title="Aua" />
         <!-- main calendar program -->
@@ -62,7 +63,7 @@
 
                 <div class="panel-footer">
 
-                    <form name ="report" action="CS_Trans_CF_Prc_V1.jsp" target="_blank" method ="post">
+                    <form name ="report" action="CS_Trans_Supplier_Prc_V1.jsp" target="_blank" method ="post">
                         <input type="hidden" name="chkNull" id="chkNull" value="date_f,date_t">
                         <input type="hidden" name="date_from" value="">
                         <input type="hidden" name="date_to" value="">          
@@ -103,17 +104,17 @@
                             <td colspan='2' class='blankspace' ></td>
                             </tr> 
                         </table>     
-                                    
+
                         <div>
                             <button type="button" class="btn btn-primary btn-block" data-toggle="tooltip" title="กดปุ่มเพื่อประมวลผล" ><b>ประมวลผล</b></button>
                         </div>  
-                                    
+
                         <!--br>
                         
                         <div>
                             <button type="button" class="btn btn-success btn-block" onclick="send_print();" data-toggle="tooltip" title="กดปุ่มเพื่อพิมพ์รายงาน"><b>พิมพ์รายงาน</b></button>     
                         </div-->
-                        
+
                     </form>
                     <!--/div-->
                 </div>

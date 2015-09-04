@@ -20,15 +20,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=TIS-620">        
-        <!--link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css"-->
         <link rel="stylesheet" href="../table.css" type="text/css"/>	        
         <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.9.1.js"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
-        <link href="../CSS/bw_button.css" rel="stylesheet" type="text/css"> <link href="../CSS/component.css" rel="stylesheet" type="text/css">
-
+        <link href="../CSS/bw_button.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
         <script src="../JS/jquery/jquery-2.1.4.js"></script>

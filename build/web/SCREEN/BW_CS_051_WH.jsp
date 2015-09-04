@@ -133,6 +133,8 @@
                     alert("ทำการย้อนเอกสารนี้กลับไปหาต้นฉบับ");
                     getId("A_return_flag").checked = value;
                     getId("A_return_flag").value = "Y";
+                    getId("A_doc_confirm").checked = false;
+                    getId("A_doc_confirm").value = "N";
                 } else {
                     getId("A_return_flag").checked = value;
                     getId("A_return_flag").value = "N";
@@ -142,6 +144,8 @@
                 if (objthis.checked) {
                     alert("ทำการยืนยันเอกสารสมบูรณ์");
                     objthis.value = "Y";
+                    getId("A_return_flag").checked = false;
+                    getId("A_return_flag").value = "N";
                 } else {
                     objthis.value = "N";
                     objthis.checked = false;
@@ -199,11 +203,6 @@
                                     <td colspan="2" align="right"><b>วันที่มีผลบังคับใช้ : <%=objs_p.getEffective_date()%></b></td>
                                 </tr>
 
-                                <!--tr>
-                                    <td class="columnlabel1">ทำการคืนเอกสารเพื่อแก้ไข</td>
-                                    <td class="columnobject"><input type="checkbox" name="A_return_flag" id="A_return_flag" value ="N" onClick="Click_Return_flag(this.checked);"></td>
-                                </tr-->
-
                                 <tr>
                                     <td class="columnlabel1"><b>ทำการคืนเอกสารเพื่อแก้ไข</b>&nbsp;:&nbsp;</td>
                                     <td class="columnobject">
@@ -237,25 +236,20 @@
                                         &nbsp;&nbsp;เวลา*&nbsp;:&nbsp;
                                         <input name='A_doc_time' class='inputs' type="text" id="A_doc_time" value='' size='10' maxlength="5" /></td>
                                 </tr>
-                                
+
                                 <tr>
                                     <td class="columnlabel1">เอกสารที่ยืนยันการเบิกแล้ว&nbsp;:&nbsp;</td>
                                     <td class="columnobject">
                                         &nbsp;<a href='#' onClick="OpenDoc_id('Y')"  ><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                     </td>
                                 </tr>                                
-                                
+
                                 <tr>
                                     <td class="columnlabel1">แผนกผู้เบิก*&nbsp;:&nbsp;</td>
                                     <td class="columnobject">
                                         <input name='A_dp_id' class='inputs' type="text" id="A_dp_id" value='' size='10' readonly="readonly" />
                                         &nbsp;&nbsp;&nbsp;<!--<a href='#' onClick="openBrWindow('Vemployee', 27, '../JSP/Search_Config2.jsp');"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;--><input name='dp_id_desc' class='inputs' type="text" id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
                                 </tr>
-
-                                <!--tr>
-                                    <td class="columnlabel1">ทำการยืนยันเอกสาร*&nbsp;</td>
-                                    <td class="columnobject"><input type="checkbox" id="A_doc_confirm" name="A_doc_confirm" value="N" onclick="doc_confrim(this)"></td>
-                                </tr-->
 
                                 <tr>
                                     <td class="columnlabel1"><b>ทำการยืนยันเอกสาร</b>&nbsp;:&nbsp;</td>
