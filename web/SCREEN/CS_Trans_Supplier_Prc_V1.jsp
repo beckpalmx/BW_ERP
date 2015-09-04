@@ -6,9 +6,9 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.*" %>
-<%@page import="com.cgc.Util.Serchselect" %>
-<%@page import="com.cgc.Util.UtiDatabase"%>
-<%@page import="com.cgc.DB.DBConnect"%>
+<%@page import="com.bw.Util.Serchselect" %>
+<%@page import="com.bw.Util.UtiDatabase"%>
+<%@page import="com.bw.DB.DBConnect"%>
 <%@page import="java.text.DecimalFormat" %>
 <%@page import="java.sql.Date"%>
 
@@ -27,7 +27,7 @@
         <script src="//code.jquery.com/jquery-1.9.1.js"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
-        <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css"> <link href="../CSS/component.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/bw_button.css" rel="stylesheet" type="text/css"> <link href="../CSS/component.css" rel="stylesheet" type="text/css">
 
         <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
@@ -331,9 +331,6 @@
 
                 Timestamp ts1 = (new Timestamp(new java.util.Date().getTime()));
                 System.out.println("ts1 = " + ts1);
-                
-                
-                                
 
 
             %>   
@@ -342,7 +339,7 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="#">
-                            <img alt="C. Gigantic Carbon Co.,Ltd" src="../IMAGES/cgc-logo-41.png">
+                            <img alt="C. Gigantic Carbon Co.,Ltd" src="../IMAGES/bw-logo-41.png">
                         </a>
                     </div>
                 </div>
@@ -368,8 +365,8 @@
 
                     <div class="CSS_Table_Example" style="width:1200px;height:150px;">    
                         <center>
-                            <a href="#" onClick="javascript:document.report.submit();" class="cgcButton_19">พิมพ์รายงาน</a>
-                            &nbsp;&nbsp;<a href="#" onClick="javascript:window.close();" class="cgcButton_19">ปิด</a>
+                            <a href="#" onClick="javascript:document.report.submit();" class="bwButton_19">พิมพ์รายงาน</a>
+                            &nbsp;&nbsp;<a href="#" onClick="javascript:window.close();" class="bwButton_19">ปิด</a>
                         </center>    
                     </div>
 

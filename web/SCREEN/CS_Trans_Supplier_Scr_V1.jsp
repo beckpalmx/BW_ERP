@@ -71,7 +71,7 @@
                             <tr>
                                 <td class='columnobject'><div align="right"><b>ประเภทพัสดุ&nbsp;:</b>&nbsp;</div></td>
                                 <td class="columnobject">
-                                    <select id="job_init_flag_id" name="job_init_flag_id" class="select_cgc3" data-style="btn-info" data-toggle="tooltip" title="">
+                                    <select id="A_product_group" name="job_init_flag_id" class="select_cgc3" data-style="btn-info" data-toggle="tooltip" title="">
                                         <option value="-">ทั้งหมด</option>
                                         <option value="BAG">กระสอบ-ถุง</option>
                                         <option value="PAL">พาเลท</option>
@@ -103,9 +103,17 @@
                             <td colspan='2' class='blankspace' ></td>
                             </tr> 
                         </table>     
-
-                        <button type="button" class="btn btn-primary btn-block" data-toggle="tooltip" title="กดปุ่มเพื่อประมวลผล" ><b>ประมวลผล</b></button>
-
+                                    
+                        <div>
+                            <button type="button" class="btn btn-primary btn-block" data-toggle="tooltip" title="กดปุ่มเพื่อประมวลผล" ><b>ประมวลผล</b></button>
+                        </div>  
+                                    
+                        <!--br>
+                        
+                        <div>
+                            <button type="button" class="btn btn-success btn-block" onclick="send_print();" data-toggle="tooltip" title="กดปุ่มเพื่อพิมพ์รายงาน"><b>พิมพ์รายงาน</b></button>     
+                        </div-->
+                        
                     </form>
                     <!--/div-->
                 </div>
