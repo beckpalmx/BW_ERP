@@ -202,35 +202,12 @@ function gettoShow(dataInput, getIdshow)//เรียกข้อมูลต�
             }
         }
 
-        /*
-         
-         if(arryID[i]=="complete_flag"){
-         if(arryData[i] == "Y" ){
-         senddataPopup("complete_flag").checked = true;
-         opener.document.getElementById("complete_flag").readOnly = true;
-         }else{
-         senddataPopup("complete_flag").checked = false;
-         opener.document.getElementById("complete_flag").readOnly = false;
-         }
-         }        
-         
-         if(arryID[i]=="A_complete_flag"){
-         if(arryData[i] == "Y" ){
-         senddataPopup("A_complete_flag").checked = true;
-         opener.document.getElementById("A_complete_flag").readOnly = true;
-         }else{
-         senddataPopup("A_complete_flag").checked = false;
-         opener.document.getElementById("A_complete_flag").readOnly = false;
-         }
-         }
-         */
-
         if (arryID[i] === "A_complete_flag" || arryID[i] === "complete_flag")
         {
             senddataPopup(arryID[i]).checked = arryData[i] === "Y" ? true : false;
             senddataPopup(arryID[i]).value = arryData[i] === "Y" ? "Y" : "N";
             senddataPopup(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-        }
+        }    
 
         if (arryData[i] !== "null") {
             if (arryID[i] === "A_percent_1" || arryID[i] === "A_percent_2" || arryID[i] === "A_percent_3" || arryID[i] === "A_percent_4"
@@ -881,11 +858,12 @@ function gettoShow_Doc_id(dataInput, getIdshow, URLShowDetail, DivShow, Valueinp
         //senddataPopup(arryID[0]).readOnly =true;
         if (arryData[i] !== "null") {
 
-            if (arryID[i] === "A_complete_flag") {
+            if (arryID[i] === "A_complete_flag" || arryID[i] === "A_doc_confirm") {
                 opener.document.getElementById(arryID[i]).value = arryData[i];
                 opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
                 opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-            }
+            }            
+            
 
             //alert(arryData[i]);
             //opener.document.getElementById(arryID[i]).value = arryData[i];
@@ -909,17 +887,7 @@ function gettoShow_Doc_id(dataInput, getIdshow, URLShowDetail, DivShow, Valueinp
             senddataPopup(arryID[i]).value = "";
             //opener.document.getElementById(arryID[i]).value = '';
         }
-
-        if (arryID[i] === "A_complete_flag") {
-            if (arryData[i] === "Y") {
-                senddataPopup("A_complete_flag").checked = true;
-                opener.document.getElementById("cost_value").readOnly = true;
-            } else {
-                senddataPopup("A_complete_flag").checked = false;
-                opener.document.getElementById("cost_value").readOnly = false;
-            }
-        }
-
+        
         //senddataPopup(arryID[i]).value = arryData[i];
 
     }
@@ -945,11 +913,11 @@ function gettoShow_Doc_id2(dataInput, getIdshow, URLShowDetail, DivShow, DivShow
     {
         if (arryData[i] !== "null") {
 
-            if (arryID[i] === "A_complete_flag") {
+            if (arryID[i] === "A_complete_flag" || arryID[i] === "A_doc_confirm") {
                 opener.document.getElementById(arryID[i]).value = arryData[i];
                 opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
                 opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-            }
+            }   
             //alert(arryData[i]);
             //opener.document.getElementById(arryID[i]).value = arryData[i];
             if (arryID[i] === "A_remark") {

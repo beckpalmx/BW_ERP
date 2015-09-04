@@ -191,6 +191,7 @@
                             %>
                             <td  class="detailLeft"><a  href="#" onClick="gettoShow_Doc_id2('<%=objut.DecodeNewLine(getshowdata)%>', '<%=memID%>', '<%=memURLShowdeatil%>', 'show', 'show2', '<%=rs2.getString(memcolom[0])%>')" class="link_transparent"><%=rs2.getString(memcoloumShow[y])%></a></td>
                                 <%
+                                    System.out.println("1 getshowdata = " + getshowdata);
                                 } else {
 
                                 %>
@@ -207,6 +208,7 @@
                             %>
                             <td  class="detailLeft"><a  href="#" onClick="gettoShow_Doc_id('<%=getshowdata%>', '<%=memID%>', '<%=memURLShowdeatil%>', 'show', '<%=rs2.getString(memcolom[0])%>')" class="link_transparent"><%=rs2.getString(memcoloumShow[y])%></a></td>
                                 <%
+                                    System.out.println("2 getshowdata = " + getshowdata);
                                 } else {
 
                                 %>

@@ -36,14 +36,14 @@ public class Process_Supplier_TransactionDB {
 
         delete(SQL_DEL, con, p);
 
-        if (process_id.equalsIgnoreCase("PR_050")) {
+        if (process_id.equalsIgnoreCase("PR_050") || process_id.equalsIgnoreCase("PR_051")) {
 
             SQL = " select runno,doc_id,doc_date,line_no,product_id,price_unit,quantity,bag_qty,amount,wh_in from " + table
                     + " where delete_flag <> 'Y' "
                     + " and to_number(amount,'999999.99')>0 "
                     + " and to_date(format_date4(doc_date),'YYYY-MM-DD') between to_date(format_date3('" + date_from + "'),'YYYY-MM-DD') AND to_date(format_date3('" + date_to + "'),'YYYY-MM-DD')";
 
-        } else if (process_id.equalsIgnoreCase("PR_051")) {
+        } else if (process_id.equalsIgnoreCase("PR_")) {
 
             SQL = " select runno,doc_id,doc_date,line_no,product_id as wh_product_id,weight as wh_weight_final,wh_in as wh_warehouse_id,location_id as wh_location_id,iodine,pgroup_id from " + table
                     + " where delete_flag <> 'Y' "
@@ -53,7 +53,7 @@ public class Process_Supplier_TransactionDB {
         }
 
         SQL = SQL + " order by to_date(format_date4(doc_date),'YYYY-MM-DD')";
-        
+
         System.out.println("Main SQL = " + SQL);
 
         SQL1 = " select count(*) from " + table
@@ -61,7 +61,7 @@ public class Process_Supplier_TransactionDB {
                 + " and to_date(format_date4(doc_date),'YYYY-MM-DD') between to_date(format_date3('" + date_from + "'),'YYYY-MM-DD') AND to_date(format_date3('" + date_to + "'),'YYYY-MM-DD')";
 
         Record = numrow(SQL1, con);
-        
+
         if (Record >= 1) {
             rs = con.createStatement().executeQuery(SQL);
             DataBean_Transaction_Process bean = new DataBean_Transaction_Process();
@@ -77,7 +77,7 @@ public class Process_Supplier_TransactionDB {
                 bean.setQuantity_total(rs.getString("quantity"));
                 bean.setBag_qty_total(rs.getString("bag_qty"));
                 bean.setAmount_total(rs.getString("amount"));
-                
+
                 System.out.println("product_id = " + rs.getString("product_id"));
                 System.out.println("amount = " + rs.getString("amount"));
 
@@ -125,11 +125,11 @@ public class Process_Supplier_TransactionDB {
                 p.setString(i++, bean.getDoc_date());
                 p.setString(i++, bean.getDoc_type());
                 p.setString(i++, bean.getProduct_id());
-                p.setString(i++, bean.getWh_id());                
+                p.setString(i++, bean.getWh_id());
                 p.setString(i++, bean.getPrice_per_unit());
                 p.setString(i++, bean.getQuantity_total());
-                p.setString(i++, bean.getBag_qty_total());                
-                p.setString(i++, bean.getAmount_total());                                
+                p.setString(i++, bean.getBag_qty_total());
+                p.setString(i++, bean.getAmount_total());
                 p.setTimestamp(i++, new Timestamp(new java.util.Date().getTime()));
                 p.setString(i++, ("System"));
                 p.addBatch();

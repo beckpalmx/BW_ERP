@@ -72,7 +72,7 @@ public class D_product_withdraw_confirm_headerDAO {
                 if (DataBean.getDoc_type().equals("Y")) {
                     pd = con.prepareStatement(" UPDATE "
                             + " d_product_withdraw_suppliers_detail_wh SET "
-                            + " doc_type = 'Y' , complete_flag = 'Y' where doc_id = ?");
+                            + " doc_type = 'Y' , complete_flag = 'Y' , amount = quantity where doc_id = ?");
                     pd.setString(1, DataBean.getDoc_id());
                     pd.executeUpdate();
                 }

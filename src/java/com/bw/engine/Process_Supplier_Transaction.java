@@ -37,6 +37,7 @@ public class Process_Supplier_Transaction {
                 System.out.println("doc_date_from = " + doc_date_from);
                 System.out.println("doc_date_to = " + doc_date_to);
                 obj.generate_transaction_process("2558-01-01", doc_date_to, "PR_050", "vd_product_accept_suppliers_detail", "+", r_create, username);
+                obj.generate_transaction_process("2558-01-01", doc_date_to, "PR_051", "vd_product_withdraw_suppliers_detail_wh", "-", r_create, username);
             }
 
             System.out.println("END Transaction Process ... ");

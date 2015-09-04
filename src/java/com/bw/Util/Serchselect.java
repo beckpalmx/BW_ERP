@@ -279,7 +279,7 @@ public class Serchselect {
             case 22:
                 if (inputdatabase.equalsIgnoreCase("Vsupplier")) {
                     strColoum = new String[]{"supplier_id", "name_t"};
-                } else if (inputdatabase.equalsIgnoreCase("Vproduct")) {
+                } else if (inputdatabase.equalsIgnoreCase("Vproduct")||inputdatabase.equalsIgnoreCase("vm_supplier_stock")) {
                     strColoum = new String[]{"product_id", "name_t"};
                 } else if (inputdatabase.equalsIgnoreCase("Vd_rawmatt_receive")) {
                     strColoum = new String[]{"doc_id", "doc_date", "car_no", "supplier_id", "supplyer_type", "car_date_in", "car_time_in", "car_date_out", "car_time_out", "potato_type", "percent_1", "percent_2", "percent_3", "percent_4", "percent_5", "percent_6", "percent_7", "percent_8", "percent_avg", "pc_ref", "price_ref", "price_accept", "soil_deduct", "contamination_deduct", "other_deduct", "dump_deduct", "brake_income", "product_id", "wh_in", "car_in_weight", "car_out_weight", "total_weight", "deduct_weight", "balance_weight", "total_payment", "amount_deduct", "amount_payment", "remark", "reporter_id", "checker_id", "approve_id", "supplier_name", "product_name", "warehouse_name", "reporter_name", "checker_name", "approve_name", "brake_value", "percent_tapioca", "amount_tapioca", "doc_time", "complete_flag"};
@@ -728,7 +728,7 @@ public class Serchselect {
             case 22:
                 if (inputdatabase.equalsIgnoreCase("Vsupplier")) {
                     strID = "A_supplier_id|supplier_id_desc";
-                } else if (inputdatabase.equalsIgnoreCase("Vproduct")) {
+                } else if (inputdatabase.equalsIgnoreCase("Vproduct")||inputdatabase.equalsIgnoreCase("vm_supplier_stock")) {
                     strID = "A_product_id|product_id_desc";
                 } else if (inputdatabase.equalsIgnoreCase("Vd_rawmatt_receive")) {
                     strID = "A_doc_id|A_doc_date|A_car_no|A_supplier_id|A_supplyer_type|A_car_date_in|A_car_time_in|A_car_date_out|A_car_time_out|A_potato_type|A_percent_1|A_percent_2|A_percent_3|A_percent_4|A_percent_5|A_percent_6|A_percent_7|A_percent_8|A_percent_avg|A_pc_ref|A_price_ref|A_price_accept|A_soil_deduct|A_contamination_deduct|A_other_deduct|A_dump_deduct|A_brake_income|A_product_id|A_wh_in|A_car_in_weight|A_car_out_weight|A_total_weight|A_deduct_weight|A_balance_weight|A_total_payment|A_amount_deduct|A_amount_payment|A_remark|A_reporter_id|A_checker_id|A_approve_id|supplier_id_desc|product_id_desc|wh_in_desc|reporter_id_desc|checker_id_desc|approve_id_desc|A_brake_value|A_per_cent_tapioca|A_amount_tapioca|A_doc_time|A_complete_flag";
@@ -1137,7 +1137,7 @@ public class Serchselect {
             case 22:
                 if (inputdatabase.equalsIgnoreCase("Vsupplier")) {
                     strFillName = new String[]{"รหัสSupplier", "ชื่อSupplier"};
-                } else if (inputdatabase.equalsIgnoreCase("Vproduct")) {
+                } else if (inputdatabase.equalsIgnoreCase("Vproduct")||inputdatabase.equalsIgnoreCase("vm_supplier_stock")) {
                     strFillName = new String[]{"รหัสสินค้า", "ชื่อสินค้า"};
                 } else if (inputdatabase.equalsIgnoreCase("Vd_rawmatt_receive")) {
                     strFillName = new String[]{"เลขที่เอกสาร", "วันที่บันทึกเอกสาร", "ชื่อผู้ขาย"};
@@ -1508,7 +1508,7 @@ public class Serchselect {
             case 22:
                 if (inputdatabase.equalsIgnoreCase("Vsupplier")) {
                     strColoumShow = new String[]{"supplier_id", "name_t"};
-                } else if (inputdatabase.equalsIgnoreCase("Vproduct")) {
+                } else if (inputdatabase.equalsIgnoreCase("Vproduct")||inputdatabase.equalsIgnoreCase("vm_supplier_stock")) {
                     strColoumShow = new String[]{"product_id", "name_t"};
                 } else if (inputdatabase.equalsIgnoreCase("Vd_rawmatt_receive")) {
                     strColoumShow = new String[]{"doc_id", "doc_date", "supplier_name"};
