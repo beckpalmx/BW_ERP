@@ -100,7 +100,7 @@
                 date_f = request.getParameter("date_f");
                 date_t = request.getParameter("date_t");
             %>
-            <input type="hidden" name="type_report" value="4">
+            <input type="hidden" name="type_report" value="1">
             <input type="hidden" name="report_code" value="BWRP_021_WH_2">
             <input type="hidden" name="price_year" value="">
             <input type="hidden" name="pgroup_id" value="-">
@@ -191,7 +191,7 @@
                 if (!request.getParameter("date_from").equals("") && !request.getParameter("date_to").equals("") && !request.getParameter("date_from").equals(null) && !request.getParameter("date_to").equals(null)) {
                     sql_where = " WHERE to_date(format_date(doc_date),'YYYY-MM-DD') between to_date(format_date2('"
                             + request.getParameter("date_from") + "'),'YYYY-MM-DD') AND to_date(format_date2('"
-                            + request.getParameter("date_to") + "'),'YYYY-MM-DD') and pgroup_id <> 'RAW' ";
+                            + request.getParameter("date_to") + "'),'YYYY-MM-DD') ";
                 }
 
                 System.out.println("cond product_id  = " + product_id);

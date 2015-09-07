@@ -24,6 +24,7 @@ public class PrintReport {
         connection = new DBConnect().openNewConnection();
         //InputStream path = (InputStream) request.getSession().getAttribute("path");
         String report_code = (String) request.getParameter("report_code");
+        System.out.println("report_code = " + report_code);
         HashMap<String, Object> hashMap = new HashMap<String, Object>();
         hashMap.put("fileName", report_code);
         hashMap.put("company_name", Mcompany(connection));

@@ -3,7 +3,7 @@
 <%@page import="com.bw.bean.UserBean"%>
 <html>
     <head>
-        <%@ include file="PageHeader.jsp" %>
+        <%@include file="PageHeader.jsp"%>
         <title></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,16 +58,17 @@
         <div class="container">        
             <div class="panel panel-primary">
                 <div class="panel-heading"> <span class="glyphicon glyphicon-list" style="color:white"></span>&nbsp;
-                    <b>รายงานความเคลื่อนไหวพัสดุ (กระสอบ-ถุง-พาเลท) (CS_Trans_Supplier_Scr_V2)</b>
+                    <b>รายงานความเคลื่อนไหวพัสดุ (กระสอบ-ถุง-พาเลท) (CS_Trans_Supplier_Scr_V1)</b>
                 </div>                
 
                 <div class="panel-footer">
 
-                    <form name ="report" action="CS_Trans_Supplier_Prc_V2.jsp" target="_blank" method ="post">
+                    <form name ="report" action="CS_Trans_Supplier_Prc_V1.jsp" target="_blank" method ="post">
                         <input type="hidden" name="chkNull" id="chkNull" value="date_f,date_t">
                         <input type="hidden" name="date_from" value="">
                         <input type="hidden" name="date_to" value="">          
-                        <table  cellpadding="0"  cellspacing="0">                        
+                        <table  cellpadding="0"  cellspacing="0">                                                        
+
                             <tr>
                                 <td class='columnobject'><div align="right"><b>กลุ่มพัสดุ&nbsp;:</b>&nbsp;</div></td>
                                 <td class="columnobject">
@@ -84,16 +85,16 @@
                                     &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('vm_supplier_stock', 22, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
                                     <input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='' size='60' readonly="readonly" />                              
                                 </td>
-                            </tr>                                                            
+                            </tr>                            
 
                             <tr>
                                 <td class='columnobject'><div align="right"><b>วันที่เริ่มต้น&nbsp;:</b>&nbsp;</div></td>
-                                <td class='columnobject'><input name="date_f" type='text' class="inputs" id="date_f" value="<%=start_current_month%>" readonly/>
+                                <td class='columnobject'><input name="date_f" type='text' class="inputs" id="date_f" size='12' value="<%=start_current_month%>" readonly/>
                                     &nbsp;<a id='date_1' href="javascript:;" data-toggle="tooltip" title="เริ่มวันที่"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                     <script type='text/javascript'>Calendar.setup({inputField: 'date_f', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});
                                     </script>                                    </td>
                                 <td class='columnobject'><div align="right"><b>ถึงวันที่&nbsp;:</b>&nbsp;</div></td>
-                                <td class='columnobject'><input name="date_t" type='text' class="inputs" id="date_t" value="<%=end_current_month%>" readonly/>
+                                <td class='columnobject'><input name="date_t" type='text' class="inputs" id="date_t" size='12' value="<%=end_current_month%>" readonly/>
                                     &nbsp;<a id='date_2' href="javascript:;" data-toggle="tooltip" title="ถึงวันที่"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                     <script type='text/javascript'>Calendar.setup({inputField: 'date_t', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>                                    
                                 </td>
@@ -104,7 +105,15 @@
                             </tr> 
                         </table>     
 
-                        <button type="button" class="btn btn-primary btn-block" data-toggle="tooltip" title="กดปุ่มเพื่อประมวลผล" ><b>ประมวลผล</b></button>
+                        <div>
+                            <button type="button" class="btn btn-primary btn-block" data-toggle="tooltip" title="กดปุ่มเพื่อประมวลผล" ><b>ประมวลผล</b></button>
+                        </div>  
+
+                        <!--br>
+                        
+                        <div>
+                            <button type="button" class="btn btn-success btn-block" onclick="send_print();" data-toggle="tooltip" title="กดปุ่มเพื่อพิมพ์รายงาน"><b>พิมพ์รายงาน</b></button>     
+                        </div-->
 
                     </form>
                     <!--/div-->

@@ -68,7 +68,7 @@
         String SQL = " ";
 
         SQL = SQL + "where to_date(format_date(doc_date),'YYYY-MM-DD') between to_date(format_date2('" + date_form + "'),'YYYY-MM-DD') AND to_date(format_date2('" + date_to + "'),'YYYY-MM-DD') ";
-
+        System.out.println("SQL = " + SQL);
         report.printReport_4(request, response, path, SQL);
     } else if (type == 6) {
         //JOptionPane.showConfirmDialog(null, request.getParameter("date_to"));
