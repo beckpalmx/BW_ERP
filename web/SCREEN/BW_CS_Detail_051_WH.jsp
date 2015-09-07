@@ -10,9 +10,26 @@
         <META Http-Equiv="Pragma" Content="no-cache">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
-        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
+        <link href="../CSS/BT.css" rel="stylesheet" type="text/css">  
+        <link href="../CSS/component.css" rel="stylesheet" type="text/css"> 
         <link href="../CSS/cgc_button.css" rel="stylesheet" type="text/css">        
         <script type="text/javascript" src="../JS/myAjaxFramework.js"></script>
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../JS/bootstrap/css/bootstrap-theme.min.css">
+
+        <script src="../JS/jquery/jquery-2.1.4.js"></script>
+        <script src="../JS/bootstrap/js/bootstrap.min.js"></script>                           
+
+        <link rel="stylesheet" href="../CSS/checkbox/awesome-bootstrap-checkbox.css"/>     
+
+
+        <script src="../JS/alertify/alertify.js"></script>        
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.core.css" />
+
+        <link rel="stylesheet" href="../CSS/alertify/alertify.default.css">
+
+        <link rel="stylesheet" href="../FONTS/css/font-awesome.css" />                  
         <script type="text/javascript">
             function goAdd() {
                 var arrayChk = new Array;
@@ -110,28 +127,26 @@
         <input type="hidden" id="I_status" name="I_status" value="<%=A_status%>">
         <input type="hidden" id="U_status" name="U_status" value="<%=U_status%>">
         <input type="hidden" id="chkNull" name="chkNull" value="A_amount">
-        <table  cellpadding="0"  cellspacing="0" align="center">
-            <tr >
-                <td class="ftopleft"></td>
-                <td  class="ftopcenter" colspan="2"><span class="h_multi">ข้อมูลเบิกพัสดุ</span>&nbsp;</td>
-                <td class="ftopright"></td>
-            </tr>
-            <tr >
-                <td class="fcenterleft"></td>
-                <td  colspan="2" class="fcentercenter">
+        <br>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                    <b>ข้อมูลการเบิก (กระสอบ - ถุง - พาเลท) </b>
+                </div>                        
+                <div class="panel-footer">   
                     <div align="center">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
                                 <td colspan="2"  class="blankspace"></td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">รหัสพัสดุ*&nbsp;</td>
+                                <td class="columnlabel1">รหัสพัสดุ*&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='product_id' class='inputs' type="text" id="product_id" value='<%=product_id%>' size='30' />  <input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='<%=product_name%>' size='70' />                               
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">คลังพัสดุ&nbsp;</td>
+                                <td class="columnlabel1">คลังพัสดุ&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_wh_in' class='inputs' type="text" id="A_wh_in" value='<%=wh_in%>' size='10' />   <a href="#">
                                         <img height="20" border="0" align="middle" width="20" src="../IMAGES/BUTTON/MAIN/SEARCH20.png" alt="ค้นหา" name="IMAGE4" onclick="openBrWindow('Mwarehouse&textinput=A_wh_in', 31, 'Search_Detail.jsp')">
@@ -139,37 +154,37 @@
                                 </td>
                             </tr>
                             <!--tr>
-                                <td class="columnlabel">กะ</td>
+                                <td class="columnlabel1">กะ</td>
                                 <td class="columnobject"><%=objuti.ShowSelectBox("select shift_id,name_t from mshift order by runno", "shift_id", "name_t", "A_shift")%>
                                     <input type="hidden" id="selectshift" value="<%=shift%>">&nbsp;</td>
                             </tr-->
                             <input type="hidden" id="A_shift" value="A">&nbsp;</td>
                             <input type="hidden" id="selectshift" value="<%=shift%>">&nbsp;</td>
-                            
+
                             <!--tr>
-                                <td class="columnlabel"><span class="row3">น้ำหนัก(กก.)&nbsp;</span></td>
+                                <td class="columnlabel1"><span class="row3">น้ำหนัก(กก.)&nbsp;</span></td>
                                 <td class="columnobject">
                                     <input name="weight" class='inputs' type="text" id="weight" size="10" value="<%=weight%>">                                
                                 </td>
                             </tr-->
-                                <input name="weight" class='inputs' type="hidden" id="weight" size="10" value="<%=weight%>">                                
+                            <input name="weight" class='inputs' type="hidden" id="weight" size="10" value="<%=weight%>">                                
                             <tr>
-                                <td class="columnlabel"><span class="row3">จำนวน&nbsp;</span>&nbsp;</td>
+                                <td class="columnlabel1"><span class="row3">จำนวน&nbsp;</span>&nbsp;</td>
                                 <td class="columnobject"><input name='bag_qty' class='inputs' type="text" id="bag_qty" value='<%=bag_qty%>' size='10' />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="columnlabel">ยอดตรวจนับ&nbsp;</td>
+                                <td class="columnlabel1">ยอดตรวจนับ&nbsp;</td>
                                 <td class="columnobject"><input name='quantity' class='inputs' type="text" id="quantity" value='<%=quantity%>' size='10' />
                                 </td>
                             </tr>
                             <!--tr>
-                                <td class="columnlabel">ยอดตรวจนับ(ก/ส)&nbsp;</td>
+                                <td class="columnlabel1">ยอดตรวจนับ(ก/ส)&nbsp;</td>
                                 <td class="columnobject"><input name='A_amount' class='inputs' type="text" id="A_amount" value='<%=amount%>' size='10' />                              </td>
                             </tr-->
                             <input name='A_amount' class='inputs' type="hidden" id="A_amount" value='<%=amount%>' size='10' />
                             <tr>
-                                <td class="columnlabel">หมายเหตุ&nbsp;</td>
+                                <td class="columnlabel1">หมายเหตุ&nbsp;</td>
                                 <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>
                             </tr>
 
@@ -192,15 +207,9 @@
                                 </td>
                             </tr>
                         </table>
-                    </div></td>
-                <td class="fcenterright"></td>
-            </tr>
-            <tr bordercolor="0069B3">
-                <td class="ffootleft"></td>
-                <td  class="ffootcenter" colspan="2"></td>
-                <td class="ffootright"></td>
-            </tr>
-        </table>
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

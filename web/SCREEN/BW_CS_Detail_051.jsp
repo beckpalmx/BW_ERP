@@ -125,8 +125,8 @@
         <input name="username" type="hidden" id="username" value="<%=request.getParameter("A_username")%>" size="30" readonly/>
         <input type="hidden" id="A_doc_id" name="A_doc_id" value="<%=request.getParameter("A_doc_id")%>">
         <input type="hidden" id="A_line_no" name="A_line_no" value="<%=line_no%>">
-        <input type="text" id="I_status" name="A_status" value="<%=A_status%>">
-        <input type="text" id="U_status" name="U_status" value="<%=U_status%>">
+        <input type="hidden" id="I_status" name="A_status" value="<%=A_status%>">
+        <input type="hidden" id="U_status" name="U_status" value="<%=U_status%>">
         <input type="hidden" id="chkNull" name="chkNull" value="A_product_id,A_weight,A_bag_qty,A_quantity">
         <br>
         <div class="container">

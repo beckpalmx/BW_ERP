@@ -175,7 +175,7 @@
                 doc_eff_date = objr_p.getDoc_eff_date();
                 doc_no = objr_p.getDoc_no();
                 //_______________________________________________________________report
-%>
+            %>
             <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input type="hidden" name="chkNull" id="chkNull" value="A_doc_id">
             <input type="hidden" name="I_status" id="I_status" value="1">

@@ -116,8 +116,8 @@
                 String ptype_id = request.getParameter("ptype_id");
 
                 // **** ลบข้อมูลตาราง ความเคลื่อนไหว
-                String sqlDelete = " DELETE FROM tmp_stock_cf ;"
-                        + " ALTER SEQUENCE seq_tmp_stock_cf RESTART WITH 1; "
+                String sqlDelete = " DELETE FROM tmp_stock_supplier_balance ;"
+                        + " ALTER SEQUENCE seq_tmp_stock_supplier_balance RESTART WITH 1; "
                         + " DELETE FROM tmp_mrawmat_current_movement ;"
                         + " ALTER SEQUENCE seq_tmp_mrawmat_current_movement RESTART WITH 1; ";
                 STateMentData = Conn.createStatement();
@@ -256,7 +256,7 @@
                         data_r = 0.00;
                         data_w = 0.00;
 
-                        SqlInsert1 = "INSERT INTO tmp_stock_cf(location_id,doc_date,doc_type,data_r,data_w,data_total,data_transfer,price_per_unit,pgroup_id,product_id) VALUES "
+                        SqlInsert1 = "INSERT INTO tmp_stock_supplier_balance(location_id,doc_date,doc_type,data_r,data_w,data_total,data_transfer,price_per_unit,pgroup_id,product_id) VALUES "
                                 + "('" + rec_loop1.getString("location_id") + "','" + s_end_period + "','"
                                 //+ doc_type + "'," + data_r + "," + data_w + "," + transfer + "," + transfer + ",'"
                                 + "***'," + data_r + "," + data_w + "," + transfer + "," + transfer + ",'"
@@ -314,7 +314,7 @@
                          + " data_w = " + data_w
                          + " balance = " + balance);
                          */
-                        SqlInsert2 = "INSERT INTO tmp_stock_cf(location_id,doc_date,doc_type,data_r,data_w,data_total,price_per_unit,pgroup_id,product_id) VALUES "
+                        SqlInsert2 = "INSERT INTO tmp_stock_supplier_balance(location_id,doc_date,doc_type,data_r,data_w,data_total,price_per_unit,pgroup_id,product_id) VALUES "
                                 + "('" + rec_loop2.getString("location_id") + "','" + rec_loop2.getString("doc_date") + "','"
                                 + rec_loop2.getString("doc_type") + "'," + data_r + "," + data_w + "," + balance + ",'"
                                 + rec_loop2.getString("price_per_unit") + "','" + rec_loop2.getString("pgroup_id") + "','" + rec_loop2.getString("product_id") + "')";
