@@ -9,11 +9,11 @@ and open the template in the editor.
 */
 
 TEXTAREA {
-    font : 12px "MS Sans Serif", sans-serif, "Microsoft Sans Serif";
-    //color : #000000;
-    //  color : #FF0000;
+font : 12px "MS Sans Serif", sans-serif, "Microsoft Sans Serif";
+//color : #000000;
+//  color : #FF0000;
     color:#3366CC;
-    vertical-align : top;
+vertical-align : top;
 }
 
 
@@ -258,28 +258,6 @@ label.columnlabel1 {
     color:#0000FF
 }
 
-.select_cgc4 {
-    //background-image:url(../IMAGES/component/icon-arrow-down.png);
-    //background-repeat:no-repeat;
-    //background-position:200px;
-    width:50px;    
-    padding:3px;    
-    margin-top:1px;
-    font-family:Cursive;
-    line-height:1;
-    border-radius:6px;
-    border:3px solid #EBE6E2;                
-    //background-color:#C0C0C0;
-    //color:#ff0;
-    //font-size:14px;
-    //-webkit-appearance:none;
-    //box-shadow:inset 0 0 10px 0 rgba(0,0,0,0.6);
-    //outline:none
-}
-.select_cgc4:hover {
-    color:#0000FF
-}
-
 .checkbox  {
     border-radius:4px;
 }   
@@ -298,24 +276,4 @@ thead th {
 .panel-heading > .table, .panel-heading > .table th {
     //margin:0px;
     //border: 0px;
-}
-
-.label {
-    text-align:right;
-}
-
-.alert, .alert-success, .alert-warning, .alert-error {
-    border: 1px solid black;
-    padding: 5px 10px;
-    background: yellow;
-}
-
-.alert-success {
-    background: green;
-}
-.alert-warning {
-    background: orange;
-}
-.alert-error {
-    background: red;
 }

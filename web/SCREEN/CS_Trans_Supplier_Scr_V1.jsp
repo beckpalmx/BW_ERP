@@ -70,9 +70,9 @@
                         <table  cellpadding="0"  cellspacing="0">                                                        
 
                             <tr>
-                                <td class='columnobject'><div align="right"><b>ประเภทพัสดุ&nbsp;:</b>&nbsp;</div></td>
+                                <td class='columnobject'><div align="right"><b>กลุ่มพัสดุ&nbsp;:</b>&nbsp;</div></td>
                                 <td class="columnobject">
-                                    <select id="A_product_group" name="job_init_flag_id" class="select_cgc3" data-style="btn-info" data-toggle="tooltip" title="">
+                                    <select id="pgroup_id" name="pgroup_id" class="select_cgc3" data-style="btn-info" data-toggle="tooltip" title="">
                                         <option value="-">ทั้งหมด</option>
                                         <option value="BAG">กระสอบ-ถุง</option>
                                         <option value="PAL">พาเลท</option>
@@ -81,7 +81,7 @@
 
                             <tr>
                                 <td class="columnlabel1">ชื่อพัสดุ&nbsp;:&nbsp;</td>
-                                <td colspan="3" class="columnobject"><input name='A_product_id' class='inputs' type="text" id="A_product_id" value='' size='12' readonly="readonly"/>
+                                <td colspan="3" class="columnobject"><input name='product_id' class='inputs' type="text" id="product_id" value='' size='12' readonly="readonly"/>
                                     &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('vm_supplier_stock', 22, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
                                     <input name='product_id_desc' class='inputs' type="text" id="product_id_desc" value='' size='60' readonly="readonly" />                              
                                 </td>

@@ -16,7 +16,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="../JS/bootstrap/js/bootstrap.min.js"></script>
 
-<link href="../CSS/bw_button.css" rel="stylesheet" type="text/css"> <link href="../CSS/component.css" rel="stylesheet" type="text/css">
+<link href="../CSS/bw_button.css" rel="stylesheet" type="text/css"> 
+<link href="../CSS/component.css" rel="stylesheet" type="text/css">
 
  <script>
 
@@ -26,7 +27,7 @@
             value += 5;
             $(".progress-bar").css("width", value + "%").attr("aria-valuenow", value);
             //if (value == 25 || value == 55 || value == 85) {
-            if (value == 75 || value == 95) {
+            if (value === 75 || value === 95) {
                 return setTimeout(barAnim, 500);
             }
             //if (value >= 100) {
