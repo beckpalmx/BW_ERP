@@ -1,26 +1,26 @@
 
-function createRequestObject() //Ajax Create an XMLHttpRequest Object
+function createRequestObject()//Create Ajax Object
 {
     var requestObjectTemp = false;
     if (window.XMLHttpRequest)
     {
-        requestObjectTemp = new XMLHttpRequest();
+        requestObjectTemp = new XMLHttpRequest();//Support Firfox 
     }
     else if (window.ActiveXObject)
     {
-        requestObjectTemp = new ActiveXObject('Microsoft.XMLHTTP');
+        requestObjectTemp = new ActiveXObject('Microsoft.XMLHTTP');//Support IE
     }
     else
     {
-        alert("Your browser does not support");
+        alert("Your browser does not support");//Not Support
     }
     return requestObjectTemp;
 }
-function getId(idname)//Return Element By ID
+function getId(idname)//�ӡ�� return ��� ID ���������к� .value ���� .innerHTML
 {
     return document.getElementById(idname);
 }
-function senddataPopup(IDname) // Return Element Popup By ID
+function senddataPopup(IDname)//�ӡ�� return ��� ID ���������к� .value ���� .innerHTML(��͹ Popup)
 {
     return opener.document.getElementById(IDname);
 }
@@ -62,13 +62,14 @@ function getSave(array)//การส่งข้อมูลแบบ Ajax
                         }
                         //ResetParameter();
                     }
+
                 }
-                //obj.innerHTML = "status:" + xhr.responseText;            
+                //obj.innerHTML = "status:" + xhr.responseText;
             };
         }
         xhr.send(null);
     }
-    /*if(al !== ""){
+    /*if(al != ""){
      
      }*/
 }
@@ -106,7 +107,7 @@ function getEdit(array)//การส่งข้อมูลแบบ Ajax
         }
         xhr.send(null);
     }
-    /*if(al !== ""){
+    /*if(al != ""){
      
      }*/
 }
@@ -174,7 +175,7 @@ function gettoShow(dataInput, getIdshow)//เรียกข้อมูลต�
     arryData = dataInput.split("|");
     arryID = getIdshow.split("|");
 
-    //sendShow_Detail(URLShowDetail, DivShow, Valueinput);
+    //alert(arryData + " - " + arryID);
 
     for (var i = 0; i < arryData.length; i++)
     {
@@ -184,34 +185,6 @@ function gettoShow(dataInput, getIdshow)//เรียกข้อมูลต�
             } else
                 opener.document.getElementById("radio2").checked = true;
         }
-
-        if (arryID[i] === "payment_method") { //---> ตรวจสอบ วิธีการจ่ายเงิน
-            if (arryData[i] === "0")
-            {
-                opener.document.getElementById("radio1").checked = true;
-            } else if (arryData[i] === "1")
-            {
-                opener.document.getElementById("radio2").checked = true;
-            } else if (arryData[i] === "2")
-            {
-                opener.document.getElementById("radio3").checked = true;
-            } else
-            {
-                opener.document.getElementById("radio1").checked = false;
-                opener.document.getElementById("radio2").checked = false;
-                opener.document.getElementById("radio3").checked = false;
-            }
-        }
-
-        if (arryID[i] === "lab_not_check") {
-            //alert("arryID[i] = " + arryID[i]);
-            if (arryData[i] === "Y") {
-                senddataPopup("lab_not_check").checked = true;
-            } else {
-                senddataPopup("lab_not_check").checked = false;
-            }
-        }
-
         if (arryID[i] === "qc_check") {
             if (arryData[i] === "Y") {
                 senddataPopup("chkbox_qc").checked = true;
@@ -229,40 +202,31 @@ function gettoShow(dataInput, getIdshow)//เรียกข้อมูลต�
             }
         }
 
-        /*
-         if (arryID[i] == "complete_flag") {
-         if (arryData[i] == "Y") {
-         senddataPopup("complete_flag").checked = true;
-         opener.document.getElementById("complete_flag").readOnly = true;
-         } else {
-         senddataPopup("complete_flag").checked = false;
-         opener.document.getElementById("complete_flag").readOnly = false;
-         }
-         }
-         */
+        if (arryID[i] === "A_complete_flag" || arryID[i] === "complete_flag")
+        {
+            senddataPopup(arryID[i]).checked = arryData[i] === "Y" ? true : false;
+            senddataPopup(arryID[i]).value = arryData[i] === "Y" ? "Y" : "N";
+            senddataPopup(arryID[i]).disabled = arryData[i] === "N" ? false : true;
+        }    
 
-        if (arryID[i] === "complete_flag") {
-            opener.document.getElementById(arryID[i]).value = arryData[i];
-            opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
-            opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
+        if (arryData[i] !== "null") {
+            if (arryID[i] === "A_percent_1" || arryID[i] === "A_percent_2" || arryID[i] === "A_percent_3" || arryID[i] === "A_percent_4"
+                    || arryID[i] === "A_percent_5" || arryID[i] === "A_percent_6" || arryID[i] === "A_percent_7" || arryID[i] === "A_percent_8") {
+                opener.document.getElementById(arryID[i]).value = arryData[i].replace('', '0');
+            }
         }
 
-        //alert("ok 2" + arryData[i]);
         if (arryData[i] !== "null") {
             if (arryID[i] === "remark") {
-                //for (var y = 0; y < arryData[i].length; y++) {
-                for (var y = 0; y < arryData[i].size; y++) {
-                    //alert("ok 2");
+                for (var y = 0; y < arryData[i].length; y++) {
                     arryData[i] = arryData[i].replace('<br>', '\n');
                 }
                 opener.document.getElementById(arryID[i]).value = arryData[i].replace('<br>', '\n');
-                //alert("ok 3");
-            } else if (arryID[i] === "price_flag") {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
-                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
             } else {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
+                opener.document.getElementById(arryID[i]).value = arryData[i].replace(/(3422042#34)/g, "\"").replace(/(3927047#39)/g, "\'");
             }
+
+
         } else {
             opener.document.getElementById(arryID[i]).value = '';
         }
@@ -285,7 +249,7 @@ function IsNumeric(sText, obj)//javascript ที่ดักข้อมูล�
         }
     }
     if (IsNumber === false) {
-        alert("Entry Number Only !!!");
+        alert("กรุณากรอกข้อมูลด้วยตัวเลขเท่านั้น");
         obj.value = sText.substr(0, sText.length - 1);
     }
 }
@@ -300,17 +264,12 @@ function URLsend(IDname, URLwork)//เป็นการรวมข้อมู
     {
         if (i === 0)
         {
-            if (arry[i] !== null) {
-                URL = URL + arry[i] + "=" + encodeToHex(getId(arry[i]).value);
-            }
+            URL = URL + arry[i] + "=" + encodeToHex(getId(arry[i]).value);
         }
         else
         {
             //alert(URL);
-            //out.println(URL);
-            if (arry[i] !== null) {
-                URL = URL + "&" + arry[i] + "=" + encodeToHex(getId(arry[i]).value);
-            }
+            URL = URL + "&" + arry[i] + "=" + encodeToHex(getId(arry[i]).value);
         }
     }
     var arry2 = new Array;
@@ -323,7 +282,7 @@ function URLsend(IDname, URLwork)//เป็นการรวมข้อมู
 //---------------------------------------------------------------------
 function confirmDialogSave(URL)
 {
-    var r = confirm("คุณต้องการบันทึกข้อมูลนี้ใช่หรือไม่ ?");
+    var r = confirm("คุณต้องการบันทึกใช่หรือไม่");
     if (r === true)
     {
         getSave(URL);
@@ -333,7 +292,7 @@ function confirmDialogSave(URL)
 //---------------------------------------------------------------------
 function confirmDialogDelete(URL)//
 {
-    var r = confirm("ต้องการลบข้อมูลนี้ ?");
+    var r = confirm("คุณต้องการลบข้อมูลนี้ใช่หรือไม่");
     if (r === true)
     {
         getSave(URL);
@@ -342,9 +301,7 @@ function confirmDialogDelete(URL)//
 //-----------------------------------------------------------------------
 function confirmDialogEdit(URL)
 {
-    //var r = confirm("คุณต้องการแก้ไขข้อมูลนี้ใช่หรือไม่");
-    var r = confirm(" ต้องการแก้ไขข้อมูลที่มีอยู่แล้วใช่หรือไม่ ? (Update DATA)");
-
+    var r = confirm("คุณต้องการแก้ไขข้อมูลนี้ใช่หรือไม่");
     if (r === true)
     {
         getEdit(URL);
@@ -354,7 +311,7 @@ function confirmDialogEdit(URL)
 //-----------------------------------------------------------------------
 function confirmDialogEdit_img(URL)
 {
-    var r = confirm("Update DATA ?");
+    var r = confirm("คุณต้องการแก้ไขข้อมูลนี้ใช่หรือไม่");
     if (r === true)
     {
         getEdit_img(URL);
@@ -390,7 +347,7 @@ function ChkParameter(ChkNull)//ตรวจสอบข้อมูลที่
         for (var i = 0; i < arryID.length; i++)
         {
             if (getId(arryID[i]).value === "") {
-                alert('ข้อมูลไม่ครบถ้วน !' + getId(arryID[i]).value);
+                alert('ข้อมูลไม่ครบถ้วน');
                 getId(arryID[i]).focus();
                 re = false;
                 break;
@@ -443,7 +400,7 @@ function cancelAction()//การ Reset หน้าจอทั้งหมด
                 theInput.checked = false;
                 theInput.disabled = false;
             } else {
-                if (theInput.id !== "process_id1" && theInput.id !== "process_name1") {
+                if (theInput.id !== "process_id" && theInput.id !== "process_name") {
                     theInput.value = '';
                     theInput.checked = false;
                     theInput.disabled = false;
@@ -458,163 +415,6 @@ function cancelAction()//การ Reset หน้าจอทั้งหมด
         theArea.value = '';
     }
 }
-//---------------------------ไว้โชว์ข้อมูลส่วน Detail แบบ Ajax------------------------------------------
-function sendShow_Detail(URLShowDetail, DivShow, Valueinput) {
-    var obj = senddataPopup(DivShow);
-    var requestObject = createRequestObject();
-    if (requestObject !== null)
-    {
-
-        requestObject.open("GET", URLShowDetail + Valueinput + "&ts=" + Math.random() + new Date().getTime());
-        requestObject.onreadystatechange = function()
-        {
-            if (requestObject.readyState === 4 && requestObject.status === 200)
-            {
-                obj.innerHTML = requestObject.responseText;
-            }
-
-        };
-        requestObject.send(null);
-
-    }
-}
-
-function gettoShow_Doc_id(dataInput, getIdshow, URLShowDetail, DivShow, Valueinput)
-{
-    sendShow_Detail(URLShowDetail, DivShow, Valueinput);
-    var arryData = new Array;
-    var arryID = new Array;
-    arryData = dataInput.split("|");
-    arryID = getIdshow.split("|");
-    for (var i = 0; i < arryData.length; i++)
-    {
-        //alert(arryData[i] );
-        //senddataPopup(arryID[0]).readOnly =true;
-        if (arryData[i] !== "null") {
-            //alert(arryData[i]);
-            //opener.document.getElementById(arryID[i]).value = arryData[i];
-            if (arryID[i] === "approve_status") { //---> ตรวจสอบการ Approve
-                if (arryData[i] !== "Y") { //---> ตรวจสอบ ค่า Null
-                    opener.document.getElementById("radio1").checked = true;
-                    opener.document.getElementById("radio1").disabled = false;
-                    opener.document.getElementById("radio2").disabled = false;
-                } else {
-                    opener.document.getElementById("radio2").checked = true;
-                    opener.document.getElementById("radio1").disabled = true;
-                    opener.document.getElementById("radio2").disabled = true;
-                }
-            }
-
-            if (arryID[i] === "status") { //---> ตรวจสอบการ status
-                if (arryData[i] !== "Y") { //---> ตรวจสอบ ค่า Null
-                    opener.document.getElementById("radio1").checked = true;
-                } else {
-                    opener.document.getElementById("radio2").checked = true;
-                }
-            }
-
-            if (arryID[i] === "remark") {
-                for (var y = 0; y < arryData[i].length; y++) {
-                    arryData[i] = arryData[i].replace('<br>', '\n');
-                }
-                opener.document.getElementById(arryID[i]).value = arryData[i].replace('<br>', '\n');
-            } else if (arryID[i] === "price_flag") {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
-                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
-            } else if (arryID[i] === "document_confirm_flag") {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
-                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
-                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-            } else if (arryID[i] === "product_confirm") {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
-                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
-                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-            } else if (arryID[i] === "quality_confirm") {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
-                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
-                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-            } else if (arryID[i] === "wh_emp_confirm") {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
-                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
-                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-            } else if (arryID[i] === "wh_leader_confirm") {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
-                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
-                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-            } else if (arryID[i] === "A_complete_flag") {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
-                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
-                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-            } else if (arryID[i] === "complete_flag") {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
-                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
-                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-            } else {
-                opener.document.getElementById(arryID[i]).value = arryData[i];
-            }
-            //senddataPopup(arryID[i]).value = arryData[i];
-        } else {
-
-            senddataPopup(arryID[i]).value = "";
-            //opener.document.getElementById(arryID[i]).value = '';
-        }
-        //senddataPopup(arryID[i]).value = arryData[i];
-
-    }
-    //gettoShow(dataInput, getIdshow);
-    senddataPopup("status_cancle").value = "1";
-    setTimeout('window.close()', 1000);
-}
-
-function gettoShow_Code_id(dataInput, getIdshow, URLShowDetail, DivShow, Valueinput)
-{
-    sendShow_Detail(URLShowDetail, DivShow, Valueinput);
-    var arryData = new Array;
-    var arryID = new Array;
-    arryData = dataInput.split("|");
-    arryID = getIdshow.split("|");
-    for (var i = 0; i < arryData.length; i++)
-    {
-        //alert(arryData[i]);
-
-        //senddataPopup(arryID[0]).readOnly =true;
-
-        if (arryData[i] !== "null") {
-
-            //alert(arryData[i]);
-            //opener.document.getElementById(arryID[i]).value = arryData[i];
-
-            if (arryID[i] === "status") { //---> ตรวจสอบการ status
-                if (arryData[i] !== "Y") { //---> ตรวจสอบ ค่า Null
-                    opener.document.getElementById("radio1").checked = true;
-                } else {
-                    opener.document.getElementById("radio2").checked = true;
-                }
-            }
-
-            if (arryID[i] === "remark") {
-                for (var y = 0; y < arryData[i].length; y++) {
-                    arryData[i] = arryData[i].replace('<br>', '\n');
-                }
-                opener.document.getElementById(arryID[i]).value = arryData[i].replace('<br>', '\n');
-            }
-
-            opener.document.getElementById(arryID[i]).value = arryData[i];
-
-        } else {
-
-            senddataPopup(arryID[i]).value = "";
-            //opener.document.getElementById(arryID[i]).value = '';
-        }
-        //senddataPopup(arryID[i]).value = arryData[i];
-
-    }
-    //gettoShow(dataInput, getIdshow);
-    //alert("Final Out = ");
-    senddataPopup("status_cancle").value = "1";
-    setTimeout('window.close()', 1000);
-}
-
 
 //---------------------------------------------------------------------
 function Delete_Line_no(URL)
@@ -663,7 +463,6 @@ function showTableNonPopup(DivShow, Valueinput, URL)//ส่งพาราม�
 
             if (requestObject.readyState === 4 && requestObject.status === 200)
             {
-                //alert("สำเร็จ");
                 obj.innerHTML = requestObject.responseText;
             }
 
@@ -796,15 +595,15 @@ function showTable2(DivShow, Valueinput1, URL)
 
 
 }
+
 //---------------------------------------------------------------------
 
 var my_window = null;
-var t;
 
 function openBrWindow(table, page, jsp) { //v2.0
-
     if (my_window === null) {
         openpopup(table, page, jsp);
+
     } else {
         closepopup();
         openpopup(table, page, jsp);
@@ -813,33 +612,15 @@ function openBrWindow(table, page, jsp) { //v2.0
 
 function openpopup(table, page, jsp) {
 
-    if (jsp.trim() === ("Search_Config_Display.jsp")) {
-        t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-        my_window = window.open(t, "mywindow", "status=1,width=730,height=480");
-        //alert(" t1 = " + t);   
-    } else if (jsp.trim() === ("Search_Doc_id.jsp") || jsp.trim() === ("Search_Doc_id2.jsp") || jsp.trim() === ("Search_Detail_Carbon_Size.jsp")
-            || jsp.trim() === ("Search_Detail_Desc.jsp") || jsp.trim() === ("Search_Detail_Desc2.jsp")) {
-        t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-        my_window = window.open(t, "mywindow", "status=1,width=560,height=530");
-    } else if (jsp.trim() === ("Search_Config.jsp")) {
-        t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-        my_window = window.open(t, "mywindow", "status=1,width=560,height=560");
-    } else if (jsp.trim() === ("Search_Detail.jsp") || jsp.trim() === ("Search_Config_Integer.jsp")) {
-        t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-        my_window = window.open(t, "mywindow", "status=1,width=560,height=520");
-    } else if (jsp.trim() === ("Search_Config2.jsp") || jsp.trim() === ("SearchWareHouse.jsp")) {
-        t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-        my_window = window.open(t, "mywindow", "status=1,width=560,height=530");
-    } else if (jsp.trim() === ("Search_ConfigProductPrice.jsp")) {
-        t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-        my_window = window.open(t, "mywindow", "status=1,width=730,height=510");
-    } else if (jsp.trim() === ("Search_Config2_1.jsp") || jsp.trim() === ("Search_Detail_ProductID.jsp")) {
-        t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-        my_window = window.open(t, "mywindow", "status=1,width=730,height=600");
+    var t;
+    t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
+    if (jsp.trim() === ("Search_Config2.jsp")) {
+        my_window = window.open(t, "mywindow", "status=1,width=700,height=530");
     } else {
-        t = '../SEARCHSCREEN/' + jsp + '?page=' + page + '&table=' + table;
-        my_window = window.open(t, "mywindow", "status=1,width=560,height=520");
+        my_window = window.open(t, "mywindow", "status=1,width=700,height=500");
     }
+
+
 }
 
 function closepopup() {
@@ -850,7 +631,7 @@ function closepopup() {
 
 //---------------------------------------------------------------------
 function IsNumber2(sText, obj) {
-    var ValidChars = "0123456789.";
+    var ValidChars = "0123456789";
     var IsNumber = true;
     var Char;
     for (i = 0; i < sText.length && IsNumber === true; i++)
@@ -864,7 +645,7 @@ function IsNumber2(sText, obj) {
     }
 
     if (IsNumber === false) {
-        alert("ป้อนเป็นตัวเลขเท่านั้น !!!");
+        alert("กรุณาพิมพ์เฉาะตัวเลขเท่านั้น");
         //obj.value=sText.substr(0,sText.length-1);
         obj.value = 0;
     }
@@ -894,7 +675,7 @@ function IsNuber(sText, obj)//javascript ตัวเลขอย่างเด
      Isdot = (sText.indexOf(".",) != -1)?Isdot+1:Isdot;
      }*/
     if (IsNumber === false) {
-        alert("ป้อนเป็นตัวเลขเท่านั้น !!!");
+        alert("กรุณาพิมพ์เฉาะตัวเลขเท่านั้น");
         //obj.value=sText.substr(0,sText.length-1);
         obj.value = 0;
     }
@@ -921,8 +702,9 @@ function MyDate(lang) {
     var engDay = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
     var thmonth = new Array("มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม");
     var engMonth = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    //var thDate=thday[NDate.getDay()]+", "+NDate.getDate()+" "+thmonth[NDate.getMonth()]+" "+(NDate.getYear()+543);
     var thDate = thday[NDate.getDay()] + ", " + NDate.getDate() + " " + thmonth[NDate.getMonth()] + " " + (NDate.getUTCFullYear() + 543);
-    var engDate = engDay[NDate.getDay()] + ", " + NDate.getDate() + " " + engMonth[NDate.getMonth()] + " " + NDate.getUTCFullYear();
+    var engDate = engDay[NDate.getDay()] + ", " + NDate.getDate() + " " + engMonth[NDate.getMonth()] + " " + NDate.getYear();
     var result = "";
     if (lang === "tha") {
         result = thDate;
@@ -931,22 +713,6 @@ function MyDate(lang) {
     }
     document.write(result);
 }
-
-//---------------------------------------------------------------------
-function MyCurrentDate(lang) {
-    NDate = new Date();
-    var thDate = NDate.getDate() + "-" + NDate.getMonth() + "-" + (NDate.getUTCFullYear() + 543);
-    var result = "";
-    if (lang === "tha") {
-        result = thDate;
-    } else {
-        result = engDate;
-    }
-    document.write(result);
-}
-
-
-
 //---------------------------------------------------------------------
 function getData_d_rawmatt_receive(URL, idshow)
 {
@@ -956,20 +722,16 @@ function getData_d_rawmatt_receive(URL, idshow)
     var requestObject = createRequestObject();
     if (requestObject)
     {
-        requestObject.open("GET", URL);
+        requestObject.open("GET", URL + "&ts=" + Math.random() + new Date().getTime());
         requestObject.onreadystatechange = function()
         {
             if (requestObject.readyState === 4 && requestObject.status === 200)
             {
-                if (parseInt(Trim(requestObject.responseText), 10) !== 0) {
-                    var arraycal = Trim(requestObject.responseText).split(",");
-                    for (i = 0; i < arraycal.length; i++) {
-                        getId(arrayidshow[i]).value = arraycal[i];
-                    }
+                var arraycal = Trim(requestObject.responseText).split(",");
+                for (var i = 0; i < arraycal.length; i++) {
+                    getId(arrayidshow[i]).value = arraycal[i];
                 }
-                else {
-                    alert("ไม่สามารถคำนวณได้");
-                }
+
             }
         };
         requestObject.send(null);
@@ -1030,7 +792,7 @@ function Delete_Line_no_ShowTotal2(URL, IDshowTotal)//140754
 {
     var arryID = new Array;
     var arryShow = new Array;
-    arryID = IDshowTotal.split(",")
+    arryID = IDshowTotal.split(",");
     var requestObject = createRequestObject();
     if (requestObject !== null)
     {
@@ -1062,118 +824,199 @@ function Delete_Line_no_ShowTotal2(URL, IDshowTotal)//140754
     }
 //window.close();
 }
-function gettoShow_Doc_id2(dataInput, getIdshow, URLShowDetail, DivShow, DivShow2, Valueinput)
+
+//---------------------------ไว้โชว์ข้อมูลส่วน Detail แบบ Ajax------------------------------------------
+function sendShow_Detail(URLShowDetail, DivShow, Valueinput) {
+    var obj = senddataPopup(DivShow);
+    var requestObject = createRequestObject();
+    if (requestObject !== null)
+    {
+
+        requestObject.open("GET", URLShowDetail + Valueinput + "&ts=" + Math.random() + new Date().getTime());
+        requestObject.onreadystatechange = function()
+        {
+            if (requestObject.readyState === 4 && requestObject.status === 200)
+            {
+                obj.innerHTML = requestObject.responseText;
+            }
+
+        };
+        requestObject.send(null);
+
+    }
+}
+function gettoShow_Doc_id(dataInput, getIdshow, URLShowDetail, DivShow, Valueinput)
 {
-    var splitURL = URLShowDetail.split(",");
-    sendShow_Detail(splitURL[0], DivShow, Valueinput);
-    sendShow_Detail(splitURL[1], DivShow2, Valueinput);
+    sendShow_Detail(URLShowDetail, DivShow, Valueinput);
     var arryData = new Array;
     var arryID = new Array;
     arryData = dataInput.split("|");
     arryID = getIdshow.split("|");
-
-    //alert("Data Array = " + arryID);
-
     for (var i = 0; i < arryData.length; i++)
     {
-        //senddataPopup(arryID[0]).disabled =true;
-        if (arryID[i] === "mark_sign" || arryID[i] === "base_plate") {
-            if (arryData[i] === "Y" && arryID[i] === "mark_sign") {
-                senddataPopup("chkbox_mark_sign").checked = true;
-                senddataPopup("mark_sign_desc").disabled = false;
-            } else if (arryData[i] === "Y" && arryID[i] === "base_plate") {
-                senddataPopup("chkbox_base_plate").checked = true;
-                senddataPopup("base_plate_desc").disabled = false;
-            } else if (arryData[i] === "N" && arryID[i] === "mark_sign") {
-                senddataPopup("chkbox_mark_sign").checked = false;
-                senddataPopup("mark_sign_desc").disabled = true;
-            } else if (arryData[i] === "N" && arryID[i] === "base_plate") {
-                senddataPopup("chkbox_base_plate").checked = false;
-                senddataPopup("base_plate_desc").disabled = true;
-            }
-        }
-
-        if (arryID[i] === "sale_confirm" || arryID[i] === "quality_confirm" || arryID[i] === "prod_confirm" || arryID[i] === "wh_confirm" || arryID[i] === "document_confirm_flag" || arryID[i] === "product_confirm" || arryID[i] === "wh_emp_confirm" || arryID[i] === "wh_leader_confirm" || arryID[i] === "A_complete_flag" || arryID[i] === "complete_flag")
-        {
-            senddataPopup(arryID[i]).checked = arryData[i] === "Y" ? true : false;
-            senddataPopup(arryID[i]).value = arryData[i] === "Y" ? "Y" : "N";
-            senddataPopup(arryID[i]).disabled = arryData[i] === "N" ? false : true;
-        }
-
-        //************************CS_036****************************
-
-        if (arryID[i] === "job_id_end") {
-            senddataPopup("job_id_end").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("job_id_end").value = (arryData[i] === "Y") ? "Y" : "N";
-        }
-        if (arryID[i] === "job_id_complete") {
-            senddataPopup("job_id_complete").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("job_id_complete").value = (arryData[i] === "Y") ? "Y" : "N";
-        }
-        if (arryID[i] === "mashed_machine_chk") {
-            senddataPopup("mashed_machine_chk").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("mashed_machine").disabled = (arryData[i] === "Y") ? false : true;
-        }
-        if (arryID[i] === "pan_chk") {
-            senddataPopup("pan_chk").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("pan").disabled = (arryData[i] === "Y") ? false : true;
-        }
-        if (arryID[i] === "ball_mill_chk") {
-            senddataPopup("ball_mill_chk").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("ball_mill").disabled = (arryData[i] === "Y") ? false : true;
-        }
-        if (arryID[i] === "pill_flat_chk") {
-            senddataPopup("pill_flat_chk").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("pill_flat").disabled = (arryData[i] === "Y") ? false : true;
-        }
-        if (arryID[i] === "mag_chk") {
-            senddataPopup("mag_chk").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("mag").disabled = (arryData[i] === "Y") ? false : true;
-        }
-        if (arryID[i] === "job_edit_chk") {
-            senddataPopup("job_edit_chk").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("job_edit").disabled = (arryData[i] === "Y") ? false : true;
-        }
-        if (arryID[i] === "wash_chk") {
-            senddataPopup("wash_chk").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("wash").disabled = (arryData[i] === "Y") ? false : true;
-        }
-        if (arryID[i] === "roast_chk") {
-            senddataPopup("roast_chk").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("roast").disabled = (arryData[i] === "Y") ? false : true;
-        }
-        if (arryID[i] === "roast_edit_chk") {
-            senddataPopup("roast_edit_chk").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("roast_edit").disabled = (arryData[i] === "Y") ? false : true;
-        }
-        if (arryID[i] === "confirm_document") {
-            senddataPopup("confirm_document").checked = (arryData[i] === "Y") ? true : false;
-            //senddataPopup("confirm_document").value = (arryData[i] === "Y")?"Y":"N";
-        }
-        //***********************************************************
-
-
-        //** PACKING
-        if (arryID[i] === "pack_repacking_status") {
-            senddataPopup("pack_repacking_status").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("pack_repacking_status").value = (arryData[i] === "Y") ? "Y" : "N";
-        }
-
-        if (arryID[i] === "carbon_trap_status") {
-            senddataPopup("carbon_trap_status").checked = (arryData[i] === "Y") ? true : false;
-            senddataPopup("carbon_trap_status").value = (arryData[i] === "Y") ? "Y" : "N";
-        }
-
-        //**
-
+        //alert(arryData[i] );
+        //senddataPopup(arryID[0]).readOnly =true;
         if (arryData[i] !== "null") {
+
+            if (arryID[i] === "A_complete_flag" || arryID[i] === "A_doc_confirm") {
+                opener.document.getElementById(arryID[i]).value = arryData[i];
+                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
+                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
+            }            
+            
+
             //alert(arryData[i]);
             //opener.document.getElementById(arryID[i]).value = arryData[i];
             if (arryID[i] === "remark") {
                 for (var y = 0; y < arryData[i].length; y++) {
                     arryData[i] = arryData[i].replace('<br>', '\n');
                 }
+                opener.document.getElementById(arryID[i]).value = arryData[i].replace('<br>', '\n');
+            } else {
+                if (arryData[i] === "Y") {
+                    opener.document.getElementById(arryID[i]).checked = arryData[i] === "Y" ? true : false;
+                    opener.document.getElementById(arryID[i]).value = arryData[i];
+                } else {
+                    opener.document.getElementById(arryID[i]).value = arryData[i];
+                }
+
+            }
+            //senddataPopup(arryID[i]).value = arryData[i];
+        } else {
+
+            senddataPopup(arryID[i]).value = "";
+            //opener.document.getElementById(arryID[i]).value = '';
+        }
+        
+        //senddataPopup(arryID[i]).value = arryData[i];
+
+    }
+    //gettoShow(dataInput, getIdshow);
+    senddataPopup("status_cancle").value = "1";
+    setTimeout('window.close()', 1000);
+}
+
+function gettoShow_Doc_id2(dataInput, getIdshow, URLShowDetail, DivShow, DivShow2, Valueinput)
+{
+    var splitURL = URLShowDetail.split(",");
+    sendShow_Detail(splitURL[0], DivShow, Valueinput);
+    sendShow_Detail(splitURL[1], DivShow2, Valueinput);
+
+    //alert("URLShowDetail = " + URLShowDetail);
+
+    var arryData = new Array;
+    var arryID = new Array;
+
+    arryData = dataInput.split("|");
+    arryID = getIdshow.split("|");
+    for (var i = 0; i < arryData.length; i++)
+    {
+        if (arryData[i] !== "null") {
+
+            if (arryID[i] === "A_complete_flag" || arryID[i] === "A_doc_confirm") {
+                opener.document.getElementById(arryID[i]).value = arryData[i];
+                opener.document.getElementById(arryID[i]).checked = arryData[i] === "N" ? false : true;
+                opener.document.getElementById(arryID[i]).disabled = arryData[i] === "N" ? false : true;
+            }   
+            //alert(arryData[i]);
+            //opener.document.getElementById(arryID[i]).value = arryData[i];
+            if (arryID[i] === "A_remark") {
+                for (var y = 0; y < arryData[i].length; y++) {
+                    arryData[i] = arryData[i].replace('<br>', '\n');
+                }
                 senddataPopup(arryID[i]).value = arryData[i].replace('<br>', '\n');
+            } else if (arryData[i] === "N" || arryData[i] === "Y") {
+                if (arryData[i] === "Y") {
+                    senddataPopup(arryID[i]).checked = true;
+                    senddataPopup(arryID[i]).value = arryData[i];
+                } else {
+                    senddataPopup(arryID[i]).checked = false;
+                    senddataPopup(arryID[i]).value = arryData[i];
+                }
+            } else if (arryID[i] === "A_base_plate") {
+                senddataPopup(arryID[i]).value = arryData[i];
+                if (arryData[i] === "1") {
+                    senddataPopup("base_plate1").checked = true;
+                    senddataPopup("A_base_plate_qty").disabled = true;
+                    senddataPopup("A_wrap_on_pallet").disabled = true;
+                    senddataPopup("A_pallet_qty").disabled = true;
+                } else if (arryData[i] === "2") {
+                    senddataPopup("base_plate2").checked = true;
+                    senddataPopup("A_base_plate_qty").disabled = false;
+                    senddataPopup("A_wrap_on_pallet").disabled = true;
+                    senddataPopup("A_pallet_qty").disabled = true;
+                } else {
+                    senddataPopup("base_plate3").checked = true;
+                    senddataPopup("A_base_plate_qty").disabled = true;
+                    senddataPopup("A_wrap_on_pallet").disabled = false;
+                    senddataPopup("A_pallet_qty").disabled = false;
+                }
+            } else {
+                senddataPopup(arryID[i]).value = arryData[i];
+            }
+        } else {
+
+            senddataPopup(arryID[i]).value = "";
+        }
+        senddataPopup("status_cancle").value = "1";
+    }
+
+
+    setTimeout('window.close()', 1000);
+}
+
+function gettoShow_Doc_id3(dataInput, getIdshow, URLShowDetail, DivShow, DivShow1, DivShow2, DivShow3, DivShow4, Valueinput)
+{
+    var splitURL = URLShowDetail.split(",");
+    sendShow_Detail(splitURL[0], DivShow, Valueinput);
+    sendShow_Detail(splitURL[1], DivShow1, Valueinput);
+    sendShow_Detail(splitURL[2], DivShow2, Valueinput);
+    sendShow_Detail(splitURL[3], DivShow3, Valueinput);
+    sendShow_Detail(splitURL[4], DivShow4, Valueinput);
+
+    var arryData = new Array;
+    var arryID = new Array;
+
+    //alert("gettoShow_Doc_id3 = URLShowDetail = " + URLShowDetail);
+
+    arryData = dataInput.split("|");
+    arryID = getIdshow.split("|");
+    for (var i = 0; i < arryData.length; i++)
+    {
+        if (arryData[i] !== "null") {
+            //alert(arryData[i]);
+            //opener.document.getElementById(arryID[i]).value = arryData[i];
+            if (arryID[i] === "A_remark") {
+                for (var y = 0; y < arryData[i].length; y++) {
+                    arryData[i] = arryData[i].replace('<br>', '\n');
+                }
+                senddataPopup(arryID[i]).value = arryData[i].replace('<br>', '\n');
+            } else if (arryData[i] === "N" || arryData[i] === "Y") {
+                if (arryData[i] === "Y") {
+                    senddataPopup(arryID[i]).checked = true;
+                    senddataPopup(arryID[i]).value = arryData[i];
+                } else {
+                    senddataPopup(arryID[i]).checked = false;
+                    senddataPopup(arryID[i]).value = arryData[i];
+                }
+            } else if (arryID[i] === "A_base_plate") {
+                senddataPopup(arryID[i]).value = arryData[i];
+                if (arryData[i] === "1") {
+                    senddataPopup("base_plate1").checked = true;
+                    senddataPopup("A_base_plate_qty").disabled = true;
+                    senddataPopup("A_wrap_on_pallet").disabled = true;
+                    senddataPopup("A_pallet_qty").disabled = true;
+                } else if (arryData[i] === "2") {
+                    senddataPopup("base_plate2").checked = true;
+                    senddataPopup("A_base_plate_qty").disabled = false;
+                    senddataPopup("A_wrap_on_pallet").disabled = true;
+                    senddataPopup("A_pallet_qty").disabled = true;
+                } else {
+                    senddataPopup("base_plate3").checked = true;
+                    senddataPopup("A_base_plate_qty").disabled = true;
+                    senddataPopup("A_wrap_on_pallet").disabled = false;
+                    senddataPopup("A_pallet_qty").disabled = false;
+                }
             } else {
                 senddataPopup(arryID[i]).value = arryData[i];
             }
@@ -1205,7 +1048,7 @@ function encodeToHex(str) {
                 r += "%" + h;
             } else {
                 r += "<br>";
-                //c++;
+                c++;
             }
 
         }
@@ -1273,18 +1116,11 @@ function cancle_chkboxAll(IDcheckboxall, thisvalue) {
  //window.close();
  
  }*/
-
 function select_value() {
     getId("product_id_select").value = getId("product_id").value;
 }
 function click_value() {
     getId("product_id").value = getId("product_id_select").value;
-}
-function select_value_c() {
-    getId("c_type_select").value = getId("c_type").value;
-}
-function click_value_c() {
-    getId("c_type").value = getId("c_type_select").value;
 }
 function format_Date(str) {
     return str.substr(6, 4) + "-" + str.substr(3, 2) + "-" + str.substr(0, 2);
@@ -1295,7 +1131,7 @@ function SelectBoxSearch(value, inputname, stadment) {
     getId(stadment).value = str;
 }
 function getsaveApprove(Data, textArea) {
-    var count = 0;
+
     var URL = Data[0];
     var IDname = Data[1];
     var xhr = createRequestObject();
@@ -1306,12 +1142,21 @@ function getsaveApprove(Data, textArea) {
         getId(textArea).value = "กำลังอนุมัติเอกสาร..........กรุณารอสักครู่";
         xhr.onreadystatechange = function()
         {
+
             if (xhr.readyState === 4 && xhr.status === 200)
             {
 
                 al = xhr.responseText;
                 al = Trim(al);
+                //alert(al);
                 getId(textArea).value = al;
+                //ResetParameter(IDname);
+                //alert(URL.indexOf(encodeToHex("PR_040")));
+                /*if(URL.indexOf(encodeToHex("PR_040")) != -1){
+                 
+                 document.btform.but1.disabled = false;
+                 document.btform.but3.disabled = false;
+                 }*/
 
             }
         };
@@ -1346,34 +1191,6 @@ function getsaveApprove2(Data, textArea) {
 //}
 }
 
-function getsaveApprove3(Data, textArea, progressbar) {
-    var count = 0;
-    var URL = Data[0];
-    var IDname = Data[1];
-    var xhr = createRequestObject();
-    var al;
-    if (xhr !== null)
-    {
-        xhr.open("GET", URL);
-        getId(textArea).value = "กำลังประมวลผล..........กรุณารอสักครู่";
-        xhr.onreadystatechange = function()
-        {
-            if (xhr.readyState === 4 && xhr.status === 200)
-            {
-
-                al = xhr.responseText;
-                al = Trim(al);
-                getId(textArea).value = al;
-                alert("al = " + al);
-                getId(progressbar).value = "100";
-            }
-        };
-    }
-    xhr.send(null);
-//}
-}
-
-
 function AjaxRun_id(TextShow, URL) {
     var xhr = createRequestObject();
     if (xhr !== null)
@@ -1382,7 +1199,6 @@ function AjaxRun_id(TextShow, URL) {
         xhr.onreadystatechange = function()
         {
             //getId(textArea).value = "กำลังอนุมัติเอกสาร..........กรุณารอสักครู่";
-
             if (xhr.readyState === 4 && xhr.status === 200)
             {
                 getId(TextShow).value = Trim(xhr.responseText);
@@ -1391,6 +1207,7 @@ function AjaxRun_id(TextShow, URL) {
     }
     xhr.send(null);
 }
+
 function ChkDate(Date_from, Date_to) {
     var return_chk = false;
     var number_day_from = parseInt(Date_from.substr(0, 2), 10);
@@ -1440,6 +1257,8 @@ function getLogin(Data) {
         document.getElementById("button").style.display = 'none';
         xhr.onreadystatechange = function()
         {
+
+
             if (xhr.readyState === 4 && xhr.status === 200)
             {
 
@@ -1455,8 +1274,12 @@ function getLogin(Data) {
                 }
             }
         };
+        //
+        xhr.send(null);
+        //return al;
     }
-    xhr.send(null);
+
+
 //}
 }
 //----------------------------เป็นการนับจำนวนวันตั้งแต่วันถึงวัน-------------จะได้ค่าจำนวยวันทั้งหมดเช่น from 01-01-2554,to 10-01-2554  จะได้ทั้งหมด 10วัน
@@ -1538,20 +1361,22 @@ function getsave_imgload(Data) {
     }
 //}
 }
-function Trim2(stringinput) {
-    var count = 0;
-    while (count < stringinput.length) {
-        if (stringinput.charAt(count) === "\r") {
-            stringinput = stringinput.replace("\r", "");
-        } else if (stringinput.charAt(count) === "\n") {
-            stringinput = stringinput.replace("\n", "");
-        } else {
-            count += 1;
-        }
-    }
-    return stringinput;
-}
+function getIDElements(inputType, Check_indexOf) {
+    var strId = "";
+    var formInputs = document.getElementsByTagName(inputType);
+    for (var i = 0; i < formInputs.length; i++) {
 
+        var theInput = formInputs[i];
+        //if(theInput.type == 'text' || theInput.type){
+        if (theInput.id.toString().indexOf(Check_indexOf) !== -1) {
+            strId += theInput.id.toString() + ",";
+        }
+
+        //}
+
+    }
+    return strId;
+}
 //-----------------------------เวลาเลือกหน้าหย่อยของส่วนdetail----------------------------------------
 function showTableNonPopup_Detail(DivShow, Valueinput, Screen, URL)//ส่งพารามิเตอร์ได้2ตัว
 {
@@ -1580,233 +1405,12 @@ function showTableNonPopup_Detail(DivShow, Valueinput, Screen, URL)//ส่ง�
         requestObject.send(null);
 
     }
-    //window.close();
-
-    function checkTime(field)
-    {
-        var errorMsg = "";
-        // regular expression to match required time format 
-        re = /^(\d{1,2}):(\d{2})(:00)?([ap]m)?$/;
-        if (field.value !== '')
-        {
-            if (regs === field.value.match(re))
-
-            {
-                if (regs[4]) { // 12-hour time format with am/pm if(regs[1] < 1 || regs[1] > 12) 
-
-                    {
-                        errorMsg = "Invalid value for hours: " + regs[1];
-                    }
-                } else
-                { // 24-hour time format if(regs[1] > 23) 
-                    {
-                        errorMsg = "Invalid value for hours: " + regs[1];
-                    }
-                }
-                if (!errorMsg && regs[2] > 59) {
-                    errorMsg = "Invalid value for minutes: " + regs[2];
-                }
-            } else {
-                errorMsg = "Invalid time format: " + field.value;
-            }
-        }
-        if (errorMsg !== "")
-
-        {
-            alert(errorMsg);
-            field.focus();
-            return false;
-        }
-        return true;
-    }
+//window.close();
 
 
 }
+function getSave_Detail(array, URLShowDetail, DivShow, Valueinput) {
 
-//--------------------------------------------------------------------
-function IsStringNum(sText, obj)//javascript ตัวเลขอย่างเดียว  keyup sText= this.value,obj = this;
-{
-    //alert("OK");
-    var ValidChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-";
-    var IsNumber = true;
-    var Char;
-    var Isdot = 0;
-    var ckreplate = 0;
-    for (i = 0; i < sText.length && IsNumber === true; i++)
-    {
-        Char = sText.charAt(i);
-        if (ValidChars.indexOf(Char) === -1)
-        {
-            IsNumber = false;
-        }
-        //alert(sText);
-
-        Isdot = (Char.indexOf(".") !== -1) ? Isdot + 1 : Isdot;
-        //alert(Isdot);
-
-    }
-    /*for(var i = 0 ; i<sText.length ;i++){
-     Isdot = (sText.indexOf(".",) != -1)?Isdot+1:Isdot;
-     }*/
-    if (IsNumber === false) {
-        alert("กรุณาพิมพ์เฉพาะตัวอักษรภาษาอังกฤษ(ตัวใหญ่)และตัวเลขเท่านั้น");
-        //obj.value=sText.substr(0,sText.length-1);
-        obj.value = '';
-    }
-
-    if (Isdot > 1) {
-        for (var i = 0; i < sText.length; i++) {
-            Char = sText.charAt(i);
-            if (Char.indexOf(".") !== -1 && ckreplate === 0) {
-                ckreplate = 1;
-            }
-            else if (Char.indexOf(".") !== -1 && ckreplate === 1) {
-                sText = sText.substr(0, i);
-                obj.value = parseFloat(sText).toFixed(2);
-                break;
-            }
-
-        }
-    }
-
-    function getCurrentDate(sText) {
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1; //January is 0!
-        var yyyy = today.getFullYear() + 543;
-
-        if (dd < 10) {
-            dd = '0' + dd;
-        }
-
-        if (mm < 10) {
-            mm = '0' + mm;
-        }
-
-        stringinput = mm + '-' + dd + '-' + yyyy;
-        return stringinput;
-    }
-
-}
-
-function confirmSave_Data(a_element, message, action) {
-
-    alertify.confirm("ต้องการบันทึกข้อมูลหรือไม่ ?", function(e) {
-
-        if (e) {
-            if (action) {
-
-                getSave_Data(action);
-                action(a_element);
-            } else {
-                alertify.alert("2" + action);
-            }
-        }
-    });
-}
-
-function confirmDelete_Data(a_element, message, action) {
-
-
-    alertify.confirm("ต้องการลบข้อมูลหรือไม่ ?", function(e) {
-
-
-        if (e) {
-            // a_element is the <a> tag that was clicked
-            if (action) {
-                getSave_Data(action);
-                action(a_element);
-            } else {
-                alertify.alert("2" + action);
-            }
-        }
-    });
-}
-
-function getSave_Data(array)//การส่งข้อมูลแบบ Ajax
-{
-    //var obj = getId(show);
-    var URL = array[0];
-    var IDname = array[1];
-    var xhr = createRequestObject();
-    var chknull = new Array;
-    chknull = IDname.split(",");
-    var al;
-    if (ChkParameter_Data(chknull)) {
-        if (xhr !== null)
-        {
-            //alert(xhr);
-            xhr.open("GET", URL);
-            xhr.onreadystatechange = function()
-            {
-                if (xhr.readyState === 4 && xhr.status === 200)
-                {
-                    al = xhr.responseText;
-                    al = Trim(al);
-
-                    if (al === "LOGIN") {
-                        window.location.href = "SCREEN/main.html";
-                    } else if (al === "edit") {
-                        //confirmDialogEdit(array);
-                        confirmDialogEdit_Data(array);
-                    } else {
-                        if (al !== "") {
-                            //alert(al);    
-                            alertify.alert(al);
-                            ResetParameter(IDname);
-                        } else {
-                            ResetParameter(IDname);
-                        }
-                        //ResetParameter();
-                    }
-
-                }
-                //obj.innerHTML = "status:" + xhr.responseText;
-            };
-        }
-        xhr.send(null);
-    }
-    /*if(al !== ""){
-     
-     }*/
-}
-
-function ChkParameter_Data(ChkNull)//ตรวจสอบข้อมูลที่กำหนดว่ามีการกรอกหรือยังไม่ทำการกรอกถ้ายังกรอกไม่ครบจะทำการระบุช่องที่กรอกข้อมูลให้
-{
-    var re = true;
-    if (ChkNull[0] === 'chkNull') {
-        var arryID = new Array;
-        arryID = getId(ChkNull[0]).value.split(",");
-        for (var i = 0; i < arryID.length; i++)
-        {
-            if (getId(arryID[i]).value === "") {
-                //alert('ข้อมูลไม่ครบถ้วน !' + getId(arryID[i]).value);
-                alertify.alert('ข้อมูลไม่ครบถ้วน !' + getId(arryID[i]).value);
-                getId(arryID[i]).focus();
-                re = false;
-                break;
-            }
-        }
-    }
-    return re;
-}
-
-function confirmDialogEdit_Data(URL)
-{
-    alertify.confirm("ต้องการแก้ไขข้อมูลที่มีอยู่แล้วใช่หรือไม่ ?", function(e) {
-        if (e) {
-            getEdit_Data(URL);
-            //alertify.success("เสร็จสิ้น");
-        } else {
-            alertify.error("คุณไม่ได้บันทึกข้อมูลที่มีการแก้ไข");
-        }
-    }
-    );
-}
-
-function getEdit_Data(array)//การส่งข้อมูลแบบ Ajax
-{
-    //var obj = getId(show);
     var URL = array[0];
     var IDname = array[1];
     var xhr = createRequestObject();
@@ -1816,32 +1420,63 @@ function getEdit_Data(array)//การส่งข้อมูลแบบ Ajax
     if (ChkParameter(chknull)) {
         if (xhr !== null)
         {
-            xhr.open("GET", URL + "&confirm=true");
+            //alert(URL);
+            xhr.open("GET", URL);
             xhr.onreadystatechange = function()
             {
                 if (xhr.readyState === 4 && xhr.status === 200)
                 {
+                    sendShow_Detail(URLShowDetail, DivShow, Valueinput);
                     al = xhr.responseText;
                     al = Trim(al);
 
-                    if (al !== "") {
-                        //alertify.alert(al);
-                        alertify.success(al);
-                        ResetParameter(IDname);
+                    if (al === "LOGIN") {
+                        window.location.href = "SCREEN/main.html";
+                    } else if (al === "edit") {
+                        confirmDialogEdit(array);
                     } else {
-                        ResetParameter(IDname);
+                        if (al !== "") {
+                            alert(al);
+                            ResetParameter(IDname);
+                        } else {
+                            ResetParameter(IDname);
+                        }
+                        //ResetParameter();
+                        window.close();
                     }
 
-
                 }
+                //obj.innerHTML = "status:" + xhr.responseText;
             };
         }
         xhr.send(null);
+
     }
-    /*if(al !== ""){
-     
-     }*/
 }
 
+//---------------------------------------------------------------------
+function getshow_status(DivShow, Valueinput, URL)//ไว้แสดงหน้า รหัสเอกสารหน้า BW_CS_032
+{
+    var obj = getId(DivShow);
+    var requestObject = createRequestObject();
+    if (requestObject !== null)
+    {
+        requestObject.open("GET", URL + getId(Valueinput).value + "&ts=" + Math.random() + new Date().getTime());
+        requestObject.onreadystatechange = function()
+        {
+            if (requestObject.readyState === 4 && requestObject.status === 200)
+            {
+                if (requestObject.responseText.replace(/\n/g, "") === "สามารถใช้เลขที่เอกสารนี้ได้") {
+                    obj.style.color = "#008000";
+                } else {
+                    obj.style.color = "#FF0000";
+                }
 
+                obj.innerHTML = requestObject.responseText.replace(/\n/g, "");
+            }
 
+        };
+        requestObject.send(null);
+
+    }
+}
