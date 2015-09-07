@@ -191,54 +191,54 @@
 
             <!--div class="CSS_Table_Example" style="width:1200px;height:150px;"-->
             <!--div class="jumbotron"-->
-                <div class="container">
-                    <table border ="1"  cellpadding="0"  cellspacing="0" class="myTable">
-                        <center><h2>รายงานความเคลื่อนไหวพัสดุ (กระสอบ - ถุง - พาเลท)</h2></center>
-                        <center><h2><span class="label label-success">วันที่ : <%=date_f%> ถึง <%=date_t%></span></h2></center> 
-                        <center><h2>จัดเตรียมข้อมูลเสร็จสิ้น กรุณากดปุ่ม พิมพ์รายงาน</h2></center>          
-                        <center>   
-                            <div class="progress">                                
-                                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>                                
-                            </div>
-                        </center>                                 
+            <div class="container">
+                <table border ="1"  cellpadding="0"  cellspacing="0" class="myTable">
+                    <center><h2>รายงานความเคลื่อนไหวพัสดุ (กระสอบ - ถุง - พาเลท)</h2></center>
+                    <center><h2><span class="label label-success">วันที่ : <%=date_f%> ถึง <%=date_t%></span></h2></center> 
+                    <center><h2>จัดเตรียมข้อมูลเสร็จสิ้น กรุณากดปุ่ม พิมพ์รายงาน</h2></center>          
+                    <center>   
+                        <div class="progress">                                
+                            <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>                                
+                        </div>
+                    </center>                                 
 
-                    </table>      
+                </table>      
 
-                    <div class="CSS_Table_Example" style="width:1200px;height:150px;">    
-                        <center>
-                            <a href="#" onClick="javascript:document.report.submit();" class="cgcButton_19">พิมพ์รายงาน</a>
-                            &nbsp;&nbsp;<a href="#" onClick="javascript:window.close();" class="cgcButton_19">ปิด</a>
-                        </center>    
-                    </div>
-
-                    <div class="CSS_Table_Example" style="width:1200px;height:150px;">    
-                        <left>                            
-                            <div class="alert alert-info">
-                                <a href="#" class="close" data-dismiss="alert">×</a>
-
-                                <table class="table table-bordered">
-                                    <tr>
-                                        <td class="row5" width="20%">
-                                    <left>เริ่มประมวลผล เวลา :</left> 
-                                    </td>
-                                    <td class="row5" width="20%">
-                                    <left><%=ts%></left>                                     
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="row5" width="20%">
-                                    <left>สิ้นสุดการประมวลผล เวลา :</left> 
-                                    </td>
-                                    <td class="row5" width="20%">
-                                    <left><%=ts1%></left>                                     
-                                    </td>
-                                    </tr>                        
-                                </table>                                    
-                            </div>
-                        </left>    
-                    </div>                    
-
+                <div class="CSS_Table_Example" style="width:1200px;height:150px;">    
+                    <center>
+                        <a href="#" onClick="javascript:document.report.submit();" class="cgcButton_19">พิมพ์รายงาน</a>
+                        &nbsp;&nbsp;<a href="#" onClick="javascript:window.close();" class="cgcButton_19">ปิด</a>
+                    </center>    
                 </div>
+
+                <div class="CSS_Table_Example" style="width:1200px;height:150px;">    
+                    <left>                            
+                        <div class="alert alert-info">
+                            <a href="#" class="close" data-dismiss="alert">×</a>
+
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td class="row5" width="20%">
+                                <left>เริ่มประมวลผล เวลา :</left> 
+                                </td>
+                                <td class="row5" width="20%">
+                                <left><%=ts%></left>                                     
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td class="row5" width="20%">
+                                <left>สิ้นสุดการประมวลผล เวลา :</left> 
+                                </td>
+                                <td class="row5" width="20%">
+                                <left><%=ts1%></left>                                     
+                                </td>
+                                </tr>                        
+                            </table>                                    
+                        </div>
+                    </left>    
+                </div>                    
+
+            </div>
             <!--/div-->
 
         </form>
