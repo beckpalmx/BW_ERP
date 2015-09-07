@@ -65,13 +65,6 @@ order by pgroup_id desc,runno]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{product_id} + " | " + $F{prod_name}]]></textFieldExpression>
 				</textField>
-				<textField>
-					<reportElement x="5" y="3" width="97" height="20" uuid="c665bf16-8907-45cf-847d-189a6032f908"/>
-					<textElement>
-						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{pgroup_id}]]></textFieldExpression>
-				</textField>
 				<line>
 					<reportElement x="0" y="0" width="1" height="25" uuid="12d665a3-07d6-4f20-a62d-7578e6b59967"/>
 				</line>

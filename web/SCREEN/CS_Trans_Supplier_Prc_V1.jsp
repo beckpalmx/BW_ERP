@@ -378,7 +378,7 @@
             <!--div class="jumbotron"-->
             <div class="container">
                 <table border ="1"  cellpadding="0"  cellspacing="0" class="myTable">
-                    <center><h1> รายงานความเคลื่อนไหวพัสดุ (กระสอบ-ถุง-พาเลท) V2</h1></center>                 
+                    <center><h1> รายงานความเคลื่อนไหวพัสดุ (กระสอบ-ถุง-พาเลท) V1</h1></center>                 
                     <center><h2><span class="label label-success">วันที่ : <%=date_f%> ถึง <%=date_t%></span></h2></center> 
                     <!--center><h2>วันที่ : <%=date_f%> ถึง <%=date_t%></h2></center--> 
                     <center>   

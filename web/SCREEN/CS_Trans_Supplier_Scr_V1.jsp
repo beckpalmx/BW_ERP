@@ -58,12 +58,12 @@
         <div class="container">        
             <div class="panel panel-primary">
                 <div class="panel-heading"> <span class="glyphicon glyphicon-list" style="color:white"></span>&nbsp;
-                    <b>รายงานความเคลื่อนไหวพัสดุ (กระสอบ-ถุง-พาเลท) (CS_Trans_Supplier_Scr_V2)</b>
+                    <b>รายงานความเคลื่อนไหวพัสดุ (กระสอบ-ถุง-พาเลท) (CS_Trans_Supplier_Scr_V1)</b>
                 </div>                
 
                 <div class="panel-footer">
 
-                    <form name ="report" action="CS_Trans_Supplier_Prc_V2.jsp" target="_blank" method ="post">
+                    <form name ="report" action="CS_Trans_Supplier_Prc_V1.jsp" target="_blank" method ="post">
                         <input type="hidden" name="chkNull" id="chkNull" value="date_f,date_t">
                         <input type="hidden" name="date_from" value="">
                         <input type="hidden" name="date_to" value="">          
