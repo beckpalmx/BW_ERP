@@ -134,7 +134,8 @@
                 Double balance = 0.00;
 
                 String product_id = request.getParameter("A_product_id");
-                //String pgroup_id = request.getParameter("pgroup_id");
+                String pgroup_id = request.getParameter("pgroup_id");                
+                
                 // **** ลบข้อมูลตาราง ความเคลื่อนไหว
                 String sqlDelete = " DELETE FROM tmp_stock_supplier_balance ;"
                         + " ALTER SEQUENCE seq_tmp_stock_supplier_balance RESTART WITH 1; "
@@ -196,7 +197,7 @@
 
                 System.out.println("cond product_id  = " + product_id);
 
-                if (product_id.equals("") || product_id == null) {
+                if (product_id.equals("") || product_id == null || product_id.equals("-")) {
                     System.out.println("Loop Null product_id  = " + product_id);
                 } else {
                     if (sql_where.equals("") || sql_where == null) {
@@ -205,6 +206,18 @@
                         sql_where = sql_where + " and product_id = '" + product_id + "'";
                     }
                 }
+                
+                System.out.println("cond pgroup_id  = " + pgroup_id);
+
+                if (pgroup_id.equals("") || pgroup_id == null || pgroup_id.equals("-")) {
+                    System.out.println("Loop Null pgroup_id  = " + pgroup_id);
+                } else {
+                    if (sql_where.equals("") || sql_where == null) {
+                        System.out.println("loop cond - sql_where  = " + sql_where);
+                    } else {
+                        sql_where = sql_where + " and pgroup_id = '" + pgroup_id + "'";
+                    }
+                }           
 
                 System.out.println("cond - sql_where  = " + sql_where);
 

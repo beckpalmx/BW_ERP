@@ -102,9 +102,7 @@
             %>
             <input type="hidden" name="type_report" value="4">
             <input type="hidden" name="report_code" value="BWRP_022_WH">
-            <input type="hidden" name="price_year" value="">
-            <input type="hidden" name="pgroup_id" value="-">
-            <input type="hidden" name="product_id" value="-">
+            <input type="hidden" name="price_year" value="">                        
             <input type="hidden" name="warehouse_id" value="-">
             <input type="hidden" name="branch" value="-">
             <input type="hidden" name="location_id" value="-">
@@ -134,7 +132,7 @@
                 Double balance = 0.00;
 
                 String product_id = request.getParameter("A_product_id");
-                //String pgroup_id = request.getParameter("pgroup_id");
+                String pgroup_id = request.getParameter("pgroup_id");
                 // **** ลบข้อมูลตาราง ความเคลื่อนไหว
                 String sqlDelete = " DELETE FROM tmp_stock_supplier_balance ;"
                         + " ALTER SEQUENCE seq_tmp_stock_supplier_balance RESTART WITH 1; "
@@ -196,7 +194,7 @@
 
                 System.out.println("cond product_id  = " + product_id);
 
-                if (product_id.equals("") || product_id == null) {
+                if (product_id.equals("") || product_id == null || product_id.equals("-")) {
                     System.out.println("Loop Null product_id  = " + product_id);
                 } else {
                     if (sql_where.equals("") || sql_where == null) {
@@ -205,6 +203,19 @@
                         sql_where = sql_where + " and product_id = '" + product_id + "'";
                     }
                 }
+                
+                System.out.println("cond pgroup_id  = " + pgroup_id);
+
+                if (pgroup_id.equals("") || pgroup_id == null || pgroup_id.equals("-")) {
+                    System.out.println("Loop Null pgroup_id  = " + pgroup_id);
+                } else {
+                    if (sql_where.equals("") || sql_where == null) {
+                        System.out.println("loop cond - sql_where  = " + sql_where);
+                    } else {
+                        sql_where = sql_where + " and pgroup_id = '" + pgroup_id + "'";
+                    }
+                }                                
+                
 
                 System.out.println("cond - sql_where  = " + sql_where);
 
@@ -378,8 +389,8 @@
             <!--div class="jumbotron"-->
             <div class="container">
                 <table border ="1"  cellpadding="0"  cellspacing="0" class="myTable">
-                    <center><h1> รายงานความเคลื่อนไหวพัสดุ (กระสอบ-ถุง-พาเลท) V1</h1></center>                 
-                    <center><h2><span class="label label-success">วันที่ : <%=date_f%> ถึง <%=date_t%></span></h2></center> 
+                    <center><h1> รายงานสรุปการรับ - จ่าย (กระสอบ-ถุง-พาเลท) V1</h1></center>
+                    <center><h2><span class="label label-success">วันที่ : <%=date_t%></span></h2></center> 
                     <!--center><h2>วันที่ : <%=date_f%> ถึง <%=date_t%></h2></center--> 
                     <center>   
                         <!--div class="progress progress-striped active"-->
