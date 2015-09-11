@@ -94,7 +94,7 @@
             D_product_accept_detailDAO objdb;
             UtiDatabase objuti;
             String line_no, doc_id, A_status, U_status,
-                    product_id, weight, bag_qty, remark, shift, product_name, quantity, wh_in, price_unit, total_price;
+                    product_id, weight, bag_qty, remark, shift, product_name, quantity, wh_in, price_unit, total_price, weight_unit, weight_size;
         %>
         <%
             line_no = "";
@@ -111,6 +111,8 @@
             wh_in = "";
             price_unit = "";
             total_price = "";
+            weight_unit = "";
+            weight_size = "";
             en = new ThaiUtil();
             objBean = new DataBeanD_product_accept_detail();
             objdb = new D_product_accept_detailDAO();
@@ -130,6 +132,8 @@
                 quantity = objBean.getQuantity();
                 price_unit = objBean.getPrice_unit();
                 total_price = objBean.getTotal_price();
+                weight_unit = objBean.getWeight_unit();
+                weight_size = objBean.getWeight_size();
             } else {
                 doc_id = request.getParameter("A_doc_id");
                 A_status = request.getParameter("I_status");
@@ -203,10 +207,26 @@
                                     <input name='A_price_unit' class='inputs' type="text" id="A_price_unit" value="<%=price_unit%>" size='10' onblur="PriceAmount('A_price_unit', 'A_bag_qty', 'A_total_price')"/>                                
                                 </td>
                             </tr>
+
                             <tr>
                                 <td class="columnlabel1">ราคารวม :&nbsp;</td>
                                 <td class="columnobject">
                                     <input name='A_total_price' class='inputs' type="text" id="A_total_price" value="<%=total_price%>" size='10' />                                
+                                </td>
+                            </tr>                            
+
+                            <tr>
+                                <td class="columnlabel1">น้ำหนัก/หน่วย :&nbsp;</td>
+                                <td class="columnobject">
+                                    <input name='weight_unit' class='inputs' type="text" id="weight_unit" value="<%=weight_unit%>" size='30'/>                                
+                                </td>
+                            </tr>                            
+
+
+                            <tr>
+                                <td class="columnlabel1">ขนาดบรรจุ :&nbsp;</td>
+                                <td class="columnobject">
+                                    <input name='weight_size' class='inputs' type="text" id="weight_size" value="<%=weight_size%>" size='30' />
                                 </td>
                             </tr>                            
 

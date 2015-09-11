@@ -50,7 +50,7 @@
     if (statusck == 1 || statusck == 2) {
         objdb.setDoc_id(request.getParameter(request_String_name[i]) == null ? "" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
         i += 1;
-        objdb.setAmount(request.getParameter(request_String_name[i]) == null ? "" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
+        objdb.setAmount(request.getParameter(request_String_name[i]) == null ? "0" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
         i += 1;
         objdb.setRemark(request.getParameter(request_String_name[i]) == null ? "" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
         i += 1;

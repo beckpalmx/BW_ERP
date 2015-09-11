@@ -19,7 +19,7 @@ public class ProductDAO {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
         
-        String sql = "INSERT INTO " + proBean.getTable_name() + "(product_id,pgroup_id,ptype_id,pcat_id,name_t,price,min,max,safety,quantity,weight,location_id,value,remark,create_date,unit_id) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO " + proBean.getTable_name() + "(product_id,pgroup_id,ptype_id,pcat_id,name_t,price,min,max,safety,quantity,warehouse_id,location_id,value,remark,create_date,unit_id,weight_size,weight) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         
         PreparedStatement p = null;
 
@@ -41,7 +41,8 @@ public class ProductDAO {
             p.setString(14, proBean.getRemark());
             p.setTimestamp(15, proBean.getCreate_date());
             p.setString(16, proBean.getUnit_id());
-
+            p.setString(17, proBean.getWeight_size());            
+            p.setString(18, proBean.getWeight());           
             p.executeUpdate();
 
             return true;
@@ -79,7 +80,7 @@ public class ProductDAO {
     public void  update(ProductBean proBean) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
-        String sql = "UPDATE " + proBean.getTable_name() + " SET pgroup_id=?,ptype_id=?,pcat_id=?,name_t=?,price=?,min=?,max=?,safety=?,quantity=?,weight=?,location_id=?,value=?,remark=?,update_date=?,unit_id=? where product_id = ?";
+        String sql = "UPDATE " + proBean.getTable_name() + " SET pgroup_id=?,ptype_id=?,pcat_id=?,name_t=?,price=?,min=?,max=?,safety=?,quantity=?,warehouse_id=?,location_id=?,value=?,remark=?,update_date=?,unit_id=?,weight_size=?,weight=? where product_id = ?";
         PreparedStatement p = null;
 
         try {
@@ -99,7 +100,9 @@ public class ProductDAO {
             p.setString(13, proBean.getRemark());
             p.setTimestamp(14, proBean.getUpdate_date());
             p.setString(15, proBean.getUnit_id());
-            p.setString(16, proBean.getProduct_id());
+            p.setString(16, proBean.getWeight_size());                        
+            p.setString(17, proBean.getWeight());                       
+            p.setString(18, proBean.getProduct_id());
             p.executeUpdate();
 
         } finally {

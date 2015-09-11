@@ -38,6 +38,10 @@ public class D_product_accept_confirm_headerDAO {
                 objuti.Return_Document(DataBean.getDoc_id(), Retrun_table, Delete_table);
             }
 
+            if (DataBean.getDoc_type().equalsIgnoreCase("Y")) {                               
+                //Add Method for complete flag 
+            }
+
         } catch (Exception e) {
             e.printStackTrace(System.out);
         } finally {
@@ -49,6 +53,7 @@ public class D_product_accept_confirm_headerDAO {
             }
         }
     }
+
     public void update_suppliers(DataBeanD_product_accept_header DataBean) throws Exception {
         Connection con = new DBConnect().openNewConnection();
         PreparedStatement p = null;

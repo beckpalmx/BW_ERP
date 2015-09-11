@@ -207,7 +207,7 @@
                                     <td class="columnlabel1"><b>ทำการคืนเอกสารเพื่อแก้ไข</b>&nbsp;:&nbsp;</td>
                                     <td class="columnobject">
                                         <div class="checkbox checkbox-primary">
-                                            <input type="checkbox" id="A_complete_flag" name="A_return_flag" value="N" onClick="Click_Return_flag(this.checked)">
+                                            <input type="checkbox" id="A_return_flag" name="A_return_flag" value="N" onClick="Click_Return_flag(this.checked)">
                                             <label for="A_return_flag"></label> 
                                         </div>
                                     </td>

@@ -43,13 +43,13 @@
 
             function Save_Data() {
 
-                confirmDialogSave(URLsend('chkNull,product_id,name_t_product,pgroup_id,pcat_id,ptype_id,price,min,max,safety,warehouse_id,location_id,value,remark_product,unit_id,table_name', '../JSP/CS_021.jsp'));
+                confirmDialogSave(URLsend('chkNull,product_id,name_t_product,pgroup_id,pcat_id,ptype_id,price,min,max,safety,warehouse_id,location_id,value,remark_product,unit_id,table_name,weight,weight_size', '../JSP/CS_021.jsp'));
 
             }
 
             function Delete_Data() {
 
-                confirmDialogDelete(URLsend('product_id,name_t_product,pgroup_id,pcat_id,ptype_id,price,min,max,safety,warehouse_id,location_id,value,remark_product,chkstatus,unit_id,table_name', '../JSP/CS_021.jsp'));
+                confirmDialogDelete(URLsend('product_id,name_t_product,pgroup_id,pcat_id,ptype_id,price,min,max,safety,warehouse_id,location_id,value,remark_product,chkstatus,unit_id,table_name,weight,weight_size', '../JSP/CS_021.jsp'));
 
             }
 
@@ -67,6 +67,7 @@
                 </div>                        
                 <div class="panel-footer">                          
                     <div align="center">
+                        <input type="hidden" id='warehouse_id' name='warehouse_id' value='1'/>
                         <input type="hidden" id="table_name" name="table_name" value="m_supplier_stock">
                         <table  cellpadding="0" cellspacing="0" >
                             <tr>
@@ -113,6 +114,29 @@
                                     <input class='inputs' type="text" name='price' id="price" size='30' value='' onKeyUp="IsNumeric(this.value, this)"/>
                                 </td>
                             </tr>
+
+                            <tr>
+                                <td class="columnlabel1">หน่วยนับ : &nbsp;</td>
+                                <td class="columnobject">
+                                    <input class='inputs' type="text" name='unit_id' id="unit_id"  size='10' value='' readonly/>&nbsp;<a href='javascript:;' onClick="openBrWindow('munit_code', 21, 'Search_Config.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
+                                    <input class='inputs' type="text" name='unit_name' id="unit_name" size='30' value='' readonly/>
+                                </td>
+                            </tr>                                 
+                            
+                            <tr>
+                                <td class="columnlabel1">น้ำหนัก/หน่วย&nbsp;(Kg.) :&nbsp;</td>
+                                <td class="columnobject">
+                                    <input class='inputs' type="text" name='weight' id="weight" size='30' value=''/>&nbsp;
+                                </td>
+                            </tr>                            
+
+                            <tr>
+                                <td class="columnlabel1">ขนาดบรรจุ :&nbsp;</td>
+                                <td class="columnobject">
+                                    <input class='inputs' type="text" name='weight_size' id="weight_size" size='30' value=''/>&nbsp;
+                                </td>
+                            </tr>
+                            
                             <tr>
                                 <td class="columnlabel1">จุดต่ำสุด : &nbsp;</td>
                                 <td class="columnobject">
@@ -130,24 +154,8 @@
                                 <td class="columnobject">
                                     <input class='inputs' type="text" name='safety' id="safety" size='30' value='' onKeyUp="IsNumeric(this.value, this)"/>                </td>
                             </tr>
-
-                            <tr>
-                                <td class="columnlabel1">หน่วยนับ : &nbsp;</td>
-                                <td class="columnobject">
-                                    <input class='inputs' type="text" name='unit_id' id="unit_id"  size='10' value='' readonly/>&nbsp;<a href='javascript:;' onClick="openBrWindow('munit_code', 21, 'Search_Config.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                    <input class='inputs' type="text" name='unit_name' id="unit_name" size='30' value='' readonly/>
-                                </td>
-                            </tr>                                 
-
-                            <tr>
-                                <td class="columnlabel1">น้ำหนักต่อหน่วย*&nbsp;</td>
-                                <td class="columnobject">
-                                    <input class='inputs' type="text" name='warehouse_id' id="warehouse_id" size='10' value='1' readonly/>&nbsp;
-                                    <!--<a href='javascript:;' onClick="MM_openBrWindow('../JSP/SearchWareHouse.jsp?chk=0','','status=1,width=560,height=500')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;&nbsp;
-                                    <input class='inputs' type="text" name='name_t_warehouse' id="name_t_warehouse" size='30' value='' readonly/>
-                                    <input type="hidden" name="remark_wh" id="remark_wh" >-->
-                                </td>
-                            </tr>
+                            
+                            
                             <tr>
                                 <td class="columnlabel1">เลขกอง : &nbsp;</td>
                                 <td class="columnobject">
@@ -171,7 +179,8 @@
                             <tr>
                                 <td colspan='2' class='blankspace'><div align="center">
                                         <input type="hidden" id="chkstatus" value="1">
-                                        <input type="hidden" id="chkNull" value="product_id,name_t_product,pgroup_id,pcat_id,ptype_id,warehouse_id">
+                                        <!--input type="hidden" id="chkNull" value="product_id,name_t_product,pgroup_id,pcat_id,ptype_id,warehouse_id"-->
+                                        <input type="hidden" id="chkNull" value="product_id">
                                         <a href="javascript:;" onClick="cancelAction();"><img alt=""  src="../IMAGES/BTN_CANCEL_90.png" width="80" height="30" border="0"></a>
                                         <a href="javascript:;" onClick="Save_Data();"><img alt=""  src="../IMAGES/BTN_SAVE_90.png" width="80" height="30" border="0"></a>
                                         <a href="javascript:;" onClick="Delete_Data();"><img alt=""  src="../IMAGES/BTN_DEL_90.png" width="80" height="30" border="0"></a></div></td>

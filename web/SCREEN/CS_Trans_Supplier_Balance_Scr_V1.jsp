@@ -58,12 +58,12 @@
         <div class="container">        
             <div class="panel panel-primary">
                 <div class="panel-heading"> <span class="glyphicon glyphicon-list" style="color:white"></span>&nbsp;
-                    <b>รายงานความเคลื่อนไหวพัสดุ (กระสอบ-ถุง-พาเลท) (CS_Trans_Supplier_Scr_V1)</b>
+                    <b>สรุปการรับ-จ่าย พัสดุ (กระสอบ-ถุง-พาเลท) (CS_Trans_Supplier_Balance_Scr_V1)</b>
                 </div>                
 
                 <div class="panel-footer">
 
-                    <form name ="report" action="CS_Trans_Supplier_Prc_V1.jsp" target="_blank" method ="post">
+                    <form name ="report" action="CS_Trans_Supplier_Balance_Prc_V1.jsp" target="_blank" method ="post">
                         <input type="hidden" name="chkNull" id="chkNull" value="date_f,date_t">
                         <input type="hidden" name="date_from" value="">
                         <input type="hidden" name="date_to" value="">          
@@ -89,12 +89,12 @@
                             <tr>
                                 <td class='columnobject'><div align="right"><b>วันที่เริ่มต้น&nbsp;:</b>&nbsp;</div></td>
                                 <td class='columnobject'><input name="date_f" type='text' class="inputs" id="date_f" value="<%=start_current_month%>" readonly/>
-                                    &nbsp;<a id='date_1' href="javascript:;" data-toggle="tooltip" title="เริ่มวันที่"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
+                                    &nbsp;<!--a id='date_1' href="javascript:;" data-toggle="tooltip" title="เริ่มวันที่"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a-->
                                     <script type='text/javascript'>Calendar.setup({inputField: 'date_f', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});
                                     </script>                                    
                                 </td>
                                 <td class='columnobject'><div align="right"><b>ถึงวันที่&nbsp;:</b>&nbsp;</div></td>
-                                <td class='columnobject'><input name="date_t" type='text' class="inputs" id="date_t" value="<%=end_current_month%>" readonly/>
+                                <td class='columnobject'><input name="date_t" type='text' class="inputs" id="date_t" value="<%=current_date%>" readonly/>
                                     &nbsp;<a id='date_2' href="javascript:;" data-toggle="tooltip" title="ถึงวันที่"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                     <script type='text/javascript'>Calendar.setup({inputField: 'date_t', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_2', singleClick: true, step: 1});</script>                                    
                                 </td>

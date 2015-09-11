@@ -101,7 +101,7 @@
                 date_t = request.getParameter("date_t");
             %>
             <input type="hidden" name="type_report" value="4">
-            <input type="hidden" name="report_code" value="BWRP_021_WH_2">
+            <input type="hidden" name="report_code" value="BWRP_022_WH">
             <input type="hidden" name="price_year" value="">
             <input type="hidden" name="pgroup_id" value="-">
             <input type="hidden" name="product_id" value="-">
@@ -133,7 +133,7 @@
                 Double transfer = 0.00;
                 Double balance = 0.00;
 
-                String product_id = request.getParameter("product_id");
+                String product_id = request.getParameter("A_product_id");
                 //String pgroup_id = request.getParameter("pgroup_id");
                 // **** ลบข้อมูลตาราง ความเคลื่อนไหว
                 String sqlDelete = " DELETE FROM tmp_stock_supplier_balance ;"
@@ -378,7 +378,7 @@
             <!--div class="jumbotron"-->
             <div class="container">
                 <table border ="1"  cellpadding="0"  cellspacing="0" class="myTable">
-                    <center><h1> รายงานความเคลื่อนไหวพัสดุ (กระสอบ-ถุง-พาเลท) V2</h1></center>                 
+                    <center><h1> รายงานความเคลื่อนไหวพัสดุ (กระสอบ-ถุง-พาเลท) V1</h1></center>                 
                     <center><h2><span class="label label-success">วันที่ : <%=date_f%> ถึง <%=date_t%></span></h2></center> 
                     <!--center><h2>วันที่ : <%=date_f%> ถึง <%=date_t%></h2></center--> 
                     <center>   

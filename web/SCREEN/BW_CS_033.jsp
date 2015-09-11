@@ -309,7 +309,7 @@
                         request.getParameter("doc_id");
                         System.out.println("doc_eff_date = " + doc_eff_date + "  |  " + "doc_no = " + doc_no);
                         //_______________________________________________________________report
-                    %>
+%>
                     <input name="A_username" type="hidden" id="A_username" value="<%=userbean.getUsername()%>" size="30" readonly/>
                     <input type="hidden" id="chkNull" value="A_doc_date,A_cassava_date,A_cassava_date2,A_amount_cassava">
                     <input type="hidden" id="I_status" value="1"><!-- เป็นการเพิ่มข้อมูลเข้าไป-->

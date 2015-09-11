@@ -254,7 +254,7 @@ public class D_product_withdraw_confirm_detailDAO {
         Connection con = objcon.openNewConnection();
         ResultSet rs = null;
         String SQL = "SELECT "
-                + "product_id,bag_qty,weight,remark,shift,amount,product_name,quantity,wh_in"
+                + "product_id,bag_qty,weight,remark,shift,amount,product_name,quantity,wh_in,weight_unit,weight_size"
                 + " FROM vd_product_withdraw_suppliers_detail_wh "
                 //+ " WHERE doc_id = '"+doc_id+"' and line_no = '"+line_no+"' and delete_flag = 'N' and complete_flag = 'N'";
                 + " WHERE doc_id = '"+doc_id+"' and line_no = '"+line_no+"' and delete_flag = 'N' ";
@@ -270,6 +270,9 @@ public class D_product_withdraw_confirm_detailDAO {
                 objbean.setProduct_name(rs.getString("product_name"));
                 objbean.setWh_id(rs.getString("wh_in"));
                 objbean.setQuantity(rs.getString("quantity"));
+                objbean.setWeight_unit(rs.getString("weight_unit"));
+                objbean.setWeight_size(rs.getString("weight_size"));                
+                
             }
         }catch(Exception e){
             e.printStackTrace(System.out);

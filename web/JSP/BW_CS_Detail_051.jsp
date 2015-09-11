@@ -55,15 +55,15 @@
         i += 1;
         objdb.setProduct_id(request.getParameter(request_String_name[i]) == null ? "" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
         i += 1;
-        objdb.setWeight(request.getParameter(request_String_name[i]) == null ? "" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
+        objdb.setWeight(request.getParameter(request_String_name[i]) == null ? "0" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
         i += 1;
-        objdb.setBag_qty(request.getParameter(request_String_name[i]) == null ? "" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
+        objdb.setBag_qty(request.getParameter(request_String_name[i]) == null ? "0" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
         i += 1;
         objdb.setRemark(request.getParameter(request_String_name[i]) == null ? "" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
         i += 1;
         objdb.setShift(request.getParameter(request_String_name[i]) == null ? "" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
         i += 1;
-        objdb.setQuantity(request.getParameter(request_String_name[i]) == null ? "" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
+        objdb.setQuantity(request.getParameter(request_String_name[i]) == null ? "0" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
         i += 1;
         objdb.setWh_id(request.getParameter(request_String_name[i]) == null ? "" : en.EncodeTexttoTIS(request.getParameter(request_String_name[i]).trim()));
         i += 1;

@@ -39,6 +39,8 @@ public class ProductBean {
     private String unit_id;
     private String delete_fag;
     private String table_name;    
+    private String weight;    
+    private String weight_size;
 
     /**
      * @return the runno
@@ -416,6 +418,34 @@ public class ProductBean {
      */
     public void setTable_name(String table_name) {
         this.table_name = table_name;
+    }
+
+    /**
+     * @return the weight_size
+     */
+    public String getWeight_size() {
+        return weight_size;
+    }
+
+    /**
+     * @param weight_size the weight_size to set
+     */
+    public void setWeight_size(String weight_size) {
+        this.weight_size = weight_size;
+    }
+
+    /**
+     * @return the weight
+     */
+    public String getWeight() {
+        return weight;
+    }
+
+    /**
+     * @param weight the weight to set
+     */
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
 

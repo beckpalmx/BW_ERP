@@ -211,7 +211,7 @@ public class Serchselect {
             case 21:
                 System.out.println("inputdatabase = " + inputdatabase);
                 if (inputdatabase.equals("vproduct") || inputdatabase.equals("vm_supplier_stock")) {
-                    strColoum = new String[]{"product_id", "name_t", "pgroup_id", "pgroup_name", "pcat_id", "pcat_name", "ptype_id", "ptype_name", "price", "min", "max", "safety", "weight", "location_id", "value", "remark","unit_id","unit_name"};
+                    strColoum = new String[]{"product_id", "name_t", "pgroup_id", "pgroup_name", "pcat_id", "pcat_name", "ptype_id", "ptype_name", "price", "min", "max", "safety", "weight", "location_id", "value", "remark","unit_id","unit_name","weight_size","weight"};
                 } else if (inputdatabase.equals("mproduct_group")) {
                     strColoum = new String[]{"pgroup_id", "name_t"};
                 } else if (inputdatabase.equals("mproduct_cat")) {
@@ -664,7 +664,7 @@ public class Serchselect {
             case 21:
                 System.out.println("inputdatabase = " + inputdatabase);
                 if (inputdatabase.equals("vproduct") || inputdatabase.equals("vm_supplier_stock")) {
-                    strID = "product_id|name_t_product|pgroup_id|name_t_pgroup|pcat_id|name_t_pcat|ptype_id|name_t_ptype|price|min|max|safety|warehouse_id|location_id|value|remark_product|unit_id|unit_name";
+                    strID = "product_id|name_t_product|pgroup_id|name_t_pgroup|pcat_id|name_t_pcat|ptype_id|name_t_ptype|price|min|max|safety|warehouse_id|location_id|value|remark_product|unit_id|unit_name|weight_size|weight";
                 } else if (inputdatabase.equals("mproduct_group")) {
                     strID = "pgroup_id|name_t_pgroup";
                 } else if (inputdatabase.equals("mproduct_cat")) {

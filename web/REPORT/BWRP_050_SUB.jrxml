@@ -39,6 +39,17 @@ ORDER BY doc_id,line_no]]>
 	<field name="shift_name" class="java.lang.String"/>
 	<field name="price_unit" class="java.lang.String"/>
 	<field name="total_price" class="java.lang.String"/>
+	<field name="pgroup_id" class="java.lang.String"/>
+	<field name="pcat_id" class="java.lang.String"/>
+	<field name="ptype_id" class="java.lang.String"/>
+	<field name="pname_t" class="java.lang.String"/>
+	<field name="weight_total" class="java.math.BigDecimal"/>
+	<field name="pgroup_name" class="java.lang.String"/>
+	<field name="pcat_name" class="java.lang.String"/>
+	<field name="ptype_name" class="java.lang.String"/>
+	<field name="unit_name" class="java.lang.String"/>
+	<field name="weight_size" class="java.lang.String"/>
+	<field name="weight_unit" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -52,11 +63,11 @@ ORDER BY doc_id,line_no]]>
 				<textFieldExpression><![CDATA[$F{line_no}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="275" y="4" width="78" height="20" uuid="3799fe22-87c5-4ff8-aa18-22b2c93ec695"/>
+				<reportElement x="202" y="4" width="101" height="20" uuid="3799fe22-87c5-4ff8-aa18-22b2c93ec695"/>
 				<textElement textAlignment="Right">
 					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{bag_qty}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{weight_size}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement x="445" y="4" width="172" height="20" uuid="40021179-3bc6-4c4c-b32b-c1ff27c5edb4"/>
@@ -73,11 +84,18 @@ ORDER BY doc_id,line_no]]>
 				<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="359" y="4" width="78" height="20" uuid="56f3368d-becc-49f7-a94f-b31c5c7cb38f"/>
+				<reportElement x="361" y="4" width="78" height="20" uuid="56f3368d-becc-49f7-a94f-b31c5c7cb38f"/>
 				<textElement textAlignment="Right">
 					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="286" y="4" width="78" height="20" uuid="9cf5f40d-1d1e-4567-975f-d03639f76b55"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bag_qty}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

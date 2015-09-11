@@ -40,120 +40,38 @@ order by pgroup_id desc,runno]]>
 	<field name="data_total" class="java.lang.Double"/>
 	<field name="price_per_unit" class="java.lang.Double"/>
 	<field name="total_price" class="java.lang.Double"/>
-	<field name="prod_name" class="java.lang.String"/>
 	<field name="data_transfer" class="java.lang.Double"/>
-	<variable name="sum_data_r" class="java.lang.Double" resetType="Group" resetGroup="product_id" calculation="Sum">
+	<field name="prod_name" class="java.lang.String"/>
+	<field name="unit_name" class="java.lang.String"/>
+	<field name="weight_unit" class="java.lang.String"/>
+	<field name="weight_size" class="java.lang.String"/>
+	<variable name="sum_data_r" class="java.lang.Double" resetType="Group" resetGroup="product_group" calculation="Sum">
 		<variableExpression><![CDATA[$F{data_r}]]></variableExpression>
 	</variable>
-	<variable name="sum_data_w" class="java.lang.Double" resetType="Group" resetGroup="product_id" calculation="Sum">
+	<variable name="sum_data_w" class="java.lang.Double" resetType="Group" resetGroup="product_group" calculation="Sum">
 		<variableExpression><![CDATA[$F{data_w}]]></variableExpression>
 	</variable>
-	<variable name="sum_data_t" class="java.lang.Double" resetType="Group" resetGroup="product_id" calculation="Sum">
+	<variable name="sum_data_t" class="java.lang.Double" resetType="Group" resetGroup="product_group" calculation="Sum">
 		<variableExpression><![CDATA[$F{data_transfer}]]></variableExpression>
 	</variable>
-	<variable name="sum_balance" class="java.lang.Double" resetType="Group" resetGroup="product_id">
+	<variable name="sum_balance" class="java.lang.Double" resetType="Group" resetGroup="product_group">
 		<variableExpression><![CDATA[new Double($V{sum_data_r}.doubleValue()) + new Double($V{sum_data_w}.doubleValue()) + new Double($V{sum_data_t}.doubleValue())]]></variableExpression>
 	</variable>
-	<group name="product_id">
-		<groupExpression><![CDATA[$F{product_id}]]></groupExpression>
+	<group name="product_group">
+		<groupExpression><![CDATA[$F{pgroup_id}]]></groupExpression>
 		<groupHeader>
-			<band height="25">
+			<band height="20">
 				<textField>
-					<reportElement x="49" y="3" width="380" height="20" backcolor="#FFFFFF" uuid="aa9de013-e171-4873-b819-70b24a940af1"/>
+					<reportElement x="51" y="0" width="307" height="20" backcolor="#FFFFFF" uuid="fc923cbb-1826-410b-85fa-b6dff62ee55a"/>
 					<textElement>
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{product_id} + " | " + $F{prod_name}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{pgroup_name}]]></textFieldExpression>
 				</textField>
-				<line>
-					<reportElement x="0" y="0" width="1" height="25" uuid="12d665a3-07d6-4f20-a62d-7578e6b59967"/>
-				</line>
-				<line>
-					<reportElement x="590" y="0" width="1" height="25" uuid="7f632529-d4da-4776-b01e-d71f2a9d4581"/>
-				</line>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="20">
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="211" y="0" width="93" height="20" uuid="fb98ee21-645d-480c-8222-677cc96a7397"/>
-					<textElement textAlignment="Right">
-						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$V{sum_data_r}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="285" y="0" width="93" height="20" uuid="493d4125-bcb4-40d6-a2d7-b3c3bd3ac288"/>
-					<textElement textAlignment="Right">
-						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$V{sum_data_w}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement x="0" y="0" width="591" height="1" uuid="bea212f3-94e6-41f2-9d21-97bb3634ee15"/>
-				</line>
-				<line>
-					<reportElement x="0" y="19" width="590" height="1" uuid="2f7e431b-33ce-4e75-b7d2-a54233ff7690"/>
-				</line>
-				<staticText>
-					<reportElement x="3" y="0" width="28" height="18" uuid="f7ac3e38-c640-4001-8d1a-6ab04de0995a"/>
-					<textElement textAlignment="Right" verticalAlignment="Top">
-						<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<text><![CDATA[รวม :]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="358" y="0" width="93" height="20" uuid="3715e483-6094-4ed1-897d-ddb553beb485"/>
-					<textElement textAlignment="Right">
-						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[($V{sum_balance}<0) ? new Double("0") : $V{sum_balance}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement x="0" y="1" width="1" height="19" uuid="4d4d24b7-b0b6-4150-8666-e2051012659c"/>
-				</line>
-				<line>
-					<reportElement x="590" y="1" width="1" height="19" uuid="05af1bc2-bc2c-4bff-b1bd-ebbd0c455a85"/>
-				</line>
-				<textField>
-					<reportElement x="32" y="0" width="70" height="20" uuid="03463d77-096e-41a4-a625-4a07ffea26c6"/>
-					<textElement>
-						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{pgroup_id}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="97" y="0" width="94" height="20" backcolor="#FFFFFF" uuid="cb5ca337-9037-42b2-ba7b-52c76262ea2b"/>
-					<textElement>
-						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{product_id}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="420" y="0" width="93" height="20" uuid="f1c0c14c-4051-4941-b810-a9a8d9bfb418"/>
-					<textElement textAlignment="Right">
-						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{price_per_unit}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="495" y="-1" width="93" height="20" uuid="843c12c1-d5d3-4b00-97ee-62194859a10a"/>
-					<textElement textAlignment="Right">
-						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[new Double( ($V{sum_data_r}.doubleValue()
-    + $V{sum_data_w}.doubleValue()
-    + $V{sum_data_t}.doubleValue() ) * $F{price_per_unit} )>0.00
-    ? new Double( ($V{sum_data_r}.doubleValue() + $V{sum_data_w}.doubleValue() + $V{sum_data_t}.doubleValue()) * $F{price_per_unit} ):0.00]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="159" y="0" width="93" height="20" uuid="b6172dfc-f48c-4717-8333-2ab8a840d121"/>
-					<textElement textAlignment="Right">
-						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$V{sum_data_t}]]></textFieldExpression>
-				</textField>
-			</band>
+			<band height="20"/>
 		</groupFooter>
 	</group>
 	<background>
@@ -173,7 +91,7 @@ order by pgroup_id desc,runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="20" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[รายงานความเคลื่อนไหวพัสดุ (กระสอบ - ถุง - พาเลท)]]></text>
+				<text><![CDATA[รายงานสรุปการรับ - จ่าย พัสดุ (กระสอบ - ถุง - พาเลท)]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="459" y="0" width="227" height="20" uuid="9e6a97c3-7446-4c7a-968a-97d6f7f2e72c"/>
@@ -201,7 +119,7 @@ order by pgroup_id desc,runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["วันที่ : " + $P{DATE_FORM} + " - " + $P{DATE_TO}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["วันที่ : " + $P{DATE_TO}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
@@ -294,13 +212,6 @@ order by pgroup_id desc,runno]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{doc_type}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="5" y="0" width="107" height="20" uuid="0e7aa705-3a42-4a90-8cd0-2f975018a0c0"/>
-				<textElement>
-					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{doc_date}]]></textFieldExpression>
-			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="211" y="0" width="93" height="20" uuid="3464e62a-0b51-4b7d-b6ca-4dfeabb9dd70"/>
 				<textElement textAlignment="Right">
@@ -348,6 +259,13 @@ order by pgroup_id desc,runno]]>
 					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{data_total} * $F{price_per_unit}>0.00 ? $F{data_total} * $F{price_per_unit}:0.00]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="32" y="0" width="129" height="20" backcolor="#FFFFFF" uuid="aa9de013-e171-4873-b819-70b24a940af1"/>
+				<textElement>
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_id} + " | " + $F{prod_name}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

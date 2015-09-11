@@ -82,7 +82,7 @@
             DataBeanD_product_withdraw_detail objBean;
             D_product_withdraw_confirm_detailDAO objdb;
             String line_no, doc_id, A_status, U_status,
-                    product_id, weight, bag_qty, remark, shift, amount, product_name, wh_in, quantity;
+                    product_id, weight, bag_qty, remark, shift, amount, product_name, wh_in, quantity, weight_unit, weight_size;
         %>
         <%
             line_no = "";
@@ -98,6 +98,8 @@
             product_name = "";
             quantity = "";
             wh_in = "";
+            weight_unit = "";
+            weight_size = "";
             en = new ThaiUtil();
             objBean = new DataBeanD_product_withdraw_detail();
             objdb = new D_product_withdraw_confirm_detailDAO();
@@ -116,6 +118,8 @@
                 product_name = objBean.getProduct_name();
                 wh_in = objBean.getWh_id();
                 quantity = objBean.getQuantity();
+                weight_unit = objBean.getWeight_unit();
+                weight_size = objBean.getWeight_size();                
             } else {
                 doc_id = request.getParameter("A_doc_id");
                 A_status = request.getParameter("I_status");
@@ -183,6 +187,22 @@
                                 <td class="columnobject"><input name='A_amount' class='inputs' type="text" id="A_amount" value='<%=amount%>' size='10' />                              </td>
                             </tr-->
                             <input name='A_amount' class='inputs' type="hidden" id="A_amount" value='<%=amount%>' size='10' />
+                            
+                            <tr>
+                                <td class="columnlabel1">น้ำหนัก/หน่วย :&nbsp;</td>
+                                <td class="columnobject">
+                                    <input name='weight_unit' class='inputs' type="text" id="weight_unit" value="<%=weight_unit%>" size='30'/>                                
+                                </td>
+                            </tr>                            
+
+
+                            <tr>
+                                <td class="columnlabel1">ขนาดบรรจุ :&nbsp;</td>
+                                <td class="columnobject">
+                                    <input name='weight_size' class='inputs' type="text" id="weight_size" value="<%=weight_size%>" size='30' />
+                                </td>
+                            </tr>                                                        
+                            
                             <tr>
                                 <td class="columnlabel1">หมายเหตุ&nbsp;</td>
                                 <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>

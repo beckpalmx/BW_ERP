@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BWRP_026" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59805b8f-3f6e-4a61-ab17-2651160692bd">
 	<property name="ireport.zoom" value="2.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="192"/>
+	<property name="ireport.x" value="75"/>
+	<property name="ireport.y" value="240"/>
 	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["filexxxx.jrxml"]]></defaultValueExpression>
 	</parameter>
@@ -232,7 +232,7 @@ order by runno]]>
 				<reportElement x="0" y="1" width="1" height="32" uuid="4597af3a-294c-4f86-abf6-643ea3507320"/>
 			</line>
 			<line>
-				<reportElement x="295" y="1" width="1" height="32" uuid="3d3122fc-0782-454a-8c6e-e72d850bd205"/>
+				<reportElement x="308" y="1" width="1" height="32" uuid="3d3122fc-0782-454a-8c6e-e72d850bd205"/>
 			</line>
 			<line>
 				<reportElement x="554" y="0" width="1" height="33" uuid="1fc165e3-3985-480d-b7a7-2793b1a8d00c"/>
@@ -261,21 +261,21 @@ order by runno]]>
 				<text><![CDATA[หมายเหตุ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="296" y="7" width="64" height="20" uuid="fdeec8ac-e3fc-4066-83e9-d860f8bd4fc0"/>
+				<reportElement x="309" y="7" width="60" height="20" uuid="fdeec8ac-e3fc-4066-83e9-d860f8bd4fc0"/>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[จำนวน]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="360" y="7" width="84" height="20" uuid="d4ce8fee-426c-41c4-ab54-1ee958b13403"/>
+				<reportElement x="369" y="7" width="75" height="20" uuid="d4ce8fee-426c-41c4-ab54-1ee958b13403"/>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[ยอดตรวจนับ]]></text>
 			</staticText>
 			<line>
-				<reportElement x="360" y="1" width="1" height="31" uuid="3514ea4c-46e5-4544-8fb0-74cb07bcdb8e"/>
+				<reportElement x="369" y="1" width="1" height="31" uuid="3514ea4c-46e5-4544-8fb0-74cb07bcdb8e"/>
 			</line>
 			<line>
 				<reportElement x="230" y="0" width="1" height="32" uuid="420b284a-a141-49b2-bf00-7f6d54fe525d"/>
@@ -288,7 +288,7 @@ order by runno]]>
 				<text><![CDATA[รายการเบิกสินค้าสำเร็จรูป (แป้ง)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="231" y="7" width="64" height="19" uuid="e17afbc9-9aa0-4ca2-af2b-16ec621a0ee6"/>
+				<reportElement x="231" y="7" width="77" height="19" uuid="e17afbc9-9aa0-4ca2-af2b-16ec621a0ee6"/>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
@@ -308,10 +308,10 @@ order by runno]]>
 				<reportElement x="31" y="0" width="1" height="420" uuid="3e6818c5-bf29-4ab7-b530-e940661ab557"/>
 			</line>
 			<line>
-				<reportElement x="295" y="0" width="1" height="420" uuid="d210545b-c7e7-4792-bfe1-514388517910"/>
+				<reportElement x="308" y="0" width="1" height="420" uuid="d210545b-c7e7-4792-bfe1-514388517910"/>
 			</line>
 			<line>
-				<reportElement x="360" y="0" width="1" height="420" uuid="4e850015-44dc-41bf-b3f8-9d0d69214f53"/>
+				<reportElement x="369" y="0" width="1" height="420" uuid="4e850015-44dc-41bf-b3f8-9d0d69214f53"/>
 			</line>
 			<subreport>
 				<reportElement x="2" y="0" width="17" height="420" uuid="bb1e8f1b-d5ca-4b20-bc64-c0c5de1a6875"/>

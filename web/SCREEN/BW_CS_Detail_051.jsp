@@ -85,7 +85,7 @@
             DataBeanD_product_withdraw_detail objBean;
             D_product_withdraw_detailDAO objdb;
             String line_no, doc_id, A_status, U_status,
-                    product_id, weight, bag_qty, remark, shift, product_name, quantity, wh_in;
+                    product_id, weight, bag_qty, remark, shift, product_name, quantity, wh_in, weight_unit, weight_size;
         %>
         <%
             line_no = "";
@@ -100,6 +100,8 @@
             product_name = "";
             quantity = "";
             wh_in = "";
+            weight_unit = "";
+            weight_size = "";
             en = new ThaiUtil();
             objBean = new DataBeanD_product_withdraw_detail();
             objdb = new D_product_withdraw_detailDAO();
@@ -117,6 +119,8 @@
                 product_name = objBean.getProduct_name();
                 wh_in = objBean.getWh_id();
                 quantity = objBean.getQuantity();
+                weight_unit = objBean.getWeight_unit();
+                weight_size = objBean.getWeight_size();
             } else {
                 doc_id = request.getParameter("A_doc_id");
                 A_status = request.getParameter("I_status");
@@ -153,22 +157,8 @@
                                 </td>
                             </tr>
 
-                            <!--tr>
-                                <td class="columnlabel1">กะ</td>
-                                <td class="columnobject"><%=objuti.ShowSelectBox("select shift_id,name_t from mshift order by runno", "shift_id", "name_t", "A_shift")%>
-                                    <input type="hidden" id="selectshift" value="<%=shift%>">&nbsp;</td>
-                            </tr-->
-
                             <input name='A_shift' class='inputs' type="hidden" id="A_shift" value='A' size='10' /> 
                             <input name='A_weight' class='inputs' type="hidden" id="A_weight" value='1' size='10' /> 
-
-                            <!--tr>
-                                <td class="columnlabel1"><span class="row3">น้ำหนัก(กก.)&nbsp;</span></td>
-                                <td class="columnobject">
-                                    <input name="A_weight" class='inputs' type="text" id="A_weight" size="10" value="<%=weight%>" onblur="Amount('A_weight', 'A_bag_qty', 'A_quantity')" >
-                                </td>
-                            </tr-->
-
                             <tr>
                                 <td class="columnlabel1"><span class="row3">จำนวน&nbsp;</span>&nbsp;</td>
                                 <td class="columnobject">
@@ -179,6 +169,22 @@
                                 <td class="columnobject">
                                     <input name='A_quantity' class='inputs' type="text" id="A_quantity" value='<%=quantity%>' size='10' />                                </td>
                             </tr>
+
+                            <tr>
+                                <td class="columnlabel1">น้ำหนัก/หน่วย :&nbsp;</td>
+                                <td class="columnobject">
+                                    <input name='weight_unit' class='inputs' type="text" id="weight_unit" value="<%=weight_unit%>" size='30'/>                                
+                                </td>
+                            </tr>                            
+
+
+                            <tr>
+                                <td class="columnlabel1">ขนาดบรรจุ :&nbsp;</td>
+                                <td class="columnobject">
+                                    <input name='weight_size' class='inputs' type="text" id="weight_size" value="<%=weight_size%>" size='30' />
+                                </td>
+                            </tr>                                                        
+
                             <tr>
                                 <td class="columnlabel1">หมายเหตุ&nbsp;</td>
                                 <td class="columnobject"><textarea class='text_inputs' name="A_remark" id="A_remark" cols="45" rows="5"><%=remark%></textarea></td>

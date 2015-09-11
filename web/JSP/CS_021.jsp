@@ -8,7 +8,7 @@
 <%!    ProductDAO pDAO = new ProductDAO();
     ProductBean proBean, selectPgBean;
     Timestamp ts;
-    String name, id_wh, rm, id, id_g, id_c, id_t, price, max, min, safety, lo_id, value, unit_id, table_name ;
+    String name, id_wh, rm, id, id_g, id_c, id_t, price, max, min, safety, lo_id, value, unit_id, table_name , weight, weight_size;
     ThaiUtil tu;
 %>
 <%
@@ -28,6 +28,8 @@
     id_wh = (String) request.getParameter("warehouse_id");
     rm = (String) request.getParameter("remark_product");
     unit_id = (String) request.getParameter("unit_id");
+    weight = (String) request.getParameter("weight");    
+    weight_size = (String) request.getParameter("weight_size");
     pDAO = new ProductDAO();
     proBean = new ProductBean();
     proBean.setTable_name(table_name);
@@ -46,6 +48,9 @@
     proBean.setWarehouse_id(id_wh);
     proBean.setUnit_id(unit_id);
     proBean.setRemark(tu.EncodeTexttoTIS(rm));
+    proBean.setWeight(weight);    
+    proBean.setWeight_size(weight_size);
+    System.out.println("weight_size = " + weight_size);
     ts = new Timestamp(new java.util.Date().getTime());
     proBean.setCreate_date(ts);
     if (request.getParameter("chkstatus") == null) {

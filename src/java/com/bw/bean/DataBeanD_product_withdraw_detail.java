@@ -26,6 +26,8 @@ public class DataBeanD_product_withdraw_detail {
     private String product_name;
     private String wh_id;
     private String quantity;
+    private String weight_unit;
+    private String weight_size;
 
     /**
      * @return the by
@@ -221,5 +223,33 @@ public class DataBeanD_product_withdraw_detail {
      */
     public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    /**
+     * @return the weight_unit
+     */
+    public String getWeight_unit() {
+        return weight_unit;
+    }
+
+    /**
+     * @param weight_unit the weight_unit to set
+     */
+    public void setWeight_unit(String weight_unit) {
+        this.weight_unit = weight_unit;
+    }
+
+    /**
+     * @return the weight_size
+     */
+    public String getWeight_size() {
+        return weight_size;
+    }
+
+    /**
+     * @param weight_size the weight_size to set
+     */
+    public void setWeight_size(String weight_size) {
+        this.weight_size = weight_size;
     }
 }
