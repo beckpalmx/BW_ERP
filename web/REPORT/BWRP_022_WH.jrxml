@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="warehouse_report" pageWidth="846" pageHeight="560" columnWidth="806" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3e99b14-3837-41f2-a8e1-571ba229324f">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="423"/>
-	<property name="ireport.y" value="108"/>
+	<property name="ireport.x" value="461"/>
+	<property name="ireport.y" value="96"/>
 	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["RP_016"]]></defaultValueExpression>
 	</parameter>
@@ -23,8 +23,13 @@
 		<defaultValueExpression><![CDATA["31-05-2558"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select product_id,prod_name,weight_unit,weight_size,ptype_name,sum(data_transfer) as transfer , sum(data_r) as receive  , sum(data_w) as withdraw , sum(data_total) as balance , avg(price_per_unit) as price_per_unit
-,(sum(data_total) * avg(price_per_unit)) as total_price
+		<![CDATA[select product_id,prod_name,weight_unit,weight_size,ptype_name
+,sum(data_transfer) as transfer
+, sum(data_r) as receive
+, sum(data_w) as withdraw
+, sum(data_total) as balance
+, avg(price_per_unit) as price_per_unit
+,((sum(data_transfer) + sum(data_r) + sum(data_w)) * avg(price_per_unit)) as total_price
 from v_tmp_stock_supplier_balance
 group by ptype_name,product_id,prod_name,weight_unit,weight_size
 order by product_id]]>
@@ -50,7 +55,7 @@ order by product_id]]>
 		<variableExpression><![CDATA[$F{transfer}]]></variableExpression>
 	</variable>
 	<variable name="sum_balance" class="java.lang.Double" resetType="Group" resetGroup="product_type_name" calculation="Sum">
-		<variableExpression><![CDATA[$F{balance}]]></variableExpression>
+		<variableExpression><![CDATA[new Double($V{sum_data_r}.doubleValue()) + new Double($V{sum_data_w}.doubleValue()) + new Double($V{sum_data_t}.doubleValue())]]></variableExpression>
 	</variable>
 	<variable name="ProdType_Comp" class="java.lang.String">
 		<variableExpression><![CDATA[$F{ptype_name}]]></variableExpression>
@@ -118,7 +123,9 @@ order by product_id]]>
 					<textElement textAlignment="Right">
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{sum_balance}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[new Double($V{sum_data_t}.doubleValue())
++ new Double($V{sum_data_r}.doubleValue())
++ new Double($V{sum_data_w}.doubleValue())]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement x="711" y="4" width="93" height="20" uuid="376e0e03-5c77-45dd-ace3-fd5b70089a08"/>
@@ -279,7 +286,9 @@ order by product_id]]>
 				<textElement textAlignment="Right">
 					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{balance}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new Double($F{receive}.doubleValue())
++ new Double($F{withdraw}.doubleValue())
++ new Double($F{transfer}.doubleValue())]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="0" y="0" width="1" height="21" uuid="2e7e6947-dd22-4774-bea5-aafbeba2eac1"/>
@@ -320,7 +329,10 @@ order by product_id]]>
 				<textElement textAlignment="Right">
 					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{total_price}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[(new Double($F{receive}.doubleValue())
++ new Double($F{withdraw}.doubleValue())
++ new Double($F{transfer}.doubleValue()))
+* new Double($F{price_per_unit}.doubleValue())]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="336" y="0" width="77" height="20" backcolor="#FFFFFF" uuid="45315e20-f27b-47dc-8934-a41a686b6754"/>

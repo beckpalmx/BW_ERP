@@ -89,7 +89,7 @@
                             <tr>
                                 <td class='columnobject'><div align="right"><b>วันที่เริ่มต้น&nbsp;:</b>&nbsp;</div></td>
                                 <td class='columnobject'><input name="date_f" type='text' class="inputs" id="date_f" value="<%=start_current_month%>" readonly/>
-                                    &nbsp;<!--a id='date_1' href="javascript:;" data-toggle="tooltip" title="เริ่มวันที่"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a-->
+                                    &nbsp;<a id='date_1' href="javascript:;" data-toggle="tooltip" title="เริ่มวันที่"><img name='IMAGE4' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a>
                                     <script type='text/javascript'>Calendar.setup({inputField: 'date_f', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});
                                     </script>                                    
                                 </td>
