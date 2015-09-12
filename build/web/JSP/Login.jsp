@@ -36,6 +36,8 @@
     //MessageBean messageBean;
     //String message_id, message_detail;    
 %>
+
+
 <%
     selectData = new UserBean();
     tu = new ThaiUtil();
@@ -57,7 +59,7 @@
     } else {
         bwdb_name = bwdb_name.toLowerCase();
         db_name_ma = db_name_ma.toLowerCase();
-    }
+    }    
 
     //System.out.println("DataBase name = " + bwdb_name + " : " + db_name_ma);
     /*
@@ -73,17 +75,13 @@
     byte[] pass_decode = Base64.decodeBase64(pass_encode);
 
     //System.out.println("-------------------0000------------------------");
-
     //System.out.println("pass_encode = " + new String(pass_encode));
-
     //System.out.println("-------------------1111------------------------");
-
     selectData.setUsername(tu.EncodeTexttoTIS(user));
     //selectData.setPassword(tu.EncodeTexttoTIS(pass));
     selectData.setPassword(new String(pass_encode));
 
     //System.out.println("-------------------2222------------------------");
-
     userBean = useDAO.selectData(selectData);
     DataBean_Mcompany = McompanyDAO.selectData_chk(selectData_chk);
 
@@ -98,7 +96,6 @@
         userBean.setMessage_disp(messageDAO.selectData_MSG());
 
         //System.out.println("-------------------444411111------------------------");
-
         //if(userBean.getUse_status().equals("Y")){
         out.print("LOGIN");
         session.removeAttribute("menu");
@@ -127,9 +124,10 @@
         for (String list : mainList) {
             mainBean = menuDAO.selectMainMenu(list);
             if (menu.equals("")) {
-                menu = menu + "[\"+" + mainBean.getName_t() + "\",\"\", path+\"deluxe-tree.files/xpicon1_s.gif\", \"\", \"\", \"XP Title Tip\", \"\", \"0\", \"\", \"\", ],";
+                //menu = menu + "[\"+" + mainBean.getName_t() + "\",\"\", path+\"deluxe-tree.files/xpicon1_s.gif\", \"\", \"\", \"XP Title Tip\", \"\", \"0\", \"\", \"\", ],";
+                menu = menu + "[\"+" + mainBean.getName_t() + "\",\"\", path+\"deluxe-tree.files/xpicon1_s.gif\", \"\", \"\",\"" + mainBean.getName_t() + "\", \"\", \"0\", \"\", \"\", ],";
             } else {
-                menu = menu + "[\"" + mainBean.getName_t() + "\",\"\", \"\", \"\", \"\", \"XP Title Tip\", \"\", \"1\", \"0\", \"\", ],";
+                menu = menu + "[\"" + mainBean.getName_t() + "\",\"\", \"\", \"\", \"\",\"" + mainBean.getName_t() + "\", \"\", \"1\", \"0\", \"\", ],";
             }
 
             for (String s_list : subList) {
@@ -163,7 +161,6 @@
         //JOptionPane.showMessageDialog(null, "Site URL must not be empty.", "Error", JOptionPane.ERROR_MESSAGE);
         //JOptionPane.showConfirmDialog(null,"choose one", "choose one", JOptionPane.YES_NO_OPTION);
         //System.out.println("-------------------5555------------------------");
-
         session.setAttribute("menu", menu);
         session.setAttribute("user", userBean);
         session.setAttribute("name_t", DataBean_Mcompany);

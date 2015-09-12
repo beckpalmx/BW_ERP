@@ -2,6 +2,7 @@
 <%@page import="com.bw.report.PrintReport"%>
 <%@page import="java.io.InputStream"%>
 <%@page language="java" contentType="text/pdf; charset=TIS-620" pageEncoding="TIS-620"%>
+<%@page language="java" trimDirectiveWhitespaces="true"%>
 <%!    InputStream path;
     String report_code, docId, start, end, employee_id;
     int type;

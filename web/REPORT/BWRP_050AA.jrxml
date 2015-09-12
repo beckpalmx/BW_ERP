@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BWRP_WAREHOUSE_REPOR" pageWidth="595" pageHeight="850" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="929483e0-a3dc-4930-93c6-059cd907118d">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="1038"/>
 	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["RP_041"]]></defaultValueExpression>
 	</parameter>
@@ -305,7 +305,7 @@ order by runno]]>
 					<subreportParameterExpression><![CDATA[$F{doc_id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BWRP_050_SUB.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BWRP_050AA_SUB.jasper"]]></subreportExpression>
 			</subreport>
 			<line>
 				<reportElement x="-2" y="504" width="558" height="1" isPrintWhenDetailOverflows="true" uuid="c72d6fe7-c46e-4d81-9140-c733f98959bd"/>
