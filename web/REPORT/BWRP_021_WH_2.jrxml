@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="warehouse_report" pageWidth="630" pageHeight="842" columnWidth="590" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3e99b14-3837-41f2-a8e1-571ba229324f">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="208"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["RP_016"]]></defaultValueExpression>
@@ -40,8 +40,12 @@ order by pgroup_id desc,runno]]>
 	<field name="data_total" class="java.lang.Double"/>
 	<field name="price_per_unit" class="java.lang.Double"/>
 	<field name="total_price" class="java.lang.Double"/>
-	<field name="prod_name" class="java.lang.String"/>
 	<field name="data_transfer" class="java.lang.Double"/>
+	<field name="prod_name" class="java.lang.String"/>
+	<field name="unit_name" class="java.lang.String"/>
+	<field name="weight_unit" class="java.lang.String"/>
+	<field name="weight_size" class="java.lang.String"/>
+	<field name="ptype_name" class="java.lang.String"/>
 	<variable name="sum_data_r" class="java.lang.Double" resetType="Group" resetGroup="product_id" calculation="Sum">
 		<variableExpression><![CDATA[$F{data_r}]]></variableExpression>
 	</variable>
@@ -77,14 +81,14 @@ order by pgroup_id desc,runno]]>
 			<band height="20">
 				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement x="211" y="0" width="93" height="20" uuid="fb98ee21-645d-480c-8222-677cc96a7397"/>
-					<textElement textAlignment="Right">
+					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{sum_data_r}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement x="285" y="0" width="93" height="20" uuid="493d4125-bcb4-40d6-a2d7-b3c3bd3ac288"/>
-					<textElement textAlignment="Right">
+					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{sum_data_w}]]></textFieldExpression>
@@ -96,15 +100,15 @@ order by pgroup_id desc,runno]]>
 					<reportElement x="0" y="19" width="590" height="1" uuid="2f7e431b-33ce-4e75-b7d2-a54233ff7690"/>
 				</line>
 				<staticText>
-					<reportElement x="3" y="0" width="28" height="18" uuid="f7ac3e38-c640-4001-8d1a-6ab04de0995a"/>
-					<textElement textAlignment="Right" verticalAlignment="Top">
+					<reportElement x="3" y="1" width="28" height="18" uuid="f7ac3e38-c640-4001-8d1a-6ab04de0995a"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
 					<text><![CDATA[รวม :]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement x="358" y="0" width="93" height="20" uuid="3715e483-6094-4ed1-897d-ddb553beb485"/>
-					<textElement textAlignment="Right">
+					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($V{sum_balance}<0) ? new Double("0") : $V{sum_balance}]]></textFieldExpression>
@@ -116,29 +120,22 @@ order by pgroup_id desc,runno]]>
 					<reportElement x="590" y="1" width="1" height="19" uuid="05af1bc2-bc2c-4bff-b1bd-ebbd0c455a85"/>
 				</line>
 				<textField>
-					<reportElement x="32" y="0" width="70" height="20" uuid="03463d77-096e-41a4-a625-4a07ffea26c6"/>
-					<textElement>
+					<reportElement x="32" y="0" width="159" height="20" uuid="03463d77-096e-41a4-a625-4a07ffea26c6"/>
+					<textElement verticalAlignment="Middle">
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{pgroup_id}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="97" y="0" width="94" height="20" backcolor="#FFFFFF" uuid="cb5ca337-9037-42b2-ba7b-52c76262ea2b"/>
-					<textElement>
-						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{product_id}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{ptype_name} + " | " + $F{prod_name}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement x="420" y="0" width="93" height="20" uuid="f1c0c14c-4051-4941-b810-a9a8d9bfb418"/>
-					<textElement textAlignment="Right">
+					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{price_per_unit}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement x="495" y="-1" width="93" height="20" uuid="843c12c1-d5d3-4b00-97ee-62194859a10a"/>
-					<textElement textAlignment="Right">
+					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double( ($V{sum_data_r}.doubleValue()
@@ -148,7 +145,7 @@ order by pgroup_id desc,runno]]>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement x="159" y="0" width="93" height="20" uuid="b6172dfc-f48c-4717-8333-2ab8a840d121"/>
-					<textElement textAlignment="Right">
+					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{sum_data_t}]]></textFieldExpression>

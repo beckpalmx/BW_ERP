@@ -341,8 +341,10 @@
                                 <tr>
                                     <td class="columnlabel1">แผนกผู้เบิก&nbsp;:&nbsp;</td>
                                     <td class="columnobject">
-                                        <input name='A_dp_id' class='inputs' type="text" id="A_dp_id" value='' size='10' readonly="readonly" />
-                                        &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('mdepartment&stadment=and+dept_id=\'' + getId('dept_id').value + '\'', 24, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;<input name='dp_id_desc' class='inputs' type="text" id="dp_id_desc" value='' size='30' readonly="readonly" />                                </td>
+                                        <input name='A_dp_id' class='inputs' type="text" id="A_dp_id" value='<%=userbean.getDept_id()%>' size='10' readonly="readonly" />
+                                        &nbsp;&nbsp;&nbsp;<img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('mdepartment&stadment=and+dept_id=\'' + getId('dept_id').value + '\'', 24, 'Search_Config2.jsp');">
+                                        &nbsp;&nbsp;&nbsp;<input name='dp_id_desc' class='inputs' type="text" id="dp_id_desc" value='<%=userbean.getDept_name()%>' size='30' readonly="readonly" />                                
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan='2' class='blankspace'></td>

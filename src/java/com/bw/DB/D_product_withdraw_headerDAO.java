@@ -177,14 +177,12 @@ public class D_product_withdraw_headerDAO {
             "doc_time",
             "dp_id",
             "reporter_id",
-            "account_id",
+            "approver_id",
             "update_by",
             "update_date",
             "complete_flag",
             "company_id",
-            "count_send_complete",
-            "wh_leader_id",
-            "account_id"                
+            "count_send_complete"
         };
         objuti = new UtiDatabase();
         objStringQuery = new StringQuery();
@@ -201,11 +199,10 @@ public class D_product_withdraw_headerDAO {
             p.setString(i, DataBean.getApprover_id());i+=1;
             p.setString(i, DataBean.getBy());i+=1;
             p.setTimestamp(i, DataBean.getDate());i+=1;
+            System.out.println("Complete_Flag = " + DataBean.getComplete_flag());
             p.setString(i, DataBean.getComplete_flag());i+=1;
             p.setString(i, DataBean.getCompany_id());i+=1;
-            p.setString(i, objuti.Count_sendcomplete("d_product_withdraw_header", DataBean.getDoc_id() , DataBean.getComplete_flag(), con));i+=1;
-            p.setString(i, DataBean.getWh_leader_id());i += 1;
-            p.setString(i, DataBean.getAccount_id());i += 1;            
+            p.setString(i, objuti.Count_sendcomplete("d_product_withdraw_header", DataBean.getDoc_id() , DataBean.getComplete_flag(), con));i+=1;        
             p.setString(i,DataBean.getDoc_id());i+=1;
             p.executeUpdate();
             if(objuti.numRowdatabase("Select count(doc_id) as num from d_product_withdraw_detail where doc_id = '"+DataBean.getDoc_id()+"' and delete_flag = 'N' and complete_flag = 'N'") != 0){

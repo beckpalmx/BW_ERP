@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="warehouse_report" pageWidth="630" pageHeight="842" columnWidth="590" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3e99b14-3837-41f2-a8e1-571ba229324f">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="117"/>
+	<property name="ireport.y" value="76"/>
 	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["RP_016"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="company_name" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["บริษัท แป้งตะวันออกเฉียงเหนือ(1987) จำกัด"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["บริษัท ซีไจแกนติก คาร์บอน จำกัด"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="iso_doc_ref" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["F-A-031- R 01"]]></defaultValueExpression>
@@ -23,29 +23,23 @@
 		<defaultValueExpression><![CDATA["31-05-2558"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select * from v_tmp_stock_warehouse_balance
-order by pgroup_id desc,runno]]>
+		<![CDATA[select * from v_tmp_stock_2
+$P!{SQL_CODE}
+order by pgroup_id desc,runno
+--to_date(format_date(doc_date),'YYYY-MM-DD') , doc_type desc]]>
 	</queryString>
 	<field name="runno" class="java.lang.Integer"/>
 	<field name="product_id" class="java.lang.String"/>
-	<field name="product_name" class="java.lang.String"/>
-	<field name="pgroup_id" class="java.lang.String"/>
-	<field name="pgroup_name" class="java.lang.String"/>
-	<field name="wh_id" class="java.lang.String"/>
-	<field name="location_id" class="java.lang.String"/>
 	<field name="doc_date" class="java.lang.String"/>
 	<field name="doc_type" class="java.lang.String"/>
 	<field name="data_r" class="java.lang.Double"/>
 	<field name="data_w" class="java.lang.Double"/>
 	<field name="data_total" class="java.lang.Double"/>
-	<field name="price_per_unit" class="java.lang.Double"/>
-	<field name="total_price" class="java.lang.Double"/>
-	<field name="data_transfer" class="java.lang.Double"/>
 	<field name="prod_name" class="java.lang.String"/>
-	<field name="unit_name" class="java.lang.String"/>
-	<field name="weight_unit" class="java.lang.String"/>
-	<field name="weight_size" class="java.lang.String"/>
-	<field name="ptype_name" class="java.lang.String"/>
+	<field name="iodine" class="java.lang.String"/>
+	<field name="price_per_unit" class="java.lang.Double"/>
+	<field name="pgroup_id" class="java.lang.String"/>
+	<field name="data_transfer" class="java.lang.Double"/>
 	<variable name="sum_data_r" class="java.lang.Double" resetType="Group" resetGroup="product_id" calculation="Sum">
 		<variableExpression><![CDATA[$F{data_r}]]></variableExpression>
 	</variable>
@@ -68,6 +62,13 @@ order by pgroup_id desc,runno]]>
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{product_id} + " | " + $F{prod_name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="5" y="3" width="97" height="20" uuid="c665bf16-8907-45cf-847d-189a6032f908"/>
+					<textElement>
+						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pgroup_id}]]></textFieldExpression>
 				</textField>
 				<line>
 					<reportElement x="0" y="0" width="1" height="25" uuid="12d665a3-07d6-4f20-a62d-7578e6b59967"/>
@@ -169,18 +170,18 @@ order by pgroup_id desc,runno]]>
 	<pageHeader>
 		<band height="60" splitType="Stretch">
 			<image>
-				<reportElement x="0" y="9" width="81" height="32" uuid="91be433d-82ec-42df-b744-85d69a77bb2d"/>
-				<imageExpression><![CDATA["bw-logo.png"]]></imageExpression>
+				<reportElement x="0" y="-14" width="110" height="59" uuid="91be433d-82ec-42df-b744-85d69a77bb2d"/>
+				<imageExpression><![CDATA["cgc-logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="49" y="13" width="410" height="32" uuid="8e188810-3472-4d1a-a105-aac65cdd663c"/>
+				<reportElement x="0" y="13" width="589" height="32" uuid="8e188810-3472-4d1a-a105-aac65cdd663c"/>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="20" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[รายงานความเคลื่อนไหวคลังสินค้า (แป้งมันสำปะหลัง)]]></text>
+				<text><![CDATA[รายงานความเคลื่อนไหวสินค้า]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="459" y="0" width="227" height="20" uuid="9e6a97c3-7446-4c7a-968a-97d6f7f2e72c"/>
+				<reportElement x="459" y="0" width="130" height="20" uuid="9e6a97c3-7446-4c7a-968a-97d6f7f2e72c"/>
 				<textElement>
 					<font fontName="CordiaUPC" size="12" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>

@@ -219,7 +219,7 @@
                 doc_no = objs_p.getEffective_date();
 
                 //_______________________________________________________________report
-            %>
+%>
             <input name="username" type="hidden" id="username" value="<%=userbean.getUsername()%>" size="30" readonly/>
             <input name="D_status" type="hidden" id="D_status" value="3">
             <!-- เป็นการ Delete ข้อมูลทั้งหมด -->
@@ -375,9 +375,10 @@
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">คลังวัตถุดิบ*&nbsp;</td>
-                                    <td colspan="3" class="columnobject"><input name='A_wh_in' class='inputs' type="text" id="A_wh_in" value='<%=objs_p.getWarehouse_begin_id()%>' size='10' readonly="readonly"/>
+                                    <td colspan="3" class="columnobject"><input name='A_wh_in' class='inputs' type="text" id="A_wh_in" value='W001' size='10' readonly="readonly"/>
                                         <img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE3' width='20' height='20' border='0' align='middle' style="cursor: pointer;" onClick="openBrWindow('Mwarehouse&stadment=and+warehouse_id+=+\'<%=objs_p.getWarehouse_begin_id()%>\'', 22, 'Search_Config2.jsp');">&nbsp;&nbsp;&nbsp;
-                                        <input name='wh_in_desc' class='inputs' type="text" id="wh_in_desc" value='<%=objs_p.getWarehouse_begin_name()%>' size='30' readonly="readonly" />                              </td>
+                                        <input name='wh_in_desc' class='inputs' type="text" id="wh_in_desc" value='คลังวัตถุดิบ' size='30' readonly="readonly" />                              
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="columnlabel1">น้ำหนักรถเข้า</td>

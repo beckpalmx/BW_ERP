@@ -101,8 +101,10 @@
                 date_t = request.getParameter("date_t");
             %>
             <input type="hidden" name="type_report" value="4">
-            <input type="hidden" name="report_code" value="BWRP_022_WH">
-            <input type="hidden" name="price_year" value="">                        
+            <input type="hidden" name="report_code" value="BWRP_024_WH">
+            <input type="hidden" name="price_year" value="">
+            <input type="hidden" name="pgroup_id" value="-">
+            <input type="hidden" name="product_id" value="-">
             <input type="hidden" name="warehouse_id" value="-">
             <input type="hidden" name="branch" value="-">
             <input type="hidden" name="location_id" value="-">
@@ -132,12 +134,13 @@
                 Double balance = 0.00;
 
                 String product_id = request.getParameter("A_product_id");
-                String pgroup_id = request.getParameter("pgroup_id");
+                String pgroup_id = request.getParameter("pgroup_id");                
+                
                 // **** ลบข้อมูลตาราง ความเคลื่อนไหว
-                String sqlDelete = " DELETE FROM tmp_stock_supplier_balance ;"
-                        + " ALTER SEQUENCE seq_tmp_stock_supplier_balance RESTART WITH 1; "
-                        + " DELETE FROM tmp_supplier_current_movement ;"
-                        + " ALTER SEQUENCE seq_tmp_supplier_current_movement RESTART WITH 1; ";
+                String sqlDelete = " DELETE FROM tmp_stock_warehouse_balance ;"
+                        + " ALTER SEQUENCE seq_tmp_stock_warehouse_balance RESTART WITH 1; "
+                        + " DELETE FROM tmp_warehouse_current_movement ;"
+                        + " ALTER SEQUENCE seq_tmp_warehouse_current_movement RESTART WITH 1; ";
                 STateMentData = Conn.createStatement();
                 STateMentData.execute(sqlDelete);
 
@@ -203,7 +206,7 @@
                         sql_where = sql_where + " and product_id = '" + product_id + "'";
                     }
                 }
-
+                
                 System.out.println("cond pgroup_id  = " + pgroup_id);
 
                 if (pgroup_id.equals("") || pgroup_id == null || pgroup_id.equals("-")) {
@@ -214,14 +217,14 @@
                     } else {
                         sql_where = sql_where + " and pgroup_id = '" + pgroup_id + "'";
                     }
-                }
+                }           
 
                 System.out.println("cond - sql_where  = " + sql_where);
 
                 /**
                  * ** หารหัสสินค้าที่เคลื่อนไหวเดือนปัจจุบัน ***
                  */
-                String sql_product_id = " Select distinct(product_id) from vt_transaction_supplier_stock " + sql_where + " Order By product_id";
+                String sql_product_id = " Select distinct(product_id) from vt_transaction_warehouse_stock " + sql_where + " Order By product_id";
 
                 //int count_product_id = 0;
                 //String product_id_check = "";
@@ -231,24 +234,17 @@
 
                 while (rec_product != null && (rec_product.next())) {
 
-                    /*                    
-                     count_product_id++;
-                     if (count_product_id == 1) {
-                     product_id_check = "'" + rec_product.getString("product_id") + "'";
-                     } else {
-                     product_id_check += ",'" + rec_product.getString("product_id") + "'";
-                     }             
-                     */
-                    SqlIns_Tmp_Prod = "INSERT INTO tmp_supplier_current_movement(product_id,period_month,create_date,create_by,period_year,remark) VALUES "
+                    SqlIns_Tmp_Prod = "INSERT INTO tmp_warehouse_current_movement(product_id,period_month,create_date,create_by,period_year,remark) VALUES "
                             + "('" + rec_product.getString("product_id") + "','" + currmonth + "'"
                             + ",'" + ts + "','System','" + curryear + "','" + request.getParameter("date_to") + "')";
-                    //System.out.println("SqlIns_Tmp_Prod = " + SqlIns_Tmp_Prod);
+                    
+                    System.out.println("SqlIns_Tmp_Prod = " + SqlIns_Tmp_Prod);
 
                     STateMentData = Conn.createStatement();
                     STateMentData.execute(SqlIns_Tmp_Prod);
                 }
 
-                String sql_tmp_product = " Select * from tmp_supplier_current_movement Order By product_id ";
+                String sql_tmp_product = " Select * from tmp_warehouse_current_movement Order By product_id ";
                 STateMent = Conn.createStatement();
                 STateMent = Conn.createStatement();
                 STateMentData = Conn2.createStatement();
@@ -258,39 +254,34 @@
 
                 while ((rec_tmp_product != null) && (rec_tmp_product.next())) { // Loop Main 
 
-                    sql_loop1 = " select product_id,sum(amount_total) as amount_total,pname_t,pgroup_id,"
-                            //+ "price_per_unit,"
-                            + "avg(to_number(price_per_unit,'999999.99')) as price_per_unit "
-                            + " from vt_transaction_supplier_stock "
+                    sql_loop1 = " select product_id,sum(amount_total) as amount_total,pname_t,pgroup_id"
+                            //+ "avg(to_number(price_per_unit,'999999.99')) as price_per_unit "
+                            + " from vt_transaction_warehouse_stock "
                             + " WHERE product_id = '" + rec_tmp_product.getString("product_id") + "' "
                             + " and to_number(month,'99') < " + currmonth
                             + " and year = '" + curryear + "'"
                             + " GROUP BY pgroup_id,product_id,pname_t  ";
 
-                    //System.out.println("sql_loop1 = " + sql_loop1);
+                    System.out.println("sql_loop1 = " + sql_loop1);
                     STateMent_loop1 = Conn.createStatement();
                     ResultSet rec_loop1 = STateMent_loop1.executeQuery(sql_loop1);
                     //String doc_type = "***";
 
                     while ((rec_loop1 != null) && (rec_loop1.next())) { // Loop 1 
-/*
-                         System.out.println("rec_loop1 = product_id = " + rec_loop1.getString("product_id")
-                         + " pgroup_id = " + rec_loop1.getString("pgroup_id")
-                         + " pname_t = " + rec_loop1.getString("pname_t")
-                         + " amount_total = " + rec_loop1.getDouble("amount_total")
-                         + " price_per_unit = " + rec_loop1.getDouble("price_per_unit"));
-                         */
 
                         transfer = rec_loop1.getDouble("amount_total");
                         transfer = Double.parseDouble(formatter.format(transfer));
                         data_r = 0.00;
                         data_w = 0.00;
 
-                        SqlInsert1 = "INSERT INTO tmp_stock_supplier_balance(product_id,doc_date,doc_type,data_r,data_w,data_total,data_transfer,price_per_unit,pgroup_id) VALUES "
+                        SqlInsert1 = "INSERT INTO tmp_stock_warehouse_balance(product_id,doc_date,doc_type,data_r,data_w,data_total,data_transfer,pgroup_id) VALUES "
                                 + "('" + rec_loop1.getString("product_id") + "','" + s_end_period + "','"
                                 //+ doc_type + "'," + data_r + "," + data_w + "," + transfer + "," + transfer + ",'"
-                                + "***'," + formatter.format(data_r) + "," + formatter.format(data_w) + "," + formatter.format(transfer) + "," + formatter.format(transfer) + ",'"
-                                + rec_loop1.getString("price_per_unit") + "','" + rec_loop1.getString("pgroup_id") + "')";
+                                + "***'," + formatter.format(data_r) + "," + formatter.format(data_w) + "," + formatter.format(transfer) + "," + formatter.format(transfer) 
+                                + "," + rec_loop1.getString("pgroup_id") + "')";
+                                //+ rec_loop1.getString("price_per_unit") + "','" + rec_loop1.getString("pgroup_id") + "')";
+                                
+                        System.out.println("SqlInsert1 = " + SqlInsert1);                        
 
                         STateMentData = Conn.createStatement();
                         STateMentData.execute(SqlInsert1);
@@ -299,16 +290,16 @@
 
                     //Start Loop 2                     
                     String sql_loop2 = "SELECT runno,doc_date,product_id,"
-                            + "doc_type,amount_total,pname_t,pgroup_id,"
-                            + "price_per_unit"
+                            + "doc_type,amount_total,pname_t,pgroup_id"
+                            //+ "price_per_unit"
                             //+ " avg(to_number(price_per_unit,'999999.99')) as price_per_unit "
-                            + " FROM vt_transaction_supplier_stock "
+                            + " FROM vt_transaction_warehouse_stock "
                             + " where to_number(month,'99') = " + currmonth
                             + " and year = '" + curryear + "'"
                             + " and product_id = '" + rec_tmp_product.getString("product_id") + "'"
                             + " Order by pgroup_id,product_id, to_date(format_date(doc_date),'YYYY-MM-DD') , doc_type desc ";
 
-                    //System.out.println("sql_loop2 = " + sql_loop2);
+                    System.out.println("sql_loop2 = " + sql_loop2);
                     STateMent_loop2 = Conn.createStatement();
                     ResultSet rec_loop2 = STateMent_loop1.executeQuery(sql_loop2);
 
@@ -355,10 +346,10 @@
                          + " data_w = " + data_w
                          + " balance = " + balance);
                          */
-                        SqlInsert2 = "INSERT INTO tmp_stock_supplier_balance(product_id,doc_date,doc_type,data_r,data_w,data_total,price_per_unit,pgroup_id) VALUES "
+                        SqlInsert2 = "INSERT INTO tmp_stock_warehouse_balance(product_id,doc_date,doc_type,data_r,data_w,data_total,pgroup_id) VALUES "
                                 + "('" + rec_loop2.getString("product_id") + "','" + rec_loop2.getString("doc_date") + "','"
-                                + rec_loop2.getString("doc_type") + "'," + formatter.format(data_r) + "," + formatter.format(data_w) + "," + formatter.format(balance) + ",'"
-                                + rec_loop2.getString("price_per_unit") + "','" + rec_loop2.getString("pgroup_id") + "')";
+                                + rec_loop2.getString("doc_type") + "'," + formatter.format(data_r) + "," + formatter.format(data_w) + "," + formatter.format(balance) + ","
+                                + "'" + rec_loop2.getString("pgroup_id") + "')";
                         STateMentData = Conn.createStatement();
                         STateMentData.execute(SqlInsert2);
 
@@ -388,8 +379,8 @@
             <!--div class="jumbotron"-->
             <div class="container">
                 <table border ="1"  cellpadding="0"  cellspacing="0" class="myTable">
-                    <center><h1> รายงานสรุปการรับ - จ่าย (กระสอบ-ถุง-พาเลท) V1</h1></center>
-                    <center><h2><span class="label label-success">วันที่ : <%=date_t%></span></h2></center> 
+                    <center><h1> รายงานความเคลื่อนไหวสินค้า (แป้งมันสำปะหลัง) V1</h1></center>                 
+                    <center><h2><span class="label label-success">วันที่ : <%=date_f%> ถึง <%=date_t%></span></h2></center> 
                     <!--center><h2>วันที่ : <%=date_f%> ถึง <%=date_t%></h2></center--> 
                     <center>   
                         <!--div class="progress progress-striped active"-->

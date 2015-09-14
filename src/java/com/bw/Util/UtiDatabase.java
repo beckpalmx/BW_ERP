@@ -5,6 +5,11 @@ import java.sql.ResultSet;
 import com.bw.DB.DBConnect;
 import java.sql.PreparedStatement;
 
+interface Interface {
+
+    void InsTimeStamp();
+}
+
 public class UtiDatabase {
 
     //<editor-fold defaultstate="collapsed" desc="นับจำนวนข้อมูลใน Table">
@@ -107,7 +112,7 @@ public class UtiDatabase {
             }
         }
         return output;
-    }    
+    }
 
     //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="ใช้ตอนจะนำข้อมูลลงฐานข้อมูลข้อมูลจะเป็นแบบ new Line">
@@ -160,7 +165,7 @@ public class UtiDatabase {
         }
         return output;
     }
-    
+
     public String ShowSelectBoxSearch_cgc2(String inputSQL, String Value, String ShowData, String HTMLIDandName) throws Exception {
         String output;
         DBConnect objcon = new DBConnect();
@@ -181,8 +186,8 @@ public class UtiDatabase {
             }
         }
         return output;
-    }    
-    
+    }
+
     public String ShowSelectBoxSearch_cgc3(String inputSQL, String Value, String ShowData, String HTMLIDandName) throws Exception {
         String output;
         DBConnect objcon = new DBConnect();
@@ -203,7 +208,7 @@ public class UtiDatabase {
             }
         }
         return output;
-    }        
+    }
 
     public String ShowSelectBoxSearch(String Select_value, String[] Fill_Name, String[] Value, String HTMLIDandName) throws Exception {
         String string_output = new String();
@@ -407,9 +412,40 @@ public class UtiDatabase {
         }
     }
     //</editor-fold>
-    
+
     public String Format_Date_For_Mysql(String inputdate) {
         return inputdate.substring(8, 10) + "-" + inputdate.substring(5, 7) + "-" + (Integer.parseInt(inputdate.substring(0, 4)) - 543);
-    }    
+    }
+
+    public int InsTimeStamp(String SQL_TimeStamp, Connection con, PreparedStatement p) throws Exception {
+        int result = 0;
+        try {
+            p = con.prepareStatement(SQL_TimeStamp);
+            p.executeUpdate();
+            p.clearParameters();
+            result = 1;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            p = null;
+        }
+        return result;
+    }
+
+    public int delete(String SQL_DEL, Connection con, PreparedStatement p) throws Exception {
+        int result = 0;
+        try {
+
+            p = con.prepareStatement(SQL_DEL);
+            p.executeUpdate();
+            p.clearParameters();
+            result = 1;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            p = null;
+        }
+        return result;
+    }
 
 }

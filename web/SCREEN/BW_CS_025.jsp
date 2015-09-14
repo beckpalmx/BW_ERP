@@ -71,7 +71,7 @@
                         getId("A_return_flag").checked = false;
                         getId("A_return_flag").value = "N";
                     } else {
-                        SURL = "../JSP/CS_028.jsp?status_d=3&chk_all=1&username=" + getId("username").value;
+                        SURL = "../JSP/CS_025.jsp?status_d=3&chk_all=1&username=" + getId("username").value;
                         SURL = SURL + "&doc_id=" + getId("doc_id").value;
                         Delete_Line_no(SURL);
                         cancelAction();
@@ -186,7 +186,7 @@
             <div class="container">
                 <div class="panel panel-primary">
                     <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                        <b>ยืนยันการรับสินค้าสำเร็จรูป (BW_CS_025)</b>
+                        <b>ยืนยันการรับสินค้าสำเร็จรูปเข้าคลัง (BW_CS_025)</b>
                     </div>                        
                     <div class="panel-footer">                
                         <div align="left">
