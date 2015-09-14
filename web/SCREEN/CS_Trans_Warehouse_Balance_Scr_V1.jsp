@@ -73,8 +73,8 @@
                                 <td class="columnobject">
                                     <select id="pgroup_id" name="pgroup_id" class="select_cgc3" data-style="btn-info" data-toggle="tooltip" title="CLick เลือกกลุ่มพัสดุ">
                                         <option value="-">ทั้งหมด</option>
-                                        <option value="BAG">กระสอบ-ถุง</option>
-                                        <option value="PAL">พาเลท</option>
+                                        <!--option value="BAG">กระสอบ-ถุง</option>
+                                        <option value="PAL">พาเลท</option-->
                                     </select>    
                             </tr>       
 
