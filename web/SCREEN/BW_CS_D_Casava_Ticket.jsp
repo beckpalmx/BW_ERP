@@ -234,7 +234,7 @@
                                     <td class="columnobject">
                                         เลขที่เอกสาร&nbsp;
                                         <input name='doc_id' class='inputs' type="text" id="doc_id" value='' size='10' readonly="readonly"/>
-                                        &nbsp;<a href='#' onClick="javascript:openBrWindow('vd_casava_skin__ticket&stadment=and+complete_flag+<>+\'Y\'and+count_rec+<>+0', 115, 'Search_Doc_id_By_DATE.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
+                                        &nbsp;<a href='#' onClick="javascript:openBrWindow('vd_casava_skin_ticket&stadment=and+complete_flag+<>+\'Y\'and+count_rec+<>+0', 115, 'Search_Doc_id_By_DATE.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;
                                         วันที่เอกสาร*&nbsp;
                                         <input class='inputs' type="text" name='doc_date' size='10' value='' id="doc_date" readonly="readonly" />&nbsp;<a id='date_1' ><img name='IMAGE2' src='../IMAGES/BUTTON/MAIN/CALENDAR20.png' border='0' align='absmiddle'></a><script type='text/javascript'>Calendar.setup({inputField: 'doc_date', ifFormat: '%d-%m-%Y', showsTime: false, button: 'date_1', singleClick: true, step: 1});</script>&nbsp;&nbsp;
                                         เวลา*&nbsp;
@@ -247,7 +247,7 @@
                                     <td class="columnobject">
                                         เอกสารที่อนุมัติแล้ว&nbsp;
                                         <input name='doc_id1' type='hidden' id="doc_id1" value='' size='10' />
-                                        <a href='#' onClick="javascript:openBrWindow('vd_casava_skin__ticket&stadment=and+complete_flag+=+\'Y\'and+count_rec+<>+0', 115, 'Search_Doc_id_By_DATE.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;                                                                                
+                                        <a href='#' onClick="javascript:openBrWindow('vd_casava_skin_ticket&stadment=and+complete_flag+=+\'Y\'and+count_rec+<>+0', 115, 'Search_Doc_id_By_DATE.jsp')"><img src='../IMAGES/BUTTON/MAIN/SEARCH20.png' alt='ค้นหา' name='IMAGE1' width='20' height='20' border='0' align='middle' ></a>&nbsp;&nbsp;                                                                                
                                     </td>
                                 </tr>                                
 

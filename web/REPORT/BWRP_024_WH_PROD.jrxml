@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="warehouse_report" pageWidth="846" pageHeight="560" columnWidth="806" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3e99b14-3837-41f2-a8e1-571ba229324f">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="497"/>
 	<property name="ireport.y" value="33"/>
 	<parameter name="fileName" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["RP_016"]]></defaultValueExpression>
@@ -29,7 +29,7 @@
 , sum(data_w) as withdraw
 , sum(data_total) as balance
 , avg(price_per_unit) as price_per_unit
-,((sum(data_transfer) + sum(data_r) + sum(data_w)) * avg(price_per_unit)) as total_price
+,((sum(data_transfer) + sum(data_r) + sum(data_w)) * avg(price_per_unit)) as total_price,avg(weight_kg_ref) as weight_kg_ref
 from v_tmp_stock_warehouse_balance
 group by ptype_name,product_id,prod_name,weight_unit,weight_size
 order by product_id]]>
@@ -37,7 +37,7 @@ order by product_id]]>
 	<field name="product_id" class="java.lang.String"/>
 	<field name="prod_name" class="java.lang.String"/>
 	<field name="weight_unit" class="java.lang.String"/>
-	<field name="weight_size" class="java.lang.String"/>
+	<field name="weight_size" class="java.lang.Double"/>
 	<field name="ptype_name" class="java.lang.String"/>
 	<field name="transfer" class="java.lang.Double"/>
 	<field name="receive" class="java.lang.Double"/>
@@ -45,6 +45,7 @@ order by product_id]]>
 	<field name="balance" class="java.lang.Double"/>
 	<field name="price_per_unit" class="java.lang.Double"/>
 	<field name="total_price" class="java.lang.Double"/>
+	<field name="weight_kg_ref" class="java.lang.Double"/>
 	<variable name="sum_data_r" class="java.lang.Double" resetType="Group" resetGroup="product_type_name" calculation="Sum">
 		<variableExpression><![CDATA[$F{receive}]]></variableExpression>
 	</variable>
@@ -63,6 +64,14 @@ order by product_id]]>
 	<variable name="Record_count" class="java.lang.Integer" resetType="Group" resetGroup="product_type_name"/>
 	<variable name="Sum_total_price" class="java.lang.Double" resetType="Group" resetGroup="product_type_name" calculation="Sum">
 		<variableExpression><![CDATA[$F{total_price}]]></variableExpression>
+	</variable>
+	<variable name="Weight_Sum_Ptype" class="java.lang.Double" resetType="Group" resetGroup="product_type_name" calculation="Sum">
+		<variableExpression><![CDATA[new Double(
+(($F{transfer}.doubleValue()
++ $F{receive}.doubleValue()
++ $F{withdraw}.doubleValue())
+* $F{weight_size}.doubleValue())
+/ $F{weight_kg_ref})]]></variableExpression>
 	</variable>
 	<group name="product_type_name">
 		<groupExpression><![CDATA[$F{ptype_name}]]></groupExpression>
@@ -127,12 +136,12 @@ order by product_id]]>
 + new Double($V{sum_data_r}.doubleValue())
 + new Double($V{sum_data_w}.doubleValue())]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="711" y="4" width="93" height="20" uuid="376e0e03-5c77-45dd-ace3-fd5b70089a08"/>
+				<textField isStretchWithOverflow="true" pattern="#,##0.000" isBlankWhenNull="true">
+					<reportElement x="639" y="4" width="93" height="20" uuid="a4c8fdfb-85a8-485a-88be-22470f6accd6"/>
 					<textElement textAlignment="Right">
 						<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{Sum_total_price}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{Weight_Sum_Ptype}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupFooter>
@@ -240,14 +249,14 @@ order by product_id]]>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="CordiaUPC" size="16" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[ราคา/หน่วย]]></text>
+				<text><![CDATA[คิดเป็นตัน]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="738" y="1" width="66" height="20" uuid="7bbf3881-60b5-4729-ab37-2359d16f02b1"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="CordiaUPC" size="16" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[จำนวนเงิน]]></text>
+				<text><![CDATA[หมายเหตุ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="376" y="1" width="92" height="20" uuid="ca881a8e-552a-430e-bb12-8b495384a24f"/>
@@ -317,29 +326,24 @@ order by product_id]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{product_type_name_COUNT}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="639" y="0" width="93" height="20" uuid="fda24da4-ceb6-4b02-a8ff-46bec9144f10"/>
-				<textElement textAlignment="Right">
-					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{price_per_unit}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="711" y="0" width="93" height="20" uuid="5f0589fa-ca32-4238-98ab-4ccaf8a4738f"/>
-				<textElement textAlignment="Right">
-					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[(new Double($F{receive}.doubleValue())
-+ new Double($F{withdraw}.doubleValue())
-+ new Double($F{transfer}.doubleValue()))
-* new Double($F{price_per_unit}.doubleValue())]]></textFieldExpression>
-			</textField>
-			<textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement x="336" y="0" width="77" height="20" backcolor="#FFFFFF" uuid="45315e20-f27b-47dc-8934-a41a686b6754"/>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weight_size}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.000" isBlankWhenNull="true">
+				<reportElement x="605" y="1" width="127" height="20" uuid="7393d63f-2050-4311-b9fa-c61e689326c1"/>
+				<textElement textAlignment="Right">
+					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Double(
+(($F{transfer}.doubleValue()
++ $F{receive}.doubleValue()
++ $F{withdraw}.doubleValue())
+* $F{weight_size}.doubleValue())
+/ $F{weight_kg_ref})]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

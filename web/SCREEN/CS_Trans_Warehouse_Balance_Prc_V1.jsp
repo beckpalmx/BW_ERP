@@ -134,8 +134,8 @@
                 Double balance = 0.00;
 
                 String product_id = request.getParameter("A_product_id");
-                String pgroup_id = request.getParameter("pgroup_id");                
-                
+                String pgroup_id = request.getParameter("pgroup_id");
+
                 // **** ลบข้อมูลตาราง ความเคลื่อนไหว
                 String sqlDelete = " DELETE FROM tmp_stock_warehouse_balance ;"
                         + " ALTER SEQUENCE seq_tmp_stock_warehouse_balance RESTART WITH 1; "
@@ -206,7 +206,7 @@
                         sql_where = sql_where + " and product_id = '" + product_id + "'";
                     }
                 }
-                
+
                 System.out.println("cond pgroup_id  = " + pgroup_id);
 
                 if (pgroup_id.equals("") || pgroup_id == null || pgroup_id.equals("-")) {
@@ -217,13 +217,14 @@
                     } else {
                         sql_where = sql_where + " and pgroup_id = '" + pgroup_id + "'";
                     }
-                }           
+                }
 
                 System.out.println("cond - sql_where  = " + sql_where);
 
                 /**
                  * ** หารหัสสินค้าที่เคลื่อนไหวเดือนปัจจุบัน ***
                  */
+                
                 String sql_product_id = " Select distinct(product_id) from vt_transaction_warehouse_stock " + sql_where + " Order By product_id";
 
                 //int count_product_id = 0;
@@ -237,7 +238,7 @@
                     SqlIns_Tmp_Prod = "INSERT INTO tmp_warehouse_current_movement(product_id,period_month,create_date,create_by,period_year,remark) VALUES "
                             + "('" + rec_product.getString("product_id") + "','" + currmonth + "'"
                             + ",'" + ts + "','System','" + curryear + "','" + request.getParameter("date_to") + "')";
-                    
+
                     System.out.println("SqlIns_Tmp_Prod = " + SqlIns_Tmp_Prod);
 
                     STateMentData = Conn.createStatement();
@@ -277,11 +278,11 @@
                         SqlInsert1 = "INSERT INTO tmp_stock_warehouse_balance(product_id,doc_date,doc_type,data_r,data_w,data_total,data_transfer,pgroup_id) VALUES "
                                 + "('" + rec_loop1.getString("product_id") + "','" + s_end_period + "','"
                                 //+ doc_type + "'," + data_r + "," + data_w + "," + transfer + "," + transfer + ",'"
-                                + "***'," + formatter.format(data_r) + "," + formatter.format(data_w) + "," + formatter.format(transfer) + "," + formatter.format(transfer) 
+                                + "***'," + formatter.format(data_r) + "," + formatter.format(data_w) + "," + formatter.format(transfer) + "," + formatter.format(transfer)
                                 + "," + rec_loop1.getString("pgroup_id") + "')";
                                 //+ rec_loop1.getString("price_per_unit") + "','" + rec_loop1.getString("pgroup_id") + "')";
-                                
-                        System.out.println("SqlInsert1 = " + SqlInsert1);                        
+
+                        System.out.println("SqlInsert1 = " + SqlInsert1);
 
                         STateMentData = Conn.createStatement();
                         STateMentData.execute(SqlInsert1);

@@ -314,11 +314,11 @@ public class SelectSearch_Doc_id {
             case 115:
                 if (inputdatabase.equals("d_wood_fuel_doc")) {
                     strURLShow = "../SHOWDETAILSCREEN/CS_Show_D_wood_fuel_doc.jsp?doc_id=";
-                } else if (inputdatabase.equals("vd_casava_skin__fresh")) {
+                } else if (inputdatabase.equals("vd_casava_skin_fresh")) {
                     strURLShow = "../SHOWDETAILSCREEN/CS_Show_D_casava_skin_doc.jsp?doc_id=";
-                } else if (inputdatabase.equals("vd_casava_skin__fresh_soil_doc")) {
+                } else if (inputdatabase.equals("vd_casava_skin_fresh_soil_doc")) {
                     strURLShow = "../SHOWDETAILSCREEN/CS_Show_VD_casava_skin_doc.jsp?doc_id=";   
-                } else if (inputdatabase.equals("vd_casava_skin__ticket")) {
+                } else if (inputdatabase.equals("vd_casava_skin_ticket")) {
                     strURLShow = "../SHOWDETAILSCREEN/CS_Show_VD_casava_skin_ticket.jsp?doc_id=";
                 }                       
                 break;
