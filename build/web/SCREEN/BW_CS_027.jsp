@@ -193,7 +193,7 @@
             <div class="container">
                 <div class="panel panel-primary">
                     <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                        <b>ยืนยันการเบิกสินค้าสำเร็จรูป (BW_CS_027)</b>
+                        <b>ยืนยันการเบิกสินค้า (BW_CS_027)</b>
                     </div>                        
                     <div class="panel-footer">                                 
                         <div align="left">

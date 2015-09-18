@@ -337,7 +337,7 @@
             <div class="container">
                 <div class="panel panel-primary">
                     <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                        <b>บันทึกส่งสินค้าสำเร็จรูปเข้าคลัง (BW_CS_024)</b>
+                        <b>บันทึกส่งสินค้าเข้าคลัง (BW_CS_024)</b>
                     </div>                        
                     <div class="panel-footer">                
                         <div align="left">

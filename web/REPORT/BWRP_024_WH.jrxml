@@ -24,6 +24,7 @@
 	</parameter>
 	<queryString>
 		<![CDATA[select * from v_tmp_stock_warehouse_balance
+where pgroup_id <> 'WIP'
 order by pgroup_id desc,runno]]>
 	</queryString>
 	<field name="runno" class="java.lang.Integer"/>
@@ -102,7 +103,7 @@ order by pgroup_id desc,runno]]>
 				<staticText>
 					<reportElement x="3" y="1" width="28" height="18" uuid="f7ac3e38-c640-4001-8d1a-6ab04de0995a"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+						<font fontName="CordiaUPC" size="16" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
 					<text><![CDATA[รวม :]]></text>
 				</staticText>
@@ -372,7 +373,7 @@ order by pgroup_id desc,runno]]>
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="359" y="2" width="95" height="20" uuid="703d8b7a-bc7b-4047-bdf6-bd306f6d0428"/>
+				<reportElement x="304" y="2" width="150" height="20" uuid="703d8b7a-bc7b-4047-bdf6-bd306f6d0428"/>
 				<textElement textAlignment="Right">
 					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>

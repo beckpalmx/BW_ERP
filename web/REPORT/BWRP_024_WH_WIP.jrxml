@@ -23,29 +23,27 @@
 		<defaultValueExpression><![CDATA["31-05-2558"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select product_id,prod_name,weight_unit,weight_size,ptype_name
+		<![CDATA[select product_id,prod_name,weight_unit,ptype_name
 ,sum(data_transfer) as transfer
 , sum(data_r) as receive
 , sum(data_w) as withdraw
 , sum(data_total) as balance
-, avg(price_per_unit) as price_per_unit
-,((sum(data_transfer) + sum(data_r) + sum(data_w)) * avg(price_per_unit)) as total_price,avg(weight_kg_ref) as weight_kg_ref
+,((sum(data_transfer) + sum(data_r) + sum(data_w)) * avg(price_per_unit)) as total_price,weight,avg(weight_kg_ref) as weight_kg_ref
 from v_tmp_stock_warehouse_balance
-where pgroup_id <> 'WIP'
-group by ptype_name,product_id,prod_name,weight_unit,weight_size
+where pgroup_id = 'WIP'
+group by ptype_name,product_id,prod_name,weight_unit,weight
 order by product_id]]>
 	</queryString>
 	<field name="product_id" class="java.lang.String"/>
 	<field name="prod_name" class="java.lang.String"/>
 	<field name="weight_unit" class="java.lang.String"/>
-	<field name="weight_size" class="java.lang.Double"/>
 	<field name="ptype_name" class="java.lang.String"/>
 	<field name="transfer" class="java.lang.Double"/>
 	<field name="receive" class="java.lang.Double"/>
 	<field name="withdraw" class="java.lang.Double"/>
 	<field name="balance" class="java.lang.Double"/>
-	<field name="price_per_unit" class="java.lang.Double"/>
 	<field name="total_price" class="java.lang.Double"/>
+	<field name="weight" class="java.lang.Double"/>
 	<field name="weight_kg_ref" class="java.lang.Double"/>
 	<variable name="sum_data_r" class="java.lang.Double" resetType="Group" resetGroup="product_type_name" calculation="Sum">
 		<variableExpression><![CDATA[$F{receive}]]></variableExpression>
@@ -71,7 +69,7 @@ order by product_id]]>
 (($F{transfer}.doubleValue()
 + $F{receive}.doubleValue()
 + $F{withdraw}.doubleValue())
-* $F{weight_size}.doubleValue())
+* $F{weight}.doubleValue())
 / $F{weight_kg_ref})]]></variableExpression>
 	</variable>
 	<group name="product_type_name">
@@ -145,7 +143,7 @@ order by product_id]]>
 					<textFieldExpression><![CDATA[$V{Weight_Sum_Ptype}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="347" y="4" width="28" height="18" uuid="67e0e06e-8cbf-46d2-a949-0830b29bcca8"/>
+					<reportElement x="347" y="4" width="28" height="18" uuid="6dfe6d14-ae1e-42b8-a33b-63c4ccd465ed"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="CordiaUPC" size="16" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 					</textElement>
@@ -171,7 +169,7 @@ order by product_id]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="20" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[รายงานสรุปการรับ - จ่าย สินค้า (แป้งมันสำปะหลัง)]]></text>
+				<text><![CDATA[ใบรายงานแป้งหยาบ/กวาดพื้น/ล้างท่อ]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="652" y="0" width="227" height="20" uuid="9e6a97c3-7446-4c7a-968a-97d6f7f2e72c"/>
@@ -339,7 +337,7 @@ order by product_id]]>
 				<textElement textAlignment="Right">
 					<font fontName="CordiaUPC" size="14" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weight_size}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{weight}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0.000" isBlankWhenNull="true">
 				<reportElement x="605" y="1" width="127" height="20" uuid="7393d63f-2050-4311-b9fa-c61e689326c1"/>
@@ -350,8 +348,8 @@ order by product_id]]>
 (($F{transfer}.doubleValue()
 + $F{receive}.doubleValue()
 + $F{withdraw}.doubleValue())
-* $F{weight_size}.doubleValue())
-/ $F{weight_kg_ref})]]></textFieldExpression>
+* $F{weight}.doubleValue())
+/ $F{weight_kg_ref}.doubleValue())]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

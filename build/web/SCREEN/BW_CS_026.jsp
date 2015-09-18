@@ -299,7 +299,7 @@
             <div class="container">
                 <div class="panel panel-primary">
                     <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                        <b>บันทึกการเบิกสินค้าสำเร็จรูป (BW_CS_026)</b>
+                        <b>บันทึกการเบิกสินค้า (BW_CS_026)</b>
                     </div>                        
                     <div class="panel-footer">                
                         <div align="left">

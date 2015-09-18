@@ -18,7 +18,7 @@
 
 <html>
     <head>
-        <title>CGC  รายงานการเคลื่อนไหว</title>        
+        <title>BW  รายงานการเคลื่อนไหว</title>        
         <meta http-equiv="Content-Type" content="text/html; charset=TIS-620">        
         <!--link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
         <link href="../CSS/BT.css" rel="stylesheet" type="text/css"-->

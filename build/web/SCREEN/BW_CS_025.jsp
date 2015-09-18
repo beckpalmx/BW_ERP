@@ -186,7 +186,7 @@
             <div class="container">
                 <div class="panel panel-primary">
                     <div class="panel-heading"> <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-                        <b>ยืนยันการรับสินค้าสำเร็จรูปเข้าคลัง (BW_CS_025)</b>
+                        <b>ยืนยันการรับสินค้าเข้าคลัง (BW_CS_025)</b>
                     </div>                        
                     <div class="panel-footer">                
                         <div align="left">

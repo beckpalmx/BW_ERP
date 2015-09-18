@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CGC ERP</title>
+        <title>BW ERP</title>
         <script language="javascript" src="../JS/myAjaxFramework.js"></script>
         <link type="text/css" href="../CSS/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
         <script type="text/javascript" src="../JS/jquery/jquery-1.7.1.min.js"></script>

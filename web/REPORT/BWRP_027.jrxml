@@ -71,7 +71,7 @@ order by runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="24" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[ใบเบิกพัสดุ/สินค้าสำเร็จรูป]]></text>
+				<text><![CDATA[ใบเบิกพัสดุ/สินค้า]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement x="429" y="22" width="130" height="20" uuid="362fc15b-0194-48d1-a66b-9f6e942121b1"/>
@@ -285,7 +285,7 @@ order by runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="14" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[รายการเบิกสินค้าสำเร็จรูป (แป้ง)]]></text>
+				<text><![CDATA[รายการเบิกสินค้า (แป้ง)]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="231" y="7" width="64" height="19" uuid="e17afbc9-9aa0-4ca2-af2b-16ec621a0ee6"/>

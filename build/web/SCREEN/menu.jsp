@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CGC ERP</title>
+        <title>BW ERP</title>
     </head>
     <script type=""  language="javascript" src="../JS/myAjaxFramework.js"></script>
     <script type="text/javascript" src="../JS/MENU.js"></script>

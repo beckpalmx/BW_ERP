@@ -18,7 +18,7 @@
 
 <html>
     <head>
-        <title>CGC  รายงานการเคลื่อนไหว</title>        
+        <title>BW  รายงานการเคลื่อนไหว</title>        
         <meta http-equiv="Content-Type" content="text/html; charset=TIS-620">        
         <!--link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
         <link href="../CSS/BT.css" rel="stylesheet" type="text/css"-->
@@ -328,25 +328,8 @@
                             data_w = 0.00;
                         }
 
-                        if (rec_loop2.getString("product_id").equals("C-I0801A-0+30-K")) {
-                            System.out.println(" rec_loop = " + rec_loop
-                                    + " | data_r = " + formatter.format(data_r)
-                                    + " | data_w = " + formatter.format(data_w)
-                                    + " | balance = " + formatter.format(balance));
-                        }
-
                         rec_loop++;
 
-                        /*                        
-                         System.out.println("rec_loop2 = product_id = " + rec_loop2.getString("product_id")
-                         + " pgroup_id = " + rec_loop2.getString("pgroup_id")
-                         + " pname_t = " + rec_loop2.getString("pname_t")
-                         + " amount_total = " + rec_loop2.getDouble("amount_total")
-                         + " price_per_unit = " + rec_loop2.getDouble("price_per_unit")
-                         + " data_r = " + data_r
-                         + " data_w = " + data_w
-                         + " balance = " + balance);
-                         */
                         SqlInsert2 = "INSERT INTO tmp_stock_warehouse_balance(product_id,doc_date,doc_type,data_r,data_w,data_total,pgroup_id) VALUES "
                                 + "('" + rec_loop2.getString("product_id") + "','" + rec_loop2.getString("doc_date") + "','"
                                 + rec_loop2.getString("doc_type") + "'," + formatter.format(data_r) + "," + formatter.format(data_w) + "," + formatter.format(balance) + ","

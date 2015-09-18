@@ -72,7 +72,7 @@ order by runno]]>
 				<textElement textAlignment="Center">
 					<font fontName="CordiaUPC" size="24" isBold="true" pdfFontName="CORDIAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[ใบเบิกพัสดุ/สินค้าสำเร็จรูป]]></text>
+				<text><![CDATA[ใบเบิกพัสดุ/สินค้า]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement x="429" y="22" width="130" height="20" uuid="362fc15b-0194-48d1-a66b-9f6e942121b1"/>

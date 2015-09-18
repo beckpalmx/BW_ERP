@@ -59,7 +59,7 @@
             });
         </script>        
 
-        <title>CGC  รายงานการเคลื่อนไหว</title>        
+        <title>BW  รายงานการเคลื่อนไหว</title>        
         <style type="text/css">
             <!--
             .myTable{

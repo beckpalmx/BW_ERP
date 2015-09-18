@@ -18,7 +18,7 @@
 
 <html>
     <head>
-        <title>CGC  รายงานการเคลื่อนไหว</title>        
+        <title>BW  รายงานการเคลื่อนไหว</title>        
         <meta http-equiv="Content-Type" content="text/html; charset=TIS-620">        
         <!--link href="../CSS/MENU.css" rel="stylesheet" type="text/css">
         <link href="../CSS/BT.css" rel="stylesheet" type="text/css"-->
@@ -325,13 +325,6 @@
                         } else {
                             data_r = rec_loop2.getDouble("amount_total");
                             data_w = 0.00;
-                        }
-
-                        if (rec_loop2.getString("product_id").equals("C-I0801A-0+30-K")) {
-                            System.out.println(" rec_loop = " + rec_loop
-                                    + " | data_r = " + formatter.format(data_r)
-                                    + " | data_w = " + formatter.format(data_w)
-                                    + " | balance = " + formatter.format(balance));
                         }
 
                         rec_loop++;

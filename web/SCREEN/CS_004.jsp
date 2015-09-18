@@ -53,7 +53,7 @@
                 confirmDialogSave(URLsend('chkNull,priviledge_id,name_t,remark,box', '../JSP/CS_004.jsp'));
             }
         </script>
-        <title>CGC ERP</title>
+        <title>BW ERP</title>
     </head>
     <%!        MenuBean menuBean = new MenuBean();
         MenuDAO menuDAO = new MenuDAO();
