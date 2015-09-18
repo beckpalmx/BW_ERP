@@ -57,20 +57,6 @@
                 });
             });
         </script>        
-        <style type="text/css">
-            <!--
-            .myTable{
-                border: thin inset; 
-                font: xx-small/ Tahoma, Geneva, sans-serif;
-                margin: auto;
-                width: 80%;
-                padding: 0px;
-
-                alignment-adjust: central;
-            }
-
-            -->
-        </style>
 
         <script>
 
@@ -371,7 +357,7 @@
                 </div>
             </nav>             
             <div class="container">
-                <table border ="1"  cellpadding="0"  cellspacing="0" class="myTable">
+                <table border ="1"  cellpadding="0"  cellspacing="0" class="">
                     <center><h1> รายงานแป้งหยาบ/กวาดพื้น/ล้างท่อ V1</h1></center>                 
                     <center><h2><span class="label label-success">วันที่ : <%=date_f%> ถึง <%=date_t%></span></h2></center>                     
                     <center>                           
