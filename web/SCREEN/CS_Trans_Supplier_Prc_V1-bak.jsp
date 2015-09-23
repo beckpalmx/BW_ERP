@@ -232,20 +232,20 @@
 
             var value = 0;
 
-            function barAnim() {
+            function ProgressBar() {
                 value += 5;
                 $(".progress-bar").css("width", value + "%").attr("aria-valuenow", value);
 //if (value == 25 || value == 55 || value == 85) {
                 if (value === 75 || value === 95) {
-                    return setTimeout(barAnim, 500);
+                    return setTimeout(ProgressBar, 500);
                 }
 //if (value >= 100) {
 //    alert(value + " % Complete");
 //}
-                return value >= 100 || setTimeout(barAnim, 20);
+                return value >= 100 || setTimeout(ProgressBar, 20);
             }
 
-            setTimeout(barAnim, 20);
+            setTimeout(ProgressBar, 20);
         </script> 
 
     </body>    
