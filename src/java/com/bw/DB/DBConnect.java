@@ -119,11 +119,15 @@ public class DBConnect {
     public Connection openNewConnectionMySQL_Old() throws Exception {
         Connection conn;
         Class.forName("com.mysql.jdbc.Driver");
-        byte[] dbname_decode = Base64.decodeBase64(MYSQL_CONNECTION_URL);
+        byte[] dbname_decode = Base64.decodeBase64(MYSQL_DBNAME);
         byte[] user_decode = Base64.decodeBase64(MYSQL_USERNAME);
         byte[] pass_decode = Base64.decodeBase64(MYSQL_PASSWORD);
 
-        conn = DriverManager.getConnection(new String(dbname_decode), new String(user_decode), new String(pass_decode));
+        String DB_Server = MYSQL_CONNECTION_URL + new String(dbname_decode);
+
+        System.out.println(DB_Server);
+
+        conn = DriverManager.getConnection(DB_Server, new String(user_decode), new String(pass_decode));
 
         if (conn == null) {
             throw new SQLException("Cannot initial database connection, because it's NULL.");
