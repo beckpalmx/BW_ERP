@@ -72,7 +72,7 @@
     //System.out.println("DB 1 = " + bwdb_name + year_data);
     //System.out.println("DB 2 = " + db_name_ma + year_data);
     byte[] pass_encode = Base64.encodeBase64(pass.getBytes());
-    byte[] pass_decode = Base64.decodeBase64(pass_encode);
+    //byte[] pass_decode = Base64.decodeBase64(pass_encode);
 
     //System.out.println("-------------------0000------------------------");
     //System.out.println("pass_encode = " + new String(pass_encode));
